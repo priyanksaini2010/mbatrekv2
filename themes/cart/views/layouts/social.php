@@ -20,15 +20,24 @@
                 </div>
                 <div class="cart">
                     <?php
+		    $modelIp = CartIp::model()->findAllByAttributes(array(
+			"ip" =>$_SERVER['REMOTE_ADDR'],
+			"status" => 1,
+		    ));
+		    
                     if (isset(Yii::app()->user->id)) {
                     $cart = Cart::model()->findAllByAttributes(array("user_id" => Yii::app()->user->id, "status" => 1));?>
                     <a href="#" id="cart-link">cart(<?php echo count($cart);?>)</a>
-                    <?php } else {?>
+                    <?php }elseif(!empty($modelIp)){?>
+		    <a href="#" id="cart-link">cart(<?php echo count($modelIp);?>)</a>
+		    <?php } else {?>
                     <a href="#" id="cart-link">cart</a>
                     <?php }?>
                     <?php
-                    if (isset(Yii::app()->user->id)) {
-                        
+                    if (isset(Yii::app()->user->id) || !empty($modelIp) ) {
+                        if(empty($cart)){
+			    $cart = $modelIp;
+			}
                         if (!empty($cart)) {
                             ?>
                             <div class="cart-wrapper">

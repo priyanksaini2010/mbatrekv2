@@ -32,7 +32,7 @@ class CartController extends Controller {
     public function accessRules() {
         return array(
             array('allow', // allow all users to perform 'index' and 'view' actions
-                'actions' => array('index', 'view','student',"addtocart","cart","remove","buynow",
+                'actions' => array('index', 'view','student',"addtocart","cart","remove","buynow","verify", 
                                     'profesionals','institutes','register',"description"),
                 'users' => array('*'),
             ),
@@ -49,7 +49,26 @@ class CartController extends Controller {
             ),
         );
     }
-
+	public function actionVerify($id){
+	    $user = UsersNew::model()->findByPk($id);
+	    if(empty($user)){
+		$this->errors["error"] = "You are not registered with us!";
+		$this->layout = getCartLayot();
+		$this->render("webroot.themes.cart.views.cart.home",array());
+	    } else {
+		$user->attributes = array("is_verified"=>1);
+		if($user->save()){
+		    $this->errors["error"] = "Your account has been verified.";
+		    $this->layout = getCartLayot();
+		    $this->render("webroot.themes.cart.views.cart.home",array());
+		}else {
+		    foreach($model->getErrors() as $key=>$err){
+                            $this->errors[$key] = $err;
+		    }
+		}
+		
+	    }
+	}
 	public function actionIndex(){
 		$this->layout = getCartLayot();
 		$this->render("webroot.themes.cart.views.cart.home",array());
@@ -83,7 +102,7 @@ class CartController extends Controller {
         
         public function actionAddtocart($id){
             $this->layout = getCartLayot();
-            
+           
             if (isset(Yii::app()->user->id)) {
                 $modelPre = Cart::model()->findByAttributes(array(
                     "user_id" =>Yii::app()->user->id,
@@ -114,7 +133,31 @@ class CartController extends Controller {
                 
                 
             }else {
-                $this->redirect(Yii::app()->createUrl("site/login"));
+                $modelPre = CartIp::model()->findByAttributes(array(
+                    "ip" =>$_SERVER['REMOTE_ADDR'],
+                    "product_id" =>$id,
+                    "status" => 1,
+                ));
+                if(empty($modelPre)){
+                    $model = new CartIp();
+                    $model->attributes = array(
+                        "ip" =>$_SERVER['REMOTE_ADDR'],
+                        "product_id" =>$id,
+                        "status" =>1,
+                        "date_created" =>date("Y-m-d h:i:s"),
+                    );
+                    if($model->save()){
+                        $this->redirect(Yii::app()->request->urlReferrer);
+                    } else {
+
+                        foreach($model->getErrors() as $key=>$err){
+                            $this->errors[$key] = $err;
+                        }
+                    }
+                } else {
+                   $this->errors["exist"] = "This product already exist in your cart."; 
+                   $this->render("webroot.themes.cart.views.cart.cart",array());
+                }
             }
         }
          public function actionRemove($id){
@@ -200,7 +243,7 @@ class CartController extends Controller {
                         $headers .= "MIME-Version: 1.0\r\n".
                                             "Content-Type: text/html; charset=UTF-8";
 
-                        $sentToUser = sendEmail($_POST['Users']['email'], $subject,$body,$headers);
+                        $sentToUser = sendEmail($_POST['UsersNew']['email'], $subject,$body,$headers);
                         $this->refresh(true,"&thankreg=1");
                     } else {
                         pr($model->getErrors());

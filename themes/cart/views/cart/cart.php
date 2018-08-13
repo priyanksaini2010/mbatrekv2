@@ -1,5 +1,12 @@
 <?php 
   $cart = Cart::model()->findAllByAttributes(array("user_id" => Yii::app()->user->id, "status" => 1));
+  $modelIp = CartIp::model()->findAllByAttributes(array(
+			"ip" =>$_SERVER['REMOTE_ADDR'],
+			"status" => 1,
+		    ));
+  if(empty($cart)){
+      $cart = $modelIp;
+  }
   $hasRecommendation = false;
   foreach ($cart as $c){
     if(count($c->product->productRecommendedValueSaverPacks) > 0){
