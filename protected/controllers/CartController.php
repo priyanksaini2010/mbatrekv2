@@ -180,7 +180,21 @@ class CartController extends Controller {
                     }
                 }
             }else {
-                $this->redirect(Yii::app()->createUrl("site/login"));
+                 $model = CartIp::model()->findByAttributes(array(
+                    "ip" =>$_SERVER['REMOTE_ADDR'],
+                    "product_id" =>$id,
+                    
+                ));
+               
+                
+                if($model->delete()){
+                    $this->redirect(Yii::app()->createUrl("cart/cart"));
+                } else {
+                   pr($model->getErrors());
+                    foreach($model->getErrors() as $key=>$err){
+                        $this->errors[$key] = $err;
+                    }
+                }
             }
         }
         public function actionBuynow($id){
