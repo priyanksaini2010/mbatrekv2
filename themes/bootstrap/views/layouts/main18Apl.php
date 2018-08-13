@@ -1,0 +1,139 @@
+<?php /* @var $this Controller */ ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="language" content="en" />
+        <link rel="stylesheet" type="text/css" href="/mbt/themes/bootstrap/css/styles.css" />
+    	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
+
+	<?php Yii::app()->bootstrap->register(); ?>
+</head>
+
+<body class="adminsection">
+
+<?php
+$items = array(
+            array('label'=>'Category Managment', 'url'=>array('/ebrouchersCategory/admin')),
+            array('label'=>'Create Category', 'url'=>array('/ebrouchersCategory/create')),
+            array('label'=>'eBrouchers', 'url'=>array('/ebrouchers/admin')),
+            array('label'=>'Upload eBroucher', 'url'=>array('/ebrouchers/create')),
+            array('label'=>'eBroucher Downloaded', 'url'=>array('/ebroucherDownloadForm/admin')),
+        );
+$blogMenu = array(
+        array('label'=>'Categories Managment', 'url'=>array('/blogCategory/admin')),
+        array('label'=>'Blog Managment', 'url'=>array('/blogs/admin')),
+);
+$siteData = array(
+            array('label'=>'Content Managment', 'url'=>array('/contentJson/admin')),
+            array('label'=>'Feedback Managment', 'url'=>array('/feedback/admin')),
+            array('label'=>'Contact Managment', 'url'=>array('/contact/admin')),
+            array('label'=>'FAQ Managment', 'url'=>array('/faq/admin')),
+            array('label'=>'FAQ Analysis', 'url'=>array('/faqAnalysis/admin')),
+            array('label'=>'Talk To Advisory', 'url'=>array('/talkToAdvisory/admin')),
+            array('label'=>'eBroucher Management', 'items'=>$items),
+            array('label'=>'Videos Management', 'url'=>array('/videos/admin')),
+            array('label'=>'Event Category Management', 'url'=>array('/eventCategory/admin')),
+            array('label'=>'Event Management', 'url'=>array('/eventGallery/admin')),
+            array('label'=>'Articles Management', 'url'=>array('/articles/admin',"type"=>1)),
+            array('label'=>'Success Story Management', 'url'=>array('/articles/admin',"type"=>2)),
+            array('label'=>'Industry Options 1', 'url'=>array('/industryOption/admin',"option_number"=>1)),
+            array('label'=>'Industry Options 2', 'url'=>array('/industryOption/admin',"option_number"=>2)),
+            array('label'=>'Industry Options 3', 'url'=>array('/industryOption/admin',"option_number"=>3)),
+            array('label'=>'Industry Options 4', 'url'=>array('/industryOption/admin',"option_number"=>4)),
+            array('label'=>'Industry Options 5', 'url'=>array('/industryOption/admin',"option_number"=>5)),
+            
+        );
+$eduCationManagment = array( 
+            array('label'=>'Modules Managment', 'url'=>array('/module/admin')),
+            array('label'=>'Case Study Functions Managment', 'url'=>array('/casestudyFunctions/admin')),
+            array('label'=>'Universities Managment', 'url'=>array('/universities/admin')),
+            array('label'=>'Institutes Managment', 'url'=>array('/institutes/admin')),
+            array('label'=>'Subjects Managment', 'url'=>array('/librarySubjects/admin')),
+            array('label'=>'Books Managment', 'url'=>array('/libraryBooks/admin')),
+            array('label'=>'Industries Managment', 'url'=>array('/industries/admin')),
+    );
+ $this->widget('bootstrap.widgets.TbNavbar',array(
+    'items'=>array(
+        array(
+            'class'=>'bootstrap.widgets.TbMenu',
+            'items'=>array(
+                array('label'=>'Home', 'url'=>'#'),
+                array('label'=>'Users', 'url'=>array('/users/admin',"role"=>1)),
+                array('label'=>'Web Data Managment', 'items'=>$siteData),
+                array('label'=>'Educational Data Managment', 'items'=>$eduCationManagment),
+//                ,
+                array('label'=>'Blog Management', 'items'=>$blogMenu),
+                
+                array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+            ),
+        ),
+        
+    ),
+    'collapse'=>true,
+    
+    'brand' => ''
+     
+)); ?>
+
+<div class="container" id="page">
+        <br/><br/><br/><br/><br/><br/>
+    	<?php if(isset($this->breadcrumbs)):?>
+		<?php $this->widget('bootstrap.widgets.TbBreadcrumbs', array(
+			'links'=>$this->breadcrumbs,
+                        'homeLink'=>CHtml::link('Home', array('/users/admin',"role"=>1)),
+
+		)); ?><!-- breadcrumbs -->
+	<?php endif?>
+            
+            <?php
+            $this->widget('bootstrap.widgets.TbAlert', array(
+                'block'=>true, // display a larger alert block?
+                'fade'=>true, // use transitions?
+                'closeText'=>'&times;', // close link text - if set to false, no close link is displayed
+                'alerts'=>array( // configurations per alert type
+                    'success'=>array('block'=>true, 'fade'=>true, 'closeText'=>'x'), // success, info, warning, error or danger
+                    'error'=>array('block'=>true, 'fade'=>true, 'closeText'=>'x'), // success, info, warning, error or danger
+                    'info'=>array('block'=>true, 'fade'=>true, 'closeText'=>'x'), // success, info, warning, error or danger
+                ),
+            )); ?>
+                
+                
+        <?php if(isset($this->menu)):?>
+		<?php $this->widget('bootstrap.widgets.TbMenu', array(
+			'items'=>$this->menu,
+                         'type'=>'tabs',
+//                        'homeLink'=>CHtml::link('Home', array('/users/admin')),
+
+		)); ?><!-- breadcrumbs -->
+	<?php endif?>
+	<?php echo $content; ?>
+
+	<div class="clear"></div>
+
+
+
+</div><!-- page -->
+<script src="js/jquery.date-dropdowns.js"></script>
+<script>
+    $(document).ready(function() {
+                $("#example10").dateDropdowns({
+                    submitFieldName: 'example10',
+                    required: true
+                });
+                $("#example11").dateDropdowns({
+                    submitFieldName: 'due_date',
+                    required: true
+                });
+                $("#example12").dateDropdowns({
+                    submitFieldName: 'close_date',
+                    required: true
+                });
+                $("#example13").dateDropdowns({
+                    submitFieldName: 'open_date',
+                    required: true
+                });
+    });
+</script>
+</body>
+</html>
