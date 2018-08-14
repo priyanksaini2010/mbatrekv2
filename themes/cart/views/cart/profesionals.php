@@ -219,8 +219,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                     <div class="">
                                         <a href="educational-institute.html" class="cta-link1">
                                             <span class="cta-img">
-                                                <img src="<?php echo $baseUrl; ?>/images/
-                                                     multiple3.png"></span>
+                                                <img src="<?php echo $baseUrl; ?>/images/multiple3.png"></span>
                                             <p class="section-pra">Multiple
                                                 <span class="hours-title"><i>Cheat
                                                         Sheets</i></span>
@@ -236,8 +235,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                 <div class="col-xs-12 col-md-6 col-lg-2 cta-home">
                                     <div class="">
                                         <a href="company.html" class="cta-link1">
-                                            <span class="cta-img"><img src="<?php echo $baseUrl; ?>/images/
-                                                                       multiple4.png"></span>
+                                            <span class="cta-img"><img src="<?php echo $baseUrl; ?>/images/multiple4.png"></span>
 
                                             <p class="section-pra">On-demand
 
