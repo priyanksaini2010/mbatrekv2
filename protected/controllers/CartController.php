@@ -199,21 +199,18 @@ class CartController extends Controller {
                     }
                 }
             }else {
-                 $model = CartIp::model()->findByAttributes(array(
-                    "ip" =>$_SERVER['REMOTE_ADDR'],
-                    "product_id" =>$id,
+                 if(isset($_COOKIE['products'])){
                     
-                ));
-               
-                
-                if($model->delete()){
-                    $this->redirect(Yii::app()->createUrl("cart/cart"));
-                } else {
-                   pr($model->getErrors());
-                    foreach($model->getErrors() as $key=>$err){
-                        $this->errors[$key] = $err;
+                    $cookieCart = unserialize($_COOKIE['products']);
+                    if(in_array($id,$cookieCart)){
+                        $arrFlip = array_flip($cookieCart);
+                        unset($arrFlip[$id]);
+                        $cookieCart = array_flip($arrFlip);
+                        setcookie("products", serialize($cookieCart),strtotime( '+30 days' ));
+
                     }
-                }
+                 }
+                 $this->redirect(Yii::app()->createUrl("cart/cart"));
             }
         }
         public function actionBuynow($id){
