@@ -58,7 +58,7 @@
             </div>
             <div class="col-xs-12 col-md-6 col-lg-3 cta-home">
                 <div class="cta-home-wrap">
-                    <a href="<?php echo Yii::app()->createUrl('cart/institutes'); ?>" class="cta-link1">
+                    <a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"educational_institute")); ?>" class="cta-link1">
                         <span class="cta-img"><img src="images/educational.png"></span>
                         <span class="cta-title">Educational Institutes</span>
                     </a>
@@ -77,7 +77,7 @@
                         </div>
                     </div>
                     <div class="cta-link2">
-                        <a href="<?php echo Yii::app()->createUrl('cart/institutes'); ?>">Know More >></a>
+                        <a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"educational_institute")); ?>">Know More >></a>
                     </div>
                 </div>
             </div>
