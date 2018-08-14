@@ -198,25 +198,6 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                 </div>
                                 <div class="col-xs-12 col-md-6 col-lg-3 cta-home">
                                     <div class="">
-                                        <a href="young-professional.html" class="cta-link1">
-                                            <span class="cta-img">
-                                                <img src="<?php echo $baseUrl; ?>/images/multiple2.png">
-                                            </span>
-                                            <p class="section-pra">Multiple
-                                                <span class="hours-title"><i>In-depth Evaluation</i>
-                                                </span>
-
-                                            </p>
-                                            <span class="cta-solve">A set of reminder sheets for you to take to 
-                                                work everyday</span>
-                                            </span>
-                                        </a>
-
-
-                                    </div>
-                                </div>
-                                <div class="col-xs-12 col-md-6 col-lg-3 cta-home">
-                                    <div class="">
                                         <a href="educational-institute.html" class="cta-link1">
                                             <span class="cta-img">
                                                 <img src="<?php echo $baseUrl; ?>/images/multiple3.png"></span>
