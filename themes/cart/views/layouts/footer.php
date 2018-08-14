@@ -13,7 +13,7 @@
                                     <span class="footer-logo">
                                             <a href="#"><img src="<?php echo $baseUrl; ?>/images/logo.png" alt="MBAtrek" /></a>
                                     </span>
-                                    <span class="copyright">© Copyright 2016 MBAtrek TM.  All rights reserved</span>
+                                    <span class="copyright">© Copyright <?php echo date("Y");?> MBAtrek TM.  All rights reserved</span>
                                 </div>
                                 <div class="footer-menu2">
                                     <ul>
