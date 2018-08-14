@@ -623,7 +623,7 @@ class SiteController extends Controller
 //			    $model2->attributes=array("login_count"=>($model2->login_count+1));
 //			    $model2->save(); 
                             if (Yii::app()->user->admin == 0) {
-                                $this->redirect(Yii::app()->createUrl('/users/admin',array("role"=>1)));
+                                $this->redirect(Yii::app()->createUrl('/usersNew/admin',array("role"=>1)));
                             }  else {
                                 $this->redirect(Yii::app()->createUrl('cart/index'));
                             }
