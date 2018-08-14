@@ -1,23 +1,17 @@
-<?php
-if(isset(Yii::app()->user->id)){
-  $cart = Cart::model()->findAllByAttributes(array("user_id" => Yii::app()->user->id, "status" => 1));
-  $modelIp = CartIp::model()->findAllByAttributes(array(
-			"ip" =>$_SERVER['REMOTE_ADDR'],
-			"status" => 1,
-		    ));
-  if(empty($cart)){
-      $cart = $modelIp;
-  }
-  $hasRecommendation = false;
-  foreach ($cart as $c){
-    if(count($c->product->productRecommendedValueSaverPacks) > 0){
+<?php $cookieCart = unserialize($_COOKIE['products']);
+$criteria = new CDbCriteria;
+$criteria->addInCondition("id", $cookieCart);
+$products = Products::model()->findAll($criteria);
+$hasRecommendation = false;
+foreach ($products as $c){
+    if(count($c->productRecommendedValueSaverPacks) > 0){
 //        pr($c->product->productRecommendedValueSaverPacks);
           $hasRecommendation = true;
           break;
     }
   }
 ?>
-<div class="cart_area_wrapper">
+ <div class="cart_area_wrapper">
     <div class="container">
         <div class="row">
             <div class="cart_wrapper">
@@ -31,20 +25,20 @@ if(isset(Yii::app()->user->id)){
                                     <?php 
                                     
                                     $total = 0;
-                                    if(!empty($cart)){
-                                    foreach($cart as $iKey=>$icart){
-                                        $total = $total +  $icart->product->price;
+                                    if(!empty($products)){
+                                    foreach($products as $iKey=>$icart){
+                                        $total = $total +  $icart->price;
                                     ?>
                                     <li class="cart_icon">
-                                        <img height="44" width="41" src="assets/products/<?php echo $icart->product->logo;?>"/>
-                                        <span><?php echo $icart->product->title;?></span>
+                                        <img height="44" width="41" src="assets/products/<?php echo $icart->logo;?>"/>
+                                        <span><?php echo $icart->title;?></span>
                                     </li>
                                     <li class="cart_label">
-                                        <h4><?php echo $icart->product->description1;?></h4>
-                                        <a href="<?php echo Yii::app()->createUrl("cart/remove",array("id"=>$icart->product->id));?>">Remove</a>
+                                        <h4><?php echo $icart->description1;?></h4>
+                                        <a href="<?php echo Yii::app()->createUrl("cart/remove",array("id"=>$icart->id));?>">Remove</a>
                                     </li>
                                     <li class="cart_money">
-                                        <span>&#8377 <?php echo $icart->product->price;?></span>
+                                        <span>&#8377 <?php echo $icart->price;?></span>
                                     </li>
                                     <?php }}else {?>
                                     <li class="cart_icon">
@@ -60,7 +54,7 @@ if(isset(Yii::app()->user->id)){
                     <div class="col-md-4">
                         <div class="card_price">
                             <div class="price_cart">
-                                <label>Sub Total (<?php echo count($cart)>1?count($cart)." Items":count($cart)." Item";?>): <span> &#8377 <?php echo $total;?></span></label>
+                                <label>Sub Total (<?php echo count($products)>1?count($products)." Items":count($products)." Item";?>): <span> &#8377 <?php echo $total;?></span></label>
                                 <a href="">Checkout</a>
                             </div>
                             <span>Have a promocode? Enter here</span>
@@ -73,8 +67,8 @@ if(isset(Yii::app()->user->id)){
                     <ul>
                         <?php 
 //                        $cart = Cart::model()->findAllByAttributes(array("user_id" => Yii::app()->user->id, "status" => 1));
-                        foreach($cart as $c){
-                        foreach($c->product->productRecommendedValueSaverPacks as $saver){
+                        foreach($products as $c){
+                        foreach($c->productRecommendedValueSaverPacks as $saver){
                         
 ?>
                         <li>
@@ -99,9 +93,4 @@ if(isset(Yii::app()->user->id)){
             </div>
         </div>
     </div>
-</div>
-<?php } else if(isset($_COOKIE['products'])) { ?>
-<?php echo $this->renderPartial("webroot.themes.cart.views.cart.cart_cookie");?> 
- 
-<?php }
-?>
+</div>  

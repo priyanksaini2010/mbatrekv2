@@ -133,31 +133,50 @@ class CartController extends Controller {
                 
                 
             }else {
-                $modelPre = CartIp::model()->findByAttributes(array(
-                    "ip" =>$_SERVER['REMOTE_ADDR'],
-                    "product_id" =>$id,
-                    "status" => 1,
-                ));
-                if(empty($modelPre)){
-                    $model = new CartIp();
-                    $model->attributes = array(
-                        "ip" =>$_SERVER['REMOTE_ADDR'],
-                        "product_id" =>$id,
-                        "status" =>1,
-                        "date_created" =>date("Y-m-d h:i:s"),
-                    );
-                    if($model->save()){
+//                pr(unserialize(array(1,2,3)));
+//                pr(unserialize(serialize(array(1,2,3))));
+                if(isset($_COOKIE['products'])){
+                    
+                    $cookieCart = unserialize($_COOKIE['products']);
+                    if(!in_array($id,$cookieCart)){
+                        $cookieCart[] = $id;
+                        setcookie("products", serialize($cookieCart),strtotime( '+30 days' ));
                         $this->redirect(Yii::app()->request->urlReferrer);
                     } else {
-
-                        foreach($model->getErrors() as $key=>$err){
-                            $this->errors[$key] = $err;
-                        }
+                        $this->errors["exist"] = "This product already exist in your cart."; 
+                        $this->render("webroot.themes.cart.views.cart.cart",array());
                     }
                 } else {
-                   $this->errors["exist"] = "This product already exist in your cart."; 
-                   $this->render("webroot.themes.cart.views.cart.cart",array());
+                    
+                    $cookieCart = array($id);
+                    setcookie("products", serialize($cookieCart),strtotime( '+30 days' ));
+                    $this->redirect(Yii::app()->request->urlReferrer);
                 }
+//                $modelPre = CartIp::model()->findByAttributes(array(
+//                    "ip" =>$_SERVER['REMOTE_ADDR'],
+//                    "product_id" =>$id,
+//                    "status" => 1,
+//                ));
+//                if(empty($modelPre)){
+//                    $model = new CartIp();
+//                    $model->attributes = array(
+//                        "ip" =>$_SERVER['REMOTE_ADDR'],
+//                        "product_id" =>$id,
+//                        "status" =>1,
+//                        "date_created" =>date("Y-m-d h:i:s"),
+//                    );
+//                    if($model->save()){
+//                        $this->redirect(Yii::app()->request->urlReferrer);
+//                    } else {
+//
+//                        foreach($model->getErrors() as $key=>$err){
+//                            $this->errors[$key] = $err;
+//                        }
+//                    }
+//                } else {
+//                   $this->errors["exist"] = "This product already exist in your cart."; 
+//                   $this->render("webroot.themes.cart.views.cart.cart",array());
+//                }
             }
         }
          public function actionRemove($id){

@@ -20,24 +20,24 @@
                 </div>
                 <div class="cart">
                     <?php
-		    $modelIp = CartIp::model()->findAllByAttributes(array(
-			"ip" =>$_SERVER['REMOTE_ADDR'],
-			"status" => 1,
-		    ));
-		    
+//		    $modelIp = CartIp::model()->findAllByAttributes(array(
+//			"ip" =>$_SERVER['REMOTE_ADDR'],
+//			"status" => 1,
+//		    ));
+		    if(isset($_COOKIE['products'])){
+                        $cookieCart = unserialize($_COOKIE['products']);
+                    }
                     if (isset(Yii::app()->user->id)) {
                     $cart = Cart::model()->findAllByAttributes(array("user_id" => Yii::app()->user->id, "status" => 1));?>
                     <a href="#" id="cart-link">cart(<?php echo count($cart);?>)</a>
-                    <?php }elseif(!empty($modelIp)){?>
-		    <a href="#" id="cart-link">cart(<?php echo count($modelIp);?>)</a>
+                    <?php }elseif(isset($_COOKIE['products'])){?>
+		    <a href="#" id="cart-link">cart(<?php echo count($cookieCart);?>)</a>
 		    <?php } else {?>
                     <a href="#" id="cart-link">cart</a>
                     <?php }?>
                     <?php
-                    if (isset(Yii::app()->user->id) || !empty($modelIp) ) {
-                        if(empty($cart)){
-			    $cart = $modelIp;
-			}
+                    if (isset(Yii::app()->user->id)) {
+                        
                         if (!empty($cart)) {
                             ?>
                             <div class="cart-wrapper">
@@ -67,7 +67,39 @@
                                 <div class="total"><a style="background: none;" href="<?php echo Yii::app()->createUrl("cart/cart",array());?>">View Cart</a></div>
                             </div>
     <?php }
-} ?>
+} else if(isset($_COOKIE['products'])) {
+    
+    $criteria = new CDbCriteria;
+    $criteria->addInCondition("id", $cookieCart);
+    $products = Products::model()->findAll($criteria);
+    ?>
+                    <div class="cart-wrapper">
+                                <div class="cart-heading">
+                                    <div class="cart-title">items</div>
+                                    <div class="cart-price">Price (in $)</div>
+                                </div>
+                                <?php
+                                $total = 0;
+                                foreach($products as $iKey=>$cart){
+                                    $total = $total +  $cart->price;
+                                ?>
+                                <div class="items-inner">
+                                    <span class="item-title">
+                                        <label class="container-cart"><?php echo $cart->title?>
+                                            <input type="checkbox" checked="checked">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </span>
+                                    <span class="item-price"><?php echo $cart->price;?></span>                                                
+                                </div>
+                                <?php }?>
+                                <div class="total">
+                                    <span class="total-title">Total</span>
+                                    <span class="total-price"><?php echo $total;?></span>
+                                </div>
+                                <div class="total"><a style="background: none;" href="<?php echo Yii::app()->createUrl("cart/cart",array());?>">View Cart</a></div>
+                            </div>
+<?php }?>
                 </div>
             </div>
         </div>
