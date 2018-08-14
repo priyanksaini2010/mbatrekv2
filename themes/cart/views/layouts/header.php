@@ -30,8 +30,9 @@
                 <li class="home"><a href="<?php echo Yii::app()->createUrl('cart/index'); ?>">Home</a>
                 <span class="icon_nav"></span>
                 </li>
-                <li class="about">
-                    <a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"company")); ?>">About us</a><span class="icon_nav"></span>
+                <li class="dropdown  about">
+                    <a class="dropdown-toggle" data-toggle="
+                  dropdown" href="#">About us</a><span class="icon_nav"></span>
                     <ul class="dropdown-menu" role="menu">
                     <li><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"mbatrek_story")); ?>">Introduction to MBAtrek</a></li>
                     <li><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"how_we_are_different")); ?>">How are we different</a></li>

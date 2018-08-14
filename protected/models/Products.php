@@ -83,7 +83,7 @@ class Products extends CActiveRecord
 			'description1' => 'Description1',
 			'price' => 'Price',
 			'type' => 'Type',
-			'is_saver' => 'Is this a saver product in this category',
+			'is_saver' => 'Is this a packaage?',
 			'product_sub_category_id' => 'Product Category',
 			'status' => 'Status',
 		);
