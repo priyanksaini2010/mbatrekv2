@@ -40,7 +40,7 @@
                 </li>
                 <li class="dropdown service">
                   <a href="#" class="dropdown-toggle" data-toggle="
-                  dropdown">Our Services </a>	<span class="icon_nav"></span>			
+                  dropdown">Our Products </a>	<span class="icon_nav"></span>			
                   <ul class="dropdown-menu" role="menu">
                     <li><a href="<?php echo Yii::app()->createUrl('cart/student'); ?>">Students</a></li>
                     <li><a href="<?php echo Yii::app()->createUrl('cart/profesionals'); ?>">Young Professionals</a></li>
