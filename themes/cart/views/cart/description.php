@@ -13,7 +13,7 @@ $product = Products::model()->findByPk($id);
             </div>
             <div class="col-md-4">
                 <div class="buy_now">
-                    <a href="javascript:void(0)">Buy Now &#8377 <?php echo $product->price; ?></a>
+                    <a href="<?php echo Yii::app()->createUrl("cart/buynow",array("id"=>$product->id));?>">Buy Now &#8377 <?php echo $product->price; ?></a>
                     <ul class="gd_ul">
                         <h2>Includes</h2>
                         <?php foreach ($product->productIncludes as $include) { ?>
