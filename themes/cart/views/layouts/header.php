@@ -35,6 +35,8 @@
                     <ul class="dropdown-menu" role="menu">
                     <li><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"mbatrek_story")); ?>">Introduction to MBAtrek</a></li>
                     <li><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"how_we_are_different")); ?>">How are we different</a></li>
+<li><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"abhishek")); ?>">Abhishek Srivastava</a></li>
+<li><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"alok")); ?>">Alok Srivastava</a></li>
                     <li><a href="#">Something else here</a></li>
                   </ul>
                 </li>

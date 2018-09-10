@@ -794,3 +794,11 @@ user-select: none;
 		padding-bottom: 0;
 		min-height: auto;
 	}
+.intro_Container{width: 100%;float: left;}
+.into_heading{width: 100%;float: left;padding: 0 0 26px 0;}
+.intro_wrapper img{float: right;margin:0 0 0 20px;}
+.into_heading h2{font-size: 29px;color: #348786;font-family: 'MyriadPro-Semibold';display:inline-block;    padding: 6px 0 0 0;margin:0;}
+.into_heading a{display:inline-block;vertical-align:top;margin:0 0 0 10px;}
+.intro_wrapper{width: 100%;float: left;}
+.intro_wrapper p span{color: #348786;}
+.intro_wrapper p{font-size: 16px;line-height:27px;    text-align: justify;}
