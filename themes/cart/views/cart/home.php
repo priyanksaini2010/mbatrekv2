@@ -40,7 +40,7 @@
                                 Understand how to survive and connect with people in your initial career
                                 </h4>
                                 <div class="cta-link2">
-                                <a href="<?php echo Yii::app()->createUrl('cart/student'); ?>">Kick-Start your first year at the job and your career >></a>
+                                <a href="<?php echo Yii::app()->createUrl('cart/profesionals'); ?>">Kick-Start your first year at the job and your career >></a>
                                 </div>
                            </div>
                             </div>
@@ -56,7 +56,7 @@
                                 Transform your institution from a center of academic learning to career building
                                 </h4>
                                 <div class="cta-link2">
-                                <a href="<?php echo Yii::app()->createUrl('cart/student'); ?>">Partner with us to transform into a career building institution >></a>
+                                <a href="#">Partner with us to transform into a career building institution >></a>
                                 </div>
                            </div>
                             </div>
@@ -72,7 +72,7 @@
                                 Upskill your young talent and new hires to the demands of today’s corporate world
                                 </h4>
                                 <div class="cta-link2">
-                                <a href="<?php echo Yii::app()->createUrl('cart/student'); ?>">Develop and accelerate growth of your next generation workforce >></a>
+                                <a href="<?php echo Yii::app()->createUrl('cart/institutes'); ?>">Develop and accelerate growth of your next generation workforce >></a>
                                 </div>
                               </div>
                         </div>

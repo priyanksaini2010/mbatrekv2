@@ -902,3 +902,6 @@ user-select: none;
   }
 }  
 .collapse .nav .dropdown.service  .dropdown.dropdown-submenu .dropdown-menu{display:none!important;}
+.collapse .nav .dropdown.service  .dropdown.dropdown-submenu:hover .dropdown-menu{display:block!important;}
+.collapse .nav .dropdown.service .dropdown-menu .dropdown.dropdown-submenu  .dropdown-menu .dropdown.dropdown-submenu .dropdown-menu{display:none!important;}
+.collapse .nav .dropdown.service .dropdown-menu .dropdown.dropdown-submenu  .dropdown-menu .dropdown.dropdown-submenu:hover .dropdown-menu{display:block!important;}
