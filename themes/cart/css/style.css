@@ -819,11 +819,11 @@ footer .footer-logo{
 }
 .student-cta1-bottom-inner{
     background: rgb(245,183,31);
-    max-width: 900px;
+    max-width: 583px;
     margin: 0 auto;
     border-radius: 15px;
     text-align: center;
-    padding: 45px 25px;
+    padding: 17px 25px 13px 25px;
 }
 .student-cta1-bottom-inner .student-cta1-bottom-title{
     font-size: 30px;

@@ -41,10 +41,27 @@
                   </ul>
                 </li>
                 <li class="dropdown service">
-                  <a href="#" class="dropdown-toggle" data-toggle="
-                  dropdown">Our Products </a>	<span class="icon_nav"></span>			
+                  <a href="#" class="dropdown-toggle" data-toggle=" dropdown">Our Products </a>	<span class="icon_nav"></span>			
                   <ul class="dropdown-menu" role="menu">
-                    <li class="sub_menu"><a href="<?php echo Yii::app()->createUrl('cart/student'); ?>">Students</a></li>
+                    <li class="sub_menu dropdown dropdown-submenu">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="<?php echo Yii::app()->createUrl('cart/student'); ?>">Students</a>
+						<ul class="dropdown-menu">
+							<li class="kopie"><a href="#">Dropdown Link 5</a></li>
+							<li><a href="#">Dropdown Submenu Link 5.1</a></li>
+							<li><a href="#">Dropdown Submenu Link 5.2</a></li>
+							<li><a href="#">Dropdown Submenu Link 5.3</a></li>
+							
+							<li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown Submenu Link 5.4</a>
+								<ul class="dropdown-menu">
+									<li class="kopie"><a href="#">Dropdown Submenu Link 5.4</a></li>
+									<li><a href="#">Dropdown Submenu Link 5.4.1</a></li>
+									<li><a href="#">Dropdown Submenu Link 5.4.2</a></li>
+									
+									
+								</ul>
+							</li>                           
+						</ul>
+					</li>
                     <li class="sub_menu"><a href="<?php echo Yii::app()->createUrl('cart/profesionals'); ?>">Young Professionals</a></li>
                   </ul>                
                 </li>
