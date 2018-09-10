@@ -21,7 +21,7 @@ foreach ($products as $c){
                         <div class="cart_detail">
                             <label class="cart_price_title">Price</label>
                             <div class="cart_repeat">
-                                <ul class="list-inline">
+                                
                                     <?php 
                                     
                                     $total = 0;
@@ -29,6 +29,7 @@ foreach ($products as $c){
                                     foreach($products as $iKey=>$icart){
                                         $total = $total +  $icart->price;
                                     ?>
+<ul class="list-inline">
                                     <li class="cart_icon">
                                         <img height="44" width="41" src="assets/products/<?php echo $icart->logo;?>"/>
                                         <span><?php echo $icart->title;?></span>
@@ -39,14 +40,15 @@ foreach ($products as $c){
                                     </li>
                                     <li class="cart_money">
                                         <span>&#8377 <?php echo $icart->price;?></span>
-                                    </li>
+                                    </li></ul>
                                     <?php }}else {?>
                                     <li class="cart_icon">
                                         <img height="44" width="41" src="images/icons/add_cart.png"/>
                                         <span>Your Cart is empty</span>
-                                    </li>
+                                    </li></ul>
+
                                     <?php }?>
-                                </ul>
+                                
                             </div>
                             <a class="View_cart" href="<?php echo Yii::app()->createUrl("cart/cart");?>">View Cart</a>
                         </div>

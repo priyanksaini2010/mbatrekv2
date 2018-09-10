@@ -29,7 +29,7 @@
                     }
                     if (isset(Yii::app()->user->id)) {
                     $cart = Cart::model()->findAllByAttributes(array("user_id" => Yii::app()->user->id, "status" => 1));?>
-                    <a href="#" id="cart-link">cart(<?php echo count($cart);?>)</a>
+                    <a href="#" id="cart-link">cart<span>(<?php echo count($cart);?>)</span></a>
                     <?php }elseif(isset($_COOKIE['products'])){?>
 		    <a href="#" id="cart-link">cart(<?php echo count($cookieCart);?>)</a>
 		    <?php } else {?>
@@ -43,7 +43,7 @@
                             <div class="cart-wrapper">
                                 <div class="cart-heading">
                                     <div class="cart-title">items</div>
-                                    <div class="cart-price">Price (in Rs)</div>
+                                    <div class="cart-price">Price (in $)</div>
                                 </div>
                                 <?php
                                 $total = 0;

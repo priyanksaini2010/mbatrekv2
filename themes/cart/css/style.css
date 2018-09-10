@@ -75,8 +75,8 @@ nav ul li a .icon{
     margin-left: 5px;
 }
 .header-bottom {
-	background: rgb(115,148,47);
-	padding: 10px 0;
+	background: #d0d0d0;
+	padding: 6px 0;
 }
 .header-bottom-inner{
     display: inline-block;
@@ -86,7 +86,7 @@ nav ul li a .icon{
 }
 .social-icons {
 	float: left;
-	margin: 4px 0 0;
+	margin: 1px 0 0;
 }
 .social-icons ul li{
     list-style-type: none;
@@ -95,15 +95,15 @@ nav ul li a .icon{
 }
 .social-icons ul li a {
 	font-size: 0;
-	height: 22px;
-	width: 22px;
+	height: 32px;
+	width: 32px;
 	display: inline-block;
 	vertical-align: top;
 	background-size: 100% 100% !important;
-	margin: 0 2px;
+	margin: 0 4px;
 }
 .social-icons ul li a.ytube{
-    background: url("../images/ytube.png");
+    background: url("../images/social_youtube.png");
 }
 .social-icons ul li a.in{
     background: url("../images/linkedin.png");
@@ -161,9 +161,9 @@ nav ul li a .icon{
     margin: 0 12px;
 }
 .cta-home-wrap{
-    border: 5px solid rgb(34,152,151);
+    
     border-radius: 25px;
-    padding: 25px 10px 10px;
+   
 }
 .cta-home{
     margin-bottom: 25px;
@@ -173,9 +173,12 @@ nav ul li a .icon{
     vertical-align: top;
     text-align: center;
     width: 100%;
+    background: #348786;
+    border-radius: 20px;
+    padding: 28px 0 17px 0;
 }
 .cta-home .cta-link1 .cta-img{
-    min-height: 140px;
+    min-height: 97px;
     display: inline-block;
     vertical-align: top;
 }
@@ -186,13 +189,25 @@ nav ul li a .icon{
     display: inline-block;
     vertical-align: top;
     width: 100%;
-    color: #000;
-    font-weight: 700;
-    font-size: 20px;
+    color: #fff;
+    font-weight: normal;
+    font-size: 22px;
+    padding:12px 0 0 0;
 }
 .cta-home .cta-body {
-    margin-top: 30px;
+    background: #daf8f6;
+    vertical-align: top;
+    margin: -24px 0 0 0;
+    padding: 32px 9px 20px 10px;
+    text-align: center;
 }
+.cta-home .cta-body h4 
+{
+    color: #348786;
+    line-height: 26px;
+    font-size: 18px;
+}
+
 .cta-home .cta-body .cta-body-row {
    min-height: 100px;
 }
@@ -212,15 +227,24 @@ nav ul li a .icon{
 .cta-home .cta-link2{
     text-align: center;
 }
+.cta-home .cta-link2 a:hover {
+    color: #4f8231;
+}
 .cta-home .cta-link2 a{
     color: rgb(34,152,151);
-    text-decoration: underline;
+    text-decoration: underline!important;
+    font-size: 16px;
+     padding: 8px 5px 0 5px;
+    display: inline-block;
+    font-style: italic;
 }
 .cta-home .cta-link2 a:hover{
     text-decoration: none;
 }
+.home-cta-wrapper{width: 100%;float: left;}
 main{
-    padding: 80px 0 20px;
+    padding: 45px 0 20px;
+    width: 100%;float: left;
 }
 footer{
     background: url("../images/footer-bg.png");
@@ -254,9 +278,9 @@ footer .footer-logo{
 .footer-wrap .footer-menu1 ul li a{
     text-transform: capitalize;
     color: #fff;    
-    font-size: 14px;    
+    font-size: 16px;    
     padding: 0 7px;    
-    font-weight: 800;
+    font-weight: normal;
 }
 .footer-wrap .footer-menu1 ul li a:hover{
     text-decoration: none;
@@ -281,9 +305,9 @@ footer .footer-logo{
 .footer-wrap .footer-menu2 ul li a{
     text-transform: capitalize;
     color: #fff;    
-    font-size: 14px;    
+    font-size: 16px;    
     padding: 0 7px;    
-    font-weight: 800;
+    font-weight: normal;
 }
 .footer-wrap .footer-menu2 ul li a:hover{
     text-decoration: none;
@@ -300,7 +324,7 @@ footer .footer-logo{
 }
 .cart-wrapper{
     position: absolute;
-    top: 51px;
+    top: 42px;
     right: 0;
     background: rgb(245,183,31);
     color: #fff;
@@ -500,7 +524,7 @@ footer .footer-logo{
 .student-journey-inner ul li .journey-text{
     display: table-cell;
     vertical-align: middle;
-    font-size: 14px;
+    font-size: 15px;
 }
 .journey-1 > ul li{
     background: rgb(115,148,47);
@@ -515,10 +539,11 @@ footer .footer-logo{
     content: "";
     position: absolute;
     top: 103px;
-    right: 94px;
+    right: 48px;
     background: url("../images/journey-1-bg.jpg");
-    width:200px;
+    width:297px;
     height: 37px;
+    background-size: 100%;
 }
 .journey-1 .journey-title-bottom{
     margin-top: 81px;
@@ -542,10 +567,11 @@ footer .footer-logo{
     content: "";
     position: absolute;
     top: 103px;
-    left: 94px;
+    left: 42px;
     background: url("../images/journey-2-bg.jpg");
-    width:200px;
+    width:297px;
     height: 37px;
+    background-size: 100%;
 }
 .student-journey-inner li.main-box{
     background: rgb(245,183,31);
@@ -587,7 +613,7 @@ footer .footer-logo{
     display: none;
 }
 .journey1-list , .journey2-list{
-    margin-top: 80px;
+    margin-top: 33px;
 }
 .student-journey-inner .journey1-list ul li{
     color: rgb(0,0,0);
@@ -606,31 +632,35 @@ footer .footer-logo{
     text-align: left;
 }
 .journey1-list ul li .list-icon{
-    width: 15%;
+    width:auto;
     display: inline-block;
+    min-width: 57px;
     vertical-align: top;
 }
 .journey2-list ul li .list-icon{
-    width: 15%;
+    width: auto;
     display: inline-block;
-    vertical-align: top;
+    vertical-align: middle;
+    min-width: 57px;
 }
 .journey1-list ul li .list-text{
-    font-weight: normal;
-    font-size: 22px;
+    font-family: 'MyriadPro-Semibold';
+    font-size: 16px;
     display: inline-block;
     vertical-align: top;
     width: 80%;
     margin-left: 15px;
 }
+.student-journey-inner .journey-1 .journey1-list .list-text{color: rgb(115,148,47);}
 .journey1-list ul li .list-text .list-text-title{
     font-weight: bold;
 }
 .journey2-list ul li .list-text{
-    font-weight: normal;
-    font-size: 22px;
+    font-family: 'MyriadPro-Semibold';
+    color: #348786;
+    font-size: 16px;
     display: inline-block;
-    vertical-align: top;
+    vertical-align: middle;
     width: 80%;
     margin-left: 15px;
 }
@@ -638,7 +668,7 @@ footer .footer-logo{
     font-weight: bold;
 }
 .arrow-icon{
-    margin: 25px 0;
+    margin: 39px 0 0 0;
     text-align: center;
     display: inline-block;
     vertical-align: top;
@@ -719,6 +749,10 @@ footer .footer-logo{
     text-decoration: underline;
     text-transform: capitalize;
 }
+.student-cta1 .intern-read-more a:hover
+{
+    color: #348786;
+}
 .student-cta1 .intern-read-more a:hover{
     text-decoration: none;
 }
@@ -789,7 +823,7 @@ footer .footer-logo{
     margin: 0 auto;
     border-radius: 15px;
     text-align: center;
-    padding: 25px;
+    padding: 45px 25px;
 }
 .student-cta1-bottom-inner .student-cta1-bottom-title{
     font-size: 30px;
@@ -802,7 +836,8 @@ footer .footer-logo{
     color: #fff;
     line-height: 1.2;
     font-weight: bold;
-    margin: 15px 0;
+    margin:0;
+    padding: 20px 0 10px 0;
 }
 .student-cta1-bottom-inner .student-cta1-bottom-sub-title .new-price{
     font-style: italic;
@@ -848,7 +883,7 @@ footer .footer-logo{
     text-align: center;
 }
 .right-choice{
-    padding-top: 30px;
+   
 }
 .right-choice-inner1 .right-choice-inner-title{
     font-size: 40px;
@@ -861,7 +896,7 @@ footer .footer-logo{
     color: rgb(34,152,151);
 }
 .student-cta2{
-    margin-top: 80px;
+    margin-top: 90px;
 }
 .student-cta2 ul {
     text-align: center;
@@ -937,7 +972,7 @@ footer .footer-logo{
     font-size: 17px;
     color: #000;
     font-weight: bold;
-    max-width: 175px;
+    max-width: 193px;
     margin: 10px auto;
 }
 .student-cta2 .intern-read-more{

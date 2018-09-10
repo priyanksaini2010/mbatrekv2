@@ -31,8 +31,7 @@
                 <span class="icon_nav"></span>
                 </li>
                 <li class="dropdown  about">
-                    <a class="dropdown-toggle" data-toggle="
-                  dropdown" href="#">About us</a><span class="icon_nav"></span>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">About us</a><span class="icon_nav"></span>
                     <ul class="dropdown-menu" role="menu">
                     <li><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"mbatrek_story")); ?>">Introduction to MBAtrek</a></li>
                     <li><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"how_we_are_different")); ?>">How are we different</a></li>
@@ -43,11 +42,8 @@
                   <a href="#" class="dropdown-toggle" data-toggle="
                   dropdown">Our Products </a>	<span class="icon_nav"></span>			
                   <ul class="dropdown-menu" role="menu">
-                    <li><a href="<?php echo Yii::app()->createUrl('cart/student'); ?>">Students</a></li>
-                    <li><a href="<?php echo Yii::app()->createUrl('cart/profesionals'); ?>">Young Professionals</a></li>
-                    <li><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"educational_institute")); ?>">Institutes</a></li>
-                    
-                    <li><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"company")); ?>">Companies</a></li>
+                    <li class="sub_menu"><a href="<?php echo Yii::app()->createUrl('cart/student'); ?>">Students</a></li>
+                    <li class="sub_menu"><a href="<?php echo Yii::app()->createUrl('cart/profesionals'); ?>">Young Professionals</a></li>
                   </ul>                
                 </li>
                 <li class="dropdown insights">
@@ -57,12 +53,11 @@
                     <li><a href="#">Action</a></li>
                     <li><a href="#">Another action</a></li>
                     <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
                     <li><a href="#">Separated link</a></li>
                   </ul>                
                 </li>
                 <li class="success"><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"mbatrek_story")); ?>">Success Stories</a><span class="icon_nav"></span></li>
-                <li class="faq"><a href="#">Faq</a><span class="icon_nav"></span></li>
+                <li class="faq"><a href="#">FAQ</a><span class="icon_nav"></span></li>
                 <li class="contact"><a href="#">Contact Us</a></li>
             </ul>
             

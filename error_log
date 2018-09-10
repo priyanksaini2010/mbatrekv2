@@ -121,3 +121,5 @@
 [03-Apr-2018 11:52:00 UTC] PHP Fatal error:  Call to undefined method stdClass::save() in /home/mbatrek2017/public_html/protected/controllers/SiteController.php on line 655
 [02-May-2018 10:45:32 UTC] PHP Fatal error:  Class 'Yi' not found in /home/mbatrek2017/public_html/index.php on line 247
 [02-May-2018 10:45:33 UTC] PHP Fatal error:  Class 'Yi' not found in /home/mbatrek2017/public_html/index.php on line 247
+[14-Aug-2018 09:46:58 UTC] PHP Fatal error:  Call to a member function delete() on a non-object in /home/mbatrek2017/public_html/v2/protected/controllers/CartController.php on line 209
+[14-Aug-2018 09:47:43 UTC] PHP Fatal error:  Call to a member function delete() on a non-object in /home/mbatrek2017/public_html/v2/protected/controllers/CartController.php on line 209

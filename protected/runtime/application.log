@@ -10436,3 +10436,96 @@ Stack trace:
 #29 {main}
 REQUEST_URI=/mbatrekv2/
 ---
+2018/08/14 07:58:49 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mbatrek_v2.users' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `users`.
+in /home/mbatrek2017/public_html/v2/protected/controllers/UsersController.php (343)
+in /home/mbatrek2017/public_html/v2/index.php (263)
+2018/08/14 07:58:49 [error] [exception.CDbException] exception 'CDbException' with message 'The table "users" for active record class "Users" cannot be found in the database.' in /home/mbatrek2017/public_html/v2/yii/framework/db/ar/CActiveRecord.php:2387
+Stack trace:
+#0 /home/mbatrek2017/public_html/v2/yii/framework/db/ar/CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Users))
+#1 /home/mbatrek2017/public_html/v2/yii/framework/db/ar/CActiveRecord.php(79): CActiveRecord->getMetaData()
+#2 /home/mbatrek2017/public_html/v2/protected/controllers/UsersController.php(343): CActiveRecord->__construct('search')
+#3 [internal function]: UsersController->actionAdmin('1')
+#4 /home/mbatrek2017/public_html/v2/yii/framework/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#5 /home/mbatrek2017/public_html/v2/yii/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(UsersController), Object(ReflectionMethod), Array)
+#6 /home/mbatrek2017/public_html/v2/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#7 /home/mbatrek2017/public_html/v2/yii/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 /home/mbatrek2017/public_html/v2/yii/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /home/mbatrek2017/public_html/v2/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#10 /home/mbatrek2017/public_html/v2/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#11 /home/mbatrek2017/public_html/v2/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#12 /home/mbatrek2017/public_html/v2/yii/framework/web/CController.php(291): CFilterChain->run()
+#13 /home/mbatrek2017/public_html/v2/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /home/mbatrek2017/public_html/v2/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#15 /home/mbatrek2017/public_html/v2/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('users/admin')
+#16 /home/mbatrek2017/public_html/v2/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#17 /home/mbatrek2017/public_html/v2/index.php(263): CApplication->run()
+#18 {main}
+REQUEST_URI=/v2/index.php?r=users/admin&role=1
+HTTP_REFERER=https://mbatrek.com/v2/index.php?r=site/login
+---
+2018/08/14 07:58:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "usersnew/admin".' in /home/mbatrek2017/public_html/v2/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/mbatrek2017/public_html/v2/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('usersnew/admin')
+#1 /home/mbatrek2017/public_html/v2/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /home/mbatrek2017/public_html/v2/index.php(263): CApplication->run()
+#3 {main}
+REQUEST_URI=/v2/index.php?r=usersnew/admin&role=1
+---
+2018/08/14 09:51:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pages/educational_institutes".' in /home/mbatrek2017/public_html/v2/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/mbatrek2017/public_html/v2/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('pages/education...')
+#1 /home/mbatrek2017/public_html/v2/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /home/mbatrek2017/public_html/v2/index.php(263): CApplication->run()
+#3 {main}
+REQUEST_URI=/v2/index.php?r=pages/educational_institutes
+---
+2018/08/14 09:51:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "pages/institiute".' in /home/mbatrek2017/public_html/v2/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/mbatrek2017/public_html/v2/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('pages/institiut...')
+#1 /home/mbatrek2017/public_html/v2/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /home/mbatrek2017/public_html/v2/index.php(263): CApplication->run()
+#3 {main}
+REQUEST_URI=/v2/index.php?r=pages/institiute
+---
+2018/08/14 09:51:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "pages".' in /home/mbatrek2017/public_html/v2/yii/framework/web/CController.php:483
+Stack trace:
+#0 /home/mbatrek2017/public_html/v2/yii/framework/web/CController.php(270): CController->missingAction('pages')
+#1 /home/mbatrek2017/public_html/v2/yii/framework/web/CWebApplication.php(282): CController->run('pages')
+#2 /home/mbatrek2017/public_html/v2/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/pages')
+#3 /home/mbatrek2017/public_html/v2/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /home/mbatrek2017/public_html/v2/index.php(263): CApplication->run()
+#5 {main}
+REQUEST_URI=/v2/index.php?r=site/pages&view=institute
+---
+2018/08/14 09:52:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested view "institutes" was not found.' in /home/mbatrek2017/public_html/v2/yii/framework/web/actions/CViewAction.php:112
+Stack trace:
+#0 /home/mbatrek2017/public_html/v2/yii/framework/web/actions/CViewAction.php(123): CViewAction->resolveView('institutes')
+#1 /home/mbatrek2017/public_html/v2/yii/framework/web/actions/CAction.php(76): CViewAction->run()
+#2 /home/mbatrek2017/public_html/v2/yii/framework/web/CController.php(308): CAction->runWithParams(Array)
+#3 /home/mbatrek2017/public_html/v2/yii/framework/web/CController.php(286): CController->runAction(Object(CViewAction))
+#4 /home/mbatrek2017/public_html/v2/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CViewAction), Array)
+#5 /home/mbatrek2017/public_html/v2/yii/framework/web/CWebApplication.php(282): CController->run('page')
+#6 /home/mbatrek2017/public_html/v2/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/page')
+#7 /home/mbatrek2017/public_html/v2/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#8 /home/mbatrek2017/public_html/v2/index.php(263): CApplication->run()
+#9 {main}
+REQUEST_URI=/v2/index.php?r=site/page&view=institutes
+---
+2018/08/14 11:58:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "productKeypoints/create".' in /home/mbatrek2017/public_html/v2/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/mbatrek2017/public_html/v2/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('productKeypoint...')
+#1 /home/mbatrek2017/public_html/v2/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /home/mbatrek2017/public_html/v2/index.php(263): CApplication->run()
+#3 {main}
+REQUEST_URI=/v2/index.php?r=productKeypoints/create&id=26
+HTTP_REFERER=https://www.mbatrek.com/v2/index.php?r=ProductRecommendedValueSaverPack/create&id=26
+---
+2018/09/10 05:45:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "usersnew/admin".' in /home/mbatrek2017/public_html/v2/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/mbatrek2017/public_html/v2/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('usersnew/admin')
+#1 /home/mbatrek2017/public_html/v2/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /home/mbatrek2017/public_html/v2/index.php(263): CApplication->run()
+#3 {main}
+REQUEST_URI=/v2/index.php?r=usersnew/admin&role=1
+HTTP_REFERER=https://mbatrek.com/v2/index.php?r=contentJson/update&id=18
+---
