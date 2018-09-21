@@ -28,11 +28,11 @@ fonts
 }
 @font-face {
     font-family: 'FontAwesome';
-    src: url('../font/fontawesome-webfont.eot?v=3.2.1');
-    src: url('../font/fontawesome-webfont.eot?#iefix&v=3.2.1') format('embedded-opentype'), 
-         url('../font/fontawesome-webfont.woff?v=3.2.1') format('woff'), 
-         url('../font/fontawesome-webfont.ttf?v=3.2.1') format('truetype'), 
-         url('../font/fontawesome-webfont.svg#fontawesomeregular?v=3.2.1') format('svg');
+    src: url('../fonts/fontawesome-webfont.eot?v=3.2.1');
+    src: url('../fonts/fontawesome-webfont.eot?#iefix&v=3.2.1') format('embedded-opentype'), 
+         url('../fonts/fontawesome-webfont.woff?v=3.2.1') format('woff'), 
+         url('../fonts/fontawesome-webfont.ttf?v=3.2.1') format('truetype'), 
+         url('../fonts/fontawesome-webfont.svg#fontawesomeregular?v=3.2.1') format('svg');
     font-weight: normal;
     font-style: normal;
   }
@@ -41,9 +41,22 @@ fonts
     padding: 0;
     box-shadow: border-box;
 }
+a,a:active,a:focus
+{
+	outline:0!important;
+}
+html
+{
+	height:100%;
+}
 body{
     font-family: 'MyriadPro-Regular';
     font-weight: normal;
+	min-height: 100%;
+	position: relative;
+	display: inline-block;
+	padding-bottom: 151px;
+	width:100%;
 }
 img{
     max-width: 100%;
@@ -101,6 +114,24 @@ nav ul li a .icon{
 	vertical-align: top;
 	background-size: 100% 100% !important;
 	margin: 0 4px;
+}
+.social-icons ul li a.youtube_icon i:hover{background:#FF0000;}
+.social-icons ul li a.linked_icon i:hover{background:#00839D;}
+.social-icons ul li a.facebook_icon i:hover{background:#4267B2;}
+.social-icons ul li a.twitter_icon i:hover{background:#1DA1F2;}
+.social-icons ul li a.quora_icon i:hover{background:#B92B27}
+.social-icons ul li a i
+{
+	font-size: 20px;
+color: #fff;
+background: #348786;
+min-width: 37px;
+text-align: center;transition: all 0.3s;
+padding: 7px 0 7px 0;border-radius:2px;
+}
+.social-icons ul li a i:hover {
+    /* font-size: 21px; */
+    min-width: 40px;
 }
 .social-icons ul li a.ytube{
     background: url("../images/social_youtube.png");
@@ -252,7 +283,9 @@ footer{
     background-repeat: no-repeat;
     background-position: bottom center;
     width: 100%;
-    float: left;
+    position:absolute;
+	bottom:0;
+	
 }
 footer .footer-wrap{    
     display: inline-block;
@@ -326,7 +359,7 @@ footer .footer-logo{
     position: absolute;
     top: 42px;
     right: 0;
-    background: rgb(245,183,31);
+    background: #348786;
     color: #fff;
     width: 280px;
     padding: 15px;
@@ -367,6 +400,7 @@ footer .footer-logo{
     display: block;
     position: relative;
     padding-left: 28px;
+    font-weight: normal;
     margin-bottom: 12px;
     cursor: pointer;
     font-size: 15px;
@@ -525,6 +559,7 @@ footer .footer-logo{
     display: table-cell;
     vertical-align: middle;
     font-size: 15px;
+	font-family:'MyriadPro-Semibold';
 }
 .journey-1 > ul li{
     background: rgb(115,148,47);
@@ -546,6 +581,7 @@ footer .footer-logo{
     background-size: 100%;
 }
 .journey-1 .journey-title-bottom{
+    font-family: 'MyriadPro-Semibold';
     margin-top: 81px;
     text-align: right;
     margin-right: 167px;
@@ -554,6 +590,7 @@ footer .footer-logo{
     color: rgb(115,148,47);
 }
 .journey-2 .journey-title-bottom{
+    font-family: 'MyriadPro-Semibold';
     margin-top: 81px;
     margin-left: 159px;
     font-size: 19px;
@@ -734,7 +771,7 @@ footer .footer-logo{
     font-size: 20px;
     color: #000;
     font-weight: bold;
-    max-width: 175px;
+    /* max-width: 175px; */
     margin: 10px auto;
 }
 .student-cta1 .intern-read-more{
@@ -771,7 +808,7 @@ footer .footer-logo{
     color: #fff;
     background: rgb(115,148,47);
     padding: 10px 10px;
-    max-width: 80px;
+    min-width: 110px;
     line-height: 1.2;
     border-radius: 10px;
     text-transform: capitalize;
@@ -788,8 +825,8 @@ footer .footer-logo{
     position: relative;
     border: 3px solid rgb(115,148,47);
     border-radius: 12px;
-    min-height: 177px;
-    max-width: 90%;
+    min-height: 138px;
+    max-width: 69%;
     margin: 27px auto 0;
 }
 .student-cta1 .intern-desc::before{
@@ -806,7 +843,7 @@ footer .footer-logo{
 }
 .student-cta1 .intern-desc ul{
     text-align: left;
-    padding: 22px 15px 15px 45px;
+    padding: 22px 13px 14px 33px;
 }
 .student-cta1 .intern-desc ul li{
     color: rgb(115,148,47);  
@@ -823,7 +860,7 @@ footer .footer-logo{
     margin: 0 auto;
     border-radius: 15px;
     text-align: center;
-    padding: 17px 25px 13px 25px;
+    padding: 17px 25px 15px 25px;
 }
 .student-cta1-bottom-inner .student-cta1-bottom-title{
     font-size: 30px;
@@ -837,17 +874,17 @@ footer .footer-logo{
     line-height: 1.2;
     font-weight: bold;
     margin:0;
-    padding: 20px 0 10px 0;
+    padding: 6px 0 0px 0;
 }
 .student-cta1-bottom-inner .student-cta1-bottom-sub-title .new-price{
     font-style: italic;
     color: rgb(115,148,47);
 }
 .student-cta1-bottom-inner .buy-and-cart{
-    margin-top: 20px;
+    margin-top: 9px;
 }
 .student-cta1-bottom-inner .buy-and-cart a {
-	border: 4px solid #fff;
+	border: 4px solid #fff;    display: inline-block;
 	color: #fff;
 	font-size: 24px;
 	text-decoration: none;
@@ -863,7 +900,7 @@ footer .footer-logo{
     color: rgb(245,183,31);
 }
 .student-cta1-bottom-inner .read-more{
-    margin-top: 25px;
+    margin-top: 14px;
     font-size: 25px;
     color: #fff;
     line-height: 1.2;
@@ -909,7 +946,7 @@ footer .footer-logo{
 }
 .student-cta2 ul.student-cta-listing > li::after{
     position: absolute;
-    right: -1.5vw;
+    right: -0.8vw;
     top: 0;
     bottom: 0;
     margin: auto;
@@ -1002,7 +1039,7 @@ footer .footer-logo{
     color: #fff;
     background: rgb(34,152,151);
     padding: 10px 10px;
-    max-width: 80px;
+    min-width: 107px;
     line-height: 1.2;
     border-radius: 10px;
     text-transform: capitalize;

@@ -1,4 +1,4 @@
-<section class="banner_area declimier">
+<!--<section class="banner_area declimier">
     <div class="container">
         <h2>Our actions are in sync with the intention. If you don’t trust us don’t use our site. </h2>
     </div>
@@ -9,7 +9,7 @@
 	<li><a href="<?php echo Yii::app()->createUrl('site/index'); ?>">Home</a> <i class="fa fa-angle-right" aria-hidden="true"></i></li>
 	<li class="active"><a href="javascript:void(0);">Disclaimer</a></li>
     </ul>
-</div>
+</div>-->
 <?php $this->setPageTitle('Disclaimer'); ?>
 <?php $data  = ContentJson::model()->findByAttributes(array("page"=>"declimier"));
     echo $data->data;

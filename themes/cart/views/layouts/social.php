@@ -2,13 +2,20 @@
     <div class="row">
         <div class="header-bottom-inner">
             <div class="social-icons">
-                <ul>
+				<ul>
+                    <li><a href="#" class="youtube_icon"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                    <li><a href="#" class="linked_icon"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                    <li><a href="#" class="facebook_icon"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="#" class="twitter_icon"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a href="#" class="quora_icon"><i class="fa fa-quora" aria-hidden="true"></i></a></li>
+                </ul>
+                <!--<ul>
                     <li><a href="#" class="ytube">youtube</a></li>
                     <li><a href="#" class="in">linkedin</a></li>
                     <li><a href="#" class="fbook">facebook</a></li>
                     <li><a href="#" class="twitter">twitter</a></li>
                     <li><a href="#" class="quora">q</a></li>
-                </ul>
+                </ul>-->
             </div>
             <div class="login-cart">
                 <div class="login">
@@ -29,9 +36,9 @@
                     }
                     if (isset(Yii::app()->user->id)) {
                     $cart = Cart::model()->findAllByAttributes(array("user_id" => Yii::app()->user->id, "status" => 1));?>
-                    <a href="#" id="cart-link">cart<span>(<?php echo count($cart);?>)</span></a>
+                    <a href="#" id="cart-link">cart<span><?php echo count($cart);?></span></a>
                     <?php }elseif(isset($_COOKIE['products'])){?>
-		    <a href="#" id="cart-link">cart(<?php echo count($cookieCart);?>)</a>
+		    <a href="#" id="cart-link">cart<span><?php echo count($cookieCart);?></span></a>
 		    <?php } else {?>
                     <a href="#" id="cart-link">cart</a>
                     <?php }?>
@@ -43,7 +50,7 @@
                             <div class="cart-wrapper">
                                 <div class="cart-heading">
                                     <div class="cart-title">items</div>
-                                    <div class="cart-price">Price (in $)</div>
+                                    <div class="cart-price">Price (in &#8377)</div>
                                 </div>
                                 <?php
                                 $total = 0;
@@ -76,7 +83,7 @@
                     <div class="cart-wrapper">
                                 <div class="cart-heading">
                                     <div class="cart-title">items</div>
-                                    <div class="cart-price">Price (in $)</div>
+                                    <div class="cart-price">Price (in &#8377)</div>
                                 </div>
                                 <?php
                                 $total = 0;

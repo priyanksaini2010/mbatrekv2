@@ -44,7 +44,7 @@ $product = Products::model()->findByPk($id);
                 <li>
                     
                     <span class="four_line"><?php echo $engage->description;?></span>
-                    <span class="step_up"><div class="arrow_big"></div><?php echo $engage->description2;?></span>
+                    <span class="step_up"><div class="arrow_big"></div><div class="inner_pro_text"><?php echo $engage->description2;?></div></span>
                     <div class="icon_wrapper">
                         <img src="assets/products/<?php echo $engage->icon;?>"/>
                     </div>
@@ -56,7 +56,7 @@ $product = Products::model()->findByPk($id);
                     <div class="icon_wrapper four_line">
                        <img src="assets/products/<?php echo $engage->icon;?>"/>
                     </div>
-                    <span class="step_up"> <div class="arrow_big"></div><?php echo $engage->description2;?></span>
+                    <span class="step_up"> <div class="arrow_big"></div><div class="inner_pro_text"><?php echo $engage->description2;?></div></span>
                     <span><?php echo $engage->description;?></span>
                 </li>
                 <?php }}?>

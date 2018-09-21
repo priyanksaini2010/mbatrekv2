@@ -16,9 +16,9 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                 <div class="row">
                     <h2>Helping you unlock your career and #hit the ground 
                         RUNNING</h2>
-                    <div class="col-xs-12 col-md-6 col-lg-6 cta-home">
+                    <!--<div class="col-xs-12 col-md-6 col-lg-6 cta-home">
                         <div class="box1">
-                            <p>Confused about how to approach your 1St job or 1st year at work?
+                            <p>Confused about how to approach your 1st job or 1st year at work?
                                 <a href="#">Click Here</a></p>
 
                         </div>
@@ -26,10 +26,30 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                     <div class="col-xs-12 col-md-6 col-lg-6 cta-home">
                         <div class="box2">
                             <p>Looking for specific help to tell your story and switch jobs?
-                                <a>Click Here</a></p>
-
-                        </div>
-                    </div>
+                               <a href="#">Click Here</a></p>
+							</div>
+                    </div>-->
+					<div class="student-top young_top">
+						<div class="container">
+							<div class="student-internship col-xs-12 col-md-6 col-lg-6">
+								<div class="icon-holder">
+									<a id="tab1" href="#"> 
+										<span class="icon yound_need_help"> 
+											<img src="images/young_need_help.png" alt=""> 
+											<!--<span class="icon-title">Internship</span>-->	 
+										</span> 
+										<span class="icon-text pull-left"> 
+											Confused about how to approach your 1st job or 1st year at work?  
+											Click Here
+										</span> 
+									</a>
+								</div>
+							</div>
+							<div class="student-placement col-xs-12 col-md-6 col-lg-6">
+								<div class="icon-holder"><a id="tab2" href="#"> <span class="icon icon-holder"> <img src="images/young_final.png" alt=""> <!--<span class="icon-title">Final Placement</span>--> </span> <span class="icon-text">Looking for specific help to tell your story and switch jobs? <br>Click Here</span> </a></div>
+							</div>
+						</div>
+					</div>
                 </div>
                 <div class="row">
                     <h4>Your career is both a &apos;Sprint&apos; and a &apos;Marathon&apos;</h4>
@@ -42,48 +62,38 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                         <img src="<?php echo $baseUrl; ?>/images/marathon.jpg" alt="marathon" class="img-responsive center-block" />
                     </div>
                 </div>
-                <div class="row">
+                <div class="row first_year">
                     <h4>Your 1st year at work could be the hardest year of your career&period;&period;&period;</h4>
-                    <div class="months">
-                        <div class="col-md-3 col-sm-3 col-xs-3 col-lg-3">
-                            <img src="<?php echo $baseUrl; ?>/images/month1.jpg" alt="mont1" class="img-responsive center-block" />
-                        </div>
-                        <div class="col-md-3 col-sm-3 col-xs-3 col-lg-3">
-                            <img src="<?php echo $baseUrl; ?>/images/month1.jpg" alt="mont1" class="img-responsive center-block" />
-                        </div>
-                        <div class="col-md-3 col-sm-3 col-xs-3 col-lg-3">
-                            <img src="<?php echo $baseUrl; ?>/images/month1.jpg" alt="mont1" class="img-responsive center-block" />
-                        </div>
-                        <div class="col-md-3 col-sm-3 col-xs-3 col-lg-3">
-                            <img src="<?php echo $baseUrl; ?>/images/month1.jpg" alt="mont1" class="img-responsive center-block" />
+                   
+                    <div class="step_professional">
+                    <div class="col-md-6">
+                        <div class="setp_up_left">
+                            <ul>
+                                <li><div class="arrow_step"></div><img src="<?php echo $baseUrl; ?>/images/job_fare.png"/><label>Just Graduated</label></li>
+                                <li><div class="arrow_step two"></div><img src="<?php echo $baseUrl; ?>/images/setting_in.png"/><label>Setting in</label></li>
+                                <li><div class="arrow_step three"></div><img src="<?php echo $baseUrl; ?>/images/surviving_icon.png"/><label>Surviving and connecting</label></li>
+                            </ul>
+                            <div class="brecket_div">
+                                <img src="<?php echo $baseUrl; ?>/images/brecket_left.png"/>
+                                <span>Trying to figure everything out</span>
+                            </div>
+                         </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="setp_up_right">
+                            <ul>
+                                <li><div class="arrow_step four"></div><img src="<?php echo $baseUrl; ?>/images/preparing_For.png"/><label>Preparing for 1st Annual Appraisal</label></li>
+                                <li><div class="arrow_step five"></div><img src="<?php echo $baseUrl; ?>/images/planning_for.png"/><label>Planning for next year</label></li>
+                                <li><div class="arrow_step six"></div><img src="<?php echo $baseUrl; ?>/images/first_year.png"/><label>1st year of work</label></li>
+                            </ul>
+                            <div class="brecket_div">
+                              <img src="<?php echo $baseUrl; ?>/images/brecket_right.png"/>
+                              <span>Positioning yourself in your company</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="course-steps">
-                        <img src="<?php echo $baseUrl; ?>/images/image.png" class="img-resonsive" alt="img" />
-                        <!--<ul class="list-inline">
-                        <li><img src="<?php echo $baseUrl; ?>/images/graduate.jpg" alt="cta3.1" class="img-responsive "/></li>
-                        <li><img src="<?php echo $baseUrl; ?>/images/angle-right-gray.jpg" alt="cta3.1" class="img-responsive "/></li>
-                        <li><img src="<?php echo $baseUrl; ?>/images/setting.jpg" alt="cta3.1" class="img-responsive "/></li>
-                        <li><img src="<?php echo $baseUrl; ?>/images/angle-right-gray.jpg" alt="cta3.1" class="img-responsive "/></li>
-                        <li><img src="<?php echo $baseUrl; ?>/images/survive.jpg" alt="cta3.1" class="img-responsive "/></li>
-                        <li><img src="<?php echo $baseUrl; ?>/images/angle-right-gray.jpg" alt="cta3.1" class="img-responsive "/></li>
-                        <li><img src="<?php echo $baseUrl; ?>/images/prepare.jpg" alt="cta3.1" class="img-responsive "/></li>
-                        <li><img src="<?php echo $baseUrl; ?>/images/angle-right-gray.jpg" alt="cta3.1" class="img-responsive "/></li>
-                        <li><img src="<?php echo $baseUrl; ?>/images/planning.jpg" alt="cta3.1" class="img-responsive "/></li>
-                        <li><img src="<?php echo $baseUrl; ?>/images/angle-right-gray.jpg" alt="cta3.1" class="img-responsive "/></li>
-                        <li><img src="<?php echo $baseUrl; ?>/images/1styear.jpg" alt="cta3.1" class="img-responsive "/></li>
-                        </ul>
-                        </div>
-                        <div class="arrow col-md-6">
-                        <img src="<?php echo $baseUrl; ?>/images/journey-1-bg.jpg ">
-                        </div>
-                        <div class="arrow col-md-6">
-                        <img src="<?php echo $baseUrl; ?>/images/journey-1-bg.jpg ">
-                        </div>-->
-
-
-                    </div>
-                    <div class="row">
+                </div>
+                    <div class="row face_many">
                         <h4>and you will face many obstacles and challenges</h4>
                         <div class="col-md-3 col-sm-3 col-xs-3 green_box">
                             <img src="<?php echo $baseUrl; ?>/images/setting.jpg" class="img-responsive center-block" />
@@ -174,7 +184,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                             </ul>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row career_planning">
                         <div class="col-me-12">
                             <h4>&period;&period;&period;#CareerPlanning: 1 year enablement program to help you with this transition</h4>
 
@@ -219,8 +229,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                     <div class="">
                                         <a href="educational-institute.html" class="cta-link1">
                                             <span class="cta-img">
-                                                <img src="<?php echo $baseUrl; ?>/images/
-                                                     multiple3.png"></span>
+                                                <img src="<?php echo $baseUrl; ?>/images/multiple3.png"></span>
                                             <p class="section-pra">Multiple
                                                 <span class="hours-title"><i>Cheat
                                                         Sheets</i></span>
@@ -236,8 +245,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                 <div class="col-xs-12 col-md-6 col-lg-2 cta-home">
                                     <div class="">
                                         <a href="company.html" class="cta-link1">
-                                            <span class="cta-img"><img src="<?php echo $baseUrl; ?>/images/
-                                                                       multiple4.png"></span>
+                                            <span class="cta-img"><img src="<?php echo $baseUrl; ?>/images/multiple4.png"></span>
 
                                             <p class="section-pra">On-demand
 
@@ -258,7 +266,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                             <p class="section-pra">LinkedIn
                                                 <span class="hours-title"><i>Diagnostic Tool</i></span>
 
-                                                </span>
+                                                </p>
                                                 <span class="cta-solve">
                                                     Provide you with clear guidance and suggestions</span>
                                         </a>
@@ -266,24 +274,24 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
 
                                     </div>
                                 </div>
-                                <div class="arrow-icon">
+                                <div class="arrow-icon ">
                                     <a href="#"><img src="<?php echo $baseUrl; ?>/images/blue-arrow-down.jpg"></a>
                                 </div>
                                 <div class="row">
                                 </div class="col-md-12">
                                 <?php if(!empty($saver)){?>
-                                <div class="student-cta1-bottom">
-                                    <div class="student-cta1-bottom-inner">
+                                <div class="student-cta1-bottom ">
+                                    <div class="student-cta1-bottom-inner ">
                                         <div class="student-cta1-bottom-title">
                                             <?php echo $saver->title;?>
 
 
                                         </div>
                                         <div class="student-cta1-bottom-sub-title">
-                                            Price Rs  <?php echo $saver->actuall_price;?>,
+                                            Price &#8377  <?php echo $saver->actuall_price;?>,
 
-                                            <br><span class="new-price">Special Offer: Rs <?php echo $saver->price;?><br>
-                                                (Rs <?php echo ceil($saver->actuall_price/12);?> per Month)</span>
+                                            <span class="new-price">Special Offer: &#8377 <?php echo $saver->price;?><br>
+                                                (&#8377 <?php echo ceil($saver->actuall_price/12);?> per Month)</span>
                                         </div>
                                         <div class="buy-and-cart">
                                             <a href="<?php echo Yii::app()->createUrl("cart/buynow",array("id"=>$saver->id));?>">buy now</a>
@@ -294,7 +302,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                 </div>
                                 <?php }?>
                             </div>
-                            <div class="arrow-icon">
+                            <div class="arrow-icon icon_2">
                                 <a href="#"><img src="<?php echo $baseUrl; ?>/images/blue-arrow-down.jpg"></a>
                             </div>
 
@@ -329,10 +337,10 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                                     <?php echo $prod->description1;?>
                                                                 </div>
                                                                 <div class="intern-read-more">
-                                                                    <a href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>$prod->id));?>">read more...</a>
+                                                                    <a href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>$prod->id));?>">read more >></a>
                                                                 </div>
                                                                 <div class="intern-price">
-                                                                    PRICE Rs <?php echo $prod->price;?>
+                                                                    PRICE &#8377 <?php echo $prod->price;?>
                                                                 </div>
                                                                 <div class="intern-link">
                                                                     <a href="<?php echo Yii::app()->createUrl("cart/buynow",array("id"=>$prod->id));?>">buy now</a>
@@ -368,10 +376,10 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                                     <?php echo $prod->description1;?>
                                                                 </div>
                                                                 <div class="intern-read-more">
-                                                                    <a href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>$prod->id));?>">read more...</a>
+                                                                    <a href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>$prod->id));?>">read more >></a>
                                                                 </div>
                                                                 <div class="intern-price">
-                                                                    PRICE Rs <?php echo $prod->price;?>
+                                                                    PRICE &#8377 <?php echo $prod->price;?>
                                                                 </div>
                                                                 <div class="intern-link">
                                                                     <a href="<?php echo Yii::app()->createUrl("cart/buynow",array("id"=>$prod->id));?>">buy now</a>
@@ -407,10 +415,10 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                                     <?php echo $prod->description1;?>
                                                                 </div>
                                                                 <div class="intern-read-more">
-                                                                    <a href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>$prod->id));?>">read more...</a>
+                                                                    <a href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>$prod->id));?>">read more >></a>
                                                                 </div>
                                                                 <div class="intern-price">
-                                                                    PRICE Rs <?php echo $prod->price;?>
+                                                                    PRICE &#8377 <?php echo $prod->price;?>
                                                                 </div>
                                                                 <div class="intern-link">
                                                                     <a href="<?php echo Yii::app()->createUrl("cart/buynow",array("id"=>$prod->id));?>">buy now</a>

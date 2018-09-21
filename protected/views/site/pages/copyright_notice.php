@@ -1,4 +1,4 @@
-<section class="banner_area copyright_notice">
+<!--<section class="banner_area copyright_notice">
     <div class="container">
         <h2>You were born an orignal, not downloaded -don't diacopy</h2>
         <span>- Conrad Hall</span>
@@ -10,7 +10,7 @@
 	<li><a href="<?php echo Yii::app()->createUrl('site/index'); ?>">Home</a> <i class="fa fa-angle-right" aria-hidden="true"></i></li>
 	<li class="active"><a href="javascript:void(0);">Copyright Notice</a></li>
     </ul>
-</div>
+</div>-->
 <?php $this->setPageTitle('Copyright'); ?>
 <?php $data  = ContentJson::model()->findByAttributes(array("page"=>"copyright_notice"));
     echo $data->data;

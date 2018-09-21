@@ -1,4 +1,4 @@
-<section class="banner_area term_conditions">
+<!--<section class="banner_area term_conditions">
     <div class="container">
         <h2>If your motives are good, our terms and conditions are easy to comply</h2>
     </div>
@@ -9,7 +9,7 @@
 	<li><a href="<?php echo Yii::app()->createUrl('site/index'); ?>">Home</a> <i class="fa fa-angle-right" aria-hidden="true"></i></li>
 	<li class="active"><a href="javascript:void(0);">Terms and Condition</a></li>
     </ul>
-</div>
+</div>-->
 <?php $this->setPageTitle('Term And Conditions'); ?>
 <?php $data  = ContentJson::model()->findByAttributes(array("page"=>"terms_conditions"));
     echo $data->data;

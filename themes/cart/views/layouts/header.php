@@ -35,34 +35,58 @@
                     <ul class="dropdown-menu" role="menu">
                     <li><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"mbatrek_story")); ?>">Introduction to MBAtrek</a></li>
                     <li><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"how_we_are_different")); ?>">How are we different</a></li>
+		<li><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"mbatrek_on_the_ground")); ?>">MBAtrek on the ground</a></li>
+
 <li><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"abhishek")); ?>">Abhishek Srivastava</a></li>
 <li><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"alok")); ?>">Alok Srivastava</a></li>
-                    <li><a href="#">Something else here</a></li>
+                    
                   </ul>
                 </li>
                 <li class="dropdown service">
                   <a href="#" class="dropdown-toggle" data-toggle=" dropdown">Our Products </a>	<span class="icon_nav"></span>			
                   <ul class="dropdown-menu" role="menu">
-                    <li class="sub_menu dropdown dropdown-submenu">
-						<a class="dropdown-toggle" data-toggle="dropdown" href="<?php echo Yii::app()->createUrl('cart/student'); ?>">Students</a>
+                    <li class=" dropdown dropdown-submenu">
+						<a class="dropdown-toggle sub_menu" data-toggle="dropdown" href="<?php echo Yii::app()->createUrl('cart/student'); ?>">Students</a>
 						<ul class="dropdown-menu">
-							<li class="kopie"><a href="#">Dropdown Link 5</a></li>
-							<li><a href="#">Dropdown Submenu Link 5.1</a></li>
-							<li><a href="#">Dropdown Submenu Link 5.2</a></li>
-							<li><a href="#">Dropdown Submenu Link 5.3</a></li>
-							
-							<li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown Submenu Link 5.4</a>
+							<li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle sub_menu" data-toggle="dropdown">Offerings</a>
 								<ul class="dropdown-menu">
-									<li class="kopie"><a href="#">Dropdown Submenu Link 5.4</a></li>
-									<li><a href="#">Dropdown Submenu Link 5.4.1</a></li>
-									<li><a href="#">Dropdown Submenu Link 5.4.2</a></li>
-									
-									
+									<li class="kopie"><a href="#">Resume </a></li>
+									<li><a href="https://mbatrek.com/v2/index.php?r=cart/description&id=24">Linkedin Diagnostic</a></li>
+									<li><a href="#">Mock Interviews</a></li>
+									<li><a href="https://mbatrek.com/v2/index.php?r=cart/description&id=23">Interviews Q & A</a></li>
+									<li><a href="https://mbatrek.com/v2/index.php?r=cart/description&id=18">Industry Analysis</a></li>
+									<li><a href="https://mbatrek.com/v2/index.php?r=cart/description&id=21">Company Analysis</a></li>
+									<li><a href="#">Job Fitment Analysis</a></li>
+									<li><a href="https://mbatrek.com/v2/index.php?r=cart/description&id=22">Cracking GD</a></li>
+									<li><a href="#">InternACE</a></li>
+									<li><a href="#">InternPRO</a></li>
+									<li><a href="https://mbatrek.com/v2/index.php?r=cart/description&id=17">InternARISE</a></li>
 								</ul>
-							</li>                           
+							</li>     
+							<li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle sub_menu" data-toggle="dropdown">Packages</a>
+								<ul class="dropdown-menu">
+									<li class="kopie"><a href="https://mbatrek.com/v2/index.php?r=cart/description&id=20">InternGo</a></li>
+									<li><a href="#">Compus2Corporate</a></li>
+								</ul>
+							</li>     						
 						</ul>
 					</li>
-                    <li class="sub_menu"><a href="<?php echo Yii::app()->createUrl('cart/profesionals'); ?>">Young Professionals</a></li>
+                    <li class="dropdown dropdown-submenu">
+						<a class="dropdown-toggle sub_menu" data-toggle="dropdown" href="<?php echo Yii::app()->createUrl('cart/profesionals'); ?>">Young Professionals</a>
+						<ul class="dropdown-menu">
+							<li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle sub_menu" data-toggle="dropdown">Offerings</a>
+								<ul class="dropdown-menu">
+									<li class="kopie"><a href="#">CareerPlanning </a></li>
+								</ul>
+							</li>     
+							<li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle sub_menu" data-toggle="dropdown">Packages</a>
+								<!--<ul class="dropdown-menu">
+									<li class="kopie"><a href="#">InternGo</a></li>
+									<li><a href="#">Compus2Corporate</a></li>
+								</ul>-->
+							</li>     						
+						</ul>
+					</li>
                   </ul>                
                 </li>
                 <li class="dropdown insights">
@@ -76,8 +100,9 @@
                   </ul>                
                 </li>
                 <li class="success"><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"mbatrek_story")); ?>">Success Stories</a><span class="icon_nav"></span></li>
-                <li class="faq"><a href="#">FAQ</a><span class="icon_nav"></span></li>
-                <li class="contact"><a href="#">Contact Us</a></li>
+                <li class="faq"><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"faq")); ?>">FAQ</a><span class="icon_nav"></span></li>
+<li class="contact"><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"blog")); ?>">Blog</a></li>
+                <li class="contact"><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"contact")); ?>">Contact Us</a></li>
             </ul>
             
             

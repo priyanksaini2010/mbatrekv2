@@ -37,7 +37,7 @@ if(isset(Yii::app()->user->id)){
 
   
                                     ?>
-                                    <ul class="list-inline">
+                                    <ul>
                                     <li class="cart_icon">
                                         <img height="44" width="41" src="assets/products/<?php echo $icart->product->logo;?>"/>
                                         <span><?php echo $icart->product->title;?></span>
@@ -99,7 +99,13 @@ if(isset(Yii::app()->user->id)){
                         <?php }}?>
                     </ul>
                 </div>
+				
                 <?php }?>
+				<div class="need_help">
+					<span>
+						Need Help? Visit the <a href="javascript:void(0);">Help Center</a> or <a href="javascript:void(0)">Contact Us</a>
+					</span>
+				</div>
             </div>
         </div>
     </div>

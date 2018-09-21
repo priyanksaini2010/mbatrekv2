@@ -6,7 +6,5 @@
 <link href="<?php echo $baseUrl; ?>/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 <link href="<?php echo $baseUrl; ?>/css/style.css" rel="stylesheet" type="text/css" />
 <link href="<?php echo $baseUrl; ?>/css/new-style.css" rel="stylesheet" type="text/css" />
-<link href="<?php echo $baseUrl; ?>/js/bootstrap.min.js" rel="stylesheet" type="text/css" />
-<link href="https://maxcdn.bootstrapcdn.com/font-aweso me/4.7.0/<?php echo $baseUrl; ?>/css/font-awesome
-        .min.css" rel="stylesheet" type="text/css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<link href="<?php echo $baseUrl; ?>/css/font-awesome.css" rel="stylesheet" type="text/css" />
+
