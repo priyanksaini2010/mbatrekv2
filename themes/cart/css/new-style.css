@@ -1214,6 +1214,11 @@ text-align: center;border-radius: 2px;}
     .add_to_Cart_div a:first-child{margin-right:4px; }
 .add_to_Cart_div a:hover{background: #d0d0d0;}
 .mbatrek_arrow ul li.performing_li span{color: #F4B643;}
-.adjusting_div.more_explain .cta-home .cta-link1{background: none;}
-.adjusting_div.more_explain .cta-home .cta-link1 .cta-title{    color: #000;}
+.adjusting_div.more_explain .cta-home .cta-link1{background: none;padding: 0;}
+.adjusting_div.more_explain .cta-home .cta-link1 .cta-title{    color: #000;font-family: 'MyriadPro-Semibold';}
+.adjusting_div.more_explain .cta-home .cta-body{background: none;text-align: left;padding-bottom: 0;}
+.adjusting_div.more_explain .cta-home-wrap{    border: 5px solid rgb(34,152,151);padding: 25px 10px 10px;
+    border-radius: 25px;}
+.adjusting_div.more_explain  .cta-home .cta-link1 .cta-img{min-height: 140px;}
+
 /*------------End Privacy policy Css----------*/
