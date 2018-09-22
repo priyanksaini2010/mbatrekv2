@@ -1213,4 +1213,7 @@ text-align: center;border-radius: 2px;}
     border-radius: 6px;} 
     .add_to_Cart_div a:first-child{margin-right:4px; }
 .add_to_Cart_div a:hover{background: #d0d0d0;}
+.mbatrek_arrow ul li.performing_li span{color: #F4B643;}
+.adjusting_div.more_explain .cta-home .cta-link1{background: none;}
+.adjusting_div.more_explain .cta-home .cta-link1 .cta-title{    color: #000;}
 /*------------End Privacy policy Css----------*/
