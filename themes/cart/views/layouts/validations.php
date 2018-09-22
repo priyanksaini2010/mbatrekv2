@@ -8,4 +8,10 @@
     <?php if(isset($_REQUEST['thanksreg'])){?>
 	 validationMethod("thanks","Thanks for signup with us, please check your email to verify.")
     <?php }?>
+    <?php if(isset($_REQUEST['thankforin'])){?>
+	 validationMethod("error","Please use MBAtrek registered email address.")
+    <?php }?>
+    <?php if(isset($_REQUEST['thankfor'])){?>
+	 validationMethod("thanks","Please check your inbox for password for recovery.")
+    <?php }?>
 </script>
