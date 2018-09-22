@@ -1,3 +1,4 @@
+<?php $this->setPageTitle('Companies'); ?>
 <?php $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/themes/cart"); ?>
 <div class="main-helping">
                 <div class="container">
