@@ -93,7 +93,7 @@
                   <a href="#" class="dropdown-toggle" data-toggle="
                   dropdown">Insights </a>	<span class="icon_nav"></span>			
                   <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Action</a></li>
+                    <li><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"blog")); ?>">Blog</a></li>
                     <li><a href="#">Another action</a></li>
                     <li><a href="#">Something else here</a></li>
                     <li><a href="#">Separated link</a></li>
@@ -101,7 +101,7 @@
                 </li>
                 <li class="success"><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"mbatrek_story")); ?>">Success Stories</a><span class="icon_nav"></span></li>
                 <li class="faq"><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"faq")); ?>">FAQ</a><span class="icon_nav"></span></li>
-<li class="contact"><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"blog")); ?>">Blog</a></li>
+
                 <li class="contact"><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"contact")); ?>">Contact Us</a></li>
             </ul>
             

@@ -815,8 +815,8 @@ user-select: none;
 .intro_wrapper img{float: right;    margin: 0 0 20px 20px;
     border: 1px solid #348786;
     padding: 2px;}
-.into_heading h2{font-size: 29px;color: #348786;font-family: 'MyriadPro-Semibold';display:inline-block;    padding: 6px 0 0 0;margin:0;}
-.into_heading a{display:inline-block;vertical-align:top;margin:0 0 0 10px;}
+.into_heading h2{font-size: 29px;color: #348786;font-family: 'MyriadPro-Semibold';display:block;    padding: 6px 0 0 0;margin:0;}
+.into_heading a{display:inline-block;vertical-align:top;margin:6px 0 0 0px;}
 .intro_wrapper{width: 100%;float: left;}
 .intro_wrapper p span{color: #348786;}
 .intro_wrapper p{font-size: 16px;line-height:27px;    text-align: justify;}
@@ -969,8 +969,8 @@ user-select: none;
 .gogle_map{width: 100%;float: left;}
 .gogle_map img{width: 332px;}
 .google_map_info{max-width: 332px;text-align: left;display: inline-block;}
-.google_map_info h3{font-size: 22px;    padding: 13px 0 3px 0;}
-.google_map_info label{font-size: 18px;color: #348786;font-weight: normal;    margin: 0 0 3px 0;}
+.google_map_info h3{font-size: 20px;    padding: 13px 0 3px 0;}
+.google_map_info label{font-size: 16px;color: #348786;font-weight: normal;    margin: 0 0 3px 0;}
 .margin-0{margin:0;}
 .capcha_div{width: 100%;float: left;  margin: 28px 0 0 0;}
 .submit_form_btn{width: 100%;float: left;text-align: center;}
@@ -983,8 +983,8 @@ user-select: none;
 .faq_Container{width:100%;float:left;margin:37px 0 0 0;}
 .faq_Container .accordion li p{font-size: 16px;color: #999;font-weight: normal;}
 .faq_Container .submenu {display: none;background:#000;}
-.faq_Container .accordion .link{font-size:17px;font-weight:normal;color:#09afb7;cursor: pointer;}
-.faq_Container .accordion >li{padding:0 0px 11px 0;margin:0 0px 11px 0;list-style:lower-latin;font-size:20px;font-weight:600;color:#09afb7;border-bottom:1px dashed #ddd;}
+.faq_Container .accordion .link{font-size:17px;font-weight:normal;color:#348786;cursor: pointer;}
+.faq_Container .accordion >li{padding:0 0px 11px 0;margin:0 0px 11px 0;list-style:lower-latin;font-size:20px;font-weight:600;color:#348786;border-bottom:1px dashed #ddd;}
 .faq_Container .accordion >li:last-child{border-bottom:none;}
 .faq_Container .accordion{padding:0 0 0 21px;}
 .faq_Container .accordion .submenu li{list-style:none;}
@@ -999,10 +999,10 @@ user-select: none;
 .usefull_Faq ul{display:inline-block;padding: 0 0 0 4px;}
 .main_heading.faq_hdng{margin:27px 0 14px;}
 .tabbable-panel{width:100%;float:left}
-.faq_Container .tabbable-panel .nav li {background: #09afb7;margin:0 1px 0px 0;}
+.faq_Container .tabbable-panel .nav li {background: #348786;margin:0 1px 0px 0;}
 .faq_Container .tabbable-panel .nav li a{border-radius:0;border:none;margin:0;font-size: 17px;font-weight: normal;color: #fff;}
-.faq_Container .tabbable-panel .nav li.active a{background:#dd991a;color:#fff;border:none;}
-.faq_Container .tabbable-panel .nav li a:hover{background:#dd991a;margin-right:0;}
+.faq_Container .tabbable-panel .nav li.active a{background:#73942f;color:#fff;border:none;}
+.faq_Container .tabbable-panel .nav li a:hover{background:#73942f;margin-right:0;}
 .faq_Container .tabbable-panel .tab-pane{margin-top:15px;}
 .fq_footer{width: 100%;float: left;text-align: center;}
 .fq_footer label{font-size: 17px;    margin: 9px 0 0 0;}
@@ -1010,7 +1010,7 @@ user-select: none;
 .fq_footer label span.color_span{color: #124cb4;}
 /*------------Blog Css----------*/
 .blog_new_container{width: 100%;float: left;}
-.blog_header{width: 100%;float: left;background: #efefef;padding: 20px 0 20px 0;}
+.blog_header{width: 100%;float: left;padding: 20px 0 20px 0;}
 .header_btn{width: 100%;float: left;text-align: center;}
 .header_btn a{border:1px solid;display: inline-block;color: #fff;background: #b1b1b1;font-size: 17px;font-family: 'MyriadPro-Semibold';    padding: 10px 20px 10px 20px;    border-radius: 7px;}
 .header_btn a.active_high{background: #348786;}
@@ -1181,3 +1181,26 @@ text-align: center;border-radius: 2px;}
 .more_about_plan label a{color: #348786;}
 .more_about_plan label a:hover{color: #f5b71f;}
 .classroom_div.out_side ul li{}
+.student-top.young_top .student-internship .pull-left{color: #348786;}
+.student-top.young_top .student-placement .icon-text{color: #73942f;} 
+.into_heading .name_Wrap{display: inline-block;vertical-align: top;margin:0 0 0 14px;}
+
+/*------------Privacy plociy Css----------*/
+.policy_container{width:100%;float:left;}
+.policy_container .main_heading {margin: 27px 0 14px;}
+.plocies_text{width:100%;float:left;}
+.plocies_text h3{font-size:18px;font-weight:600;text-transform:uppercase;font-size:18px;color:#333;font-family: 'MyriadPro-Semibold';}
+.plocies_text p a{color:#09afb7;font-weight:600;text-decoration:underline;}
+.plocies_text p {padding-bottom:12px;    font-size: 17px;}
+.plocies_text p span{color:#09afb7;font-size:16px;border-bottom:1px solid #09afb7;font-weight:600;}
+.plocies_text .second_details p{padding-bottom:0;}
+.plocies_text .second_details li{padding-bottom:4px; background-position: 0 7px;}
+.plocies_text .second_details ul{padding-bottom:30px;}
+.plocies_text .website_Text{padding-bottom:4px;}
+.plocies_text .company_text{padding-bottom:30px;}
+.creadit_container{width:100%;float:left;border:1px solid #09afb7;background:#f8f8f8;padding:26px 26px 20px;}
+.creadit_container p{padding-bottom:4px;}
+.creadit_container a{font-size:16px;color:#09afb7;font-weight:600;text-decoration:underline;display:inline-block;padding-bottom:25px;}
+.main_heading h3.text_right{font-size: 29px;color: #348786;text-align: center;font-family: 'MyriadPro-Semibold';margin:0;}
+.main_heading.privay_container h3{margin:0 0 19px 0;}
+/*------------End Privacy policy Css----------*/

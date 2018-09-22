@@ -3,7 +3,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="login_wrapper">
-					<h3 class="heading-desc">Log In to Your MBAtrek Account… </h3>
+					<h3 class="heading-desc">Log In to Your MBAtrek Account</h3>
 					
 					<?php
 							$form = $this->beginWidget('CActiveForm', array(

@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="login_wrapper">
-                <h3 class="heading-desc">Sign Up and Start Your Journey… 	</h3>
+                <h3 class="heading-desc">Sign Up and Start Your Journey</h3>
                 <?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
                         'id'=>'register-form',
                         'enableAjaxValidation'=>false,
