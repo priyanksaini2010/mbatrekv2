@@ -95,9 +95,9 @@ class SiteController extends Controller
 	}
         
         public function actionForgot(){
-            $model = new Users;
+            $model = new UsersNew;
             if (!empty($_POST)) {
-                $find = Users::model()->findByAttributes(array("email" => $_POST['Users']['username']));
+                $find = UsersNew::model()->findByAttributes(array("email" => $_POST['UsersNew']['email']));
                 if (empty($find)) {
                     $this->redirect(array("site/forgot","thankforin"=>1));
                 } else {
@@ -108,7 +108,7 @@ class SiteController extends Controller
 //                            . "Thanks,<br/ >"
 //                            . "MBATrek";
 		    $template = getTemplate("forget");
-				$name = ucfirst($find->fname)." ".ucfirst($find->lname);
+				$name = ucfirst($find->full_name);
 				$body = str_replace("{{SUBJECT}}", $subject, $template);
 				$body = str_replace("{{NAME}}", $name, $body);
 				$body = str_replace("{{PASSWORD}}", $find->password, $body);
