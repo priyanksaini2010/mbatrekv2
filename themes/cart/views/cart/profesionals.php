@@ -1,3 +1,4 @@
+<?php $this->setPageTitle('Young Professionals'); ?>
 <?php $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/themes/cart"); ?>
 <?php
 $products = Products::model()->findAllByAttributes(array("product_sub_category_id"=>1,"type"=>1,"status"=>1,"is_saver"=>0));

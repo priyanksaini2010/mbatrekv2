@@ -35,7 +35,7 @@
                     <ul class="dropdown-menu" role="menu">
                     <li><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"mbatrek_story")); ?>">Introduction to MBAtrek</a></li>
                     <li><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"how_we_are_different")); ?>">How are we different</a></li>
-		<li><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"mbatrek_on_the_ground")); ?>">MBAtrek on the ground</a></li>
+	<!--	<li><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"mbatrek_on_the_ground")); ?>">MBAtrek on the ground</a></li>-->
 
 <li><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"abhishek")); ?>">Abhishek Srivastava</a></li>
 <li><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"alok")); ?>">Alok Srivastava</a></li>
@@ -94,6 +94,7 @@
                   dropdown">Insights </a>	<span class="icon_nav"></span>			
                   <ul class="dropdown-menu" role="menu">
                     <li><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"blog")); ?>">Blog</a></li>
+<li><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"mbatrek_on_the_ground")); ?>">MBAtrek on the ground</a></li>
                     <li><a href="#">Another action</a></li>
                     <li><a href="#">Something else here</a></li>
                     <li><a href="#">Separated link</a></li>
