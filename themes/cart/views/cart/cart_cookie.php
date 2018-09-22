@@ -57,7 +57,7 @@ foreach ($products as $c){
                         <div class="card_price">
                             <div class="price_cart">
                                 <label>Sub Total (<?php echo count($products)>1?count($products)." Items":count($products)." Item";?>): <span> &#8377 <?php echo $total;?></span></label>
-                                <a href="">Checkout</a>
+                                <a href="<?php echo Yii::app()->createUrl("cart/checkout");?>">Checkout</a>
                             </div>
                             <span>Have a promocode? Enter here</span>
                         </div>
