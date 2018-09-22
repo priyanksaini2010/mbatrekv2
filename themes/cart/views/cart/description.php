@@ -26,7 +26,7 @@ $product = Products::model()->findByPk($id);
 
                                 <div class="li_wrap"><img src="assets/products/<?php echo $include->logo; ?>"/></div>
                                 <div class="li_Text_wrap">
-                                    <?php echo $include->description; ?>
+                                    <?php echo $include->description; ?> 
                                 </div>
                             </li>
                         <?php } ?>
