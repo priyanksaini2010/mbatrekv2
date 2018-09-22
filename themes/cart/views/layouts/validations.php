@@ -14,4 +14,7 @@
     <?php if(isset($_REQUEST['thankfor'])){?>
 	 validationMethod("thanks","Please check your inbox for password for recovery.")
     <?php }?>
+    <?php if(isset($_REQUEST['underconst'])){?>
+	 validationMethod("underconst","This page is under construction.")
+    <?php }?>
 </script>
