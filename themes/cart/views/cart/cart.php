@@ -65,7 +65,7 @@ if(isset(Yii::app()->user->id)){
                         <div class="card_price">
                             <div class="price_cart">
                                 <label>Sub Total (<?php echo count($cart)>1?count($cart)." Items":count($cart)." Item";?>): <span> &#8377 <?php echo $total;?></span></label>
-                                <a href="">Checkout</a>
+                                <a href="<?php echo Yii::app()->createUrl("cart/checkout");?>">Checkout</a>
                             </div>
                             <span class="promocode">Have a promocode? Enter here</span>
                         </div>
