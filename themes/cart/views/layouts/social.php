@@ -3,11 +3,11 @@
         <div class="header-bottom-inner">
             <div class="social-icons">
 				<ul>
-                    <li><a href="#" class="youtube_icon"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
-                    <li><a href="#" class="linked_icon"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                    <li><a href="#" class="facebook_icon"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                    <li><a href="#" class="twitter_icon"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                    <li><a href="#" class="quora_icon"><i class="fa fa-quora" aria-hidden="true"></i></a></li>
+                    <li><a href="https://www.youtube.com/channel/UCJg7bO36Hii_AXTDL6TLY4A" target="_blank"  class="youtube_icon"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                    <li><a href="https://www.linkedin.com/company/mbatrek-private-ltd" class="linked_icon" target="_blank"><i class="fa fa-linkedin" aria-hidden="true" target="_blank"></i></a></li>
+                    <li><a href="https://www.facebook.com/MBAtrek-1084606068302037/" class="facebook_icon" target="_blank"><i class="fa fa-facebook" aria-hidden="true" target="_blank"></i></a></li>
+                    <li><a href="https://twitter.com/MBAtrekIndia" class="twitter_icon" target="_blank"><i class="fa fa-twitter" aria-hidden="true" target="_blank"></i></a></li>
+                    <li><a href="https://www.quora.com/profile/Abhishek-Srivastava-1486" class="quora_icon" target="_blank"><i class="fa fa-quora" aria-hidden="true" target="_blank"></i></a></li>
                 </ul>
                 <!--<ul>
                     <li><a href="#" class="ytube">youtube</a></li>

@@ -1,6 +1,7 @@
 <?php
 $product = Products::model()->findByPk($id);
 ?>
+<?php $this->setPageTitle( $product->title); ?>
 <div class="comany_conainer">
     <div class="container">
         <div class="row">

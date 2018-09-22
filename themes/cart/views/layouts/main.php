@@ -8,7 +8,7 @@ echo isset($this->pageTitle) ? ": " . $this->pageTitle : "";
 ?></title>      
 
  <?php echo $this->renderPartial("webroot.themes.cart.views.layouts.head");?>
-
+<link rel="icon" href="<?php echo $baseUrl;?>/images/favicon.ico" type="image/x-icon">
 </head>
     <body>
         <div class="page-wrapper">
