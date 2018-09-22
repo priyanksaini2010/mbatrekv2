@@ -88,8 +88,13 @@ $product = Products::model()->findByPk($id);
                             <span>
                                 (Choose your best fit)
                             </span>
+                            
                         </label>
                         <img src="assets/products/<?php echo $recon->icon;?>"/>
+                        <div class="add_to_Cart_div">
+                                <a href="">Add to Cart</a>
+                                <a href="">Buy Now</a>
+                            </div>
                     </div>
 
                 </li>
