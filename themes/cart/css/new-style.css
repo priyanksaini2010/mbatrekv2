@@ -816,7 +816,7 @@ user-select: none;
     border: 1px solid #348786;
     padding: 2px;}
 .into_heading h2{font-size: 29px;color: #348786;font-family: 'MyriadPro-Semibold';display:block;    padding: 6px 0 0 0;margin:0;}
-.into_heading a{display:inline-block;vertical-align:top;margin:6px 0 0 0px;}
+.into_heading a{display:inline-block;vertical-align:top;margin:0px;}
 .intro_wrapper{width: 100%;float: left;}
 .intro_wrapper p span{color: #348786;}
 .intro_wrapper p{font-size: 16px;line-height:27px;    text-align: justify;}
@@ -1170,9 +1170,9 @@ text-align: center;border-radius: 2px;}
 /*------------End Blog Css----------*/
 
 .ground_mbatrek{width: 100%;float: left;}
-.ground_mbatrek h3{font-size: 29px;font-family: 'MyriadPro-Semibold';color: #348786;margin:0;padding: 40px 0 32px 0;}
+.ground_mbatrek h3{font-size: 29px;font-family: 'MyriadPro-Semibold';color: #348786;margin:0;padding: 0 0 18px 0;text-align: center;}
 .event_container{width: 100%;float: left;}
-.event_container h4{font-size: 26px;text-align:center;font-family: 'MyriadPro-Semibold';color: #348786;    padding: 0 0 20px 0;margin:0;}
+.event_container h4{font-size: 26px;text-align:left;font-family: 'MyriadPro-Semibold';color: #348786;    padding: 0 0 20px 0;margin:0;}
 .eventbanner{width: 100%;float: left;}
 .eventbanner img{width: 100%;}
 .eventbanner p{color: #348786;font-weight: normal;font-size: 20px;padding: 16px 0 0 0;margin:0;}
@@ -1183,7 +1183,7 @@ text-align: center;border-radius: 2px;}
 .classroom_div.out_side ul li{}
 .student-top.young_top .student-internship .pull-left{color: #348786;}
 .student-top.young_top .student-placement .icon-text{color: #73942f;} 
-.into_heading .name_Wrap{display: inline-block;vertical-align: top;margin:0 0 0 14px;}
+.into_heading .name_Wrap{display: inline-block;vertical-align: top;margin:0 0 14px 14px;}
 
 /*------------Privacy plociy Css----------*/
 .policy_container{width:100%;float:left;}
@@ -1222,3 +1222,7 @@ text-align: center;border-radius: 2px;}
 .adjusting_div.more_explain  .cta-home .cta-link1 .cta-img{min-height: 140px;}
 
 /*------------End Privacy policy Css----------*/
+.into_heading ul li {padding:5px 0 0 0;color: #348786;font-size: 18px;font-weight: normal;display: block;list-style: none;}
+.into_heading ul li em{margin-right: 10px;}
+.into_heading ul li a{color: #348786;}
+.into_heading ul li a:hover{color: #4f8231;}
