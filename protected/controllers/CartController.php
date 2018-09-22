@@ -33,7 +33,7 @@ class CartController extends Controller {
         return array(
             array('allow', // allow all users to perform 'index' and 'view' actions
                 'actions' => array('index', 'view','student',"addtocart","cart","remove","buynow","verify", 
-                                    'profesionals','institutes','register',"description"),
+                                    'profesionals','institutes','register',"description","checkout"),
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
