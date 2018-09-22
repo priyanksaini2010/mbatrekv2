@@ -10874,3 +10874,39 @@ Stack trace:
 REQUEST_URI=/v2/index.php?r=site/page&view=talk_advisory
 HTTP_REFERER=https://mbatrek.com/v2/index.php?r=site/page&view=terms_conditions
 ---
+2018/09/22 07:12:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "usersnew/admin".' in /home/mbatrek2017/public_html/v2/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/mbatrek2017/public_html/v2/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('usersnew/admin')
+#1 /home/mbatrek2017/public_html/v2/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /home/mbatrek2017/public_html/v2/index.php(263): CApplication->run()
+#3 {main}
+REQUEST_URI=/v2/index.php?r=usersnew/admin&role=1
+HTTP_REFERER=https://www.mbatrek.com/v2/index.php?r=products/view&id=18
+---
+2018/09/22 07:16:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "usersnew/admin".' in /home/mbatrek2017/public_html/v2/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/mbatrek2017/public_html/v2/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('usersnew/admin')
+#1 /home/mbatrek2017/public_html/v2/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /home/mbatrek2017/public_html/v2/index.php(263): CApplication->run()
+#3 {main}
+REQUEST_URI=/v2/index.php?r=usersnew/admin&role=1
+HTTP_REFERER=https://www.mbatrek.com/v2/index.php?r=products/view&id=18
+---
+2018/09/22 07:16:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "usersnew/admin".' in /home/mbatrek2017/public_html/v2/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/mbatrek2017/public_html/v2/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('usersnew/admin')
+#1 /home/mbatrek2017/public_html/v2/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /home/mbatrek2017/public_html/v2/index.php(263): CApplication->run()
+#3 {main}
+REQUEST_URI=/v2/index.php?r=usersnew/admin&role=1
+HTTP_REFERER=https://www.mbatrek.com/v2/index.php?r=products/view&id=18
+---
+2018/09/22 07:16:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "usersnew/admin".' in /home/mbatrek2017/public_html/v2/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/mbatrek2017/public_html/v2/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('usersnew/admin')
+#1 /home/mbatrek2017/public_html/v2/yii/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /home/mbatrek2017/public_html/v2/index.php(263): CApplication->run()
+#3 {main}
+REQUEST_URI=/v2/index.php?r=usersnew/admin&role=1
+HTTP_REFERER=https://mbatrek.com/v2/index.php?r=products/view&id=17
+---

@@ -70,7 +70,7 @@ $eduCationManagment = array(
             'class'=>'bootstrap.widgets.TbMenu',
             'items'=>array(
                 array('label'=>'Home', 'url'=>'#'),
-                array('label'=>'Users', 'url'=>array('/usersnew/admin',"role"=>1)),
+                array('label'=>'Users', 'url'=>array('/usersNew/admin',"role"=>1)),
                 array('label'=>'Web Data Managment', 'items'=>$siteData),
 //                array('label'=>'Educational Data Managment', 'items'=>$eduCationManagment),
 //                ,
