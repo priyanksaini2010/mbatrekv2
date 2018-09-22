@@ -100,6 +100,15 @@ class CartController extends Controller {
             $this->render("webroot.themes.cart.views.cart.cart",array());
         }
         
+        public function actionCheckout(){
+            if(!isset(Yii::app()->user->id)){
+                 $this->redirect(array("site/login"));
+            }else {
+                $this->redirect(array("cart/checkout","underconst"=>1));
+            }
+        }
+
+
         public function actionAddtocart($id){
             $this->layout = getCartLayot();
            
