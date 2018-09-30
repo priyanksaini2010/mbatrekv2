@@ -33,12 +33,12 @@
                 <li class="dropdown  about">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">About us</a><span class="icon_nav"></span>
                     <ul class="dropdown-menu" role="menu">
-                    <li><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"mbatrek_story")); ?>">Introduction to MBAtrek</a></li>
-                    <li><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"how_we_are_different")); ?>">How are we different</a></li>
+                    <li><a href="<?php echo Yii::app()->createUrl('our-story'); ?>">Introduction to MBAtrek</a></li>
+                    <li><a href="<?php echo Yii::app()->createUrl('how-are-we-different'); ?>">How are we different</a></li>
 	<!--	<li><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"mbatrek_on_the_ground")); ?>">MBAtrek on the ground</a></li>-->
 
-<li><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"abhishek")); ?>">Abhishek Srivastava</a></li>
-<li><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"alok")); ?>">Alok Srivastava</a></li>
+<li><a href="<?php echo Yii::app()->createUrl('abhishek-srivastava'); ?>">Abhishek Srivastava</a></li>
+<li><a href="<?php echo Yii::app()->createUrl('alok-srivastava'); ?>">Alok Srivastava</a></li>
                     
                   </ul>
                 </li>
@@ -110,17 +110,17 @@
                   <a href="#" class="dropdown-toggle" data-toggle="
                   dropdown">Insights </a>	<span class="icon_nav"></span>			
                   <ul class="dropdown-menu" role="menu">
-                    <li><a href="<?php echo Yii::app()->createUrl('site/blogs', array("view"=>"blog")); ?>">Blog</a></li>
-<li><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"mbatrek_on_the_ground")); ?>">MBAtrek on the ground</a></li>
+                    <li><a href="<?php echo Yii::app()->createUrl('blogs'); ?>">Blog</a></li>
+<li><a href="<?php echo Yii::app()->createUrl('mbatrek-on-the-ground'); ?>">MBAtrek on the ground</a></li>
                     <li><a href="#">Another action</a></li>
                     <li><a href="#">Something else here</a></li>
                     <li><a href="#">Separated link</a></li>
                   </ul>                
                 </li>
-                <li class="success"><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"mbatrek_story")); ?>">Success Stories</a><span class="icon_nav"></span></li>
-                <li class="faq"><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"faq")); ?>">FAQ</a><span class="icon_nav"></span></li>
+                <li class="success"><a href="<?php echo Yii::app()->createUrl('our-story'); ?>">Success Stories</a><span class="icon_nav"></span></li>
+                <li class="faq"><a href="<?php echo Yii::app()->createUrl('frequently-asked-questions'); ?>">FAQ</a><span class="icon_nav"></span></li>
 
-                <li class="contact"><a href="<?php echo Yii::app()->createUrl('contact/create', array("view"=>"contact")); ?>">Contact Us</a></li>
+                <li class="contact"><a href="<?php echo Yii::app()->createUrl('contact-us'); ?>">Contact Us</a></li>
             </ul>
             
             
