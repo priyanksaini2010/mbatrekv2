@@ -24,6 +24,8 @@ $this->menu=array(
 		'content',
 		'author',
 		'background_image',
+		'banner_image',
 		'date_created',
+		'date_updated',
 	),
 )); ?>

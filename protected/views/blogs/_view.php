@@ -24,9 +24,19 @@
 	<?php echo CHtml::encode($data->background_image); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('banner_image')); ?>:</b>
+	<?php echo CHtml::encode($data->banner_image); ?>
+	<br />
+
+	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('date_created')); ?>:</b>
 	<?php echo CHtml::encode($data->date_created); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('date_updated')); ?>:</b>
+	<?php echo CHtml::encode($data->date_updated); ?>
+	<br />
+
+	*/ ?>
 
 </div>

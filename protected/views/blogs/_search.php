@@ -15,7 +15,11 @@
 
 	<?php echo $form->textFieldRow($model,'background_image',array('class'=>'span5','maxlength'=>255)); ?>
 
+	<?php echo $form->textFieldRow($model,'banner_image',array('class'=>'span5','maxlength'=>255)); ?>
+
 	<?php echo $form->textFieldRow($model,'date_created',array('class'=>'span5')); ?>
+
+	<?php echo $form->textFieldRow($model,'date_updated',array('class'=>'span5')); ?>
 
 	<div class="form-actions">
 		<?php $this->widget('bootstrap.widgets.TbButton', array(
