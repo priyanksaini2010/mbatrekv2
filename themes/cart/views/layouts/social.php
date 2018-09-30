@@ -64,12 +64,12 @@
                                             <span class="checkmark"></span>
                                         </label>
                                     </span>
-                                    <span class="item-price"><?php echo $cart->product->price;?></span>                                                
+                                    <span class="item-price"><?php echo money($cart->product->price);?></span>                                                
                                 </div>
                                 <?php }?>
                                 <div class="total">
                                     <span class="total-title">Total</span>
-                                    <span class="total-price"><?php echo $total;?></span>
+                                    <span class="total-price"><?php echo money($total);?></span>
                                 </div>
                                 <div class="total"><a style="background: none;" href="<?php echo Yii::app()->createUrl("cart/cart",array());?>">View Cart</a></div>
                             </div>

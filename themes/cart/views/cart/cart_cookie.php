@@ -39,7 +39,7 @@ foreach ($products as $c){
                                         <a href="<?php echo Yii::app()->createUrl("cart/remove",array("id"=>$icart->id));?>">Remove</a>
                                     </li>
                                     <li class="cart_money">
-                                        <span>&#8377 <?php echo $icart->price;?></span>
+                                        <span>&#8377 <?php echo money($icart->price);?></span>
                                     </li></ul>
                                     <?php }}else {?>
                                     <li class="cart_icon">
@@ -56,7 +56,7 @@ foreach ($products as $c){
                     <div class="col-md-4">
                         <div class="card_price">
                             <div class="price_cart">
-                                <label>Sub Total (<?php echo count($products)>1?count($products)." Items":count($products)." Item";?>): <span> &#8377 <?php echo $total;?></span></label>
+                                <label>Sub Total (<?php echo count($products)>1?count($products)." Items":count($products)." Item";?>): <span> &#8377 <?php echo money($total);?></span></label>
                                 <a href="<?php echo Yii::app()->createUrl("cart/checkout");?>">Checkout</a>
                             </div>
                             <span>Have a promocode? Enter here</span>
@@ -84,7 +84,7 @@ foreach ($products as $c){
                                 <img src="assets/products/<?php echo $saver->icon;?>"/>
                             </div>
                             <div class="recomended_price">
-                                <label> &#8377 <?php echo $saver->recommendedProduct->price;?></label>
+                                <label> &#8377 <?php echo money($saver->recommendedProduct->price);?></label>
                                 <a href="<?php echo Yii::app()->createUrl("cart/addtocart",array("id"=>$saver->recommendedProduct->id));    ?>">Add to cart</a>
                             </div>
                         </li>

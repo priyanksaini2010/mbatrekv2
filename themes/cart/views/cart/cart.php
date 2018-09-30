@@ -47,7 +47,7 @@ if(isset(Yii::app()->user->id)){
                                         <a href="<?php echo Yii::app()->createUrl("cart/remove",array("id"=>$icart->product->id));?>">Remove</a>
                                     </li>
                                     <li class="cart_money">
-                                        <span>&#8377 <?php echo $icart->product->price;?></span>
+                                        <span>&#8377 <?php echo money($icart->product->price);?></span>
                                     </li></ul>
                                     <?php }}else {?>
                                     <li class="cart_icon">
@@ -64,7 +64,7 @@ if(isset(Yii::app()->user->id)){
                     <div class="col-md-4">
                         <div class="card_price">
                             <div class="price_cart">
-                                <label>Sub Total (<?php echo count($cart)>1?count($cart)." Items":count($cart)." Item";?>): <span> &#8377 <?php echo $total;?></span></label>
+                                <label>Sub Total (<?php echo count($cart)>1?count($cart)." Items":count($cart)." Item";?>): <span> &#8377 <?php echo money($total);?></span></label>
                                 <a href="<?php echo Yii::app()->createUrl("cart/checkout");?>">Checkout</a>
                             </div>
                             <span class="promocode">Have a promocode? Enter here</span>
@@ -92,7 +92,7 @@ if(isset(Yii::app()->user->id)){
                                 <img src="assets/products/<?php echo $saver->icon;?>"/>
                             </div>
                             <div class="recomended_price">
-                                <label> &#8377 <?php echo $saver->recommendedProduct->price;?></label>
+                                <label> &#8377 <?php echo money($saver->recommendedProduct->price);?></label>
                                 <a href="<?php echo Yii::app()->createUrl("cart/addtocart",array("id"=>$saver->recommendedProduct->id));    ?>">Add to cart</a>
                             </div>
                         </li>
