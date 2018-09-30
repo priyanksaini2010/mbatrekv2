@@ -61,7 +61,7 @@ class BlogsController extends Controller
 	 */
 	public function actionCreate()
 	{
-                $this->layout = 'webroot.themes.bootstrap.views.layouts.main';
+               $this->layout = 'webroot.themes.bootstrap.views.layouts.main';
 		$model=new Blogs;
 
 		// Uncomment the following line if AJAX validation is needed
@@ -89,8 +89,8 @@ class BlogsController extends Controller
 			$imageSize = getimagesize($path."/".$fileName);
 			$error =false;
 			if ($imageSize[0] < 1138 || $imageSize[0] < 761 ) {
-			    $model->addError("banner_image","Banner Image Size Must Be greater than equal to 1138X761");
-			    $error =true;
+//			    $model->addError("banner_image","Banner Image Size Must Be greater than equal to 1138X761");
+//			    $error =true;
 			}
 			
 			
@@ -112,7 +112,7 @@ class BlogsController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-                $this->layout = 'webroot.themes.bootstrap.views.layouts.main';
+		$this->layout = 'webroot.themes.bootstrap.views.layouts.main';
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
@@ -130,11 +130,15 @@ class BlogsController extends Controller
                                 $fileName = rand().$_FILES['Blogs']['name']['background_image'];  // random number + file name
                                 move_uploaded_file($_FILES['Blogs']['tmp_name']['background_image'],$path."/".$fileName);
                                 $_POST['Blogs']['background_image'] = $fileName;
-                            } 
+                            } else {
+                                $_POST['Blogs']['background_image'] = $model->background_image;
+                            }
                             if (isset($_FILES['Blogs']['name']['banner_image']) && !empty($_FILES['Blogs']['name']['banner_image'])) {
                                 $fileName = rand().$_FILES['Blogs']['name']['banner_image'];  // random number + file name
                                 move_uploaded_file($_FILES['Blogs']['tmp_name']['banner_image'],$path."/".$fileName);
                                 $_POST['Blogs']['banner_image'] = $fileName;
+                            }else {
+                                $_POST['Blogs']['banner_image'] = $model->banner_image;
                             }
                         }
 			$model->attributes=$_POST['Blogs'];
@@ -174,7 +178,6 @@ class BlogsController extends Controller
 	 */
 	public function actionIndex()
 	{
-                $this->layout = 'webroot.themes.bootstrap.views.layouts.main';
 		$dataProvider=new CActiveDataProvider('Blogs');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
@@ -186,7 +189,7 @@ class BlogsController extends Controller
 	 */
 	public function actionAdmin()
 	{
-                $this->layout = 'webroot.themes.bootstrap.views.layouts.main';
+            $this->layout = 'webroot.themes.bootstrap.views.layouts.main';
 		$model=new Blogs('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Blogs']))

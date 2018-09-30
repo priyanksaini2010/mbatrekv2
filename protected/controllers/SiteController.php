@@ -661,6 +661,11 @@ class SiteController extends Controller
             if(isset($_GET['cat_id'])) {
                  $criteria->addCondition("blog_category_id = ".$_GET['cat_id']);
             }
+            if(isset($_GET['type'])) {
+                 $criteria->addCondition("type = ".$_GET['type']);
+            } else {
+                $criteria->addCondition("type = 1");
+            }
             $count=  Blogs::model()->count($criteria);
             $pages=new CPagination($count);
 
@@ -786,7 +791,6 @@ class SiteController extends Controller
             $criteria->order = "date_updated desc";
             $criteria->addCondition("id = ".$id);
             $model=Blogs::model()->find($criteria);
-            $approvedComments = BlogComments::model()->findAllByAttributes(array("blog_id"=>$id,"is_approved" =>1));
             
             $criteria=new CDbCriteria();
             $criteria->order = "date_updated desc";
@@ -800,7 +804,6 @@ class SiteController extends Controller
             // display the login form
             $this->render('blogdetails', array(
                 'model' => $model,
-                'comments' => $approvedComments,
                 'latests' => $latest,
             ));
 	}
