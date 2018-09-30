@@ -110,7 +110,7 @@
                   <a href="#" class="dropdown-toggle" data-toggle="
                   dropdown">Insights </a>	<span class="icon_nav"></span>			
                   <ul class="dropdown-menu" role="menu">
-                    <li><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"blog")); ?>">Blog</a></li>
+                    <li><a href="<?php echo Yii::app()->createUrl('site/blogs', array("view"=>"blog")); ?>">Blog</a></li>
 <li><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"mbatrek_on_the_ground")); ?>">MBAtrek on the ground</a></li>
                     <li><a href="#">Another action</a></li>
                     <li><a href="#">Something else here</a></li>
