@@ -94,15 +94,16 @@ return array(
         
         // uncomment the following to enable URLs in path-format
 		
-		/*'urlManager'=>array(
+		'urlManager'=>array(
 			'urlFormat'=>'path',
-			'showScriptName'=>t,
+			'showScriptName'=>false,
 //			'caseSensitive'=>false, 
 			'rules'=>array(
-				'who-we-are' => 'site/page/view/who_we_are',
-				'what-we-do' => 'site/page/view/what_we_do',
-				'our-bielf' => 'site/page/view/our_bielf',
-				'what-we-believe' => 'site/page/view/our_bielf',
+				'our-story' => 'site/page/view/mbatrek_story',
+				'how-are-we-different' => 'site/page/view/how_we_are_different',
+				'abhishek-srivastava' => 'site/page/view/abhishek',
+				'alok-srivastava' => 'site/page/view/alok',
+				'mbatrek-on-the-ground' => 'site/page/view/mbatrek_on_the_ground',
 				'support' => 'site/page/view/support',
 				'career' => 'site/page/view/career',
 				'feedback' => 'site/page/view/feedback',
@@ -121,13 +122,13 @@ return array(
 				'articles' => 'site/articles/type/1',
 				'success-story' => 'site/articles/type/2',
 				'blogs' => 'site/blogs',
-				'contact-us' => 'site/contact',
+				'contact-us' => 'contact/create/contact',
 				'login' => 'site/login',
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
-		),*/
+		),
 		
 
 		// database settings are configured in database.php
