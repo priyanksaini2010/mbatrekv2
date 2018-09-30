@@ -4,9 +4,9 @@
                     <div class="footer-wrap">
                             <div class="footer-menu1">
                                     <ul>
-                                        <li><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"copyright_notice")); ?>">Copyright Notice</a></li>
-                                        <li><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"privacy_policy")); ?>">Privacy Statement</a></li>
-                                        <li><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"declimier")); ?>">Disclaimer</a></li>
+                                        <li><a href="<?php echo Yii::app()->createUrl('copyright-notice'); ?>">Copyright Notice</a></li>
+                                        <li><a href="<?php echo Yii::app()->createUrl('privacy-policy'); ?>">Privacy Statement</a></li>
+                                        <li><a href="<?php echo Yii::app()->createUrl('disclaimer'); ?>">Disclaimer</a></li>
                                     </ul>
                                 </div>
                                 <div class="footer-logo-wrapper">
@@ -17,9 +17,9 @@
                                 </div>
                                 <div class="footer-menu2">
                                     <ul>
-                                        <li><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"terms_conditions")); ?>">Terms & Conditions</a></li>
-                                        <li><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"talk_advisory")); ?>">Talk to Career Advisor</a></li>
-                                        <li><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"faq")); ?>">FAQs</a></li>
+                                        <li><a href="<?php echo Yii::app()->createUrl('terms-and-conditions'); ?>">Terms & Conditions</a></li>
+                                        <li><a href="<?php echo Yii::app()->createUrl('talk-to-our-career-advisor'); ?>">Talk to Career Advisor</a></li>
+                                        <li><a href="<?php echo Yii::app()->createUrl('frequently-asked-questions'); ?>">FAQs</a></li>
                                     </ul>
                                 </div>
                     </div>
