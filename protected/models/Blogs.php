@@ -6,6 +6,7 @@
  * The followings are the available columns in table 'blogs':
  * @property integer $id
  * @property integer $blog_category_id
+ * @property integer $type
  * @property string $title
  * @property string $content
  * @property string $author
@@ -15,7 +16,6 @@
  * @property string $date_updated
  *
  * The followings are the available model relations:
- * @property BlogComments[] $blogComments
  * @property BlogCategory $blogCategory
  */
 class Blogs extends CActiveRecord
@@ -36,12 +36,12 @@ class Blogs extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('blog_category_id, title, content, author, background_image, banner_image, date_created, date_updated', 'required'),
-			array('blog_category_id', 'numerical', 'integerOnly'=>true),
+			array('blog_category_id, type, title, content, author, background_image, banner_image, date_created, date_updated', 'required'),
+			array('blog_category_id, type', 'numerical', 'integerOnly'=>true),
 			array('title, author, background_image, banner_image', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, blog_category_id, title, content, author, background_image, banner_image, date_created, date_updated', 'safe', 'on'=>'search'),
+			array('id, blog_category_id, type, title, content, author, background_image, banner_image, date_created, date_updated', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -53,7 +53,6 @@ class Blogs extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'blogComments' => array(self::HAS_MANY, 'BlogComments', 'blog_id'),
 			'blogCategory' => array(self::BELONGS_TO, 'BlogCategory', 'blog_category_id'),
 		);
 	}
@@ -66,11 +65,12 @@ class Blogs extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'blog_category_id' => 'Blog Category',
+			'type' => 'Type',
 			'title' => 'Title',
 			'content' => 'Content',
 			'author' => 'Author',
 			'background_image' => 'Background Image',
-			'banner_image' => 'Banner Image (1138X761)',
+			'banner_image' => 'Banner Image',
 			'date_created' => 'Date Created',
 			'date_updated' => 'Date Updated',
 		);
@@ -96,6 +96,7 @@ class Blogs extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('blog_category_id',$this->blog_category_id);
+		$criteria->compare('type',$this->type);
 		$criteria->compare('title',$this->title,true);
 		$criteria->compare('content',$this->content,true);
 		$criteria->compare('author',$this->author,true);
