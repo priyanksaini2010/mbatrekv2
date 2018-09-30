@@ -21,13 +21,13 @@ $items = array(
 //            array('label'=>'eBroucher Downloaded', 'url'=>array('/ebroucherDownloadForm/admin')),
         );
 $blogMenu = array(
-//        array('label'=>'Categories Managment', 'url'=>array('/blogCategory/admin')),
+        array('label'=>'Categories Managment', 'url'=>array('/blogCategory/admin')),
         array('label'=>'Blog Managment', 'url'=>array('/blogs/admin')),
 );
 $siteData = array(
 			array('label'=>'Product Managment', 'url'=>array('/products/admin')),
             array('label'=>'Content Managment', 'url'=>array('/contentJson/admin')),
-     array('label'=>'Blog Managment', 'url'=>array('/blogs/admin')),
+//     array('label'=>'Blog Managment', 'url'=>array('/blogs/admin')),
 //            array('label'=>'Feedback Managment', 'url'=>array('/feedback/admin')),
 //            array('label'=>'Contact Managment', 'url'=>array('/contact/admin')),
 //            array('label'=>'FAQ Managment', 'url'=>array('/faq/admin')),
@@ -75,7 +75,7 @@ $eduCationManagment = array(
                 array('label'=>'Web Data Managment', 'items'=>$siteData),
 //                array('label'=>'Educational Data Managment', 'items'=>$eduCationManagment),
 //                ,
-//                array('label'=>'Blog Management', 'items'=>$blogMenu),
+                array('label'=>'Blog Management', 'items'=>$blogMenu),
                 
                 array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
             ),
