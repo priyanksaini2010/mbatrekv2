@@ -21,10 +21,10 @@
                         </a>
                         <div class="cta-body">
                             <h4>
-                              Enhance your preparation and skill-sets to get the right role and job 
+                              Enhance your preparation and skill-sets to get the right role and setup for a successful career
                             </h4>
                             <div class="cta-link2">
-                              <a href="<?php echo Yii::app()->createUrl('cart/student'); ?>">Start your preparation for Internship / Final Placement >></a>
+                              <a href="<?php echo Yii::app()->createUrl('cart/student'); ?>">Start your preparation for Internship / Placement >></a>
                              </div>
                         </div>
                         
@@ -38,7 +38,7 @@
                             </a>
                             <div class="cta-body">
                                 <h4>
-                                Understand how to survive and connect with people in your initial career
+                                Understand how to survive and connect with people in the initial stages of your career
                                 </h4>
                                 <div class="cta-link2">
                                 <a href="<?php echo Yii::app()->createUrl('cart/profesionals'); ?>">Kick-Start your first year at the job and your career >></a>
@@ -57,7 +57,7 @@
                                 Transform your institution from a center of academic learning to career building
                                 </h4>
                                 <div class="cta-link2">
-                                <a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"educational_institute")); ?>">Partner with us to transform into a career building institution >></a>
+                                <a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"educational_institute")); ?>">Transform into a career building institution >></a>
                                 </div>
                            </div>
                             </div>
@@ -73,7 +73,7 @@
                                 Upskill your young talent and new hires to the demands of today’s corporate world
                                 </h4>
                                 <div class="cta-link2">
-                                <a href="<?php echo Yii::app()->createUrl('cart/institutes'); ?>">Develop and accelerate growth of your next generation workforce >></a>
+                                <a href="<?php echo Yii::app()->createUrl('cart/institutes'); ?>">Accelerate the growth of your next generation workforce >></a>
                                 </div>
                               </div>
                         </div>

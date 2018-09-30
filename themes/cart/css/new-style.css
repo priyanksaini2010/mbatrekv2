@@ -775,7 +775,7 @@ user-select: none;
 .how_We_contaner .interview_section li{width: 18%;}
 .home_mainheading{width: 100%;float: left;}
 .home_mainheading h2{font-size: 29px;text-align: center;color: #348786;margin:0;padding: 0 0 20px 0;font-family: 'MyriadPro-Semibold';}
-.home_mainheading h3{font-size: 29px;text-align: center;color: #348786;font-style: italic;margin:0;    padding: 0 0 49px 0;font-family: 'MyriadPro-Semibold';}
+.home_mainheading h3{font-size: 29px;text-align: center;color: #7a7a7a;font-style: italic;margin:0;    padding: 0 0 49px 0;font-family: 'MyriadPro-Semibold';}
 .journy_block .journey1-list ul li .list-text{color: #73942f;}
 .journy_block .journey1-list ul li .list-text .list-text-title{color: #73942f;}
 .ready_section{width: 100%;float: left;background: #e7e7e7;    padding: 0 0 37px 0;    margin: 51px 0 19px 0;}
@@ -1226,3 +1226,5 @@ text-align: center;border-radius: 2px;}
 .into_heading ul li em{margin-right: 10px;}
 .into_heading ul li a{color: #348786;}
 .into_heading ul li a:hover{color: #4f8231;}
+.student-top.young_top .student-internship:hover .icon-text{background: rgb(34,152,151);color: #fff;}
+.student-top.young_top .student-placement:hover .icon-text{background: #73942f;color: #fff;}

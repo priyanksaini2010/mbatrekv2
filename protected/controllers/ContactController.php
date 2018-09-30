@@ -27,15 +27,15 @@ class ContactController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('create','index','view'),
+				'actions'=>array('index','view','create'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('admin','delete','update'),
+				'actions'=>array('update'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array(),
+				'actions'=>array('admin','delete'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -50,7 +50,6 @@ class ContactController extends Controller
 	 */
 	public function actionView($id)
 	{
-                $this->layout = 'webroot.themes.bootstrap.views.layouts.main';
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
@@ -62,6 +61,7 @@ class ContactController extends Controller
 	 */
 	public function actionCreate()
 	{
+                $this->layout = getCartLayot();
 		$model=new Contact;
 
 		// Uncomment the following line if AJAX validation is needed
@@ -69,31 +69,32 @@ class ContactController extends Controller
 
 		if(isset($_POST['Contact']))
 		{
-			$blokedEmails = CHtml::listData(BlockedEmail::model()->findAll(),"id","email");
-			if(in_array($_POST['Contact']['email'], $blokedEmails)){
-			    $this->redirect(Yii::app()->createUrl('site/contact'));
-			}
+			
 			$model->attributes=$_POST['Contact'];
 			
 			if($model->save()){
                                 $subject = $_POST['Contact']['subject'];
                                 $body = "Hello Admin,<br/><br/>"
                                         . "New Enquiry recieved: <br/><br/ >"
-                                        . "name: ".$_POST['Contact']['name']."<br/ >"
-                                        . "Phone: ".$_POST['Contact']['phone']."<br/ >"
+                                        . "First Name: ".$_POST['Contact']['first_name']."<br/ >"
+                                        . "Last Name: ".$_POST['Contact']['last_name']."<br/ >"
+                                        . "Mobile No.: ".$_POST['Contact']['mobile_no']."<br/ >"
                                         . "Email : ".$_POST['Contact']['email']."<br/ >"
-                                        . "Message : ".$_POST['Contact']['message']."<br/ ><br/ >"
+                                        . "Rep Type : ".$_POST['Contact']['are_you']."<br/ >"
+                                        . "Name of Company / Institute : ".$_POST['Contact']['name_of_company_institute']."<br/ >"
+                                        . "Subject : ".$_POST['Contact']['subject']."<br/ ><br/ >"
+                                        . "Message : ".$_POST['Contact']['your_message']."<br/ ><br/ >"
                                         . "Thanks,<br/ >"
                                         . "MBATrek Feedback Service";
-                                $headers="From: ".$_POST['Contact']['name']." <".$_POST['Contact']['email']."> \r\n".
-                                        "Reply-To: ".$_POST['Contact']['name']." \r\n";
+                                $headers="From: ".$_POST['Contact']['first_name']." ".$_POST['Contact']['last_name']." <".$_POST['Contact']['email']."> \r\n".
+                                        "Reply-To: ".$_POST['Contact']['first_name']." ".$_POST['Contact']['last_name']." \r\n";
 
                                 $headers .= "MIME-Version: 1.0\r\n".
                                             "Content-Type: text/html; charset=UTF-8";
 
-                                $sentToUser = mail(Yii::app()->params['adminEmail'], $subject,$body,$headers);
+                                $sentToUser = sendEmail(Yii::app()->params['adminEmail'], $subject,$body,$headers);
 				
-                                $body = "Hello ".$_POST['Contact']['name'].",<br/><br/>"
+                                $body = "Hello ".$_POST['Contact']['first_name']." ".$_POST['Contact']['last_name'].",<br/><br/>"
                                         . "Thanks to contact us. Will get in touch soon: <br/><br/ >"
                                         . "Thanks,<br/ >"
                                         . "MBATrek Feedback Service";
@@ -103,11 +104,11 @@ class ContactController extends Controller
                                 $headers .= "MIME-Version: 1.0\r\n".
                                             "Content-Type: text/html; charset=UTF-8";
                                 $sentToUser = sendEmail($_POST['Contact']['email'], $subject,$body,$headers);
-                                $this->redirect(Yii::app()->createUrl('site/contact',array('thankc'=>1)));
+                                $this->redirect(Yii::app()->createUrl('contact/create',array('thankc'=>1)));
                         }
 		}
 
-		$this->render('create',array(
+		$this->render('contact',array(
 			'model'=>$model,
 		));
 	}
@@ -172,7 +173,6 @@ class ContactController extends Controller
 	 */
 	public function actionAdmin()
 	{
-                $this->layout = 'webroot.themes.bootstrap.views.layouts.main';
 		$model=new Contact('search');
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Contact']))

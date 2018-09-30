@@ -5,12 +5,14 @@
  *
  * The followings are the available columns in table 'contact':
  * @property integer $id
- * @property string $name
- * @property string $phone
+ * @property string $first_name
+ * @property string $last_name
+ * @property string $mobile_no
  * @property string $email
+ * @property string $are_you
+ * @property string $name_of_company_institute
  * @property string $subject
- * @property integer $type
- * @property string $message
+ * @property string $your_message
  */
 class Contact extends CActiveRecord
 {
@@ -30,12 +32,12 @@ class Contact extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, phone, email, subject, message', 'required'),
-			array('type', 'numerical', 'integerOnly'=>true),
-			array('name, phone, email, subject', 'length', 'max'=>255),
+			array('first_name, last_name, mobile_no, email, are_you, name_of_company_institute, subject, your_message', 'required'),
+			array('first_name, last_name, mobile_no, email, name_of_company_institute, subject', 'length', 'max'=>255),
+			array('are_you', 'length', 'max'=>18),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, name, phone, email, subject, type, message', 'safe', 'on'=>'search'),
+			array('id, first_name, last_name, mobile_no, email, are_you, name_of_company_institute, subject, your_message', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -57,12 +59,14 @@ class Contact extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'name' => 'Name',
-			'phone' => 'Phone',
+			'first_name' => 'First Name',
+			'last_name' => 'Last Name',
+			'mobile_no' => 'Mobile No.',
 			'email' => 'Email',
+			'are_you' => 'Are You',
+			'name_of_company_institute' => 'Name of Company / Institute',
 			'subject' => 'Subject',
-			'type' => 'Type',
-			'message' => 'Message',
+			'your_message' => 'Your Message',
 		);
 	}
 
@@ -85,12 +89,14 @@ class Contact extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('name',$this->name,true);
-		$criteria->compare('phone',$this->phone,true);
+		$criteria->compare('first_name',$this->first_name,true);
+		$criteria->compare('last_name',$this->last_name,true);
+		$criteria->compare('mobile_no',$this->mobile_no,true);
 		$criteria->compare('email',$this->email,true);
+		$criteria->compare('are_you',$this->are_you,true);
+		$criteria->compare('name_of_company_institute',$this->name_of_company_institute,true);
 		$criteria->compare('subject',$this->subject,true);
-		$criteria->compare('type',$this->type);
-		$criteria->compare('message',$this->message,true);
+		$criteria->compare('your_message',$this->your_message,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

@@ -120,7 +120,7 @@
                 <li class="success"><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"mbatrek_story")); ?>">Success Stories</a><span class="icon_nav"></span></li>
                 <li class="faq"><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"faq")); ?>">FAQ</a><span class="icon_nav"></span></li>
 
-                <li class="contact"><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"contact")); ?>">Contact Us</a></li>
+                <li class="contact"><a href="<?php echo Yii::app()->createUrl('contact/create', array("view"=>"contact")); ?>">Contact Us</a></li>
             </ul>
             
             

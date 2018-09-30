@@ -14,7 +14,12 @@ function validateEmail(emailField) {
     }
     return true;
 }
-
+$(document).ready(function(){
+     $("#submit_form_btn_act").click(function(){
+         
+         $('#contact-form').submit();
+     });
+ });
 $(document).ready(function(){
     //Registeration Form Validation
     
@@ -43,3 +48,44 @@ $(document).ready(function(){
         return true;
     });
 })
+
+$("#contact-form").submit(function() {
+//    alert("here");
+            
+            if ($("#Contact_first_name").val() == "") {
+                $("#Contact_first_name").focus()
+                validationMethod("Contact_first_name","Please enter first name.");
+                return false;
+            }
+            if ($("#Contact_last_name").val() == "") {
+                $("#Contact_last_name").focus()
+                validationMethod("Contact_last_name","Please enter last name.");
+                return false;
+            }
+            if ($("#Contact_email").val() == "" || !validateEmail($("#Contact_email").val())) {
+                $("#Contact_email").focus()
+                validationMethod("Contact_email","Please enter valid email.");
+                return false;
+            }   
+            if ($("#Contact_mobile_no").val() == "") {
+                $("#Contact_mobile_no").focus()
+                validationMethod("Contact_mobile_no","Please enter valid mobile number.");
+                return false;
+            }
+            if ($("#Contact_name_of_company_institute").val() == "") {
+                $("#Contact_name_of_company_institute").focus()
+                validationMethod("Contact_name_of_company_institute","Please enter name of Company / Institute.");
+                return false;
+            }
+            if ($("#Contact_subject").val() == "") {
+                $("#Contact_subject").focus()
+                validationMethod("Contact_subject","Please enter subject.");
+                return false;
+            }
+            if ($("#Contact_subject").val() == "") {
+                $("#Contact_subject").focus()
+                validationMethod("Contact_your_message","Please enter your message.");
+                return false;
+            }
+            
+        });

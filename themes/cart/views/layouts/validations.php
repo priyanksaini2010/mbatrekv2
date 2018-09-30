@@ -17,4 +17,7 @@
     <?php if(isset($_REQUEST['underconst'])){?>
 	 validationMethod("underconst","This page is under construction.")
     <?php }?>
+    <?php if(isset($_REQUEST['thankc'])){?>
+	 validationMethod("thankc","Thanks for your feedback, we will get in touch with you soon.")
+    <?php }?>
 </script>

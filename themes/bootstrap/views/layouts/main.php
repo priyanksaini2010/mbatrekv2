@@ -92,7 +92,7 @@ $eduCationManagment = array(
     	<?php if(isset($this->breadcrumbs)):?>
 		<?php $this->widget('bootstrap.widgets.TbBreadcrumbs', array(
 			'links'=>$this->breadcrumbs,
-                        'homeLink'=>CHtml::link('Home', array('/users/admin',"role"=>1)),
+                        'homeLink'=>CHtml::link('Home', array('/usersNew/admin',"role"=>1)),
 
 		)); ?><!-- breadcrumbs -->
 	<?php endif?>
