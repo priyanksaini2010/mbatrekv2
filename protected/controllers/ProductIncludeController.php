@@ -139,10 +139,15 @@ class ProductIncludeController extends Controller
                     CFileHelper::createDirectory($path, null, true);
                 }
                 if (!empty($_FILES)) {
-                    $fileName = generateRandomString(10) . str_replace(" ", "", $_FILES['ProductInclude']['name']['logo']);  // random number + file name
-                    $tmp_name = $_FILES['ProductInclude']['tmp_name']['logo'];
-                    move_uploaded_file($tmp_name, $path . "/" . $fileName);
-                    $_POST['ProductInclude']['logo'] = $fileName;
+                    if(!empty($_FILES['ProductInclude']['name']['logo'])){
+                        $fileName = generateRandomString(10) . str_replace(" ", "", $_FILES['ProductInclude']['name']['logo']);  // random number + file name
+                        $tmp_name = $_FILES['ProductInclude']['tmp_name']['logo'];
+                        move_uploaded_file($tmp_name, $path . "/" . $fileName);
+                        $_POST['ProductInclude']['logo'] = $fileName;
+                    } else {
+                        $_POST['ProductInclude']['logo'] = $model->logo;
+                    }
+                    
 
                 }
 		// Uncomment the following line if AJAX validation is needed
