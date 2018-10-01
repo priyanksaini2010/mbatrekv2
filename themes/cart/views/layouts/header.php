@@ -50,14 +50,15 @@
 						<ul class="dropdown-menu">
 							<li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle sub_menu" data-toggle="dropdown">Offerings</a>
 								<ul class="dropdown-menu">
-									<li class="kopie"><a href="https://mbatrek.com/v2/index.php?r=cart/description&id=25">Resume / CV Diagnostic</a></li>
-									<li><a href="https://mbatrek.com/v2/index.php?r=cart/description&id=24">Linkedin Diagnostic</a></li>
+                                                                    
+									<li class="kopie"><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"25")); ?>">Resume / CV Diagnostic</a></li>
+									<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"24")); ?>">Linkedin Diagnostic</a></li>
 									<li><a href="#">Mock Interviews</a></li>
-									<li><a href="https://mbatrek.com/v2/index.php?r=cart/description&id=23">Interviews Q & A</a></li>
-									<li><a href="https://mbatrek.com/v2/index.php?r=cart/description&id=18">Industry Analysis</a></li>
-									<li><a href="https://mbatrek.com/v2/index.php?r=cart/description&id=21">Company Analysis</a></li>
+									<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"23")); ?>">Interviews Q & A</a></li>
+									<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"18")); ?>">Industry Analysis</a></li>
+									<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"21")); ?>">Company Analysis</a></li>
 									<li><a href="#">Job Fitment Analysis</a></li>
-									<li><a href="https://mbatrek.com/v2/index.php?r=cart/description&id=22">Cracking GD</a></li>
+									<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"22")); ?>">Cracking GD</a></li>
 									<!--<li><a href="#">InternACE</a></li>
 									<li><a href="#">InternPRO</a></li>
 									<li><a href="https://mbatrek.com/v/index.php?r=cart/description&id=17">InternARISE</a></li>-->
@@ -65,11 +66,11 @@
 							</li>     
 							<li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle sub_menu" data-toggle="dropdown">Packages</a>
 								<ul class="dropdown-menu">
-									<li class="kopie"><a href="https://mbatrek.com/v2/index.php?r=cart/description&id=20">InternGO</a></li>
+									<li class="kopie"><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"20")); ?>">InternGO</a></li>
 <!--<li><a href="https://mbatrek.com/v2/index.php?r=cart/description&id=22">Cracking GD</a></li>-->
                                                                         <li><a href="#">InternACE</a></li>
                                                                         <li><a href="#">InternPRO</a></li>
-<li><a href="https://mbatrek.com/v2/index.php?r=cart/description&id=17">InternARISE</a></li>
+<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"17")); ?>">InternARISE</a></li>
 								
 	<li><a href="#">Campus2Corporate</a></li>
 								</ul>
