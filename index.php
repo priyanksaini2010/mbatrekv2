@@ -2,6 +2,9 @@
 error_reporting(E_ERROR);
 require_once 'payment_lib/PaytmKit/lib/config_paytm.php';
 require_once 'payment_lib/PaytmKit/lib/encdec_paytm.php';
+function money($number){
+    return number_format($number, 0, '.', ',');
+}
 function productsMenu($id){
     return array(
 	array('label'=>'Products Details','url'=>array('products/view',"id"=>$id)),
