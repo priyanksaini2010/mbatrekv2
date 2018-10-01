@@ -448,6 +448,7 @@ p.section-pra {
     background: #229897;
     border: none;
   }
+  .login-footer .btn-danger:focus{ background: #229897;}
   .form-signin input[type="password"] {
     margin-bottom: 10px;
     border-radius: 5px;
@@ -1228,3 +1229,10 @@ text-align: center;border-radius: 2px;}
 .into_heading ul li a:hover{color: #4f8231;}
 .student-top.young_top .student-internship:hover .icon-text{background: rgb(34,152,151);color: #fff;}
 .student-top.young_top .student-placement:hover .icon-text{background: #73942f;color: #fff;}
+.bread_crum{float: right;    margin: 0 9px 11px 0;}
+.bread_crum ul li a{color: #348786;}
+.bread_crum ul li.active a{font-family: 'MyriadPro-Semibold';} 
+.ground_1_pic {
+    width: 33%;
+    display: inline-block;
+}
