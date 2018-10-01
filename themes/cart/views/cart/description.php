@@ -14,7 +14,7 @@ $product = Products::model()->findByPk($id);
             </div>
             <div class="col-md-4">
                 <div class="buy_now">
-                    <a href="javascript:void(0)">&#8377 <?php echo money($product->price); ?></a>
+                    <a href="javascript:void(0)">&#8377 <?php echo $product->price; ?></a>
                     <div class="order_div">
                         <a href="<?php echo Yii::app()->createUrl("cart/buynow",array("id"=>$product->id));?>">Buy Now</a>
                         <a href="<?php echo Yii::app()->createUrl("cart/addtocart",array("id"=>$product->id));?>">Add to Cart</a>
