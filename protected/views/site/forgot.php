@@ -31,8 +31,9 @@
 						<div class="main">	
 						<!--<div class="phAnimate"><label for="lastname">First Name <em>*</em></label> <input id="name" class="input_field" type="text" name="name" /></div>-->
 							<?php if($model->email != ''){ $data =  array('for' => "firstname",'class' => 'active');}else{$data =  array('for' => "firstname");};?>
-                                        <?php echo $form->labelEx($model, 'email', $data); ?>
+                                        <div class="phAnimate"><label for="lastname">Email <em>*</em></label> 
                                         <?php echo $form->textField($model, 'email', array('class'=>"input_field")); ?>
+                                        </div>
 							<span class="clearfix"></span>	
 						</div>
 						
