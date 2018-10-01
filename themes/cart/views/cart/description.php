@@ -14,7 +14,7 @@ $product = Products::model()->findByPk($id);
             </div>
             <div class="col-md-4">
                 <div class="buy_now">
-                    <a href="javascript:void(0)">&#8377 <?php echo $product->price; ?></a>
+                    <a href="javascript:void(0)">&#8377 <?php echo money($product->price); ?></a>
                     <div class="order_div">
                         <a href="<?php echo Yii::app()->createUrl("cart/buynow",array("id"=>$product->id));?>">Buy Now</a>
                         <a href="<?php echo Yii::app()->createUrl("cart/addtocart",array("id"=>$product->id));?>">Add to Cart</a>
@@ -24,7 +24,7 @@ $product = Products::model()->findByPk($id);
                         <?php foreach ($product->productIncludes as $include) { ?>
                             <li>
 
-                                <div class="li_wrap"><img src="assets/products/<?php echo $include->logo; ?>"/></div>
+                                <div class="li_wrap"><img src="<?php echo Yii::app()->baseUrl;?>/assets/products/<?php echo $include->logo; ?>"/></div>
                                 <div class="li_Text_wrap">
                                     <?php echo $include->description; ?> 
                                 </div>
@@ -47,7 +47,7 @@ $product = Products::model()->findByPk($id);
                     <span class="four_line"><?php echo $engage->description;?></span>
                     <span class="step_up"><div class="arrow_big"></div><div class="inner_pro_text"><?php echo $engage->description2;?></div></span>
                     <div class="icon_wrapper">
-                        <img src="assets/products/<?php echo $engage->icon;?>"/>
+                        <img src="<?php echo Yii::app()->baseUrl;?>/assets/products/<?php echo $engage->icon;?>"/>
                     </div>
 
                 </li>
@@ -55,7 +55,7 @@ $product = Products::model()->findByPk($id);
                 <li>
                     
                     <div class="icon_wrapper four_line">
-                       <img src="assets/products/<?php echo $engage->icon;?>"/>
+                       <img src="<?php echo Yii::app()->baseUrl;?>/assets/products/<?php echo $engage->icon;?>"/>
                     </div>
                     <span class="step_up"> <div class="arrow_big"></div><div class="inner_pro_text"><?php echo $engage->description2;?></div></span>
                     <span><?php echo $engage->description;?></span>
@@ -70,7 +70,7 @@ $product = Products::model()->findByPk($id);
             <ul>
                  <?php foreach ($product->productKeyOutcomes as $outcomes){?>
                 <li>
-                    <img src="assets/products/<?php echo $outcomes->icon;?>"/>
+                    <img src="<?php echo Yii::app()->baseUrl;?>/assets/products/<?php echo $outcomes->icon;?>"/>
                     <span><?php echo $outcomes->description;?></span>
                 </li>
                  <?php }?>
@@ -90,7 +90,7 @@ $product = Products::model()->findByPk($id);
                             </span>
                             
                         </label>
-                        <img src="assets/products/<?php echo $recon->icon;?>"/>
+                        <img src="<?php echo Yii::app()->baseUrl;?>/assets/products/<?php echo $recon->icon;?>"/>
                         <div class="add_to_Cart_div">
                                 <a href="">Add to Cart</a>
                                 <a href="">Buy Now</a>
