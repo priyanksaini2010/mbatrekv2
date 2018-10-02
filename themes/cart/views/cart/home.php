@@ -96,7 +96,7 @@
                     <ul>
                         <li>
                             <div class="global_img">
-                                <img src="images/global.png"/>
+                                <img src="<?php echo $baseUrl; ?>/images/global.png"/>
                             </div>
                             <div class="global_text">
                                 <h3>1500+ Years of 
@@ -106,7 +106,7 @@
                         </li>
                         <li>
                             <div class="global_img">
-                                <img src="images/personalize.png"/>
+                                <img src="<?php echo $baseUrl; ?>/images/personalize.png"/>
                             </div>
                             <div class="global_text">
                                 <h3>Personalized One –To - One Sessions
@@ -116,7 +116,7 @@
                         </li>
                         <li>
                             <div class="global_img">
-                                <img src="images/support.png"/>
+                                <img src="<?php echo $baseUrl; ?>/images/support.png"/>
                             </div>
                             <div class="global_text">
                                 <h3>Continuous support via Email / WhatsApp
@@ -141,7 +141,7 @@
                         <div class="categories_container">
                             <div class="repeat_categories">
                                 <div class="repeat_icon">
-                                    <img src="images/resume_diagonisted_icon.png"/>
+                                    <img src="<?php echo $baseUrl; ?>/images/resume_diagonisted_icon.png"/>
                                 </div>
                                 <div class="categories-text">
                                     Resume Diagnostic
@@ -152,7 +152,7 @@
                             </div>
                             <div class="repeat_categories">
                                 <div class="repeat_icon">
-                                    <img src="images/resume_diagonisted_icon.png"/>
+                                    <img src="<?php echo $baseUrl; ?>/images/resume_diagonisted_icon.png"/>
                                 </div>
                                 <div class="categories-text">
                                 LinkedIn Diagnostic
@@ -163,7 +163,7 @@
                             </div>
                             <div class="repeat_categories">
                                 <div class="repeat_icon">
-                                    <img src="images/resume_diagonisted_icon.png"/>
+                                    <img src="<?php echo $baseUrl; ?>/images/resume_diagonisted_icon.png"/>
                                 </div>
                                 <div class="categories-text">
                                 Personal Branding
@@ -181,7 +181,7 @@
                         <div class="categories_container">
                             <div class="repeat_categories">
                                 <div class="repeat_icon">
-                                    <img src="images/resume_diagonisted_icon.png"/>
+                                    <img src="<?php echo $baseUrl; ?>/images/resume_diagonisted_icon.png"/>
                                 </div>
                                 <div class="categories-text">
                                 Industry Analysis
@@ -192,7 +192,7 @@
                             </div>
                             <div class="repeat_categories">
                                 <div class="repeat_icon">
-                                    <img src="images/resume_diagonisted_icon.png"/>
+                                    <img src="<?php echo $baseUrl; ?>/images/resume_diagonisted_icon.png"/>
                                 </div>
                                 <div class="categories-text">
                                 Company Analysis
@@ -203,7 +203,7 @@
                             </div>
                             <div class="repeat_categories">
                                 <div class="repeat_icon">
-                                    <img src="images/resume_diagonisted_icon.png"/>
+                                    <img src="<?php echo $baseUrl; ?>/images/resume_diagonisted_icon.png"/>
                                 </div>
                                 <div class="categories-text">
                                 Job Fitment Analysis
@@ -221,7 +221,7 @@
                         <div class="categories_container">
                             <div class="repeat_categories">
                                 <div class="repeat_icon">
-                                    <img src="images/resume_diagonisted_icon.png"/>
+                                    <img src="<?php echo $baseUrl; ?>/images/resume_diagonisted_icon.png"/>
                                 </div>
                                 <div class="categories-text">
                                 Mock Interview
@@ -232,7 +232,7 @@
                             </div>
                             <div class="repeat_categories">
                                 <div class="repeat_icon">
-                                    <img src="images/resume_diagonisted_icon.png"/>
+                                    <img src="<?php echo $baseUrl; ?>/images/resume_diagonisted_icon.png"/>
                                 </div>
                                 <div class="categories-text">
                                 Interview    Q & A
@@ -243,7 +243,7 @@
                             </div>
                             <div class="repeat_categories">
                                 <div class="repeat_icon">
-                                    <img src="images/resume_diagonisted_icon.png"/>
+                                    <img src="<?php echo $baseUrl; ?>/images/resume_diagonisted_icon.png"/>
                                 </div>
                                 <div class="categories-text custome_padding">
                                 Cracking GD
@@ -261,7 +261,7 @@
                         <div class="categories_container">
                             <div class="repeat_categories">
                                 <div class="repeat_icon">
-                                    <img src="images/resume_diagonisted_icon.png"/>
+                                    <img src="<?php echo $baseUrl; ?>/images/resume_diagonisted_icon.png"/>
                                 </div>
                                 <div class="categories-text custome_padding">
                                 InternACE
@@ -272,7 +272,7 @@
                             </div>
                             <div class="repeat_categories">
                                 <div class="repeat_icon">
-                                    <img src="images/resume_diagonisted_icon.png"/>
+                                    <img src="<?php echo $baseUrl; ?>/images/resume_diagonisted_icon.png"/>
                                 </div>
                                 <div class="categories-text custome_padding">
                                 InternPRO
@@ -283,7 +283,7 @@
                             </div>
                             <div class="repeat_categories">
                                 <div class="repeat_icon">
-                                    <img src="images/resume_diagonisted_icon.png"/>
+                                    <img src="<?php echo $baseUrl; ?>/images/resume_diagonisted_icon.png"/>
                                 </div>
                                 <div class="categories-text custome_padding">
                                 InternARISE
@@ -293,7 +293,8 @@
                                 </div>
                             </div>
                         </div>
-                    </li>   
+                    </li>  
+            </div> 
                 </ul>
             </div>
         </div>
