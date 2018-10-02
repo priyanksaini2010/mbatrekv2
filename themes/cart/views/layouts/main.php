@@ -8,23 +8,33 @@
             echo isset($this->pageTitle) ? ": " . $this->pageTitle : "";
             ?></title>      
 
-<?php echo $this->renderPartial("webroot.themes.cart.views.layouts.head"); ?>
+        <?php echo $this->renderPartial("webroot.themes.cart.views.layouts.head"); ?>
         <link rel="icon" href="<?php echo $baseUrl; ?>/images/favicon.ico" type="image/x-icon">
     </head>
     <body>
+        <div id="fb-root"></div>
+        <script>(function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id))
+                    return;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.1';
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script> 
         <div class="page-wrapper">
 
-<?php echo $this->renderPartial("webroot.themes.cart.views.layouts.header"); ?>
+                <?php echo $this->renderPartial("webroot.themes.cart.views.layouts.header"); ?>
 
             <div class="header-bottom">
-<?php echo $this->renderPartial("webroot.themes.cart.views.layouts.social"); ?>                        
+                <?php echo $this->renderPartial("webroot.themes.cart.views.layouts.social"); ?>                        
             </div> 
             <main>
             <?php echo $content; ?>
             </main>
         <?php echo $this->renderPartial("webroot.themes.cart.views.layouts.footer"); ?>
         </div>
-        <?php echo $this->renderPartial("webroot.themes.cart.views.layouts.foot"); ?>
+<?php echo $this->renderPartial("webroot.themes.cart.views.layouts.foot"); ?>
 
         <div id="myModal27" class="modal" data-easein="shake" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -49,6 +59,6 @@
                 </div>
             </div>
         </div>
-        <?php echo $this->renderPartial("webroot.themes.cart.views.layouts.validations"); ?> 
+<?php echo $this->renderPartial("webroot.themes.cart.views.layouts.validations"); ?> 
     </body>
 </html> 

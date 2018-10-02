@@ -299,5 +299,6 @@
             </div>
         </div>
     </div>
+<?php echo $this->renderPartial("webroot.themes.cart.views.cart.socialwidgets"); ?> 
 </div>
 
