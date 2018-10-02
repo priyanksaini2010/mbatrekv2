@@ -44,32 +44,10 @@
 										<a href="<?php echo Yii::app()->createUrl("site/forgot");?>">Forgot Password?</a>
 									</div>
 									<div class="signu_div">
-											<span><a href="#myModal27" role="button" class="btn btn-default" data-toggle="modal">Don’t </a>have an? account </span>
+											<span>Don’t have an? account </span>
                                                                                         <a href="<?php echo Yii::app()->createUrl("cart/register");?>">Sign up now</a>
 									</div>
-									 <div id="myModal27" class="modal" data-easein="shake" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-										<div class="modal-dialog">
-											<div class="modal-content">
-												<!--<div class="modal-header">
-													<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-													<h4 class="modal-title">Modal header</h4>
-												</div>-->
-													<div class="modal-body">
-														<div class="md-content">
-															<h3>Error !</h3>
-															<div class="error_wrap">
-																<div class="error_container">
-																	<p><i class="fa fa-warning" aria-hidden"true"=""></i> Please enter valid email address!</p>
-																</div>
-																<!-- <button class="md-close">OK</button> -->
-																<div class="main_register"><div class="site_btn"><a data-dismiss="modal" class="close" href="javascript:void(0);">OK</a></div></div>
-															</div>
-														</div>
-													</div>
-													
-											</div>
-										</div>
-									</div>
+									 
 								</div>
 							</div>
 						</div>
