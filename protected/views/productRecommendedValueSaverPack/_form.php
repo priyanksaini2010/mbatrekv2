@@ -45,7 +45,7 @@ $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
              <?php if($model->isNewRecord){?>
                 <input type="button" value="Create and Add More" id="addmore" class="btn btn-primary"/>
                 <?php if($return == 0){?>
-                <a href="<?php echo Yii::app()->createUrl("productKeypoints/create",array("id"=>$product_id));?>" class="btn btn-warning btn-lg">
+                <a href="<?php echo Yii::app()->createUrl("productKeyPoints/create",array("id"=>$product_id));?>" class="btn btn-warning btn-lg">
                     <span class="glyphicon glyphicon-forward"></span> Skip
                 </a>
                 <?php } else{?>

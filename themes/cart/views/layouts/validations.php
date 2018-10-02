@@ -15,9 +15,9 @@
 	 validationMethod("thanks","Please check your inbox for password for recovery.")
     <?php }?>
     <?php if(isset($_REQUEST['underconst'])){?>
-	 validationMethod("underconst","This page is under construction.")
+	 validationMethod("error","This page is under construction.")
     <?php }?>
     <?php if(isset($_REQUEST['thankc'])){?>
-	 validationMethod("thankc","Thanks for your feedback, we will get in touch with you soon.")
+	 validationMethod("thanks","Thanks for your feedback, we will get in touch with you soon.")
     <?php }?>
 </script>

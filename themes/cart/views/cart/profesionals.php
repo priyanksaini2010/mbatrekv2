@@ -228,7 +228,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                 </div>
                                 <div class="col-xs-12 col-md-6 col-lg-3 cta-home">
                                     <div class="">
-                                        <a href="educational-institute.html" class="cta-link1">
+                                        <a href="#" class="cta-link1">
                                             <span class="cta-img">
                                                 <img src="<?php echo $baseUrl; ?>/images/multiple3.png"></span>
                                             <p class="section-pra">Multiple
@@ -245,7 +245,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                 </div>
                                 <div class="col-xs-12 col-md-6 col-lg-2 cta-home">
                                     <div class="">
-                                        <a href="company.html" class="cta-link1">
+                                        <a href="#" class="cta-link1">
                                             <span class="cta-img"><img src="<?php echo $baseUrl; ?>/images/multiple4.png"></span>
 
                                             <p class="section-pra">On-demand
@@ -261,7 +261,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                 </div>
                                 <div class="col-xs-12 col-md-6 col-lg-2 cta-home">
                                     <div class="">
-                                        <a href="company.html" class="cta-link1">
+                                        <a href="#" class="cta-link1">
                                             <span class="cta-img">
                                                 <img src="<?php echo $baseUrl; ?>/images/linked_icon.png"></span>
                                             <p class="section-pra">LinkedIn
@@ -330,7 +330,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                             <div class="intern-type">
                                                                 <div class="top-icon">
                                                                     <a href="#">
-                                                                        <img src="assets/products/<?php echo $prod->logo;?>">
+                                                                        <img src="<?php echo Yii::app()->request->baseUrl;?>/assets/products/<?php echo $prod->logo;?>">
                                                                     </a>
                                                                 </div>
                                                                 <div class="intern-title"><?php echo $prod->title;?></div>
@@ -369,7 +369,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                             <div class="intern-type">
                                                                 <div class="top-icon">
                                                                     <a href="#">
-                                                                        <img src="assets/products/<?php echo $prod->logo;?>">
+                                                                        <img src="<?php echo Yii::app()->request->baseUrl;?>/assets/products/<?php echo $prod->logo;?>">
                                                                     </a>
                                                                 </div>
                                                                 <div class="intern-title"><?php echo $prod->title;?></div>
@@ -408,7 +408,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                             <div class="intern-type">
                                                                 <div class="top-icon">
                                                                     <a href="#">
-                                                                        <img src="assets/products/<?php echo $prod->logo;?>">
+                                                                        <img src="<?php echo Yii::app()->request->baseUrl;?>/assets/products/<?php echo $prod->logo;?>">
                                                                     </a>
                                                                 </div>
                                                                 <div class="intern-title"><?php echo $prod->title;?></div>
