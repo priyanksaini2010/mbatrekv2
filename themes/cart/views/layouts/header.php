@@ -54,11 +54,11 @@
                                                                     
 									<li class="kopie"><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"25")); ?>">Resume / CV Diagnostic</a></li>
 									<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"24")); ?>">Linkedin Diagnostic</a></li>
-									<li><a href="#">Mock Interviews</a></li>
+									<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"30")); ?>">Mock Interviews</a></li>
 									<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"23")); ?>">Interviews Q & A</a></li>
 									<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"18")); ?>">Industry Analysis</a></li>
 									<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"21")); ?>">Company Analysis</a></li>
-									<li><a href="#">Job Fitment Analysis</a></li>
+									<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"29")); ?>">Job Fitment Analysis</a></li>
 									<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"22")); ?>">Cracking GD</a></li>
 									<!--<li><a href="#">InternACE</a></li>
 									<li><a href="#">InternPRO</a></li>
@@ -69,8 +69,8 @@
 								<ul>
 									<li class="kopie"><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"20")); ?>">InternGO</a></li>
 <!--<li><a href="https://mbatrek.com/v2/index.php?r=cart/description&id=22">Cracking GD</a></li>-->
-                                                                        <li><a href="#">InternACE</a></li>
-                                                                        <li><a href="#">InternPRO</a></li>
+                                                                        <li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"28")); ?>">InternACE</a></li>
+                                                                        <li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"27")); ?>">InternPRO</a></li>
 <li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"17")); ?>">InternARISE</a></li>
 								
 	<li><a href="#">Campus2Corporate</a></li>
@@ -86,12 +86,12 @@
 									<!--<li class="kopie"><a href="#">#CareerPlanning </a></li>
 									 <li class="kopie"><a href="#">#IndustryReady </a></li>
 									 <li class="kopie"><a href="#">#InterviewReady </a></li>-->
-									<li class="kopie"><a href="#">Industry Analysis</a></li>	
-									<li class="kopie"><a href="#">Company Analysis</a></li>
-									<li class="kopie"><a href="#">Job Fitment Analysis </a></li>
-									<li class="kopie"><a href="#">Resume / CV Diagnostic</a></li>
-									<li class="kopie"><a href="#">LinkedIn Diagnostic </a></li>
-									<li class="kopie"><a href="#">Mock Interview </a></li>
+									<li class="kopie"><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"18")); ?>">Industry Analysis</a></li>	
+									<li class="kopie"><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"21")); ?>">Company Analysis</a></li>
+									<li class="kopie"><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"29")); ?>">Job Fitment Analysis </a></li>
+									<li class="kopie"><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"25")); ?>">Resume / CV Diagnostic</a></li>
+									<li class="kopie"><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"24")); ?>">LinkedIn Diagnostic </a></li>
+									<li class="kopie"><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"30")); ?>">Mock Interview </a></li>
 									<li class="kopie"><a href="#">Interview Q & A</a></li>
 								</ul>
 							</li>      
