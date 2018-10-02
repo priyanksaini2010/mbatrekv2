@@ -1,5 +1,5 @@
 a{text-decoration:none!important;}
-header{background:#348786;padding: 8px 0 5px 0;}
+header{background:#348786;padding: 14px 0 0px 0;}
 ul,ol{margin:0;}
 .navbar-default {
 	 background:none; 
@@ -94,10 +94,10 @@ ul,ol{margin:0;}
 
 .dropdown-menu {
 	position: absolute;
-	top: 33px;
+	top: 52px;
 	left: 0;
 	z-index: 1000;
-	display: none;
+	
 	float: left;
 	min-width: 213px;
 	padding: 11px 0 0 0;
@@ -106,33 +106,33 @@ ul,ol{margin:0;}
 	text-align: left;
 	list-style: none;
 	background-color:transparent;
-	/* -webkit-background-clip: padding-box; */
-	/* background-clip: padding-box; */
-	/* border: 1px solid #ccc; */
-	/* border: 1px solid rgba(0,0,0,.15); */
-	/* border-radius: 4px; */
-	/* -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175); */
-	/* box-shadow: 0 6px 12px rgba(0,0,0,.175); */
+	opacity: 0;
+    visibility: hidden;
+    -webkit-transition: top 0.4s ease,opacity 0.4s ease,visibility 0.4s ease;
+    -moz-transition: top 0.4s ease,opacity 0.4s ease,visibility 0.4s ease;
+    -ms-transition: top 0.4s ease,opacity 0.4s ease,visibility 0.4s ease;
+    -o-transition: top 0.4s ease,opacity 0.4s ease,visibility 0.4s ease;
+    transition: top 0.4s ease,opacity 0.4s ease,visibility 0.4s ease;
 }
 /*header end*/
 
 
-.logo{width: auto;
+.logo{width: auto;display:none;
 
 max-width: 60px;
 
 float: left;}
-.logo2{width: auto;
+.logo2{width: auto;display:none;
 
 max-width: 144px;
 
 float: left;}
 .navbar-nav {
 	float: right;
-	margin: 14px 0;
+	margin:0;
 }
 .navbar{margin-bottom:0;}
-.navi li a {
+.navi> li> a {
 	color: #fff !important;
 	font-size: 15px;
 	border-radius: 20px;
@@ -162,6 +162,7 @@ float: left;}
 {
 	
     margin: 0 5px 0px 0;
+	padding:0px 0 16px 0;
    
 }
 .navi li> a .icon_nav
@@ -901,7 +902,10 @@ user-select: none;
  
 @media (min-width: 768px) {
   ul.nav li:hover > ul.dropdown-menu {
-    display: block;
+    display: block!important;
+	    opacity: 1;
+    visibility: visible;
+    top: 33px;
   }
   #navbar {
     text-align: center;
@@ -1236,3 +1240,186 @@ text-align: center;border-radius: 2px;}
     width: 33%;
     display: inline-block;
 }
+.navbar-nav  ul{
+	width:216px;position:absolute;    top:65px;padding: 11px 0 0 0px;
+	opacity: 0;
+    visibility: hidden;
+    -webkit-transition: top 0.4s ease,opacity 0.4s ease,visibility 0.4s ease;
+    -moz-transition: top 0.4s ease,opacity 0.4s ease,visibility 0.4s ease;
+    -ms-transition: top 0.4s ease,opacity 0.4s ease,visibility 0.4s ease;
+    -o-transition: top 0.4s ease,opacity 0.4s ease,visibility 0.4s ease;
+    transition: top 0.4s ease,opacity 0.4s ease,visibility 0.4s ease;
+	
+	}
+.navbar-collapse > .navbar-nav > li:hover >ul
+{
+	top:48px;
+	visibility:visible;
+	opacity:1;
+	    z-index: 9;
+}
+.navbar-collapse > .navbar-nav > li >ul >li:first-child:after
+{
+	position: absolute;
+	content: "\f0d8";
+	font-family: 'FontAwesome';
+	top: -24px;
+	line-height: normal;
+	font-size: 36px;
+	left: 17px;
+	color:#348786;
+	    z-index: -1;
+}
+.navbar-nav li ul li{background:#348786;padding:0;position:relative;}
+.navbar-nav li ul li:first-child a{padding-top:11px;}
+.navbar-nav li ul li:last-child{padding-bottom:11px;}
+.navbar-nav li ul li a{color:#fff;font-size:15px;display:block;font-family: 'MyriadPro-Regular';padding:7px 7px 4px 7px;}
+
+/* second tire */
+.navbar-collapse > .navbar-nav > li >ul >li >ul
+{
+	 left: 101%;
+	  padding-top: 0;
+}
+.navbar-collapse > .navbar-nav > li >ul >li:hover >a{background:#fff;color:#348786}
+.navbar-collapse > .navbar-nav > li >ul >li >ul li:hover >a{background:#fff;color:#348786}
+.navbar-collapse > .navbar-nav > li >ul >li:hover >ul
+{
+	top: 0;
+    visibility: visible;
+    opacity: 1;
+}
+
+/* third tire */
+.navbar-collapse > .navbar-nav > li >ul >li >ul>li >ul
+{
+	z-index:1;
+	left: 101%;
+    padding-top: 0;
+}
+.navbar-collapse > .navbar-nav > li >ul >li >ul>li:hover ul
+{
+	top: 0px;
+    visibility: visible;
+    opacity: 1;
+}
+.login_wrapper .phAnimate {
+    margin-bottom: 0;
+}
+.modal .modal-body {
+    padding: 0;
+}
+.md-content {
+    color: #fff;
+    background: #fff;
+    position: relative;
+    border-radius: 3px;
+    margin: 0 auto;
+}
+.md-content h3 {
+    color: #fff;
+    padding: 7px 0 5px 8px;
+    display: block;
+    background: #09AFB7;font-family: 'MyriadPro-Semibold';
+    font-size: 16px;
+	margin:0;
+	text-align:center;
+}
+.error_wrap {
+    width: 100%;
+    float: left;
+    background: #fff;
+    padding: 5px 0 10px 0;
+}
+.error_container {
+    width: 100%;
+    float: left;
+    padding: 16px 8px 13px 8px;
+}
+.modal .modal-dialog {
+    width: 241px;
+	    margin: 190px auto 30px;
+}
+.error_container p {
+    color: red;
+
+}
+.site_btn{width:100%;float:left;text-align:center;}
+.site_btn a{padding: 7px 40px 6px 40px;
+    font-size: 18px;display:inline-block;float:none;
+    background: #229897;border-radius:5px;
+    border: none;opacity:1;text-shadow:none;color:#fff;font-family: 'MyriadPro-Semibold';}
+.site_btn a:hover{opacity:1;text-shadow:none;}
+.how_We_engage{
+    width: 100%;
+    float: left;
+    text-align: center;
+    margin: 31px 0 0 0;
+    background: #e7e7e7;
+    padding: 48px 0 44px 0;
+}
+.how_We_engage ul li .title_eng h3{color: #348786;font-size: 27px;font-family: 'MyriadPro-Semibold';text-align: center;    margin: 0 0 8px 0;}
+.engage_img{padding:0 0 12px 0;}
+.how_We_engage ul li {display: inline-block;list-style: none;  position: relative;  width:21.3%;border:2px solid #348786;  border-radius: 42px;  margin-right: 143px;padding: 26px 20px 13px 20px;}
+.how_We_engage ul li:last-child{margin:0;}
+.title_descrip{color: #000;font-size: 22px;font-family: 'MyriadPro-Semibold';text-align: center;    margin: 0 0 8px 0;}
+.price_eng label{color: #348786;font-size: 27px;font-family: 'MyriadPro-Semibold';text-align: center;    margin: 0 0 8px 0;}
+.how_We_engage ul li >  img{position: absolute;    top: 103px;
+    right: -99px;}
+.discount_eng{width: 100%;float: left;}
+.combo_price{    width: 225px;
+    display: inline-block;
+    text-align: center;
+    background: #f1aa35;
+    padding: 10px 0 11px 0;
+    border-radius: 16px;
+    margin: 38px 0 0 0;}
+.combo_price label{color: #fff;font-size: 18px;display: block;font-weight: normal;margin:0;}
+.combo_price span{display: block;color: #fff;font-size: 16px;}
+.combo_price span.discount_line{text-decoration: line-through;  padding: 2px 0 3px 0;}
+.price_detail_home{width: 100%;float: left;}
+.arrow_center{width:100%;float: left;}
+.home_sec_2{width: 100%;float: left;background: #348786;    margin: 56px 0 0 0;}
+.global_experiance{width: 100%;float: left;    padding: 16px 0 15px 0;}
+.global_experiance ul li{display: inline-block;width:33.1%;padding: 0 20px 0px 0;vertical-align: top;}
+.global_experiance ul li:last-child{padding:0;}
+.global_experiance ul li .global_img{display: inline-block;    max-width: 100px;vertical-align: top;    float: left;}
+.global_experiance ul li .global_text{display: table;    max-width: 254px;}
+.global_experiance ul li .global_text h3{color: #fff;font-size: 20px;font-family: 'MyriadPro-Semibold';    margin: 0;    vertical-align: middle;
+    display: table-cell;
+    height: 101px;
+    line-height: 26px;
+    text-align: center;}
+.bulid_categories{width:100%;float: left;    padding: 45px 0 0 0;}
+.bulid_categories ul li{display: inline-block;list-style: none;width: 20%;margin-right: 73px;}
+.bulid_categories ul li .bulid_button a{background: #348786; 
+    color: #fff;
+    display: inline-block;
+    padding: 7px 20px 3px 20px;
+    font-size: 22px;
+    font-weight: normal;
+    border-radius: 8px;}
+.repeat_categories{width: 100%;float: left;   margin-top: 12px; padding: 10px 11px 4px 11px;    border: 2px solid #348786;
+    border-radius: 12px;}
+.repeat_categories .repeat_icon{display: inline-block;    vertical-align: top;}
+.repeat_categories .categories-text{display: inline-block;color: #348786;font-size: 22px;font-family: 'MyriadPro-Semibold';    max-width: 136px;
+    text-align: center;}
+.categories_price{width: 100%;float: left;}
+.categories_price span{color: #73942f;font-weight: normal;font-size: 16px;}
+.bulid_categories .bulid_button{text-align: center;}
+.bulid_categories ul li:last-child{margin:0;}
+.bulid_categories .categories_container{position: relative;}
+.bulid_categories .categories_container:after
+{
+    position: absolute;
+    content: "";
+    height: 300px;
+    width: 1px;
+    background: #ccc;
+    right: -40px;
+    top: 10px;
+    bottom: 0;
+    margin: auto;
+}
+.bulid_categories ul li:last-child .categories_container:after{display: none;}
+.custome_padding{padding:13px 0 18px 15px;}

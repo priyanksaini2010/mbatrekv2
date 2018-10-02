@@ -78,6 +78,225 @@
                               </div>
                         </div>
                     </div>
+                    <div class="col-md-12">
+                        <div class="price_detail_home">
+                            <div class="arrow-icon ">
+                                <a href="#"><img src="/v2/themes/cart/images/blue-arrow-down.jpg"></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 </div>
-				</div>
+                </div>
+<div class="home_sec_2">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="global_experiance"> 
+                    <ul>
+                        <li>
+                            <div class="global_img">
+                                <img src="images/global.png"/>
+                            </div>
+                            <div class="global_text">
+                                <h3>1500+ Years of 
+                                Global Experience from our core team & industry experts
+                                </h3>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="global_img">
+                                <img src="images/personalize.png"/>
+                            </div>
+                            <div class="global_text">
+                                <h3>Personalized One –To - One Sessions
+
+                                </h3>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="global_img">
+                                <img src="images/support.png"/>
+                            </div>
+                            <div class="global_text">
+                                <h3>Continuous support via Email / WhatsApp
+                                </h3>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="bulid_categories">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <ul>
+                    <li>
+                        <div class="bulid_button">
+                            <a href="">Build your own Brand</a>
+                        </div>
+                        <div class="categories_container">
+                            <div class="repeat_categories">
+                                <div class="repeat_icon">
+                                    <img src="images/resume_diagonisted_icon.png"/>
+                                </div>
+                                <div class="categories-text">
+                                    Resume Diagnostic
+                                </div>
+                                <div class="categories_price">
+                                    <span>Price &#8377;  800</span>
+                                </div>
+                            </div>
+                            <div class="repeat_categories">
+                                <div class="repeat_icon">
+                                    <img src="images/resume_diagonisted_icon.png"/>
+                                </div>
+                                <div class="categories-text">
+                                LinkedIn Diagnostic
+                                </div>
+                                <div class="categories_price">
+                                    <span>Price &#8377;  800</span>
+                                </div>
+                            </div>
+                            <div class="repeat_categories">
+                                <div class="repeat_icon">
+                                    <img src="images/resume_diagonisted_icon.png"/>
+                                </div>
+                                <div class="categories-text">
+                                Personal Branding
+                                </div>
+                                <div class="categories_price">
+                                    <span>Price &#8377;  800</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>   
+                    <li>
+                        <div class="bulid_button">
+                            <a href="">Company / Industry & Job Fitment</a>
+                        </div>
+                        <div class="categories_container">
+                            <div class="repeat_categories">
+                                <div class="repeat_icon">
+                                    <img src="images/resume_diagonisted_icon.png"/>
+                                </div>
+                                <div class="categories-text">
+                                Industry Analysis
+                                </div>
+                                <div class="categories_price">
+                                    <span>Price &#8377;  800</span>
+                                </div>
+                            </div>
+                            <div class="repeat_categories">
+                                <div class="repeat_icon">
+                                    <img src="images/resume_diagonisted_icon.png"/>
+                                </div>
+                                <div class="categories-text">
+                                Company Analysis
+                                </div>
+                                <div class="categories_price">
+                                    <span>Price &#8377;  800</span>
+                                </div>
+                            </div>
+                            <div class="repeat_categories">
+                                <div class="repeat_icon">
+                                    <img src="images/resume_diagonisted_icon.png"/>
+                                </div>
+                                <div class="categories-text">
+                                Job Fitment Analysis
+                                </div>
+                                <div class="categories_price">
+                                    <span>Price &#8377;  800</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>  
+                    <li>
+                        <div class="bulid_button">
+                            <a href="">Preparing for Placements</a>
+                        </div>
+                        <div class="categories_container">
+                            <div class="repeat_categories">
+                                <div class="repeat_icon">
+                                    <img src="images/resume_diagonisted_icon.png"/>
+                                </div>
+                                <div class="categories-text">
+                                Mock Interview
+                                </div>
+                                <div class="categories_price">
+                                    <span>Price &#8377;  800</span>
+                                </div>
+                            </div>
+                            <div class="repeat_categories">
+                                <div class="repeat_icon">
+                                    <img src="images/resume_diagonisted_icon.png"/>
+                                </div>
+                                <div class="categories-text">
+                                Interview    Q & A
+                                </div>
+                                <div class="categories_price">
+                                    <span>Price &#8377;  800</span>
+                                </div>
+                            </div>
+                            <div class="repeat_categories">
+                                <div class="repeat_icon">
+                                    <img src="images/resume_diagonisted_icon.png"/>
+                                </div>
+                                <div class="categories-text custome_padding">
+                                Cracking GD
+                                </div>
+                                <div class="categories_price">
+                                    <span>Price &#8377;  800</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>  
+                    <li>
+                        <div class="bulid_button">
+                            <a href="">Preparing for Internship</a>
+                        </div>
+                        <div class="categories_container">
+                            <div class="repeat_categories">
+                                <div class="repeat_icon">
+                                    <img src="images/resume_diagonisted_icon.png"/>
+                                </div>
+                                <div class="categories-text custome_padding">
+                                InternACE
+                                </div>
+                                <div class="categories_price">
+                                    <span>Price &#8377;  800</span>
+                                </div>
+                            </div>
+                            <div class="repeat_categories">
+                                <div class="repeat_icon">
+                                    <img src="images/resume_diagonisted_icon.png"/>
+                                </div>
+                                <div class="categories-text custome_padding">
+                                InternPRO
+                                </div>
+                                <div class="categories_price">
+                                    <span>Price &#8377;  800</span>
+                                </div>
+                            </div>
+                            <div class="repeat_categories">
+                                <div class="repeat_icon">
+                                    <img src="images/resume_diagonisted_icon.png"/>
+                                </div>
+                                <div class="categories-text custome_padding">
+                                InternARISE
+                                </div>
+                                <div class="categories_price">
+                                    <span>Price &#8377;  800</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>   
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+

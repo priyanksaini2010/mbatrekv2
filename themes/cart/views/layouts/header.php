@@ -28,11 +28,11 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navi">
                 <li class="home"><a href="<?php echo Yii::app()->createUrl('cart/index'); ?>">Home</a>
-                <span class="icon_nav"></span>
+               
                 </li>
-                <li class="dropdown  about">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">About us</a><span class="icon_nav"></span>
-                    <ul class="dropdown-menu" role="menu">
+                <li class="about">
+                    <a href="#">About us</a></span>
+                    <ul>
                     <li><a href="<?php echo Yii::app()->createUrl('our-story'); ?>">Introduction to MBAtrek</a></li>
                     <li><a href="<?php echo Yii::app()->createUrl('how-are-we-different'); ?>">How are we different</a></li>
 	<!--	<li><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"mbatrek_on_the_ground")); ?>">MBAtrek on the ground</a></li>-->
@@ -42,14 +42,15 @@
                     
                   </ul>
                 </li>
-                <li class="dropdown service">
-                  <a href="#" class="dropdown-toggle" data-toggle=" dropdown">Our Products </a>	<span class="icon_nav"></span>			
-                  <ul class="dropdown-menu" role="menu">
-                    <li class=" dropdown dropdown-submenu">
-						<a class="dropdown-toggle sub_menu" data-toggle="dropdown" href="<?php echo Yii::app()->createUrl('cart/student'); ?>">Students</a>
-						<ul class="dropdown-menu">
-							<li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle sub_menu" data-toggle="dropdown">Offerings</a>
-								<ul class="dropdown-menu">
+                <li class="service">
+                  <a href="javascript:void(0);" >Our Products </a>		
+                  <ul>
+                    <li>
+						<a href="<?php echo Yii::app()->createUrl('cart/student'); ?>">Students <i class="pull-right fa fa-angle-double-right" aria-hidden="true"></i></a>
+						<ul>
+							<li>
+								<a href="#">Offerings <i class="pull-right fa fa-angle-double-right" aria-hidden="true"></i></a>
+								<ul>
                                                                     
 									<li class="kopie"><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"25")); ?>">Resume / CV Diagnostic</a></li>
 									<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"24")); ?>">Linkedin Diagnostic</a></li>
@@ -64,8 +65,8 @@
 									<li><a href="https://mbatrek.com/v/index.php?r=cart/description&id=17">InternARISE</a></li>-->
 								</ul>
 							</li>     
-							<li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle sub_menu" data-toggle="dropdown">Packages</a>
-								<ul class="dropdown-menu">
+							<li><a href="#">Packages <i class="pull-right fa fa-angle-double-right" aria-hidden="true"></i></a> 
+								<ul>
 									<li class="kopie"><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"20")); ?>">InternGO</a></li>
 <!--<li><a href="https://mbatrek.com/v2/index.php?r=cart/description&id=22">Cracking GD</a></li>-->
                                                                         <li><a href="#">InternACE</a></li>
@@ -77,11 +78,11 @@
 							</li>     						
 						</ul>
 					</li>
-                    <li class="dropdown dropdown-submenu">
-						<a class="dropdown-toggle sub_menu" data-toggle="dropdown" href="<?php echo Yii::app()->createUrl('cart/profesionals'); ?>">Young Professionals</a>
-						<ul class="dropdown-menu">
-							<li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle sub_menu" data-toggle="dropdown">Offerings</a>
-								<ul class="dropdown-menu">
+                    <li>
+						<a href="<?php echo Yii::app()->createUrl('cart/profesionals'); ?>">Young Professionals <i class="pull-right fa fa-angle-double-right" aria-hidden="true"></i></a>
+						<ul>
+							<li><a href="#" >Offerings <i class="pull-right fa fa-angle-double-right" aria-hidden="true"></i></a>
+								<ul>
 									<!--<li class="kopie"><a href="#">#CareerPlanning </a></li>
 									 <li class="kopie"><a href="#">#IndustryReady </a></li>
 									 <li class="kopie"><a href="#">#InterviewReady </a></li>-->
@@ -93,9 +94,9 @@
 									<li class="kopie"><a href="#">Mock Interview </a></li>
 									<li class="kopie"><a href="#">Interview Q & A</a></li>
 								</ul>
-							</li>     
-							<li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle sub_menu" data-toggle="dropdown">Packages</a>
-								<ul class="dropdown-menu">
+							</li>      
+							<li><a href="#" >Packages <i class="pull-right fa fa-angle-double-right" aria-hidden="true"></i></a>
+								<ul>
 									<!--<li class="kopie"><a href="#">Industry Ana</a></li>
 									<li><a href="#">Compus2Corporate</a></li>-->
 									<li class="kopie"><a href="#">#CareerPlanning </a></li>
@@ -107,10 +108,9 @@
 					</li>
                   </ul>                
                 </li>
-                <li class="dropdown insights">
-                  <a href="#" class="dropdown-toggle" data-toggle="
-                  dropdown">Insights </a>	<span class="icon_nav"></span>			
-                  <ul class="dropdown-menu" role="menu">
+                <li>
+                  <a href="#">Insights </a>				
+                  <ul >
                     <li><a href="<?php echo Yii::app()->createUrl('blogs'); ?>">Blog</a></li>
 <li><a href="<?php echo Yii::app()->createUrl('mbatrek-on-the-ground'); ?>">MBAtrek on the ground</a></li>
                     <li><a href="#">Another action</a></li>
@@ -118,8 +118,8 @@
                     <li><a href="#">Separated link</a></li>
                   </ul>                
                 </li>
-                <li class="success"><a href="<?php echo Yii::app()->createUrl('our-story'); ?>">Success Stories</a><span class="icon_nav"></span></li>
-                <li class="faq"><a href="<?php echo Yii::app()->createUrl('frequently-asked-questions'); ?>">FAQ</a><span class="icon_nav"></span></li>
+                <li class="success"><a href="<?php echo Yii::app()->createUrl('our-story'); ?>">Success Stories</a></li>
+                <li class="faq"><a href="<?php echo Yii::app()->createUrl('frequently-asked-questions'); ?>">FAQ</a></li>
 
                 <li class="contact"><a href="<?php echo Yii::app()->createUrl('contact-us'); ?>">Contact Us</a></li>
             </ul>
