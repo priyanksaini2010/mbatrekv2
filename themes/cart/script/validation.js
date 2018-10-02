@@ -1,7 +1,21 @@
 // Method to call validation pop up or alerts
 function validationMethod(id,text){
-    
-    alert(text);
+//    alert(id);
+    switch(id){
+        case "error":
+            $("#pop-notification-type").text("Error !");
+            $("#pop-notification-class").addClass("fa-warning");
+            $("#pop-notification-class").removeClass("fa-check");
+            break;
+        case "thanks":
+            $("#pop-notification-type").text("Thanks");
+            $("#pop-notification-class").addClass("fa-check");
+            $("#pop-notification-class").removeClass("fa-warning");
+            break;
+    }
+     $("#pop-notification-text").text(text);
+    $('#myModal27').modal('show');
+//    alert(text);
 }
 // Method to validate email
 function validateEmail(emailField) {
@@ -29,21 +43,21 @@ $(document).ready(function(){
             return false;
         }
         if ($("#UsersNew_email").val() == "" || !validateEmail($("#UsersNew_email").val())){
-            validationMethod("UsersNew_email","Please enter valid email.");return false;
+            validationMethod("error","Please enter valid email.");return false;
         }
         if ($("#UsersNew_password").val() == ""){
-            validationMethod("UsersNew_password","Please enter password.");return false;
+            validationMethod("error","Please enter password.");return false;
         }
         if ($("#UsersNew_password").val().length < 6){
-            validationMethod("UsersNew_cpassword","Please password of atleast 7 characters.");return false;
+            validationMethod("error","Please password of atleast 7 characters.");return false;
         }
         if ($("#UsersNew_cpassword").val() == ""){
-            validationMethod("UsersNew_cpassword","Please confirm password!");return false;
+            validationMethod("error","Please confirm password!");return false;
         }
        
         
         if ($("#UsersNew_cpassword").val() != $("#UsersNew_password").val()){
-            validationMethod("UsersNew_cpassword","Confirm password and Password must be same.");return false;
+            validationMethod("error","Confirm password and Password must be same.");return false;
         }
         return true;
     });
@@ -54,12 +68,12 @@ $("#contact-form").submit(function() {
             
             if ($("#Contact_first_name").val() == "") {
                 $("#Contact_first_name").focus()
-                validationMethod("Contact_first_name","Please enter first name.");
+                validationMethod("error","Please enter first name.");
                 return false;
             }
             if ($("#Contact_last_name").val() == "") {
                 $("#Contact_last_name").focus()
-                validationMethod("Contact_last_name","Please enter last name.");
+                validationMethod("error","Please enter last name.");
                 return false;
             }
             if ($("#Contact_email").val() == "" || !validateEmail($("#Contact_email").val())) {
@@ -69,22 +83,22 @@ $("#contact-form").submit(function() {
             }   
             if ($("#Contact_mobile_no").val() == "") {
                 $("#Contact_mobile_no").focus()
-                validationMethod("Contact_mobile_no","Please enter valid mobile number.");
+                validationMethod("error","Please enter valid mobile number.");
                 return false;
             }
             if ($("#Contact_name_of_company_institute").val() == "") {
                 $("#Contact_name_of_company_institute").focus()
-                validationMethod("Contact_name_of_company_institute","Please enter name of Company / Institute.");
+                validationMethod("error","Please enter name of Company / Institute.");
                 return false;
             }
             if ($("#Contact_subject").val() == "") {
                 $("#Contact_subject").focus()
-                validationMethod("Contact_subject","Please enter subject.");
+                validationMethod("error","Please enter subject.");
                 return false;
             }
             if ($("#Contact_subject").val() == "") {
                 $("#Contact_subject").focus()
-                validationMethod("Contact_your_message","Please enter your message.");
+                validationMethod("error","Please enter your message.");
                 return false;
             }
             
