@@ -713,6 +713,14 @@ footer .footer-logo{
     vertical-align: top;
     width: 100%;
 }
+.arrow-icon a{    transition: all 0.30s ease-in-out;display: inline-block;
+    -moz-transition: all 0.30s ease-in-out;
+    -webkit-transition: all 0.30s ease-in-out;}
+.arrow-icon a:hover{
+	transform: scale(1.1,1.1);
+    -moz-transform: scale(1.1,1.1);
+    -webkit-transform: scale(1.1,1.1);
+}
 .student-cta1{
     padding-top: 110px;
 }

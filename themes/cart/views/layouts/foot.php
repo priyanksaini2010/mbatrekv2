@@ -7,6 +7,7 @@
         <script src="<?php echo $baseUrl; ?>/script/scripts" type="text/javascript"></script> 
         <script src="<?php echo $baseUrl; ?>/script/validation.js" type="text/javascript"></script> 
 		<script src="<?php echo $baseUrl; ?>/js/custome_new.js"></script>
+		<script src="<?php echo $baseUrl; ?>/js/responsiveslides.min.js"></script>
 		
 <!------ Include the above in your HEAD tag ---------->
 <script>

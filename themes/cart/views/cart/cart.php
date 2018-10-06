@@ -66,8 +66,16 @@ if(isset(Yii::app()->user->id)){
                             <div class="price_cart">
                                 <label>Sub Total (<?php echo count($cart)>1?count($cart)." Items":count($cart)." Item";?>): <span> &#8377 <?php echo money($total);?></span></label>
                                 <a href="<?php echo Yii::app()->createUrl("cart/checkout");?>">Checkout</a>
-                            </div>
+                            </div> 
                             <span class="promocode">Have a promocode? Enter here</span>
+							<div class="promo_card_apply">
+								<label>Kindly Login with your college ID to apply the promocode</label>
+								<div class="phAnimate"><label for="lastname">Email ID: <em>*</em></label> <input id="name" class="input_field" type="text" name="name" /></div>
+								<div class="phAnimate"><label for="lastname">Password: <em>*</em></label> <input id="name" class="input_field" type="text" name="name" /></div>
+								<div class="promo_btn">
+									<input type="submit" value="Submit" name="submit" />
+								</div>
+							</div>
                         </div>
                     </div>
                 </div>
