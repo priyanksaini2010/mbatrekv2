@@ -31,8 +31,10 @@
 //			"ip" =>$_SERVER['REMOTE_ADDR'],
 //			"status" => 1,
 //		    ));
+//                    pr($_COOKIE,false);
 		    if(isset($_COOKIE['products'])){
                         $cookieCart = unserialize($_COOKIE['products']);
+                        
                     }
                     if (isset(Yii::app()->user->id)) {
                     $cart = Cart::model()->findAllByAttributes(array("user_id" => Yii::app()->user->id, "status" => 1));?>
@@ -60,8 +62,8 @@
                                 <div class="items-inner">
                                     <span class="item-title">
                                         <label class="container-cart"><?php echo $cart->product->title?>
-                                            <input type="checkbox" checked="checked">
-                                            <span class="checkmark"></span>
+                                            <input type="checkbox" checked="checked" class="cart-remove" value="<?php echo $cart->product->id;?>">
+                                            <span class="checkmark" ></span>
                                         </label>
                                     </span>
                                     <span class="item-price"><?php echo money($cart->product->price);?></span>                                                
@@ -93,7 +95,7 @@
                                 <div class="items-inner">
                                     <span class="item-title">
                                         <label class="container-cart"><?php echo $cart->title?>
-                                            <input type="checkbox" checked="checked">
+                                            <input type="checkbox" checked="checked"  class="cart-remove" value="<?php echo $cart->id;?>">
                                             <span class="checkmark"></span>
                                         </label>
                                     </span>

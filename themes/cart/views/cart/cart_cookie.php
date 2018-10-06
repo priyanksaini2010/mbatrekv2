@@ -10,6 +10,8 @@ foreach ($products as $c){
           break;
     }
   }
+   $baseUrl = Yii::app()->request->baseUrl;
+           
 ?>
  <div class="cart_area_wrapper">
     <div class="container">
@@ -31,7 +33,7 @@ foreach ($products as $c){
                                     ?>
 <ul class="list-inline">
                                     <li class="cart_icon">
-                                        <img height="44" width="41" src="assets/products/<?php echo $icart->logo;?>"/>
+                                        <img height="44" width="41" src="<?php echo $baseUrl;?>/assets/products/<?php echo $icart->logo;?>"/>
                                         <span><?php echo $icart->title;?></span>
                                     </li>
                                     <li class="cart_label">
@@ -43,7 +45,7 @@ foreach ($products as $c){
                                     </li></ul>
                                     <?php }}else {?>
                                     <li class="cart_icon">
-                                        <img height="44" width="41" src="images/icons/add_cart.png"/>
+                                        <img height="44" width="41" src="<?php echo $baseUrl;?>/themes/cart/images/icons/add_cart.png"/>
                                         <span>Your Cart is empty</span>
                                     </li></ul>
 
@@ -60,6 +62,24 @@ foreach ($products as $c){
                                 <a href="<?php echo Yii::app()->createUrl("cart/checkout");?>">Checkout</a>
                             </div>
                             <span>Have a promocode? Enter here</span>
+                            <?php if (!isset(Yii::app()->user->id)){?>
+                                <?php
+							$form = $this->beginWidget('CActiveForm', array(
+								'id' => 'login-form',
+								'enableClientValidation' => true,
+								'enableAjaxValidation' => true,
+								'clientOptions' => array(
+									'validateOnSubmit' => true,
+									'validateOnChange' => true
+								),
+								'htmlOptions'=> array(
+									"class" => "form-signin mg-btm"
+								),
+							));
+                                                        $model=new LoginForm;
+							$pwdErr = $form->error($model, 'password');
+							$userErr = $form->error($model, 'username');
+						?>
 							<div class="promo_card_apply">
 								<label>Kindly Login with your college ID to apply the promocode</label>
 								<div class="phAnimate"><label for="lastname">Email ID: <em>*</em></label> <input id="name" class="input_field" type="text" name="name" /></div>
@@ -68,6 +88,8 @@ foreach ($products as $c){
 									<input type="submit" value="Submit" name="submit" />
 								</div>
 							</div>
+                                        <?php $this->endWidget();?>      
+                            <?php }?>
                         </div>
                     </div>
                 </div>
@@ -89,7 +111,7 @@ foreach ($products as $c){
                                         (<?php echo $saver->short_description?>)
                                     </span>
                                 </label>
-                                <img src="assets/products/<?php echo $saver->icon;?>"/>
+                                <img src="<?php echo $baseUrl;?>/assets/products/<?php echo $saver->icon;?>"/>
                             </div>
                             <div class="recomended_price">
                                 <label> &#8377 <?php echo money($saver->recommendedProduct->price);?></label>

@@ -8,6 +8,13 @@ $saver = Products::model()->findByAttributes(array("product_sub_category_id"=>1,
 $arrProd = array();
 $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/themes/cart");
 ?>
+<div class="bread_crum">
+    <ul class="list-inline list-unstyled">
+        <li><a href="javascript:void(0);"><i class="fa fa-home" aria-hidden="true"></i></a> <i class="fa fa-angle-right" aria-hidden="true"></i></li>
+        <li><a href="<?php echo Yii::app()->createUrl('cart/index'); ?>">Home</a> <i class="fa fa-angle-right" aria-hidden="true"></i></li>
+        <li class="active"><a href="javascript:void(0);">Students</a></li>
+    </ul>
+</div>
 <div class="studen-wrapper">
     <?php $this->setPageTitle('Students'); ?>
     <?php $data  = ContentJson::model()->findByAttributes(array("page"=>"student_page"));
@@ -49,7 +56,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                 <a href="<?php echo Yii::app()->createUrl("cart/addtocart",array("id"=>$prod->id));?>">add to cart</a>
                             </div>
                         </div>
-                        <div class="intern-desc">
+<!--                        <div class="intern-desc">
                             <ul>
                                 <?php foreach($prod->productKeyPoints as $keypoint){?>
                                 <li>
@@ -57,7 +64,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                 </li>
                                 <?php }?>   
                             </ul>
-                        </div>
+                        </div>-->
                     </li>
                     <?php }}else {?>
                     <!--<span class="no-products">No Products Found</span>-->

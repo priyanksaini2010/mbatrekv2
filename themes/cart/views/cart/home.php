@@ -2,9 +2,9 @@
 <?php $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/themes/cart"); ?>
 <div class="home_page_slider">
 	<ul class="rslides" id="slider1">
-		<li><img src="<?php echo $baseUrl; ?>/images/1.jpg" alt=""></li>
-		<li><img src="<?php echo $baseUrl; ?>/images/2.jpg" alt=""></li>
-		<li><img src="<?php echo $baseUrl; ?>/images/3.jpg" alt=""></li>
+            <?php foreach ( Banners::model()->findAll()as $banner){?>
+		<li><img src="<?php echo Yii::app()->request->baseUrl; ?>/assets/Banners/<?php echo $banner->image;?>" alt=""></li>
+	    <?php }?>
 	</ul>
 </div>
 <div class="container">

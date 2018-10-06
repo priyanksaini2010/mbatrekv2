@@ -36,7 +36,11 @@ $(document).ready(function(){
  });
 $(document).ready(function(){
     //Registeration Form Validation
-    
+    $(".cart-remove").click(function(){
+            if(confirm("Are you sure you want to remove this product from your cart?")){
+                window.location.href = "https://localhost/v3/cart/removeCart?p="+$(this).val();
+            }
+        });
     $("#register-form").submit(function(){
         if ($("#UsersNew_full_name").val() == ""){
             validationMethod("UsersNew_full_name","Please enter full name");
@@ -60,6 +64,27 @@ $(document).ready(function(){
             validationMethod("error","Confirm password and Password must be same.");return false;
         }
         return true;
+    });
+    $(".apply-promo").click(function(){
+        $.ajax({
+            url : "https://localhost/v3/cart/applypromo",
+            type : "post",
+            data : {
+                code : $(".apply-promo-value").val()
+            },
+            success : function(data){
+                var obj = $.parseJSON(data);
+                if(obj.status == "success"){
+                    window.location.refresh;
+                    validationMethod("thanks",obj.message)
+                    location.reload(true);
+                }else {
+                    validationMethod("error",obj.message)
+                }
+                
+            }
+            
+        });
     });
 })
 

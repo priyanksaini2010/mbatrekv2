@@ -33,7 +33,7 @@ class CartController extends Controller {
         return array(
             array('allow', // allow all users to perform 'index' and 'view' actions
                 'actions' => array('index', 'view','student',"addtocart","cart","remove","buynow","verify", 
-                                    'profesionals','institutes','register',"description","checkout"),
+                                    'profesionals','institutes','register',"description","checkout","removeCart","applypromo"),
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -96,8 +96,45 @@ class CartController extends Controller {
 	}
         
         public function actionCart(){
+            
             $this->layout = getCartLayot();
             $this->render("webroot.themes.cart.views.cart.cart",array());
+        }
+        
+        public function actionApplypromo(){
+            $status = array("status"=>"failure","message"=>"Invalid Reequest");
+            if(!empty($_POST)) {
+                
+                $domain_name = substr(strrchr($_POST['code'], "@"), 1);
+                $isCouponValid = CouponCode::model()->findByAttributes(array("domain"=>$domain_name));
+                if(!empty($isCouponValid)) {
+                    $isThisUsed = CouponUsage::model()->findByAttributes(array("email_used"=>$_POST['code']));
+                    if(empty($isThisUsed)){
+                        $cart = Cart::model()->findByAttributes(array("user_id" => Yii::app()->user->id, "status" => 1));
+                        
+                        $model = new CouponUsage;
+                        $model->attributes = array(
+                                                "cart_id" => $cart->id,
+                                                "coupon_id" => $isCouponValid->id,
+                                                "email_used" => $_POST['code'],
+                                                "users_new_id" => Yii::app()->user->id,
+                                                "date_created"=> date("Y-m-d h:i:s")
+                                            );
+                        if($model->save()){
+                            $status['status'] = "success";
+                            $status['message'] = "Discount have been applied successfully.";
+                        }else {
+                            pr($model->getErrors());
+                            $status['message'] = "Oops! Some error occured, Please try after some time.";
+                        }
+                    } else {
+                        $status['message'] = "Discount have been availed for this email address.";
+                    }
+                }else {
+                    $status['message'] = "This email address is not valid for discount.".$domain_name;
+                }
+            }
+            echo json_encode($status);die;
         }
         
         public function actionCheckout(){
@@ -110,6 +147,7 @@ class CartController extends Controller {
 
 
         public function actionAddtocart($id){
+//             pr($_COOKIE['products']);
             $this->layout = getCartLayot();
            
             if (isset(Yii::app()->user->id)) {
@@ -220,6 +258,40 @@ class CartController extends Controller {
                     }
                  }
                  $this->redirect(Yii::app()->createUrl("cart/cart"));
+            }
+        }
+         public function actionRemoveCart($p){
+            $this->layout = getCartLayot();
+            $id = $p;
+            if (isset(Yii::app()->user->id)) {
+                $model = Cart::model()->findByAttributes(array(
+                    "user_id" =>Yii::app()->user->id,
+                    "product_id" =>$id,
+                    
+                ));
+               
+                
+                if($model->delete()){
+                    $this->redirect(Yii::app()->createUrl("cart/index"));
+                } else {
+                   pr($model->getErrors());
+                    foreach($model->getErrors() as $key=>$err){
+                        $this->errors[$key] = $err;
+                    }
+                }
+            }else {
+                 if(isset($_COOKIE['products'])){
+                    
+                    $cookieCart = unserialize($_COOKIE['products']);
+                    if(in_array($id,$cookieCart)){
+                        $arrFlip = array_flip($cookieCart);
+                        unset($arrFlip[$id]);
+                        $cookieCart = array_flip($arrFlip);
+                        setcookie("products", serialize($cookieCart),strtotime( '+30 days' ));
+
+                    }
+                 }
+                 $this->redirect(Yii::app()->createUrl("cart/index"));
             }
         }
         public function actionBuynow($id){

@@ -20,4 +20,12 @@
     <?php if(isset($_REQUEST['thankc'])){?>
 	 validationMethod("thanks","Thanks for your feedback, we will get in touch with you soon.")
     <?php }?>
+//        $(document).ready(function(){
+//    //Registeration Form Validation
+//        $(".cart-remove").click(function(){
+//                if(confirm("Are you sure you want to remove this product from your cart?")){
+//                    window.location.href = <?php echo Yii::app()->createUrl("cart/removeCart",array("p"));?>+$(this).val();
+//                }
+//            })
+//    })
 </script>
