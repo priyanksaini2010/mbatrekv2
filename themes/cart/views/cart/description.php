@@ -64,9 +64,10 @@ $product = Products::model()->findByPk($id);
             </ul>
         </div>
         </div>
+    <?php if($id == 20){?>
         <div class="how_We_engage">
 					<div class="container">
-						for intergo page
+						
 						<ul>
 							<li>
 								<div class="title_eng">
@@ -126,6 +127,8 @@ $product = Products::model()->findByPk($id);
 						</div>
 					</div>
                 </div>
+    <?php }?>
+    <?php if($id == 20){?>
                 <div class="how_We_engage">
 					<div class="container">
 						for industry ready
@@ -188,6 +191,8 @@ $product = Products::model()->findByPk($id);
 						</div>
 					</div>
                 </div>
+    <?php }?>
+     <?php if($id == 18){?>
                 <div class="how_We_engage">
 					<div class="container">
 						for interview ready
@@ -234,7 +239,9 @@ $product = Products::model()->findByPk($id);
 						</div>
 					</div>
 				</div>
+     <?php }?>
     <div class="container">
+        <?php if($id != 28 && $id != 20 && $id != 18){?>
         <div class="key_outcomes">
             <h3>Key Outcomes </h3>
             <ul>
@@ -247,6 +254,7 @@ $product = Products::model()->findByPk($id);
                 
             </ul>
         </div>
+        <?php }?>
         <div class="our_recomanded product_recomnd">
             <h4>Recommended Value Saver Packages </h4>
             <ul>
