@@ -8,10 +8,13 @@
             echo isset($this->pageTitle) ? ": " . $this->pageTitle : "";
             ?></title>      
 
-        <?php echo $this->renderPartial("webroot.themes.cart.views.layouts.head"); ?>
+        <?php 
+        $controller = $this->uniqueid;
+    $action = $this->action->Id;
+        echo $this->renderPartial("webroot.themes.cart.views.layouts.head"); ?>
         <link rel="icon" href="<?php echo $baseUrl; ?>/images/favicon.ico" type="image/x-icon">
     </head>
-    <body>
+    <body <?php if($controller == "cart" && $action == "index"){?>class="only-home-class"<?php }?>>
         <div id="fb-root"></div>
         <script>(function (d, s, id) {
                 var js, fjs = d.getElementsByTagName(s)[0];
