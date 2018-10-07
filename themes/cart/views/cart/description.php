@@ -64,6 +64,176 @@ $product = Products::model()->findByPk($id);
             </ul>
         </div>
         </div>
+        <div class="how_We_engage">
+					<div class="container">
+						for intergo page
+						<ul>
+							<li>
+								<div class="title_eng">
+									<h3>InternACE</h3>
+								</div>
+								<div class="engage_img">
+									<img src="<?php echo $baseUrl; ?>/images/internace_icon.png"/>
+								</div>
+								<div class="title_descrip">
+									Getting ready and relevant for internship
+								</div>
+								<div class="price_eng">
+									<label>&#8377 4,500</label>
+								</div>
+								<img src="<?php echo $baseUrl; ?>/images/plus_icon.png"/>
+							</li>
+							<li>
+								<div class="title_eng">
+									<h3>InternPRO</h3>
+								</div>
+								<div class="engage_img">
+									<img src="<?php echo $baseUrl; ?>/images/internPro_icon.png"/>
+								</div>
+								<div class="title_descrip">
+									Delivering your best during the internship
+
+								</div>
+								<div class="price_eng">
+									<label>&#8377 4,500</label>
+								</div>
+								<img src="<?php echo $baseUrl; ?>/images/plus_icon.png"/>
+							</li>
+							<li>
+								<div class="title_eng">
+									<h3>InternARISE</h3>
+								</div>
+								<div class="engage_img">
+									<img src="<?php echo $baseUrl; ?>/images/internet_arice_icon.png"/>
+								</div>
+								<div class="title_descrip">
+									Mapping your internship with final placement
+
+
+								</div>
+								<div class="price_eng">
+									<label>&#8377 4,500</label>
+								</div>
+								
+							</li>
+						</ul>
+						<div class="discount_eng">
+							<div class="combo_price">
+								<label>Combo Price &#8377 6,750</label>
+								<span class="discount_line">Total Price &#8377 9,000</span>
+								<span>You save &#8377 2,2250 (25%)</span>
+							</div>
+						</div>
+					</div>
+                </div>
+                <div class="how_We_engage">
+					<div class="container">
+						for industry ready
+						<ul>
+							<li>
+								<div class="title_eng">
+									<h3>InternACE</h3>
+								</div>
+								<div class="engage_img">
+									<img src="<?php echo $baseUrl; ?>/images/internace_icon.png"/>
+								</div>
+								<div class="title_descrip">
+									Getting ready and relevant for internship
+								</div>
+								<div class="price_eng">
+									<label>&#8377 4,500</label>
+								</div>
+								<img src="<?php echo $baseUrl; ?>/images/plus_icon.png"/>
+							</li>
+							<li>
+								<div class="title_eng">
+									<h3>InternPRO</h3>
+								</div>
+								<div class="engage_img">
+									<img src="<?php echo $baseUrl; ?>/images/internPro_icon.png"/>
+								</div>
+								<div class="title_descrip">
+									Delivering your best during the internship
+
+								</div>
+								<div class="price_eng">
+									<label>&#8377 4,500</label>
+								</div>
+								<img src="<?php echo $baseUrl; ?>/images/plus_icon.png"/>
+							</li>
+							<li>
+								<div class="title_eng">
+									<h3>InternARISE</h3>
+								</div>
+								<div class="engage_img">
+									<img src="<?php echo $baseUrl; ?>/images/internet_arice_icon.png"/>
+								</div>
+								<div class="title_descrip">
+									Mapping your internship with final placement
+
+
+								</div>
+								<div class="price_eng">
+									<label>&#8377 4,500</label>
+								</div>
+								
+							</li>
+						</ul>
+						<div class="discount_eng">
+							<div class="combo_price">
+								<label>Combo Price &#8377 6,750</label>
+								<span class="discount_line">Total Price &#8377 9,000</span>
+								<span>You save &#8377 2,2250 (25%)</span>
+							</div>
+						</div>
+					</div>
+                </div>
+                <div class="how_We_engage">
+					<div class="container">
+						for interview ready
+						<ul>
+							<li>
+								<div class="title_eng">
+									<h3>InternACE</h3>
+								</div>
+								<div class="engage_img">
+									<img src="<?php echo $baseUrl; ?>/images/internace_icon.png"/>
+								</div>
+								<div class="title_descrip">
+									Getting ready and relevant for internship
+								</div>
+								<div class="price_eng">
+									<label>&#8377 4,500</label>
+								</div>
+								<img src="<?php echo $baseUrl; ?>/images/plus_icon.png"/>
+							</li>
+							<li>
+								<div class="title_eng">
+									<h3>InternPRO</h3>
+								</div>
+								<div class="engage_img">
+									<img src="<?php echo $baseUrl; ?>/images/internPro_icon.png"/>
+								</div>
+								<div class="title_descrip">
+									Delivering your best during the internship
+
+								</div>
+								<div class="price_eng">
+									<label>&#8377 4,500</label>
+								</div>
+								<img src="<?php echo $baseUrl; ?>/images/plus_icon.png"/>
+							</li>
+							
+						</ul>
+						<div class="discount_eng">
+							<div class="combo_price">
+								<label>Combo Price &#8377 6,750</label>
+								<span class="discount_line">Total Price &#8377 9,000</span>
+								<span>You save &#8377 2,2250 (25%)</span>
+							</div>
+						</div>
+					</div>
+				</div>
     <div class="container">
         <div class="key_outcomes">
             <h3>Key Outcomes </h3>

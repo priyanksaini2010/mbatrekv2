@@ -1,7 +1,7 @@
 <?php $this->setPageTitle('Blogs Details'); ?>
 <div class="blog_new_container_details">
     <div class="blog_header">
-        <div class="container">
+    <!--    <div class="container">
             <div class="col-md-4">
                 <div class="header_btn"><a class="active_high" href="javascript:void(0);">Recent Updates</a></div>
             </div>
@@ -12,7 +12,7 @@
                 <div class="header_btn"><a href="javascript:void(0);">Recent Updates</a></div>
             </div>
         </div>
-    </div>
+    </div>-->
     <div class="container">
         <div class="blog_container">
             <h3>Helping you make the most of your career</h3>
@@ -27,14 +27,14 @@
                 <div class="blog_header"><img class="img-responsive" src="<?php echo Yii::app()->baseUrl;?>/assets/blogs/<?php echo $model->banner_image;;?>" alt="" /></div>
                 <div class="row">
                     <div class="col-md-9 col-sm-9 col-xs-12">
-                        <div class="share_post">
+                       <!-- <div class="share_post">
                             <ul class="list-inline list-unstyled">
-                                <!--<li><a class="comment_post" href="javascript:void(0);">0Comments</a></li>-->
-                                <li><!-- <a href="javascript:void(0);" class="share_post_b jssocials" id="share"> -->
+                                <li><a class="comment_post" href="javascript:void(0);">0Comments</a></li>
+                                <li><a href="javascript:void(0);" class="share_post_b jssocials" id="share"> 
                                     <div class="jssocials-shares">&nbsp;</div>
-                                    <!-- </a> --></li>
+                                    </a> </li>
                             </ul>
-                        </div>
+                        </div>-->
                         <div class="post_information">
                         <?php echo $model->content; ?>
                     </div> 
@@ -51,14 +51,14 @@
                                     </div>
                                 </form></div>
                         </div>-->
-                        <div class="comment_reply">
-                            <!--<h3 class="main_comment">Comments (0)</h3>-->
-                            <!--    <div class="login_to_comment">
+                        <!--<div class="comment_reply">
+                            <h3 class="main_comment">Comments (0)</h3>
+                             <div class="login_to_comment">
                                                                                     <div class="site_btn"><a data-toggle="modal" data-target="#myModal1" class="raised ripple has-ripple" href="#myModal1">Login to Comment</a></div>
                                                                                     <span class="login_comment">Don't have an account? <a href="/site/index">Sign up</a> now</span>
-                                                                            </div> -->
+                                                                            </div> 
                             <div class="comment_blocker">&nbsp;</div>
-                        </div>
+                        </div>-->
                     </div>
                     <div class="col-md-3 col-sm-3 col-xs-12">
                         <div class="categories_container">

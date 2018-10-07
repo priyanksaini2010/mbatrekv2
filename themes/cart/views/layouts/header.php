@@ -119,7 +119,13 @@
                   </ul>                
                 </li>
                 <li class="success"><a href="<?php echo Yii::app()->createUrl('our-story'); ?>">Success Stories</a></li>
-                <li class="faq"><a href="<?php echo Yii::app()->createUrl('frequently-asked-questions'); ?>">FAQ</a></li>
+                <li class="faq"><a href="javascript:void(0);">CampusConnect</a>
+				<ul >
+                    <li><a href="#">Campus Ambassador</a></li>
+                    <li><a href="#">#InterviewReady</a></li>
+                    <li><a href="#">#IndustryReady</a></li>
+                  </ul>
+				</li>
 
                 <li class="contact"><a href="<?php echo Yii::app()->createUrl('contact-us'); ?>">Contact Us</a></li>
             </ul>
