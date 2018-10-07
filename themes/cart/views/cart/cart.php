@@ -85,6 +85,7 @@ if(isset(Yii::app()->user->id)){
                                 <?php }?>
                                 <a href="<?php echo Yii::app()->createUrl("cart/checkout");?>">Checkout</a>
                             </div> 
+                            <?php if(empty($coupon)){?>
                             <span class="promocode">Have a promocode? Enter here</span>
 							<?php if (!isset(Yii::app()->user->id)){?>
                                 <?php
@@ -121,7 +122,7 @@ if(isset(Yii::app()->user->id)){
                                     <input type="submit" value="Apply" name="submit" class="apply-promo"/>
                                 </div>
                             </div>
-                            <?php }?>
+                            <?php }}?>
                             <?php
                             
                             if(!empty($coupon)){?>
