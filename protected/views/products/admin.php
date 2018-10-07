@@ -18,7 +18,12 @@ $this->menu=array(
 	'columns'=>array(
 		
 		'title',
-		
+		array(
+                        'header'=>"Category",
+                        "name"=>'product_sub_category_id',
+                        "value"=>'ProductCategory::model()->findByAttributes(array("id"=>$data->product_sub_category_id))->category',
+                        'filter'=>CHtml::listData( ProductCategory::model()->findAll(), 'id', 'category'),
+                    ),
 		'actuall_price',
 		'price',
 		/*
