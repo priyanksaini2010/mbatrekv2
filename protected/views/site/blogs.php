@@ -32,7 +32,7 @@ if(!isset($_GET['type'])){
                     echo "Insights to help you get to your desired company";
                     break;
                 case 3:
-                    echo "earn from the Industry’s Top Leaders";
+                    echo "Learn from the Industry’s Top Leaders";
                     break;
                 
             }
