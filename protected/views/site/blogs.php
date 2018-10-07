@@ -22,7 +22,23 @@ if(!isset($_GET['type'])){
     </div>
     <div class="container">
         <div class="blog_container">
-            <h3>Helping you make the most of your career</h3>
+         
+            <h3>
+                   <?php switch($typ){
+                case 1:
+                    echo "Helping you make the most of your career";
+                    break;
+                case 2:
+                    echo "Insights to help you get to your desired company";
+                    break;
+                case 3:
+                    echo "earn from the Industry’s Top Leaders";
+                    break;
+                
+            }
+?>
+                
+            </h3>
             <div class="our_blog">
                 <div class="row">
                     <?php foreach ($blogs as $blog){?>
