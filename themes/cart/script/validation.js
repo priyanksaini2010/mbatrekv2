@@ -66,6 +66,9 @@ $(document).ready(function(){
         return true;
     });
     $(".apply-promo").click(function(){
+        if(!validateEmail($(".apply-promo-value").val())){
+            validationMethod("error","Please enter valid email.");return false;
+        }
         $.ajax({
             url : "https://mbatrek.com/v2/cart/applypromo",
             type : "post",
