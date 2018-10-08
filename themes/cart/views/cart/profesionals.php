@@ -43,7 +43,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
 								<div class="icon-holder">
 									<a id="tab1" href="#"> 
 										<span class="icon yound_need_help"> 
-											<img src="images/young_need_help.png" alt=""> 
+											<img src="https://mbatrek.com/v2/images/young_need_help.png" alt=""> 
 											<!--<span class="icon-title">Internship</span>-->	 
 										</span> 
 										<span class="icon-text pull-left"> 
@@ -54,7 +54,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
 								</div>
 							</div>
 							<div class="student-placement col-xs-12 col-md-6 col-lg-6">
-								<div class="icon-holder"><a id="tab2" href="#"> <span class="icon icon-holder"> <img src="images/young_final.png" alt=""> <!--<span class="icon-title">Final Placement</span>--> </span> <span class="icon-text">Looking for specific help to tell your story and switch jobs? <br>Click Here</span> </a></div>
+								<div class="icon-holder"><a id="tab2" href="#"> <span class="icon icon-holder"> <img src="https://mbatrek.com/v2/images/young_final.png" alt=""> <!--<span class="icon-title">Final Placement</span>--> </span> <span class="icon-text">Looking for specific help to tell your story and switch jobs? <br>Click Here</span> </a></div>
 							</div>
 						</div>
 					</div>
