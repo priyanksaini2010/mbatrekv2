@@ -1,5 +1,5 @@
 a{text-decoration:none!important;}
-header{background:#348786;padding: 14px 0 0px 0;}
+header{background:#348786;padding: 7px 0 4px 0;}
 ul,ol{margin:0;}
 .navbar-default {
 	 background:none; 
@@ -117,19 +117,20 @@ ul,ol{margin:0;}
 /*header end*/
 
 
-.logo{width: auto;display:none;
+.logo{width: auto;
 
 max-width: 60px;
 
 float: left;}
-.logo2{width: auto;display:none;
+.logo2{width: auto;
 
 max-width: 144px;
 
 float: left;}
 .navbar-nav {
 	float: right;
-	margin:0;
+    margin:0;
+    margin:15px 0 0 0;
 }
 .navbar{margin-bottom:0;}
 .navi> li> a {
@@ -552,7 +553,7 @@ user-select: none;
     border-radius: 5px;  float:right;
 	margin: 12px 0 0 0;}
 .cart_detail a.View_cart:hover{background: #73942f;}
-.card_price{text-align: center;      max-width: 300px;float: right; padding:27px 0px 0 0px;position:relative;}
+.card_price{text-align: center;      max-width:100%;width:100%;float: right; padding:27px 0px 0 0px;position:relative;}
 .card_price label{color: #229897;font-size: 20px;display: block;padding: 0 0 7px 0;font-family: 'MyriadPro-Semibold';}
 .card_price a{background: #229897;
     color: #fff;
@@ -1467,3 +1468,10 @@ text-align: center;border-radius: 2px;}
 .promo_card_apply > label{font-size:18px;}
 .promo_card_apply .promo_btn input[type="submit"]:focus{outline:0;}
 .card_price.open_promo .promo_card_apply{display:block;}
+.promo_card_applied .applicd_code{color:#348786;}
+.applied_now{width: 100%;float: left;padding: 8px 0 0 0;}
+.applied_now label{display: inline-block;    display: inline-block;
+    font-size: 16px;
+    font-weight: normal;
+    color: #777;}
+.only-home-class main{padding-top:0;}

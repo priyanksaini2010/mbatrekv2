@@ -7,7 +7,7 @@ $product = Products::model()->findByPk($id);
         <div class="row">
             <div class="col-md-8">
                 <div class="company_left">
-                    <h3>#<?php echo $product->title; ?>
+                    <h3><?php echo $product->title; ?>
                     </h3>
                     <?php echo $product->description; ?>
                 </div>
@@ -135,7 +135,7 @@ $product = Products::model()->findByPk($id);
     <?php if($id == 28){?>
                 <div class="how_We_engage">
 					<div class="container">
-						for industry ready
+						
 						<ul>
 							<li>
 								<div class="title_eng">

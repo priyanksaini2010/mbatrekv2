@@ -127,8 +127,10 @@ if(isset(Yii::app()->user->id)){
                             
                             if(!empty($coupon)){?>
                             <div class="promo_card_applied">
-                                <label>Applied Promo Code</label>
-                                <div class="phAnimate"><label for="lastname"><?php echo $coupon->email_used;?></label></div>
+                                <div class="applied_now">
+                                <label class="applicd_code">Applied Promo Code:</label>
+                                <label for="lastname"><?php echo $coupon->email_used;?></div>
+                            </div>
                             </div>    
                             <?php }?>
                         </div>

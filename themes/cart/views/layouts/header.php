@@ -113,14 +113,33 @@
                   <ul >
                     <li><a href="<?php echo Yii::app()->createUrl('blogs'); ?>">Blog</a></li>
 <li><a href="<?php echo Yii::app()->createUrl('mbatrek-on-the-ground'); ?>">MBAtrek on the ground</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li><a href="#">Separated link</a></li>
+                    
                   </ul>                
                 </li>
-                <li class="success"><a href="<?php echo Yii::app()->createUrl('our-story'); ?>">Success Stories</a></li>
+								<li class="success"><a href="<?php echo Yii::app()->createUrl('our-story'); ?>">Success Stories</a>
+								<ul >
+										<li><a href="#">Students <i class="pull-right fa fa-angle-double-right" aria-hidden="true"></i></a>
+										<ul >
+											<li><a href="#">#YouBeThe Intrective </a></li>
+											<li><a href="#">#Compus 2 Corporate</a></li>
+										</ul>
+									</li>
+										<li><a href="#">Placement Coordinator <i class="pull-right fa fa-angle-double-right" aria-hidden="true"></i></a>
+										<ul >
+											<li><a href="#">#YouBeThe Intrective </a></li>
+											<li><a href="#">#Compus 2 Corporate</a></li>
+										</ul>
+									</li>
+										<li><a href="#">Young Professionals <i class="pull-right fa fa-angle-double-right" aria-hidden="true"></i></a>
+										<ul >
+											<li><a href="#">#Career Planning</a></li>
+											
+										</ul>
+									</li>
+                  </ul>
+							</li>
                 <li class="faq"><a href="javascript:void(0);">CampusConnect</a>
-				<ul >
+									<ul >
                     <li><a href="#">Campus Ambassador</a></li>
                     <li><a href="#">#InterviewReady</a></li>
                     <li><a href="#">#IndustryReady</a></li>
