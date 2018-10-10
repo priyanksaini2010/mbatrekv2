@@ -36,7 +36,7 @@ $product = Products::model()->findByPk($id);
         </div>
         
     </div>
-        <?php if($id != 28 && $id != 20 && $id != 18){?>
+        <?php if($id != 28 && $id != 19 && $id != 18){?>
     <div class="how_We_contaner">
             <div class="container">
             <h3>How do we engage with you  </h3>
@@ -68,7 +68,7 @@ $product = Products::model()->findByPk($id);
         <?php }?>
     
     
-    <?php if($id == 20){?>
+    <?php if($id == 19){?>
         <div class="how_We_engage">
 					<div class="container">
 						
