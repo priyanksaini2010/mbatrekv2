@@ -17,6 +17,10 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
     <img src="assets/products/<?php echo $model->logo ?>" height="50px" width="50px"/>
 <?php } ?>
 <?php echo $form->fileFieldRow($model, 'logo', array('class' => 'span5', 'maxlength' => 255)); ?>
+<?php if (!$model->isNewRecord) { ?>
+<img src="assets/products/<?php echo $model->home_page_icon ?>" height="50px" width="50px"/>
+<?php } ?>
+<?php echo $form->fileFieldRow($model, 'home_page_icon', array('class' => 'span5', 'maxlength' => 255)); ?>
 <?php echo $form->textFieldRow($model, 'description1', array('class' => 'span5')); ?>
 <?php echo $form->textFieldRow($model, 'actuall_price', array('class' => 'span5')); ?>
 
@@ -42,6 +46,11 @@ $this->widget('KRichTextEditor', array(
 <br />
 <label for="Products_type" class="required">Product Type <span class="required">*</span></label>
 <?php echo $form->dropDownList($model, 'type', array("Select Product Type", "Student", "Young Proffesional"), array('class' => 'span3')); ?>
+<br />
+<label for="Products_type" class="required">Home Page Bucket <span class="required">*</span></label>
+<?php 
+$ar = array(1=>"Build Your Brand",2=>"Company / Industry & Job Fitment",3=>"Preparing For Placements",4=>"Perparing For Internship");
+echo $form->dropDownList($model, 'home_page_bucket', $ar, array('class' => 'span3')); ?>
 <br />
 <label for="Products_product_sub_category_id" class="required">Product Category <span class="required">*</span></label>
 <?php echo $form->dropDownList($model, 'product_sub_category_id',CHtml::listData(ProductSubCategory::model()->findAll(),"id","description"), array('class' => 'span3')); ?>
