@@ -187,7 +187,7 @@ class CartController extends Controller {
                     $cookieCart = unserialize($_COOKIE['products']);
                     if(!in_array($id,$cookieCart)){
                         $cookieCart[] = $id;
-                        setcookie("products", serialize($cookieCart),strtotime( '+30 days' ));
+                        setcookie("products", serialize($cookieCart),strtotime( '+30 days' ),DIREC);
                         $this->redirect(Yii::app()->request->urlReferrer);
                     } else {
                         $this->errors["exist"] = "This product already exist in your cart."; 
@@ -196,7 +196,7 @@ class CartController extends Controller {
                 } else {
                     
                     $cookieCart = array($id);
-                    setcookie("products", serialize($cookieCart),strtotime( '+30 days' ));
+                    setcookie("products", serialize($cookieCart),strtotime( '+30 days' ),DIREC);
                     $this->redirect(Yii::app()->request->urlReferrer);
                 }
 //                $modelPre = CartIp::model()->findByAttributes(array(
@@ -253,7 +253,7 @@ class CartController extends Controller {
                         $arrFlip = array_flip($cookieCart);
                         unset($arrFlip[$id]);
                         $cookieCart = array_flip($arrFlip);
-                        setcookie("products", serialize($cookieCart),strtotime( '+30 days' ));
+                        setcookie("products", serialize($cookieCart),strtotime( '+30 days' ),DIREC);
 
                     }
                  }
@@ -290,7 +290,7 @@ class CartController extends Controller {
                         $arrFlip = array_flip($cookieCart);
                         unset($arrFlip[$id]);
                         $cookieCart = array_flip($arrFlip);
-                        setcookie("products", serialize($cookieCart),strtotime( '+30 days' ));
+                        setcookie("products", serialize($cookieCart),strtotime( '+30 days' ),DIREC);
 
                     }
                  }
