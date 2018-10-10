@@ -130,6 +130,11 @@ $eduCationManagment = array(
 <script src="<?php echo Yii::app()->baseUrl;?>/js/jquery.date-dropdowns.js"></script>
 <script>
     $(document).ready(function() {
+             $('img').each(function () {
+                    var src =  $(this).attr('src');
+                    src = '/v3/'+src;
+                    $(this).attr('src', src);
+                });
                 $("#example10").dateDropdowns({
                     submitFieldName: 'example10',
 		    minYear : 2016,
