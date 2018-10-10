@@ -14,9 +14,13 @@
  * @property integer $type
  * @property integer $is_saver
  * @property integer $product_sub_category_id
+ * @property string $home_page_icon
+ * @property integer $home_page_bucket
  * @property integer $status
  *
  * The followings are the available model relations:
+ * @property Cart[] $carts
+ * @property CartIp[] $cartIps
  * @property ProductEngage[] $productEngages
  * @property ProductInclude[] $productIncludes
  * @property ProductKeyOutcome[] $productKeyOutcomes
@@ -42,13 +46,14 @@ class Products extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('title, logo, actuall_price, description, description1, price, type, is_saver, product_sub_category_id, status', 'required'),
-			array('type, is_saver, product_sub_category_id, status', 'numerical', 'integerOnly'=>true),
+			array('title, logo, actuall_price, description, description1, price, type, is_saver, product_sub_category_id, home_page_icon, home_page_bucket, status', 'required'),
+			array('type, is_saver, product_sub_category_id, home_page_bucket, status', 'numerical', 'integerOnly'=>true),
 			array('actuall_price, price', 'numerical'),
 			array('title, logo, description1', 'length', 'max'=>255),
+			array('home_page_icon', 'length', 'max'=>250),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, title, logo, actuall_price, description, description1, price, type, is_saver, product_sub_category_id, status', 'safe', 'on'=>'search'),
+			array('id, title, logo, actuall_price, description, description1, price, type, is_saver, product_sub_category_id, home_page_icon, home_page_bucket, status', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -60,6 +65,8 @@ class Products extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'carts' => array(self::HAS_MANY, 'Cart', 'product_id'),
+			'cartIps' => array(self::HAS_MANY, 'CartIp', 'product_id'),
 			'productEngages' => array(self::HAS_MANY, 'ProductEngage', 'product_id'),
 			'productIncludes' => array(self::HAS_MANY, 'ProductInclude', 'product_id'),
 			'productKeyOutcomes' => array(self::HAS_MANY, 'ProductKeyOutcome', 'product_id'),
@@ -83,8 +90,10 @@ class Products extends CActiveRecord
 			'description1' => 'Description1',
 			'price' => 'Price',
 			'type' => 'Type',
-			'is_saver' => 'Is this a packaage?',
-			'product_sub_category_id' => 'Product Category',
+			'is_saver' => 'Is Saver',
+			'product_sub_category_id' => 'Product Sub Category',
+			'home_page_icon' => 'Home Page Icon',
+			'home_page_bucket' => 'Home Page Bucket',
 			'status' => 'Status',
 		);
 	}
@@ -117,6 +126,8 @@ class Products extends CActiveRecord
 		$criteria->compare('type',$this->type);
 		$criteria->compare('is_saver',$this->is_saver);
 		$criteria->compare('product_sub_category_id',$this->product_sub_category_id);
+		$criteria->compare('home_page_icon',$this->home_page_icon,true);
+		$criteria->compare('home_page_bucket',$this->home_page_bucket);
 		$criteria->compare('status',$this->status);
 
 		return new CActiveDataProvider($this, array(
