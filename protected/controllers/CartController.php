@@ -272,7 +272,7 @@ class CartController extends Controller {
                
                 
                 if($model->delete()){
-                    $this->redirect(Yii::app()->createUrl("cart/index"));
+                    $this->redirect(Yii::app()->request->urlReferrer."?show_cart=1",array("show_cart"=>1));
                 } else {
                    pr($model->getErrors());
                     foreach($model->getErrors() as $key=>$err){
@@ -291,7 +291,7 @@ class CartController extends Controller {
 
                     }
                  }
-                 $this->redirect(Yii::app()->createUrl("cart/index"));
+                 $this->redirect(Yii::app()->request->urlReferrer."?show_cart=1",array("show_cart"=>1));
             }
         }
         public function actionBuynow($id){
@@ -355,7 +355,7 @@ class CartController extends Controller {
                                             "Content-Type: text/html; charset=UTF-8";
 
                         $sentToUser = sendEmail($_POST['UsersNew']['email'], $subject,$body,$headers);
-                        $this->refresh(true,"&thankreg=1");
+                        $this->refresh(true,"?thankreg=1");
                     } else {
                         pr($model->getErrors());
                     }
