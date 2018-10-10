@@ -132,7 +132,7 @@ $eduCationManagment = array(
     $(document).ready(function() {
              $('img').each(function () {
                     var src =  $(this).attr('src');
-                    src = '/v3/'+src;
+                    src = '/v2/'+src;
                     $(this).attr('src', src);
                 });
                 $("#example10").dateDropdowns({
