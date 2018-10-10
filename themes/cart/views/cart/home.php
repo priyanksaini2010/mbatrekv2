@@ -176,7 +176,7 @@
 										<?php echo $product->title;?>
 									</div>
 									<div class="categories_price">
-										<span>Price &#8377;  <?php echo money($product->title);?></span>
+										<span>Price &#8377;  <?php echo money($product->price);?></span>
 										<span class="read_more_span">Read More <i class="fa fa-angle-double-right" aria-hidden="true"></i></span>
 									</div>
 								</div>
