@@ -1,4 +1,5 @@
-<?php $cookieCart = unserialize($_COOKIE['products']);
+<?php 
+$cookieCart = unserialize($_COOKIE['products']);
 $criteria = new CDbCriteria;
 $criteria->addInCondition("id", $cookieCart);
 $products = Products::model()->findAll($criteria);
@@ -61,8 +62,8 @@ foreach ($products as $c){
                                 <label>Sub Total (<?php echo count($products)>1?count($products)." Items":count($products)." Item";?>): <span> &#8377 <?php echo money($total);?></span></label>
                                 <a href="<?php echo Yii::app()->createUrl("cart/checkout");?>">Checkout</a>
                             </div>
-                            <span>Have a promocode? Enter here</span>
-                            <?php if (!isset(Yii::app()->user->id)){?>
+                            <span class="promocode">Have a promocode? Enter here</span>
+							<?php if (!isset(Yii::app()->user->id)){?>
                                 <?php
 							$form = $this->beginWidget('CActiveForm', array(
 								'id' => 'login-form',
@@ -73,8 +74,10 @@ foreach ($products as $c){
 									'validateOnChange' => true
 								),
 								'htmlOptions'=> array(
-									"class" => "form-signin mg-btm"
+									"class" => "form-signin mg-btm",
+                                                                        
 								),
+                                                            "action" =>     Yii::app()->createUrl("site/login")
 							));
                                                         $model=new LoginForm;
 							$pwdErr = $form->error($model, 'password');
@@ -82,13 +85,15 @@ foreach ($products as $c){
 						?>
 							<div class="promo_card_apply">
 								<label>Kindly Login with your college ID to apply the promocode</label>
-								<div class="phAnimate"><label for="lastname">Email ID: <em>*</em></label> <input id="name" class="input_field" type="text" name="name" /></div>
-								<div class="phAnimate"><label for="lastname">Password: <em>*</em></label> <input id="name" class="input_field" type="text" name="name" /></div>
+								<div class="phAnimate"><label for="lastname">Email ID: <em>*</em></label> 
+                                                                    <input class="input_field" placeholder="" name="LoginForm[username]" id="LoginForm_username" type="text"></div>
+								<div class="phAnimate"><label for="lastname">Password: <em>*</em></label> 
+                                                                    <input class="input_field" placeholder="" name="LoginForm[password]" id="LoginForm_password" type="password"></div>
 								<div class="promo_btn">
 									<input type="submit" value="Submit" name="submit" />
 								</div>
 							</div>
-                                        <?php $this->endWidget();?>      
+                                        <?php $this->endWidget();?>       
                             <?php }?>
                         </div>
                     </div>
