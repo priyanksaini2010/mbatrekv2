@@ -100,8 +100,8 @@
 									<!--<li class="kopie"><a href="#">Industry Ana</a></li>
 									<li><a href="#">Compus2Corporate</a></li>-->
 									<li class="kopie"><a href="#">#CareerPlanning </a></li>
-                                                                         <li class="kopie"><a href="#">#IndustryReady </a></li>
-                                                                         <li class="kopie"><a href="#">#InterviewReady </a></li>
+                                                                         <li class="kopie"><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"31")); ?>">#IndustryReady </a></li>
+                                                                         <li class="kopie"><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"32")); ?>">#InterviewReady </a></li>
 								</ul>
 							</li>     						
 						</ul>
