@@ -77,7 +77,7 @@
                             </div>
     <?php }
 } else if(isset($_COOKIE['products'])) {
-    
+    $cookieCart = unserialize($_COOKIE['products']);
     $criteria = new CDbCriteria;
     $criteria->addInCondition("id", $cookieCart);
     $products = Products::model()->findAll($criteria);
@@ -99,12 +99,12 @@
                                             <span class="checkmark"></span>
                                         </label>
                                     </span>
-                                    <span class="item-price"><?php echo $cart->price;?></span>                                                
+                                    <span class="item-price"><?php echo money($cart->price);?></span>                                                
                                 </div>
                                 <?php }?>
                                 <div class="total">
                                     <span class="total-title">Total</span>
-                                    <span class="total-price"><?php echo $total;?></span>
+                                    <span class="total-price"><?php echo money($total);?></span>
                                 </div>
                                 <div class="total"><a style="background: none;" href="<?php echo Yii::app()->createUrl("cart/cart",array());?>">View Cart</a></div>
                             </div>
