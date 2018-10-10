@@ -117,8 +117,8 @@ class SiteController extends Controller
 
                     $headers .= "MIME-Version: 1.0\r\n".
                                 "Content-Type: text/html; charset=UTF-8";
-		    
-                    $sentToUser = sendEmail($_POST['Users']['username'], $subject,$body,$headers);
+//		    pr($_POST);
+                    $sentToUser = sendEmail($_POST['UsersNew']['email'], $subject,$body,$headers);
                     $this->redirect(array("site/forgot","thankfor"=>1));
                 }
             }
