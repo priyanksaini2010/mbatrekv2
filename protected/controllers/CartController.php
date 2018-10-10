@@ -271,6 +271,9 @@ class CartController extends Controller {
                 ));
                
                 
+                
+                
+                
                 if($model->delete()){
                     $this->redirect(Yii::app()->request->urlReferrer."?show_cart=1",array("show_cart"=>1));
                 } else {
