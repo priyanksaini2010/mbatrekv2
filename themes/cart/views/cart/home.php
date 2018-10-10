@@ -141,202 +141,52 @@
         <div class="row">
             <div class="col-md-12">
                 <ul>
+                    <?php $arr = array(1,2,3,4);
+                        foreach ($arr as $a){
+                            $products = Products::model()->findAllByAttributes(array("home_page_bucket" => $a));
+                    ?>
                     <li>
                         <div class="bulid_button">
-                            <a href="">Build your own Brand</a>
+                            <a href="">
+                            <?php switch($a){
+                                case 1:
+                                    echo "Build your own Brand";
+                                break;
+                                case 2:
+                                    echo "Company / Industry & Job Fitment";
+                                break;
+                                case 3:
+                                    echo "Preparing For Placements";
+                                break;
+                                case 4:
+                                    echo "Perparing For Internship";
+                                break;
+                            
+                             }?>
+                            </a>
                         </div>
                         <div class="categories_container">
-							<a href="javascript:void(0);">
+                            <?php foreach ($products as $product){?>
+							<a href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>$product->id));?>">
 								<div class="repeat_categories">
 									<div class="repeat_icon">
-										<img src="<?php echo $baseUrl; ?>/images/resume_diagonisted_icon.png"/>
+										<img src="<?php echo Yii::app()->request->baseUrl; ?>/assets/products/<?php echo $product->home_page_icon;?>"/>
 									</div>
 									<div class="categories-text">
-										Resume Diagnostic
+										<?php echo $product->title;?>
 									</div>
 									<div class="categories_price">
-										<span>Price &#8377;  800</span>
+										<span>Price &#8377;  <?php echo money($product->title);?></span>
 										<span class="read_more_span">Read More <i class="fa fa-angle-double-right" aria-hidden="true"></i></span>
 									</div>
 								</div>
 							</a>
-							<a href="javascript:void(0);">
-								<div class="repeat_categories">
-									<div class="repeat_icon">
-										<img src="<?php echo $baseUrl; ?>/images/linked_in_diagnosit.png"/>
-									</div>
-									<div class="categories-text">
-									LinkedIn Diagnostic
-									</div>
-									<div class="categories_price">
-										<span>Price &#8377;  800</span>
-										<span class="read_more_span">Read More <i class="fa fa-angle-double-right" aria-hidden="true"></i></span>
-									</div>
-								</div>
-							</a>
-							<a href="javascript:void(0);">
-								<div class="repeat_categories">
-									<div class="repeat_icon">
-										<img src="<?php echo $baseUrl; ?>/images/personal_branding.png"/>
-									</div>
-									<div class="categories-text">
-									Personal Branding
-									</div>
-									<div class="categories_price">
-										<span>Price &#8377;  800</span>
-										<span class="read_more_span">Read More <i class="fa fa-angle-double-right" aria-hidden="true"></i></span>
-									</div>
-								</div>
-							</a>
+                            <?php }?>
+							
                         </div>
                     </li>   
-                    <li>
-                        <div class="bulid_button">
-                            <a href="">Company / Industry & Job Fitment</a>
-                        </div>
-                        <div class="categories_container">
-							<a href="javascript:void(0);">
-								<div class="repeat_categories">
-									<div class="repeat_icon">
-										<img src="<?php echo $baseUrl; ?>/images/industry_analyis_icon.png"/>
-									</div>
-									<div class="categories-text">
-									Industry Analysis
-									</div>
-									<div class="categories_price">
-										<span>Price &#8377;  800</span>
-										<span class="read_more_span">Read More <i class="fa fa-angle-double-right" aria-hidden="true"></i></span>
-									</div>
-								</div>
-							</a>
-							<a href="javascript:void(0);">
-								<div class="repeat_categories">
-									<div class="repeat_icon">
-										<img src="<?php echo $baseUrl; ?>/images/company_analysis_icon.png"/>
-									</div>
-									<div class="categories-text">
-									Company Analysis
-									</div>
-									<div class="categories_price">
-										<span>Price &#8377;  800</span>
-										<span class="read_more_span">Read More <i class="fa fa-angle-double-right" aria-hidden="true"></i></span>
-									</div>
-								</div>
-							</a>
-							<a href="javascript:void(0);">
-								<div class="repeat_categories">
-									<div class="repeat_icon">
-										<img src="<?php echo $baseUrl; ?>/images/job_fitment_icon.png"/>
-									</div>
-									<div class="categories-text">
-									Job Fitment Analysis
-									</div>
-									<div class="categories_price">
-										<span>Price &#8377;  800</span>
-										<span class="read_more_span">Read More <i class="fa fa-angle-double-right" aria-hidden="true"></i></span>
-									</div>
-								</div>
-							</a>
-                        </div>
-                    </li>  
-                    <li>
-                        <div class="bulid_button">
-                            <a href="">Preparing for Placements</a>
-                        </div>
-                        <div class="categories_container">
-							<a href="javascript:void(0);">
-								<div class="repeat_categories">
-									<div class="repeat_icon">
-										<img src="<?php echo $baseUrl; ?>/images/mockup_interview_icon.png"/>
-									</div>
-									<div class="categories-text">
-									Mock Interview
-									</div>
-									<div class="categories_price">
-										<span>Price &#8377;  800</span>
-										<span class="read_more_span">Read More <i class="fa fa-angle-double-right" aria-hidden="true"></i></span>
-									</div>
-								</div>
-							</a>
-							<a href="javascript:void(0);">
-								<div class="repeat_categories">
-									<div class="repeat_icon">
-										<img src="<?php echo $baseUrl; ?>/images/interview_q_a.png"/>
-									</div>
-									<div class="categories-text">
-									Interview    Q & A
-									</div>
-									<div class="categories_price">
-										<span>Price &#8377;  800</span>
-										<span class="read_more_span">Read More <i class="fa fa-angle-double-right" aria-hidden="true"></i></span>
-									</div>
-								</div>
-							</a>
-							<a href="javascript:void(0);">
-								<div class="repeat_categories">
-									<div class="repeat_icon">
-										<img src="<?php echo $baseUrl; ?>/images/cracing_gd.png"/>
-									</div>
-									<div class="categories-text custome_padding">
-									Cracking GD
-									</div>
-									<div class="categories_price">
-										<span>Price &#8377;  800</span>
-										<span class="read_more_span">Read More <i class="fa fa-angle-double-right" aria-hidden="true"></i></span>
-									</div>
-								</div>
-							</a>
-                        </div>
-                    </li>  
-                    <li>
-                        <div class="bulid_button">
-                            <a href="">Preparing for Internship</a>
-                        </div>
-                        <div class="categories_container">
-							<a href="javascript:void(0);">
-								<div class="repeat_categories">
-									<div class="repeat_icon">
-										<img src="<?php echo $baseUrl; ?>/images/interAce_icon.png"/>
-									</div>
-									<div class="categories-text custome_padding">
-									InternACE
-									</div>
-									<div class="categories_price">
-										<span>Price &#8377;  800</span>
-										<span class="read_more_span">Read More <i class="fa fa-angle-double-right" aria-hidden="true"></i></span>
-									</div>
-								</div>
-							</a>
-							<a href="javascript:void(0);">
-								<div class="repeat_categories">
-									<div class="repeat_icon">
-										<img src="<?php echo $baseUrl; ?>/images/interPro_icon.png"/>
-									</div>
-									<div class="categories-text custome_padding">
-									InternPRO
-									</div>
-									<div class="categories_price">
-										<span>Price &#8377;  800</span>
-										<span class="read_more_span">Read More <i class="fa fa-angle-double-right" aria-hidden="true"></i></span>
-									</div>
-								</div>
-							</a>
-							<a href="javascript:void(0);">
-								<div class="repeat_categories">
-									<div class="repeat_icon">
-										<img src="<?php echo $baseUrl; ?>/images/interArise_icon.png"/>
-									</div>
-									<div class="categories-text custome_padding">
-									InternARISE
-									</div>
-									<div class="categories_price">
-										<span>Price &#8377;  800</span>
-										<span class="read_more_span">Read More <i class="fa fa-angle-double-right" aria-hidden="true"></i></span>
-									</div>
-								</div>
-							</a>
-                        </div>
-                    </li>  
+                        <?php }?>
+                    
             </div> 
                 </ul>
             </div>
