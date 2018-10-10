@@ -120,14 +120,14 @@
 								<ul >
 										<li><a href="#">Students <i class="pull-right fa fa-angle-double-right" aria-hidden="true"></i></a>
 										<ul >
-											<li><a href="#">#YouBeThe Intrective </a></li>
-											<li><a href="#">#Compus 2 Corporate</a></li>
+											<li><a href="#">#YouBeTheExecutive </a></li>
+											<li><a href="#">#Campus2Corporate</a></li>
 										</ul>
 									</li>
 										<li><a href="#">Placement Coordinator <i class="pull-right fa fa-angle-double-right" aria-hidden="true"></i></a>
 										<ul >
-											<li><a href="#">#YouBeThe Intrective </a></li>
-											<li><a href="#">#Compus 2 Corporate</a></li>
+											<li><a href="#">#YouBeTheExecutive </a></li>
+											<li><a href="#">#Campus2Corporate</a></li>
 										</ul>
 									</li>
 										<li><a href="#">Young Professionals <i class="pull-right fa fa-angle-double-right" aria-hidden="true"></i></a>
