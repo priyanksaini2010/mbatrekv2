@@ -67,7 +67,7 @@
 							</li>     
 							<li><a href="#">Packages <i class="pull-right fa fa-angle-double-right" aria-hidden="true"></i></a> 
 								<ul>
-									<li class="kopie"><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"20")); ?>">InternGO</a></li>
+									<li class="kopie"><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"19")); ?>">InternGO</a></li>
 <!--<li><a href="https://mbatrek.com/v2/index.php?r=cart/description&id=22">Cracking GD</a></li>-->
                                                                         <li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"28")); ?>">InternACE</a></li>
                                                                         <li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"27")); ?>">InternPRO</a></li>
