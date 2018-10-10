@@ -80,6 +80,10 @@ class ProductsController extends Controller
                             $tmp_name = $_FILES['Products']['tmp_name']['logo'];
                             move_uploaded_file($tmp_name, $path . "/" . $fileName);
                             $_POST['Products']['logo'] = $fileName;
+                            $fileName = rand() . str_replace(" ", "", $_FILES['Products']['name']['home_page_icon']);  // random number + file name
+                            $tmp_name = $_FILES['Products']['tmp_name']['home_page_icon'];
+                            move_uploaded_file($tmp_name, $path . "/" . $fileName);
+                            $_POST['Products']['home_page_icon'] = $fileName;
 
                         }
 			$model->attributes=$_POST['Products'];
@@ -128,10 +132,21 @@ class ProductsController extends Controller
                             } else {
                                  $_POST['Products']['logo'] = $model->logo;
                             }
+                        if($_FILES['Products']['name']['home_page_icon'] != ""){
+                            $fileName = rand() . str_replace(" ", "", $_FILES['Products']['name']['home_page_icon']);  // random number + file name
+                            $tmp_name = $_FILES['Products']['tmp_name']['home_page_icon'];
+                            move_uploaded_file($tmp_name, $path . "/" . $fileName);
+                            $_POST['Products']['home_page_icon'] = $fileName;
+                            
+                            } else {
+                                 $_POST['Products']['home_page_icon'] = $model->home_page_icon;
+                            }
                         } else {
                             $_POST['Products']['logo'] = $model->logo;
+                            $_POST['Products']['home_page_icon'] = $model->home_page_icon;
                         }
 			$model->attributes=$_POST['Products'];
+//                        pr($model->attributes);
 			if($model->save())
                         {
                             Yii::app()->user->setFlash("success","Product updated successfully");
