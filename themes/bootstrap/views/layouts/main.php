@@ -35,7 +35,7 @@ $siteData = array(
 //            array('label'=>'FAQ Analysis', 'url'=>array('/faqAnalysis/admin')),
 //            array('label'=>'Talk To Advisory', 'url'=>array('/talkToAdvisory/admin')),
 //            array('label'=>'eBroucher Management', 'items'=>$items),
-//            array('label'=>'Videos Management', 'url'=>array('/videos/admin')),
+            array('label'=>'Success Story Management', 'url'=>array('/successStory/admin')),
             array('label'=>'Event Category Management', 'url'=>array('/eventCategory/admin')),
             array('label'=>'Event Management', 'url'=>array('/eventGallery/admin')),
 //            array('label'=>'Articles Management', 'url'=>array('/articles/admin',"type"=>1)),
