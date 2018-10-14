@@ -20,18 +20,19 @@ switch ($type){
 
 $leftContent = SuccessStory::model()->findAllByAttributes(array("type"=>$type,"sub_type"=>1));
 $rightContent = SuccessStory::model()->findAllByAttributes(array("type"=>$type,"sub_type"=>2));
+if(!empty($leftContent) || !empty($rightContent)) {
 ?>
 <div class="container">
     <div class="row">
         <div class="sucess_story_wrap">
             <h3>What <?php echo $text;?> say about MBAtrek…</h3>
             <div class="col-md-6 the_Executive">
-                <?php if($left == ""){?>
+               
                 <div class="sucess_heading">
                     <h3><?php echo $left;?></h3>
                     
                 </div>
-                <?php }?>
+                
                 <?php foreach($leftContent as $content){?>
                 <div class="sucess_Repeat">
                     <div class="row">
@@ -79,3 +80,6 @@ $rightContent = SuccessStory::model()->findAllByAttributes(array("type"=>$type,"
         </div>
     </div>
 </div>
+<?php }else {?>
+<p>No Records Founf</p>
+<?php } ?>
