@@ -17,7 +17,7 @@ switch ($type){
         $right = "";
     break;
 }
-$this->setPageTitle( $type." Success Story");
+$this->setPageTitle( $text." Success Story");
 $leftContent = SuccessStory::model()->findAllByAttributes(array("type"=>$type,"sub_type"=>1));
 $rightContent = SuccessStory::model()->findAllByAttributes(array("type"=>$type,"sub_type"=>2));
 if(!empty($leftContent) || !empty($rightContent)) {
