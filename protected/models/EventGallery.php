@@ -6,10 +6,11 @@
  * The followings are the available columns in table 'event_gallery':
  * @property integer $id
  * @property integer $event_category_id
- * @property string $image
- *
- * The followings are the available model relations:
- * @property EventCategory $eventCategory
+ * @property string $image_1
+ * @property string $image_2
+ * @property string $image_3
+ * @property string $name
+ * @property string $description
  */
 class EventGallery extends CActiveRecord
 {
@@ -29,12 +30,13 @@ class EventGallery extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('event_category_id, image', 'required'),
+			array('event_category_id, image_1, image_2, image_3, name, description', 'required'),
 			array('event_category_id', 'numerical', 'integerOnly'=>true),
-			array('image', 'length', 'max'=>1555),
+			array('image_1', 'length', 'max'=>1555),
+			array('image_2, image_3, name', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, event_category_id, image', 'safe', 'on'=>'search'),
+			array('id, event_category_id, image_1, image_2, image_3, name, description', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -46,7 +48,6 @@ class EventGallery extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'eventCategory' => array(self::BELONGS_TO, 'EventCategory', 'event_category_id'),
 		);
 	}
 
@@ -58,7 +59,11 @@ class EventGallery extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'event_category_id' => 'Event Category',
-			'image' => 'Image',
+			'image_1' => 'Image 1',
+			'image_2' => 'Image 2',
+			'image_3' => 'Image 3',
+			'name' => 'Name',
+			'description' => 'Description',
 		);
 	}
 
@@ -82,7 +87,11 @@ class EventGallery extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('event_category_id',$this->event_category_id);
-		$criteria->compare('image',$this->image,true);
+		$criteria->compare('image_1',$this->image_1,true);
+		$criteria->compare('image_2',$this->image_2,true);
+		$criteria->compare('image_3',$this->image_3,true);
+		$criteria->compare('name',$this->name,true);
+		$criteria->compare('description',$this->description,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
