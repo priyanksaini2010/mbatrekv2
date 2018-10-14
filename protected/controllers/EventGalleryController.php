@@ -77,12 +77,23 @@ class EventGalleryController extends Controller
                             CFileHelper::createDirectory($path,null,true);
                         }
                         if (!empty($_FILES)) {
-                            $fileName = rand().str_replace(" ","", $_FILES['EventGallery']['name']['image']);  // random number + file name
-                            $tmp_name = $_FILES['EventGallery']['tmp_name']['image'];
+//                            pr($_FILES);
+                            $fileName = rand().str_replace(" ","", $_FILES['EventGallery']['name']['image_1']);  // random number + file name
+                            $tmp_name = $_FILES['EventGallery']['tmp_name']['image_1'];
                             move_uploaded_file($tmp_name, $path."/".$fileName);
+                            $_POST['EventGallery']['image_1'] = $fileName;
+                            $fileName = rand().str_replace(" ","", $_FILES['EventGallery']['name']['image_2']);  // random number + file name
+                            $tmp_name = $_FILES['EventGallery']['tmp_name']['image_2'];
+                            move_uploaded_file($tmp_name, $path."/".$fileName);
+                            
+                            $_POST['EventGallery']['image_2'] = $fileName;
+                            $fileName = rand().str_replace(" ","", $_FILES['EventGallery']['name']['image_3']);  // random number + file name
+                            $tmp_name = $_FILES['EventGallery']['tmp_name']['image_3'];
+                            move_uploaded_file($tmp_name, $path."/".$fileName);
+                            $_POST['EventGallery']['image_3'] = $fileName;
 
                         }
-                        $_POST['EventGallery']['image'] = $fileName;
+                        
                         $model->attributes=$_POST['EventGallery'];
 			if($model->save()){
                             Yii::app()->user->setFlash('success', "Event Category Added Successfully."); 
@@ -120,12 +131,34 @@ class EventGalleryController extends Controller
                             CFileHelper::createDirectory($path,null,true);
                         }
                         if (!empty($_FILES)) {
-                            $fileName = rand().str_replace(" ","", $_FILES['EventGallery']['name']['image']);  // random number + file name
-                            $tmp_name = $_FILES['EventGallery']['tmp_name']['image'];
-                            move_uploaded_file($tmp_name, $path."/".$fileName);
+                            if($_FILES['EventGallery']['tmp_name']['image_1'] != ""){
+                                $fileName = rand().str_replace(" ","", $_FILES['EventGallery']['name']['image_1']);  // random number + file name
+                                $tmp_name = $_FILES['EventGallery']['tmp_name']['image_1'];
+                                move_uploaded_file($tmp_name, $path."/".$fileName);
+                                $_POST['EventGallery']['image_1'] = $fileName;
+                            }else {
+                                 $_POST['EventGallery']['image_1'] = $model->image_1;
+                            }
+                            if($_FILES['EventGallery']['tmp_name']['image_2'] != ""){
+                                $fileName = rand().str_replace(" ","", $_FILES['EventGallery']['name']['image_2']);  // random number + file name
+                                $tmp_name = $_FILES['EventGallery']['tmp_name']['image_2'];
+                                move_uploaded_file($tmp_name, $path."/".$fileName);
+                                $_POST['EventGallery']['image_2'] = $fileName;
+                            }else {
+                                 $_POST['EventGallery']['image_2'] = $model->image_1;
+                            }
+                            if($_FILES['EventGallery']['tmp_name']['image_3'] != ""){
+                                $fileName = rand().str_replace(" ","", $_FILES['EventGallery']['name']['image_3']);  // random number + file name
+                                $tmp_name = $_FILES['EventGallery']['tmp_name']['image_3'];
+                                move_uploaded_file($tmp_name, $path."/".$fileName);
+                                $_POST['EventGallery']['image_3'] = $fileName;
+                            }else {
+                                 $_POST['EventGallery']['image_3'] = $model->image_1;
+                            }
+                            
 
                         }
-                        $_POST['EventGallery']['image'] = $fileName;
+                       
 			$model->attributes=$_POST['EventGallery'];
 			if($model->save()){
                             Yii::app()->user->setFlash('success', "Event Added Successfully."); 
