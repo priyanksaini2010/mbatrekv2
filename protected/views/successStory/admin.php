@@ -19,8 +19,8 @@ $this->menu=array(
 	'filter'=>$model,
 	'columns'=>array(
 //		'id',
-		'type',
-		'sub_type',
+//		'type',
+//		'sub_type',
 		'college_or_company',
 		'author',
 		'course',
@@ -29,6 +29,7 @@ $this->menu=array(
 		*/
 		array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',
+                        'template' => "{update}{delete}"
 		),
 	),
 )); ?>
