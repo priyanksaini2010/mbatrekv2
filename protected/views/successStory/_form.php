@@ -8,12 +8,12 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<?php
-        $ar = array(1=>"Placement Coordinators",2=>"students ",3=>"Young Professionals");
+        $ar = array(1=>"Placement Coordinators",2=>"Students ",3=>"Young Professionals");
         echo $form->dropDownList($model, 'type', $ar, array('class' => 'span3')); ?>
 
 	<?php
         
-        $ar = array(1=>"#YouBeTheExecutive",2=>"How to Leverage 2 Year MBA Program",3=>"How to Maximize the Opportunity for Placements",4=>"Left Part",5=>"Right Part");
+        $ar = array(1=>"Left Part",2=>"Right Part");
          echo $form->dropDownList($model, 'sub_type', $ar, array('class' => 'span3')); ?>
 
 	<?php echo $form->textFieldRow($model,'college_or_company',array('class'=>'span5','maxlength'=>255)); ?>
