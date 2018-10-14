@@ -107,11 +107,11 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                             <img src="<?php echo $baseUrl; ?>/images/setting.jpg" class="img-responsive center-block" />
                             <h5 class="text-center">Settling in</h5>
                             <ul>
-                                <li><img src="<?php echo $baseUrl; ?>/images/clode_new_one.png">
+                                <!--<li><img src="<?php echo $baseUrl; ?>/images/clode_new_one.png">
                                     <label>  Lack of clarity about your role </label> 
-                                </li>
+                                </li>-->
                                 <li><img src="<?php echo $baseUrl; ?>/images/picture.png">
-                                    <label>Expectations not met – salary, role, boss
+                                    <label>Salary, role, boss - did i get it right ?
                                     </label>
                                 </li>
                                 <li><img src="<?php echo $baseUrl; ?>/images/nosuppot.png">
@@ -135,10 +135,10 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                     <label>Can’t really understand the peers and/or seniors
                                     </label>
                                 </li>
-                                <li><img src="<?php echo $baseUrl; ?>/images/tools.png">
+                                <!--<li><img src="<?php echo $baseUrl; ?>/images/tools.png">
                                     <label>Proficiency in tools and systems is limited
                                     </label>
-                                </li>
+                                </li>-->
                                 <li><img src="<?php echo $baseUrl; ?>/images/follow.png">
                                     <label>Don’t know who to follow in the organization
                                     </label>
@@ -153,10 +153,10 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                     <label>High degree of politics and power play
                                     </label>
                                 </li>
-                                <li><img src="<?php echo $baseUrl; ?>/images/ownstory.png">
+                               <!-- <li><img src="<?php echo $baseUrl; ?>/images/ownstory.png">
                                     <label>Not able to tell your own story
                                     </label>
-                                </li>
+                                </li>-->
                                 <li><img src="<?php echo $baseUrl; ?>/images/stress.png">
                                     <label>Your boss doesn’t see you as a high performer
                                     </label>
@@ -185,10 +185,10 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                     <label>You might want to switch jobs or roles
                                     </label>
                                 </li>
-                                <li><img src="<?php echo $baseUrl; ?>/images/role.png">
+                                <!--<li><img src="<?php echo $baseUrl; ?>/images/role.png">
                                     <label>You are happy – want to make the next promotion
                                     </label>
-                                </li>
+                                </li>-->
                             </ul>
                         </div>
                     </div>
@@ -283,12 +283,12 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                     </div>
                                 </div>
                                 <div class="arrow-icon ">
-                                    <a href="#"><img src="<?php echo $baseUrl; ?>/images/blue-arrow-down.jpg"></a>
+                                    <a class="scroll_to" href="#intern_price"><img src="<?php echo $baseUrl; ?>/images/blue-arrow-down.jpg"></a>
                                 </div>
                                 <div class="row">
                                 </div class="col-md-12">
                                 <?php if(!empty($saver)){?>
-                                <div class="student-cta1-bottom ">
+                                <div class="student-cta1-bottom " id="intern_price" >
                                     <div class="student-cta1-bottom-inner ">
                                         <div class="student-cta1-bottom-title">
                                             <?php echo $saver->title;?>
@@ -311,7 +311,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                 <?php }?>
                             </div>
                             <div class="arrow-icon icon_2">
-                                <a href="#"><img src="<?php echo $baseUrl; ?>/images/blue-arrow-down.jpg"></a>
+                                <a  class="scroll_to" href="#indusctry_ready"><img src="<?php echo $baseUrl; ?>/images/blue-arrow-down.jpg"></a>
                             </div>
 
                             <div class="studen-wrapper">
@@ -361,6 +361,30 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="combo_package">
+                                        <div class="student-cta1-bottom ">
+                                                <div class="student-cta1-bottom-inner " id="indusctry_ready">
+                                                    <div class="student-cta1-bottom-title">
+                                                    Industry Ready Combo Package
+                                                    <span class="combol_sub_Text">(5 Industry Analyses + 10 Company Analyses + Job Fitment Assessment)</span>
+                                                    </div>
+                                                    <div class="student-cta1-bottom-sub-title">
+                                                        Price ₹  <div class="line_trgh_com">3,500</div><br>
+                                                        <span class="new-price">Special Offer: ₹ 3,200
+                                                            </span>
+                                                    </div>
+                                                    <div class="buy-and-cart">
+                                                        <a href="/v2/cart/buynow/19">buy now</a>
+                                                        <a href="/v2/cart/addtocart/19">add to cart</a>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="arrow-icon icon_2">
+                                            <a class="scroll_to" href="#interview_ready"><img src="/v2/themes/cart/images/blue-arrow-down.jpg"></a>
+                                        </div>
+                                        </div>
+                                       
                                         <div class="right-choice-inner2">
                                             <div class="right-choice-inner-title">
                                                 Let us help you in building your <span class="text-color">own Story....</span>
@@ -438,6 +462,27 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                     </ul>                                    
                                                 </div>
                                             </div>
+                                        </div>
+                                        <div class="combo_package">
+                                        <div class="student-cta1-bottom ">
+                                                <div class="student-cta1-bottom-inner" id="interview_ready" >
+                                                    <div class="student-cta1-bottom-title">
+                                                    Interview Ready Combo Package
+                                                    <span class="combol_sub_Text">(50 Q & A + 3 Mock Interviews)</span>
+                                                    </div>
+                                                    <div class="student-cta1-bottom-sub-title">
+                                                        Price ₹  <div class="line_trgh_com">3,500</div><br>
+                                                        <span class="new-price">Special Offer: ₹ 3,200
+                                                            </span>
+                                                    </div>
+                                                    <div class="buy-and-cart">
+                                                        <a href="/v2/cart/buynow/19">buy now</a>
+                                                        <a href="/v2/cart/addtocart/19">add to cart</a>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                          
                                         </div>
                                         <div class="row">
                                         </div class="col-md-12">

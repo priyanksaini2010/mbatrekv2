@@ -1063,7 +1063,10 @@ footer .footer-logo{
     text-decoration: none;
 }
 .right-choice-inner2{
-    margin-top: 50px;
+    margin-top: 12px;
+    display: block;
+    width: 100%;
+    float: left;
 }
 .right-choice-inner2 .right-choice-inner-title{
     font-size: 40px;

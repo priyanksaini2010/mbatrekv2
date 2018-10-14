@@ -111,8 +111,10 @@
                 <li>
                   <a href="#">Insights </a>				
                   <ul >
-                    <li><a href="<?php echo Yii::app()->createUrl('blogs'); ?>">Blog</a></li>
-<li><a href="<?php echo Yii::app()->createUrl('mbatrek-on-the-ground'); ?>">MBAtrek on the ground</a></li>
+					<li><a href="<?php echo Yii::app()->createUrl('blogs'); ?>">Blogs / Article</a></li>
+					<li><a href="javascript:void(0);">Videos</a></li>
+					<li><a href="javascript:void(0);">#CareerPrep</a></li>
+<!--<li><a href="<?//php //echo Yii::app()->createUrl('mbatrek-on-the-ground'); ?>">MBAtrek on the ground</a></li>-->
                     
                   </ul>                
                 </li>
@@ -140,9 +142,9 @@
 							</li>
                 <li class="faq"><a href="javascript:void(0);">CampusConnect</a>
 									<ul >
-                    <li><a href="#">Campus Ambassador</a></li>
-                    <li><a href="#">#InterviewReady</a></li>
-                    <li><a href="#">#IndustryReady</a></li>
+                    <li><a href="#">Campus Ambassador Program</a></li>
+                    <li><a href="#">#InterviewReady Competition</a></li>
+                    <li><a href="#">#IndustryReady Competition</a></li>
                   </ul>
 				</li>
 

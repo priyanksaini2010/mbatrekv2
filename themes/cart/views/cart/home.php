@@ -88,14 +88,14 @@
                     <div class="col-md-12">
                         <div class="price_detail_home">
                             <div class="arrow-icon ">
-                                <a href="#"><img src="/v2/themes/cart/images/blue-arrow-down.jpg"></a>
+                                <a href="#home_Section" class="scroll_to" ><img src="/v2/themes/cart/images/blue-arrow-down.jpg"></a>
                             </div>
                         </div>
                     </div>
                 </div>
                 </div>
                 </div>
-<div class="home_sec_2">
+<div class="home_sec_2" id="home_Section" >
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -173,7 +173,7 @@
 										<img src="<?php echo Yii::app()->request->baseUrl; ?>/assets/products/<?php echo $product->home_page_icon;?>"/>
 									</div>
 									<div class="categories-text">
-										<?php echo $product->title;?>
+										<span><?php echo $product->title;?></span>
 									</div>
 									<div class="categories_price">
 										<span>Price &#8377;  <?php echo money($product->price);?></span>
