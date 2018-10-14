@@ -73,8 +73,10 @@ class SuccessStoryController extends Controller
 		if(isset($_POST['SuccessStory']))
 		{
 			$model->attributes=$_POST['SuccessStory'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			if($model->save()){
+                            Yii::app()->user->setFlash("success","Success Story Added Successfully");
+                            $this->redirect(array('admin','id'=>$model->id));
+                        }
 		}
 
 		$this->render('create',array(
@@ -97,8 +99,10 @@ class SuccessStoryController extends Controller
 		if(isset($_POST['SuccessStory']))
 		{
 			$model->attributes=$_POST['SuccessStory'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			if($model->save()){
+                            Yii::app()->user->setFlash("success","Success Story Updated Successfully");
+                            $this->redirect(array('admin','id'=>$model->id));
+                        }
 		}
 
 		$this->render('update',array(
