@@ -33,7 +33,7 @@ class CartController extends Controller {
         return array(
             array('allow', // allow all users to perform 'index' and 'view' actions
                 'actions' => array('index', 'view','student',"addtocart","cart","remove","buynow","verify", 
-                                    'profesionals','institutes','register',"description","checkout","removeCart","applypromo"),
+                                    'profesionals','institutes','register',"description","checkout","removeCart","applypromo","story"),
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -72,6 +72,10 @@ class CartController extends Controller {
 	public function actionIndex(){
 		$this->layout = getCartLayot();
 		$this->render("webroot.themes.cart.views.cart.home",array());
+	}
+	public function actionStory(){
+		$this->layout = getCartLayot();
+		$this->render("webroot.themes.cart.views.cart.story",array());
 	}
 	
 	public function actionStudent(){
