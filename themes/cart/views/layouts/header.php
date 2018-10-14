@@ -120,19 +120,19 @@
                 </li>
 								<li class="success"><a href="<?php echo Yii::app()->createUrl('our-story'); ?>">Success Stories</a>
 								<ul >
-										<li><a href="#">Students <i class="pull-right fa fa-angle-double-right" aria-hidden="true"></i></a>
+										<li><a href="<?php echo Yii::app()->createUrl('cart/story', array("type"=>"2")); ?>">Students <i class="pull-right fa fa-angle-double-right" aria-hidden="true"></i></a>
 										<ul >
 											<li><a href="#">#YouBeTheExecutive </a></li>
 											<li><a href="#">#Campus2Corporate</a></li>
 										</ul>
 									</li>
-										<li><a href="#">Placement Coordinator <i class="pull-right fa fa-angle-double-right" aria-hidden="true"></i></a>
+										<li><a href="<?php echo Yii::app()->createUrl('cart/story', array("type"=>"1")); ?>">Placement Coordinator <i class="pull-right fa fa-angle-double-right" aria-hidden="true"></i></a>
 										<ul >
 											<li><a href="#">#YouBeTheExecutive </a></li>
 											<li><a href="#">#Campus2Corporate</a></li>
 										</ul>
 									</li>
-										<li><a href="#">Young Professionals <i class="pull-right fa fa-angle-double-right" aria-hidden="true"></i></a>
+										<li><a href="<?php echo Yii::app()->createUrl('cart/story', array("type"=>"3")); ?>">Young Professionals <i class="pull-right fa fa-angle-double-right" aria-hidden="true"></i></a>
 										<ul >
 											<li><a href="#">#Career Planning</a></li>
 											
