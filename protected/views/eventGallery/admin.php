@@ -22,7 +22,7 @@ $this->menu=array(
 	'filter'=>$model,
 	'columns'=>array(
 		'id',
-		'event_category_id',
+		'name',
 //		'image',
 		array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',
