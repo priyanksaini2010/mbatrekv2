@@ -5,14 +5,14 @@
             validationMethod("error","<?php echo $error;?>")
             <?php }?>
 <?php } ?>
-    <?php if(isset($_REQUEST['thanksreg'])){?>
+    <?php if(isset($_REQUEST['thankreg'])){?>
 	 validationMethod("thanks","Thanks for signup with us, please check your email to verify.")
     <?php }?>
     <?php if(isset($_REQUEST['thankforin'])){?>
 	 validationMethod("error","Please use MBAtrek registered email address.")
     <?php }?>
     <?php if(isset($_REQUEST['thankfor'])){?>
-	 validationMethod("thanks","Please check your inbox for password for recovery.")
+	 validationMethod("thanks","Please check your inbox for password recovery.")
     <?php }?>
     <?php if(isset($_REQUEST['underconst'])){?>
 	 validationMethod("error","This page is under construction.")
