@@ -114,30 +114,32 @@
 					<li><a href="<?php echo Yii::app()->createUrl('blogs'); ?>">Blogs / Article</a></li>
 					<li><a href="javascript:void(0);">Videos</a></li>
 					<li><a href="javascript:void(0);">#CareerPrep</a></li>
-<!--<li><a href="<?//php //echo Yii::app()->createUrl('mbatrek-on-the-ground'); ?>">MBAtrek on the ground</a></li>-->
+
                     
                   </ul>                
                 </li>
 								<li class="success"><a href="<?php echo Yii::app()->createUrl('our-story'); ?>">Success Stories</a>
 								<ul >
-										<li><a href="<?php echo Yii::app()->createUrl('cart/story', array("type"=>"2")); ?>">Students <i class="pull-right fa fa-angle-double-right" aria-hidden="true"></i></a>
-										<ul >
+										<li><a href="<?php echo Yii::app()->createUrl('cart/story', array("type"=>"2")); ?>">Students </a>
+										<!--<ul >
 											<li><a href="#">#YouBeTheExecutive </a></li>
 											<li><a href="#">#Campus2Corporate</a></li>
-										</ul>
+										</ul>-->
 									</li>
-										<li><a href="<?php echo Yii::app()->createUrl('cart/story', array("type"=>"1")); ?>">Placement Coordinator <i class="pull-right fa fa-angle-double-right" aria-hidden="true"></i></a>
-										<ul >
+										<li><a href="<?php echo Yii::app()->createUrl('cart/story', array("type"=>"1")); ?>">Placement Coordinator </a>
+										<!--<ul >
 											<li><a href="#">#YouBeTheExecutive </a></li>
 											<li><a href="#">#Campus2Corporate</a></li>
-										</ul>
+										</ul>-->
 									</li>
-										<li><a href="<?php echo Yii::app()->createUrl('cart/story', array("type"=>"3")); ?>">Young Professionals <i class="pull-right fa fa-angle-double-right" aria-hidden="true"></i></a>
-										<ul >
+									<li><a href="<?php echo Yii::app()->createUrl('cart/story', array("type"=>"3")); ?>">Young Professionals </a>
+										
+										<!--<ul >
 											<li><a href="#">#Career Planning</a></li>
 											
-										</ul>
+										</ul>-->
 									</li>
+									<li><a href="<?php echo Yii::app()->createUrl('mbatrek-on-the-ground'); ?>">MBAtrek on the ground</a></li>
                   </ul>
 							</li>
                 <li class="faq"><a href="javascript:void(0);">CampusConnect</a>

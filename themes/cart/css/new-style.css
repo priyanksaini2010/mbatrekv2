@@ -736,6 +736,7 @@ user-select: none;
 .mbatek_strory h3{font-size: 29px;color: #229897;text-align: center;margin:0;padding: 0 0 11px 0;font-family: 'MyriadPro-Semibold';}
 .mbatek_strory h4{font-size: 23px;color: #229897;font-family: 'MyriadPro-Semibold';    padding: 15px 0 13px 0;margin:0;}
 .mbatek_strory p span{color: #229897;}
+.mbatek_strory p a{color: #229897;}
 .mbatek_strory p {font-size:16px;}
 .mbatek_strory p.relevent_upper_text {margin: 40px 0 0 0;}
 .mbatek_strory ul li{text-align: center;display: inline-block;list-style: none;padding: 0 30px;}
@@ -1191,10 +1192,10 @@ text-align: center;border-radius: 2px;}
 .ground_mbatrek h3{font-size: 29px;font-family: 'MyriadPro-Semibold';color: #348786;margin:0;padding: 0 0 18px 0;text-align: center;}
 .event_container{width: 100%;float: left;}
 .event_container h4{font-size: 26px;text-align:left;font-family: 'MyriadPro-Semibold';color: #348786;    padding: 0 0 20px 0;margin:0;}
-.eventbanner{width: 100%;float: left;}
+.eventbanner{width: 100%;float: left;    padding: 0 0px 8px 0;    margin: 0 0 29px 0;border-bottom: 1px solid #ccc;}
 .eventbanner img{width: 100%;}
 .eventbanner p{color: #348786;font-weight: normal;font-size: 20px;padding: 16px 0 0 0;margin:0;}
-.more_about_plan{width: 100%;float: left;    padding: 13px 0 0 0;}
+.more_about_plan{width: 100%;float: left; }
 .more_about_plan label{font-size: 26px;font-family: 'MyriadPro-Semibold';color: #999;}
 .more_about_plan label a{color: #348786;}
 .more_about_plan label a:hover{color: #f5b71f;}
@@ -1461,7 +1462,7 @@ text-align: center;border-radius: 2px;}
 .home_sec_2.social_media ul li .global_text h3{height:81px;padding:0 0 0 16px;font-size:27px;}
 .home_sec_2.social_media ul li .global_text{max-width:100%;}
 .home_sec_2.social_media .global_experiance{padding:16px 0 2px 0;}
-.promo_card_apply{width:100%;position:absolute;background:#ddd;padding:13px 20px 20px 20px;border-radius: 8px;display:none;    margin: 6px 0 0 0;}
+.promo_card_apply{border:1px solid #348786;width:100%;position:absolute;background:#fff;padding:13px 20px 20px 20px;border-radius: 8px;display:none;    margin: 6px 0 0 0;z-index:9;}
 .promo_btn{width:100%;float:left;text-align:center;}
 .promo_card_apply .promo_btn input[type="submit"]{border:none;background:#348786;color:#fff;display:inline-block;border:1px solid #348786;transition:all 0.3s; padding: 7px 17px 6px 17px;font-size: 18px;border-radius: 8px;}
 .promo_card_apply .input_field{border-color:#348786;}
@@ -1487,11 +1488,11 @@ text-align: center;border-radius: 2px;}
 .card_price .form-signin{padding:0;width:100%;float: left;}
 .promo_card_apply:after{position: absolute;
     content: "\f0d8";
-    font-family: 'FontAwesome';
-    top: -3px;
+    font-family: 'FontAwesome';z-index:-1;
+    top: -9px;
     font-size: 38px;
     line-height: 0;
-    color: #ddd;}
+    color: #348786;}
 .card_price .form-signin .input_field{margin:0;}
 .combo_package{width: 100%;float: left; padding: 0 0 27px 0;}
 .combo_package .student-cta1-bottom-title .combol_sub_Text{    font-size: 17px;
