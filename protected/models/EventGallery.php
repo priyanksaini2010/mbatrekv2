@@ -59,9 +59,9 @@ class EventGallery extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'event_category_id' => 'Event Category',
-			'image_1' => 'Image 1',
-			'image_2' => 'Image 2',
-			'image_3' => 'Image 3',
+			'image_1' => 'Image 1(376x282 PX)',
+			'image_2' => 'Image 2(376x282 PX)',
+			'image_3' => 'Image 3(376x282 PX)',
 			'name' => 'Name',
 			'description' => 'Description',
 		);
