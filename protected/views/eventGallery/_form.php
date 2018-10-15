@@ -21,12 +21,18 @@ $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
                 foreach ($Qmodels as $Qmodel)
                     $data[$Qmodel->id] = $Qmodel->name;   ?>
 	<?php echo $form->dropDownList($model,'event_category_id',$data, array('empty'=>'Select Category')) ;?>
-        <?php echo $form->fileFieldRow($model,'image_1',array('class'=>'span5','maxlength'=>1555)); ?>
+        <?php echo $form->fileFieldRow($model,'image_1',array('class'=>'span5','maxlength'=>1555)); 
+        if(!$model->isNewRecord){?>
         <img src="assets/eBrouchers/<?php echo $model->image_1; ?>" height="50px" width="100px"/>
-        <?php echo $form->fileFieldRow($model,'image_2',array('class'=>'span5','maxlength'=>1555)); ?>
+        <?php }?>
+        <?php echo $form->fileFieldRow($model,'image_2',array('class'=>'span5','maxlength'=>1555)); 
+        if(!$model->isNewRecord){?>
         <img src="assets/eBrouchers/<?php echo $model->image_2; ?>" height="50px" width="100px"/>
-        <?php echo $form->fileFieldRow($model,'image_3',array('class'=>'span5','maxlength'=>1555)); ?>
+        <?php }?>
+        <?php echo $form->fileFieldRow($model,'image_3',array('class'=>'span5','maxlength'=>1555)); 
+        if(!$model->isNewRecord){?>
         <img src="assets/eBrouchers/<?php echo $model->image_3; ?>" height="50px" width="100px"/>
+        <?php }?>
 	
 
 	<?php echo $form->textFieldRow($model,'name',array('class'=>'span5','maxlength'=>255)); ?>
