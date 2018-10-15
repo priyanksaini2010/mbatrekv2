@@ -36,7 +36,7 @@ $product = Products::model()->findByPk($id);
         </div>
         
     </div>
-        <?php if($id != 28 && $id != 19 && $id != 18){?>
+        <?php if( $id != 19 && $id != 18 && $id != 31 && $id != 32){?>
     <div class="how_We_contaner">
             <div class="container">
             <h3>How do we engage with you  </h3>
@@ -68,7 +68,7 @@ $product = Products::model()->findByPk($id);
         <?php }?>
     
     
-    <?php if($id == 19){?>
+    <?php if($id == 19 || $id == 31 || $id == 32){?>
         <div class="how_We_engage">
 					<div class="container">
 						
@@ -245,7 +245,7 @@ $product = Products::model()->findByPk($id);
 				</div>
      <?php }?>
     <div class="container">
-        <?php if($id != 28 && $id != 20 && $id != 18){?>
+        <?php if($id != 28 && $id != 20 && $id != 18 && $id != 31 && $id != 32){?>
         <div class="key_outcomes">
             <h3>Key Outcomes </h3>
             <ul>
@@ -266,7 +266,7 @@ $product = Products::model()->findByPk($id);
                 <li>
                     <div class="recomended_title">
                         <label>
-                           <?php echo $recon->title;?>
+                           <?php echo $recon->recommendedProduct->title;?>
                             <span>
                                 (Choose your best fit)
                             </span>
@@ -274,8 +274,8 @@ $product = Products::model()->findByPk($id);
                         </label>
                         <img src="<?php echo Yii::app()->baseUrl;?>/assets/products/<?php echo $recon->icon;?>"/>
                         <div class="add_to_Cart_div">
-                                <a href="">Add to Cart</a>
-                                <a href="">Buy Now</a>
+                                <a href="<?php echo Yii::app()->createUrl("cart/addtocart",array("id"=>$recon->recommended_product_id));?>">Add to Cart</a>
+                                <a href="<?php echo Yii::app()->createUrl("cart/buynow",array("id"=>$recon->recommended_product_id));?>">Buy Now</a>
                             </div>
                     </div>
 

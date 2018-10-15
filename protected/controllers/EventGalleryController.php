@@ -76,26 +76,43 @@ class EventGalleryController extends Controller
                         if (!is_dir($path)) {
                             CFileHelper::createDirectory($path,null,true);
                         }
+                        $error =false;
                         if (!empty($_FILES)) {
 //                            pr($_FILES);
                             $fileName = rand().str_replace(" ","", $_FILES['EventGallery']['name']['image_1']);  // random number + file name
                             $tmp_name = $_FILES['EventGallery']['tmp_name']['image_1'];
                             move_uploaded_file($tmp_name, $path."/".$fileName);
+                            $imageSize = getimagesize($path."/".$fileName);
+                            
+                            if ($imageSize[0] < 376 || $imageSize[0] < 282 ) {
+                                $model->addError("image_1","Image 1 Size Must Be greater than equal to 376x282");
+                                $error =true;
+                            }
                             $_POST['EventGallery']['image_1'] = $fileName;
                             $fileName = rand().str_replace(" ","", $_FILES['EventGallery']['name']['image_2']);  // random number + file name
                             $tmp_name = $_FILES['EventGallery']['tmp_name']['image_2'];
+                           
                             move_uploaded_file($tmp_name, $path."/".$fileName);
-                            
+                             $imageSize = getimagesize($path."/".$fileName);
+                            if ($imageSize[0] < 376 || $imageSize[0] < 282 ) {
+                                $model->addError("image_2","Image 2 Size Must Be greater than equal to 376x282");
+                                $error =true;
+                            }
                             $_POST['EventGallery']['image_2'] = $fileName;
                             $fileName = rand().str_replace(" ","", $_FILES['EventGallery']['name']['image_3']);  // random number + file name
                             $tmp_name = $_FILES['EventGallery']['tmp_name']['image_3'];
                             move_uploaded_file($tmp_name, $path."/".$fileName);
+                            $imageSize = getimagesize($path."/".$fileName);
+                            if ($imageSize[0] < 376 || $imageSize[0] < 282 ) {
+                            $model->addError("image_3","Image 3 Size Must Be greater than equal to 376x282");
+                                $error =true;
+                            }
                             $_POST['EventGallery']['image_3'] = $fileName;
 
                         }
                         
                         $model->attributes=$_POST['EventGallery'];
-			if($model->save()){
+			if(!$error && $model->save()){
                             Yii::app()->user->setFlash('success', "Event Category Added Successfully."); 
                             $this->redirect(array('admin'));
                         } else {
