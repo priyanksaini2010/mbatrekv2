@@ -3,18 +3,24 @@ $type = $_REQUEST['type'];
 switch ($type){
     case 1:
         $text = "Placement Coordinator";
+        $text_bottom = "Want to get these sessions conducted by MBAtrek ‘FREE of COST’…";
         $left = "How to Leverage 2 Year MBA Program";
         $right = "How to Maximize the Opportunity for Placements";
+        $class = "cordinator_page";
     break;
     case 2:
         $text = "Students";
+        $text_bottom = "Want to get these awesome career impacting packages ";
         $left = "#YouBeTheExecutive";
         $right = "#YouBeTheExecutive";
+        $class = "";
     break;
     case 3:
         $text = "Young Proffesionals";
+        $text_bottom = "Want your career to head in the right direction like these professionals…";
         $left = "";
         $right = "";
+        $class = "profession_success";
     break;
 }
 $this->setPageTitle( $text." Success Story");
@@ -24,13 +30,14 @@ if(!empty($leftContent) || !empty($rightContent)) {
 ?>
 <div class="container">
     <div class="row">
-        <div class="sucess_story_wrap">
+        <div class="sucess_story_wrap <?php echo $class;?>">
             <h3>What <?php echo $text;?> say about MBAtrek…</h3>
             <div class="col-md-6 the_Executive">
                
                 <div class="sucess_heading">
+                    <?php if($left != ""){?>
                     <h3><?php echo $left;?></h3>
-                    
+                    <?php }?>
                 </div>
                 
                 <?php foreach($leftContent as $content){?>
@@ -53,7 +60,9 @@ if(!empty($leftContent) || !empty($rightContent)) {
             </div>
             <div class="col-md-6">
                 <div class="sucess_heading">
+                    <?php if($right != ""){?>
                     <h3><?php echo $right;?></h3>
+                    <?php }?>
                     <!--<h2>Internship Series…</h2>-->
                 </div>
                 <?php foreach($rightContent as $content){?>
@@ -75,7 +84,7 @@ if(!empty($leftContent) || !empty($rightContent)) {
                 <?php }?>
             </div>
             <div class="want_to_get">
-                <h3>Want to get these awesome career impacting packages <a href="javascript:void(0);">Click Here</a></h3>
+                <h3><?php echo $text_bottom;?> <a href="javascript:void(0);">Click Here</a></h3>
             </div>
         </div>
     </div>
