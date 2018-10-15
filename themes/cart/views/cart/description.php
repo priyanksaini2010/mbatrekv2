@@ -132,7 +132,7 @@ $product = Products::model()->findByPk($id);
 					</div>
                 </div>
     <?php }?>
-    <?php if($id == 28){?>
+    <?php if($id == 1000){?>
                 <div class="how_We_engage">
 					<div class="container">
 						
