@@ -23,11 +23,19 @@ switch ($type){
         $class = "profession_success";
     break;
 }
+
 $this->setPageTitle( $text." Success Story");
 $leftContent = SuccessStory::model()->findAllByAttributes(array("type"=>$type,"sub_type"=>1));
 $rightContent = SuccessStory::model()->findAllByAttributes(array("type"=>$type,"sub_type"=>2));
 if(!empty($leftContent) || !empty($rightContent)) {
 ?>
+<div class="bread_crum">
+    <ul class="list-inline list-unstyled">
+        <li><a href="javascript:void(0);"><i class="fa fa-home" aria-hidden="true"></i></a> <i class="fa fa-angle-right" aria-hidden="true"></i></li>
+        <li><a href="<?php echo Yii::app()->createUrl('cart/index'); ?>">Home</a> <i class="fa fa-angle-right" aria-hidden="true"></i></li>
+        <li class="active"><a href="javascript:void(0);"><?php echo  $text." Success Story";?></a></li>
+    </ul>
+</div>
 <div class="container">
     <div class="row">
         <div class="sucess_story_wrap <?php echo $class;?>">
