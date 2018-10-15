@@ -266,7 +266,7 @@ $product = Products::model()->findByPk($id);
                 <li>
                     <div class="recomended_title">
                         <label>
-                           <?php echo $recon->title;?>
+                           <?php echo $recon->recommendedProduct->title;?>
                             <span>
                                 (Choose your best fit)
                             </span>
@@ -274,8 +274,8 @@ $product = Products::model()->findByPk($id);
                         </label>
                         <img src="<?php echo Yii::app()->baseUrl;?>/assets/products/<?php echo $recon->icon;?>"/>
                         <div class="add_to_Cart_div">
-                                <a href="">Add to Cart</a>
-                                <a href="">Buy Now</a>
+                                <a href="<?php echo Yii::app()->createUrl("cart/addtocart",array("id"=>$recon->recommended_product_id));?>">Add to Cart</a>
+                                <a href="<?php echo Yii::app()->createUrl("cart/buynow",array("id"=>$recon->recommended_product_id));?>">Buy Now</a>
                             </div>
                     </div>
 
