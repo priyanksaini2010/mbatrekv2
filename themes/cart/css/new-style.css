@@ -1247,7 +1247,7 @@ text-align: center;border-radius: 2px;}
 .into_heading ul li a:hover{color: #4f8231;}
 .student-top.young_top .student-internship:hover .icon-text{background: rgb(34,152,151);color: #fff;}
 .student-top.young_top .student-placement:hover .icon-text{background: #73942f;color: #fff;}
-.bread_crum{float: right;    margin: 0 9px 11px 0;}
+.bread_crum{float: right; text-align:right;width:100%;margin: 0 9px 11px 0;}
 .bread_crum ul li a{color: #348786;font-size: 16px;}
 .bread_crum ul li.active a{font-family: 'MyriadPro-Semibold';} 
 .ground_1_pic {
@@ -1506,7 +1506,7 @@ text-align: center;border-radius: 2px;}
 .sucess_story_wrap h3{text-align:center;font-size: 29px;font-family: 'MyriadPro-Semibold';color: #348786;margin:0;padding: 40px 0 44px 0;}
 .sucess_Repeat{margin-bottom: 20px; width: 100%;float: left;border: 1px solid #ddd;padding: 10px;border-radius: 9px;}
 .sucess_heading{width: 100%;float: left;}
-.sucess_heading h3{text-align:left;font-size: 29px;font-family: 'MyriadPro-Semibold';color: #73942f;margin:0;padding: 0;}
+.sucess_heading h3{text-align:left;font-size: 29px;font-family: 'MyriadPro-Semibold';color: #73942f;margin:0;padding: 0;min-height: 90px;}
 .sucess_heading h2{font-size: 29px;font-family: 'MyriadPro-Semibold';color: #73942f;margin:0;padding:15px 0 20px 0;}
 .video_container{width:100%;float: left;}
 .sucess_info{width: 100%;float: left;}

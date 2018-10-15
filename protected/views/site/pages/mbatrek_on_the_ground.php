@@ -24,11 +24,12 @@
                 
                 <p><?php echo $event->description;?></p>
         
-                <div class="more_about_plan"><label>To know more about our programs, <a href="<?php echo Yii::app()->createUrl("cart/student");?>">Click Here</a> </label></div>
+                
 
             </div>
         </div>
         <?php }?>
+        <div class="more_about_plan"><label>To know more about our programs, <a href="<?php echo Yii::app()->createUrl("cart/student");?>">Click Here</a> </label></div>
 <!--		<div class="more_about_plan"><label>To know more about our programs, <a href="javascript:void(0);">Click Here</a> </label></div>-->
     </div>
 </div>
