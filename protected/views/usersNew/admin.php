@@ -21,15 +21,14 @@ $this->menu=array(
 //		'id',
 		'full_name',
 		'email',
-//		'password',
+		'password',
 //		'update_subscription',
 		'is_verified',
-		/*
-		'date_created',
-		'role',
-		*/
-//		array(
-////			'class'=>'bootstrap.widgets.TbButtonColumn',
-//		),
+                'date_created',
+		array(
+			'class'=>'bootstrap.widgets.TbButtonColumn',    
+                        "template" => "{delete}",
+                        
+		),
 	),
 )); ?>
