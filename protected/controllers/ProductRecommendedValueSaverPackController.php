@@ -135,7 +135,7 @@ class ProductRecommendedValueSaverPackController extends Controller
                 if (!is_dir($path)) {
                     CFileHelper::createDirectory($path, null, true);
                 }
-                if (!empty($_FILES)) {
+                if (!empty($_FILES) && $_FILES['ProductRecommendedValueSaverPack']['name']['icon'] != "") {
                     $fileName = generateRandomString() . str_replace(" ", "", $_FILES['ProductRecommendedValueSaverPack']['name']['icon']);  // random number + file name
                     $tmp_name = $_FILES['ProductRecommendedValueSaverPack']['tmp_name']['icon'];
                     move_uploaded_file($tmp_name, $path . "/" . $fileName);
