@@ -141,7 +141,7 @@
         <div class="row">
             <div class="col-md-12">
                 <ul>
-                    <?php $arr = array(1,2,3,4);
+                    <?php $arr = array(1,3,4);
                         foreach ($arr as $a){
                             $products = Products::model()->findAllByAttributes(array("home_page_bucket" => $a));
                     ?>
