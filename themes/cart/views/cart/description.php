@@ -36,7 +36,7 @@ $product = Products::model()->findByPk($id);
         </div>
         
     </div>
-        <?php if( $id != 19 && $id != 18 && $id != 31 && $id != 32){?>
+        <?php if( $id != 19 && $id != 31 && $id != 32){?>
     <div class="how_We_contaner">
             <div class="container">
             <h3>How do we engage with you  </h3>
@@ -68,71 +68,113 @@ $product = Products::model()->findByPk($id);
         <?php }?>
     
     
-    <?php if($id == 19 || $id == 31 || $id == 32){?>
+    <?php if( $id == 31){?>
         <div class="how_We_engage">
 					<div class="container">
 						
 						<ul>
 							<li>
 								<div class="title_eng">
-									<h3>InternACE</h3>
+									<h3>Industry Analysis</h3>
 								</div>
 								<div class="engage_img">
-									<img src="<?php echo $baseUrl; ?>/images/internace_icon.png"/>
+									<img src="<?php echo $baseUrl; ?>/images/industry_analysis.png"/>
 								</div>
 								<div class="title_descrip">
-									Getting ready and relevant for internship
+									Get a detail analysis of the selected industry according to your fitment
+
+								</div>
+								<div class="know_more_combo">
+									<a href="javacript:void(0);">Know More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
 								</div>
 								<div class="price_eng">
-									<label>&#8377 4,500</label>
+									<label>&#8377 2,500</label>
 								</div>
 								<img src="<?php echo $baseUrl; ?>/images/plus_icon.png"/>
 							</li>
 							<li>
 								<div class="title_eng">
-									<h3>InternPRO</h3>
+									<h3>Company Analysis</h3>
 								</div>
 								<div class="engage_img">
-									<img src="<?php echo $baseUrl; ?>/images/internPro_icon.png"/>
-								</div>
-								<div class="title_descrip">
-									Delivering your best during the internship
-
-								</div>
-								<div class="price_eng">
-									<label>&#8377 4,500</label>
-								</div>
-								<img src="<?php echo $baseUrl; ?>/images/plus_icon.png"/>
-							</li>
-							<li>
-								<div class="title_eng">
-									<h3>InternARISE</h3>
-								</div>
-								<div class="engage_img">
-									<img src="<?php echo $baseUrl; ?>/images/internet_arice_icon.png"/>
-								</div>
-								<div class="title_descrip">
-									Mapping your internship with final placement
-
-
-								</div>
-								<div class="price_eng">
-									<label>&#8377 4,500</label>
+									<img src="<?php echo $baseUrl; ?>/images/company_analysis.png"/>
 								</div>
 								
+								<div class="title_descrip">
+									Get a detail analysis of the selected company according to your fitment
+								</div>
+								<div class="know_more_combo">
+									<a href="javacript:void(0);">Know More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+								<div class="price_eng">
+									<label>&#8377 2,000</label>
+								</div>
 							</li>
 						</ul>
 						<div class="discount_eng">
 							<div class="combo_price">
-								<label>Combo Price &#8377 6,750</label>
-								<span class="discount_line">Total Price &#8377 9,000</span>
-								<span>You save &#8377 2,2250 (25%)</span>
+								<label>Combo Price &#8377 3,500</label>
+								<span class="discount_line">Total Price &#8377 4,500</span>
+								<span>You save &#8377 1,000 (20%)</span>
 							</div>
 						</div>
 					</div>
                 </div>
     <?php }?>
-    <?php if($id == 1000){?>
+	
+	    <?php if( $id == 32){?>
+        <div class="how_We_engage">
+					<div class="container">
+						
+						<ul>
+							<li>
+								<div class="title_eng">
+									<h3>3 Mock Interviews</h3>
+								</div>
+								<div class="engage_img">
+									<img src="<?php echo $baseUrl; ?>/images/three_mockp_interview.png"/>
+								</div>
+								<div class="title_descrip">
+									Practice your answers and understand how to structure the content
+								</div>
+								<div class="know_more_combo">
+									<a href="javacript:void(0);">Know More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+								<div class="price_eng">
+									<label>&#8377 1,500</label>
+								</div>
+								<img src="<?php echo $baseUrl; ?>/images/plus_icon.png"/>
+							</li>
+							<li>
+								<div class="title_eng">
+									<h3>50 Interview Q&A </h3>
+								</div>
+								<div class="engage_img">
+									<img src="<?php echo $baseUrl; ?>/images/fifty_mocup_interview.png"/>
+								</div>
+								
+								<div class="title_descrip">
+									Know the questions asked in your dream company and how to answer them
+								</div>
+								<div class="know_more_combo">
+									<a href="javacript:void(0);">Know More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+								</div>
+								<div class="price_eng">
+									<label>&#8377 1,250</label>
+								</div>
+							</li>
+						</ul>
+						<div class="discount_eng">
+							<div class="combo_price">
+								<label>Combo Price &#8377 2,250</label>
+								<span class="discount_line">Total Price &#8377 2,750</span>
+								<span>You save &#8377 500 (18%)</span>
+							</div>
+						</div>
+					</div>
+                </div>
+    <?php }?>
+    <?php if($id == 19){?>
                 <div class="how_We_engage">
 					<div class="container">
 						
@@ -196,8 +238,8 @@ $product = Products::model()->findByPk($id);
 					</div>
                 </div>
     <?php }?>
-     <?php if($id == 18){?>
-                <div class="how_We_engage">
+     <?//php //if($id == 18){?>
+               <!-- <div class="how_We_engage">
 					<div class="container">
 						for interview ready
 						<ul>
@@ -242,8 +284,8 @@ $product = Products::model()->findByPk($id);
 							</div>
 						</div>
 					</div>
-				</div>
-     <?php }?>
+				</div>-->
+     <?//php }?>
     <div class="container">
         <?php if($id != 28 && $id != 20 && $id != 18 && $id != 31 && $id != 32){?>
         <div class="key_outcomes">

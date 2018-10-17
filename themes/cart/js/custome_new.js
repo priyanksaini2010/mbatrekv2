@@ -111,16 +111,77 @@ $(document).ready(function(){
      
 
     });
+	
 
-    $('.scroll_to').click(function(e){
-      
-          var jump = $(this).attr('href');
-      
-          var new_position = $(jump).offset();
-      
-          $('html, body').stop().animate({ scrollTop: new_position.top }, 500);
-      
-          e.preventDefault();
-      
-      });
-      
+/*======== smooth scrolling js =======*/
+
+$('.scroll_to').click(function(e){
+  
+	  var jump = $(this).attr('href');
+  
+	  var new_position = $(jump).offset();
+  
+	  $('html, body').stop().animate({ scrollTop: new_position.top }, 500);
+  
+	  e.preventDefault();
+  
+  });
+
+/* =========Animation Effect In Page========== */  
+$(document).ready(function(){
+	/* ========For HomePage======= */
+	$('.bulid_categories .col-md-12 ul li').css('opacity', 0);
+	$('.bulid_categories .col-md-12 ul li').waypoint( function()
+	{
+	// $('.what_you_will_Get .earn_container ul li').addClass('fadeInUp');
+	var $isAnimatedSecond = $('.bulid_categories .col-md-12 ul li'),
+		$isAnimatedSecondSingle = $('.what_you_will_Get .is-animated__single');
+	
+	{
+		$isAnimatedSecond.addClass('animated fadeInUp'); 
+		$isAnimatedSecond.eq(0).css('animation-delay', '.2s');
+		$isAnimatedSecond.eq(1).css('animation-delay', '.3s');
+		$isAnimatedSecond.eq(2).css('animation-delay', '.4s');
+		$isAnimatedSecond.eq(3).css('animation-delay', '.4s');
+		$isAnimatedSecondSingle.addClass('animated rollIn').css('animation-delay', '1.7s');
+	}
+	}, { offset: '80%' });
+	/* ========End For HomePage======= */
+	
+	/* ========For Our Story======= */
+	$('.addition_wrapper').css('opacity', 0);
+	$('.addition_wrapper').waypoint( function()
+	{
+	var $isAnimatedSecond = $('.addition_wrapper');
+	{
+		$isAnimatedSecond.addClass('animated fadeInUp'); 
+	}
+	}, { offset: '80%' });
+	
+	/* Transform Process */
+	$('.transfor_process .container > h3').css('opacity', 0);
+	$('.transfor_process .container > p').css('opacity', 0);
+	$('.mbatrek_arrow > img').css('opacity', 0);
+	$('.mbatrek_arrow ul li').css('opacity', 0);
+	$('.adjusting_div.more_explain').css('opacity', 0);
+	$('.transfor_process .container > h3').waypoint( function()
+	{
+	var $isAnimatedSecond = $('.transfor_process .container > h3'),
+		$isAnimatedSecondp = $('.transfor_process .container >  p'),
+		$isAnimatedSecondimg = $('.mbatrek_arrow > img'),
+		$isAnimatedSecondul = $('.mbatrek_arrow ul li'),
+		$isAnimatedSecondcta = $('.adjusting_div.more_explain');
+	{
+		$isAnimatedSecond.addClass('animated fadeInUp'); 
+		$isAnimatedSecondp.addClass('animated fadeInUp'); 
+		$isAnimatedSecondimg.addClass('animated fadeInUp').css('animation-delay', '.7s');
+		$isAnimatedSecondul.addClass('animated fadeInLeft'); 
+		$isAnimatedSecondul.eq(0).css('animation-delay', '2s');
+		$isAnimatedSecondul.eq(1).css('animation-delay', '3.5s');
+		$isAnimatedSecondul.eq(2).css('animation-delay', '5s');
+		//$isAnimatedSecondul.eq(3).css('animation-delay', '.4s');
+		$isAnimatedSecondcta.addClass('animated fadeInUp').css('animation-delay', '6s');
+	}
+	}, { offset: '50%' });
+	/* ========End For Our Story======= */
+});

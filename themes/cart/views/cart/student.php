@@ -92,7 +92,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
             </div>
         </div>
     </div>
-    <div class="student-placement-title">
+    <div class="student-placement-title" id="followed_by" > 
         <div class="container">
             <div class="student-placement-title-inner">
                  <?php echo $category2->category;?>

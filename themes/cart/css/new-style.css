@@ -715,7 +715,7 @@ user-select: none;
     height: 26px;
 	background-repeat: no-repeat;}
 .how_We_contaner ul li:last-child .step_up .arrow_big{display: none;}
-.how_We_contaner ul li span.step_up .inner_pro_text{    display: table-cell;vertical-align: middle;}
+.how_We_contaner ul li span.step_up .inner_pro_text{     text-transform: capitalize;display: table-cell;vertical-align: middle;}
 .how_We_contaner ul li span.step_up{background: #348786;color: #fff;font-size: 17px;display: table;width: 92%;padding:5px 6px 2px 6px;font-family: 'MyriadPro-Semibold';   font-style: normal;
 	border-radius: 8px;margin:0px 0 26px 0;min-height: 54px;position: relative;}
 	.how_We_contaner ul {    padding: 21px 0 0 0;}
@@ -750,6 +750,7 @@ user-select: none;
 .stry_text .journy_block ul li span{display: inline-block;font-size: 16px;text-align: left;padding: 0;}
 .stry_text .journy_block ul li span.list-icon{width: auto;min-width: auto;}
 .stry_text .journy_block .journey2-list{margin-top: 0;}
+.stry_text .journy_block .journey2-list ul li .list-text{color:#222;font-family: 'MyriadPro-Regular';font-weight:normal;}
 .stry_text .journy_block ul li { padding: 0 0 16px 0;}
 .stry_text .journy_block ul{border:none;padding-top: 0;}
 .addtional_container{width: 100%;float: left;}
@@ -791,7 +792,8 @@ user-select: none;
 .home_mainheading{width: 100%;float: left;}
 .home_mainheading h2{font-size: 29px;text-align: center;color: #348786;margin:0;padding: 0 0 20px 0;font-family: 'MyriadPro-Semibold';}
 .home_mainheading h3{font-size: 29px;text-align: center;color: #7a7a7a;font-style: italic;margin:0;    padding: 0 0 49px 0;font-family: 'MyriadPro-Semibold';}
-.journy_block .journey1-list ul li .list-text{color: #73942f;}
+.journy_block .journey1-list ul li .list-text{color: #222;
+    font-family: 'MyriadPro-Regular';}
 .journy_block .journey1-list ul li .list-text .list-text-title{color: #73942f;}
 .ready_section{width: 100%;float: left;background: #e7e7e7;    padding: 0 0 37px 0;    margin: 51px 0 19px 0;}
 .diffrent_block.bulid_capblity >img{margin:0 0 14px 0;}
@@ -1373,11 +1375,11 @@ text-align: center;border-radius: 2px;}
     background: #e7e7e7;
     padding: 48px 0 44px 0;
 }
-.how_We_engage ul li .title_eng h3{color: #348786;font-size: 27px;font-family: 'MyriadPro-Semibold';text-align: center;    margin: 0 0 8px 0;}
+.how_We_engage ul li .title_eng h3{color: #348786;font-size: 23px;font-family: 'MyriadPro-Semibold';text-align: center;    margin: 0 0 8px 0;}
 .engage_img{padding:0 0 12px 0;}
 .how_We_engage ul li {display: inline-block;list-style: none;  position: relative;  width:21.3%;border:2px solid #348786;  border-radius: 42px;  margin-right: 143px;padding: 26px 20px 13px 20px;}
 .how_We_engage ul li:last-child{margin:0;}
-.title_descrip{color: #000;font-size: 22px;font-family: 'MyriadPro-Semibold';text-align: center;    margin: 0 0 8px 0;}
+.title_descrip{color: #000;font-size: 16px;font-family: 'MyriadPro-Semibold';text-align: center;    margin: 0 0 8px 0;}
 .price_eng label{color: #348786;font-size: 27px;font-family: 'MyriadPro-Semibold';text-align: center;    margin: 0 0 8px 0;}
 .how_We_engage ul li >  img{position: absolute;    top: 103px;
     right: -99px;}
@@ -1436,7 +1438,7 @@ text-align: center;border-radius: 2px;}
 {
     position: absolute;
     content: "";
-    height: 300px;
+    height: 100%;
     width: 1px;
     background: #ccc;
     right: -40px;
@@ -1506,7 +1508,8 @@ text-align: center;border-radius: 2px;}
 .sucess_story_wrap h3{text-align:center;font-size: 29px;font-family: 'MyriadPro-Semibold';color: #348786;margin:0;padding: 40px 0 44px 0;}
 .sucess_Repeat{margin-bottom: 20px; width: 100%;float: left;border: 1px solid #ddd;padding: 10px;border-radius: 9px;}
 .sucess_heading{width: 100%;float: left;}
-.sucess_heading h3{text-align:left;font-size: 29px;font-family: 'MyriadPro-Semibold';color: #73942f;margin:0;padding: 0;min-height: 90px;}
+.sucess_story_wrap.cordinator_page .sucess_heading h3{min-height: 90px;}
+.sucess_heading h3{text-align:left;font-size: 29px;font-family: 'MyriadPro-Semibold';color: #73942f;margin:0;padding: 0 0 24px 0;}
 .sucess_heading h2{font-size: 29px;font-family: 'MyriadPro-Semibold';color: #73942f;margin:0;padding:15px 0 20px 0;}
 .video_container{width:100%;float: left;}
 .sucess_info{width: 100%;float: left;}
@@ -1526,3 +1529,63 @@ text-align: center;border-radius: 2px;}
 .sucess_container_page.cordinator_page .sucess_heading h3{text-align: center;margin: 0 0 15px 0;line-height: 35px;}
 .sucess_container_page.profession_success .sucess_heading h3{text-align: center;padding: 0 0 25px 0;}
 .sucess_container_page.profession_success .sucess_story_wrap >h3{    padding-bottom: 18px;}
+.know_more_combo a{font-size:18px;color:#348786;padding: 0 0 6px 0;display:inline-block;}
+.addition_wrapper {
+    width: 100%;
+    float: left;
+    margin: 32px 0 7px 0;
+}
+
+/* compas amastor */
+.amastor_wrap{width: 100%;float: left;}
+.amastor_button{width: 100%;float: left;text-align: center;    margin: 42px 0 0 0;}
+.amastor_button a{transition:all 0.3s;display:  inline-block;background: #73942f;font-size: 20px;font-family: 'MyriadPro-Semibold';color: #fff;    padding: 10px 30px 10px 30px;    border-radius: 6px;}
+.compas_heading{width: 100%;float: left;text-align: center;}
+.amastor_button a:hover{background: #348786;}
+.amaster_bulid{width: 100%;float: left;text-align: center;}
+.amaster_repeat{width: 100%;float: left;text-align: center;border:1px solid #ccc;    padding: 28px 0 34px 0;    margin: 35px 0 0 0;}
+.amaster_repeat h3{margin:0;font-weight: normal;color: #222;padding: 21px 0 0 0;    line-height: 30px;}
+.amaster_repeat h3 span{color: #348786;font-family: 'MyriadPro-Semibold';display: inline;}
+.compas_heading h3{font-family: 'MyriadPro-Semibold';font-size: 39px;margin:0;color: #73942f;}
+.compas_heading h4{font-family: 'MyriadPro-Semibold';font-size:29px;margin:0;color: #348786;margin:0;padding: 22px 0 0 0;}
+.earn_point{width: 100%;float: left;background: #e7e7e7;}
+.earn_container{width: 100%;float: left;text-align: center;padding: 38px 0 30px 0;}
+.earn_container ul li{display: inline-block;position: relative;    width: 17%;}
+.earn_container ul li:after{content: "";position: absolute;background-image: url(../images/arrow_amaster.png);width: 30px;height: 30px;top: 38%;transform: translatey(-50%);right: -23px;}
+.earn_container ul li span{display: block;color: #348786;font-size: 20px;font-family: 'MyriadPro-Semibold';    padding: 17px 0 0 0;}
+.earn_point .compas_heading{padding: 6px 0 0 0;}
+.earn_container ul li:last-child:after{display: none;}
+.what_do_u_get{width: 100%;float: left;}
+.what_do_u_get .amaster_repeat{border:none;padding:0;}
+.what_do_u_get .amaster_repeat h3{display: inline-block;font-size: 18px;padding:0 48px 0px 0;      width: 284px;  display: table-cell; vertical-align: middle;}
+.what_do_u_get .amaster_repeat{text-align: left;display: table;margin:20px 0 5px 0;position: relative;}
+.what_do_u_get  .col-md-4{position: relative;}
+.what_do_u_get  .col-md-4:after{position: absolute;content: "";height: 253px;width: 1px;background: #ccc;top:11px;right:25px;}
+.what_do_u_get  .col-md-4:last-child:after{display: none;}
+.what_do_u_get  .compas_heading{    padding: 0 0 26px 0;}
+.what_you_will_Get{width: 100%;float: left;}
+.what_you_will_Get .earn_point ul li:after{display: none;}
+.what_you_will_Get .earn_point ul li{vertical-align: top;width: 31%;}
+.what_you_will_Get .earn_point ul li span{font-weight: normal;font-family: 'MyriadPro-Regular';    padding: 19px 40px 0 40px;}
+.faq_amastor{width: 100%;float: left;}
+.faq_amastor .compas_heading h5{font-size: 18px;color: #8a8a8a;font-family: 'MyriadPro-Semibold';margin:0;padding:15px 0 23px 0;}
+.ambastor_container.regsiter_emastor .earn_point{    margin: 41px 0 0 0;}
+.ambastor_container.regsiter_emastor .earn_point  ul li{width:29%;padding: 0 62px;}
+.ambastor_container.regsiter_emastor .earn_point  ul li:after{    top: 24%;}
+.register_Form{width: 100%;float: left; }
+.register_Form .compas_heading{padding: 22px 0 29px 0;}
+.form_amster_field{width:100%;float: left;margin-bottom: 20px;}
+.form_amster_field .application_submit{background: #73942f;color: #fff;font-size: 20px;border:none;padding:10px 21px 7px 21px;border-radius: 4px;}
+.form_amster_field .application_submit:hover{background: #348786;}
+.form_amster_field label{color: #222;display: block;font-family: 'MyriadPro-Regular';font-size: 20px;font-weight: normal;}
+.form_amster_field label em{color:red;font-style: normal;}
+.form_amster_field  input[type="text"]{color: #222;width: 100%;border:1px solid #348786;padding: 10px 10px;}
+.form_amster_field  select{width: 100%;color: #222;border:1px solid #348786;padding: 10px;font-size: 20px;}
+.form_amster_field  textarea{width: 100%;color: #222;border:1px solid #348786;padding: 10px;font-size: 20px;resize: none;}
+
+.are_yu input[type=radio].css-checkbox {position:absolute; z-index:-1000; left:-1000px; overflow: hidden; clip: rect(0 0 0 0); height:1px; width:1px; margin:-1px; padding:0; border:0;}
+.are_yu input[type=radio].css-checkbox + label.css-label {padding-left:26px;height:21px; display:inline-block;line-height:21px;background-repeat:no-repeat;background-position: 0 0;font-size:16px;max-width: 95px;
+vertical-align:middle;cursor:pointer;}
+.are_yu input[type=radio].css-checkbox:checked + label.css-label {background-position: 0 -21px;}
+.are_yu label.css-label {background-image:url(http://csscheckbox.com/checkboxes/u/csscheckbox_5ab92245cf78caac21ff087cfc374219.png);-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;
+-moz-user-select: none;-ms-user-select: none;user-select: none;}
