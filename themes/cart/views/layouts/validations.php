@@ -20,6 +20,12 @@
     <?php if(isset($_REQUEST['thankc'])){?>
 	 validationMethod("thanks","Thanks for your feedback, we will get in touch with you soon.")
     <?php }?>
+    <?php if(isset($_REQUEST['thanmscart'])){
+        $type = ""
+        
+        ?>
+	 validationMethod("thanks","Thanks for your feedback, we will get in touch with you soon.")
+    <?php }?>
 //        $(document).ready(function(){
 //    //Registeration Form Validation
 //        $(".cart-remove").click(function(){
