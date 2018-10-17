@@ -149,16 +149,15 @@ class ProductEngageController extends Controller
                 if (!is_dir($path)) {
                     CFileHelper::createDirectory($path, null, true);
                 }
-                if (!empty($_FILES)) {
+                if (!empty($_FILES) && $_FILES['ProductEngage']['name']['icon'] != "") {
                     $fileName = generateRandomString(10) . str_replace(" ", "", $_FILES['ProductEngage']['name']['icon']);  // random number + file name
                     $tmp_name = $_FILES['ProductEngage']['tmp_name']['icon'];
                     move_uploaded_file($tmp_name, $path . "/" . $fileName);
                     $_POST['ProductEngage']['icon'] = $fileName;
 
                 } else {
-                    if(isset($_POST['ProductEngage'])){
-                        $_POST['ProductEngage']['icon'] = $model->icon;
-                    }
+                    $_POST['ProductEngage']['icon'] = $model->icon;
+                    
                 }
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
