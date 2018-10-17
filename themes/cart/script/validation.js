@@ -79,8 +79,8 @@ $(document).ready(function(){
                 var obj = $.parseJSON(data);
                 if(obj.status == "success"){
                     window.location.refresh;
-                    validationMethod("thanks",obj.message)
-                    location.reload(true);
+//                    validationMethod("thanks",obj.message)
+                    location.reload("?thanmscart=1&type="+obj.type+"&disc="+obj.discount_type);
                 }else {
                     validationMethod("error",obj.message)
                 }
