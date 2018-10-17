@@ -78,12 +78,16 @@ class BlogsController extends Controller
                                 $fileName = rand().$_FILES['Blogs']['name']['background_image'];  // random number + file name
                                 move_uploaded_file($_FILES['Blogs']['tmp_name']['background_image'],$path."/".$fileName);
                                 $_POST['Blogs']['background_image'] = $fileName;
-                            } 
+                            } else {
+                                $_POST['Blogs']['background_image'] = $model->background_image;
+                            }
                             if (isset($_FILES['Blogs']['name']['banner_image']) && !empty($_FILES['Blogs']['name']['banner_image'])) {
                                 $fileName = rand().$_FILES['Blogs']['name']['banner_image'];  // random number + file name
                                 move_uploaded_file($_FILES['Blogs']['tmp_name']['banner_image'],$path."/".$fileName);
                                 $_POST['Blogs']['banner_image'] = $fileName;
-                            } 
+                            } else {
+                                $_POST['Blogs']['banner_image'] = $model->banner_image;
+                            }
                         }
 			$model->attributes=$_POST['Blogs'];
 			$imageSize = getimagesize($path."/".$fileName);
