@@ -28,26 +28,15 @@ function initials($str) {
 
 function sendEmail( $email,$subject,$body,$headers )
 {
-    
-    // Get cURL resource
-    $curl = curl_init();
-    // Set some options - we are passing in a useragent too here
-    curl_setopt_array($curl, array(
-	CURLOPT_RETURNTRANSFER => 1,
-	CURLOPT_URL => 'http://b4bsourcing.com/sendmail.php',
-	CURLOPT_POST => 1,
-	CURLOPT_POSTFIELDS => array(
-	    'email' => $email,
-	    'subject' => $subject,
-	    'body' => $body,
-	    'headers' => $headers,
-	)
-    ));
-    // Send the request & save response to $resp
-    $resp = curl_exec($curl);
-    
-    // Close request to clear up some resources
-    curl_close($curl);
+//    
+//    $headers = "MIME-Version: 1.0" . "\r\n";
+//    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+//
+//    // More headers
+//    $headers .= 'From: <webmaster@example.com>' . "\r\n";
+//    $headers .= 'Cc: myboss@example.com' . "\r\n";
+
+    mail($email,$subject,$body,$headers);
 //    pr($body);
 }
 function array_2_csv($array) {
