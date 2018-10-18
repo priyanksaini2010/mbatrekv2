@@ -79,42 +79,25 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                     <ul class="list-inline list-unstyled chec_filed">
-                                                <li>
-                                                    <input type="radio" name="Contact[type]" value="1" id="Industry" class="css-checkbox" />
-                                                    <label for="Industry" class="css-label  radGroup1">Industry</label>
-                                                </li>
-                                                <li>
-                                                    <input type="radio" name="Contact[type]" value="2" id="Institute" class="css-checkbox" />
-                                                    <label for="Institute" class="css-label  radGroup1">Institute</label>
-                                                </li>
-                                                <li>
-                                                    <input type="radio" name="Contact[type]" value="3" id="Student" class="css-checkbox" />
-                                                    <label for="Student" class="css-label  radGroup1">Student</label>
-                                                </li>
-                                                <li>
-                                                    <input type="radio" name="Contact[type]" value="4" id="Young-Proffesional" class="css-checkbox" />
-                                                    <label for="Young-Proffesional" class="css-label  radGroup1">Young-Proffesional</label>
-                                                </li>
-                                            </ul>
-<!--                    <ul>
-                        <li>
+                     
+                <ul>
+                    <li>
                             <input type="radio"  name="Contact[type]" value="1"  id="radio2" class="css-checkbox" checked="checked"/>
                             <label for="radio2" class="css-label radGroup1">Company Rep</label>                                                    
-                        </li>
-                        <li>
+                    </li>
+                    <li>
                             <input type="radio" name="Contact[type]" value="2"  id="radio3" class="css-checkbox" />
                             <label for="radio3" class="css-label radGroup1">Institute Rep</label>
-                        </li>
-                        <li>
+                    </li>
+                    <li>
                             <input type="radio"  name="Contact[type]" value="3"  id="radio31" class="css-checkbox" />
                             <label for="radio31" class="css-label radGroup1">College Student</label>
-                        </li>
-                        <li>
+                    </li>
+                    <li>
                             <input type="radio"  name="Contact[type]" value="4"  id="radio32" class="css-checkbox" />
                             <label for="radio32" class="css-label radGroup1">Young professional</label>
-                        </li>
-                    </ul>-->
+                    </li>
+                </ul>
                 </div>
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="phAnimate">
