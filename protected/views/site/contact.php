@@ -79,7 +79,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                    <!--                        <ul class="list-inline list-unstyled chec_filed">
+                     <ul class="list-inline list-unstyled chec_filed">
                                                 <li>
                                                     <input type="radio" name="Contact[type]" value="1" id="Industry" class="css-checkbox" />
                                                     <label for="Industry" class="css-label  radGroup1">Industry</label>
@@ -96,8 +96,8 @@
                                                     <input type="radio" name="Contact[type]" value="4" id="Young-Proffesional" class="css-checkbox" />
                                                     <label for="Young-Proffesional" class="css-label  radGroup1">Young-Proffesional</label>
                                                 </li>
-                                            </ul>-->
-                    <ul>
+                                            </ul>
+<!--                    <ul>
                         <li>
                             <input type="radio"  name="Contact[type]" value="1"  id="radio2" class="css-checkbox" checked="checked"/>
                             <label for="radio2" class="css-label radGroup1">Company Rep</label>                                                    
@@ -114,7 +114,7 @@
                             <input type="radio"  name="Contact[type]" value="4"  id="radio32" class="css-checkbox" />
                             <label for="radio32" class="css-label radGroup1">Young professional</label>
                         </li>
-                    </ul>
+                    </ul>-->
                 </div>
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="phAnimate">
