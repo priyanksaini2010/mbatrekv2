@@ -64,16 +64,20 @@
                     <div class="col-md-6 col-sm-6 col-xs-12">
                         <ul class="list-inline list-unstyled chec_filed">
                             <li>
-                                <input type="checkbox" name="Contact[type]" value="1" id="Industry" class="css-checkbox" />
-                                <label for="Industry" class="css-label">Industry</label>
+                                <input type="radio" name="Contact[type]" value="1" id="Industry" class="css-checkbox" />
+                                <label for="Industry" class="css-label  radGroup1">Industry</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="Contact[type]" value="2" id="Institute" class="css-checkbox" />
-                                <label for="Institute" class="css-label">Institute</label>
+                                <input type="radio" name="Contact[type]" value="2" id="Institute" class="css-checkbox" />
+                                <label for="Institute" class="css-label  radGroup1">Institute</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="Contact[type]" value="3" id="Student" class="css-checkbox" />
-                                <label for="Student" class="css-label">Student</label>
+                                <input type="radio" name="Contact[type]" value="3" id="Student" class="css-checkbox" />
+                                <label for="Student" class="css-label  radGroup1">Student</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="Contact[type]" value="4" id="Young-Proffesional" class="css-checkbox" />
+                                <label for="Young-Proffesional" class="css-label  radGroup1">Young-Proffesional</label>
                             </li>
                         </ul>
                     </div>
