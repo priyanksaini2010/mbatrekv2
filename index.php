@@ -3,6 +3,7 @@ error_reporting(E_ERROR);
 const DIREC = "/v2/";
 require_once 'payment_lib/PaytmKit/lib/config_paytm.php';
 require_once 'payment_lib/PaytmKit/lib/encdec_paytm.php';
+require_once ('linkedinwp/oauth/linkedinoauth.php');
 function money($number){
     return number_format($number, 0, '.', ',');
 }
@@ -38,6 +39,31 @@ function sendEmail( $email,$subject,$body,$headers )
 
     mail($email,$subject,$body,$headers);
 //    pr($body);
+}
+
+function getLinkedInFeeds(){
+    $code = generateRandomString(10);
+//    $code = "AQS56H56i6WHKP8a_f4U0cDz1k0kKpmD7r-oGcaC1IaTyA7enWZ8TBOvp9nmBOqnjT6cJPK5aMeITBGaj_H_mcRJqWGv6Opg2nQvJ8_w9ItW45zeA2-YQxCic8MGjeXEDcVVTh5XUaKzpiBSbOoElOmBKpbqz9PLONMK0tIDzi5GeFUkQTrsLp3lJ07DjA";
+//    $url = "https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=819f0m0m8h76le";
+//    $url .= "&redirect_uri=".urlencode("https://localhost/v3/callback.php");
+//    $url .= "&state=".$token."&scope=rw_company_admin";
+//    pr($url);
+    
+    $token = "AQWOU03ygilhdpae6Iz3NQ0hGS7XxzV4bNT45wpWPrZgxqqvhAxMcLfpCDof0zsZMe5ArDOr5xPWFMoHYHdM_6HG2pD90kRrv2Cn5JFMiO5w_5E9ZTd83zCuTAjejFyWqMF1QWbcUNa-nM6XZv2J67obwzmu_5bEoY0VPZfsX1cS4ZnOOuA6V77AEDA9Qtx1wRJTMCUg3DYpRqIJGXbV8lakR05vl1lUO5CqYPCzTnbqNWWTH9Z9wb2356B7ep9JDy8zQNEfmUnoFKo64feFD1fU8HWG_SxojZvRTdO6FTXKUdFO3hik8F2TUKOBPyMOAwxz8_W_TyY0H_PveCYlQKnLhOzStA";
+    $url = "https://api.linkedin.com/v1/companies/7955944/updates";    
+    $headers = array(
+      'Authorization: Bearer ' . $token,
+      'x-li-format: json'
+    );
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+    $response = curl_exec($ch);
+    curl_close($ch);
+    $data = (array)json_decode($response);
+    return $data;
+
 }
 function array_2_csv($array) {
     $csv = array();
@@ -237,7 +263,7 @@ if ($location != "") {
     $lat = $location->latitude;
     $long = $location->longitude;
 } 
-
+//getLinkedInFeeds();
 $line = date('Y-m-d H:i:s') . " | ".$_SERVER['REMOTE_ADDR']." | ".$country." | ".$city." | ".$region." | ".$lat." | ".$long." | ".$_SERVER['HTTP_USER_AGENT'] ." | ".$_SERVER['REQUEST_URI'] ."\n";
 if (filesize(getcwd().'/visitors.log') > 3000000 ) {
    rename(getcwd().'/visitors.log', getcwd().'/logs/visitors-'.date("Y-m-d")."-".time().'.log'); 
