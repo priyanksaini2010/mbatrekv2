@@ -58,7 +58,7 @@
 									<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"23")); ?>">Interviews Q & A</a></li>
 									<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"18")); ?>">Industry Analysis</a></li>
 									<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"21")); ?>">Company Analysis</a></li>
-									<!--<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"29")); ?>">Job Fitment Analysis</a></li>-->
+									<!--<li><a href="<?php // echo Yii::app()->createUrl('cart/description', array("id"=>"29")); ?>">Job Fitment Analysis</a></li>-->
 									<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"22")); ?>">Cracking GD</a></li>
 									<!--<li><a href="#">InternACE</a></li>
 									<li><a href="#">InternPRO</a></li>
