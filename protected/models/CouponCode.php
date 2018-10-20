@@ -8,6 +8,7 @@
  * @property integer $discount_type
  * @property string $domain
  * @property integer $discount
+ * @property integer $min_value
  * @property integer $is_active
  *
  * The followings are the available model relations:
@@ -31,12 +32,12 @@ class CouponCode extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('discount_type, domain, discount, is_active', 'required'),
-			array('discount_type, discount, is_active', 'numerical', 'integerOnly'=>true),
+			array('discount_type, domain, discount, min_value, is_active', 'required'),
+			array('discount_type, discount, min_value, is_active', 'numerical', 'integerOnly'=>true),
 			array('domain', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, discount_type, domain, discount, is_active', 'safe', 'on'=>'search'),
+			array('id, discount_type, domain, discount, min_value, is_active', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -62,6 +63,7 @@ class CouponCode extends CActiveRecord
 			'discount_type' => 'Discount Type',
 			'domain' => 'Domain',
 			'discount' => 'Discount',
+			'min_value' => 'Min Value',
 			'is_active' => 'Is Active',
 		);
 	}
@@ -88,6 +90,7 @@ class CouponCode extends CActiveRecord
 		$criteria->compare('discount_type',$this->discount_type);
 		$criteria->compare('domain',$this->domain,true);
 		$criteria->compare('discount',$this->discount);
+		$criteria->compare('min_value',$this->min_value);
 		$criteria->compare('is_active',$this->is_active);
 
 		return new CActiveDataProvider($this, array(
