@@ -81,7 +81,7 @@ $(document).ready(function(){
 //                    window.location.refresh;
                     validationMethod("thanks",obj.message)
 //                    location.reload("?thanmscart=1");
-                    setInterval(function(){window.location.reload(); }, 2000);
+                    setInterval(function(){window.location.reload(); }, 3000);
                 }else {
                     validationMethod("error",obj.message)
                 }
