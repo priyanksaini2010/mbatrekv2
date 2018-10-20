@@ -8,8 +8,19 @@
                     </blockquote></div>
             </div>
             <div class="col-md-4">
-                <script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
-                <script type="IN/CompanyProfile" data-id="7955944" data-format="inline" data-related="false"></script>
+                <?php $feeds = getLinkedInFeeds();
+                foreach($feeds['values'] as $feed){
+//                    foreach($feedContents as $feed){
+                ?>
+                <ul>
+                    <li class="linked-in-status">
+                        <?php echo $feed->updateContent->companyStatusUpdate->share->comment;?>
+                    </li>
+                    <li class="linked-in-image">
+                        <img src="<?php echo $feed->updateContent->companyStatusUpdate->share->content->eyebrowUrl;?>" height="200" width="200">
+                    </li>
+                </ul>
+                <?php }?>
             </div>
         </div>
     </div>
