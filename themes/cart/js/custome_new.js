@@ -176,11 +176,11 @@ $(document).ready(function(){
 		$isAnimatedSecondp.addClass('animated fadeInUp'); 
 		$isAnimatedSecondimg.addClass('animated fadeInUp').css('animation-delay', '.7s');
 		$isAnimatedSecondul.addClass('animated fadeInLeft'); 
-		$isAnimatedSecondul.eq(0).css('animation-delay', '2s');
-		$isAnimatedSecondul.eq(1).css('animation-delay', '3.5s');
-		$isAnimatedSecondul.eq(2).css('animation-delay', '5s');
+		$isAnimatedSecondul.eq(0).css('animation-delay', '.7s');
+		$isAnimatedSecondul.eq(1).css('animation-delay', '.7s');
+		$isAnimatedSecondul.eq(2).css('animation-delay', '.7s');
 		//$isAnimatedSecondul.eq(3).css('animation-delay', '.4s');
-		$isAnimatedSecondcta.addClass('animated fadeInUp').css('animation-delay', '6s');
+		$isAnimatedSecondcta.addClass('animated fadeInUp').css('animation-delay', '.7s');
 	}
 	}, { offset: '50%' });
 	/* ========End For Our Story======= */
