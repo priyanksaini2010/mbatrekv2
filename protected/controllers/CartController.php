@@ -131,7 +131,17 @@ class CartController extends Controller {
                                                 );
                             if($model->save()){
                                 $status['status'] = "success";
-                                $status['message'] = "Discount have been applied successfully.";
+                                $amount = $isCouponValid->discount;
+                                switch ($isCouponValid->discount_type){
+                                    case 1:
+                                        $status['message'] = "A promo code is successfully applied to your college id. You have received ".$amount."% off discount.";
+                                        break;
+                                    case 2:
+                                        $status['message'] = "A Discount of Rs.".money($amount)."% have been applied successfully.";
+                                        $status['message'] = "A promo code is successfully applied to your college id. You have received Rs.".money($amount)." off discount.";
+                                        break;
+                                }
+                                
                             }else {
                                 pr($model->getErrors());
                                 $status['message'] = "Oops! Some error occured, Please try after some time.";
