@@ -115,22 +115,31 @@ class CartController extends Controller {
                     $isThisUsed = CouponUsage::model()->findByAttributes(array("email_used"=>$_POST['code']));
                     if(empty($isThisUsed)){
                         $cart = Cart::model()->findByAttributes(array("user_id" => Yii::app()->user->id, "status" => 1));
-                        
-                        $model = new CouponUsage;
-                        $model->attributes = array(
-                                                "cart_id" => $cart->id,
-                                                "coupon_id" => $isCouponValid->id,
-                                                "email_used" => $_POST['code'],
-                                                "users_new_id" => Yii::app()->user->id,
-                                                "date_created"=> date("Y-m-d h:i:s")
-                                            );
-                        if($model->save()){
-                            $status['status'] = "success";
-                            $status['message'] = "Discount have been applied successfully.";
-                        }else {
-                            pr($model->getErrors());
-                            $status['message'] = "Oops! Some error occured, Please try after some time.";
+                        $cartAll = Cart::model()->findAllByAttributes(array("user_id" => Yii::app()->user->id, "status" => 1));
+                        $total = 0;
+                        foreach ($cartAll as $sum){
+                          $total = $total +   $sum->product->price;
                         }
+                        if($total >= $isCouponValid->min_value){
+                            $model = new CouponUsage;
+                            $model->attributes = array(
+                                                    "cart_id" => $cart->id,
+                                                    "coupon_id" => $isCouponValid->id,
+                                                    "email_used" => $_POST['code'],
+                                                    "users_new_id" => Yii::app()->user->id,
+                                                    "date_created"=> date("Y-m-d h:i:s")
+                                                );
+                            if($model->save()){
+                                $status['status'] = "success";
+                                $status['message'] = "Discount have been applied successfully.";
+                            }else {
+                                pr($model->getErrors());
+                                $status['message'] = "Oops! Some error occured, Please try after some time.";
+                            }
+                        } else {
+                            $status['message'] = "This coupon code is valid only for minimum cart value of Rs.". money($isCouponValid->min_value).".";
+                        }
+                        
                     } else {
                         $status['message'] = "Discount have been availed for this email address.";
                     }
