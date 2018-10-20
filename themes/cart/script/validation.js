@@ -70,7 +70,7 @@ $(document).ready(function(){
             validationMethod("error","Please enter valid email.");return false;
         }
         $.ajax({
-            url : "https://mbatrek.com/v2/cart/applypromo",
+            url : "applypromo",
             type : "post",
             data : {
                 code : $(".apply-promo-value").val()
@@ -78,9 +78,10 @@ $(document).ready(function(){
             success : function(data){
                 var obj = $.parseJSON(data);
                 if(obj.status == "success"){
-                    window.location.refresh;
-//                    validationMethod("thanks",obj.message)
-                    location.reload("?thanmscart=1&type="+obj.type+"&disc="+obj.discount_type);
+//                    window.location.refresh;
+                    validationMethod("thanks",obj.message)
+//                    location.reload("?thanmscart=1");
+                    setInterval(function(){window.location.reload(); }, 2000);
                 }else {
                     validationMethod("error",obj.message)
                 }
