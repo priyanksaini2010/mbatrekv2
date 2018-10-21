@@ -40,7 +40,28 @@ function sendEmail( $email,$subject,$body,$headers )
     mail($email,$subject,$body,$headers);
 //    pr($body);
 }
+function getInstaFeeds(){
+    $accees_token = "1653288519.af13baa.942b173826424eb8bd741d9c3fb8781b";
+//$client_id = "af13baa72a464546983963921e964930";
+//$url = "https://api.instagram.com/oauth/authorize/?client_id=".$client_id."&redirect_uri=".urlencode("https://localhost/v3/callback.php")."&response_type=code&scope=public_content";
+////
+//    pr($url);
 
+    $url = "https://api.instagram.com/v1/users/self/media/recent/?access_token=".$accees_token;    
+//    $headers = array(
+//      'Authorization: Bearer ' . $token,
+//      'x-li-format: json'
+//    );
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+    $response = curl_exec($ch);
+    curl_close($ch);
+    $data = (array)json_decode($response);
+//    pr($data);
+    return $data;
+}
 function getLinkedInFeeds(){
     $code = generateRandomString(10);
 //    $code = "AQS56H56i6WHKP8a_f4U0cDz1k0kKpmD7r-oGcaC1IaTyA7enWZ8TBOvp9nmBOqnjT6cJPK5aMeITBGaj_H_mcRJqWGv6Opg2nQvJ8_w9ItW45zeA2-YQxCic8MGjeXEDcVVTh5XUaKzpiBSbOoElOmBKpbqz9PLONMK0tIDzi5GeFUkQTrsLp3lJ07DjA";
@@ -263,7 +284,7 @@ if ($location != "") {
     $lat = $location->latitude;
     $long = $location->longitude;
 } 
-//getLinkedInFeeds();
+//getInstaFeeds();
 $line = date('Y-m-d H:i:s') . " | ".$_SERVER['REMOTE_ADDR']." | ".$country." | ".$city." | ".$region." | ".$lat." | ".$long." | ".$_SERVER['HTTP_USER_AGENT'] ." | ".$_SERVER['REQUEST_URI'] ."\n";
 if (filesize(getcwd().'/visitors.log') > 3000000 ) {
    rename(getcwd().'/visitors.log', getcwd().'/logs/visitors-'.date("Y-m-d")."-".time().'.log'); 
