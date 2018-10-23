@@ -112,6 +112,7 @@ return array(
 				'handbook' => 'site/page/view/handbook',
 				'event-gallery' => 'site/page/view/event_gallery',
 				'campus-abassador' => 'site/page/view/campus_ambassador',
+				'campus-abassador-register' => 'cart/campus',
 				'copyright-notice' => 'site/page/view/copyright_notice',
 				'privacy-policy' => 'site/page/view/privacy_policy',
 				'disclaimer' => 'site/page/view/declimier',
