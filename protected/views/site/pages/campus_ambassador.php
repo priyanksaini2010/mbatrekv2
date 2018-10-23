@@ -27,7 +27,7 @@
                         </div>
                     </div>
                     <div class="amastor_button">
-                        <a href="javascript:void(0);">Apply Now</a>
+                        <a href="<?php echo Yii::app()->createUrl('campus-abassador-register'); ?>">Apply Now</a>
                     </div>
                 </div>
             </div>
@@ -140,7 +140,7 @@
             </div>
         </div> 
         <div class="amastor_button">
-            <a href="javascript:void(0);">Apply Now</a>
+            <a href="<?php echo Yii::app()->createUrl('campus-abassador-register'); ?>">Apply Now</a>
         </div>
     </section> 
     <?php
