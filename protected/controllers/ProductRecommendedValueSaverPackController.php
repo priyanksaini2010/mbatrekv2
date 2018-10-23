@@ -93,7 +93,7 @@ class ProductRecommendedValueSaverPackController extends Controller
                                 . "<ul>"
                                     . "<li>Key Points</li>"
                                     . "</ul>");
-                                    $this->redirect(array('productKeypoints/create','id'=>$id));
+                                    $this->redirect(array('productKeyPoints/create','id'=>$id));
                                 }
                         } else {
 //                            $this->redirect(array('ProductEngage/create','id'=>$id));
