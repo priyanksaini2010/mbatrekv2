@@ -23,7 +23,9 @@
                     <li><button class="filter-btn" data-filter="all">All</button></li>
                     <?php 
                     $cats = EventCategory::model()->findAll();
-                    $gallery = EventGallery::model()->findAll();
+                    $criteria = new CDbCriteria;
+                    $criteria->order = 'id DESC';
+                    $gallery = EventGallery::model()->findAll($criteria);
                     foreach ($cats as $cat) {
                     ?>
                     <li><button class="filter-btn" data-filter=".<?php echo $cat->name;?>"><?php echo $cat->name;?></button></li>
