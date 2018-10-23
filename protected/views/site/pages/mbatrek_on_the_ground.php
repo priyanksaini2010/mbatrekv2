@@ -12,7 +12,10 @@
     <div class="container">
         <h3>MBAtrek On the Ground</h3>
         <?php
-        $events = EventGallery::model()->findAll();
+        
+        $criteria = new CDbCriteria;
+        $criteria->order = 'id DESC';
+        $events = EventGallery::model()->findAll($criteria);
         foreach($events as $event){
         ?>
         <div class="event_container">
