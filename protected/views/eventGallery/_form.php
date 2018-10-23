@@ -20,7 +20,7 @@ $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
                 /* Used array to rename the season name to something more clear */
                 foreach ($Qmodels as $Qmodel)
                     $data[$Qmodel->id] = $Qmodel->name;   ?>
-	<?php echo $form->hiddenField($model,'institute_batch_id',array('value'=>1)); ?>
+	<?php echo $form->hiddenField($model,'event_category_id',array('value'=>1)); ?>
         <?php echo $form->fileFieldRow($model,'image_1',array('class'=>'span5','maxlength'=>1555)); 
         if(!$model->isNewRecord){?>
         <img src="assets/eBrouchers/<?php echo $model->image_1; ?>" height="50px" width="100px"/>

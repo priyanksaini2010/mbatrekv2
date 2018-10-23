@@ -1449,6 +1449,7 @@ text-align: center;border-radius: 2px;}
 .bulid_categories ul li:last-child .categories_container:after{display: none;}
 .custome_padding{padding:13px 0 18px 15px;}
 .social_container{width: 100%;float: left;    margin: 54px 0 0 0;}
+.social_container .col-md-4{padding:0;    width: 341px;margin-right:20px;}
 .home_page_slider{width:100%;float:left;position:relative;border-bottom: 3px solid #348786;margin-bottom: 49px;}
 .home_page_slider .rslides_tabs li{display:inline-block;}
 .home_page_slider .rslides_tabs li a{color:#fff;width:21px;height:18px;background:#348786;margin: 0 0 0 6px;display: inline-block;text-align: center;box-shadow: 1px 2px 3px 0px #999;padding:1px 0 0 0;}
@@ -1589,3 +1590,11 @@ vertical-align:middle;cursor:pointer;}
 .are_yu input[type=radio].css-checkbox:checked + label.css-label {background-position: 0 -21px;}
 .are_yu label.css-label {background-image:url(http://csscheckbox.com/checkboxes/u/csscheckbox_5ab92245cf78caac21ff087cfc374219.png);-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;
 -moz-user-select: none;-ms-user-select: none;user-select: none;}
+.linked_in_feeds{width:100%;float:left;border:1px solid #EBEDF0;}
+.linked_in_feeds ul li{display:block;list-style:none;margin-bottom:20px;}
+.feeds_blocks{padding:0 10px;width:100%;float:left;height:395px;overflow-y:scroll;}
+.linked_header{width:100%;float:left;border-bottom: 1px solid #EBEDF0;
+    padding: 0 0 29px 12px;
+    margin: 0 0 15px 0;}
+.linked_header img{border:1px solid #222;margin:0 4px 0px 0}
+.linked_header h2{color: #348786;font-size: 20px;font-family: 'MyriadPro-Semibold';display:inline-block;}

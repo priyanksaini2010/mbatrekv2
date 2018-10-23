@@ -155,7 +155,7 @@ class ProductEngageController extends Controller
                     move_uploaded_file($tmp_name, $path . "/" . $fileName);
                     $_POST['ProductEngage']['icon'] = $fileName;
 
-                } else {
+                } else if(!empty($_POST)){
                     $_POST['ProductEngage']['icon'] = $model->icon;
                     
                 }

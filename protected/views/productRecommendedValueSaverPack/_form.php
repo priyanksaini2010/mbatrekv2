@@ -2,7 +2,7 @@
 $criteria = new CDbCriteria();
 $criteria->addCondition("id != ".$id);
 $criteria->addCondition("status = 1");
-$criteria->addCondition("product_sub_category_id = ".$modelProducts->product_sub_category_id);
+#$criteria->addCondition("product_sub_category_id = ".$modelProducts->product_sub_category_id);
 $products = Products::model()->findAll($criteria);
 $recom = array();
 $recom[0] = "Select Product";

@@ -8,19 +8,28 @@
                     </blockquote></div>
             </div>
             <div class="col-md-4">
-                <?php $feeds = getLinkedInFeeds();
-                foreach($feeds['values'] as $feedLin){
-//                    foreach($feedContents as $feed){
-                ?>
-                <ul>
-                    <li class="linked-in-status">
-                        <?php echo $feedLin->updateContent->companyStatusUpdate->share->comment;?>
-                    </li>
-                    <li class="linked-in-image">
-                        <img src="<?php echo $feedLin->updateContent->companyStatusUpdate->share->content->eyebrowUrl;?>" height="200" width="200">
-                    </li>
-                </ul>
-                <?php }?>
+				<div class="linked_in_feeds">
+					<div class="linked_header">
+						<img src="<?php echo $baseUrl; ?>/images/linked_img.jpg"/>
+						<h2>LinkedIn</h2>
+					</div>
+					<div class="feeds_blocks">
+					<?php $feeds = getLinkedInFeeds();
+					foreach($feeds['values'] as $feedLin){
+	//                    foreach($feedContents as $feed){
+					?>
+					
+					<ul>
+						<li class="linked-in-status">
+							<?php echo $feedLin->updateContent->companyStatusUpdate->share->comment;?>
+						</li>
+						<li class="linked-in-image">
+							<img src="<?php echo $feedLin->updateContent->companyStatusUpdate->share->content->eyebrowUrl;?>" height="200" width="200">
+						</li>
+					</ul>
+					<?php }?>
+					</div>
+				</div>
             </div>
             <div class="col-md-4">
                 <?php $feeds = getInstaFeeds();
