@@ -65,6 +65,50 @@ $(document).ready(function(){
         }
         return true;
     });
+    $("#campus-ambassador-form").submit(function(){
+        if ($("#CampusAmbassador_first_name").val() == ""){
+            validationMethod("error","Please enter first name.");
+            return false;
+        }
+        if ($("#CampusAmbassador_last_name").val() == ""){
+            validationMethod("error","Please enter last name.");
+            return false;
+        }
+        if ($("#CampusAmbassador_mobile_number").val() == ""){
+            validationMethod("error","Please enter mobile number.");
+            return false;
+        }
+        if ($("#CampusAmbassador_email_id").val() == "" || !validateEmail($("#CampusAmbassador_email_id").val())){
+            validationMethod("error","Please enter valid email.");return false;
+        }
+        if ($("#CampusAmbassador_college_id").val() == ""){
+            validationMethod("error","Please select a coollege.");
+            return false;
+        }
+        if ($("#CampusAmbassador_course_id").val() == ""){
+            validationMethod("error","Please select a course.");
+            return false;
+        }
+        if ($("#CampusAmbassador_year_of_graduation_id").val() == ""){
+            validationMethod("error","Please select a year of graduation.");
+            return false;
+        }
+        if ($("#CampusAmbassador_question_1").val() == ""){
+            validationMethod("error","Please tell us Why do you want to be a MBAtrek Campus Ambassador?");
+            return false;
+        }
+        if ($("#CampusAmbassador_question_2").val() == ""){
+            validationMethod("error","Please Suggest two super creative ideas to share the importance of career development in your college");
+            return false;
+        }
+        if ($("#CampusAmbassador_question_3").val() == ""){
+            validationMethod("error","Please provide Any additional information you would like");
+            return false;
+        }
+        
+        
+        return true;
+    });
     $(".apply-promo").click(function(){
         if(!validateEmail($(".apply-promo-value").val())){
             validationMethod("error","Please enter valid email.");return false;
