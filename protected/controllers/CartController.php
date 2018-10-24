@@ -391,7 +391,7 @@ class CartController extends Controller {
                         $name = ucfirst($_POST['UsersNew']['full_name']);
                         $body = str_replace("{{SUBJECT}}", $subject, $template);
                         $body = str_replace("{{NAME}}", $name, $body);
-                        $link = Yii::app()->params['url']."index.php?r=cart/verify&id=".$model->id;
+                        $link = Yii::app()->params['url']."cart/verify?id=".$model->id;
                         $body = str_replace("{{LINK}}", $link, $body);
                         $headers="From: ".Yii::app()->params['adminEmail']." <".Yii::app()->params['adminEmail']."> \r\n".
                                         "Reply-To: ".Yii::app()->params['adminEmail']." \r\n";
