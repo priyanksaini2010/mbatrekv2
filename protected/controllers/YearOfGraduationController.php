@@ -1,6 +1,6 @@
 <?php
 
-class CoursesController extends Controller
+class YearOfGraduationController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -63,16 +63,16 @@ class CoursesController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Courses;
+		$model=new YearOfGraduation;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Courses']))
+		if(isset($_POST['YearOfGraduation']))
 		{
-			$model->attributes=$_POST['Courses'];
+			$model->attributes=$_POST['YearOfGraduation'];
 			if($model->save()){
-                            Yii::app()->user->setFlash('success', "Course added successfully.");
+                            Yii::app()->user->setFlash('success', "Year Of Graduation added successfully.");
                             $this->redirect(array('admin','id'=>$model->id));
                         }
 		}
@@ -94,11 +94,11 @@ class CoursesController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Courses']))
+		if(isset($_POST['YearOfGraduation']))
 		{
-			$model->attributes=$_POST['Courses'];
+			$model->attributes=$_POST['YearOfGraduation'];
 			if($model->save()){
-                            Yii::app()->user->setFlash('success', "College updated successfully.");
+                            Yii::app()->user->setFlash('success', "Year of graduation added successfully.");
                             $this->redirect(array('admin','id'=>$model->id));
                         }
 		}
@@ -133,7 +133,7 @@ class CoursesController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Courses');
+		$dataProvider=new CActiveDataProvider('YearOfGraduation');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -144,10 +144,10 @@ class CoursesController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Courses('search');
+		$model=new YearOfGraduation('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Courses']))
-			$model->attributes=$_GET['Courses'];
+		if(isset($_GET['YearOfGraduation']))
+			$model->attributes=$_GET['YearOfGraduation'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -161,7 +161,7 @@ class CoursesController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Courses::model()->findByPk($id);
+		$model=YearOfGraduation::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -173,7 +173,7 @@ class CoursesController extends Controller
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='courses-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='year-of-graduation-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

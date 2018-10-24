@@ -85,7 +85,20 @@ class CartController extends Controller {
 	}
 	public function actionCampus(){
 		$this->layout = getCartLayot();
-		$this->render("webroot.themes.cart.views.cart.campus",array());
+                $model=new CampusAmbassador;
+
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+
+		if(isset($_POST['CampusAmbassador']))
+		{
+                        $_POST['CampusAmbassador']['registeration_date'] = date("Y-m-d h:i:s");
+			$model->attributes=$_POST['CampusAmbassador'];
+			if($model->save()){
+				$this->redirect(array('index','thankscampus'=>1));
+                        }
+		}
+		$this->render("webroot.themes.cart.views.cart.campus",array("model"=>$model));
 
 	}
 	public function actionDescription($id){

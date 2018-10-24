@@ -1,6 +1,6 @@
 <?php
 
-class CoursesController extends Controller
+class CampusAmbassadorController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -51,7 +51,7 @@ class CoursesController extends Controller
 	 */
 	public function actionView($id)
 	{
-                $this->redirect("admin");
+//                $this->redirect("admin");
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
@@ -63,18 +63,16 @@ class CoursesController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Courses;
+		$model=new CampusAmbassador;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Courses']))
+		if(isset($_POST['CampusAmbassador']))
 		{
-			$model->attributes=$_POST['Courses'];
-			if($model->save()){
-                            Yii::app()->user->setFlash('success', "Course added successfully.");
-                            $this->redirect(array('admin','id'=>$model->id));
-                        }
+			$model->attributes=$_POST['CampusAmbassador'];
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('create',array(
@@ -94,13 +92,11 @@ class CoursesController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Courses']))
+		if(isset($_POST['CampusAmbassador']))
 		{
-			$model->attributes=$_POST['Courses'];
-			if($model->save()){
-                            Yii::app()->user->setFlash('success', "College updated successfully.");
-                            $this->redirect(array('admin','id'=>$model->id));
-                        }
+			$model->attributes=$_POST['CampusAmbassador'];
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('update',array(
@@ -133,7 +129,7 @@ class CoursesController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Courses');
+		$dataProvider=new CActiveDataProvider('CampusAmbassador');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -144,10 +140,10 @@ class CoursesController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Courses('search');
+		$model=new CampusAmbassador('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Courses']))
-			$model->attributes=$_GET['Courses'];
+		if(isset($_GET['CampusAmbassador']))
+			$model->attributes=$_GET['CampusAmbassador'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -161,7 +157,7 @@ class CoursesController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Courses::model()->findByPk($id);
+		$model=CampusAmbassador::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -173,7 +169,7 @@ class CoursesController extends Controller
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='courses-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='campus-ambassador-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
