@@ -1,4 +1,9 @@
-<?php $this->setPageTitle('Campus Ambassador - Registeration'); ?>
+<?php $this->setPageTitle('Campus Ambassador - Registeration'); 
+$colleges = CHtml::listData(Colleges::model()->findAll(), "id", "name");
+$courses = CHtml::listData(Courses::model()->findAll(), "id", "title");
+$yog = CHtml::listData(YearOfGraduation::model()->findAll(), "id", "year");
+
+?>
 <div class="ambastor_container regsiter_emastor">
     <section class="amastor_wrap">
         <div class="container">
@@ -35,80 +40,91 @@
         <div class="compas_heading">
             <h4>Here’s Your Chance to Amaze us! </h4>
         </div>
+        <?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
+                'id'=>'campus-ambassador-form',
+                'enableAjaxValidation'=>false,
+        )); ?>
+        <?php echo $form->errorSummary($model); ?>
         <div class="container">
             <div class="col-md-6">
                 <div class="form_amster_field">
-                    <label>First Name <Em>*</Em></label>
-                    <input type="text"/>
+<!--                    <label>First Name <Em>*</Em></label>
+                    <input type="text"/>-->
+                    <?php echo $form->textFieldRow($model,'first_name',array('class'=>'span5','maxlength'=>255)); ?>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form_amster_field">
-                    <label>Last Name <Em>*</Em></label>
-                    <input type="text"/>
+                    <?php echo $form->textFieldRow($model,'last_name',array('class'=>'span5','maxlength'=>255)); ?>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form_amster_field">
-                    <label>Mobile Number <Em>*</Em></label>
-                    <input type="text"/>
+<!--                    <label>Mobile Number <Em>*</Em></label>
+                    <input type="text"/>-->
+                    <?php echo $form->textFieldRow($model,'mobile_number',array('class'=>'span5','maxlength'=>255)); ?>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form_amster_field">
-                    <label>E-mail ID <Em>*</Em></label>
-                    <input type="text"/>
+<!--                    <label>E-mail ID <Em>*</Em></label>
+                    <input type="text"/>-->
+                    <?php echo $form->textFieldRow($model,'email_id',array('class'=>'span5','maxlength'=>255)); ?>
                 </div>
             </div>
             <div class="col-md-12">
                 <div class="form_amster_field">
-                    <label>E-mail ID <Em>*</Em></label>
-                    <select>
+                    <label>College <Em>*</Em></label>
+<!--                    <select>
                         <option>abc</option>
                         <option>abc</option>
                         <option>abc</option>
                         <option>abc</option>
-                    </select>
+                    </select>-->
+                    <?php echo $form->dropDownList($model, 'college_id', $colleges, array('class' => 'span3')); ?>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form_amster_field">
                     <label>Course <Em>*</Em></label>
-                    <select>
+<!--                    <select>
                         <option>abc</option>
                         <option>abc</option>
                         <option>abc</option>
                         <option>abc</option>
-                    </select>
+                    </select>-->
+                    <?php echo $form->dropDownList($model, 'course_id', $courses, array('class' => 'span3')); ?>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form_amster_field">
                     <label>Year of Graduation <Em>*</Em></label>
-                    <select>
+<!--                    <select>
                         <option>abc</option>
                         <option>abc</option>
                         <option>abc</option>
                         <option>abc</option>
-                    </select>
+                    </select>-->
+                     <?php echo $form->dropDownList($model, 'year_of_graduation_id', $yog, array('class' => 'span3')); ?>
                 </div>
             </div>
             <div class="col-md-12">
                 <div class="form_amster_field">
-                    <label>Why do you want to be a MBAtrek Campus Ambassador? <Em>*</Em></label>
-                    <textarea></textarea>
+<!--                    <label>Why do you want to be a MBAtrek Campus Ambassador? <Em>*</Em></label>
+                    <textarea></textarea>-->
+                    <?php echo $form->textAreaRow($model,'question_1',array('rows'=>6, 'cols'=>50, 'class'=>'span8')); ?>
                 </div>
             </div>
             <div class="col-md-12">
                 <div class="form_amster_field">
-                    <label>Suggest two super creative ideas to share the importance of career development  in your college <Em>*</Em></label>
-                    <textarea></textarea>
+<!--                    <label>Suggest two super creative ideas to share the importance of career development  in your college <Em>*</Em></label>
+                    <textarea></textarea>-->
+                    <?php echo $form->textAreaRow($model,'question_2',array('rows'=>6, 'cols'=>50, 'class'=>'span8')); ?>
                 </div>
             </div>
             <div class="col-md-12">
                 <div class="form_amster_field">
-                    <label>Any additional information you would like to provide us?  </label>
-                    <textarea></textarea>
+                   <?php echo $form->textAreaRow($model,'question_3',array('rows'=>6, 'cols'=>50, 'class'=>'span8')); ?>
                 </div>
             </div>
             <div class="col-md-12 text-center">
@@ -117,5 +133,6 @@
                 </div>
             </div>
         </div>
+        <?php $this->endWidget();?>
     </section>
 </div>
