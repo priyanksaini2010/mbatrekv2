@@ -47,6 +47,22 @@
                 </ul>
                 <?php }?>
             </div>
+            <div class="col-md-4">
+                <?php $feeds = getYoutubeFeeds();
+                foreach($feeds->items as $item){
+//                    foreach($feedContents as $feed){
+                    if(isset($item->id->videoId)){
+                ?>
+                <ul>
+                    <li>
+                        <?php echo $item->snippet->title;?>
+                    </li>
+                    <li>
+                        <iframe width="280" height="150" src="https://www.youtube.com/embed/<?php echo $item->id->videoId;?>" frameborder="0" allowfullscreen></iframe>
+                    </li>
+                </ul>
+                <?php }}?>
+            </div>
         </div>
     </div>
 </div>
