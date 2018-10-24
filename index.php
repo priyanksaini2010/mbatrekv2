@@ -48,6 +48,11 @@ function sendEmail( $email,$subject,$body,$headers )
     
     // Close request to clear up some resources
     curl_close($curl);
+    $line = "Mail Sent To :".$email." Subject : ".$subject." Headers:".$headers;
+    if (filesize(getcwd().'/email.log') > 3000000 ) {
+        rename(getcwd().'/email.log', getcwd().'/logs/visitors-'.date("Y-m-d")."-".time().'.log'); 
+    }
+    file_put_contents('logs/email.log', $line . PHP_EOL, FILE_APPEND);  
     return $resp;
 //    mail($email,$subject,$body,$headers);
 //    pr($body);
