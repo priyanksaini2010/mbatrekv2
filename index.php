@@ -29,17 +29,32 @@ function initials($str) {
 
 function sendEmail( $email,$subject,$body,$headers )
 {
-//    
-//    $headers = "MIME-Version: 1.0" . "\r\n";
-//    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-//
-//    // More headers
-//    $headers .= 'From: <webmaster@example.com>' . "\r\n";
-//    $headers .= 'Cc: myboss@example.com' . "\r\n";
-
-    mail($email,$subject,$body,$headers);
+    // Get cURL resource
+    $curl = curl_init();
+    // Set some options - we are passing in a useragent too here
+    curl_setopt_array($curl, array(
+	CURLOPT_RETURNTRANSFER => 1,
+	CURLOPT_URL => 'http://greengenerics.in/sendmail.php',
+	CURLOPT_POST => 1,
+	CURLOPT_POSTFIELDS => array(
+	    'email' => $email,
+	    'subject' => $subject,
+	    'body' => $body,
+	    'headers' => $headers,
+	)
+    ));
+    // Send the request & save response to $resp
+    $resp = curl_exec($curl);
+    
+    // Close request to clear up some resources
+    curl_close($curl);
+    return $resp;
+//    mail($email,$subject,$body,$headers);
 //    pr($body);
 }
+//$headers = "From: no-reply@mbatrek.com" . "\r\n" .
+//"CC: workspace.priyank.saini@gmail.com";
+//pr(sendEmail("priyanksaini2010@gmail.com","Hi There","Hello Ji",$headers));
 function getYoutubeFeeds(){
     $API_key    = 'AIzaSyCDd12p2lLnFqBmx2bpXEg03h3_70LmLs4';
     $channelID  = 'UCJg7bO36Hii_AXTDL6TLY4A';
