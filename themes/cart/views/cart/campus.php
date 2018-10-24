@@ -138,3 +138,9 @@ $yog = CHtml::listData(YearOfGraduation::model()->findAll(), "id", "year");
         <?php $this->endWidget();?>
     </section>
 </div>
+<style>
+    .required{
+        color :red;
+        
+    }
+</style>
