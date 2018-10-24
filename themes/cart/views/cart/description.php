@@ -310,7 +310,7 @@ $product = Products::model()->findByPk($id);
                         <label>
                            <?php echo $recon->recommendedProduct->title;?>
                             <span>
-                                (Choose your best fit)
+                                (<?php echo $recon->short_description;?>)
                             </span>
                             
                         </label>
