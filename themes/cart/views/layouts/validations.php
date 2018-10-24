@@ -20,6 +20,9 @@
     <?php if(isset($_REQUEST['thankc'])){?>
 	 validationMethod("thanks","Thanks for your feedback, we will get in touch with you soon.")
     <?php }?>
+    <?php if(isset($_REQUEST['thankscampus'])){?>
+	 validationMethod("thanks","Thanks for showing your interest in campus ambassador program, we will get in touch with you soon.")
+    <?php }?>
     <?php if(isset($_REQUEST['thanmscart'])){
         $type = ""
         
