@@ -23,6 +23,9 @@
     <?php if(isset($_REQUEST['thankscampus'])){?>
 	 validationMethod("thanks","Thanks for showing interest in  joining revolution to up-skill your peers.\n If our team is amazed by your idea we will get back to you with next step.\n Stay tuned.")
     <?php }?>
+        <?php if(isset($_REQUEST['thanksverify'])){?>
+	 validationMethod("thanks","Thanks for registering with us. You account has been verified now.")
+    <?php }?>
     <?php if(isset($_REQUEST['thanmscart'])){
         $type = ""
         
