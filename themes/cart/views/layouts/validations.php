@@ -21,7 +21,7 @@
 	 validationMethod("thanks","Thanks for your feedback, we will get in touch with you soon.")
     <?php }?>
     <?php if(isset($_REQUEST['thankscampus'])){?>
-	 validationMethod("thanks","Thanks for showing your interest in campus ambassador program, we will get in touch with you soon.")
+	 validationMethod("thanks","Thanks for showing interest in  joining revolution to up-skill your peers.\n If our team is amazed by your idea we will get back to you with next step.\n Stay tuned.")
     <?php }?>
     <?php if(isset($_REQUEST['thanmscart'])){
         $type = ""
