@@ -82,7 +82,7 @@ $(document).ready(function(){
             validationMethod("error","Please enter valid email.");return false;
         }
         if ($("#CampusAmbassador_college_id").val() == ""){
-            validationMethod("error","Please select a coollege.");
+            validationMethod("error","Please select a college.");
             return false;
         }
         if ($("#CampusAmbassador_course_id").val() == ""){
