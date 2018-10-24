@@ -14,20 +14,28 @@ $this->menu= productsMenu($product_id);
           <span class="glyphicon glyphicon-plus"></span>Add More 
 </a>
 
-<?php $this->widget('bootstrap.widgets.TbGridView',array(
+<?php
+$prods = CHtml::listData(Colleges::model()->findAll(), "id", "title");
+$this->widget('bootstrap.widgets.TbGridView',array(
 	'id'=>'product-recommended-value-saver-pack-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		'title',
+//		'title',
 		'short_description',
-		array(
-                'name'=>'icon', 
-                    'type' => 'raw',
-                    'filter' => '',
-                    'value' => 'CHtml::image(Yii::app()->baseUrl . "/assets/products/" . $data->icon,"", array("width"=>32, "height"=>38, "style" =>"background-color : #229897"))',
+                array(
+                    'name'=>'recommended_product_id', 
+                    'value' => '$data->recommendedProduct->title',
+                    'filter' => $prods
                 ),
-		
+            
+//		array(
+//                'name'=>'icon', 
+//                    'type' => 'raw',
+//                    'filter' => '',
+//                    'value' => 'CHtml::image(Yii::app()->baseUrl . "/assets/products/" . $data->icon,"", array("width"=>32, "height"=>38, "style" =>"background-color : #229897"))',
+//                ),
+//		
 		array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',
                         'template' => "{update}{delete}",
