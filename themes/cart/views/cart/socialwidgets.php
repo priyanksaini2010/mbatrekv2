@@ -24,7 +24,7 @@
 							<?php echo $feedLin->updateContent->companyStatusUpdate->share->comment;?>
 						</li>
 						<li class="linked-in-image">
-							<img src="<?php echo $feedLin->updateContent->companyStatusUpdate->share->content->eyebrowUrl;?>" height="200" width="200">
+							<img src="<?php echo $feedLin->updateContent->companyStatusUpdate->share->content->eyebrowUrl;?>" height="280" width="150">
 						</li>
 					</ul>
 					<?php }?>
@@ -38,8 +38,8 @@
                 ?>
                 <ul>
                     <li class="instagram-image">
-                        <!--<img src="<?php // echo $feed->images->standard_resolution->url;?>" height="200" width="200">-->
-                        <img src="<?php echo $feedLin->updateContent->companyStatusUpdate->share->content->eyebrowUrl;?>" height="200" width="200">
+                        <img src="<?php echo $feed->images->standard_resolution->url;?>" height="200" width="200">
+                        <!--<img src="<?php // echo $feedLin->updateContent->companyStatusUpdate->share->content->eyebrowUrl;?>" height="280" width="150">-->
                     </li>
                     <li>
                         <?php echo $feed->caption->text;?>
@@ -54,10 +54,10 @@
                     if(isset($item->id->videoId)){
                 ?>
                 <ul>
-                    <li>
+                    <li class="youtube-title">
                         <?php echo $item->snippet->title;?>
                     </li>
-                    <li>
+                    <li class="youtube-video">
                         <iframe width="280" height="150" src="https://www.youtube.com/embed/<?php echo $item->id->videoId;?>" frameborder="0" allowfullscreen></iframe>
                     </li>
                 </ul>
