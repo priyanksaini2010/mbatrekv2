@@ -314,7 +314,7 @@ $product = Products::model()->findByPk($id);
                             </span>
                             
                         </label>
-                        <img src="<?php echo Yii::app()->baseUrl;?>/assets/products/<?php echo $recon->icon;?>"/>
+                        <img src="<?php echo Yii::app()->baseUrl;?>/assets/products/<?php echo $recon->recommendedProduct->logo;?>"/>
                         <div class="add_to_Cart_div">
                                 <a href="<?php echo Yii::app()->createUrl("cart/addtocart",array("id"=>$recon->recommended_product_id));?>">Add to Cart</a>
                                 <a href="<?php echo Yii::app()->createUrl("cart/buynow",array("id"=>$recon->recommended_product_id));?>">Buy Now</a>
