@@ -165,6 +165,6 @@ return array(
 		// this is used in contact page
 		'adminEmail'=>'info@mbatrek.com',
 		'noreply'=>'no-reply@mbatrek.com',
-                'url'=>'https://mbatrek.com/',
+                'url'=>'https://mbatrek.com/v2/',
 	),
 );
