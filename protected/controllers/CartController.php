@@ -58,9 +58,7 @@ class CartController extends Controller {
 	    } else {
 		$user->attributes = array("is_verified"=>1);
 		if($user->save()){
-		    $this->errors["error"] = "Your account has been verified.";
-		    $this->layout = getCartLayot();
-		    $this->render("webroot.themes.cart.views.cart.home",array());
+		   $this->redirect(array('index','thanksverify'=>1));
 		}else {
 		    foreach($model->getErrors() as $key=>$err){
                             $this->errors[$key] = $err;
