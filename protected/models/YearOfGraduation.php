@@ -1,23 +1,23 @@
 <?php
 
 /**
- * This is the model class for table "courses".
+ * This is the model class for table "year_of_graduation".
  *
- * The followings are the available columns in table 'courses':
+ * The followings are the available columns in table 'year_of_graduation':
  * @property integer $id
- * @property string $title
+ * @property string $year
  *
  * The followings are the available model relations:
  * @property CampusAmbassador[] $campusAmbassadors
  */
-class Courses extends CActiveRecord
+class YearOfGraduation extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'courses';
+		return 'year_of_graduation';
 	}
 
 	/**
@@ -28,11 +28,11 @@ class Courses extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('title', 'required'),
-			array('title', 'length', 'max'=>255),
+			array('year', 'required'),
+			array('year', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, title', 'safe', 'on'=>'search'),
+			array('id, year', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -44,7 +44,7 @@ class Courses extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'campusAmbassadors' => array(self::HAS_MANY, 'CampusAmbassador', 'course_id'),
+			'campusAmbassadors' => array(self::HAS_MANY, 'CampusAmbassador', 'year_of_graduation_id'),
 		);
 	}
 
@@ -55,7 +55,7 @@ class Courses extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'title' => 'Title',
+			'year' => 'Year',
 		);
 	}
 
@@ -78,7 +78,7 @@ class Courses extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('title',$this->title,true);
+		$criteria->compare('year',$this->year,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -89,7 +89,7 @@ class Courses extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Courses the static model class
+	 * @return YearOfGraduation the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
