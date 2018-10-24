@@ -162,7 +162,7 @@ class EventGalleryController extends Controller
                                 move_uploaded_file($tmp_name, $path."/".$fileName);
                                 $_POST['EventGallery']['image_2'] = $fileName;
                             }else {
-                                 $_POST['EventGallery']['image_2'] = $model->image_1;
+                                 $_POST['EventGallery']['image_2'] = $model->image_2;
                             }
                             if($_FILES['EventGallery']['tmp_name']['image_3'] != ""){
                                 $fileName = rand().str_replace(" ","", $_FILES['EventGallery']['name']['image_3']);  // random number + file name
@@ -170,12 +170,13 @@ class EventGalleryController extends Controller
                                 move_uploaded_file($tmp_name, $path."/".$fileName);
                                 $_POST['EventGallery']['image_3'] = $fileName;
                             }else {
-                                 $_POST['EventGallery']['image_3'] = $model->image_1;
+                                 $_POST['EventGallery']['image_3'] = $model->image_3;
                             }
                             
 
                         }
                        
+                        
 			$model->attributes=$_POST['EventGallery'];
 			if($model->save()){
                             Yii::app()->user->setFlash('success', "Event Added Successfully."); 
