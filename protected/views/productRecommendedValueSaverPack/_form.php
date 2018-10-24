@@ -22,12 +22,12 @@ $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
 
 	<?php echo $form->hiddenField($model,'product_id',array('value'=>$id)); ?>
 	<?php echo $form->hiddenField($model,'title',array('value'=>"test")); ?>
-	<?php echo $form->hiddenField($model,'short_description',array('value'=>"test")); ?>
+	<?php // echo $form->hiddenField($model,'short_description',array('value'=>"test")); ?>
 	<?php echo $form->hiddenField($model,'icon',array('value'=>"test")); ?>
 
 	<?php // echo $form->textFieldRow($model,'title',array('class'=>'span5','maxlength'=>255)); ?>
 
-	<?php // echo $form->textFieldRow($model,'short_description',array('class'=>'span5','maxlength'=>255)); ?>
+	<?php echo $form->textFieldRow($model,'short_description',array('class'=>'span5','maxlength'=>255)); ?>
         <label for="Products_status" class="required">Recommended Product With This Product <span class="required">*</span></label>
         <?php echo $form->dropDownList($model, 'recommended_product_id', $recom, array('class' => 'span3')); ?>
 	
