@@ -1,7 +1,7 @@
 <?php
 $this->breadcrumbs=array(
 	'Courses'=>array('index'),
-	$model->name,
+	$model->title,
 );
 
 $this->menu=array(
@@ -19,6 +19,6 @@ $this->menu=array(
 	'data'=>$model,
 	'attributes'=>array(
 		'id',
-		'name',
+		'title',
 	),
 )); ?>

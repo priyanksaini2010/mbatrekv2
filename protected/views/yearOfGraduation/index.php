@@ -1,15 +1,15 @@
 <?php
 $this->breadcrumbs=array(
-	'Courses',
+	'Year Of Graduations',
 );
 
 $this->menu=array(
-	array('label'=>'Create Courses','url'=>array('create')),
-	array('label'=>'Manage Courses','url'=>array('admin')),
+	array('label'=>'Create YearOfGraduation','url'=>array('create')),
+	array('label'=>'Manage YearOfGraduation','url'=>array('admin')),
 );
 ?>
 
-<h1>Courses</h1>
+<h1>Year Of Graduations</h1>
 
 <?php $this->widget('bootstrap.widgets.TbListView',array(
 	'dataProvider'=>$dataProvider,

@@ -1,13 +1,14 @@
 <?php
 $this->breadcrumbs=array(
-	'Courses'=>array('index'),
-	'Create',
+	'Courses'=>array('courses/admin'),
+	'Manage',
 );
 
 $this->menu=array(
-	array('label'=>'List Courses','url'=>array('index')),
-	array('label'=>'Manage Courses','url'=>array('admin')),
+	array('label'=>'Manage Courses','url'=>array('courses/admin')),
+	array('label'=>'Create Courses','url'=>array('courses/create')),
 );
+
 ?>
 
 <h1>Create Courses</h1>

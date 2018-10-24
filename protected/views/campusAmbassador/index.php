@@ -1,15 +1,15 @@
 <?php
 $this->breadcrumbs=array(
-	'Courses',
+	'Campus Ambassadors',
 );
 
 $this->menu=array(
-	array('label'=>'Create Courses','url'=>array('create')),
-	array('label'=>'Manage Courses','url'=>array('admin')),
+	array('label'=>'Create CampusAmbassador','url'=>array('create')),
+	array('label'=>'Manage CampusAmbassador','url'=>array('admin')),
 );
 ?>
 
-<h1>Courses</h1>
+<h1>Campus Ambassadors</h1>
 
 <?php $this->widget('bootstrap.widgets.TbListView',array(
 	'dataProvider'=>$dataProvider,
