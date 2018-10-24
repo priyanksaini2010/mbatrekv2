@@ -40,6 +40,13 @@ function sendEmail( $email,$subject,$body,$headers )
     mail($email,$subject,$body,$headers);
 //    pr($body);
 }
+function getYoutubeFeeds(){
+    $API_key    = 'AIzaSyCDd12p2lLnFqBmx2bpXEg03h3_70LmLs4';
+    $channelID  = 'UCJg7bO36Hii_AXTDL6TLY4A';
+    $maxResults = 10;
+    $videoList = json_decode(file_get_contents('https://www.googleapis.com/youtube/v3/search?order=date&part=snippet&channelId='.$channelID.'&maxResults='.$maxResults.'&key='.$API_key.''));
+    return $videoList;
+}
 function getInstaFeeds(){
     $accees_token = "1653288519.af13baa.942b173826424eb8bd741d9c3fb8781b";
 //$client_id = "af13baa72a464546983963921e964930";
