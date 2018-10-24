@@ -73,7 +73,7 @@
                                                                         <li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"27")); ?>">InternPRO</a></li>
 <li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"17")); ?>">InternARISE</a></li>
 								
-	<li><a href="#">Campus2Corporate</a></li>
+	<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"34")); ?>">Campus2Corporate</a></li>
 								</ul>
 							</li>     						
 						</ul>
@@ -99,7 +99,7 @@
 								<ul>
 									<!--<li class="kopie"><a href="#">Industry Ana</a></li>
 									<li><a href="#">Compus2Corporate</a></li>-->
-									<li class="kopie"><a href="#">#CareerPlanning </a></li>
+									<li class="kopie"><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"33")); ?>">#CareerPlanning </a></li>
                                                                          <li class="kopie"><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"31")); ?>">#IndustryReady </a></li>
                                                                          <li class="kopie"><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"32")); ?>">#InterviewReady </a></li>
 								</ul>
