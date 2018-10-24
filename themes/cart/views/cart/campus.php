@@ -2,7 +2,9 @@
 $colleges = CHtml::listData(Colleges::model()->findAll(), "id", "name");
 $courses = CHtml::listData(Courses::model()->findAll(), "id", "title");
 $yog = CHtml::listData(YearOfGraduation::model()->findAll(), "id", "year");
-
+//$colleges[0] = "Select College";
+//$courses[0] = "Select Course";
+//$yog[0] = "Select Year Of Graduation";
 ?>
 <div class="ambastor_container regsiter_emastor">
     <section class="amastor_wrap">
@@ -81,7 +83,7 @@ $yog = CHtml::listData(YearOfGraduation::model()->findAll(), "id", "year");
                         <option>abc</option>
                         <option>abc</option>
                     </select>-->
-                    <?php echo $form->dropDownList($model, 'college_id', $colleges, array('class' => 'span3')); ?>
+                    <?php echo $form->dropDownList($model, 'college_id', $colleges, array('class' => 'span3','empty'=>'Select an option')); ?>
                 </div>
             </div>
             <div class="col-md-6">
@@ -93,7 +95,7 @@ $yog = CHtml::listData(YearOfGraduation::model()->findAll(), "id", "year");
                         <option>abc</option>
                         <option>abc</option>
                     </select>-->
-                    <?php echo $form->dropDownList($model, 'course_id', $courses, array('class' => 'span3')); ?>
+                    <?php echo $form->dropDownList($model, 'course_id', $courses, array('class' => 'span3','empty'=>'Select an option')); ?>
                 </div>
             </div>
             <div class="col-md-6">
@@ -105,7 +107,7 @@ $yog = CHtml::listData(YearOfGraduation::model()->findAll(), "id", "year");
                         <option>abc</option>
                         <option>abc</option>
                     </select>-->
-                     <?php echo $form->dropDownList($model, 'year_of_graduation_id', $yog, array('class' => 'span3')); ?>
+                     <?php echo $form->dropDownList($model, 'year_of_graduation_id', $yog, array('class' => 'span3','empty'=>'Select an option')); ?>
                 </div>
             </div>
             <div class="col-md-12">
