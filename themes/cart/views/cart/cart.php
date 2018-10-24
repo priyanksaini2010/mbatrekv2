@@ -149,12 +149,12 @@ if(isset(Yii::app()->user->id)){
                         <li>
                             <div class="recomended_title">
                                 <label>
-                                    <?php echo $saver->title?>
+                                    <?php echo $saver->recommendedProduct->title?>
                                     <span>
                                         (<?php echo $saver->short_description?>)
                                     </span>
                                 </label>
-                                <img src="<?php echo $baseUrl;?>/assets/products/<?php echo $saver->icon;?>"/>
+                                <img src="<?php echo $baseUrl;?>/assets/products/<?php echo $saver->recommendedProduct->logo;?>"/>
                             </div>
                             <div class="recomended_price">
                                 <label> &#8377 <?php echo money($saver->recommendedProduct->price);?></label>
