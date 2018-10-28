@@ -94,7 +94,7 @@ class UsersNew extends CActiveRecord
 		$criteria->compare('is_verified',$this->is_verified);
 		$criteria->compare('date_created',$this->date_created,true);
 		$criteria->compare('role',$this->role);
-
+                $criteria->order = "id desc";
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));

@@ -83,7 +83,7 @@ class ProductKeyPoints extends CActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('product_id',$this->product_id);
 		$criteria->compare('points',$this->points,true);
-
+                $criteria->order = "id desc";
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));

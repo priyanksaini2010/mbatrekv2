@@ -95,7 +95,7 @@ class ProductRecommendedValueSaverPack extends CActiveRecord
 		$criteria->compare('title',$this->title,true);
 		$criteria->compare('short_description',$this->short_description,true);
 		$criteria->compare('icon',$this->icon,true);
-
+                $criteria->order = "id desc";
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));

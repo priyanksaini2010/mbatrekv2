@@ -89,7 +89,7 @@ class ProductEngage extends CActiveRecord
 		$criteria->compare('description',$this->description,true);
 		$criteria->compare('description2',$this->description2,true);
 		$criteria->compare('icon',$this->icon,true);
-
+                $criteria->order = "id desc";
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));

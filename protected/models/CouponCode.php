@@ -92,7 +92,7 @@ class CouponCode extends CActiveRecord
 		$criteria->compare('discount',$this->discount);
 		$criteria->compare('min_value',$this->min_value);
 		$criteria->compare('is_active',$this->is_active);
-
+                $criteria->order = "id desc";
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));

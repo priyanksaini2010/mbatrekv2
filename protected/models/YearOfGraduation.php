@@ -79,7 +79,7 @@ class YearOfGraduation extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('year',$this->year,true);
-
+                $criteria->order = "id desc";
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));

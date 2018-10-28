@@ -129,7 +129,7 @@ class Products extends CActiveRecord
 		$criteria->compare('home_page_icon',$this->home_page_icon,true);
 		$criteria->compare('home_page_bucket',$this->home_page_bucket);
 		$criteria->compare('status',$this->status);
-
+                $criteria->order = "id desc";
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));

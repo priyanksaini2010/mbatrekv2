@@ -104,7 +104,7 @@ class Blogs extends CActiveRecord
 		$criteria->compare('banner_image',$this->banner_image,true);
 		$criteria->compare('date_created',$this->date_created,true);
 		$criteria->compare('date_updated',$this->date_updated,true);
-
+                $criteria->order = "id desc";
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));

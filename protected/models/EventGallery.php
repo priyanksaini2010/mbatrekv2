@@ -92,7 +92,7 @@ class EventGallery extends CActiveRecord
 		$criteria->compare('image_3',$this->image_3,true);
 		$criteria->compare('name',$this->name,true);
 		$criteria->compare('description',$this->description,true);
-
+                $criteria->order = "id desc";
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));

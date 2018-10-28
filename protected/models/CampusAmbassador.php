@@ -114,7 +114,7 @@ class CampusAmbassador extends CActiveRecord
 		$criteria->compare('question_2',$this->question_2,true);
 		$criteria->compare('question_3',$this->question_3,true);
 		$criteria->compare('registeration_date',$this->registeration_date,true);
-
+                $criteria->order = "id desc";
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));

@@ -97,7 +97,7 @@ class Contact extends CActiveRecord
 		$criteria->compare('name_of_company_institute',$this->name_of_company_institute,true);
 		$criteria->compare('subject',$this->subject,true);
 		$criteria->compare('your_message',$this->your_message,true);
-
+                $criteria->order = "id desc";
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
