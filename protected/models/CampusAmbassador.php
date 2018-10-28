@@ -40,9 +40,10 @@ class CampusAmbassador extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('first_name, last_name, mobile_number, email_id, college_id, course_id, year_of_graduation_id, question_1, question_2, question_3, registeration_date', 'required'),
+			array('first_name, last_name, mobile_number, email_id, college_id, course_id, year_of_graduation_id, question_1, question_2, registeration_date', 'required'),
 			array('college_id, course_id, year_of_graduation_id', 'numerical', 'integerOnly'=>true),
 			array('first_name, last_name, mobile_number, email_id', 'length', 'max'=>255),
+                        array('question_3', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, first_name, last_name, mobile_number, email_id, college_id, course_id, year_of_graduation_id, question_1, question_2, question_3, registeration_date', 'safe', 'on'=>'search'),
