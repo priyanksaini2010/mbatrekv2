@@ -51,7 +51,7 @@
                             ?>
                             <div <?php if(isset($_REQUEST['show_cart'])){echo "style='display:block;'";}?> class="cart-wrapper">
                                 <div class="cart-heading">
-                                    <div class="cart-title">items</div>
+                                    <div class="cart-title">Items</div>
                                     <div class="cart-price">Price (in &#8377)</div>
                                 </div>
                                 <?php
