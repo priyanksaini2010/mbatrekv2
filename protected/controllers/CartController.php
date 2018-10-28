@@ -33,7 +33,7 @@ class CartController extends Controller {
         return array(
             array('allow', // allow all users to perform 'index' and 'view' actions
                 'actions' => array('index', 'view','student',"addtocart","cart","remove","buynow","verify", 
-                                    'profesionals','institutes','register',"description","checkout","removeCart","applypromo","story","campus"),
+                                    'profesionals','institutes','register',"description","checkout","removeCart","applypromo","story","campus","loginandapply"),
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -67,6 +67,77 @@ class CartController extends Controller {
 		
 	    }
 	}
+        public function actionLoginandapply(){
+            $resp = array("status"=>"failure","message" => "Opps, that didn't work please try again");
+            $model=new LoginForm;
+            $_POST['LoginForm']= $_POST;
+            if(isset($_POST['LoginForm']))
+            {
+
+                $model->attributes=$_POST['LoginForm'];
+                if($model->validate() && $model->login()){
+                    
+                    $domain_name = substr(strrchr($_POST['username'], "@"), 1);
+                    $isCouponValid = CouponCode::model()->findByAttributes(array("domain"=>$domain_name));
+                   
+                    if(!empty($isCouponValid)) {
+                        $isThisUsed = CouponUsage::model()->findByAttributes(array("email_used"=>$_POST['username']));
+                        if(empty($isThisUsed)){ 
+                            $cart = Cart::model()->findByAttributes(array("user_id" => Yii::app()->user->id, "status" => 1));
+                            $cartAll = Cart::model()->findAllByAttributes(array("user_id" => Yii::app()->user->id, "status" => 1));
+                            $total = 0;
+                            foreach ($cartAll as $sum){
+                              $total = $total +   $sum->product->price;
+                            }
+                            
+                            if($total >= $isCouponValid->min_value){
+                                $model = new CouponUsage;
+                                $model->attributes = array(
+                                                        "cart_id" => $cart->id,
+                                                        "coupon_id" => $isCouponValid->id,
+                                                        "email_used" => $_POST['username'],
+                                                        "users_new_id" => Yii::app()->user->id,
+                                                        "date_created"=> date("Y-m-d h:i:s")
+                                                    );
+                                if($model->save()){
+                                    $resp['status'] = "success";
+                                    $amount = $isCouponValid->discount;
+                                    switch ($isCouponValid->discount_type){
+                                        case 1:
+                                            $resp['message'] = "A promo code is successfully applied to your college id. You have received ".$amount."% off discount.";
+                                            break;
+                                        case 2:
+                                            $resp['message'] = "A Discount of Rs.".money($amount)."% have been applied successfully.";
+                                            $resp['message'] = "A promo code is successfully applied to your college id. You have received Rs.".money($amount)." off discount.";
+                                            break;
+                                    }
+
+                                }else {
+                                    pr($model->getErrors());
+                                    $resp['message'] = "Oops! Some error occured, Please try after some time.";
+                                }
+                            } else {
+                                $resp['message'] = "This coupon code is valid only for minimum cart value of Rs.". money($isCouponValid->min_value).".";
+                            }
+
+                        } else {
+                             
+                            $resp['message'] = "Discount have been availed for this email address.";
+                        }
+                    }else {
+                        $resp['message'] = "This email address is not valid for discount.".$domain_name;
+                    }
+                } else {
+                    foreach($model->getErrors() as $key=>$errors){
+                           $resp['message'] = $errors[0];
+                    }
+                }
+            } else {
+                 $resp['message'] = "Please enter valid username and password";
+            }
+            echo json_encode($resp);
+            die;
+        }
 	public function actionIndex(){
 		$this->layout = getCartLayot();
 		$this->render("webroot.themes.cart.views.cart.home",array());
