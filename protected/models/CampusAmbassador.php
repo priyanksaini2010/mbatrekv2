@@ -80,7 +80,7 @@ class CampusAmbassador extends CActiveRecord
 			'year_of_graduation_id' => 'Year Of Graduation',
 			'question_1' => 'Why do you want to be a MBAtrek Campus Ambassador? ',
 			'question_2' => 'Suggest two super creative ideas to share the importance of career development in your college',
-			'question_3' => 'Any additional information you would like to provide us',
+			'question_3' => 'Any additional information you would like to provide us <span style="color:grey;">(Optional)</span>',
 			'registeration_date' => 'Registeration Date',
 		);
 	}
