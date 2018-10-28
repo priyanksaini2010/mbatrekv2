@@ -113,7 +113,7 @@
                   <ul >
 					<li><a href="<?php echo Yii::app()->createUrl('blogs'); ?>">Blogs / Article</a></li>
 					<li><a href="javascript:void(0);">Videos</a></li>
-					<li><a href="javascript:void(0);">#CareerPrep</a></li>
+					<!--<li><a href="javascript:void(0);">#CareerPrep</a></li>-->
 
                     
                   </ul>                
