@@ -23,15 +23,15 @@ $yog = CHtml::listData(YearOfGraduation::model()->findAll(), "id", "year");
             <div class="earn_container">
                 <ul>
                     <li>
-                        <img src="images/wow_icon.png"/>
+                        <img src="<?php echo $baseUrl; ?>/images/wow_icon.png"/>
                         <span>Wow us with your answers</span>
                     </li>
                     <li>
-                        <img src="images/send_video_icon.png"/>
+                        <img src="<?php echo $baseUrl; ?>/images/send_video_icon.png"/>
                         <span>Send a video showing your awesomeness</span>
                     </li>
                     <li>
-                        <img src="images/final_interview_icon.png"/>
+                        <img src="<?php echo $baseUrl; ?>/images/final_interview_icon.png"/>
                         <span>Final interview over skype</span>
                     </li>
                 </ul>

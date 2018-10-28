@@ -32,22 +32,36 @@
 				</div>
             </div>
             <div class="col-md-4">
-                <?php $feeds = getInstaFeeds();
-                foreach($feeds['data'] as $feed){
-//                    foreach($feedContents as $feed){
-                ?>
-                <ul>
-                    <li class="instagram-image">
-                        <img src="<?php echo $feed->images->standard_resolution->url;?>" height="200" width="200">
-                        <!--<img src="<?php // echo $feedLin->updateContent->companyStatusUpdate->share->content->eyebrowUrl;?>" height="280" width="150">-->
-                    </li>
-                    <li>
-                        <?php echo $feed->caption->text;?>
-                    </li>
-                </ul>
-                <?php }?>
+				<div class="linked_in_feeds">
+					<div class="linked_header">
+						<img src="<?php echo $baseUrl; ?>/images/linked_img.jpg"/>
+						<h2>Instagram</h2>
+					</div>
+					<div class="feeds_blocks">
+					<?php $feeds = getInstaFeeds();
+					foreach($feeds['data'] as $feed){
+	//                    foreach($feedContents as $feed){
+					?>
+					<ul>
+						<li class="instagram-image">
+							<img src="<?php echo $feed->images->standard_resolution->url;?>" height="200" width="200">
+							<!--<img src="<?php // echo $feedLin->updateContent->companyStatusUpdate->share->content->eyebrowUrl;?>" height="280" width="150">-->
+						</li>
+						<li>
+							<?php echo $feed->caption->text;?>
+						</li>
+					</ul>
+					<?php }?>
+					</div>
+				</div>
             </div>
             <div class="col-md-4">
+			<div class="linked_in_feeds">
+					<div class="linked_header">
+						<img src="<?php echo $baseUrl; ?>/images/linked_img.jpg"/>
+						<h2>Youtube</h2>
+					</div>
+					<div class="feeds_blocks">
                 <?php $feeds = getYoutubeFeeds();
                 foreach($feeds->items as $item){
 //                    foreach($feedContents as $feed){
@@ -62,6 +76,8 @@
                     </li>
                 </ul>
                 <?php }}?>
+				</div>
+				</div>
             </div>
         </div>
     </div>
