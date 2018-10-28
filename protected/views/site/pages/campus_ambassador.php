@@ -10,19 +10,19 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="amaster_repeat">
-                            <img src="<?php echo Yii::app()->request->baseUrl;?>/images/learn_skilling.png"/>
+                            <img src="<?php echo $baseUrl; ?>/images/learn_skilling.png"/>
                             <h3>Learn <span>Skilling-up</span> and <span>Career Planning</span></h3>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="amaster_repeat">
-                            <img src="<?php echo Yii::app()->request->baseUrl;?>/images/bulid_sales.png"/>
+                            <img src="<?php echo $baseUrl; ?>/images/bulid_sales.png"/>
                             <h3>Build your <span>Sales and Marketing Capabilities</span></h3>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="amaster_repeat">
-                            <img src="<?php echo Yii::app()->request->baseUrl;?>/images/win_prices.png"/>
+                            <img src="<?php echo $baseUrl; ?>/images/win_prices.png"/>
                             <h3>Win Prizes worth <span>₹ 20,000</span> and Chance for <span>PPI</span></h3>
                         </div>
                     </div>
@@ -41,19 +41,19 @@
             <div class="earn_container">
                 <ul>
                     <li>
-                        <img src="<?php echo Yii::app()->request->baseUrl;?>/images/newbie_icon.png"/>
+                        <img src="<?php echo $baseUrl; ?>/images/newbie_icon.png"/>
                         <span>Newbie</span>
                     </li>
                     <li>
-                        <img src="<?php echo Yii::app()->request->baseUrl;?>/images/rokie_icon.png"/>
+                        <img src="<?php echo $baseUrl; ?>/images/rokie_icon.png"/>
                         <span>Rookie</span>
                     </li>
                     <li>
-                        <img src="<?php echo Yii::app()->request->baseUrl;?>/images/rockstar_icon.png"/>
+                        <img src="<?php echo $baseUrl; ?>/images/rockstar_icon.png"/>
                         <span>Rockstar</span>
                     </li>
                     <li>
-                        <img src="<?php echo Yii::app()->request->baseUrl;?>/images/legends_icon.png"/>
+                        <img src="<?php echo $baseUrl; ?>/images/legends_icon.png"/>
                         <span>Legend</span>
                     </li>
                 </ul>
@@ -69,45 +69,45 @@
                 <div class="row">
                     <div class="col-md-4 is-animated">
                         <div class="amaster_repeat">
-                            <img src="<?php echo Yii::app()->request->baseUrl;?>/images/amazon_gift_icon.png"/>
+                            <img src="<?php echo $baseUrl; ?>/images/amazon_gift_icon.png"/>
                             <h3>Amazon Gift Cards Worth up to <span>₹ 7,000</span></h3>
                         </div>
                         <div class="amaster_repeat">
-                            <img src="<?php echo Yii::app()->request->baseUrl;?>/images/free_mbatrek_icon.png"/>
+                            <img src="<?php echo $baseUrl; ?>/images/free_mbatrek_icon.png"/>
                             <h3>Free MBAtrek Services  Worth up to <span>₹ 3,500</span></h3>
                         </div>
                         <div class="amaster_repeat">
-                            <img src="<?php echo Yii::app()->request->baseUrl;?>/images/mbatek_goodies.png"/>
+                            <img src="<?php echo $baseUrl; ?>/images/mbatek_goodies.png"/>
                             <h3>MBAtrek Goodies  Worth up to <span>₹ 9,500 </span></h3>
                         </div>
                     </div>
                     <div class="col-md-4  is-animated">
                         <div class="amaster_repeat">
-                            <img src="<?php echo Yii::app()->request->baseUrl;?>/images/certification_of_Appriciation.png"/>
+                            <img src="<?php echo $baseUrl; ?>/images/certification_of_Appriciation.png"/>
                             <h3><span>Certificate of Appreciation </span> from MBAtrek’s Founders</h3>
                         </div>
                         <div class="amaster_repeat">
-                            <img src="<?php echo Yii::app()->request->baseUrl;?>/images/linkedin_Recom_icon.png"/>
+                            <img src="<?php echo $baseUrl; ?>/images/linkedin_Recom_icon.png"/>
                             <h3><span>LinkedIn Recommendation </span> by MBAtrek’s founders
                             </h3>
                         </div>
                         <div class="amaster_repeat">
-                            <img src="<?php echo Yii::app()->request->baseUrl;?>/images/get_featured_icon.png"/>
+                            <img src="<?php echo $baseUrl; ?>/images/get_featured_icon.png"/>
                             <h3><span>Get featured</span> on MBAtrek’s Facebook page
                             </h3>
                         </div>
                     </div>
                     <div class="col-md-4 is-animated">
                         <div class="amaster_repeat">
-                            <img src="<?php echo Yii::app()->request->baseUrl;?>/images/preplacement_icon.png"/>
+                            <img src="<?php echo $baseUrl; ?>/images/preplacement_icon.png"/>
                             <h3>Pre-Placement Interview  <span>(PPI)</span></h3>
                         </div>
                         <div class="amaster_repeat">
-                            <img src="<?php echo Yii::app()->request->baseUrl;?>/images/marketing_icon.png"/>
+                            <img src="<?php echo $baseUrl; ?>/images/marketing_icon.png"/>
                             <h3><span>Marketing and Sales </span> Experience</h3>
                         </div>
                         <div class="amaster_repeat">
-                            <img src="<?php echo Yii::app()->request->baseUrl;?>/images/personal_brand.png"/>
+                            <img src="<?php echo $baseUrl; ?>/images/personal_brand.png"/>
                             <h3>Create your own  <span>Personal Brand</span></h3>
                         </div>
                     </div>
@@ -124,15 +124,15 @@
                 <div class="earn_container">
                     <ul>
                         <li class="animated  is-animated ">
-                            <img src="<?php echo Yii::app()->request->baseUrl;?>/images/some_love.png"/>
+                            <img src="<?php echo $baseUrl; ?>/images/some_love.png"/>
                             <span>Spread some Love on Social Media </span>
                         </li>
                         <li class="animated  is-animated">
-                            <img src="<?php echo Yii::app()->request->baseUrl;?>/images/refer_friend.png"/>
+                            <img src="<?php echo $baseUrl; ?>/images/refer_friend.png"/>
                             <span>Refer Your Friends to use MBAtrek’s products </span>
                         </li>
                         <li class="animated  is-animated">
-                            <img src="<?php echo Yii::app()->request->baseUrl;?>/images/buliding_workshop.png"/>
+                            <img src="<?php echo $baseUrl; ?>/images/buliding_workshop.png"/>
                             <span>Facilitate MBAtrek Career Building Workshops on Campus </span>
                         </li>
                     </ul>
