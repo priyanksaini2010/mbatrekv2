@@ -54,7 +54,7 @@
                                                                     
 									<li class="kopie"><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"25")); ?>">Resume / CV Diagnostic</a></li>
 									<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"24")); ?>">Linkedin Diagnostic</a></li>
-									<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"30")); ?>">Mock Interviews</a></li>
+									<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"30")); ?>">Mock Interview</a></li>
 									<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"23")); ?>">Interviews Q & A</a></li>
 									<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"18")); ?>">Industry Analysis</a></li>
 									<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"21")); ?>">Company Analysis</a></li>
