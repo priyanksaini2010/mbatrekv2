@@ -66,7 +66,7 @@ foreach ($products as $c){
 							<?php if (!isset(Yii::app()->user->id)){?>
                                 <?php
 							$form = $this->beginWidget('CActiveForm', array(
-								'id' => 'login-form',
+								'id' => 'login-form-cart',
 								'enableClientValidation' => true,
 								'enableAjaxValidation' => true,
 								'clientOptions' => array(
@@ -90,7 +90,7 @@ foreach ($products as $c){
 								<div class="phAnimate"><label for="lastname">Password: <em>*</em></label> 
                                                                     <input class="input_field" placeholder="" name="LoginForm[password]" id="LoginForm_password" type="password"></div>
 								<div class="promo_btn">
-									<input type="submit" value="Submit" name="submit" />
+									<input type="button" id="login-form-submit" value="Submit" name="submit" />
 								</div>
 							</div>
                                         <?php $this->endWidget();?>       
