@@ -15,7 +15,9 @@ $this->menu=array(
 <h1>Manage Campus Ambassadors</h1>
 
 
-<?php $this->widget('bootstrap.widgets.TbGridView',array(
+<?php
+
+$grid = $this->widget('bootstrap.widgets.TbGridView',array(
 	'id'=>'campus-ambassador-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
@@ -51,4 +53,7 @@ $this->menu=array(
                         'template' => "{view}"
 		),
 	),
-)); ?>
+)); 
+
+$this->renderExportGridButton($grid,'Export To CSV',array('class'=>'btn btn-info pull-right'));
+?>
