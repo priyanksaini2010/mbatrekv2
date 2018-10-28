@@ -44,7 +44,14 @@ class CampusAmbassadorController extends Controller
 		);
 	}
 
-
+        public function behaviors() {
+                return array(
+                    'exportableGrid' => array(
+                        'class' => 'application.components.ExportableGridBehavior',
+                        'filename' => 'PostsWithUsers.csv',
+                        'csvDelimiter' => ';', //i.e. Excel friendly csv delimiter
+                        ));
+            }
 	/**
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
@@ -144,7 +151,15 @@ class CampusAmbassadorController extends Controller
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['CampusAmbassador']))
 			$model->attributes=$_GET['CampusAmbassador'];
-
+                 if ($this->isExportRequest()) { //<==== [[ADD THIS BLOCK BEFORE RENDER]]
+                        //set_time_limit(0); //Uncomment to export lage datasets
+                        //Add to the csv a single line of text
+//                        $this->exportCSV(array('POSTS WITH FILTER:'), null, false);
+                        //Add to the csv a single model data with 3 empty rows after the data
+//                        $this->exportCSV($model, array_keys($model->attributeLabels()), false, 3);
+                        //Add to the csv a lot of models from a CDataProvider
+                        $this->exportCSV($model->search(), array('first_name', 'last_name', 'mobile_number', 'email_id','college_id','college.name','course_id','course.title'));
+                    }
 		$this->render('admin',array(
 			'model'=>$model,
 		));
