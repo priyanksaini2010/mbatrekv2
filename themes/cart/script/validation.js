@@ -101,10 +101,10 @@ $(document).ready(function(){
             validationMethod("error","Please Suggest two super creative ideas to share the importance of career development in your college");
             return false;
         }
-        if ($("#CampusAmbassador_question_3").val() == ""){
-            validationMethod("error","Please provide Any additional information you would like");
-            return false;
-        }
+//        if ($("#CampusAmbassador_question_3").val() == ""){
+//            validationMethod("error","Please provide Any additional information you would like");
+//            return false;
+//        }
         
         
         return true;
