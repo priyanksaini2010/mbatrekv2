@@ -32,6 +32,31 @@
         ?>
 	 validationMethod("thanks","Thanks for your feedback, we will get in touch with you soon.")
     <?php }?>
+        $(document).ready(function(){
+            $("#login-form-submit").click(function(){
+                $.ajax({
+                    "type" : "post",
+                    url : "<?php echo Yii::app()->createUrl("cart/loginandapply")?>",
+                    data : {
+                        "username" : $("#LoginForm_username").val(),
+                        "password" : $("#LoginForm_password").val()
+                    },
+                    success : function(data){
+//                        alert("herer");
+                        var obj = $.parseJSON(data);
+                        if(obj.status == "success"){
+        //                    window.location.refresh;
+                            validationMethod("thanks",obj.message)
+        //                    location.reload("?thanmscart=1");
+                            setInterval(function(){window.location.reload(); }, 3000);
+                        }else {
+                            validationMethod("error",obj.message)
+                             setInterval(function(){window.location.reload(); }, 3000);
+                        }
+                    }
+                })
+            });
+        })
 //        $(document).ready(function(){
 //    //Registeration Form Validation
 //        $(".cart-remove").click(function(){
