@@ -116,7 +116,7 @@ foreach ($products as $c){
                                         (<?php echo $saver->short_description?>)
                                     </span>
                                 </label>
-                                <img src="<?php echo $baseUrl;?>/assets/products/<?php echo $saver->recommendedProduct->logo;?>"/>
+                                <img src="<?php echo $baseUrl;?>/assets/products/<?php echo $saver->icon;?>"/>
                             </div>
                             <div class="recomended_price">
                                 <label> &#8377 <?php echo money($saver->recommendedProduct->price);?></label>
