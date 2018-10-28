@@ -4,10 +4,12 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="language" content="en" />
-        <link rel="stylesheet" type="text/css" href="/mbt/themes/bootstrap/css/styles.css" />
+        <link rel="stylesheet" type="text/css" href="/v3/themes/bootstrap/css/styles.css" />
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
     	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 
 	<?php Yii::app()->bootstrap->register(); ?>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
 </head>
 
 <body class="adminsection">
@@ -132,6 +134,11 @@ $eduCationManagment = array(
 
 </div><!-- page -->
 <script src="<?php echo Yii::app()->baseUrl;?>/js/jquery.date-dropdowns.js"></script>
+<style>
+    .ui-sortable-handle{
+        cursor: grab;
+    }
+</style>
 <script>
     $(document).ready(function() {
              $('img').each(function () {
