@@ -9,6 +9,7 @@
  * @property string $description
  * @property string $description2
  * @property string $icon
+ * @property integer $sortOrder
  *
  * The followings are the available model relations:
  * @property Products $product
@@ -32,11 +33,11 @@ class ProductEngage extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('product_id, description, description2, icon', 'required'),
-			array('product_id', 'numerical', 'integerOnly'=>true),
+			array('product_id, sortOrder', 'numerical', 'integerOnly'=>true),
 			array('description, description2, icon', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, product_id, description, description2, icon', 'safe', 'on'=>'search'),
+			array('id, product_id, description, description2, icon, sortOrder', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -63,6 +64,7 @@ class ProductEngage extends CActiveRecord
 			'description' => 'Description',
 			'description2' => 'Description2',
 			'icon' => 'Icon',
+			'sortOrder' => 'Sort Order',
 		);
 	}
 
@@ -89,7 +91,8 @@ class ProductEngage extends CActiveRecord
 		$criteria->compare('description',$this->description,true);
 		$criteria->compare('description2',$this->description2,true);
 		$criteria->compare('icon',$this->icon,true);
-                $criteria->order = "id desc";
+		$criteria->compare('sortOrder',$this->sortOrder);
+                 $criteria->order = "sortOrder asc";
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));

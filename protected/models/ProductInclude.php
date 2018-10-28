@@ -8,6 +8,7 @@
  * @property integer $product_id
  * @property string $description
  * @property string $logo
+ * @property integer $sortOrder
  *
  * The followings are the available model relations:
  * @property Products $product
@@ -31,11 +32,11 @@ class ProductInclude extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('product_id, description, logo', 'required'),
-			array('product_id', 'numerical', 'integerOnly'=>true),
+			array('product_id, sortOrder', 'numerical', 'integerOnly'=>true),
 			array('description, logo', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, product_id, description, logo', 'safe', 'on'=>'search'),
+			array('id, product_id, description, logo, sortOrder', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -60,7 +61,8 @@ class ProductInclude extends CActiveRecord
 			'id' => 'ID',
 			'product_id' => 'Product',
 			'description' => 'Description',
-			'logo' => 'Icon',
+			'logo' => 'Logo',
+			'sortOrder' => 'Sort Order',
 		);
 	}
 
@@ -86,7 +88,8 @@ class ProductInclude extends CActiveRecord
 		$criteria->compare('product_id',$this->product_id);
 		$criteria->compare('description',$this->description,true);
 		$criteria->compare('logo',$this->logo,true);
-                $criteria->order = "id desc";
+		$criteria->compare('sortOrder',$this->sortOrder);
+                $criteria->order = "sortOrder asc";
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
