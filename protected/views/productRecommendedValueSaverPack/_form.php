@@ -23,7 +23,7 @@ $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
 	<?php echo $form->hiddenField($model,'product_id',array('value'=>$id)); ?>
 	<?php echo $form->hiddenField($model,'title',array('value'=>"test")); ?>
 	<?php // echo $form->hiddenField($model,'short_description',array('value'=>"test")); ?>
-	<?php echo $form->hiddenField($model,'icon',array('value'=>"test")); ?>
+	<?php // echo $form->hiddenField($model,'icon',array('value'=>"test")); ?>
 
 	<?php // echo $form->textFieldRow($model,'title',array('class'=>'span5','maxlength'=>255)); ?>
 
@@ -32,11 +32,11 @@ $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
         <?php echo $form->dropDownList($model, 'recommended_product_id', $recom, array('class' => 'span3')); ?>
 	
         <?php
-//            if(!$model->isNewRecord) {?>
+            if(!$model->isNewRecord) {?>
         <br />
-        <!--<img style="background-color: #229897;" src="assets/products/<?php echo $model->icon?>" height="50px" width="50px"/>-->
-        <?php // }?>
-        <?php // echo $form->fileFieldRow($model,'icon',array('class'=>'span5','maxlength'=>255)); ?>
+        <img style="background-color: #229897;" src="assets/products/<?php echo $model->icon?>" height="50px" width="50px"/>
+        <?php }?>
+        <?php echo $form->fileFieldRow($model,'icon',array('class'=>'span5','maxlength'=>255)); ?>
         <input type="hidden" name="addmore" value="0" id="add">
 
 	<div class="form-actions">
