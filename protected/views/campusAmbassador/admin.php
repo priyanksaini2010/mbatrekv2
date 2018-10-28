@@ -20,11 +20,23 @@ $this->menu=array(
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		'id',
+//		'id',
 		'first_name',
 		'last_name',
 		'mobile_number',
 		'email_id',
+                array(
+                        'header'=>"College",
+                        "name"=>'college_id',
+                        "value"=>'Colleges::model()->findByAttributes(array("id"=>$data->college_id))->name',
+                        'filter'=>CHtml::listData( Colleges::model()->findAll(), 'id', 'name'),
+                    ),
+                array(
+                        'header'=>"Course",
+                        "name"=>'course_id',
+                        "value"=>'Courses::model()->findByAttributes(array("id"=>$data->course_id))->title',
+                        'filter'=>CHtml::listData( Courses::model()->findAll(), 'id', 'title'),
+                    ),
 //		'college_id',
 //		
 //		'course_id',
