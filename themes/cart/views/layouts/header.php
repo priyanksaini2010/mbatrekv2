@@ -36,7 +36,9 @@
                     <li><a href="<?php echo Yii::app()->createUrl('our-story'); ?>">Introduction to MBAtrek</a></li>
                     <li><a href="<?php echo Yii::app()->createUrl('how-are-we-different'); ?>">How are we different</a></li>
 	<!--	<li><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"mbatrek_on_the_ground")); ?>">MBAtrek on the ground</a></li>-->
-
+	
+<li><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"company")); ?>">Company</a></li>
+<li><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"team")); ?>">MBAtrek on the ground</a></li>
 <li><a href="<?php echo Yii::app()->createUrl('abhishek-srivastava'); ?>">Abhishek Srivastava</a></li>
 <li><a href="<?php echo Yii::app()->createUrl('alok-srivastava'); ?>">Alok Srivastava</a></li>
                     
