@@ -570,10 +570,11 @@ user-select: none;
 .recomended_title {width: 100%;float: left;background: #229897;text-align: center;padding: 10px 10px 8px 10px;
 	border-radius: 10px;}
 	.recomended_title  > img{float: right;}
-.recomended_title label {font-size: 17px;font-weight:normal;color: #fff;vertical-align: top;    padding: 2px 6px 0 0;font-family: 'MyriadPro-Semibold';}
+.recomended_title label {font-size: 17px;font-weight:normal;color: #fff;vertical-align: top;    padding: 2px 6px 0 0;font-family: 'MyriadPro-Semibold';    width: 178px;
+    vertical-align: top;}
 .recomended_title label span{display: block;}
 .recomended_price {width: 100%;float: left;text-align: center;padding: 9px 0 0 0;}
-.our_recomanded ul li{display: inline-block;list-style: none;margin-right: 40px;    width: 21%;}
+.our_recomanded ul li{display: inline-block;list-style: none;margin-right: 40px;    width: 21%;vertical-align:top;}
 .our_recomanded ul li:last-child{margin-right: 0px;}
 .our_recomanded ul {padding: 32px 0 0 0;}
 .recomended_price label{color: #229897;font-size: 23px;display: block;font-family: 'MyriadPro-Semibold';}
@@ -1605,3 +1606,136 @@ vertical-align:middle;cursor:pointer;}
     width: 70px;
     height: 70px;
 }
+
+/* comnpany page css */
+.our_company_page{width: 100%;float: left;}
+.helping_section{width: 100%;float: left;}
+.helping_ready{width: 100%;float: left;background: #e7e7e7;padding: 47px 0 15px 0;
+    margin: 51px 0 0 0;}
+.helping_ready .journey-1:after{display: none;}
+.helping_ready .journey-2:after{display: none;}
+.helping_ready .journey-1 ul{text-align: left;
+    display: inline-block;
+    vertical-align: top;}
+    .helping_ready .journey-1 .journey1-list{margin:0;}
+    .helping_ready .journey-1 h2{font-family: 'MyriadPro-Semibold'; color: rgb(115,148,47);margin:0;font-size: 26px;text-align: center;padding:0 0 29px 0;}
+    .helping_ready .journey-2 h2{font-family: 'MyriadPro-Semibold'; color: #348786;margin:0;font-size: 26px;text-align: center;padding: 0 0 29px 0;}
+    .helping_ready .journey-2 .journey2-list{margin:0;}
+.helping_ready .journey-1 .journey1-list ul li{    list-style-type: none;
+    color: rgb(0,0,0);
+    font-size: 16px;
+    border-radius: 10px;
+    color: #fff;
+    display: table;
+    height: 65px;
+    width: 100%;
+    font-weight: bold;
+    padding:0 10px 23px 10px;
+   
+    position: relative;}
+.helping_ready .journey1-list ul li .list-text{color: #222;font-size: 16px;}
+.helping_ready .journey1-list ul li .list-text .list-text-title{font-family: 'MyriadPro-Semibold';
+    color: rgb(115,148,47);}
+.helping_ready .journey-2 .journey2-list ul li{    list-style-type: none;
+    color: rgb(0,0,0);
+    font-size: 16px;
+    border-radius: 10px;
+    color: #fff;
+    display: table;
+    height: 65px;
+    width: 100%;
+    font-weight: bold;
+    padding: 0 10px 23px 10px;
+   
+    position: relative;}
+.helping_ready .journey2-list ul li .list-text{color: #222;font-size: 16px;}
+.helping_ready .journey2-list ul li .list-text .list-text-title{font-family: 'MyriadPro-Semibold';color: rgb(34,152,151);}
+.ready_process{width: 100%;float: left;}
+.helping_section h3{font-family: 'MyriadPro-Semibold';margin:0;padding:15px 0 23px 0;color: #348786;text-align: center;}
+.helping_section p{color: #222;font-size: 19px;}
+.ready_process .student-journey-inner ul li .journey-text{font-family: 'MyriadPro-Semibold';font-size: 15px;}
+.bulid_your_next .student-internship a{display: inline-block;}
+.bulid_your_next .student-placement a{display: inline-block;}
+.bulid_your_next .student-top .icon-holder{    max-width: 506px;}
+.bulid_your_next .student-top .icon-text{border-radius: 30px;  }
+.bulid_your_next .student-internship a .icon{    padding: 28px 0 0 0;}
+.bulid_your_next .student-placement a .icon{    padding: 28px 0 0 0;}
+.manger_heading{width: 100%;float: left;}
+.manger_heading h3{font-family: 'MyriadPro-Regular';font-weight: normal;margin:0;padding:3px 0 23px 0;font-size: 25px;font-style:italic;color: #348786;text-align: center;}
+.manger_heading h2{font-family: 'MyriadPro-Semibold';margin:0;color: #348786;text-align: center;font-size:24px;}
+.manger_categories{width: 100%;float: left;text-align: center;margin: 28px 0 0 0;}
+.manger_categories ul li{display: inline-block;list-style: none;position: relative;    width: 33%;    padding: 0 50px;}
+.manger_categories ul li:after{content: "";position: absolute;background-image:url('../images/company/company_arrow.png');width: 29px;height: 29px;display: inline-block;right: -15px;top: 32px;}
+.manger_categories ul li span{display: block;color: #348786;font-family:'MyriadPro-Semibold';padding: 12px 0 0 0;font-size: 21px;}
+.manger_categories ul li:last-child:after{display: none;}
+.empower_manager{width: 100%;float: left;}
+.empower_manager .manger_heading h2{color: #73942f;}
+.empower_manager .manger_categories ul li span{color: #73942f;}
+.empower_manager .manger_categories ul li:after {display: none;}
+.key_Area_cover{width: 100%;float: left;background: #e7e7e7;padding: 44px 0 54px 0;}
+.key_Area_cover .manger_categories ul li:after {display: none;}
+.key_Area_cover .manger_categories ul li{    padding: 0 13px;width: 19%;    vertical-align: top;}
+.key_Area_cover .manger_categories ul li span{font-family: 'MyriadPro-Regular';font-weight: normal;font-size: 18px;}
+.support_managment{width: 100%;float: left;padding:13px 0 0 0;}
+.support_block{width: 100%;float: left;}
+.support_block h2{font-family: 'MyriadPro-Semibold';margin:0;color: #348786;text-align: left;font-size:24px;padding:0 0 18px 0;min-height: 70px;}
+/* .support_block  ul{position: relative;padding: 0 0 0 138px;} */
+.support_block  ul{background-image: url(../images/company/coloboration_icon.png);    padding: 0 0 0 149px;background-repeat: no-repeat;background-position: 0px 11px;}
+.support_block  ul li{list-style-position: inside;color: #348786;font-size: 20px;font-family: 'MyriadPro-Regular';font-weight: normal;}
+.support_managment .row .support_aligment{display: inline-block;text-align: left;width: 40%;    padding: 0;vertical-align: top;}
+.support_managment .row{text-align: center; }
+.how_we_Deliver .manger_heading h2{color: #73942f;}
+.how_we_Deliver .manger_categories  ul li:after{display: none;}
+.how_we_Deliver .manger_categories  ul li span{color: #73942f;}
+.how_we_Deliver .manger_categories  ul li {width: 19%;vertical-align: top;padding:0 10px;}
+.owner_proile{width: 100%;float: left;}
+.owner_proile .manger_heading h2{text-align: left;}
+.owner_proile .manger_heading h4{font-family: 'MyriadPro-Semibold';margin:0;color: #777;padding:9px 0 0 0;text-align: left;font-size:24px;}
+.our_Team_mbatrek{width: 100%;float: left;}
+.our_team_block{width: 100%;float: left;text-align: center;}
+.our_team_block h3{font-family: 'MyriadPro-Semibold';margin:0;color:#348786;padding:9px 0 0 0;text-align: center;font-size:24px;}
+.our_team_block ul{width: 68%;display: inline-block;padding:46px 0 41px 0;}
+.our_team_block ul li{list-style: none;display: inline-block;cursor: pointer;width: 40%;}
+.our_team_block ul li a {display:block;position: relative;min-height: 189px;    width: 100%;text-align: left;}
+.our_team_block ul li a img{position: absolute;top: 0;right: 0;left: 0;margin:auto;}
+.our_team_block ul li a img.hover_img{display: none;}
+.our_team_block ul li:hover .hover_img{display: block;}
+.our_team_block ul li:hover h3{color: #348786;}
+.our_team_block ul li h3{color: #888;font-family: 'MyriadPro-Semibold';margin:0;font-size:24px;padding:10px 0 0 0;}
+.our_team_block ul li h3 span{display: block;}
+.our_team_block.intern_Team  ul li a {display:block;position: relative;min-height: 100px;    width: 100%;text-align: left;}
+.our_team_block.intern_Team  ul li{float: none!important;padding: 0 30px 50px 30px;width: 20%;}
+.our_team_block.intern_Team  ul {width: 100%;text-align: center;}
+.our_team_block.intern_Team  ul li h3{font-size: 20px;font-family: 'MyriadPro-Regular';font-weight: normal;}
+.expand_information{width: 100%;float: left;display:none;background: #e7e7e7;text-align: left;    padding: 24px;
+    border-radius: 9px;}
+.expand_information p{font-size: 18px;}
+.expand_information  ul li{width: auto;padding: 0 15px;}
+.expand_information  ul {padding:11px 0 0 0;text-align: center;width: 100%;}
+.expand_information  ul li span{font-size: 20px;padding-left: 7px;margin: 7px 0 0 0;
+    display: inline-block;}
+.expand_information.display_information_alok{display: block!important;}
+.social_info_admin{width: 100%;float: left;}
+
+/* Industry REady Page */
+.ambastor_container.industry_Ready .earn_point .earn_container .amaster_repeat{padding:28px 40px 34px 30px;}
+.ambastor_container.industry_Ready .earn_container ul li .arrow_industry_icon{position: absolute;top:28px;    right: -16px;}
+.ambastor_container.industry_Ready .earn_container ul li{position: relative;    width: 22%;}
+.ambastor_container.industry_Ready .earn_point.the_task{background: none;}
+.ambastor_container.industry_Ready .earn_point.the_task .compas_heading h3{color: #348786;}
+.ambastor_container.industry_Ready .earn_point.the_task .compas_heading h4{color: #999;font-size: 20px;}
+.ambastor_container.industry_Ready .earn_point.the_task ul li{vertical-align: top;    width: 18%;}
+.ambastor_container.industry_Ready .earn_point.the_task ul li .industry_dyn_text{color: #73942f;}
+.ambastor_container.industry_Ready .earn_point.the_task ul li .value_chain_Text{color: #f3ad02;}
+.ambastor_container.industry_Ready .earn_point.the_task ul li .text_tech{color: #656565;}
+.ambastor_container.industry_Ready .earn_point.the_task ul li label{font-family: 'MyriadPro-Regular';font-weight: normal;font-size: 18px;padding:11px 0 0 0;}
+.ambastor_container.industry_Ready .what_do_u_get .amaster_bulid .col-md-4 h3{color: #348786;font-size: 20px;font-family: 'MyriadPro-Semibold';margin:0;}
+.ambastor_container.industry_Ready .what_do_u_get.rule_Game .amaster_repeat img{float: left;}
+.ambastor_container.industry_Ready .what_do_u_get.rule_Game .amaster_repeat h3{float: left;    padding-left: 21px;width: 89%;}
+.still_stuck{width: 100%;float: left;}
+.still_stuck h4{font-size: 29px;font-family: 'MyriadPro-Regular';     line-height: 41px;font-weight: normal;    margin: 30px 0 0 0;}
+.still_stuck h4 span{color: #348786;}
+.ambastor_container.industry_Ready.interview_ready .earn_point.the_task .earn_container ul li{width: 38%;padding: 0 68px;position: relative;}
+.ambastor_container.industry_Ready.interview_ready .earn_point.the_task .earn_container ul li .plus_icon_intervew{position: absolute;right: -19px;top:32px;}
+.ambastor_container.register_interview .earn_point .earn_container ul li{width: 24%;padding: 0 12px; vertical-align: top;position: relative;}
+.ambastor_container.register_interview .earn_point .earn_container ul li .arrow_intervew{position: absolute;top:33px;right: -44px;}
