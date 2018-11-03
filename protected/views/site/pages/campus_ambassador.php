@@ -145,7 +145,7 @@
     </section> 
     <?php
         
-        $FaqType = FaqType::model()->findAll();;
+        $FaqType = CaFaqType::model()->findAll();;
         //echo $data->data;
     ?>
     <section class="faq_amastor">
@@ -170,7 +170,7 @@
                         <div id="tab_default_<?php echo $faq->id;?>" class="tab-pane active">
                             <ul id="" class="accordion">
                                 <?php 
-                                    $dataArray  = Faq::model()->findAllByAttributes(array("type" => $faq->id));
+                                    $dataArray  = CaFaq::model()->findAllByAttributes(array("type" => $faq->id));
                                     foreach ($dataArray as $data){
                                 ?>
                                 <li>
