@@ -25,7 +25,8 @@ $items = array(
 $blogMenu = array(
         array('label'=>'Categories Managment', 'url'=>array('/blogCategory/admin')),
         array('label'=>'Blog Managment', 'url'=>array('/blogs/admin')),
-);
+        array('label'=>'Videos Managment', 'url'=>array('/videos/admin')),
+    );
 $siteData = array(
 			array('label'=>'Product Managment', 'url'=>array('/products/admin')),
 			array('label'=>'Coupon Managment', 'url'=>array('/couponCode/admin')),
@@ -34,6 +35,7 @@ $siteData = array(
 //            array('label'=>'Feedback Managment', 'url'=>array('/feedback/admin')),
 //            array('label'=>'Contact Managment', 'url'=>array('/contact/admin')),
             array('label'=>'FAQ Managment', 'url'=>array('/faq/admin')),
+            array('label'=>'CA FAQ Managment', 'url'=>array('/caFaq/admin')),
 //            array('label'=>'FAQ Analysis', 'url'=>array('/faqAnalysis/admin')),
 //            array('label'=>'Talk To Advisory', 'url'=>array('/talkToAdvisory/admin')),
 //            array('label'=>'eBroucher Management', 'items'=>$items),
