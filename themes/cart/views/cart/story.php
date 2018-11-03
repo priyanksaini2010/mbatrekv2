@@ -12,7 +12,9 @@ switch ($type){
         $text = "Students";
         $text_bottom = "Want to get these awesome career impacting packages ";
         $left = "#YouBeTheExecutive";
-        $right = "#YouBeTheExecutive";
+        $left_second = "Internship Series…";
+        $right = "#Compus2Corporate";
+        $right_Second = "Placement Series…";
         $class = "";
     break;
     case 3:
@@ -45,6 +47,7 @@ if(!empty($leftContent) || !empty($rightContent)) {
                 <div class="sucess_heading">
                     <?php if($left != ""){?>
                     <h3><?php echo $left;?></h3>
+					<h2><?php echo $left_second;?></h2>
                     <?php }?>
                 </div>
                 
@@ -71,7 +74,7 @@ if(!empty($leftContent) || !empty($rightContent)) {
                     <?php if($right != ""){?>
                     <h3><?php echo $right;?></h3>
                     <?php }?>
-                    <!--<h2>Internship Series…</h2>-->
+                    <h2><?php echo $right_Second;?></h2>
                 </div>
                 <?php foreach($rightContent as $content){?>
                 <div class="sucess_Repeat">

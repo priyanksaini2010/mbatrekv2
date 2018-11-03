@@ -307,14 +307,18 @@ $product = Products::model()->findByPk($id);
                 <?php foreach($product->productRecommendedValueSaverPacks as $recon){?>
                 <li>
                     <div class="recomended_title">
-                        <label>
-                           <?php echo $recon->recommendedProduct->title;?>
-                            <span>
-                                (<?php echo $recon->short_description;?>)
-                            </span>
-                            
-                        </label>
-                        <img src="<?php echo Yii::app()->baseUrl;?>/assets/products/<?php echo $recon->icon;?>"/>
+						<div class="recomended_bound">
+							<label>
+							   <?php echo $recon->recommendedProduct->title;?>
+								<span>
+									(<?php echo $recon->short_description;?>)
+								</span>
+								
+							</label>
+							<div class="rec_wrap">
+							<img src="<?php echo Yii::app()->baseUrl;?>/assets/products/<?php echo $recon->icon;?>"/>
+							</div>
+						</div>
                         <div class="add_to_Cart_div">
                                 <a href="<?php echo Yii::app()->createUrl("cart/addtocart",array("id"=>$recon->recommended_product_id));?>">Add to Cart</a>
                                 <a href="<?php echo Yii::app()->createUrl("cart/buynow",array("id"=>$recon->recommended_product_id));?>">Buy Now</a>

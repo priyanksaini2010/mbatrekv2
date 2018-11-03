@@ -11,10 +11,9 @@ $model = new TalkToAdvisory();
 	<li class="active"><a href="javascript:void(0);">Talk to Our Career Advisor</a></li>
     </ul>
 </div>
-<section class="bielf_container">
+<section class="bielf_container task_page">
     <div class="container">
         <div class="main_heading talk_advisor">
-            <h4>Career Advisor</h4>
             <h3>Talk to Our Career Advisor</h3>
         </div> 
         <div class="talk_to_Advisor margin_bottom_45">

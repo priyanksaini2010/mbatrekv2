@@ -571,7 +571,7 @@ user-select: none;
 	border-radius: 10px;}
 	.recomended_title  > img{float: right;}
 .recomended_title label {font-size: 17px;font-weight:normal;color: #fff;vertical-align: top;    padding: 2px 6px 0 0;font-family: 'MyriadPro-Semibold';    width: 178px;
-    vertical-align: top;}
+    vertical-align: middle;display:table-cell;height: 71px;}
 .recomended_title label span{display: block;}
 .recomended_price {width: 100%;float: left;text-align: center;padding: 9px 0 0 0;}
 .our_recomanded ul li{display: inline-block;list-style: none;margin-right: 40px;    width: 21%;vertical-align:top;}
@@ -1513,7 +1513,7 @@ text-align: center;border-radius: 2px;}
 .sucess_heading{width: 100%;float: left;}
 .sucess_story_wrap.cordinator_page .sucess_heading h3{min-height: 90px;}
 .sucess_heading h3{text-align:left;font-size: 29px;font-family: 'MyriadPro-Semibold';color: #73942f;margin:0;padding: 0 0 24px 0;}
-.sucess_heading h2{font-size: 29px;font-family: 'MyriadPro-Semibold';color: #73942f;margin:0;padding:15px 0 20px 0;}
+.sucess_heading h2{font-size: 25px;font-family: 'MyriadPro-Semibold';color: #73942f;margin:0;padding:0px 0 20px 0;}
 .video_container{width:100%;float: left;}
 .sucess_info{width: 100%;float: left;}
 .sucess_info label{font-size: 18px;font-family: 'MyriadPro-Regular';color: #73942f;font-weight: normal;line-height: 24px;}
@@ -1555,7 +1555,7 @@ text-align: center;border-radius: 2px;}
 .what_you_will_Get .earn_point{margin-bottom:0;}
 .earn_container{width: 100%;float: left;text-align: center;padding: 38px 0 30px 0;}
 .earn_container ul li{display: inline-block;position: relative;    width: 17%;}
-.earn_container ul li:after{content: "";position: absolute;background-image: url(../images/arrow_amaster.png);width: 30px;height: 30px;top: 38%;transform: translatey(-50%);right: -23px;}
+.earn_container ul li:after{content: "";position: absolute;background-image: url(../images/arrow_amaster.png);background-repeat:no-repeat;width: 30px;height: 30px;top: 38%;transform: translatey(-50%);right: -23px;}
 .earn_container ul li span{display: block;color: #348786;font-size: 20px;font-family: 'MyriadPro-Semibold';    padding: 17px 0 0 0;}
 .earn_point .compas_heading{padding: 6px 0 0 0;}
 .earn_container ul li:last-child:after{display: none;}
@@ -1739,3 +1739,31 @@ vertical-align:middle;cursor:pointer;}
 .ambastor_container.industry_Ready.interview_ready .earn_point.the_task .earn_container ul li .plus_icon_intervew{position: absolute;right: -19px;top:32px;}
 .ambastor_container.register_interview .earn_point .earn_container ul li{width: 24%;padding: 0 12px; vertical-align: top;position: relative;}
 .ambastor_container.register_interview .earn_point .earn_container ul li .arrow_intervew{position: absolute;top:33px;right: -44px;}
+/*------------Talk To Advior Css----------*/
+.talk_to_Advisor{width:100%;float:left;}
+.talk_to_Advisor ul li a{color:#666666;font-weight:600;padding: 11px 0;width: 256px;background:#e5e5e5;font-size:16px;text-transform:uppercase;display:inline-block;}
+.talk_to_Advisor ul li a.active{background:#09afb7;color:#fff;}
+.talk_to_Advisor ul{text-align:center;}
+.talk_to_Advisor .panel-body{width:100%;float:left;border:1px solid #ccc;padding:46px 76px 27px;}
+.heading_Tab{width:100%;float:left;text-align:center;padding:0 0 45px;}
+.heading_Tab h2{font-size:34px;display:block;text-transform:uppercase;padding:0 0 4px 0;font-weight:600;color:#666;}
+.heading_Tab h3{font-size:19px;font-weight:400;display:block;color:#666;}
+.main_heading.talk_advisor {margin:27px 0 14px;}
+/*------------End Talk To Advior Css----------*/
+.bielf_container.task_page .talk_advisor h3{color: #348786;font-size: 29px;font-family: 'MyriadPro-Semibold';text-align:center;    padding: 0 0 21px 0;}
+.bielf_container.task_page  .sibmit_form  .site_btn {border:none;background:none;display:inline-block;width:auto;float:none;}
+.bielf_container.task_page  .sibmit_form  {width:100%;float:left;text-align:center;}
+.sucess_story_wrap.cordinator_page  .sucess_heading  h2{display:none;}
+.sucess_story_wrap.profession_success  .sucess_heading  h2{display:none;}
+.li_wrap >img {
+    width: 40px;
+}
+.recomended_bound img{width:40px;float:right;}
+.recomended_bound{display:table;}
+.recomended_bound .rec_wrap {
+    display: table-cell;
+    vertical-align: middle;
+    float: none;
+    width: 40px;
+    height: 77px;
+}

@@ -141,7 +141,7 @@
 											
 										</ul>-->
 									</li>
-									<li><a href="<?php echo Yii::app()->createUrl('mbatrek-on-the-ground'); ?>">MBAtrek on the ground</a></li>
+									<li><a href="<?php echo Yii::app()->createUrl('mbatrek-on-the-ground'); ?>">Events</a></li>
                   </ul>
 							</li>
                 <li class="faq"><a href="javascript:void(0);">CampusConnect</a>

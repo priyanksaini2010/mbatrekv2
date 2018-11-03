@@ -62,7 +62,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                 <div class="row">
                     <h4>Your career is both a &apos;Sprint&apos; and a &apos;Marathon&apos;</h4>
                     <div class="spirit col-md-6 col-sm-6 col-xs-6 col-lg-6">
-                        <h5>Spirit</h5>
+                        <h5>Sprint</h5>
                         <img src="<?php echo $baseUrl; ?>/images/spirit.jpg" alt="spirit" class="img-responsive center-block" />
                     </div>
                     <div class="marathon col-md-6 col-sm-6 col-xs-6 col-lg-6">
@@ -376,6 +376,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                     <div class="buy-and-cart">
                                                         <a href="/v2/cart/buynow/19">buy now</a>
                                                         <a href="/v2/cart/addtocart/19">add to cart</a>
+														<a href="javascript:void(0);">Read More</a>
                                                     </div>
 
                                                 </div>
@@ -478,6 +479,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                     <div class="buy-and-cart">
                                                         <a href="/v2/cart/buynow/19">buy now</a>
                                                         <a href="/v2/cart/addtocart/19">add to cart</a>
+														<a href="javascript:void(0);">Read More</a>
                                                     </div>
 
                                                 </div>
