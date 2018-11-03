@@ -11,6 +11,7 @@
  * @property string $image_3
  * @property string $name
  * @property string $description
+ * @property integer $sortOrder
  */
 class EventGallery extends CActiveRecord
 {
@@ -30,13 +31,13 @@ class EventGallery extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('event_category_id, image_1, image_2, image_3, name, description', 'required'),
-			array('event_category_id', 'numerical', 'integerOnly'=>true),
+			array('event_category_id, image_1, image_2, image_3, name, description, sortOrder', 'required'),
+			array('event_category_id, sortOrder', 'numerical', 'integerOnly'=>true),
 			array('image_1', 'length', 'max'=>1555),
 			array('image_2, image_3, name', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, event_category_id, image_1, image_2, image_3, name, description', 'safe', 'on'=>'search'),
+			array('id, event_category_id, image_1, image_2, image_3, name, description, sortOrder', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -59,11 +60,12 @@ class EventGallery extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'event_category_id' => 'Event Category',
-			'image_1' => 'Image 1(376x282 PX)',
-			'image_2' => 'Image 2(376x282 PX)',
-			'image_3' => 'Image 3(376x282 PX)',
+			'image_1' => 'Image 1',
+			'image_2' => 'Image 2',
+			'image_3' => 'Image 3',
 			'name' => 'Name',
 			'description' => 'Description',
+			'sortOrder' => 'Sort Order',
 		);
 	}
 
@@ -92,7 +94,8 @@ class EventGallery extends CActiveRecord
 		$criteria->compare('image_3',$this->image_3,true);
 		$criteria->compare('name',$this->name,true);
 		$criteria->compare('description',$this->description,true);
-                $criteria->order = "id desc";
+		$criteria->compare('sortOrder',$this->sortOrder);
+                 $criteria->order = "sortOrder asc";
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
