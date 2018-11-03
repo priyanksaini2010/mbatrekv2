@@ -241,7 +241,7 @@ class CartController extends Controller {
                         $status['message'] = "Discount have been availed for this email address.";
                     }
                 }else {
-                    $status['message'] = "This email address is not valid for discount.".$domain_name;
+                    $status['message'] = "<span>Sorry!</span><br /><span>Currently no coupon is applicable on this Email ID</span><br/><span>Try Login with your College Email ID.</span>";
                 }
             }
             echo json_encode($status);die;
