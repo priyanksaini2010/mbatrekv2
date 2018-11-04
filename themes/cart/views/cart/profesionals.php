@@ -479,7 +479,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                     <div class="buy-and-cart">
                                                         <a href="<?php echo Yii::app()->createUrl("cart/buynow",array("id"=>19));?>">buy now</a>
                                                         <a href="<?php echo Yii::app()->createUrl("cart/addtocart",array("id"=>19));?>">add to cart</a>
-                                                        <a href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>19));?>;">Read More</a>
+                                                        <a href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>19));?>">Read More</a>
                                                     </div>
 
                                                 </div>
