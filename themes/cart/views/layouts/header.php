@@ -147,8 +147,8 @@
                 <li class="faq"><a href="javascript:void(0);">CampusConnect</a>
 									<ul >
                     <li><a href="<?php echo Yii::app()->createUrl('campus-abassador'); ?>">Campus Ambassador Program</a></li>
-                    <li><a href="#">#InterviewReady Competition</a></li>
-                    <li><a href="#">#IndustryReady Competition</a></li>
+                    <li><a href="<?php echo Yii::app()->createUrl('interview-ready-competition'); ?>">#InterviewReady Competition</a></li>
+                    <li><a href="<?php echo Yii::app()->createUrl('industry-ready-competition'); ?>">#IndustryReady Competition</a></li>
                   </ul>
 				</li>
 
