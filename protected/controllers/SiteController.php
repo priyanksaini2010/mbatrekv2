@@ -683,6 +683,32 @@ class SiteController extends Controller
         /**
 	 * Logs out the current user and redirect to homepage.
 	 */
+	public function actionVideos()
+	{  
+            $criteria=new CDbCriteria();
+            $criteria->order = "date_updated desc";
+            if(isset($_GET['type'])) {
+                 $criteria->addCondition("type = ".$_GET['type']);
+            } else {
+                $criteria->addCondition("type = 1");
+            }
+            $count=  Videos::model()->count($criteria);
+            $pages=new CPagination($count);
+
+            // results per page
+            $pages->pageSize=9;
+            $pages->applyLimit($criteria);
+            $models=Videos::model()->findAll($criteria);
+            
+            // display the login form
+            $this->render('video_series', array(
+                'models' => $models,
+                     'pages' => $pages
+                ));
+	}
+        /**
+	 * Logs out the current user and redirect to homepage.
+	 */
 	public function actionArticles()
 	{  
             $criteria=new CDbCriteria();
@@ -735,24 +761,24 @@ class SiteController extends Controller
         /**
 	 * Logs out the current user and redirect to homepage.
 	 */
-	public function actionVideos()
-	{  
-            $criteria=new CDbCriteria();
-            
-            $count= Videos::model()->count($criteria);
-            $pages=new CPagination($count);
-
-            // results per page
-            $pages->pageSize=9;
-            $pages->applyLimit($criteria);
-            $models=Videos::model()->findAll($criteria);
-            
-            // display the login form
-            $this->render('pages/videos', array(
-                'models' => $models,
-                     'pages' => $pages
-                ));
-	}
+//	public function actionVideos()
+//	{  
+//            $criteria=new CDbCriteria();
+//            
+//            $count= Videos::model()->count($criteria);
+//            $pages=new CPagination($count);
+//
+//            // results per page
+//            $pages->pageSize=9;
+//            $pages->applyLimit($criteria);
+//            $models=Videos::model()->findAll($criteria);
+//            
+//            // display the login form
+//            $this->render('pages/videos', array(
+//                'models' => $models,
+//                     'pages' => $pages
+//                ));
+//	}
         /**
 	 * Logs out the current user and redirect to homepage.
 	 */
