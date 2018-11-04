@@ -123,6 +123,8 @@ return array(
 				'terms-and-conditions' => 'site/page/view/terms_conditions',
 				'talk-to-our-career-advisor' => 'site/page/view/talk_to_advisory',
 				'quick-links' => 'site/page/view/quick_links',
+				'company' => 'site/page/view/comp',
+				'our-team' => 'site/page/view/team',
 				'frequently-asked-questions' => 'site/page/view/faq',
 				'sitemap' => 'site/page/view/quick_links',
 				'articles' => 'site/articles/type/1',
