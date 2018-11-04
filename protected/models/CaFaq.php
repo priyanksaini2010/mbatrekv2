@@ -85,7 +85,7 @@ class CaFaq extends CActiveRecord
 		$criteria->compare('type',$this->type);
 		$criteria->compare('question',$this->question,true);
 		$criteria->compare('answer',$this->answer,true);
-
+                $criteria->order = "id desc";
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
