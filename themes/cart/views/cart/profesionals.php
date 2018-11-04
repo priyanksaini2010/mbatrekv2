@@ -374,9 +374,9 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                             </span>
                                                     </div>
                                                     <div class="buy-and-cart">
-                                                        <a href="/v2/cart/buynow/19">buy now</a>
-                                                        <a href="/v2/cart/addtocart/19">add to cart</a>
-														<a href="javascript:void(0);">Read More</a>
+                                                        <a href="<?php echo Yii::app()->createUrl("cart/addtocart",array("id"=>19));?>">buy now</a>
+                                                        <a href="<?php echo Yii::app()->createUrl("cart/addtocart",array("id"=>19));?>">add to cart</a>
+                                                        <a href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>19));?>">Read More</a>
                                                     </div>
 
                                                 </div>
@@ -477,9 +477,9 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                             </span>
                                                     </div>
                                                     <div class="buy-and-cart">
-                                                        <a href="/v2/cart/buynow/19">buy now</a>
-                                                        <a href="/v2/cart/addtocart/19">add to cart</a>
-														<a href="javascript:void(0);">Read More</a>
+                                                        <a href="<?php echo Yii::app()->createUrl("cart/buynow",array("id"=>19));?>">buy now</a>
+                                                        <a href="<?php echo Yii::app()->createUrl("cart/addtocart",array("id"=>19));?>">add to cart</a>
+                                                        <a href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>19));?>;">Read More</a>
                                                     </div>
 
                                                 </div>
