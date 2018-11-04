@@ -6,7 +6,7 @@ class VideosController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/column2';
+	public $layout='webroot.themes.bootstrap.views.layouts.main';
 
 	/**
 	 * @return array action filters
@@ -31,11 +31,11 @@ class VideosController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','admin','delete'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array(),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -65,12 +65,15 @@ class VideosController extends Controller
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
+                
 		if(isset($_POST['Videos']))
-		{
+		{       $_POST['Videos']['date_created'] = date("Y-m-d h:i:s");
+                $_POST['Videos']['date_updated'] = date("Y-m-d h:i:s");
 			$model->attributes=$_POST['Videos'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			if($model->save()){
+                             Yii::app()->user->setFlash('success', "Blog created successfully.");
+                            $this->redirect(array('admin'));
+                        }
 		}
 
 		$this->render('create',array(
@@ -89,12 +92,15 @@ class VideosController extends Controller
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
+               
 		if(isset($_POST['Videos']))
 		{
+                         $_POST['Videos']['date_updated'] = date("Y-m-d h:i:s");
 			$model->attributes=$_POST['Videos'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			if($model->save()){
+                             Yii::app()->user->setFlash('success', "Video updated successfully.");
+                            $this->redirect(array('admin'));
+                        }
 		}
 
 		$this->render('update',array(
