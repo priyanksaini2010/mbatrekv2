@@ -115,6 +115,8 @@ return array(
 				'campus-abassador' => 'site/page/view/campus_ambassador',
 				'campus-abassador-register' => 'cart/campus',
 				'copyright-notice' => 'site/page/view/copyright_notice',
+				'industry-ready-competition' => 'site/page/view/industry_ready_compitition',
+				'interview-ready-competition' => 'site/page/view/interview_ready_compitition',
 				'privacy-policy' => 'site/page/view/privacy_policy',
 				'disclaimer' => 'site/page/view/declimier',
 				'terms-and-conditions' => 'site/page/view/terms_conditions',
