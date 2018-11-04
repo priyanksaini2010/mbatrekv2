@@ -110,6 +110,7 @@ return array(
 				'e-brouchers' => 'site/page/view/download_ebrochersform',
 				'videos' => 'site/page/view/videos',
 				'handbook' => 'site/page/view/handbook',
+				'videos' => 'site/videos',
 				'event-gallery' => 'site/page/view/event_gallery',
 				'campus-abassador' => 'site/page/view/campus_ambassador',
 				'campus-abassador-register' => 'cart/campus',
