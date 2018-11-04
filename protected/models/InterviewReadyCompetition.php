@@ -76,9 +76,9 @@ class InterviewReadyCompetition extends CActiveRecord
 			'mba_batch' => 'Mba Batch',
 			'college' => 'College',
 			'name_of_college' => 'Name Of College',
-			'question_1' => 'Question 1',
-			'question_2' => 'Question 2',
-			'question_3' => 'Question 3',
+			'question_1' => 'Name of your Student Placement Coordinator / Student Committee Member',
+			'question_2' => 'Email of your Student Placement Coordinator / Student Committee Member',
+			'question_3' => 'Mobile No of your Student Placement Coordinator / Student Committee Member',
 			'registeration_date' => 'Registeration Date',
 		);
 	}
