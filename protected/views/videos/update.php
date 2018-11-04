@@ -1,18 +1,17 @@
 <?php
 $this->breadcrumbs=array(
-	'Videoses'=>array('index'),
-	$model->title=>array('view','id'=>$model->id),
-	'Update',
+	'Videos'=>array('admin'),
+	'Manage',
 );
 
 $this->menu=array(
-	array('label'=>'List Videos','url'=>array('index')),
-	array('label'=>'Create Videos','url'=>array('create')),
-	array('label'=>'View Videos','url'=>array('view','id'=>$model->id)),
-	array('label'=>'Manage Videos','url'=>array('admin')),
+	array('label'=>'Manage Videos','url'=>array('videos/admin')),
+	array('label'=>'Create Videos','url'=>array('videos/create')),
 );
+
 ?>
 
-<h1>Update Videos <?php echo $model->id; ?></h1>
+
+<h1>Update Videos </h1>
 
 <?php echo $this->renderPartial('_form',array('model'=>$model)); ?>
