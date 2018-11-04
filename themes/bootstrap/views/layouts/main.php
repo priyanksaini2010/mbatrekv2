@@ -46,6 +46,7 @@ $siteData = array(
             array('label'=>'Courses Management', 'url'=>array('/courses/admin')),
             array('label'=>'Year Of Graduation Management', 'url'=>array('/yearOfGraduation/admin')),
             array('label'=>'Campus Ambassador Management', 'url'=>array('/campusAmbassador/admin')),
+            array('label'=>'Interview/Industry Management', 'url'=>array('/interviewReadyCompetition/admin')),
 //            array('label'=>'Success Story Management', 'url'=>array('/articles/admin',"type"=>2)),
 //            array('label'=>'Success Story Management', 'url'=>array('/articles/admin',"type"=>2)),
 //            array('label'=>'Industry Options 1', 'url'=>array('/industryOption/admin',"option_number"=>1)),
