@@ -50,10 +50,10 @@ $this->widget('KRichTextEditor', array(
 <label for="Products_type" class="required">Home Page Bucket <span class="required">*</span></label>
 <?php 
 $ar = array(1=>"Build Your Brand",2=>"Company / Industry & Job Fitment",3=>"Preparing For Placements",4=>"Perparing For Internship");
-echo $form->dropDownList($model, 'home_page_bucket', $ar, array('class' => 'span3')); ?>
+echo $form->dropDownList($model, 'home_page_bucket', $ar, array('class' => 'span3','empty'=>'Select an option')); ?>
 <br />
 <label for="Products_product_sub_category_id" class="required">Product Category <span class="required">*</span></label>
-<?php echo $form->dropDownList($model, 'product_sub_category_id',CHtml::listData(ProductSubCategory::model()->findAll(),"id","description"), array('class' => 'span3')); ?>
+<?php echo $form->dropDownList($model, 'product_sub_category_id',CHtml::listData(ProductSubCategory::model()->findAll(),"id","description"), array('class' => 'span3',"")); ?>
 <br />
 <?php if (!$model->isNewRecord) { ?>
     <label for="Products_status" class="required">Product Status <span class="required">*</span></label>
