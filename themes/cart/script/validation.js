@@ -38,7 +38,7 @@ $(document).ready(function(){
     //Registeration Form Validation
     $(".cart-remove").click(function(){
             if(confirm("Are you sure you want to remove this product from your cart?")){
-                window.location.href = "https://mbatrek.com/v2/cart/removeCart?p="+$(this).val();
+                window.location.href = "https://localhost/v3/cart/removeCart?p="+$(this).val();
             }
         });
     $("#register-form").submit(function(){
@@ -99,6 +99,55 @@ $(document).ready(function(){
         }
         if ($("#CampusAmbassador_question_2").val() == ""){
             validationMethod("error","Please Suggest two super creative ideas to share the importance of career development in your college");
+            return false;
+        }
+//        if ($("#CampusAmbassador_question_3").val() == ""){
+//            validationMethod("error","Please provide Any additional information you would like");
+//            return false;
+//        }
+        
+        
+        return true;
+    });
+    $("#interview-ready-form").submit(function(){
+        if ($("#InterviewReadyCompetition_first_name").val() == ""){
+            validationMethod("error","Please enter first name.");
+            return false;
+        }
+        if ($("#InterviewReadyCompetition_last_name").val() == ""){
+            validationMethod("error","Please enter last name.");
+            return false;
+        }
+        if ($("#InterviewReadyCompetition_mobile_number").val() == ""){
+            validationMethod("error","Please enter mobile number.");
+            return false;
+        }
+        if ($("#InterviewReadyCompetition_email_id").val() == "" || !validateEmail($("#InterviewReadyCompetition_email_id").val())){
+            validationMethod("error","Please enter valid email.");return false;
+        }
+        if ($("#InterviewReadyCompetition_mba_batch").val() == ""){
+            validationMethod("error","Please select a MBA batch.");
+            return false;
+        }
+        if ($("#InterviewReadyCompetition_college").val() == ""){
+            validationMethod("error","Please select a college.");
+            return false;
+        }
+        
+        if ($("#InterviewReadyCompetition_name_of_college").val() == ""){
+            validationMethod("error","Please enter college name.");
+            return false;
+        }
+//        if ($("#CampusAmbassador_year_of_graduation_id").val() == ""){
+//            validationMethod("error","Please select a year of graduation.");
+//            return false;
+//        }
+        if ($("#InterviewReadyCompetition_question_1").val() == ""){
+            validationMethod("error","Please tell us Name of your Student Placement Coordinator / Student Committee Member");
+            return false;
+        }
+        if ($("#InterviewReadyCompetition_question_2").val() == ""){
+            validationMethod("error","Please tell us Email of your Student Placement Coordinator / Student Committee Member");
             return false;
         }
 //        if ($("#CampusAmbassador_question_3").val() == ""){
