@@ -1,7 +1,7 @@
 <?php
 $this->breadcrumbs=array(
 	'Videoses'=>array('index'),
-	$model->id,
+	$model->title,
 );
 
 $this->menu=array(
@@ -19,7 +19,14 @@ $this->menu=array(
 	'data'=>$model,
 	'attributes'=>array(
 		'id',
-		'iframe',
-		'tag_line',
+		'blog_category_id',
+		'type',
+		'title',
+		'content',
+		'author',
+		'background_image',
+		'banner_image',
+		'date_created',
+		'date_updated',
 	),
 )); ?>

@@ -6,6 +6,7 @@
  * The followings are the available columns in table 'colleges':
  * @property integer $id
  * @property string $name
+ * @property integer $sortOrder
  *
  * The followings are the available model relations:
  * @property CampusAmbassador[] $campusAmbassadors
@@ -29,10 +30,11 @@ class Colleges extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('name', 'required'),
+			array('sortOrder', 'numerical', 'integerOnly'=>true),
 			array('name', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, name', 'safe', 'on'=>'search'),
+			array('id, name, sortOrder', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -56,6 +58,7 @@ class Colleges extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'name' => 'Name',
+			'sortOrder' => 'Sort Order',
 		);
 	}
 
@@ -79,7 +82,8 @@ class Colleges extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('name',$this->name,true);
-                $criteria->order = "id desc";
+		$criteria->compare('sortOrder',$this->sortOrder);
+                   $criteria->order = "sortOrder asc";
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));

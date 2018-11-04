@@ -17,10 +17,7 @@ class VideosController extends Controller
 			'accessControl', // perform access control for CRUD operations
 		);
 	}
-        public function __construct($id) {
-            parent::__construct($id);
-            $this->layout = getLayot();
-        }
+
 	/**
 	 * Specifies the access control rules.
 	 * This method is used by the 'accessControl' filter.
@@ -34,11 +31,11 @@ class VideosController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','admin','delete'),
+				'actions'=>array('create','update'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array(),
+				'actions'=>array('admin','delete'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -73,7 +70,7 @@ class VideosController extends Controller
 		{
 			$model->attributes=$_POST['Videos'];
 			if($model->save())
-				$this->redirect(array('admin','id'=>$model->id));
+				$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('create',array(
@@ -97,7 +94,7 @@ class VideosController extends Controller
 		{
 			$model->attributes=$_POST['Videos'];
 			if($model->save())
-				$this->redirect(array('admin','id'=>$model->id));
+				$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('update',array(

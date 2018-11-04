@@ -6,6 +6,7 @@
  * The followings are the available columns in table 'year_of_graduation':
  * @property integer $id
  * @property string $year
+ * @property integer $sortOrder
  *
  * The followings are the available model relations:
  * @property CampusAmbassador[] $campusAmbassadors
@@ -29,10 +30,11 @@ class YearOfGraduation extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('year', 'required'),
+			array('sortOrder', 'numerical', 'integerOnly'=>true),
 			array('year', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, year', 'safe', 'on'=>'search'),
+			array('id, year, sortOrder', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -56,6 +58,7 @@ class YearOfGraduation extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'year' => 'Year',
+			'sortOrder' => 'Sort Order',
 		);
 	}
 
@@ -79,7 +82,8 @@ class YearOfGraduation extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('year',$this->year,true);
-                $criteria->order = "id desc";
+		$criteria->compare('sortOrder',$this->sortOrder);
+                     $criteria->order = "sortOrder asc";
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));

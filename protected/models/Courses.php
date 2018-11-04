@@ -6,6 +6,7 @@
  * The followings are the available columns in table 'courses':
  * @property integer $id
  * @property string $title
+ * @property integer $sortOrder
  *
  * The followings are the available model relations:
  * @property CampusAmbassador[] $campusAmbassadors
@@ -28,11 +29,12 @@ class Courses extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('title', 'required'),
+			array('title, sortOrder', 'required'),
+			array('sortOrder', 'numerical', 'integerOnly'=>true),
 			array('title', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, title', 'safe', 'on'=>'search'),
+			array('id, title, sortOrder', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -56,6 +58,7 @@ class Courses extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'title' => 'Title',
+			'sortOrder' => 'Sort Order',
 		);
 	}
 
@@ -79,7 +82,8 @@ class Courses extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('title',$this->title,true);
-                $criteria->order = "id desc";
+		$criteria->compare('sortOrder',$this->sortOrder);
+                  $criteria->order = "sortOrder asc";
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));

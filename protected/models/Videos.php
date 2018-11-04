@@ -5,8 +5,15 @@
  *
  * The followings are the available columns in table 'videos':
  * @property integer $id
- * @property string $iframe
- * @property string $tag_line
+ * @property integer $blog_category_id
+ * @property integer $type
+ * @property string $title
+ * @property string $content
+ * @property string $author
+ * @property string $background_image
+ * @property string $banner_image
+ * @property string $date_created
+ * @property string $date_updated
  */
 class Videos extends CActiveRecord
 {
@@ -26,11 +33,12 @@ class Videos extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('iframe, tag_line', 'required'),
-			array('tag_line', 'length', 'max'=>255),
+			array('blog_category_id, type, title, content, author, background_image, banner_image, date_created, date_updated', 'required'),
+			array('blog_category_id, type', 'numerical', 'integerOnly'=>true),
+			array('title, author, background_image, banner_image', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, iframe, tag_line', 'safe', 'on'=>'search'),
+			array('id, blog_category_id, type, title, content, author, background_image, banner_image, date_created, date_updated', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -52,8 +60,15 @@ class Videos extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'iframe' => 'Iframe',
-			'tag_line' => 'Tag Line',
+			'blog_category_id' => 'Blog Category',
+			'type' => 'Type',
+			'title' => 'Title',
+			'content' => 'Content',
+			'author' => 'Author',
+			'background_image' => 'Background Image',
+			'banner_image' => 'Banner Image',
+			'date_created' => 'Date Created',
+			'date_updated' => 'Date Updated',
 		);
 	}
 
@@ -76,8 +91,15 @@ class Videos extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('iframe',$this->iframe,true);
-		$criteria->compare('tag_line',$this->tag_line,true);
+		$criteria->compare('blog_category_id',$this->blog_category_id);
+		$criteria->compare('type',$this->type);
+		$criteria->compare('title',$this->title,true);
+		$criteria->compare('content',$this->content,true);
+		$criteria->compare('author',$this->author,true);
+		$criteria->compare('background_image',$this->background_image,true);
+		$criteria->compare('banner_image',$this->banner_image,true);
+		$criteria->compare('date_created',$this->date_created,true);
+		$criteria->compare('date_updated',$this->date_updated,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

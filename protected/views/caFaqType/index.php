@@ -1,15 +1,15 @@
 <?php
 $this->breadcrumbs=array(
-	'Videoses',
+	'Ca Faq Types',
 );
 
 $this->menu=array(
-	array('label'=>'Create Videos','url'=>array('create')),
-	array('label'=>'Manage Videos','url'=>array('admin')),
+	array('label'=>'Create CaFaqType','url'=>array('create')),
+	array('label'=>'Manage CaFaqType','url'=>array('admin')),
 );
 ?>
 
-<h1>Videoses</h1>
+<h1>Ca Faq Types</h1>
 
 <?php $this->widget('bootstrap.widgets.TbListView',array(
 	'dataProvider'=>$dataProvider,
