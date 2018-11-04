@@ -57,6 +57,53 @@
                     }
                 })
             });
+            $("#talk-to-advisory-form-registered").submit(function() {
+                if ($("#mbatrek_id").val() == "" || !validateEmail($("#mbatrek_id").val())) {
+                    $("#mbatrek_id").focus()
+
+                    validationMethod("error","Please Enter MBATrek Id");
+                    return false;
+                }
+                if ($("#message2").val() == "") {
+                    $("#message2").focus()
+                    validationMethod("error","Please Enter Message");
+                    return false;
+                }
+                if ($("#area2").val() == "") {
+                    $("#area2").focus()
+                    validationMethod("error","Please Enter Area");
+                    return false;
+                }
+            });
+            $("#talk-to-advisory-form").submit(function() {
+
+                if ($("#TalkToAdvisory_name").val() == "") {
+                    $("#TalkToAdvisory_name").focus()
+                    validationMethod("error","Please Enter Name");
+                    return false;
+                }
+                if ($("#TalkToAdvisory_email").val() == "" || !validateEmail($("#TalkToAdvisory_email").val())) {
+                    $("#TalkToAdvisory_email").focus()
+                     validationMethod("error","Please Enter Email Id");
+                    return false;
+                }
+                if ($("#TalkToAdvisory_message").val() == "") {
+                    $("#TalkToAdvisory_message").focus()
+                     validationMethod("error","Please Enter Message");
+                    return false;
+                }
+                if ($("#TalkToAdvisory_area").val() == "") {
+                    $("#TalkToAdvisory_area").focus()
+                     validationMethod("error","Please Enter Area");
+                    return false;
+                }
+            });
+            $("#talk_subit").click(function() {
+                $("#talk-to-advisory-form").submit();
+            })
+            $("#talk_submit").click(function() {
+                $("#talk-to-advisory-form-registered").submit();
+            })
         })
 //        $(document).ready(function(){
 //    //Registeration Form Validation
