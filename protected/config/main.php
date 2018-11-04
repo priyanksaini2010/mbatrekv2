@@ -105,6 +105,7 @@ return array(
 				'alok-srivastava' => 'site/page/view/alok',
 				'mbatrek-on-the-ground' => 'site/page/view/mbatrek_on_the_ground',
 				'support' => 'site/page/view/support',
+				'interview-registeration' => 'cart/interview',
 				'career' => 'site/page/view/career',
 				'feedback' => 'site/page/view/feedback',
 				'e-brouchers' => 'site/page/view/download_ebrochersform',
