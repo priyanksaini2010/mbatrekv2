@@ -6,6 +6,7 @@ $yog = CHtml::listData(YearOfGraduation::model()->findAll(), "id", "year");
 //$courses[0] = "Select Course";
 //$yog[0] = "Select Year Of Graduation";
 ?>
+<?php $baseUrl = Yii::app()->request->baseUrl; ?>
 <div class="ambastor_container regsiter_emastor">
     <section class="amastor_wrap">
         <div class="container">
