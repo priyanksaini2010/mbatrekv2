@@ -91,6 +91,13 @@ $yog = CHtml::listData(YearOfGraduation::model()->findAll($criteria), "id", "yea
                     <?php echo $form->dropDownList($model, 'college_id', $colleges, array('class' => 'span3','empty'=>'Select an option')); ?>
                 </div>
             </div>
+            <div class="col-md-6" id="name_of_college" style="display:none;">
+                <div class="form_amster_field">
+<!--                    <label>E-mail ID <Em>*</Em></label>
+                    <input type="text"/>-->
+                    <?php echo $form->textFieldRow($model,'name_of_college',array('class'=>'span5','maxlength'=>255)); ?>
+                </div>
+            </div>
             <div class="col-md-6">
                 <div class="form_amster_field">
                     <label>Course <Em>*</Em></label>
@@ -101,6 +108,13 @@ $yog = CHtml::listData(YearOfGraduation::model()->findAll($criteria), "id", "yea
                         <option>abc</option>
                     </select>-->
                     <?php echo $form->dropDownList($model, 'course_id', $courses, array('class' => 'span3','empty'=>'Select an option')); ?>
+                </div>
+            </div>
+            <div class="col-md-6" id="name_of_course" style="display:none;">
+                <div class="form_amster_field">
+<!--                    <label>E-mail ID <Em>*</Em></label>
+                    <input type="text"/>-->
+                    <?php echo $form->textFieldRow($model,'name_of_course',array('class'=>'span5','maxlength'=>255)); ?>
                 </div>
             </div>
             <div class="col-md-6">
