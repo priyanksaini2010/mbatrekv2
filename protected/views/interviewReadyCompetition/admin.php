@@ -1,18 +1,18 @@
 <?php
 $this->breadcrumbs=array(
-	'Interview / Industry Ready Competitions'=>array('interviewReadyCompetition/admin'),
+	'Interview  Ready Competitions'=>array('interviewReadyCompetition/admin'),
 	'Manage',
 );
 
 $this->menu=array(
-	array('label'=>'Manage Interview / Industry Ready Competition','url'=>array('interviewReadyCompetition/admin')),
+	array('label'=>'Manage Interview Ready Competition','url'=>array('interviewReadyCompetition/admin')),
 	
 );
 
 
 ?>
 
-<h1>Manage Interview / Industry Ready Competitions</h1>
+<h1>Manage Interview Ready Competitions</h1>
 
 <?php
 
