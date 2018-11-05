@@ -71,7 +71,7 @@
                     </div>
                     <div class="col-xs-12 col-md-6 col-lg-3 cta-home">
                             <div class="cta-home-wrap">
-                            <a href="<?php echo Yii::app()->createUrl('cart/institutes'); ?>" class="cta-link1">
+                            <a href=<?php echo Yii::app()->createUrl('company'); ?>" class="cta-link1">
                                 <span class="cta-img"><img src="<?php echo $baseUrl; ?>/images/companies_icon.png"></span>
                                  <span class="cta-title">Companies</span>
                             </a>
