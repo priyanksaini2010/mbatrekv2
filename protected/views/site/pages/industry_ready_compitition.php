@@ -30,7 +30,7 @@
                             </div>
                         </div>
                         <div class="amastor_button">
-                            <a href="<?php echo Yii::app()->createUrl("interview-registeration");?>">Register Now</a>
+                            <a href="<?php echo Yii::app()->createUrl("industry-ready-registeration");?>">Register Now</a>
                         </div>
                     </div>
                 </div>
@@ -187,7 +187,7 @@
                             </div>
                         </div>
                         <div class="amastor_button">
-                            <a href="<?php echo Yii::app()->createUrl("interview-registeration");?>">Register Now</a>
+                            <a href="<?php echo Yii::app()->createUrl("industry-ready-registeration");?>">Register Now</a>
                         </div>
                     </div>
                     <div class="still_stuck">
