@@ -142,6 +142,12 @@ $(document).ready(function(){
 //            validationMethod("error","Please select a year of graduation.");
 //            return false;
 //        }
+        if($("#InterviewReadyCompetition_college").val() == 4){
+            if ($("#IndustryReadyCompetition_name_of_college").val() == ""){
+                validationMethod("error","Please enter college name.");
+                return false;
+            } 
+        }
         if ($("#InterviewReadyCompetition_question_1").val() == ""){
             validationMethod("error","Please tell us Name of your Student Placement Coordinator / Student Committee Member");
             return false;
@@ -211,6 +217,14 @@ $(document).ready(function(){
         return true;
     });
     $("#IndustryReadyCompetition_college").change(function(){
+        
+        if($(this).val() == 4){
+            $("#name_of_college").show();
+        } else {
+            $("#name_of_college").hide();
+        }
+    });
+    $("#InterviewReadyCompetition_college").change(function(){
         
         if($(this).val() == 4){
             $("#name_of_college").show();
