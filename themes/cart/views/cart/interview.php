@@ -1,7 +1,9 @@
 <?php $this->setPageTitle('#interviewReady - Registeration'); 
-$colleges = CHtml::listData(Colleges::model()->findAll(), "id", "name");
-$courses = CHtml::listData(Courses::model()->findAll(), "id", "title");
-$yog = CHtml::listData(YearOfGraduation::model()->findAll(), "id", "year");
+$criteria=new CDbCriteria;
+$criteria->order = "sortOrder asc";
+$colleges = CHtml::listData(CollegesCompetition::model()->findAll($criteria), "id", "name");
+$courses = CHtml::listData(Courses::model()->findAll($criteria), "id", "title");
+$yog = CHtml::listData(YearOfGraduation::model()->findAll($criteria), "id", "year");
 //$colleges[0] = "Select College";
 //$courses[0] = "Select Course";
 //$yog[0] = "Select Year Of Graduation";
