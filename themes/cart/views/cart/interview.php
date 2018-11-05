@@ -84,7 +84,7 @@ $yog = CHtml::listData(YearOfGraduation::model()->findAll($criteria), "id", "yea
                                 <?php echo $form->dropDownList($model, 'college', $colleges, array('class' => 'span3','empty'=>'Select an option')); ?>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6"  id="name_of_college" style="display:none;">
                             <div class="form_amster_field">
                                 <?php echo $form->textFieldRow($model,'name_of_college',array('class'=>'span5','maxlength'=>255)); ?>
                             </div>
