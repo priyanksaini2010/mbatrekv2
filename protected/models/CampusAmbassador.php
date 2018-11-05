@@ -42,7 +42,7 @@ class CampusAmbassador extends CActiveRecord
 		return array(
 			array('first_name, last_name, mobile_number, email_id, college_id, course_id, year_of_graduation_id, question_1, question_2, registeration_date', 'required'),
 			array('college_id, course_id, year_of_graduation_id', 'numerical', 'integerOnly'=>true),
-			array('first_name, last_name, mobile_number, email_id', 'length', 'max'=>255),
+			array('first_name, last_name, mobile_number, email_id,  name_of_college, name_of_course', 'length', 'max'=>255),
                         array('question_3', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
@@ -82,6 +82,8 @@ class CampusAmbassador extends CActiveRecord
 			'question_2' => 'Suggest two super creative ideas to share the importance of career development in your college',
 			'question_3' => 'Any additional information you would like to provide us <span style="color:grey;">(Optional)</span>',
 			'registeration_date' => 'Registeration Date',
+                        'name_of_college' => 'Name Of College',
+			'name_of_course' => 'Name Of Course',
 		);
 	}
 
