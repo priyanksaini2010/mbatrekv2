@@ -1,5 +1,6 @@
 <?php
 error_reporting(E_ERROR);
+date_default_timezone_set("Asia/Kolkata");
 const DIREC = "/v2/";
 require_once 'payment_lib/PaytmKit/lib/config_paytm.php';
 require_once 'payment_lib/PaytmKit/lib/encdec_paytm.php';
