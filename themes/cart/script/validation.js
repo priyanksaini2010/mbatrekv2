@@ -158,6 +158,66 @@ $(document).ready(function(){
         
         return true;
     });
+    
+    $("#industry-ready-form").submit(function(){
+        if ($("#IndustryReadyCompetition_first_name").val() == ""){
+            validationMethod("error","Please enter first name.");
+            return false;
+        }
+        if ($("#IndustryReadyCompetition_last_name").val() == ""){
+            validationMethod("error","Please enter last name.");
+            return false;
+        }
+        if ($("#IndustryReadyCompetition_mobile_number").val() == ""){
+            validationMethod("error","Please enter mobile number.");
+            return false;
+        }
+        if ($("#IndustryReadyCompetition_email_id").val() == "" || !validateEmail($("#IndustryReadyCompetition_email_id").val())){
+            validationMethod("error","Please enter valid email.");return false;
+        }
+        if ($("#IndustryReadyCompetition_mba_batch").val() == ""){
+            validationMethod("error","Please select a MBA batch.");
+            return false;
+        }
+        if ($("#IndustryReadyCompetition_college").val() == ""){
+            validationMethod("error","Please select a college.");
+            return false;
+        }
+        if($("#IndustryReadyCompetition_college").val() == 4){
+            if ($("#IndustryReadyCompetition_name_of_college").val() == ""){
+                validationMethod("error","Please enter college name.");
+                return false;
+            } 
+        }
+        
+//        if ($("#CampusAmbassador_year_of_graduation_id").val() == ""){
+//            validationMethod("error","Please select a year of graduation.");
+//            return false;
+//        }
+        if ($("#IndustryReadyCompetition_question_1").val() == ""){
+            validationMethod("error","Please tell us Name of your Student Placement Coordinator / Student Committee Member");
+            return false;
+        }
+        if ($("#IndustryReadyCompetition_question_2").val() == ""){
+            validationMethod("error","Please tell us Email of your Student Placement Coordinator / Student Committee Member");
+            return false;
+        }
+//        if ($("#CampusAmbassador_question_3").val() == ""){
+//            validationMethod("error","Please provide Any additional information you would like");
+//            return false;
+//        }
+        
+        
+        return true;
+    });
+    $("#IndustryReadyCompetition_college").change(function(){
+        
+        if($(this).val() == 4){
+            $("#name_of_college").show();
+        } else {
+            $("#name_of_college").hide();
+        }
+    });
     $(".apply-promo").click(function(){
         if(!validateEmail($(".apply-promo-value").val())){
             validationMethod("error","Please enter valid email.");return false;
