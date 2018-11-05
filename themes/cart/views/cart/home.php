@@ -71,7 +71,7 @@
                     </div>
                     <div class="col-xs-12 col-md-6 col-lg-3 cta-home">
                             <div class="cta-home-wrap">
-                            <a href=<?php echo Yii::app()->createUrl('company'); ?>" class="cta-link1">
+                            <a href="<?php echo Yii::app()->createUrl('company'); ?>" class="cta-link1">
                                 <span class="cta-img"><img src="<?php echo $baseUrl; ?>/images/companies_icon.png"></span>
                                  <span class="cta-title">Companies</span>
                             </a>
@@ -80,7 +80,7 @@
                                 Upskill your young talent and new hires to the demands of today’s corporate world
                                 </h4>
                                 <div class="cta-link2">
-                                <a href="<?php echo Yii::app()->createUrl('cart/institutes'); ?>">Accelerate the growth of your next generation workforce >></a>
+                                <a href="<?php echo Yii::app()->createUrl('company'); ?>">Accelerate the growth of your next generation workforce >></a>
                                 </div>
                               </div>
                         </div>
@@ -208,7 +208,7 @@
                             </div>
                         </li>
                     </ul>
-                </div>
+                </div>  
             </div>
         </div>
     </div>
