@@ -1668,7 +1668,7 @@ vertical-align:middle;cursor:pointer;}
 .manger_categories ul li:after{content: "";position: absolute;background-image:url('../images/company/company_arrow.png');width: 29px;height: 29px;display: inline-block;right: -15px;top: 32px;}
 .manger_categories ul li span{display: block;color: #348786;font-family:'MyriadPro-Semibold';padding: 12px 0 0 0;font-size: 21px;}
 .manger_categories ul li:last-child:after{display: none;}
-.empower_manager{width: 100%;float: left;}
+.empower_manager{width: 100%;float: left;    margin: 42px 0 0 0;}
 .empower_manager .manger_heading h2{color: #73942f;}
 .empower_manager .manger_categories ul li span{color: #73942f;}
 .empower_manager .manger_categories ul li:after {display: none;}
@@ -1767,3 +1767,17 @@ vertical-align:middle;cursor:pointer;}
     width: 40px;
     height: 77px;
 }
+.top_header_Text{width: 100%;float: left;text-align: center;}
+.top_header_Text h2{color: #348786;margin:0;padding: 0 0 14px 0;font-size: 29px;font-family: 'MyriadPro-Semibold';}
+.blog_new_container.video_container .blog_header{background: #efefef;    margin: 24px 0 42px 0;}
+.blog_new_container.video_container iframe{height: 315px;}
+.block_Titke h1{margin:0;font-family: 'MyriadPro-Semibold';font-size: 20px;color:#222;}
+.block_Titke h2{margin:0;font-family: 'MyriadPro-Semibold';font-size: 20px;color: #222;padding: 11px 0 12px 0;}
+.blog_video_repeat {width: 100%;float: left;border-bottom: 1px solid #ccc;margin: 0 0 38px 0;}
+.blog_video_repeat .col-md-7{padding:0;}
+.bulid_your_next .arrow-icon{margin-bottom:40px;}
+.our_company_page .key_Area_cover{margin-top:48px;}
+.manager_div {    width: 100%;
+    float: left;
+    margin: 60px 0 48px 0;}
+.our_company_page .leader_shipt_div{margin-top:20px;}
