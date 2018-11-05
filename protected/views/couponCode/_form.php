@@ -11,6 +11,7 @@
         
 	<?php echo $form->textFieldRow($model,'domain',array('class'=>'span5','maxlength'=>255)); ?>
 	<?php echo $form->textFieldRow($model,'discount',array('class'=>'span5','maxlength'=>255)); 
+	 echo $form->textFieldRow($model,'min_value',array('class'=>'span5','maxlength'=>255)); 
         ?>
         <br />
         <?php echo $form->dropDownList($model,'is_active',array(1=>"Activate",2=>"Deactivate"),array('class'=>'span5')); ?>
