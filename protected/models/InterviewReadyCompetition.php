@@ -39,7 +39,7 @@ class InterviewReadyCompetition extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('first_name, last_name, mobile_number, email_id, mba_batch, college, name_of_college, question_1, question_2, registeration_date', 'required'),
+			array('first_name, last_name, mobile_number, email_id, mba_batch, college, question_1, question_2, registeration_date', 'required'),
 			array('mba_batch, college', 'numerical', 'integerOnly'=>true),
 			array('first_name, last_name, mobile_number, email_id, name_of_college', 'length', 'max'=>255),
 			array('question_3', 'safe'),
