@@ -374,9 +374,9 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                             </span>
                                                     </div>
                                                     <div class="buy-and-cart">
-                                                        <a href="<?php echo Yii::app()->createUrl("cart/addtocart",array("id"=>19));?>">buy now</a>
-                                                        <a href="<?php echo Yii::app()->createUrl("cart/addtocart",array("id"=>19));?>">add to cart</a>
-                                                        <a href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>19));?>">Read More</a>
+                                                        <a href="<?php echo Yii::app()->createUrl("cart/addtocart",array("id"=>33));?>">buy now</a>
+                                                        <a href="<?php echo Yii::app()->createUrl("cart/addtocart",array("id"=>33));?>">add to cart</a>
+                                                        <a href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>33));?>">Read More</a>
                                                     </div>
 
                                                 </div>
@@ -468,7 +468,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                         <div class="student-cta1-bottom ">
                                                 <div class="student-cta1-bottom-inner" id="interview_ready" >
                                                     <div class="student-cta1-bottom-title">
-                                                    Interview Ready Combo Package
+                                                        
                                                     <span class="combol_sub_Text">(50 Q & A + 3 Mock Interviews)</span>
                                                     </div>
                                                     <div class="student-cta1-bottom-sub-title">
@@ -477,9 +477,9 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                             </span>
                                                     </div>
                                                     <div class="buy-and-cart">
-                                                        <a href="<?php echo Yii::app()->createUrl("cart/buynow",array("id"=>19));?>">buy now</a>
-                                                        <a href="<?php echo Yii::app()->createUrl("cart/addtocart",array("id"=>19));?>">add to cart</a>
-                                                        <a href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>19));?>">Read More</a>
+                                                        <a href="<?php echo Yii::app()->createUrl("cart/buynow",array("id"=>32));?>">buy now</a>
+                                                        <a href="<?php echo Yii::app()->createUrl("cart/addtocart",array("id"=>32));?>">add to cart</a>
+                                                        <a href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>32));?>">Read More</a>
                                                     </div>
 
                                                 </div>
