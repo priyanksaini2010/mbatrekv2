@@ -8,7 +8,7 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<?php echo $form->textAreaRow($model,'question',array('rows'=>6, 'cols'=>50, 'class'=>'span8')); ?>
-	<?php echo $form->dropDownList($model,'type',CHtml::listData( FaqType::model()->findAll(), 'id', 'name'),array('class'=>'span8')); ?>
+	<?php echo $form->dropDownList($model,'type',CHtml::listData( CaFaqType::model()->findAll(), 'id', 'name'),array('class'=>'span8')); ?>
 
 	<?php echo $form->textAreaRow($model,'answer',array('rows'=>6, 'cols'=>50, 'class'=>'span8')); ?>
 
