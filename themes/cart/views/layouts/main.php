@@ -63,5 +63,40 @@
             </div>
         </div>
 <?php echo $this->renderPartial("webroot.themes.cart.views.layouts.validations"); ?> 
+ <script>
+     
+    $(".show_content_alok").hover(
+        function () {
+        $(".alok_info").addClass("display_information_alok");
+        },
+        function () {
+        $(".alok_info").removeClass("display_information_alok");
+        }
+    );
+    $(".show_content_abhishek").hover(
+        function () {
+        $(".abhishek_info").addClass("display_information_alok");
+        },
+        function () {
+        $(".abhishek_info").removeClass("display_information_alok");
+        }
+    );
+    $(".ayushi_info").hover(
+        function () {
+        $(".show_ayushi_info").addClass("display_information_alok");
+        },
+        function () {
+        $(".show_ayushi_info").removeClass("display_information_alok");
+        }
+    );
+    $(".rahul_info").hover(
+        function () {
+        $(".show_rahul_info").addClass("display_information_alok");
+        },
+        function () {
+        $(".show_rahul_info").removeClass("display_information_alok");
+        }
+    );
+    </script>
     </body>
 </html> 
