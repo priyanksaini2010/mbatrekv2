@@ -32,7 +32,7 @@ class CartController extends Controller {
     public function accessRules() {
         return array(
             array('allow', // allow all users to perform 'index' and 'view' actions
-                'actions' => array('interview','index', 'view','student',"addtocart","cart","remove","buynow","verify", 
+                'actions' => array('industry','interview','index', 'view','student',"addtocart","cart","remove","buynow","verify", 
                                     'profesionals','institutes','register',"description","checkout","removeCart","applypromo","story","campus","loginandapply"),
                 'users' => array('*'),
             ),
@@ -186,6 +186,24 @@ class CartController extends Controller {
                         }
 		}
 		$this->render("webroot.themes.cart.views.cart.interview",array("model"=>$model));
+
+	}
+        public function actionIndustry(){
+		$this->layout = getCartLayot();
+                $model=new IndustryReadyCompetition;
+
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+
+		if(isset($_POST['IndustryReadyCompetition']))
+		{
+                        $_POST['IndustryReadyCompetition']['registeration_date'] = date("Y-m-d h:i:s");
+			$model->attributes=$_POST['IndustryReadyCompetition'];
+			if($model->save()){
+				$this->redirect(array('index','thankscampus'=>1));
+                        }
+		}
+		$this->render("webroot.themes.cart.views.cart.industry",array("model"=>$model));
 
 	}
 	public function actionDescription($id){
