@@ -5,14 +5,14 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Manage Interview / Industry Ready Competition','url'=>array('interviewReadyCompetition/admin')),
+	array('label'=>'Manage Interview Ready Competition','url'=>array('interviewReadyCompetition/admin')),
 	
 );
 
 
 ?>
 
-<h1>View Interview / Industry Ready Competitions</h1>
+<h1>View Interview Ready Competitions</h1>
 
 
 
