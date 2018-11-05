@@ -249,9 +249,9 @@ $(document).ready(function(){
     $("#CampusAmbassador_course_id").change(function(){
         
         if($(this).val() == 2){
-            $("#name_of_college").show();
+            $("#name_of_course").show();
         } else {
-            $("#name_of_college").hide();
+            $("#name_of_course").hide();
         }
     });
     $("#CampusAmbassador_college_id").change(function(){
