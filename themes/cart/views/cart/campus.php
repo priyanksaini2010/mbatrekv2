@@ -1,7 +1,11 @@
-<?php $this->setPageTitle('Campus Ambassador - Registeration'); 
-$colleges = CHtml::listData(Colleges::model()->findAll(), "id", "name");
-$courses = CHtml::listData(Courses::model()->findAll(), "id", "title");
-$yog = CHtml::listData(YearOfGraduation::model()->findAll(), "id", "year");
+<?php 
+$this->setPageTitle('Campus Ambassador - Registeration'); 
+$criteria=new CDbCriteria;
+$criteria->order = "sortOrder asc";
+$colleges = CHtml::listData(Colleges::model()->findAll($criteria), "id", "name");
+$courses = CHtml::listData(Courses::model()->findAll($criteria), "id", "title");
+$yog = CHtml::listData(YearOfGraduation::model()->findAll($criteria), "id", "year");
+//pr($yog);
 //$colleges[0] = "Select College";
 //$courses[0] = "Select Course";
 //$yog[0] = "Select Year Of Graduation";
