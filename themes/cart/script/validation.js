@@ -85,9 +85,23 @@ $(document).ready(function(){
             validationMethod("error","Please select a college.");
             return false;
         }
+        if ($("#CampusAmbassador_college_id").val() == 2){
+            if($("#CampusAmbassador_name_of_college").val() == ""){
+                validationMethod("error","Please enter name of college.");
+                return false;
+            }
+            
+        }
         if ($("#CampusAmbassador_course_id").val() == ""){
             validationMethod("error","Please select a course.");
             return false;
+        }
+        if ($("#CampusAmbassador_course_id").val() == 2){
+            if($("#CampusAmbassador_name_of_course").val() == ""){
+                validationMethod("error","Please enter name of course.");
+                return false;
+            }
+            
         }
         if ($("#CampusAmbassador_year_of_graduation_id").val() == ""){
             validationMethod("error","Please select a year of graduation.");
@@ -227,6 +241,22 @@ $(document).ready(function(){
     $("#InterviewReadyCompetition_college").change(function(){
         
         if($(this).val() == 4){
+            $("#name_of_college").show();
+        } else {
+            $("#name_of_college").hide();
+        }
+    });
+    $("#CampusAmbassador_course_id").change(function(){
+        
+        if($(this).val() == 2){
+            $("#name_of_college").show();
+        } else {
+            $("#name_of_college").hide();
+        }
+    });
+    $("#CampusAmbassador_college_id").change(function(){
+        
+        if($(this).val() == 2){
             $("#name_of_college").show();
         } else {
             $("#name_of_college").hide();
