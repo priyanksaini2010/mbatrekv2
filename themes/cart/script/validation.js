@@ -134,16 +134,16 @@ $(document).ready(function(){
             return false;
         }
         
-        if ($("#InterviewReadyCompetition_name_of_college").val() == ""){
-            validationMethod("error","Please enter college name.");
-            return false;
-        }
+//        if ($("#InterviewReadyCompetition_name_of_college").val() == ""){
+//            validationMethod("error","Please enter college name.");
+//            return false;
+//        }
 //        if ($("#CampusAmbassador_year_of_graduation_id").val() == ""){
 //            validationMethod("error","Please select a year of graduation.");
 //            return false;
 //        }
         if($("#InterviewReadyCompetition_college").val() == 4){
-            if ($("#IndustryReadyCompetition_name_of_college").val() == ""){
+            if ($("#InterviewReadyCompetition_name_of_college").val() == ""){
                 validationMethod("error","Please enter college name.");
                 return false;
             } 
