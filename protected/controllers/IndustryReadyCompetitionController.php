@@ -70,14 +70,14 @@ class IndustryReadyCompetitionController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new InterviewReadyCompetition;
+		$model=new IndustryReadyCompetition;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['InterviewReadyCompetition']))
+		if(isset($_POST['IndustryReadyCompetition']))
 		{
-			$model->attributes=$_POST['InterviewReadyCompetition'];
+			$model->attributes=$_POST['IndustryReadyCompetition'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -99,9 +99,9 @@ class IndustryReadyCompetitionController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['InterviewReadyCompetition']))
+		if(isset($_POST['IndustryReadyCompetition']))
 		{
-			$model->attributes=$_POST['InterviewReadyCompetition'];
+			$model->attributes=$_POST['IndustryReadyCompetition'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -136,7 +136,7 @@ class IndustryReadyCompetitionController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('InterviewReadyCompetition');
+		$dataProvider=new CActiveDataProvider('IndustryReadyCompetition');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -147,10 +147,10 @@ class IndustryReadyCompetitionController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new InterviewReadyCompetition('search');
+		$model=new IndustryReadyCompetition('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['InterviewReadyCompetition']))
-			$model->attributes=$_GET['InterviewReadyCompetition'];
+		if(isset($_GET['IndustryReadyCompetition']))
+			$model->attributes=$_GET['IndustryReadyCompetition'];
                 if ($this->isExportRequest()) { //<==== [[ADD THIS BLOCK BEFORE RENDER]]
                         //set_time_limit(0); //Uncomment to export lage datasets
                         //Add to the csv a single line of text
@@ -173,7 +173,7 @@ class IndustryReadyCompetitionController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=InterviewReadyCompetition::model()->findByPk($id);
+		$model=IndustryReadyCompetition::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
