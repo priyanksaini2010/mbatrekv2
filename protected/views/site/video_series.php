@@ -3,7 +3,11 @@ $blogs =$models;
 $typ = $_GET['type'];
 
 ?>
-<div class="blog_new_container">
+<div class="blog_new_container video_container">
+    <div class="top_header_Text">
+        <h2>Here is our ‘FREE’ Video Series to help you get</h2>
+        <h2>‘Ready’ & ‘Relevant’ for the Corporate World</h2>
+    </div>
     <div class="blog_header">
         <div class="container">
             <div class="col-md-4">
@@ -23,17 +27,19 @@ $typ = $_GET['type'];
             <div class="our_blog">
                 <div class="row">
                     <?php foreach ($blogs as $blog){?>
-                    <div class="col-md-4 col-sm-4 col-xs-6">
+                        <div class="blog_video_repeat">
+                    <div class="col-md-7 col-sm-7 col-xs-7">
                         <div class="blog_block">
-                            <ul class="list-unstyled">
-                                <li><span class="date_blog"><?php echo date("d", strtotime($blog->date_created));?></span> <span class="month_blog"><?php echo date("M", strtotime($blog->date_created));?></span></li>
-                                <li><img src="images/comment_icon.png" alt="" /> <span class="comment_blog"><?php echo date("y", strtotime($blog->date_created));?></span></li>
-                            </ul>
+                            <div class="block_Titke">
+                                <h1>Heading -1 </h1>
+                                <h2>Description</h2>
+                            </div>
                             <div class="blog_img">
                                 <?php echo $blog->youtube_video_link;?>
                             </div>
                             
                         </div>
+                    </div>
                     </div>
                     <?php }?>
                     

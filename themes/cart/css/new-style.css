@@ -1026,7 +1026,7 @@ user-select: none;
 .faq_Container .tabbable-panel .nav li a:hover{background:#73942f;margin-right:0;}
 .faq_Container .tabbable-panel .tab-pane{margin-top:15px;}
 .fq_footer{width: 100%;float: left;text-align: center;}
-.fq_footer label{font-size: 17px;    margin: 9px 0 0 0;}
+.fq_footer label{font-size: 17px;    margin: 9px 0 0 0;font-family: 'MyriadPro-Semibold';}
 .fq_footer label span{color: #348786;}
 .fq_footer label span.color_span{color: #124cb4;}
 /*------------Blog Css----------*/
@@ -1546,7 +1546,7 @@ text-align: center;border-radius: 2px;}
 .compas_heading{width: 100%;float: left;text-align: center;}
 .amastor_button a:hover{background: #348786;}
 .amaster_bulid{width: 100%;float: left;text-align: center;}
-.amaster_repeat{width: 100%;float: left;text-align: center;border:1px solid #ccc;    padding: 28px 0 34px 0;    margin: 35px 0 0 0;}
+.amaster_repeat{width: 100%;float: left;text-align: center;border:1px solid #ccc;    padding: 28px 20px 34px 20px; min-height:243px;   margin: 35px 0 0 0;}
 .amaster_repeat h3{margin:0;font-weight: normal;color: #222;padding: 21px 0 0 0;    line-height: 30px;}
 .amaster_repeat h3 span{color: #348786;font-family: 'MyriadPro-Semibold';display: inline;}
 .compas_heading h3{font-family: 'MyriadPro-Semibold';font-size: 39px;margin:0;color: #73942f;}
@@ -1562,7 +1562,7 @@ text-align: center;border-radius: 2px;}
 .what_do_u_get{width: 100%;float: left;}
 .what_do_u_get .amaster_repeat{border:none;padding:0;}
 .what_do_u_get .amaster_repeat h3{display: inline-block;font-size: 18px;padding:0 48px 0px 0;      width: 284px;  display: table-cell; vertical-align: middle;}
-.what_do_u_get .amaster_repeat{text-align: left;display: table;margin:20px 0 5px 0;position: relative;}
+.what_do_u_get .amaster_repeat{text-align: left;display: table;margin:20px 0 5px 0;position: relative;min-height:auto;}
 .what_do_u_get  .col-md-4{position: relative;}
 .what_do_u_get  .col-md-4:after{position: absolute;content: "";height: 253px;width: 1px;background: #ccc;top:11px;right:25px;}
 .what_do_u_get  .col-md-4:last-child:after{display: none;}

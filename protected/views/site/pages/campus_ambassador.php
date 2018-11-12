@@ -23,7 +23,7 @@
                     <div class="col-md-4">
                         <div class="amaster_repeat">
                             <img src="<?php echo $baseUrl; ?>/images/win_prices.png"/>
-                            <h3>Win Prizes worth <span>₹ 20,000</span> and Chance for <span>PPI</span></h3>
+                            <h3>Win Prizes worth upto <span>₹ 20,000</span> and Chance for <span>PPI</span></h3>
                         </div>
                     </div>
                     <div class="amastor_button">
@@ -188,7 +188,10 @@
                       <?php }?>
                 </div>
             </div>
-            <div class="fq_footer"><label>Still stuck with your problem? <span>Contact us at</span> <span class="color_span"> contact@mbatrek.com</span> or Talk to Our <span>Career Advisor at</span> <span class="color_span">+91 98219 48334</span> </label></div>
+            <div class="fq_footer">
+			<!--<label>Still stuck with your problem? <span>Contact us at</span> <span class="color_span"> contact@mbatrek.com</span> or Talk to Our <span>Career Advisor at</span> <span class="color_span">+91 98219 48334</span> </label>-->
+			<label>Have more doubts? Mail us at <a href="mailto:contact@mbatrek.com">contact@mbatrek.com</a> </label>
+			</div>
         </div>
     </div>
 </div>

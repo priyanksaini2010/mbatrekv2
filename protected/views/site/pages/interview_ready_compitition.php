@@ -26,7 +26,7 @@
                         <div class="col-md-4">
                             <div class="amaster_repeat">
                                 <img src="<?php echo $baseUrl;?>/images/industry_Ready/win_price.png"/>
-                                <h3>Win Prizes worth <span>₹ 10,000</span> and <span>PPI </span></h3>
+                                <h3>Win Prizes worth upto <span>₹ 10,000</span> and <span>PPI </span></h3>
                             </div>
                         </div>
                         <div class="amastor_button">

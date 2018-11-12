@@ -38,7 +38,7 @@ $(document).ready(function(){
     //Registeration Form Validation
     $(".cart-remove").click(function(){
             if(confirm("Are you sure you want to remove this product from your cart?")){
-                window.location.href = "https://localhost/v3/cart/removeCart?p="+$(this).val();
+                window.location.href = "https://mbatrek.com/v2/cart/removeCart?p="+$(this).val();
             }
         });
     $("#register-form").submit(function(){
