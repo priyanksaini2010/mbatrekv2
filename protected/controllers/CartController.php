@@ -62,6 +62,8 @@ class CartController extends Controller {
                 } else{
                     $this->redirect(Yii::app()->request->urlReferrer);
                 }
+            } else {
+                $this->redirect(Yii::app()->request->urlReferrer);
             }
         }
         
@@ -400,7 +402,21 @@ class CartController extends Controller {
                
                 
                 if($model->delete()){
-                    $this->redirect(Yii::app()->createUrl("cart/cart"));
+                    $cart = Cart::model()->findAllByAttributes(array("user_id" => Yii::app()->user->id, "status" => 1));
+                    $cartID = Cart::model()->findByAttributes(array("user_id" => Yii::app()->user->id, "status" => 1));
+                    $coupon = CouponUsage::model()->findByAttributes(array("cart_id" => $cartID->id));
+                    if (!empty($coupon)) {
+                        $totalAmount = 0;
+                        foreach ($cart as $c){
+                            $totalAmount = $totalAmount + $c->product->price;
+                        }
+                        if($coupon->coupon->min_value > $totalAmount){
+                            $model = CouponUsage::model()->findByPk($coupon->id);
+                            $model->delete();
+                        }
+                    }
+
+                $this->redirect(Yii::app()->createUrl("cart/cart"));
                 } else {
                    pr($model->getErrors());
                     foreach($model->getErrors() as $key=>$err){
@@ -437,6 +453,19 @@ class CartController extends Controller {
                 
                 
                 if($model->delete()){
+                    $cart = Cart::model()->findAllByAttributes(array("user_id" => Yii::app()->user->id, "status" => 1));
+                    $cartID = Cart::model()->findByAttributes(array("user_id" => Yii::app()->user->id, "status" => 1));
+                    $coupon = CouponUsage::model()->findByAttributes(array("cart_id" => $cartID->id));
+                    if (!empty($coupon)) {
+                        $totalAmount = 0;
+                        foreach ($cart as $c){
+                            $totalAmount = $totalAmount + $c->product->price;
+                        }
+                        if($coupon->coupon->min_value > $totalAmount){
+                            $model = CouponUsage::model()->findByPk($coupon->id);
+                            $model->delete();
+                        }
+                    }
                     $this->redirect(Yii::app()->request->urlReferrer."?show_cart=1",array("show_cart"=>1));
                 } else {
                    pr($model->getErrors());
