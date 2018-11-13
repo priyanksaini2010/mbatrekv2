@@ -129,7 +129,9 @@ if(isset(Yii::app()->user->id)){
                             <div class="promo_card_applied">
                                 <div class="applied_now">
                                 <label class="applicd_code">Applied Promo Code:</label>
-                                <label for="lastname"><?php echo $coupon->email_used;?></div>
+                                <label for="lastname"><?php echo $coupon->email_used;?></label>
+                                <br />
+                                <a class="remove-coupon" href="<?php echo Yii::app()->createUrl("remove-coupon");?>">Remove Coupon</a>
                             </div>
                             </div>    
                             <?php }?>
@@ -168,7 +170,7 @@ if(isset(Yii::app()->user->id)){
                 <?php }?>
 				<div class="need_help">
 					<span>
-                                            Need Help? Visit the <a href="<?php echo Yii::app()->createUrl("frequently-asked-questions");?>">FAQ</a> or <a href="javascript:void(0)">Contact Us</a>
+                                            Need Help? Visit the <a href="<?php echo Yii::app()->createUrl("frequently-asked-questions");?>">FAQ</a> or <a href="<?php echo Yii::app()->createUrl("contact-us");?>">Contact Us</a>
 					</span>
 				</div>
             </div>
