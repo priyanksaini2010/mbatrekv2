@@ -109,8 +109,10 @@ foreach ($products as $c){
                         <?php 
 //                        $cart = Cart::model()->findAllByAttributes(array("user_id" => Yii::app()->user->id, "status" => 1));
                         foreach($products as $c){
-                        foreach($c->productRecommendedValueSaverPacks as $saver){
-                        
+                            $array = array();
+                        foreach($c->product->productRecommendedValueSaverPacks as $saver){
+                        if(!in_array($saver->recommendedProduct->id,$array)){
+                            $array[] = $saver->recommendedProduct->id;
 ?>
                         <li>
                             <div class="recomended_title">
@@ -127,7 +129,7 @@ foreach ($products as $c){
                                 <a href="<?php echo Yii::app()->createUrl("cart/addtocart",array("id"=>$saver->recommendedProduct->id));    ?>">Add to cart</a>
                             </div>
                         </li>
-                        <?php }}?>
+                        <?php }}}?>
                     </ul>
                 </div>
                 <?php }?>
