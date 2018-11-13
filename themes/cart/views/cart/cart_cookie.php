@@ -34,11 +34,15 @@ foreach ($products as $c){
                                     ?>
 <ul class="list-inline">
                                     <li class="cart_icon">
+                                        <a href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>$icart->product->id));?>">
                                         <img height="44" width="41" src="<?php echo $baseUrl;?>/assets/products/<?php echo $icart->logo;?>"/>
                                         <span><?php echo $icart->title;?></span>
+                                        </a>
                                     </li>
                                     <li class="cart_label">
+                                        <a href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>$icart->product->id));?>">
                                         <h4><?php echo $icart->description1;?></h4>
+                                        </a>
                                         <a href="<?php echo Yii::app()->createUrl("cart/remove",array("id"=>$icart->id));?>">Remove</a>
                                     </li>
                                     <li class="cart_money">
