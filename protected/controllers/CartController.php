@@ -24,31 +24,47 @@ class CartController extends Controller {
    		$this->layout = getCartLayot();
     }
 
-    /**
-     * Specifies the access control rules.
-     * This method is used by the 'accessControl' filter.
-     * @return array access control rules
-     */
-    public function accessRules() {
-        return array(
-            array('allow', // allow all users to perform 'index' and 'view' actions
-                'actions' => array('industry','interview','index', 'view','student',"addtocart","cart","remove","buynow","verify", 
-                                    'profesionals','institutes','register',"description","checkout","removeCart","applypromo","story","campus","loginandapply"),
-                'users' => array('*'),
-            ),
-            array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('create', 'update', 'admin', 'delete'),
-                'users' => array('@'),
-            ),
-            array('allow', // allow admin user to perform 'admin' and 'delete' actions
-                'actions' => array(),
-                'users' => array('admin'),
-            ),
-            array('deny', // deny all users
-                'users' => array('*'),
-            ),
-        );
-    }
+        /**
+         * Specifies the access control rules.
+         * This method is used by the 'accessControl' filter.
+         * @return array access control rules
+         */
+        public function accessRules() {
+            return array(
+                array('allow', // allow all users to perform 'index' and 'view' actions
+                    'actions' => array('removeCoupon','industry','interview','index', 'view','student',"addtocart","cart","remove","buynow","verify", 
+                                        'profesionals','institutes','register',"description","checkout","removeCart","applypromo","story","campus","loginandapply"),
+                    'users' => array('*'),
+                ),
+                array('allow', // allow authenticated user to perform 'create' and 'update' actions
+                    'actions' => array('create', 'update', 'admin', 'delete'),
+                    'users' => array('@'),
+                ),
+                array('allow', // allow admin user to perform 'admin' and 'delete' actions
+                    'actions' => array(),
+                    'users' => array('admin'),
+                ),
+                array('deny', // deny all users
+                    'users' => array('*'),
+                ),
+            );
+        }
+    
+        public function actionRemoveCoupon(){
+            if(isset(Yii::app()->user->id)){
+                
+                $cartID = Cart::model()->findByAttributes(array("user_id" => Yii::app()->user->id, "status" => 1));
+                $coupon = CouponUsage::model()->findByAttributes(array("cart_id"=> $cartID->id));
+                if(!empty($coupon)){
+                    $model = CouponUsage::model()->findByPk($coupon->id);
+                    $model->delete();
+                    $this->redirect(Yii::app()->request->urlReferrer);
+                } else{
+                    $this->redirect(Yii::app()->request->urlReferrer);
+                }
+            }
+        }
+        
 	public function actionVerify($id){
 	    $user = UsersNew::model()->findByPk($id);
 	    if(empty($user)){
