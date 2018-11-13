@@ -1,4 +1,21 @@
 // Method to call validation pop up or alerts
+function phonenumber(mobNum)
+{
+    var filter = /^\d*(?:\.\d{1,2})?$/;
+
+    if (filter.test(mobNum)) {
+        if (mobNum.length == 10) {
+            return true
+        } else {
+            return false;
+        }
+    }
+    else {
+        return false;
+    }
+}
+
+
 function validationMethod(id,text){
 //    alert(id);
     switch(id){
@@ -74,8 +91,8 @@ $(document).ready(function(){
             validationMethod("error","Please enter last name.");
             return false;
         }
-        if ($("#CampusAmbassador_mobile_number").val() == ""){
-            validationMethod("error","Please enter mobile number.");
+        if ($("#CampusAmbassador_mobile_number").val() == "" || !phonenumber($("#CampusAmbassador_mobile_number").val())){
+            validationMethod("error","Please enter valid mobile number.");
             return false;
         }
         if ($("#CampusAmbassador_email_id").val() == "" || !validateEmail($("#CampusAmbassador_email_id").val())){
@@ -132,8 +149,8 @@ $(document).ready(function(){
             validationMethod("error","Please enter last name.");
             return false;
         }
-        if ($("#InterviewReadyCompetition_mobile_number").val() == ""){
-            validationMethod("error","Please enter mobile number.");
+        if ($("#InterviewReadyCompetition_mobile_number").val() == "" || !phonenumber($("#InterviewReadyCompetition_mobile_number").val())){
+            validationMethod("error","Please enter valid mobile number.");
             return false;
         }
         if ($("#InterviewReadyCompetition_email_id").val() == "" || !validateEmail($("#InterviewReadyCompetition_email_id").val())){
@@ -188,8 +205,8 @@ $(document).ready(function(){
             validationMethod("error","Please enter last name.");
             return false;
         }
-        if ($("#IndustryReadyCompetition_mobile_number").val() == ""){
-            validationMethod("error","Please enter mobile number.");
+        if ($("#IndustryReadyCompetition_mobile_number").val() == "" || !phonenumber($("#InterviewReadyCompetition_mobile_number").val())){
+            validationMethod("error","Please enter valid mobile number.");
             return false;
         }
         if ($("#IndustryReadyCompetition_email_id").val() == "" || !validateEmail($("#IndustryReadyCompetition_email_id").val())){
