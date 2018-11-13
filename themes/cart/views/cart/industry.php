@@ -89,21 +89,21 @@ $yog = CHtml::listData(YearOfGraduation::model()->findAll($criteria), "id", "yea
                                 <?php echo $form->textFieldRow($model,'name_of_college',array('class'=>'span5','maxlength'=>255)); ?>
                             </div>
                         </div>
-                        <div class="col-md-12">
+                        <div class="col-md-12" id="question_1" style="display:none;">
                             <div class="form_amster_field">
 <!--                                <label>Name of your Student Placement Coordinator / Student Committee Member  <Em>*</Em></label>
                                <textarea></textarea>-->
   <?php echo $form->textAreaRow($model,'question_1',array('rows'=>6, 'cols'=>50, 'class'=>'span8')); ?>
                             </div>
                         </div>
-                        <div class="col-md-12">
+                        <div class="col-md-12" id="question_2" style="display:none;">
                             <div class="form_amster_field">
 <!--                                <label>Email of your Student Placement Coordinator / Student Committee Member  <Em>*</Em></label>
                                 <textarea></textarea>-->
                                       <?php echo $form->textAreaRow($model,'question_2',array('rows'=>6, 'cols'=>50, 'class'=>'span8')); ?>
                             </div>
                         </div>
-                        <div class="col-md-12">
+                        <div class="col-md-12" id="question_3" style="display:none;">
                             <div class="form_amster_field">
 <!--                                <label>Mobile No of your Student Placement Coordinator / Student Committee Member  </label>
                                 <textarea></textarea>-->
