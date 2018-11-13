@@ -231,14 +231,21 @@ $(document).ready(function(){
 //            validationMethod("error","Please select a year of graduation.");
 //            return false;
 //        }
-        if ($("#IndustryReadyCompetition_question_1").val() == ""){
-            validationMethod("error","Please tell us Name of your Student Placement Coordinator / Student Committee Member");
-            return false;
+        if($("#IndustryReadyCompetition_college").val() == 4){
+            if ($("#IndustryReadyCompetition_question_1").val() == ""){
+                validationMethod("error","Please tell us Name of your Student Placement Coordinator / Student Committee Member");
+                return false;
+            }
         }
-        if ($("#IndustryReadyCompetition_question_2").val() == ""){
-            validationMethod("error","Please tell us Email of your Student Placement Coordinator / Student Committee Member");
-            return false;
+        if($("#IndustryReadyCompetition_college").val() == 4){
+            if ($("#IndustryReadyCompetition_question_2").val() == ""){
+                validationMethod("error","Please tell us Email of your Student Placement Coordinator / Student Committee Member");
+                return false;
+            }
         }
+        
+        
+        
 //        if ($("#CampusAmbassador_question_3").val() == ""){
 //            validationMethod("error","Please provide Any additional information you would like");
 //            return false;
@@ -251,8 +258,14 @@ $(document).ready(function(){
         
         if($(this).val() == 4){
             $("#name_of_college").show();
+            $("#question_1").show();
+            $("#question_2").show();
+            $("#question_3").show();
         } else {
             $("#name_of_college").hide();
+            $("#question_1").hide();
+            $("#question_2").hide();
+            $("#question_3").hide();
         }
     });
     $("#InterviewReadyCompetition_college").change(function(){
