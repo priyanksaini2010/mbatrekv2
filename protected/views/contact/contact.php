@@ -143,7 +143,7 @@
                         </div>
                         <div class="google_map_info">
                             <h3>MBAtrek Private Ltd.</h3>
-                            <label>414 (4th Floor), Suncity Business Tower, </label> <label>Golf Course Road, Sector -54, </label> <label>Gurugram &ndash; 122003, INDIA</label> <label>Email: contact@mbatrek.com</label></div>
+                            <label>414 (4th Floor), Suncity Business Tower, </label> <label>Golf Course Road, Sector -54, </label> <label>Gurugram &ndash; 122003, INDIA</label> <label>Email: <a href="mailto:contact@mbatrek.com">contact@mbatrek.com</a></label></div>
                     </div>
                 </div>
             </div>
