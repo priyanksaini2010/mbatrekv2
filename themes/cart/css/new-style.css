@@ -967,7 +967,7 @@ user-select: none;
 .student-top.young_top .icon-text{padding: 14px 25px;}
 .student-top.young_top .icon-holder .icon.icon-holder{    margin: 34px 0 0 0;max-width: 135px;}
 .student-top.young_top .icon.yound_need_help{margin-right:25px;max-width:15%;margin-top:30px;}
-.need_help{width:100%;float:left;}
+.need_help{width:100%;float:left;margin: 50px 0 0 0;}
 .need_help span{font-weight:normal;font-size:15px;}
 .need_help span a{color:blue;}
 
@@ -1559,7 +1559,8 @@ text-align: center;border-radius: 2px;}
 .earn_container ul li span{display: block;color: #348786;font-size: 20px;font-family: 'MyriadPro-Semibold';    padding: 17px 0 0 0;}
 .earn_point .compas_heading{padding: 6px 0 0 0;}
 .earn_container ul li:last-child:after{display: none;}
-.what_do_u_get{width: 100%;float: left;}
+.what_do_u_get{width: 100%;float: left;background:#e7e7e7;padding:20px 0 42px 0;}
+.what_do_u_get.rule_Game{background:none;margin: 40px 0 0 0;padding:0;}
 .what_do_u_get .amaster_repeat{border:none;padding:0;}
 .what_do_u_get .amaster_repeat h3{display: inline-block;font-size: 18px;padding:0 48px 0px 0;      width: 284px;  display: table-cell; vertical-align: middle;}
 .what_do_u_get .amaster_repeat{text-align: left;display: table;margin:20px 0 5px 0;position: relative;min-height:auto;}
@@ -1575,7 +1576,7 @@ text-align: center;border-radius: 2px;}
 .faq_amastor .compas_heading h5{font-size: 18px;color: #8a8a8a;font-family: 'MyriadPro-Semibold';margin:0;padding:15px 0 23px 0;}
 .ambastor_container.regsiter_emastor .earn_point{    margin: 41px 0 0 0;}
 .ambastor_container.regsiter_emastor .earn_point  ul li{width:29%;padding: 0 62px;}
-.ambastor_container.regsiter_emastor .earn_point  ul li:after{    top: 24%;}
+.ambastor_container.regsiter_emastor .earn_point  ul li:after{    top: 30%;}
 .register_Form{width: 100%;float: left; }
 .register_Form .compas_heading{padding: 22px 0 29px 0;}
 .form_amster_field{width:100%;float: left;margin-bottom: 20px;}
@@ -1781,3 +1782,22 @@ vertical-align:middle;cursor:pointer;}
     float: left;
     margin: 60px 0 48px 0;}
 .our_company_page .leader_shipt_div{margin-top:20px;}
+.our_company_page .manager_div{margin-top:0;}
+.our_company_page .how_we_Deliver .manager_div{margin-top:60px;}
+.show_content_alok.active_team >a img.witho_hover{display:none;}
+.show_content_alok.active_team >a img.hover_img{display:block;}
+.show_content_alok.active_team h3{color:#348786;}
+.show_content_abhishek.active_team >a img.witho_hover{display:none;}
+.show_content_abhishek.active_team >a img.hover_img{display:block;}
+.show_content_abhishek.active_team h3{color:#348786;}
+.ayushi_info.active_team >a img.witho_hover{display:none;}
+.ayushi_info.active_team >a img.hover_img{display:block;}
+.ayushi_info.active_team h3{color:#348786;}
+.rahul_info.active_team >a img.witho_hover{display:none;}
+.rahul_info.active_team >a img.hover_img{display:block;}
+.rahul_info.active_team h3{color:#348786;}
+.our_team_block .expand_information ul li >a {min-height:auto;}
+.our_team_block .expand_information ul li >a>img {position:relative;vertical-align:top;}
+.ambastor_container.industry_Ready.interview_ready .earn_container ul li:after{display:none;}
+.ambastor_container.regsiter_emastor.register_interview .earn_container ul li:after{display:none;}
+.ambastor_container.industry_Ready .earn_point .earn_container ul li:after{display:none;}

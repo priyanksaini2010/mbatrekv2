@@ -64,8 +64,9 @@
         </div>
 <?php echo $this->renderPartial("webroot.themes.cart.views.layouts.validations"); ?> 
  <script>
-     
+   /*   
     $(".show_content_alok").hover(
+	
         function () {
         $(".alok_info").addClass("display_information_alok");
         },
@@ -96,7 +97,7 @@
         function () {
         $(".show_rahul_info").removeClass("display_information_alok");
         }
-    );
+    ); */
     </script>
     </body>
 </html> 
