@@ -83,7 +83,7 @@
                 <ul>
                     <li>
                             <input type="radio"  name="Contact[type]" value="1"  id="radio2" class="css-checkbox" checked="checked"/>
-                            <label for="radio2" class="css-label radGroup1">Company Rep</label>                                                    
+                            <label for="radio2" class="css-label radGroup1">Company Official</label>                                                    
                     </li>
                     <li>
                             <input type="radio" name="Contact[type]" value="2"  id="radio3" class="css-checkbox" />

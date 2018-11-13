@@ -20,7 +20,7 @@
                         <div class="col-md-4">
                             <div class="amaster_repeat">
                                 <img src="<?php echo $baseUrl;?>/images/industry_Ready/your_stroy.png"/>
-                                <h3>Rehearse your<span>Story</span> </h3>
+                                <h3>Rehearse your <span>Story</span> </h3>
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -164,7 +164,7 @@
                         <div class="col-md-6  is-animated">
                             <div class="amaster_repeat">
                                 <img src="<?php echo $baseUrl;?>/images/industry_Ready/two.png"/>
-                                <h3><span>MBAtrek will <span>visit your campus</span> to declare the Winners & provide performance feedback  </h3>
+                                <h3>MBAtrek will <span>visit your campus</span> to declare the Winners & provide performance feedback  </h3>
                             </div>
                             <div class="amaster_repeat">
                                 <img src="<?php echo $baseUrl;?>/images/industry_Ready/three.png"/>

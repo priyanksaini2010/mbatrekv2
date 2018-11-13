@@ -168,7 +168,7 @@ if(isset(Yii::app()->user->id)){
                 <?php }?>
 				<div class="need_help">
 					<span>
-						Need Help? Visit the <a href="javascript:void(0);">Help Center</a> or <a href="javascript:void(0)">Contact Us</a>
+						Need Help? Visit the <a href="javascript:void(0);">FAQ</a> or <a href="javascript:void(0)">Contact Us</a>
 					</span>
 				</div>
             </div>

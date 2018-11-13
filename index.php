@@ -297,7 +297,7 @@ function getTemplate($type){
     return $content;
 }
 
-$location = file_get_contents('http://freegeoip.net/json/'.$_SERVER['REMOTE_ADDR']);
+/*$location = file_get_contents('http://freegeoip.net/json/'.$_SERVER['REMOTE_ADDR']);
 $country = "";
 $city = "";
 $region = "";
@@ -311,13 +311,13 @@ if ($location != "") {
     $region = $location->region_name;	
     $lat = $location->latitude;
     $long = $location->longitude;
-} 
+} */
 //getInstaFeeds();
-$line = date('Y-m-d H:i:s') . " | ".$_SERVER['REMOTE_ADDR']." | ".$country." | ".$city." | ".$region." | ".$lat." | ".$long." | ".$_SERVER['HTTP_USER_AGENT'] ." | ".$_SERVER['REQUEST_URI'] ."\n";
+/*$line = date('Y-m-d H:i:s') . " | ".$_SERVER['REMOTE_ADDR']." | ".$country." | ".$city." | ".$region." | ".$lat." | ".$long." | ".$_SERVER['HTTP_USER_AGENT'] ." | ".$_SERVER['REQUEST_URI'] ."\n";
 if (filesize(getcwd().'/visitors.log') > 3000000 ) {
    rename(getcwd().'/visitors.log', getcwd().'/logs/visitors-'.date("Y-m-d")."-".time().'.log'); 
 }
-file_put_contents('logs/visitors.log', $line . PHP_EOL, FILE_APPEND);    
+file_put_contents('logs/visitors.log', $line . PHP_EOL, FILE_APPEND);    */
 // change the following paths if necessary
 $yii=dirname(__FILE__).'/yii/framework/yii.php';
 $config=dirname(__FILE__).'/protected/config/main.php';

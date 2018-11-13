@@ -179,7 +179,7 @@
                         <div class="col-md-6  is-animated">
                             <div class="amaster_repeat">
                                 <img src="<?php echo $baseUrl;?>/images/industry_Ready/two.png"/>
-                                <h3><span>The participants need to register in <span>teams with at least 2 students</span> and maximum up-to 4 students   </h3>
+                                <h3>The participants need to register in <span>teams with at least 2 students</span> and maximum up-to 4 students   </h3>
                             </div>
                             <div class="amaster_repeat">
                                 <img src="<?php echo $baseUrl;?>/images/industry_Ready/three.png"/>

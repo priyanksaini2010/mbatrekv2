@@ -206,3 +206,43 @@ $(function() {
 
 });
 /* ========End task to advisry======= */
+
+/* ========Our Team======= */
+$(document).ready(function(){
+	$('.show_content_alok').click(function(e){
+		$(this).toggleClass('active_team');
+		$('.alok_info').toggleClass('display_information_alok');
+		$('.abhishek_info').removeClass('display_information_alok');
+		$('.show_content_abhishek').removeClass('active_team');
+		e.stopPropagation();
+		$(document).on("click", function(e) {
+			if ($(e.target).is(".expand_information") === false) {
+			  $(".expand_information").removeClass("display_information_alok");
+			}
+		});
+	});
+	
+	$('.show_content_abhishek').click(function(e){
+		$(this).toggleClass('active_team');
+		$('.abhishek_info').toggleClass('display_information_alok');
+		$('.alok_info').removeClass('display_information_alok');
+		$('.show_content_alok').removeClass('active_team');
+		e.stopPropagation();
+	});
+	$('.ayushi_info').click(function(e){
+		$(this).toggleClass('active_team');
+		$('.show_ayushi_info').toggleClass('display_information_alok');
+		$('.show_rahul_info').removeClass('display_information_alok');
+		$('.rahul_info').removeClass('active_team');
+		e.stopPropagation();
+	});
+	$('.rahul_info').click(function(e){
+		$(this).toggleClass('active_team');
+		$('.show_rahul_info').toggleClass('display_information_alok');
+		$('.show_ayushi_info').removeClass('display_information_alok');
+		$('.ayushi_info').removeClass('active_team');
+		e.stopPropagation();
+	}); 
+});
+
+/* ========End Our Team======= */

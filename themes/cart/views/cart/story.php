@@ -13,7 +13,7 @@ switch ($type){
         $text_bottom = "Want to get these awesome career impacting packages ";
         $left = "#YouBeTheExecutive";
         $left_second = "Internship Series…";
-        $right = "#Compus2Corporate";
+        $right = "#Campus2Corporate";
         $right_Second = "Placement Series…";
         $class = "";
     break;

@@ -83,7 +83,7 @@
                 </section>
                 <section class="bulid_your_next">
                     <div class="container">
-                        <div class="arrow-icon"><a class="scroll_to" href="#followed_by"><img src="images/blue-arrow-down.jpg" alt=""></a></div> 
+                        <div class="arrow-icon"><a class="scroll_to" href="#bulid_next"><img src="images/blue-arrow-down.jpg" alt=""></a></div> 
                         <div class="student-top">
                             <div class="container">
                             <div class="student-internship col-xs-12 col-md-6 col-lg-6">
@@ -93,11 +93,11 @@
                             <div class="icon-holder"><a id="tab2" href="javascript:void(0);"> <span class="icon"> <img src="images/company/customize_solution.png" alt=""> <span class="icon-title">Final Placements</span> </span> <span class="icon-text"> Need help preparing for final placements? <span style="text-decoration: underline;display: block;">Click Here</span> </span> </a></div>
                             </div>
                             </div>
-                            <div class="arrow-icon"><a class="scroll_to" href="#followed_by"><img src="images/blue-arrow-down.jpg" alt=""></a></div> 
+                            <div class="arrow-icon"><a class="scroll_to" href="#key_Area"><img src="images/blue-arrow-down.jpg" alt=""></a></div> 
                         </div>
                     </div>
                 </section>
-                <section class="manager_div">
+                <section class="manager_div" id="bulid_next">
                     <div class="container">
                         <div class="manger_heading">
                             <h2>#CAREERtrek</h2>
@@ -146,7 +146,7 @@
                             </div>
                         </section>
                 </section>
-               <section class="key_Area_cover">
+               <section class="key_Area_cover" id="key_Area">
                     <div class="manager_div">
                         <div class="container">
                             <div class="manger_heading">
