@@ -46,11 +46,19 @@ if(isset(Yii::app()->user->id)){
                                     ?>
                                     <ul>
                                     <li class="cart_icon">
+                                        <a href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>$icart->product->id));?>">
                                         <img height="44" width="41" src="<?php echo $baseUrl;?>/assets/products/<?php echo $icart->product->logo;?>"/>
-                                        <span><?php echo $icart->product->title;?></span>
+                                        </a>
+                                        <span>
+                                            <a href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>$icart->product->id));?>">
+                                                <?php echo $icart->product->title;?>
+                                            </a>
+                                        </span>
                                     </li>
                                     <li class="cart_label">
+                                        <a href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>$icart->product->id));?>">
                                         <h4><?php echo $icart->product->description1;?></h4>
+                                        </a>
                                         <a href="<?php echo Yii::app()->createUrl("cart/remove",array("id"=>$icart->product->id));?>">Remove</a>
                                     </li>
                                     <li class="cart_money">
