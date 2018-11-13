@@ -39,10 +39,10 @@ class InterviewReadyCompetition extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('first_name, last_name, mobile_number, email_id, mba_batch, college, question_1, question_2, registeration_date', 'required'),
+			array('first_name, last_name, mobile_number, email_id, mba_batch, college, registeration_date', 'required'),
 			array('mba_batch, college', 'numerical', 'integerOnly'=>true),
 			array('first_name, last_name, mobile_number, email_id, name_of_college', 'length', 'max'=>255),
-			array('question_3', 'safe'),
+			array('question_1, question_2,question_3', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, first_name, last_name, mobile_number, email_id, mba_batch, college, name_of_college, question_1, question_2, question_3, registeration_date', 'safe', 'on'=>'search'),
@@ -76,8 +76,8 @@ class InterviewReadyCompetition extends CActiveRecord
 			'mba_batch' => 'Mba Batch',
 			'college' => 'College',
 			'name_of_college' => 'Name Of College',
-			'question_1' => 'Name of your Student Placement Coordinator / Student Committee Member',
-			'question_2' => 'Email of your Student Placement Coordinator / Student Committee Member',
+			'question_1' => 'Name of your Student Placement Coordinator / Student Committee Member <span class="required">*</span>',
+			'question_2' => 'Email of your Student Placement Coordinator / Student Committee Member <span class="required">*</span>',
 			'question_3' => 'Mobile No of your Student Placement Coordinator / Student Committee Member',
 			'registeration_date' => 'Registeration Date',
 		);
