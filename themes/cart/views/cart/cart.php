@@ -47,7 +47,7 @@ if(isset(Yii::app()->user->id)){
                                     <ul>
                                     <li class="cart_icon">
                                         <a href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>$icart->product->id));?>">
-                                        <img height="44" width="41" src="<?php echo $baseUrl;?>/assets/products/<?php echo $icart->product->logo;?>"/>
+                                        <img height="44" width="41" src="<?php echo $baseUrl;?>/assets/products/<?php echo $icart->product->home_page_icon;?>"/>
                                         </a>
                                         <span>
                                             <a href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>$icart->product->id));?>">
