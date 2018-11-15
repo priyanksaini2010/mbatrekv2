@@ -64,7 +64,7 @@ if(!empty($leftContent) || !empty($rightContent) || !empty($rightContent_2)) {
                         </div>
                         <div class="col-md-7">
                             <div class="sucess_info">
-                                <label><?php echo $content->course;?> <?php echo $content->college_or_company;?></label>
+                                <label><?php echo $content->college_or_company;?>&nbsp;<?php echo $content->course;?> </label>
                                 <Span><?php echo $content->author;?></Span>
                             </div>
                         </div>
@@ -89,7 +89,7 @@ if(!empty($leftContent) || !empty($rightContent) || !empty($rightContent_2)) {
                         </div>
                         <div class="col-md-7">
                             <div class="sucess_info">
-                                <label><?php echo $content->course;?> <?php echo $content->college_or_company;?></label>
+                                <label><?php echo $content->college_or_company;?>&nbsp;<?php echo $content->course;?> </label>
                                 <Span><?php echo $content->author;?></Span>
                             </div>
                         </div>
