@@ -529,7 +529,7 @@ class CartController extends Controller {
             $model = new UsersNew;
             if(isset($_POST['UsersNew']))
             {
-                $_POST['UsersNew']['role'] = 1;
+//                $_POST['UsersNew']['role'] = 1;
                 $_POST['UsersNew']['password'] = $_POST['UsersNew']['password'];
                 $_POST['UsersNew']['is_verified'] = 0;
                 $_POST['UsersNew']['date_created'] = date('Y-m-d h:i:s');
