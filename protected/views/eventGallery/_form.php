@@ -54,8 +54,16 @@ $this->widget('KRichTextEditor', array(
 		<?php $this->widget('bootstrap.widgets.TbButton', array(
 			'buttonType'=>'submit',
 			'type'=>'primary',
+                    "id"=>"submit-btn",
 			'label'=>$model->isNewRecord ? 'Create' : 'Save',
 		)); ?>
 	</div>
-
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".btn-primary").click(function(){
+            $(this).attr("type","button");
+            $("#event-gallery-form").submit();
+        })
+    });
+</script>
 <?php $this->endWidget(); ?>
