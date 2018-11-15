@@ -24,8 +24,8 @@
                         <label for="checkboxG1" class="css-label">
                             Are You?
                         </label>
-                        <input type="radio" name="UsersNew[role]" value="1" id="checkboxG1_radio" class="css-checkbox" />College Student 
-                        <input type="radio" name="UsersNew[role]" value="2" id="checkboxG1_radio" class="css-checkbox" />Young Professional
+                        <input type="radio" name="UsersNew[role]" value="1" id="checkboxG1_radio1" class="css-checkbox" />College Student 
+                        <input type="radio" name="UsersNew[role]" value="2" id="checkboxG1_radio2" class="css-checkbox" />Young Professional
                         <span class="clearfix"></span>	
                     </div>
                     <div class="login-footer">
