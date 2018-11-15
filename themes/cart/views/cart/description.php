@@ -293,7 +293,7 @@ $product = Products::model()->findByPk($id);
             <ul>
                  <?php foreach ($product->productKeyOutcomes as $outcomes){?>
                 <li>
-                    <img src="<?php echo Yii::app()->baseUrl;?>/assets/products/<?php echo $outcomes->icon;?>"/>
+                    <img height="100" width="100" src="<?php echo Yii::app()->baseUrl;?>/assets/products/<?php echo $outcomes->icon;?>"/>
                     <span><?php echo $outcomes->description;?></span>
                 </li>
                  <?php }?>
