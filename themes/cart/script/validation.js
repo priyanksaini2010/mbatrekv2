@@ -14,6 +14,21 @@ function phonenumber(mobNum)
         return false;
     }
 }
+function passwords(pass)
+{
+    var filter = /^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]+$/;
+
+    if (filter.test(pass)) {
+        if (pass.length >= 8) {
+            return true
+        } else {
+            return false;
+        }
+    }
+    else {
+        return false;
+    }
+}
 
 
 function validationMethod(id,text){
@@ -64,6 +79,7 @@ $(document).ready(function(){
             }
         });
     $("#register-form").submit(function(){
+        
         if ($("#UsersNew_full_name").val() == ""){
             validationMethod("UsersNew_full_name","Please enter full name");
             return false;
@@ -74,18 +90,21 @@ $(document).ready(function(){
         if ($("#UsersNew_password").val() == ""){
             validationMethod("error","Please enter password.");return false;
         }
-        if ($("#UsersNew_password").val().length < 6){
-            validationMethod("error","Please password of atleast 7 characters.");return false;
+        if ($("#UsersNew_password").val().length < 8){
+            validationMethod("error","Password length should be  atleast 8 characters.");return false;
+        }
+        if (!passwords($("#UsersNew_password").val())){
+            validationMethod("error","Password length should be alphanumeric.");
+            return false;
         }
         if ($("#UsersNew_cpassword").val() == ""){
-            validationMethod("error","Please confirm password!");return false;
+            validationMethod("error","Please confirm password.");return false;
         }
        
-        
         if ($("#UsersNew_cpassword").val() != $("#UsersNew_password").val()){
             validationMethod("error","Confirm password and Password must be same.");return false;
         }
-        return true;
+        return false ;
     });
     $("#campus-ambassador-form").submit(function(){
         if ($("#CampusAmbassador_first_name").val() == ""){
