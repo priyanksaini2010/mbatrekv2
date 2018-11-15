@@ -18,7 +18,7 @@
             <h3>Helping you make the most of your career</h3>
             <div class="blog_details">
                 <div class="blog_heading">
-                    <h2>Tips on GD</h2>
+                    <h2><?php echo $model->title; ?></h2>
                     <ul class="list-inline list-unstyled">
                         <li><span class="posted_by">By: <?php echo ucfirst($model->author);?></span></li>
                         <li><span class="posted_on">On:  <?php echo date("d M, Y",  strtotime($model->date_created));?></span></li>
