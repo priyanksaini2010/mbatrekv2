@@ -21,7 +21,7 @@
 	 validationMethod("thanks","Thank You for reaching out to us! We will get back to you soon.")
     <?php }?>
     <?php if(isset($_REQUEST['thankscampus'])){?>
-	 validationMethod("thanks","<span>Thanks for showing interest in  joining revolution to up-skill your peers.</span>\n\ <br /> <span>If our team is amazed by your idea we will get back to you with next step.</span><br /><span> Stay tuned.</span>")
+	 specialValidationMethod("thanks","no-message-from-here")
     <?php }?>
         <?php if(isset($_REQUEST['thanksverify'])){?>
 	 validationMethod("thanks","Thanks for registering with us. You account has been verified now.")
