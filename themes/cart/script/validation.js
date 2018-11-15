@@ -52,6 +52,11 @@ $(document).ready(function(){
      });
  });
 $(document).ready(function(){
+     $("#share").jsSocials({
+    showLabel: false,
+    showCount: false,
+    shares: ["email", "twitter", "facebook", "googleplus", "linkedin"]
+})
     //Registeration Form Validation
     $(".cart-remove").click(function(){
             if(confirm("Are you sure you wantsdds to remove this product from your cart?")){
