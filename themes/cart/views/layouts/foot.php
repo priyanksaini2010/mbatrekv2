@@ -9,7 +9,7 @@
 		<script src="<?php echo $baseUrl; ?>/js/custome_new.js"></script>
 		<script src="<?php echo $baseUrl; ?>/js/responsiveslides.min.js"></script>
 		<script src="<?php echo $baseUrl; ?>/js/jquery.waypoints.min.js"></script>
-		
+                <script src="<?php echo $baseUrl;?>/js/jssocials.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 <script>
 		
