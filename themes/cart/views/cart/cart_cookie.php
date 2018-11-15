@@ -118,9 +118,9 @@ foreach ($products as $c){
                             <div class="recomended_title">
                                  <a style="cursor: pointer !important;" href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>$saver->recommendedProduct->id));?>">
                                 <label>
-                                    <?php echo $saver->recommendedProduct->title?>
+                                    <?php echo $saver->recommendedProduct->title;?>
                                     <span>
-                                        (<?php echo $saver->short_description?>)
+                                        (<?php echo $saver->short_description;?>)
                                     </span>
                                 </label>
                                  </a>
