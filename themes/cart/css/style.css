@@ -499,21 +499,23 @@ footer .footer-logo{
 }
 .student-placement:hover .icon-text{background: rgb(34,152,151);;color: #fff;}
 .icon-title{
-    font-size: 22px;
+    font-size: 21px;
     line-height: 1.2;
     margin-top: 10px;
     display: inline-block;
-    font-weight: bold;
+   
+	font-family: 'MyriadPro-Semibold';
 }
 .icon-text{
     border: 5px solid;
     border-radius: 45px;
-    font-size: 23px;
+    font-size: 22px;
     line-height: 1.5;
     margin-top: 10px;
     display: inline-block;
-    font-weight: bold;
+    
     padding: 38px 25px;
+	font-family: 'MyriadPro-Semibold';
 }
 .student-internship a{
     color: rgb(115,148,47);
@@ -534,6 +536,7 @@ footer .footer-logo{
     color: #fff;
     font-weight: bold;
     text-align: center;
+	font-family: 'MyriadPro-Semibold';
 }
 .student-journey{
     margin-top: 50px;
@@ -756,7 +759,8 @@ footer .footer-logo{
     vertical-align: top;
 }
 .student-cta1 ul.student-cta1-listing > li .intern-type .top-icon a img{
-    z-index: 10;
+    z-index: 10;height: 67px;
+    width: 100%;
     position: relative;
 }
 .student-cta1 ul.student-cta1-listing > li .intern-type .top-icon a:after{
@@ -784,6 +788,7 @@ footer .footer-logo{
     color: #000;
     font-weight: bold;
     /* max-width: 175px; */
+	    font-weight: normal;
     margin: 5px auto 10px auto;
 }
 .student-cta1 .intern-read-more{
@@ -796,11 +801,12 @@ footer .footer-logo{
     font-style: italic;    
     text-align: center;
     text-decoration: underline!important;
-    text-transform: capitalize;
+    text-transform: capitalize;font-weight:normal;
 }
 .student-cta1 .intern-read-more a:hover
 {
     color: #348786;
+	font-family: 'MyriadPro-Semibold';
 }
 .student-cta1 .intern-read-more a:hover{
     text-decoration: none;
@@ -808,7 +814,7 @@ footer .footer-logo{
 .student-cta1 .intern-price{
     color: rgb(115,148,47);
     font-size: 20px;
-    font-weight: bold;
+    font-family: 'MyriadPro-Semibold';
 }
 .student-cta1 .intern-link{
     margin-top: 20px;
@@ -817,6 +823,7 @@ footer .footer-logo{
     font-size: 17px;
     font-weight: bold;
     display: inline-block;
+	font-weight:normal;
     color: #fff;
     background: rgb(115,148,47);
     padding: 10px 10px;
@@ -878,13 +885,13 @@ footer .footer-logo{
     font-size: 30px;
     color: #fff;
     line-height: 1.2;
-    font-weight: bold;
+    font-family: 'MyriadPro-Semibold';
 }
 .student-cta1-bottom-inner .student-cta1-bottom-sub-title{
     font-size: 25px;
     color: #fff;
     line-height: 1.2;
-    font-weight: bold;
+    font-family: 'MyriadPro-Semibold';
     margin:0;
     padding: 6px 0 0px 0;
 }
@@ -939,6 +946,7 @@ footer .footer-logo{
     color: rgb(166,166,166);
     font-weight: bold;
     text-align: center;
+	font-family: 'MyriadPro-Semibold';
 }
 .right-choice-inner1 .right-choice-inner-title .text-color{
     font-style: italic;
@@ -1020,7 +1028,7 @@ footer .footer-logo{
 .student-cta2 .intern-body{
     font-size: 17px;
     color: #000;
-    font-weight: bold;
+    font-family: 'MyriadPro-Semibold';
     max-width: 193px;
     margin: 10px auto;
 }
@@ -1038,15 +1046,16 @@ footer .footer-logo{
 }
 .student-cta2 .intern-price{
     font-size: 20px;
-    font-weight: bold;
+    font-family: 'MyriadPro-Semibold';
     color: rgb(34,152,151);
 }
 .student-cta2 .intern-link{
     margin-top: 20px;
 }
 .student-cta2 .intern-link a{
+	font-weight:normal;
     font-size: 17px;
-    font-weight: bold;
+   font-family: 'MyriadPro-Semibold';
     display: inline-block;
     color: #fff;
     background: rgb(34,152,151);

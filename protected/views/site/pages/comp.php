@@ -93,14 +93,14 @@
                             <div class="icon-holder"><a id="tab2" href="javascript:void(0);"> <span class="icon"> <img src="images/company/customize_solution.png" alt=""> <span class="icon-title">Final Placements</span> </span> <span class="icon-text"> Need help preparing for final placements? <span style="text-decoration: underline;display: block;">Click Here</span> </span> </a></div>
                             </div>
                             </div>
-                            <div class="arrow-icon"><a class="scroll_to" href="#key_Area"><img src="images/blue-arrow-down.jpg" alt=""></a></div> 
+                           <!-- <div class="arrow-icon"><a class="scroll_to" href="#key_Area"><img src="images/blue-arrow-down.jpg" alt=""></a></div> -->
                         </div>
                     </div>
                 </section>
                 <section class="manager_div" id="bulid_next">
                     <div class="container">
                         <div class="manger_heading">
-                            <h2>#CAREERtrek</h2>
+                            <h2 class="career_title">#CAREERtrek</h2>
                             <h3>Build Your Next Set of Empowered Managers </h3>
                         </div>
                         <div class="manger_categories">

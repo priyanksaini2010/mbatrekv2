@@ -741,6 +741,8 @@ user-select: none;
 .mbatek_strory p {font-size:16px;}
 .mbatek_strory p.relevent_upper_text {margin: 40px 0 0 0;}
 .mbatek_strory ul li{text-align: center;display: inline-block;list-style: none;padding: 0 30px;}
+.mbatek_strory ul.category_blok_div li{padding:0 21px;width:28%;vertical-align:top;}
+.manger_heading h2.career_title {margin-top:15px;}
 .mbatek_strory ul li span{display: block;font-size: 20px;color: #229897;    padding: 9px 0 0 0;font-family: 'MyriadPro-Semibold';}
 .mbatek_strory ul{text-align: center;    margin: 50px 0 0 0;}
 .stry_text{width: 100%;float: left;
@@ -1801,3 +1803,4 @@ vertical-align:middle;cursor:pointer;}
 .ambastor_container.industry_Ready.interview_ready .earn_container ul li:after{display:none;}
 .ambastor_container.regsiter_emastor.register_interview .earn_container ul li:after{display:none;}
 .ambastor_container.industry_Ready .earn_point .earn_container ul li:after{display:none;}
+.studen-wrapper .student-placement-title{background:#348786;}
