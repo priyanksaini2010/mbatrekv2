@@ -211,7 +211,7 @@ $(document).ready(function(){
             validationMethod("error","Please enter last name.");
             return false;
         }
-        if ($("#IndustryReadyCompetition_mobile_number").val() == "" || !phonenumber($("#InterviewReadyCompetition_mobile_number").val())){
+        if ($("#IndustryReadyCompetition_mobile_number").val() == "" || !phonenumber($("#IndustryReadyCompetition_mobile_number").val())){
             validationMethod("error","Please enter valid mobile number.");
             return false;
         }
