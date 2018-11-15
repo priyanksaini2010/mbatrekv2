@@ -128,12 +128,12 @@
 											<li><a href="#">#Campus2Corporate</a></li>
 										</ul>-->
 									</li>
-										<li><a href="<?php echo Yii::app()->createUrl('cart/story', array("type"=>"1")); ?>">Placement Coordinator </a>
-										<!--<ul >
+<!--										<li><a href="<?php // echo Yii::app()->createUrl('cart/story', array("type"=>"1")); ?>">Placement Coordinator </a>
+										<ul >
 											<li><a href="#">#YouBeTheExecutive </a></li>
 											<li><a href="#">#Campus2Corporate</a></li>
-										</ul>-->
-									</li>
+										</ul>
+									</li>-->
 									<li><a href="<?php echo Yii::app()->createUrl('cart/story', array("type"=>"3")); ?>">Young Professionals </a>
 										
 										<!--<ul >
