@@ -54,6 +54,7 @@ $this->widget('bootstrap.widgets.TbGridView',array(
 	'id'=>'event-gallery-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
+        'enablePagination' => false,
      'rowCssClassExpression'=>'"items[]_{$data->id}"',
 	'columns'=>array(
 		'id',
