@@ -139,7 +139,9 @@ if(isset(Yii::app()->user->id)){
                                 <label class="applicd_code">Applied Promo Code:</label>
                                 <label for="lastname"><?php echo $coupon->email_used;?></label>
                                 <br />
-                                <a class="remove-coupon" href="<?php echo Yii::app()->createUrl("remove-coupon");?>">Remove Promo Code</a>
+                                <a style="background: none;color:#777;font-size:16px;"class="remove-coupon" href="<?php echo Yii::app()->createUrl("remove-coupon");?>">
+                                    <i>Remove Promo Code</i>
+                                </a>
                             </div>
                             </div>    
                             <?php }?>
