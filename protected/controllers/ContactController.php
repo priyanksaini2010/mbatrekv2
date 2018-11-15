@@ -66,7 +66,7 @@ class ContactController extends Controller
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
+              
 		if(isset($_POST['Contact']))
 		{
 			
@@ -105,6 +105,8 @@ class ContactController extends Controller
                                             "Content-Type: text/html; charset=UTF-8";
                                 $sentToUser = sendEmail($_POST['Contact']['email'], $subject,$body,$headers);
                                 $this->redirect(Yii::app()->createUrl('contact/create',array('thankc'=>1)));
+                        } else {
+                            pr($model->getErrors());
                         }
 		}
 
