@@ -37,7 +37,14 @@ $typ = $_GET['type'];
                             <div class="blog_img">
                                 <?php echo $blog->youtube_video_link;?>
                             </div>
-                            
+                            <div class="share_post">
+                                <ul class="list-inline list-unstyled">
+                                    <!--<li><a class="comment_post" href="javascript:void(0);">0Comments</a></li>-->
+                                    <li><a href="javascript:void(0);" class="share_post_b jssocials" id="share"> 
+                                        <div class="jssocials-shares">&nbsp;</div>
+                                        </a> </li>
+                                </ul>
+                           </div>
                         </div>
                     </div>
                     </div>
