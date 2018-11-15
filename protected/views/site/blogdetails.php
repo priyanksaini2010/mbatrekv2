@@ -27,14 +27,14 @@
                 <div class="blog_header"><img class="img-responsive" src="<?php echo Yii::app()->baseUrl;?>/assets/blogs/<?php echo $model->banner_image;;?>" alt="" /></div>
                 <div class="row">
                     <div class="col-md-9 col-sm-9 col-xs-12">
-                       <!-- <div class="share_post">
+                       <div class="share_post">
                             <ul class="list-inline list-unstyled">
-                                <li><a class="comment_post" href="javascript:void(0);">0Comments</a></li>
+                                <!--<li><a class="comment_post" href="javascript:void(0);">0Comments</a></li>-->
                                 <li><a href="javascript:void(0);" class="share_post_b jssocials" id="share"> 
                                     <div class="jssocials-shares">&nbsp;</div>
                                     </a> </li>
                             </ul>
-                        </div>-->
+                       </div>
                         <div class="post_information">
                         <?php echo $model->content; ?>
                     </div> 
