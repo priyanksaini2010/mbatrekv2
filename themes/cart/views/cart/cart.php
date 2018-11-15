@@ -152,8 +152,9 @@ if(isset(Yii::app()->user->id)){
                     <ul>
                         <?php 
 //                        $cart = Cart::model()->findAllByAttributes(array("user_id" => Yii::app()->user->id, "status" => 1));
+                         $array = array();
                         foreach($cart as $c){
-                            $array = array();
+                           
                         foreach($c->product->productRecommendedValueSaverPacks as $saver){
                         if(!in_array($saver->recommendedProduct->id,$array)){
                             $array[] = $saver->recommendedProduct->id;
