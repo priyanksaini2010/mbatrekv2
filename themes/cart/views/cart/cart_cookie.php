@@ -35,7 +35,7 @@ foreach ($products as $c){
 <ul class="list-inline">
                                     <li class="cart_icon">
                                         <a href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>$icart->product->id));?>">
-                                        <img height="44" width="41" src="<?php echo $baseUrl;?>/assets/products/<?php echo $icart->logo;?>"/>
+                                        <img height="44" width="41" src="<?php echo $baseUrl;?>/assets/products/<?php echo $icart->home_page_icon;?>"/>
                                         <span><?php echo $icart->title;?></span>
                                         </a>
                                     </li>
@@ -116,12 +116,14 @@ foreach ($products as $c){
 ?>
                         <li>
                             <div class="recomended_title">
+                                 <a style="cursor: pointer !important;" href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>$saver->recommendedProduct->id));?>">
                                 <label>
                                     <?php echo $saver->recommendedProduct->title?>
                                     <span>
                                         (<?php echo $saver->short_description?>)
                                     </span>
                                 </label>
+                                 </a>
                                 <img src="<?php echo $baseUrl;?>/assets/products/<?php echo $saver->icon;?>"/>
                             </div>
                             <div class="recomended_price">
