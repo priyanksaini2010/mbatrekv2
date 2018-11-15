@@ -62,6 +62,37 @@
                 </div>
             </div>
         </div>
+         <div id="myModal28" class="modal" data-easein="shake" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!--<div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h4 class="modal-title">Modal header</h4>
+                    </div>-->
+                    <div class="modal-body">
+                        <div class="md-content">
+                            <h3 id="pop-notification-type-2">Thanks</h3>
+                            <div class="error_wrap">
+                                <div class="error_container">
+                                    <p><i class="fa fa-check" id="pop-notification-class" aria-hidden"true"=""></i>
+                                        <span id="pop-notification-text">
+                                            <span>Thanks for showing interest in  joining revolution to up-skill your peers.</span>
+                                            <br /> <br />
+                                            <span>If our team is amazed by your idea we will get back to you with next step.</span>
+                                            <br /><br />
+                                            <span> Stay tuned.</span>
+                                            
+                                        </span></p>
+                                </div>
+                                <!-- <button class="md-close">OK</button> -->
+                                <div class="main_register"><div class="site_btn"><a data-dismiss="modal" class="close" href="javascript:void(0);">OK</a></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
 <?php echo $this->renderPartial("webroot.themes.cart.views.layouts.validations"); ?> 
  <script>
    /*   
