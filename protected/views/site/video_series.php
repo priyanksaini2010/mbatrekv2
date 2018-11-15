@@ -31,8 +31,8 @@ $typ = $_GET['type'];
                     <div class="col-md-7 col-sm-7 col-xs-7">
                         <div class="blog_block">
                             <div class="block_Titke">
-                                <h1>Heading -1 </h1>
-                                <h2>Description</h2>
+                                <h1>  <?php echo $blog->title;?></h1>
+                                <h2>  <?php echo $blog->content;?></h2>
                             </div>
                             <div class="blog_img">
                                 <?php echo $blog->youtube_video_link;?>
