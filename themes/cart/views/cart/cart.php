@@ -163,12 +163,14 @@ if(isset(Yii::app()->user->id)){
 ?>
                         <li>
                             <div class="recomended_title">
+                                 <a style="cursor: pointer !important;" href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>$saver->recommendedProduct->id));?>">
                                 <label>
-                                    <?php echo $saver->recommendedProduct->title?>
+                                    <?php echo $saver->recommendedProduct->title;?>
                                     <span>
-                                        (<?php echo $saver->short_description?>)
+                                        (<?php echo $saver->short_description;?>)
                                     </span>
                                 </label>
+                                 </a>
                                 <img src="<?php echo $baseUrl;?>/assets/products/<?php echo $saver->icon;?>"/>
                             </div>
                             <div class="recomended_price">
