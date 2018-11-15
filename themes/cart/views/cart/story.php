@@ -16,6 +16,7 @@ switch ($type){
         $right = "#Campus2Corporate";
         $right_Second = "Placement Series…";
         $class = "";
+          $right_2 = "How to Leverage 2 Year MBA Program";
     break;
     case 3:
         $text = "Young Proffesionals";
@@ -23,13 +24,15 @@ switch ($type){
         $left = "";
         $right = "";
         $class = "profession_success";
+      
     break;
 }
 
 $this->setPageTitle( $text." Success Story");
 $leftContent = SuccessStory::model()->findAllByAttributes(array("type"=>$type,"sub_type"=>1));
 $rightContent = SuccessStory::model()->findAllByAttributes(array("type"=>$type,"sub_type"=>2));
-if(!empty($leftContent) || !empty($rightContent)) {
+$rightContent_2 = SuccessStory::model()->findAllByAttributes(array("type"=>$type,"sub_type"=>3));
+if(!empty($leftContent) || !empty($rightContent) || !empty($rightContent_2)) {
 ?>
 <div class="bread_crum">
     <ul class="list-inline list-unstyled">
@@ -77,6 +80,31 @@ if(!empty($leftContent) || !empty($rightContent)) {
                     <h2><?php echo $right_Second;?></h2>
                 </div>
                 <?php foreach($rightContent as $content){?>
+                <div class="sucess_Repeat">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="video_container">
+                                <iframe width="560" height="315" src="<?php echo $content->video_url;?>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="sucess_info">
+                                <label><?php echo $content->course;?> <?php echo $content->college_or_company;?></label>
+                                <Span><?php echo $content->author;?></Span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php }?>
+            </div>
+            <div class="col-md-6">
+                <div class="sucess_heading">
+                    <?php if($right_2 != ""){?>
+                    <h3><?php echo $right_2;?></h3>
+                    <?php }?>
+                    <h2><?php echo $right_Second_2;?></h2>
+                </div>
+                <?php foreach($rightContent_2 as $content){?>
                 <div class="sucess_Repeat">
                     <div class="row">
                         <div class="col-md-5">
