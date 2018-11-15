@@ -13,7 +13,7 @@
 
 	<?php
         
-        $ar = array(1=>"Left Part",2=>"Right Part");
+        $ar = array(1=>"Left Part",2=>"Right Part",3=>"Last Right Part");
          echo $form->dropDownList($model, 'sub_type', $ar, array('class' => 'span3')); ?>
 
 	<?php echo $form->textFieldRow($model,'college_or_company',array('class'=>'span5','maxlength'=>255)); ?>
