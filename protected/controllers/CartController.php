@@ -441,6 +441,7 @@ class CartController extends Controller {
          public function actionRemoveCart($p){
             $this->layout = getCartLayot();
             $id = $p;
+            
             if (isset(Yii::app()->user->id)) {
                 $model = Cart::model()->findByAttributes(array(
                     "user_id" =>Yii::app()->user->id,
