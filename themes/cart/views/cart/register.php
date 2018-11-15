@@ -21,6 +21,11 @@
                         <?php if($model->password != ''){ $data =  array('for' => "firstname",'class' => 'active');}else{$data =  array('for' => "firstname");};?>
                         <?php echo $form->passwordField($model, 'password', array('class' => "form-control","placeholder"=>"Password")); ?>
                         <input type="password" class="form-control" placeholder="Confirm Password" id="UsersNew_cpassword"> 
+                        <label for="checkboxG1" class="css-label">
+                            Are You?
+                        </label>
+                        <input type="radio" name="UsersNew[role]" value="1" id="checkboxG1_radio" class="css-checkbox" />College Student 
+                        <input type="radio" name="UsersNew[role]" value="2" id="checkboxG1_radio" class="css-checkbox" />Young Professional
                         <span class="clearfix"></span>	
                     </div>
                     <div class="login-footer">
