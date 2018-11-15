@@ -38,7 +38,7 @@
         <?php echo $this->renderPartial("webroot.themes.cart.views.layouts.footer"); ?>
         </div>
 <script type="text/javascript">
-var domain_name = '<?php echo $_SERVER['HTTP_HOST']."/v2/";?>';
+var domain_name = '<?php echo $_SERVER['HTTP_HOST'].DIREC;?>';
 </script>
 <?php echo $this->renderPartial("webroot.themes.cart.views.layouts.foot"); ?>
 
