@@ -349,7 +349,7 @@ $("#contact-form").submit(function() {
                 validationMethod("Contact_email","Please enter valid email.");
                 return false;
             }   
-            if ($("#Contact_mobile_no").val() == "") {
+            if ($("#Contact_mobile_no").val() == "" || !phonenumber($("#Contact_mobile_no").val())) {
                 $("#Contact_mobile_no").focus()
                 validationMethod("error","Please enter valid mobile number.");
                 return false;
