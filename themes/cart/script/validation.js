@@ -109,7 +109,7 @@ $(document).ready(function(){
         if ($("#UsersNew_cpassword").val() != $("#UsersNew_password").val()){
             validationMethod("error","Confirm password and Password must be same.");return false;
         }
-        return false ;
+        return true ;
     });
     $("#campus-ambassador-form").submit(function(){
         if ($("#CampusAmbassador_first_name").val() == ""){
