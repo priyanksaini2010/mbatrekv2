@@ -37,6 +37,9 @@
             </main>
         <?php echo $this->renderPartial("webroot.themes.cart.views.layouts.footer"); ?>
         </div>
+<script type="text/javascript">
+var domain_name = '<?php echo $_SERVER['HTTP_HOST']."/v2/";?>';
+</script>
 <?php echo $this->renderPartial("webroot.themes.cart.views.layouts.foot"); ?>
 
         <div id="myModal27" class="modal" data-easein="shake" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
