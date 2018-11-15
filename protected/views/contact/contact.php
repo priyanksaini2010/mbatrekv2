@@ -77,19 +77,19 @@
                             <div class="are_yu"><label>Are You?</label>
                                 <ul>
                                     <li>
-                                        <input type="radio"  name="Contact[type]" value="1"  id="radio2" class="css-checkbox" checked="checked"/>
+                                        <input type="radio"  name="Contact[are_you]" value="1"  id="radio2" class="css-checkbox" checked="checked"/>
                                         <label for="radio2" class="css-label radGroup1">Company Official</label>                                                    
                                     </li>
                                     <li>
-                                        <input type="radio" name="Contact[type]" value="2"  id="radio3" class="css-checkbox" />
+                                        <input type="radio" name="Contact[are_you]" value="2"  id="radio3" class="css-checkbox" />
                                         <label for="radio3" class="css-label radGroup1">Institute Rep</label>
                                     </li>
                                     <li>
-                                        <input type="radio"  name="Contact[type]" value="3"  id="radio31" class="css-checkbox" />
+                                        <input type="radio"  name="Contact[are_you]" value="3"  id="radio31" class="css-checkbox" />
                                         <label for="radio31" class="css-label radGroup1">College Student</label>
                                     </li>
                                     <li>
-                                        <input type="radio"  name="Contact[type]" value="4"  id="radio32" class="css-checkbox" />
+                                        <input type="radio"  name="Contact[are_you]" value="4"  id="radio32" class="css-checkbox" />
                                         <label for="radio32" class="css-label radGroup1">Young professional</label>
                                     </li>
                                 </ul>
