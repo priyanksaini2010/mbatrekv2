@@ -23,6 +23,12 @@ $this->menu=array(
 		'email',
 		'password',
 //		'update_subscription',
+                array(
+                        'header'=>"Role",
+                        "name"=>'role',
+                        "value"=>'$data->role==1?"College Student":" Young Proffesional"',
+                        'filter'=>CHtml::listData( CaFaqType::model()->findAll(), 'id', 'name'),
+                    ),
 		'is_verified',
                 'date_created',
 		array(
