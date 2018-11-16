@@ -86,12 +86,12 @@ class ContactController extends Controller
                                         . "Message : ".$_POST['Contact']['your_message']."<br/ ><br/ >"
                                         . "Thanks,<br/ >"
                                         . "MBATrek Feedback Service";
-                                $headers="From: ".$_POST['Contact']['first_name']." ".$_POST['Contact']['last_name']." <".$_POST['Contact']['email']."> \r\n".
-                                        "Reply-To: ".$_POST['Contact']['first_name']." ".$_POST['Contact']['last_name']." \r\n";
+                                $headers="From: ".Yii::app()->params['adminEmail']." <".Yii::app()->params['adminEmail']."> \r\n".
+                                        "Reply-To: ".Yii::app()->params['adminEmail']." \r\n";
 
                                 $headers .= "MIME-Version: 1.0\r\n".
                                             "Content-Type: text/html; charset=UTF-8";
-
+                                
                                 $sentToUser = sendEmail(Yii::app()->params['adminEmail'], $subject,$body,$headers);
 				
                                 $body = "Hello ".$_POST['Contact']['first_name']." ".$_POST['Contact']['last_name'].",<br/><br/>"

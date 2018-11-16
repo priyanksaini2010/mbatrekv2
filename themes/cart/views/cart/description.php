@@ -21,7 +21,12 @@ $product = Products::model()->findByPk($id);
                     </div>
                     <ul class="gd_ul">
                         <h2>Includes</h2>
-                        <?php foreach ($product->productIncludes as $include) { ?>
+                        <?php 
+                        $criteria=new CDbCriteria;
+                        $criteria->order = "sortOrder asc";
+                        $criteria->addCondition('product_id ='.$product->id);
+                        $includes= ProductInclude::model()->findAll($criteria);
+                        foreach ($includes as $include) { ?>
                             <li>
 
                                 <div class="li_wrap"><img src="<?php echo Yii::app()->baseUrl;?>/assets/products/<?php echo $include->logo; ?>"/></div>
@@ -41,7 +46,12 @@ $product = Products::model()->findByPk($id);
             <div class="container">
             <h3>How do we engage with you  </h3>
             <ul class="">
-                <?php foreach ($product->productEngages as $eKey=>$engage){?>
+                <?php
+                $criteria=new CDbCriteria;
+                $criteria->order = "sortOrder asc";
+                $criteria->addCondition('product_id ='.$product->id);
+                $engage = ProductEngage::model()->findAll($criteria);
+                foreach ($engage as $eKey=>$engage){?>
                 <?php if($eKey % 2 == 0 || $eKey == 0){?>
                 <li>
                     
@@ -291,7 +301,12 @@ $product = Products::model()->findByPk($id);
         <div class="key_outcomes">
             <h3>Key Outcomes </h3>
             <ul>
-                 <?php foreach ($product->productKeyOutcomes as $outcomes){?>
+                 <?php
+                  $criteria=new CDbCriteria;
+                $criteria->order = "sortOrder asc";
+                $criteria->addCondition('product_id ='.$product->id);
+                $keyOut= ProductKeyOutcome::model()->findAll($criteria);
+                 foreach ($keyOut as $outcomes){?>
                 <li>
                     <img height="100" width="100" src="<?php echo Yii::app()->baseUrl;?>/assets/products/<?php echo $outcomes->icon;?>"/>
                     <span><?php echo $outcomes->description;?></span>
