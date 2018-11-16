@@ -170,8 +170,9 @@ if(isset(Yii::app()->user->id)){
                                         (<?php echo $saver->short_description;?>)
                                     </span>
                                 </label>
-                                 </a>
+                                
                                 <img src="<?php echo $baseUrl;?>/assets/products/<?php echo $saver->icon;?>"/>
+								 </a>
                             </div>
                             <div class="recomended_price">
                                 <label> &#8377 <?php echo money($saver->recommendedProduct->price);?></label>

@@ -536,6 +536,7 @@ user-select: none;
 .cart_detail .cart_icon img{width: auto;}
 .cart_detail .cart_icon{       min-width: 103px; max-width: 103px;border:1px solid #229897;text-align: center;    border-radius: 19px;
     padding: 12px 6px;}
+.cart_detail .cart_icon a{color:#229897;}
 .cart_detail .cart_icon span{display: block;color:#229897; word-wrap: break-word; line-height: 18px;  font-size: 16px; font-family: 'MyriadPro-Semibold';padding:7px 0 0 0; }
 .cart_label h4{margin:0;color: #229897;font-size: 	19px;  font-family: 'MyriadPro-Semibold';  line-height: 21px;}
 .check_box {padding: 0 0 16px 17px;}
