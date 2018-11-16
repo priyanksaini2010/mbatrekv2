@@ -14,7 +14,7 @@
         <?php
         
         $criteria = new CDbCriteria;
-        $criteria->order = 'id DESC';
+        $criteria->order = 'sortOrder DESC';
         $events = EventGallery::model()->findAll($criteria);
         foreach($events as $event){
         ?>
