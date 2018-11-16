@@ -8,6 +8,7 @@
                     <li><a href="https://www.facebook.com/MBAtrekIndia/" class="facebook_icon" target="_blank"><i class="fa fa-facebook" aria-hidden="true" target="_blank"></i></a></li>
                     <li><a href="https://twitter.com/MBAtrekIndia" class="twitter_icon" target="_blank"><i class="fa fa-twitter" aria-hidden="true" target="_blank"></i></a></li>
                     <li><a href="https://www.quora.com/profile/Abhishek-Srivastava-1486" class="quora_icon" target="_blank"><i class="fa fa-quora" aria-hidden="true" target="_blank"></i></a></li>
+                    <li><a href="https://www.instagram.com/mbatrek/" class="quora_icon" target="_blank"><i class="fa fa-instagram" aria-hidden="true" target="_blank"></i></a></li>
                 </ul>
                 <!--<ul>
                     <li><a href="#" class="ytube">youtube</a></li>
