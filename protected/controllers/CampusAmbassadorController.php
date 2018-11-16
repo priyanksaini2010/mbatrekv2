@@ -158,7 +158,7 @@ class CampusAmbassadorController extends Controller
                         //Add to the csv a single model data with 3 empty rows after the data
 //                        $this->exportCSV($model, array_keys($model->attributeLabels()), false, 3);
                         //Add to the csv a lot of models from a CDataProvider
-                        $this->exportCSV($model->search(), array('first_name', 'last_name', 'mobile_number', 'email_id','college_id','college.name','course_id','course.title','question_1','question_2','question_3','	name_of_college','name_of_course'));
+                        $this->exportCSV($model->search(), array('first_name', 'last_name', 'mobile_number', 'email_id','college_id','college.name','course_id','course.title','question_1','question_2','question_3','name_of_college','name_of_course'));
                     }
 		$this->render('admin',array(
 			'model'=>$model,
