@@ -14,6 +14,7 @@
  */
 class TalkToAdvisory extends CActiveRecord
 {
+        public $verifyCode;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -33,6 +34,7 @@ class TalkToAdvisory extends CActiveRecord
 			array('name, email, message, area', 'required'),
 			array('name, email, institute, area', 'length', 'max'=>255),
 			array('date', 'safe'),
+                        array('verifyCode', 'captcha', 'allowEmpty'=>!CCaptcha::checkRequirements()),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, name, email, message, institute, area, date', 'safe', 'on'=>'search'),
@@ -63,6 +65,7 @@ class TalkToAdvisory extends CActiveRecord
 			'institute' => 'Institute',
 			'area' => 'Area',
 			'date' => 'Date',
+                        'verifyCode'=>'Verification Code', 
 		);
 	}
 
