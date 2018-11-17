@@ -2,6 +2,8 @@
 
 class TalkToAdvisoryController extends Controller
 {
+    
+        public $errors = array();
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
@@ -17,7 +19,15 @@ class TalkToAdvisoryController extends Controller
 			'accessControl', // perform access control for CRUD operations
 		);
 	}
-
+        public function actions(){
+            return array(
+                // captcha action renders the CAPTCHA image displayed on the contact page
+                'captcha'=>array(
+                    'class'=>'CCaptchaAction',
+                    'backColor'=>BACK_COLOR,
+                ),
+            );
+	}
 	/**
 	 * Specifies the access control rules.
 	 * This method is used by the 'accessControl' filter.
@@ -27,7 +37,7 @@ class TalkToAdvisoryController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','create'),
+				'actions'=>array('index','view','create','captcha'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -62,6 +72,7 @@ class TalkToAdvisoryController extends Controller
 	public function actionCreate()
 	{
                 
+                $this->layout = getCartLayot();
 		$model=new TalkToAdvisory;
 
 		// Uncomment the following line if AJAX validation is needed
@@ -77,8 +88,18 @@ class TalkToAdvisoryController extends Controller
 		if(isset($_POST['TalkToAdvisory']))
 		{
 			$model->attributes=$_POST['TalkToAdvisory'];
-			if($model->save())
+			if($model->save()){
 				$this->redirect(array('site/page','view'=>"talk_to_advisory","thankc"=>1));
+                        } else {
+                           
+                            foreach ($model->getErrors() as $error){
+                                $this->errors['email'] = $error[0];
+                            }
+                            
+                            $this->render('talk_to_advisory',array(
+                                    'model'=>$model,
+                            ));
+                        }
 		}
         }
 
