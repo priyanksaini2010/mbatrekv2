@@ -19,11 +19,13 @@
                             <div class="contact_info_div margin-0">
                                 <div class="phAnimate">
                                     <label for="lastname">First Name <em>*</em></label> 
-                                    <?php if ($model->first_name != '') {
+                                    <?php
+                                    if ($model->first_name != '') {
                                         $data = array('for' => "first_name", 'class' => 'active');
                                     } else {
                                         $data = array('for' => "first_name");
-                                    }; ?>
+                                    };
+                                    ?>
 <?php echo $form->labelEx($model, 'first_name', $data); ?>
 <?php echo $form->textField($model, 'first_name', array('class' => "input_field")); ?>
                                 </div>
@@ -34,13 +36,15 @@
                             <div class="contact_info_div margin-0">
                                 <div class="phAnimate">
                                     <!--<label for="lastname">Last Name <em>*</em></label>--> 
-<?php if ($model->last_name != '') {
-    $data = array('for' => "last_name", 'class' => 'active');
-} else {
-    $data = array('for' => "last_name");
-}; ?>
+                                    <?php
+                                    if ($model->last_name != '') {
+                                        $data = array('for' => "last_name", 'class' => 'active');
+                                    } else {
+                                        $data = array('for' => "last_name");
+                                    };
+                                    ?>
 <?php echo $form->labelEx($model, 'last_name', $data); ?>
-                                    <?php echo $form->textField($model, 'last_name', array('class' => "input_field")); ?>
+<?php echo $form->textField($model, 'last_name', array('class' => "input_field")); ?>
                                 </div>
                             </div>
 
@@ -49,11 +53,13 @@
                             <div class="contact_info_div">
                                 <div class="phAnimate">
                                     <!--<label for="lastname">Email <em>*</em></label>--> 
-<?php if ($model->email != '') {
-    $data = array('for' => "email", 'class' => 'active');
-} else {
-    $data = array('for' => "email");
-}; ?>
+                                    <?php
+                                    if ($model->email != '') {
+                                        $data = array('for' => "email", 'class' => 'active');
+                                    } else {
+                                        $data = array('for' => "email");
+                                    };
+                                    ?>
 <?php echo $form->labelEx($model, 'email', $data); ?>
 <?php echo $form->textField($model, 'email', array('class' => "input_field")); ?>
                                 </div>
@@ -63,11 +69,13 @@
                         <div class="col-md-6">
                             <div class="contact_info_div">
                                 <div class="phAnimate">
-<?php if ($model->mobile_no != '') {
-    $data = array('for' => "mobile_no", 'class' => 'active');
-} else {
-    $data = array('for' => "mobile_no");
-}; ?>
+                                    <?php
+                                    if ($model->mobile_no != '') {
+                                        $data = array('for' => "mobile_no", 'class' => 'active');
+                                    } else {
+                                        $data = array('for' => "mobile_no");
+                                    };
+                                    ?>
 <?php echo $form->labelEx($model, 'mobile_no', $data); ?>
 <?php echo $form->textField($model, 'mobile_no', array('class' => "input_field")); ?>
                                 </div>
@@ -98,37 +106,43 @@
                         <div class="col-md-12">
                             <div class="contact_info_div">
                                 <div class="phAnimate">
-<?php if ($model->name_of_company_institute != '') {
+<?php
+if ($model->name_of_company_institute != '') {
     $data = array('for' => "name_of_company_institute", 'class' => 'active');
 } else {
     $data = array('for' => "name_of_company_institute");
-}; ?>
-<?php echo $form->labelEx($model, 'name_of_company_institute', $data); ?>
-<?php echo $form->textField($model, 'name_of_company_institute', array('class' => "input_field")); ?>
+};
+?>
+                                    <?php echo $form->labelEx($model, 'name_of_company_institute', $data); ?>
+                                    <?php echo $form->textField($model, 'name_of_company_institute', array('class' => "input_field")); ?>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="contact_info_div">
                                 <div class="phAnimate"> 
-<?php if ($model->subject != '') {
+<?php
+if ($model->subject != '') {
     $data = array('for' => "subject", 'class' => 'active');
 } else {
     $data = array('for' => "subject");
-}; ?>
-<?php echo $form->labelEx($model, 'subject', $data); ?>
-<?php echo $form->textField($model, 'subject', array('class' => "input_field")); ?>
+};
+?>
+                                    <?php echo $form->labelEx($model, 'subject', $data); ?>
+                                    <?php echo $form->textField($model, 'subject', array('class' => "input_field")); ?>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="contact_info_div">
                                 <div class="phAnimate">
-<?php if ($model->your_message != '') {
+<?php
+if ($model->your_message != '') {
     $data = array('for' => "your_message", 'class' => 'active');
 } else {
     $data = array('for' => "your_message");
-}; ?>
+};
+?>
 <?php echo $form->labelEx($model, 'your_message', $data); ?>
 <?php echo $form->textArea($model, 'your_message', array('class' => "input_field")); ?>
                                 </div>
@@ -147,7 +161,18 @@
                     </div>
                 </div>
             </div>
-
+            <?php if (CCaptcha::checkRequirements()): ?>
+                <div class="row">
+    <?php echo $form->labelEx($model, 'verifyCode'); ?>
+                    <div>
+    <?php $this->widget('CCaptcha'); ?>
+    <?php echo $form->textField($model, 'verifyCode'); ?>
+                    </div>
+                    <div class="hint">Please enter the letters as they are shown in the image above.
+                        <br/>Letters are not case-sensitive.</div>
+    <?php echo $form->error($model, 'verifyCode'); ?>
+                </div>
+<?php endif; ?>
             <div class="capcha_div"><img src="images/capcha.png" alt="" />
                 <div class="submit_form_btn" ><button type="submit">Submit</button></div>
             </div>
