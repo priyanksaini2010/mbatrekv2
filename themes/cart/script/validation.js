@@ -398,5 +398,9 @@ $("#contact-form").submit(function() {
                 validationMethod("error","Please enter your message.");
                 return false;
             }
+            if($("#Contact_verifyCode").val() == ""){
+                validationMethod("error","Please enter verification code.");
+                return false;
+            }
             
         });
