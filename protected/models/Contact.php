@@ -16,6 +16,8 @@
  */
 class Contact extends CActiveRecord
 {
+    
+        public $verifyCode;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -35,6 +37,7 @@ class Contact extends CActiveRecord
 			array('first_name, last_name, mobile_no, email, are_you, name_of_company_institute, subject, your_message', 'required'),
 			array('first_name, last_name, mobile_no, email, name_of_company_institute, subject', 'length', 'max'=>255),
 			array('are_you', 'length', 'max'=>18),
+                        array('verifyCode', 'captcha', 'allowEmpty'=>!CCaptcha::checkRequirements()),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, first_name, last_name, mobile_no, email, are_you, name_of_company_institute, subject, your_message', 'safe', 'on'=>'search'),
@@ -67,6 +70,7 @@ class Contact extends CActiveRecord
 			'name_of_company_institute' => 'Name of Company / Institute',
 			'subject' => 'Subject',
 			'your_message' => 'Your Message',
+                        'verifyCode'=>'Verification Code', 
 		);
 	}
 
