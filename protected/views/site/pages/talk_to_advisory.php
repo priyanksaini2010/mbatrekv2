@@ -1,6 +1,8 @@
 <?php $this->setPageTitle('Talk To Career Advisory');
+if(!isset($model)){
+    $model = new TalkToAdvisory();
+}
 
-$model = new TalkToAdvisory();
 
 ?>  
  
@@ -73,6 +75,18 @@ $model = new TalkToAdvisory();
                                         <?php echo $form->textArea($model, 'message', array('class' => "input_field")); ?>
                                     </div>
                                 </div>
+                                <?php if (CCaptcha::checkRequirements()): ?>
+                                                <div class="row">
+                                    <?php echo $form->labelEx($model, 'verifyCode'); ?>
+                                                    <div>
+                                    <?php $this->widget('CCaptcha'); ?>
+                                    <?php echo $form->textField($model, 'verifyCode'); ?>
+                                                    </div>
+                                                    <div class="hint">Please enter the letters as they are shown in the image above.
+                                                        <br/>Letters are not case-sensitive.</div>
+                                    <?php echo $form->error($model, 'verifyCode'); ?>
+                                                </div>
+                                <?php endif; ?>
                                 <div class="sibmit_form">
                                     <button class="site_btn raised ripple" type="submit"><a id='talk_subit' href="javascript:void('0');">Submit</a></button>
                                 </div>
@@ -113,6 +127,18 @@ $model = new TalkToAdvisory();
                                         <?php echo $form->textArea($model, 'message', array('class' => "input_field","id"=>"message2")); ?>
                                     </div>
                                 </div>
+                                <?php if (CCaptcha::checkRequirements()): ?>
+                                                <div class="row">
+                                    <?php echo $form->labelEx($model, 'verifyCode'); ?>
+                                                    <div>
+                                    <?php $this->widget('CCaptcha'); ?>
+                                    <?php echo $form->textField($model, 'verifyCode'); ?>
+                                                    </div>
+                                                    <div class="hint">Please enter the letters as they are shown in the image above.
+                                                        <br/>Letters are not case-sensitive.</div>
+                                    <?php echo $form->error($model, 'verifyCode'); ?>
+                                                </div>
+                                <?php endif; ?>
                                 <div class="sibmit_form">
                                     <button class="site_btn raised ripple" type="submit"><a id='talk_submit' href="javascript:void('0');">Post</a></button>
                                 </div>
