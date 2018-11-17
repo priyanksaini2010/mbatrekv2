@@ -73,6 +73,11 @@
                     validationMethod("error","Please Enter Area");
                     return false;
                 }
+                if ($("#TalkToAdvisory_verifyCode").val() == "") {
+                    $("#TalkToAdvisory_verifyCode").focus()
+                     validationMethod("error","Please Enter Verification Code");
+                    return false;
+                }
             });
             $("#talk-to-advisory-form").submit(function() {
 
@@ -94,6 +99,11 @@
                 if ($("#TalkToAdvisory_area").val() == "") {
                     $("#TalkToAdvisory_area").focus()
                      validationMethod("error","Please Enter Area");
+                    return false;
+                }
+                if ($("#TalkToAdvisory_verifyCode").val() == "") {
+                    $("#TalkToAdvisory_verifyCode").focus()
+                     validationMethod("error","Please Enter Verification Code");
                     return false;
                 }
             });
