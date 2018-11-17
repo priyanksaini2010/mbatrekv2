@@ -2,12 +2,22 @@
 
 class ContactController extends Controller
 {
+        public $errors = array();
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
 	public $layout='//layouts/column2';
-
+        
+        public function actions(){
+            return array(
+                // captcha action renders the CAPTCHA image displayed on the contact page
+                'captcha'=>array(
+                    'class'=>'CCaptchaAction',
+                    'backColor'=>0xFFFFFF,
+                ),
+            );
+	}
 	/**
 	 * @return array action filters
 	 */
@@ -27,7 +37,7 @@ class ContactController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','create'),
+				'actions'=>array('index','view','create','captcha'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -106,7 +116,9 @@ class ContactController extends Controller
                                 $sentToUser = sendEmail($_POST['Contact']['email'], $subject,$body,$headers);
                                 $this->redirect(Yii::app()->createUrl('contact/create',array('thankc'=>1)));
                         } else {
-                            pr($model->getErrors());
+                            foreach ($model->getErrors() as $error){
+                                $this->errors['email'] = $error[0];
+                            }
                         }
 		}
 
