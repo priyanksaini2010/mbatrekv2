@@ -5,6 +5,7 @@
 error_reporting(E_ERROR);
 date_default_timezone_set("Asia/Kolkata");
 const DIREC = "/v2/";
+const BACK_COLOR = 0xFFFFFF;
 require_once 'payment_lib/PaytmKit/lib/config_paytm.php';
 require_once 'payment_lib/PaytmKit/lib/encdec_paytm.php';
 //require_once ('linkedinwp/oauth/linkedinoauth.php');
