@@ -69,8 +69,8 @@ class Blogs extends CActiveRecord
 			'title' => 'Title',
 			'content' => 'Content',
 			'author' => 'Author',
-			'background_image' => 'Background Image',
-			'banner_image' => 'Banner Image',
+			'background_image' => 'Background Image (1100x320 Px)',
+			'banner_image' => 'Banner Image (1100x320 Px)',
 			'date_created' => 'Date Created',
 			'date_updated' => 'Date Updated',
 		);
