@@ -29,6 +29,7 @@ $this->menu=array(
                         "value"=>'$data->role==1?"College Student":" Young Proffesional"',
                         'filter'=>array(1=>"College Student",2=>"Young Proffesioinal"),
                     ),
+                'name_of_college_company',
                 array(
                         'header'=>"Subscription Opted",
                         "name"=>'update_subscription',
