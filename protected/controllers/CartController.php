@@ -192,6 +192,10 @@ class CartController extends Controller {
 			$model->attributes=$_POST['CampusAmbassador'];
 			if($model->save()){
 				$this->redirect(array('index','thankscampus'=>1));
+                        } else {
+                            foreach ($model->getErrors() as $error){
+                                $this->errors['email'] = $error[0];
+                            }
                         }
 		}
 		$this->render("webroot.themes.cart.views.cart.campus",array("model"=>$model));
