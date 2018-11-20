@@ -5,7 +5,7 @@ $products = Products::model()->findAllByAttributes(array("product_sub_category_i
 $category = ProductCategory::model()->findByPk(1);
 $category2 = ProductCategory::model()->findByPk(2);
 $subs = ProductSubCategory::model()->findAllByAttributes(array("product_category_id"=>2));
-$saver = Products::model()->findByAttributes(array("product_sub_category_id"=>1,"type"=>1,"status"=>1,"is_saver" => 1));
+$saver = Products::model()->findByAttributes(array("id"=>33));
 
 $arrProd = array();
 $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/themes/cart");
@@ -205,7 +205,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                 </div>
                                 <div class="col-xs-12 col-md-6 col-lg-3 cta-home">
                                     <div class="">
-                                        <a href="young-professional.html" class="cta-link1">
+                                        <a href="#" class="cta-link1">
                                             <span class="cta-img">
                                                 <img src="<?php echo $baseUrl; ?>/images/multiple2.png">
                                             </span>
