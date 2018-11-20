@@ -47,7 +47,7 @@ class Products extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('title, logo, actuall_price, description, description1, price, type, is_saver, product_sub_category_id, status', 'required'),
-			array('type, is_saver, product_sub_category_id, home_page_bucket, status', 'numerical', 'integerOnly'=>true),
+			array('type, is_saver, product_sub_category_id, home_page_bucket, status,sortOrder', 'numerical', 'integerOnly'=>true),
 			array('actuall_price, price', 'numerical'),
 			array('title, logo, description1', 'length', 'max'=>255),
 			array('home_page_icon', 'length', 'max'=>250),
@@ -95,6 +95,7 @@ class Products extends CActiveRecord
 			'home_page_icon' => 'Home Page Icon',
 			'home_page_bucket' => 'Home Page Bucket',
 			'status' => 'Status',
+                        'sortOrder' => 'Sort Order',
 		);
 	}
 
@@ -130,8 +131,13 @@ class Products extends CActiveRecord
 		$criteria->compare('home_page_bucket',$this->home_page_bucket);
 		$criteria->compare('status',$this->status);
                 $criteria->order = "id desc";
+                $criteria->order = "sortOrder asc";
+                $criteria->limit = 100;
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+                        'pagination' => array(
+                                            'pageSize' => 30,
+                                        ),
 		));
 	}
 
