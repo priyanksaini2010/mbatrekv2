@@ -110,6 +110,18 @@ $yog = CHtml::listData(YearOfGraduation::model()->findAll($criteria), "id", "yea
                                 <?php echo $form->textAreaRow($model,'question_3',array('rows'=>6, 'cols'=>50, 'class'=>'span8')); ?>
                             </div>
                         </div>
+                        <?php if (CCaptcha::checkRequirements()): ?>
+                            <div class="catcha_Code">
+                                <?php echo $form->labelEx($model, 'verifyCode'); ?>
+                                <div>
+                                    <?php $this->widget('CCaptcha'); ?>
+                                    <?php echo $form->textField($model, 'verifyCode'); ?>
+                                </div>
+                                <div class="hint">Please enter the letters as they are shown in the image above.
+                                    <br/>Letters are not case-sensitive.</div>
+                                <?php echo $form->error($model, 'verifyCode'); ?>
+                            </div>
+                        <?php endif; ?>
                         <div class="col-md-12 text-center">
                             <div class="form_amster_field">
                                 <input class="application_submit" type="submit" name="Submit Application" value="Submit Application"/>
