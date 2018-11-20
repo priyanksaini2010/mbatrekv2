@@ -50,7 +50,7 @@
         //                    location.reload("?thanmscart=1");
                             setInterval(function(){window.location.reload(); }, 3000);
                         }else {
-                            validationMethod("error",obj.message)
+                            validationMethodSpecialCart("error",obj.message)
                              setInterval(function(){window.location.reload(); }, 3000);
                         }
                     }
