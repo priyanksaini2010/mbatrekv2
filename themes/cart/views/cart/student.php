@@ -1,5 +1,13 @@
 <?php
-$products = Products::model()->findAllByAttributes(array("product_sub_category_id"=>1,"type"=>1,"status"=>1,"is_saver"=>0));
+$criteria=new CDbCriteria;
+
+$criteria->compare('product_sub_category_id',1);
+$criteria->compare('type',1);
+$criteria->compare('status',1);
+$criteria->compare('is_saver',0);
+$criteria->order = "sortOrder asc";
+$products = Products::model()->findAll($criteria);
+//$products = Products::model()->findAllByAttributes(array("product_sub_category_id"=>1,"type"=>1,"status"=>1,"is_saver"=>0));
 $category = ProductCategory::model()->findByPk(1);
 $category2 = ProductCategory::model()->findByPk(2);
 $subs = ProductSubCategory::model()->findAllByAttributes(array("product_category_id"=>2));
