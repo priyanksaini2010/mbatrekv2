@@ -157,20 +157,22 @@ if ($model->your_message != '') {
                         </div>
                         <div class="google_map_info">
                             <h3>MBAtrek Private Ltd.</h3>
-                            <label>414 (4th Floor), Suncity Business Tower, </label> <label>Golf Course Road, Sector -54, </label> <label>Gurugram &ndash; 122003, INDIA</label> <label>Email: <a href="mailto:contact@mbatrek.com">contact@mbatrek.com</a></label></div>
+                            <label>414 (4th Floor), Suncity Business Tower, </label> <label>Golf Course Road, Sector -54, </label> <label>Gurugram &ndash; 122003, INDIA</label> <label>Email: <a href="mailto:contact@mbatrek.com">contact@mbatrek.com</a></label>
+							<label>Phone: +91 9821948334, +91 9821948335</label>
+							</div>
                     </div>
                 </div>
             </div>
             <?php if (CCaptcha::checkRequirements()): ?>
-                <div class="row">
-    <?php echo $form->labelEx($model, 'verifyCode'); ?>
-                    <div>
-    <?php $this->widget('CCaptcha'); ?>
-    <?php echo $form->textField($model, 'verifyCode'); ?>
-                    </div>
-                    <div class="hint">Please enter the letters as they are shown in the image above.
-                        <br/>Letters are not case-sensitive.</div>
-    <?php echo $form->error($model, 'verifyCode'); ?>
+                <div class="catcha_Code">
+						<?php echo $form->labelEx($model, 'verifyCode'); ?>
+										<div>
+						<?php $this->widget('CCaptcha'); ?>
+						<?php echo $form->textField($model, 'verifyCode'); ?>
+										</div>
+										<div class="hint">Please enter the letters as they are shown in the image above.
+											<br/>Letters are not case-sensitive.</div>
+						<?php echo $form->error($model, 'verifyCode'); ?>
                 </div>
 <?php endif; ?>
             <div class="capcha_div"><img src="images/capcha.png" alt="" />

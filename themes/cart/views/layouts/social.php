@@ -16,14 +16,22 @@
                     <li><a href="#" class="fbook">facebook</a></li>
                     <li><a href="#" class="twitter">twitter</a></li>
                     <li><a href="#" class="quora">q</a></li>
-                </ul>-->
+                </ul>--> 
             </div>
             <div class="login-cart">
                 <div class="login">
                     <?php if (isset(Yii::app()->user->id)) { ?>
-                        <a href="<?php echo Yii::app()->createUrl('site/logout'); ?>">Logout</a>
+                        <a class="profile_open" href="">Logout</a>
+						<div class="profile_div">
+							<ul>
+								<li><a href="javascript:void(0);">My Profile</a></li>
+								<li><a href="javascript:void(0);">Pass Orders</a></li>
+								<li><a href="<?php echo Yii::app()->createUrl('site/logout'); ?>">Logout</a></li>
+							</ul>
+						</div>
                     <?php } else { ?>
                         <a href="<?php echo Yii::app()->createUrl('site/login'); ?>">login</a>
+						
                     <?php } ?>
                 </div>
                 <div class="cart">

@@ -74,16 +74,16 @@ var domain_name = '<?php echo $_SERVER['HTTP_HOST'].DIREC;?>';
                     </div>-->
                     <div class="modal-body">
                         <div class="md-content">
-                            <h3 id="pop-notification-type-2">Thanks</h3>
+                            <h3 id="pop-notification-type-2">Registration Successful</h3>
                             <div class="error_wrap">
                                 <div class="error_container">
-                                    <p><i class="fa fa-check" id="pop-notification-class" aria-hidden"true"=""></i>
+                                    <p><!--<i class="fa fa-check" id="pop-notification-class" aria-hidden"true"=""></i>-->
                                         <span id="pop-notification-text">
                                             <span>Thanks for showing interest in  joining revolution to up-skill your peers.</span>
                                             <br /> <br />
-                                            <span>If our team is amazed by your idea we will get back to you with next step.</span>
+                                            <span>If our team is amazed by your idea we will get back to you with next step :)</span>
                                             <br /><br />
-                                            <span> Stay tuned.</span>
+                                            <span> Stay tuned !!</span>
                                             
                                         </span></p>
                                 </div>

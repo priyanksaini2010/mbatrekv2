@@ -246,3 +246,24 @@ $(document).ready(function(){
 });
 
 /* ========End Our Team======= */
+
+/* ========Our Profile======= */
+$(document).ready(function(){
+	$('.profile_open').click(function(){
+		$('.profile_div').toggleClass('open_profile_div');
+	});
+});
+
+/* ========End Profile======= */
+
+/* ========Register From======= */
+
+$(document).ready(function() {
+    $("div.desc").hide();
+    $(".register_input li .css-checkbox").click(function() {
+        var test = $(this).val();
+        $("div.desc").hide();
+        $("#" + test).show();
+    });
+});
+/* ========End Register Form======= */

@@ -124,8 +124,8 @@ if(isset(Yii::app()->user->id)){
                                         <?php $this->endWidget();?>      
                             <?php }else{?>
                             <div class="promo_card_apply">
-                                <label>Kindly enter your College / Company ID to apply the promocode</label>
-                                <div class="phAnimate"><label for="lastname">Email ID: <em>*</em></label> <input class="apply-promo-value" id="name" class="input_field" type="text" name="name" /></div>
+                                <label> </label>
+                                <div class="phAnimate"><label for="lastname">Email ID: <em>*</em></label> <input class="apply-promo-value input_field" id="name" class="input_field" type="text" name="name" /></div>
                                 <div class="promo_btn">
                                     <input type="submit" value="Apply" name="submit" class="apply-promo"/>
                                 </div>
@@ -163,13 +163,13 @@ if(isset(Yii::app()->user->id)){
 ?>
                         <li>
                             <div class="recomended_title">
-                                 <a style="cursor: pointer !important;" href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>$saver->recommendedProduct->id));?>">
-                                <label>
-                                    <?php echo $saver->recommendedProduct->title;?>
+                                 <a  href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>$saver->recommendedProduct->id));?>">
+									<div class="discount_outer">
+                                    <span class="discount_text"><?php echo $saver->recommendedProduct->title;?></span>
                                     <span>
                                         (<?php echo $saver->short_description;?>)
                                     </span>
-                                </label>
+                              </div>
                                 
                                 <img src="<?php echo $baseUrl;?>/assets/products/<?php echo $saver->icon;?>"/>
 								 </a>

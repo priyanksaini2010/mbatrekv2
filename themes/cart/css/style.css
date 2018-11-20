@@ -182,9 +182,36 @@ padding: 7px 0 7px 0;border-radius:2px;
     margin-top: -3px;
 }
 .login-cart .login{
-    display: inline-block;
+    display: inline-block;position:relative;
     vertical-align: top;
     margin: 0;
+}
+.login-cart .login .profile_div
+{
+	position: absolute;
+    top: 42px;
+    left: 0;
+    background: #348786;
+    color: #fff;
+    width: 176px;
+    padding: 6px 0 5px 0 ;
+    z-index: 99;
+	display:none;
+}
+.login-cart .login .profile_div ul{width:100%;float:left;}
+.login-cart .login .profile_div ul li{list-style:none;}
+.login-cart .login .profile_div ul li a:hover
+{
+	background:#fff;
+	color:#348786;
+}
+.login-cart .login .profile_div ul li a
+{
+	background:none;
+	border:none;
+	padding: 6px 0px 3px  10px;
+	border-radius:0;
+	width:100%;
 }
 .login-cart .cart{
     display: inline-block;

@@ -575,7 +575,7 @@ user-select: none;
     vertical-align: middle;display:table-cell;height: 71px;}
 .recomended_title label span{display: block;}
 .recomended_price {width: 100%;float: left;text-align: center;padding: 9px 0 0 0;}
-.our_recomanded ul li{display: inline-block;list-style: none;margin-right: 40px;    width: 21%;vertical-align:top;}
+.our_recomanded ul li{display: inline-block;list-style: none;margin-right: 40px;    width: 21%;vertical-align:top;margin-bottom: 40px;}
 .our_recomanded ul li:last-child{margin-right: 0px;}
 .our_recomanded ul {padding: 32px 0 0 0;}
 .recomended_price label{color: #229897;font-size: 23px;display: block;font-family: 'MyriadPro-Semibold';}
@@ -1069,7 +1069,7 @@ user-select: none;
 .main_heading.blog_heading{margin:27px 0 14px;}
 .blog_details{width:100%;float:left;}
 .blog_header{width:100%;float:left;}
-.blog_header img{border:1px solid #ddd;width:100%;}
+.blog_header img{border:1px solid #ddd;width:100%;    height: 320px;}
 .blog_heading{width:100%;float:left;}
 .blog_heading ul li span{font-size:16px;font-weight:400;color:#555;padding:3px 0 2px 37px;background-repeat:no-repeat;display:inline-block;}
 .blog_heading ul li span.posted_by{background-image:url('../images/posted_by.png');}
@@ -1361,7 +1361,7 @@ text-align: center;border-radius: 2px;}
 	    margin: 190px auto 30px;
 }
 .error_container p {
-    color: red;
+    color: #222;
     font-size: 17px;
 
 }
@@ -1424,7 +1424,8 @@ text-align: center;border-radius: 2px;}
 .repeat_categories{width: 100%;float: left;   margin-top: 12px; padding: 10px 11px 4px 11px;    border: 2px solid #348786;
     border-radius: 12px;}
 .repeat_categories .repeat_icon{display: inline-block;  width: 47px;  vertical-align: top;float:left;}
-.repeat_categories .categories-text{display: table;color: #348786;font-size: 22px;font-family: 'MyriadPro-Semibold';   width: 152px;float:left;word-break: break-all;
+.repeat_categories .repeat_icon img{width:47px;height:47px;}
+.repeat_categories .categories-text{display: table;color: #348786;font-size: 22px;font-family: 'MyriadPro-Semibold';   width: 152px;float:left;
     text-align: center;}
 .categories_price{width: 100%;float: left;padding: 6px 0 0 0;}
 .categories_price span{color: #73942f;font-weight: normal;font-size: 16px;}
@@ -1473,7 +1474,7 @@ text-align: center;border-radius: 2px;}
 .promo_card_apply{border:1px solid #348786;width:100%;position:absolute;background:#fff;padding:13px 20px 20px 20px;border-radius: 8px;display:none;    margin: 6px 0 0 0;z-index:9;}
 .promo_btn{width:100%;float:left;text-align:center;}
 .promo_card_apply .promo_btn input[type="submit"]{border:none;background:#348786;color:#fff;display:inline-block;border:1px solid #348786;transition:all 0.3s; padding: 7px 17px 6px 17px;font-size: 18px;border-radius: 8px;}
-.promo_card_apply .input_field{border-color:#348786;}
+.promo_card_apply .input_field{border-color:#348786;font-weight:normal;}
 .promo_card_apply .promo_btn input[type="submit"]:hover{border:1px solid #348786;background:#fff;color:#348786;}
 .promo_card_apply > label{font-size:18px;}
 .promo_card_apply .promo_btn input[type="submit"]:focus{outline:0;}
@@ -1487,7 +1488,7 @@ text-align: center;border-radius: 2px;}
 .only-home-class main{padding-top:0;}
 .repeat_categories .categories-text span {
 	    padding: 0 9px;
-    height: 46px;
+    height: 62px;
     display: table-cell;
     vertical-align: middle;
    
@@ -1714,7 +1715,7 @@ vertical-align:middle;cursor:pointer;}
 .expand_information{width: 100%;float: left;display:none;background: #e7e7e7;text-align: left;    padding: 24px;
     border-radius: 9px;}
 .expand_information p{font-size: 18px;}
-.expand_information  ul li{width: auto;padding: 0 15px;}
+.expand_information  ul li{width: auto;padding: 0 15px;vertical-align:top;}
 .expand_information  ul {padding:11px 0 0 0;text-align: center;width: 100%;}
 .expand_information  ul li span{font-size: 20px;padding-left: 7px;margin: 7px 0 0 0;
     display: inline-block;}
@@ -1799,9 +1800,34 @@ vertical-align:middle;cursor:pointer;}
 .rahul_info.active_team >a img.witho_hover{display:none;}
 .rahul_info.active_team >a img.hover_img{display:block;}
 .rahul_info.active_team h3{color:#348786;}
-.our_team_block .expand_information ul li >a {min-height:auto;}
+.our_team_block .social_info_admin ul li a {min-height:auto;  display:inline-block;  width: auto;vertical-align:top;
+    }
 .our_team_block .expand_information ul li >a>img {position:relative;vertical-align:top;}
 .ambastor_container.industry_Ready.interview_ready .earn_container ul li:after{display:none;}
 .ambastor_container.regsiter_emastor.register_interview .earn_container ul li:after{display:none;}
 .ambastor_container.industry_Ready .earn_point .earn_container ul li:after{display:none;}
 .studen-wrapper .student-placement-title{background:#348786;}
+.catcha_Code{width:100%;float:left;margin-top:52px;}
+.social-icons ul li:last-child a:hover i
+{
+	background: #d6249f;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+ 
+}
+.blog_container .our_blog .blog_video_repeat .share_post{border:none;padding:0;}
+.recomended_title a>img {
+    width: 41px;
+    height: 41px;
+    vertical-align: top;margin: 2px 0 0 0;
+}
+.discount_outer{display:inline-block;width: 175px;}
+.discount_outer span{font-size:18px;color:#fff;}
+.profile_div.open_profile_div{display:block!important;}
+.login_wrapper .are_yu{    padding: 0 0 24px 0;}
+.login_wrapper .are_yu ul{padding:0 0 0 15px;}
+.login_wrapper.register{max-width: 396px;}
+.other_fields .desc{width:100%;float:left;}
+.other_fields{margin: 13px 0 0 0;
+    float: left;
+    width: 100%;}
+.other_fields .form-control{margin-top:15px;margin-bottom:0!important;}

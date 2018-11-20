@@ -45,7 +45,7 @@ if(!empty($leftContent) || !empty($rightContent) || !empty($rightContent_2)) {
     <div class="row">
         <div class="sucess_story_wrap <?php echo $class;?>">
             <h3>What <?php echo $text;?> say about MBAtrek…</h3>
-            <div class="col-md-6 the_Executive">
+            <div class="col-md-4 the_Executive">
                
                 <div class="sucess_heading">
                     <?php if($left != ""){?>
@@ -72,7 +72,7 @@ if(!empty($leftContent) || !empty($rightContent) || !empty($rightContent_2)) {
                 </div>
                 <?php }?>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4 the_Executive">
                 <div class="sucess_heading">
                     <?php if($right != ""){?>
                     <h3><?php echo $right;?></h3>
@@ -97,7 +97,7 @@ if(!empty($leftContent) || !empty($rightContent) || !empty($rightContent_2)) {
                 </div>
                 <?php }?>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="sucess_heading">
                     <?php if($right_2 != ""){?>
                     <h3><?php echo $right_2;?></h3>

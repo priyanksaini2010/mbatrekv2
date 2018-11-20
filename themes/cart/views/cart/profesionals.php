@@ -101,97 +101,86 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                         </div>
                     </div>
                 </div>
-                    <div class="row face_many">
+                    <!--<div class="row face_many">
                         <h4>and you will face many obstacles and challenges</h4>
                         <div class="col-md-3 col-sm-3 col-xs-3 green_box">
-                            <img src="<?php echo $baseUrl; ?>/images/setting.jpg" class="img-responsive center-block" />
+                            <img src="<?php //echo $baseUrl; ?>/images/setting.jpg" class="img-responsive center-block" />
                             <h5 class="text-center">Settling in</h5>
                             <ul>
-                                <!--<li><img src="<?php echo $baseUrl; ?>/images/clode_new_one.png">
-                                    <label>  Lack of clarity about your role </label> 
-                                </li>-->
-                                <li><img src="<?php echo $baseUrl; ?>/images/picture.png">
+                               
+                                <li><img src="<?php //echo $baseUrl; ?>/images/picture.png">
                                     <label>Salary, role, boss - did i get it right ?
                                     </label>
                                 </li>
-                                <li><img src="<?php echo $baseUrl; ?>/images/nosuppot.png">
+                                <li><img src="<?php //echo $baseUrl; ?>/images/nosuppot.png">
                                     <label>No support and/or training provided
                                     </label>
                                 </li>
-                                <li><img src="<?php echo $baseUrl; ?>/images/lack.png">
+                                <li><img src="<?php //echo $baseUrl; ?>/images/lack.png">
                                     <label>Unprepared and lack basic skills needed for work</label>
                                 </li>
                             </ul>
                         </div>
                         <div class="col-md-3 col-sm-3 col-xs-3  green_box">
-                            <img src="<?php echo $baseUrl; ?>/images/survive.jpg" class="img-responsive center-block" />
+                            <img src="<?php //echo $baseUrl; ?>/images/survive.jpg" class="img-responsive center-block" />
                             <h5 class="text-center">Surviving and connecting</h5>
                             <ul>
-                                <li><img src="<?php echo $baseUrl; ?>/images/intern.png">
+                                <li><img src="<?php //echo $baseUrl; ?>/images/intern.png">
                                     <label>Intense stress and work pressure
                                     </label>
                                 </li>
-                                <li><img src="<?php echo $baseUrl; ?>/images/understand.png">
+                                <li><img src="<?php //echo $baseUrl; ?>/images/understand.png">
                                     <label>Can’t really understand the peers and/or seniors
                                     </label>
                                 </li>
-                                <!--<li><img src="<?php echo $baseUrl; ?>/images/tools.png">
-                                    <label>Proficiency in tools and systems is limited
-                                    </label>
-                                </li>-->
-                                <li><img src="<?php echo $baseUrl; ?>/images/follow.png">
+                               
+                                <li><img src="<?php //echo $baseUrl; ?>/images/follow.png">
                                     <label>Don’t know who to follow in the organization
                                     </label>
                                 </li>
                             </ul>
                         </div>
                         <div class="col-md-3 col-sm-3 col-xs-3 dark_green">
-                            <img src="<?php echo $baseUrl; ?>/images/prepare_icon.png" class="img-responsive center-block" />
+                            <img src="<?php //echo $baseUrl; ?>/images/prepare_icon.png" class="img-responsive center-block" />
                             <h5 class="text-center">Preparing for 1st Annual Appraisal</h5>
                             <ul>
-                                <li><img src="<?php echo $baseUrl; ?>/images/hightdegree.png">
+                                <li><img src="<?php //echo $baseUrl; ?>/images/hightdegree.png">
                                     <label>High degree of politics and power play
                                     </label>
                                 </li>
-                               <!-- <li><img src="<?php echo $baseUrl; ?>/images/ownstory.png">
-                                    <label>Not able to tell your own story
-                                    </label>
-                                </li>-->
-                                <li><img src="<?php echo $baseUrl; ?>/images/stress.png">
+                              
+                                <li><img src="<?php //echo $baseUrl; ?>/images/stress.png">
                                     <label>Your boss doesn’t see you as a high performer
                                     </label>
                                 </li>
-                                <li><img src="<?php echo $baseUrl; ?>/images/question.png">
+                                <li><img src="<?php //echo $baseUrl; ?>/images/question.png">
                                     <label>How does performance appraisal actually work?
                                     </label>
                                 </li>
                             </ul>
                         </div>
                         <div class="col-md-3 col-sm-3 col-xs-3 dark_green">
-                            <img src="<?php echo $baseUrl; ?>/images/planning.png" class="img-responsive center-block" />
+                            <img src="<?php //echo $baseUrl; ?>/images/planning.png" class="img-responsive center-block" />
                             <h5 class="text-center">Planning for 
                                 next year
                             </h5>
                             <ul>
-                                <li><img src="<?php echo $baseUrl; ?>/images/next.png">
+                                <li><img src="<?php //echo $baseUrl; ?>/images/next.png">
                                     <label>What’s next? – Role, Project and Priorities
                                     </label>
                                 </li>
-                                <li><img src="<?php echo $baseUrl; ?>/images/might.png">
+                                <li><img src="<?php //echo $baseUrl; ?>/images/might.png">
                                     <label>How my role fits in with the company’s strategy
                                     </label
                                     ></li>
-                                <li><img src="<?php echo $baseUrl; ?>/images/happy.png">
+                                <li><img src="<?php //echo $baseUrl; ?>/images/happy.png">
                                     <label>You might want to switch jobs or roles
                                     </label>
                                 </li>
-                                <!--<li><img src="<?php echo $baseUrl; ?>/images/role.png">
-                                    <label>You are happy – want to make the next promotion
-                                    </label>
-                                </li>-->
+                              
                             </ul>
                         </div>
-                    </div>
+                    </div>-->
                     <div class="row career_planning">
                         <div class="col-me-12">
                             <h4>&period;&period;&period;#CareerPlanning: 1 year enablement program to help you with this transition</h4>
