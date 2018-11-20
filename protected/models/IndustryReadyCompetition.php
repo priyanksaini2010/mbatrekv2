@@ -23,6 +23,7 @@
  */
 class IndustryReadyCompetition extends CActiveRecord
 {
+        public $verifyCode;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -43,6 +44,7 @@ class IndustryReadyCompetition extends CActiveRecord
 			array('mba_batch, college', 'numerical', 'integerOnly'=>true),
 			array('first_name, last_name, mobile_number, email_id, name_of_college', 'length', 'max'=>255),
 			array('question_1, question_2,question_3', 'safe'),
+                        array('verifyCode', 'captcha', 'allowEmpty'=>!CCaptcha::checkRequirements()),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, first_name, last_name, mobile_number, email_id, mba_batch, college, name_of_college, question_1, question_2, question_3, registeration_date', 'safe', 'on'=>'search'),
