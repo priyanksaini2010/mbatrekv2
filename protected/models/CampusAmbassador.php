@@ -24,6 +24,7 @@
  */
 class CampusAmbassador extends CActiveRecord
 {
+        public $verifyCode;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -43,7 +44,9 @@ class CampusAmbassador extends CActiveRecord
 			array('first_name, last_name, mobile_number, email_id, college_id, course_id, year_of_graduation_id, question_1, question_2, registeration_date', 'required'),
 			array('college_id, course_id, year_of_graduation_id', 'numerical', 'integerOnly'=>true),
 			array('first_name, last_name, mobile_number, email_id,  name_of_college, name_of_course', 'length', 'max'=>255),
+                        array('verifyCode', 'captcha', 'allowEmpty'=>!CCaptcha::checkRequirements()),
                         array('question_3', 'safe'),
+                    
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, first_name, last_name, mobile_number, email_id, college_id, course_id, year_of_graduation_id, question_1, question_2, question_3, registeration_date', 'safe', 'on'=>'search'),
