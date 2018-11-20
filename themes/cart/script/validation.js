@@ -105,6 +105,7 @@ $(document).ready(function(){
         if ($("#UsersNew_cpassword").val() == ""){
             validationMethod("error","Please confirm password.");return false;
         }
+        
         if(!$('#radio2').is(':checked') && !$('#radio3').is(':checked')) {
             validationMethod("error","Please tell us if you are a college student or a young proffesional.");return false;
         }
@@ -120,6 +121,9 @@ $(document).ready(function(){
         }
         if ($("#UsersNew_cpassword").val() != $("#UsersNew_password").val()){
             validationMethod("error","Confirm password and Password must be same.");return false;
+        }
+        if ($("#UsersNew_verifyCode").val() == ""){
+            validationMethod("error","Please enter verification code.");return false;
         }
         return true ;
     });
