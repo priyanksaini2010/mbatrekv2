@@ -177,6 +177,9 @@ $(document).ready(function(){
             validationMethod("error","Please Suggest two super creative ideas to share the importance of career development in your college");
             return false;
         }
+        if ($("#CampusAmbassador_verifyCode").val() == ""){
+            validationMethod("error","Please enter verification code.");return false;
+        }
 //        if ($("#CampusAmbassador_question_3").val() == ""){
 //            validationMethod("error","Please provide Any additional information you would like");
 //            return false;
@@ -236,7 +239,9 @@ $(document).ready(function(){
                 return false;
             }
         }
-        
+        if ($("#InterviewReadyCompetition_verifyCode").val() == ""){
+            validationMethod("error","Please enter verification code.");return false;
+        }
         
 //        if ($("#CampusAmbassador_question_3").val() == ""){
 //            validationMethod("error","Please provide Any additional information you would like");
@@ -294,7 +299,9 @@ $(document).ready(function(){
                 return false;
             }
         }
-        
+        if ($("#IndustryReadyCompetition_verifyCode").val() == ""){
+            validationMethod("error","Please enter verification code.");return false;
+        }
         
         
 //        if ($("#CampusAmbassador_question_3").val() == ""){
