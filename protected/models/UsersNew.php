@@ -33,7 +33,7 @@ class UsersNew extends CActiveRecord
 		return array(
 			array('full_name, email, password, is_verified, date_created', 'required'),
 			array('update_subscription, is_verified, role', 'numerical', 'integerOnly'=>true),
-			array('full_name, email, password', 'length', 'max'=>255),
+			array('full_name, email, password, name_of_college_company', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, full_name, email, password, update_subscription, is_verified, date_created, role', 'safe', 'on'=>'search'),
@@ -48,6 +48,8 @@ class UsersNew extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+                    'carts' => array(self::HAS_MANY, 'Cart', 'user_id'),
+                    'couponUsages' => array(self::HAS_MANY, 'CouponUsage', 'users_new_id'),
 		);
 	}
 
@@ -65,6 +67,7 @@ class UsersNew extends CActiveRecord
 			'is_verified' => 'Is Verified',
 			'date_created' => 'Date Created',
 			'role' => 'Role',
+                        'name_of_college_company' => 'Name Of College / Company',
 		);
 	}
 
@@ -94,6 +97,7 @@ class UsersNew extends CActiveRecord
 		$criteria->compare('is_verified',$this->is_verified);
 		$criteria->compare('date_created',$this->date_created,true);
 		$criteria->compare('role',$this->role);
+                $criteria->compare('name_of_college_company',$this->name_of_college_company,true);
                 $criteria->order = "id desc";
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
