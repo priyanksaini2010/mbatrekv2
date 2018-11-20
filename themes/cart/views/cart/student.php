@@ -12,7 +12,7 @@ $category = ProductCategory::model()->findByPk(1);
 $category2 = ProductCategory::model()->findByPk(2);
 $subs = ProductSubCategory::model()->findAllByAttributes(array("product_category_id"=>2));
 $saver = Products::model()->findByAttributes(array("product_sub_category_id"=>1,"type"=>1,"status"=>1,"is_saver" => 1));
-
+$campusCorp = Products::model()->findByAttributes(array("id"=>34));
 $arrProd = array();
 $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/themes/cart");
 ?>
@@ -145,7 +145,29 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                 </div>
                             </li>
                             <?php }?>
-                        </ul>                                    
+                        </ul>
+                        <?php 
+                        if($sub->id == 4){
+             $saver = $campusCorp;
+             if(!empty($saver)){?>
+                <div class="student-cta1-bottom">
+                    <div class="student-cta1-bottom-inner">
+                        <div class="student-cta1-bottom-title">
+                           <?php echo $saver->title;?>
+                        </div>
+                        <div class="student-cta1-bottom-sub-title">
+                            PRICE - <span class="old_price">&#8377 <?php echo money($saver->actuall_price);?></span>, <span class="new-price">Now - &#8377  <?php echo money($saver->price);?></span>
+                        </div>
+                        <div class="buy-and-cart">
+                            <a href="<?php echo Yii::app()->createUrl("cart/buynow",array("id"=>$saver->id));?>">buy now</a>
+                            <a href="<?php echo Yii::app()->createUrl("cart/addtocart",array("id"=>$saver->id));?>">add to cart</a>
+                        </div>
+                        <div class="read-more">
+                            <a href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>$saver->id));?>">read more >></a>
+                        </div>
+                    </div>
+                </div>
+                        <?php }}?>
                     </div>
                 </div>
             </div>
@@ -155,6 +177,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
             <?php }
             
             }?>
+             
 <!--            <div class="student-cta1-bottom">
                 <div class="student-cta1-bottom-inner">
                     <div class="student-cta1-bottom-title">
