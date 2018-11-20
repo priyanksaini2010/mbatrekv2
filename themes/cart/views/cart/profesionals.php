@@ -374,7 +374,8 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                             <a class="scroll_to" href="#interview_ready"><img src="/v2/themes/cart/images/blue-arrow-down.jpg"></a>
                                         </div>
                                         </div>
-                                       
+                                       <?php $products = Products::model()->findAllByAttributes(array("product_sub_category_id"=>3,"type"=>1,"status"=>1,"is_saver"=>0));?>
+                                        <?php if(!empty($products)){?>
                                         <div class="right-choice-inner2">
                                             <div class="right-choice-inner-title">
                                                 Let us help you in building your <span class="text-color">own Story....</span>
@@ -383,7 +384,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                 <div class="student-cta2-inner">
                                                     <ul class="student-cta-listing">
                                                         <?php 
-                                                    $products = Products::model()->findAllByAttributes(array("product_sub_category_id"=>3,"type"=>1,"status"=>1,"is_saver"=>0));
+                                                    
                                                     foreach ($products as $prod){
                                                 ?>
                                                         <li>
@@ -414,6 +415,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                 </div>
                                             </div>
                                         </div>
+                                        <?php }?>
                                         <div class="right-choice-inner2">
                                             <div class="right-choice-inner-title">
                                                 Let us help you secure that  <span class="text-color">amazing job offer....</span>
