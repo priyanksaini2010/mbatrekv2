@@ -32,7 +32,7 @@ class CartController extends Controller {
         public function accessRules() {
             return array(
                 array('allow', // allow all users to perform 'index' and 'view' actions
-                    'actions' => array('removeCoupon','industry','interview','index', 'view','student',"addtocart","cart","remove","buynow","verify", 
+                    'actions' => array('captcha','removeCoupon','industry','interview','index', 'view','student',"addtocart","cart","remove","buynow","verify", 
                                         'profesionals','institutes','register',"description","checkout","removeCart","applypromo","story","campus","loginandapply"),
                     'users' => array('*'),
                 ),
@@ -49,7 +49,16 @@ class CartController extends Controller {
                 ),
             );
         }
-    
+          
+        public function actions(){
+            return array(
+                // captcha action renders the CAPTCHA image displayed on the contact page
+                'captcha'=>array(
+                    'class'=>'CCaptchaAction',
+                    'backColor'=>BACK_COLOR,
+                ),
+            );
+	}
         public function actionRemoveCoupon(){
             if(isset(Yii::app()->user->id)){
                 
@@ -561,7 +570,9 @@ class CartController extends Controller {
                         $sentToUser = sendEmail($_POST['UsersNew']['email'], $subject,$body,$headers);
                         $this->refresh(true,"?thankreg=1");
                     } else {
-                        pr($model->getErrors());
+                        foreach ($model->getErrors() as $error){
+                            $this->errors['email'] = $error[0];
+                        }
                     }
                 } catch (Exception $ex) {
                     $model->addError('email', 'Email already exist');
