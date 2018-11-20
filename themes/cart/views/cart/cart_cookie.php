@@ -34,13 +34,13 @@ foreach ($products as $c){
                                     ?>
 <ul class="list-inline">
                                     <li class="cart_icon">
-                                        <a href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>$icart->product->id));?>">
+                                        <a href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>$icart->id));?>">
                                         <img height="44" width="41" src="<?php echo $baseUrl;?>/assets/products/<?php echo $icart->home_page_icon;?>"/>
                                         <span><?php echo $icart->title;?></span>
                                         </a>
                                     </li>
                                     <li class="cart_label">
-                                        <a href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>$icart->product->id));?>">
+                                        <a href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>$icart->id));?>">
                                         <h4><?php echo $icart->description1;?></h4>
                                         </a>
                                         <a href="<?php echo Yii::app()->createUrl("cart/remove",array("id"=>$icart->id));?>">Remove</a>
@@ -110,7 +110,7 @@ foreach ($products as $c){
 //                        $cart = Cart::model()->findAllByAttributes(array("user_id" => Yii::app()->user->id, "status" => 1));
                         foreach($products as $c){
                             $array = array();
-                        foreach($c->product->productRecommendedValueSaverPacks as $saver){
+                        foreach($c->productRecommendedValueSaverPacks as $saver){
                         if(!in_array($saver->recommendedProduct->id,$array)){
                             $array[] = $saver->recommendedProduct->id;
 ?>
