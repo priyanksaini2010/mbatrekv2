@@ -54,6 +54,10 @@ function specialValidationMethod(id,text){
     $('#myModal28').modal('show');
 //    alert(text);
 }
+function validationMethodSpecialCart(id,text){
+    $('#myModal29').modal('show');
+//    alert(text);
+}
 // Method to validate email
 function validateEmail(emailField) {
     var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
