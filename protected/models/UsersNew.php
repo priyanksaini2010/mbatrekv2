@@ -15,6 +15,7 @@
  */
 class UsersNew extends CActiveRecord
 {
+        public $verifyCode;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -34,6 +35,7 @@ class UsersNew extends CActiveRecord
 			array('full_name, email, password, is_verified, date_created', 'required'),
 			array('update_subscription, is_verified, role', 'numerical', 'integerOnly'=>true),
 			array('full_name, email, password, name_of_college_company', 'length', 'max'=>255),
+                        array('verifyCode', 'captcha', 'allowEmpty'=>!CCaptcha::checkRequirements()),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, full_name, email, password, update_subscription, is_verified, date_created, role', 'safe', 'on'=>'search'),
