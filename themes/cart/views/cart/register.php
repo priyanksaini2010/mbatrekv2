@@ -53,6 +53,19 @@
                                 <input type="checkbox" name="UsersNew[update_subscription]" value="1" id="checkboxG1" class="css-checkbox" />
                                 <label for="checkboxG1" class="css-label">Send me updates for new products and future promotional and discount offers</label>
                             </div>
+                            <?php if (CCaptcha::checkRequirements()): ?>
+                            <div class="catcha_Code">
+                                    <?php echo $form->labelEx($model, 'verifyCode'); ?>
+                                    <div>
+                                        <?php $this->widget('CCaptcha'); ?>
+                                        <?php echo $form->textField($model, 'verifyCode'); ?>
+                                    </div>
+                                    <div class="hint">Please enter the letters as they are shown in the image above.
+                                        <br/>Letters are not case-sensitive.</div>
+                                    <?php echo $form->error($model, 'verifyCode'); ?>
+                                </div>
+                            <?php endif; ?>
+                            <div class="capcha_div"><img src="images/capcha.png" alt="" />
                             <div class="col-xs-12 col-md-12 text-center">
                                 <button type="submit" class="btn btn-large btn-danger">Sign Up</button>
                             </div>
