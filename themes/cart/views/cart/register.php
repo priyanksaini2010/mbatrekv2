@@ -8,7 +8,7 @@
                         'enableAjaxValidation'=>false,
                         'htmlOptions'=>array(
                             'class'=>'form-signin mg-btm',
-                            'action' => Yii::app()->createUrl('site/register')
+//                            'action' => Yii::app()->createUrl('site/register')
                             
                     ))); ?> 
                     <div class="main">	
@@ -28,20 +28,21 @@
 						<div class="are_yu"><label>Are You?</label>
                                 <ul class="register_input">
                                     <li>
-                                        <input type="radio"  name="Contact[are_you]" value="twoCarDiv"  id="radio2" class="css-checkbox "/>
+                                        <input type="radio" value="1"  name="UsersNew[role]"   id="radio2" class="css-checkbox "/>
                                         <label for="radio2" class="css-label radGroup1">College Student </label>                                                    
                                     </li>
                                     <li>
-                                        <input type="radio" name="Contact[are_you]" value="threeCarDiv"  id="radio3" class="css-checkbox" />
+                                        <input type="radio" value="2" name="UsersNew[role]" id="radio3" class="css-checkbox" />
                                         <label for="radio3" class="css-label radGroup1">Young Professional</label>
                                     </li>
 								</ul>
 								<div class="other_fields">
-									<div id="twoCarDiv" class="desc">
-										<input class="form-control" placeholder="Name of your college*"  type="text" >
+									<div id="1" class="desc">
+										<input name="UsersNew[name_of_college]" class="form-control" placeholder="Name of your college*" id="name_of_college"  type="text" >
+                                                                                
 									</div>
-									<div id="threeCarDiv" class="desc">
-										<input class="form-control" placeholder="Name of your company*"  type="text" >
+									<div id="2" class="desc">
+										<input name="UsersNew[name_of_company]" class="form-control" placeholder="Name of your company*"  type="text" id="name_of_company">
 									</div>
 								</div>
                             </div>
