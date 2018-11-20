@@ -136,7 +136,7 @@ class Products extends CActiveRecord
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
                         'pagination' => array(
-                                            'pageSize' => 30,
+                                            'pageSize' => 100,
                                         ),
 		));
 	}
