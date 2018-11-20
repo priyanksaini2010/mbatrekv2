@@ -21,11 +21,11 @@
             <div class="login-cart">
                 <div class="login">
                     <?php if (isset(Yii::app()->user->id)) { ?>
-                        <a class="profile_open" href="">Logout</a>
+                        <a class="profile_open" href="#">Logout</a>
 						<div class="profile_div">
 							<ul>
 								<li><a href="javascript:void(0);">My Profile</a></li>
-								<li><a href="javascript:void(0);">Pass Orders</a></li>
+								<li><a href="javascript:void(0);">Past Orders</a></li>
 								<li><a href="<?php echo Yii::app()->createUrl('site/logout'); ?>">Logout</a></li>
 							</ul>
 						</div>
