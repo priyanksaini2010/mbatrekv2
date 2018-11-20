@@ -105,7 +105,19 @@ $(document).ready(function(){
         if ($("#UsersNew_cpassword").val() == ""){
             validationMethod("error","Please confirm password.");return false;
         }
-       
+        if(!$('#radio2').is(':checked') && !$('#radio3').is(':checked')) {
+            validationMethod("error","Please tell us if you are a college student or a young proffesional.");return false;
+        }
+        if($('#radio2').is(':checked')){
+            if($("#name_of_college").val() == ""){
+                validationMethod("error","Please enter college name.");return false;
+            }
+        }
+        if($('#radio3').is(':checked')){
+            if($("#name_of_company").val() == ""){
+                validationMethod("error","Please enter company name.");return false;
+            }
+        }
         if ($("#UsersNew_cpassword").val() != $("#UsersNew_password").val()){
             validationMethod("error","Confirm password and Password must be same.");return false;
         }
