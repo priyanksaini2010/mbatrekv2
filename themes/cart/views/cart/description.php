@@ -85,7 +85,7 @@ $product = Products::model()->findByPk($id);
 						<ul>
 							<li>
 								<div class="title_eng">
-									<h3>Industry Analysis</h3>
+									<h3>3 Industry Analysis</h3>
 								</div>
 								<div class="engage_img">
 									<img src="<?php echo $baseUrl; ?>/images/industry_analysis.png"/>
@@ -104,7 +104,7 @@ $product = Products::model()->findByPk($id);
 							</li>
 							<li>
 								<div class="title_eng">
-									<h3>Company Analysis</h3>
+									<h3>5 Company Analysis</h3>
 								</div>
 								<div class="engage_img">
 									<img src="<?php echo $baseUrl; ?>/images/company_analysis.png"/>
@@ -139,7 +139,7 @@ $product = Products::model()->findByPk($id);
 						<ul>
 							<li>
 								<div class="title_eng">
-									<h3>3 Mock Interviews</h3>
+									<h3>1 Mock Interviews</h3>
 								</div>
 								<div class="engage_img">
 									<img src="<?php echo $baseUrl; ?>/images/three_mockp_interview.png"/>
@@ -157,7 +157,7 @@ $product = Products::model()->findByPk($id);
 							</li>
 							<li>
 								<div class="title_eng">
-									<h3>50 Interview Q&A </h3>
+									<h3>25 Interview Q&A </h3>
 								</div>
 								<div class="engage_img">
 									<img src="<?php echo $baseUrl; ?>/images/fifty_mocup_interview.png"/>
@@ -326,13 +326,13 @@ $product = Products::model()->findByPk($id);
                     <div class="recomended_title">
 						<div class="recomended_bound">
                                                      <a style="cursor: pointer !important;" href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>$recon->recommendedProduct->id));?>">
-							<label>
+							
 							   <?php echo $recon->recommendedProduct->title;?>
 								<span>
 									(<?php echo $recon->short_description;?>)
 								</span>
 								
-							</label>
+							
                                                           </a>
 							<div class="rec_wrap">
 							<img src="<?php echo Yii::app()->baseUrl;?>/assets/products/<?php echo $recon->icon;?>"/>

@@ -13,14 +13,14 @@
                     ))); ?> 
                     <div class="main">	
                         <?php if($model->full_name != ''){ $data =  array('for' => "firstname",'class' => 'active');}else{$data =  array('for' => "firstname");};?>
-                        <?php echo $form->textField($model, 'full_name', array('class' => "form-control","placeholder"=>"Full Name","autofocus"=>"autofocus")); ?>
+                        <?php echo $form->textField($model, 'full_name', array('class' => "form-control","placeholder"=>"Full Name*","autofocus"=>"autofocus")); ?>
                         
                         <?php if($model->email != ''){ $data =  array('for' => "firstname",'class' => 'active');}else{$data =  array('for' => "firstname");};?>
-                        <?php echo $form->textField($model, 'email', array('class' => "form-control","placeholder"=>"Email")); ?>
+                        <?php echo $form->textField($model, 'email', array('class' => "form-control","placeholder"=>"Email*")); ?>
                         
                         <?php if($model->password != ''){ $data =  array('for' => "firstname",'class' => 'active');}else{$data =  array('for' => "firstname");};?>
-                        <?php echo $form->passwordField($model, 'password', array('class' => "form-control","placeholder"=>"Password")); ?>
-                        <input type="password" class="form-control" placeholder="Confirm Password" id="UsersNew_cpassword"> 
+                        <?php echo $form->passwordField($model, 'password', array('class' => "form-control","placeholder"=>"Password*")); ?>
+                        <input type="password" class="form-control" placeholder="Confirm Password*" id="UsersNew_cpassword"> 
                         
 						<!--
                         <input type="radio" name="UsersNew[role]" checked="checked" value="1" id="checkboxG1_radio1" class="css-checkbox" />College Student 
@@ -65,7 +65,7 @@
                                     <?php echo $form->error($model, 'verifyCode'); ?>
                                 </div>
                             <?php endif; ?>
-                            <div class="capcha_div"><img src="images/capcha.png" alt="" />
+                            <div class="capcha_div"><div><img src="images/capcha.png" alt="" /></div>
                             <div class="col-xs-12 col-md-12 text-center">
                                 <button type="submit" class="btn btn-large btn-danger">Sign Up</button>
                             </div>

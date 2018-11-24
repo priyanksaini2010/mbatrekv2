@@ -197,7 +197,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                 </span>
                                             </p>
                                             <span class="cta-solve">
-                                                Solve for your context, i.e </span>
+                                                Solve for your context, i.e Your Solution </span>
                                         </a>
 
 
@@ -214,8 +214,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                 </span>
 
                                             </p>
-                                            <span class="cta-solve">A set of reminder sheets for you to take to 
-                                                work everyday</span>
+                                            <span class="cta-solve">Help you understand yourself better from a  career perpective</span>
                                             </span>
                                         </a>
 
@@ -231,9 +230,8 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                 <span class="hours-title"><i>Cheat
                                                         Sheets</i></span>
                                             </p>
-                                            <p>
-                                                <span class="cta-solve">A set of reminder sheets for you 
-                                                    to take to work everyday</span></p>
+                                          
+                                                <span class="cta-solve">Enable you with a ready set of guids to take to work everyday</span>
                                         </a>
 
 

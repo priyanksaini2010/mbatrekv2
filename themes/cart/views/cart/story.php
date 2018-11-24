@@ -16,7 +16,7 @@ switch ($type){
         $right = "#Campus2Corporate";
         $right_Second = "Placement Series…";
         $class = "";
-          $right_2 = "How to Leverage 2 Year MBA Program";
+          $right_2 = "Leverage your 2 Year MBA";
     break;
     case 3:
         $text = "Young Proffesionals";
@@ -44,7 +44,7 @@ if(!empty($leftContent) || !empty($rightContent) || !empty($rightContent_2)) {
 <div class="container">
     <div class="row">
         <div class="sucess_story_wrap <?php echo $class;?>">
-            <h3>What <?php echo $text;?> say about MBAtrek…</h3>
+            <h3>What <?php echo $text;?> say about MBAtrek</h3>
             <div class="col-md-4 the_Executive">
                
                 <div class="sucess_heading">

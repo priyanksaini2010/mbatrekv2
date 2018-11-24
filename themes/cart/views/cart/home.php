@@ -16,7 +16,7 @@
                              End-to-End Solutions to develop ‘Ready’ and ‘Relevant’ corporate executives
                         </h2>
                         <h3>
-                              Begin your #MBAtrek journey as…
+                              Begin your #MBAtrek journey
                         </h3>
                     </div>
                     <div class="col-xs-12 col-md-6 col-lg-3 cta-home">
@@ -24,7 +24,7 @@
                         <a href="<?php echo Yii::app()->createUrl('cart/student'); ?>" class="cta-link1">
                             <span class="cta-img"><img src="<?php echo $baseUrl; ?>/images/student_icon.png">
 							</span>
-                            <span class="cta-title">Students</span>
+                            <span class="cta-title">Student</span>
                         </a>
                         <div class="cta-body">
                             <h4>
@@ -41,7 +41,7 @@
                             <div class="cta-home-wrap">
                             <a href="<?php echo Yii::app()->createUrl('cart/profesionals'); ?>" class="cta-link1">
                                 <span class="cta-img"><img src="<?php echo $baseUrl; ?>/images/professional_icon.png"></span>
-                                <span class="cta-title">Young Professionals</span>
+                                <span class="cta-title">Young Professional</span>
                             </a>
                             <div class="cta-body">
                                 <h4>
@@ -57,7 +57,7 @@
                             <div class="cta-home-wrap">
                             <a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"educational_institute")); ?>" class="cta-link1">
                                 <span class="cta-img"><img src="<?php echo $baseUrl; ?>/images/education_institute.png"></span>
-                                <span class="cta-title">Educational Institutes</span>
+                                <span class="cta-title">Educational Institute</span>
                             </a>
                             <div class="cta-body">
                                 <h4>
@@ -73,7 +73,7 @@
                             <div class="cta-home-wrap">
                             <a href="<?php echo Yii::app()->createUrl('company'); ?>" class="cta-link1">
                                 <span class="cta-img"><img src="<?php echo $baseUrl; ?>/images/companies_icon.png"></span>
-                                 <span class="cta-title">Companies</span>
+                                 <span class="cta-title">Company</span>
                             </a>
                             <div class="cta-body">
                                 <h4>
@@ -106,7 +106,7 @@
                                 <img src="<?php echo $baseUrl; ?>/images/global.png"/>
                             </div>
                             <div class="global_text">
-                                <h3>1500+ Years of 
+                                <h3>1,500+ Years of 
                                 Global Experience from our core team & industry experts
                                 </h3>
                             </div>
@@ -203,7 +203,7 @@
                                 <img src="<?php echo $baseUrl; ?>/images/social_media_on.png"/>
                             </div>
                             <div class="global_text">
-                                <h3>MBAtrek on Social Media...
+                                <h3>MBAtrek on Social Media
                                 </h3>
                             </div>
                         </li>
