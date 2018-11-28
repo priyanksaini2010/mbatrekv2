@@ -50,6 +50,8 @@ $FaqType = FaqType::model()->findAll();;
                       <?php }?>
                 </div>
             </div>
+            
+            
             <div class="fq_footer"><label>Still stuck with your problem? <span><a href="<?php echo Yii::app()->createUrl("contact-us");?>">Contact us</a> at</span> <a href="mailto:contact@mbatrek.com"><span class="color_span"> contact@mbatrek.com</span></a> or <a href="<?php echo Yii::app()->createUrl("talk-to-our-career-advisor");?>">Talk to Our <span>Career Advisor</a> at</span> <span class="color_span">+91 98219 48334</span> </label></div>
         </div>
     </div>
