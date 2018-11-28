@@ -19,7 +19,7 @@
                         <?php echo $form->textField($model, 'email', array('class' => "form-control","placeholder"=>"Email*")); ?>
                         
                         <?php if($model->password != ''){ $data =  array('for' => "firstname",'class' => 'active');}else{$data =  array('for' => "firstname");};?>
-                        <?php echo $form->passwordField($model, 'password', array('class' => "form-control","placeholder"=>"Password*")); ?>
+                        <?php echo $form->passwordField($model, 'password', array('class' => "form-control","placeholder"=>"Password*,8 character long and alphanumeric")); ?>
                         <input type="password" class="form-control" placeholder="Confirm Password*" id="UsersNew_cpassword"> 
                         
 						<!--
@@ -28,20 +28,21 @@
 						<div class="are_yu"><label>Are You?</label>
                                 <ul class="register_input">
                                     <li>
-                                        <input type="radio" value="1"  name="UsersNew[role]"   id="radio2" class="css-checkbox "/>
+                                        <input type="radio" <?php if(isset($model->role) && $model->role ==1){?>checked="checked"<?php }?> value="1"  name="UsersNew[role]"   id="radio2" class="css-checkbox "/>
                                         <label for="radio2" class="css-label radGroup1">College Student </label>                                                    
                                     </li>
                                     <li>
-                                        <input type="radio" value="2" name="UsersNew[role]" id="radio3" class="css-checkbox" />
+                                        <input type="radio" <?php if(isset($model->role) && $model->role ==2){?>checked="checked"<?php }?> value="2" name="UsersNew[role]" id="radio3" class="css-checkbox" />
                                         <label for="radio3" class="css-label radGroup1">Young Professional</label>
                                     </li>
 								</ul>
 								<div class="other_fields">
-									<div id="1" class="desc">
+                                                                    
+                                                                    <div id="1" class="desc"  <?php if(isset($model->role) && $model->role ==1){?>style="display :block !important;"<?php }?>>
 										<input name="UsersNew[name_of_college]" class="form-control" placeholder="Name of your college*" id="name_of_college"  type="text" >
                                                                                 
 									</div>
-									<div id="2" class="desc">
+									<div id="2" class="desc" <?php if(isset($model->role) && $model->role ==2){?>style="display :block !important;"<?php }?>>
 										<input name="UsersNew[name_of_company]" class="form-control" placeholder="Name of your company*"  type="text" id="name_of_company">
 									</div>
 								</div>

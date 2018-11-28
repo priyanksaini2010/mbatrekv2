@@ -50,8 +50,24 @@ function validationMethod(id,text){
 //    alert(text);
 }
 
+function validationMethodNotApplied(id,text){
+    $('#myModal32').modal('show');
+//    alert(text);
+}
+function validationMethodThanks(id,text){
+    $('#myModal33').modal('show');
+//    alert(text);
+}
 function specialValidationMethod(id,text){
     $('#myModal28').modal('show');
+//    alert(text);
+}
+function specialValidationMethodInterview(id,text){
+    $('#myModal30').modal('show');
+//    alert(text);
+}
+function specialValidationMethodIndustry(id,text){
+    $('#myModal31').modal('show');
 //    alert(text);
 }
 function validationMethodSpecialCart(id,text){
@@ -79,7 +95,7 @@ $(document).ready(function(){
      $("#share").jsSocials({
     showLabel: false,
     showCount: false,
-    shares: ["email", "twitter", "facebook", "googleplus", "linkedin"]
+    shares: ["email", "twitter", "facebook", "linkedin"]
 })
     //Registeration Form Validation
     $(".cart-remove").click(function(){
@@ -93,8 +109,11 @@ $(document).ready(function(){
             validationMethod("UsersNew_full_name","Please enter full name");
             return false;
         }
+        if ($("#UsersNew_email").val() == ""){
+            validationMethod("error","Please enter your email id.");return false;
+        }
         if ($("#UsersNew_email").val() == "" || !validateEmail($("#UsersNew_email").val())){
-            validationMethod("error","Please enter valid email.");return false;
+            validationMethod("error","Please enter valid email. e.g. yourname@example.com");return false;
         }
         if ($("#UsersNew_password").val() == ""){
             validationMethod("error","Please enter password.");return false;
@@ -103,7 +122,7 @@ $(document).ready(function(){
             validationMethod("error","Password length should be  atleast 8 characters.");return false;
         }
         if (!passwords($("#UsersNew_password").val())){
-            validationMethod("error","Password length should be alphanumeric.");
+            validationMethod("error","Password length should be alphanumeric, can not contain special chearacters.");
             return false;
         }
         if ($("#UsersNew_cpassword").val() == ""){
@@ -111,7 +130,7 @@ $(document).ready(function(){
         }
         
         if(!$('#radio2').is(':checked') && !$('#radio3').is(':checked')) {
-            validationMethod("error","Please tell us if you are a college student or a young proffesional.");return false;
+            validationMethod("error","Please tell us if you are a college student or a young professional.");return false;
         }
         if($('#radio2').is(':checked')){
             if($("#name_of_college").val() == ""){
@@ -377,6 +396,8 @@ $(document).ready(function(){
                     validationMethod("thanks",obj.message)
 //                    location.reload("?thanmscart=1");
                     setInterval(function(){window.location.reload(); }, 3000);
+                } else if(obj.status == "notapplied"){
+                    validationMethodNotApplied("error",obj.message)
                 }else {
                     validationMethod("error",obj.message)
                 }

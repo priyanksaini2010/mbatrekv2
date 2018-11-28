@@ -291,6 +291,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                         <div class="buy-and-cart">
                                             <a href="<?php echo Yii::app()->createUrl("cart/buynow",array("id"=>$saver->id));?>">buy now</a>
                                             <a href="<?php echo Yii::app()->createUrl("cart/addtocart",array("id"=>$saver->id));?>">add to cart</a>
+                                            <a href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>$saver->id));?>">read more</a>
                                         </div>
 
                                     </div>
@@ -348,6 +349,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                 </div>
                                             </div>
                                         </div>
+                                          <?php  $product = Products::model()->findByAttributes(array("id"=>31));?>
                                         <div class="combo_package">
                                         <div class="student-cta1-bottom ">
                                                 <div class="student-cta1-bottom-inner " id="indusctry_ready">
@@ -356,8 +358,8 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                     <span class="combol_sub_Text">(5 Industry Analyses + 10 Company Analyses + Job Fitment Assessment)</span>
                                                     </div>
                                                     <div class="student-cta1-bottom-sub-title">
-                                                        Price ₹  <div class="line_trgh_com">3,500</div><br>
-                                                        <span class="new-price">Special Offer: ₹ 3,200
+                                                        Price ₹  <div class="line_trgh_com"><?php echo money($product->actuall_price);?></div><br>
+                                                        <span class="new-price">Special Offer: ₹ <?php echo money($product->price);?>
                                                             </span>
                                                     </div>
                                                     <div class="buy-and-cart">
@@ -422,7 +424,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                 <div class="student-cta2-inner">
                                                     <ul class="student-cta-listing">
                                                          <?php 
-                                                    $products = Products::model()->findAllByAttributes(array("product_sub_category_id"=>4,"type"=>1,"status"=>1,"is_saver"=>0));
+                                                    $products = Products::model()->findAllByAttributes(array("product_sub_category_id"=>4,"status"=>1,"is_saver"=>0));
                                                     foreach ($products as $prod){
                                                 ?>
                                                         <li>
@@ -453,6 +455,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                 </div>
                                             </div>
                                         </div>
+                                        <?php  $product = Products::model()->findByAttributes(array("id"=>32));?>
                                         <div class="combo_package">
                                         <div class="student-cta1-bottom ">
                                                 <div class="student-cta1-bottom-inner" id="interview_ready" >
@@ -461,8 +464,8 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                     <span class="combol_sub_Text">(50 Q & A + 3 Mock Interviews)</span>
                                                     </div>
                                                     <div class="student-cta1-bottom-sub-title">
-                                                        Price ₹  <div class="line_trgh_com">3,500</div><br>
-                                                        <span class="new-price">Special Offer: ₹ 3,200
+                                                        Price ₹  <div class="line_trgh_com"><?php echo money($product->actuall_price);?></div><br>
+                                                        <span class="new-price">Special Offer: ₹ <?php echo money($product->price);?>
                                                             </span>
                                                     </div>
                                                     <div class="buy-and-cart">

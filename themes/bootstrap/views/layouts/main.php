@@ -35,20 +35,16 @@ $siteData = array(
 //            array('label'=>'Feedback Managment', 'url'=>array('/feedback/admin')),
 //            array('label'=>'Contact Managment', 'url'=>array('/contact/admin')),
             array('label'=>'FAQ Managment', 'url'=>array('/faq/admin')),
-            array('label'=>'CA FAQ Managment', 'url'=>array('/caFaq/admin')),
+           
 //            array('label'=>'FAQ Analysis', 'url'=>array('/faqAnalysis/admin')),
             array('label'=>'Talk To Career Advisory', 'url'=>array('/talkToAdvisory/admin')),
 //            array('label'=>'eBroucher Management', 'items'=>$items),
             array('label'=>'Success Story Management', 'url'=>array('/successStory/admin')),
 //            array('label'=>'Event Category Management', 'url'=>array('/eventCategory/admin')),
             array('label'=>'Event Management', 'url'=>array('/eventGallery/admin')),
-            array('label'=>'Colleges Management', 'url'=>array('/colleges/admin')),
-            array('label'=>'Competition Colleges Management', 'url'=>array('/collegesCompetition/admin')),
-            array('label'=>'Courses Management', 'url'=>array('/courses/admin')),
-            array('label'=>'Year Of Graduation Management', 'url'=>array('/yearOfGraduation/admin')),
-            array('label'=>'Campus Ambassador Management', 'url'=>array('/campusAmbassador/admin')),
-            array('label'=>'Interview Management', 'url'=>array('/interviewReadyCompetition/admin')),
-            array('label'=>'Industry Management', 'url'=>array('/industryReadyCompetition/admin')),
+           
+           
+          
 //            array('label'=>'Success Story Management', 'url'=>array('/articles/admin',"type"=>2)),
 //            array('label'=>'Success Story Management', 'url'=>array('/articles/admin',"type"=>2)),
 //            array('label'=>'Industry Options 1', 'url'=>array('/industryOption/admin',"option_number"=>1)),
@@ -61,22 +57,21 @@ $siteData = array(
 //	    array('label'=>'Block Email', 'url'=>array('/blockedEmail/admin')),
             
         );
-$eduCationManagment = array( 
-//            array('label'=>'Modules Managment', 'url'=>array('/module/admin')),
-//            array('label'=>'Traits Managment', 'url'=>array('/traits/admin')),
-//            array('label'=>'Case Study Functions Managment', 'url'=>array('/casestudyFunctions/admin')),
-//            array('label'=>'Universities Managment', 'url'=>array('/universities/admin')),
-//            array('label'=>'Institutes Managment', 'url'=>array('/institutes/admin')),
-//            array('label'=>'Subjects Managment', 'url'=>array('/librarySubjects/admin')),
-//            array('label'=>'Books Managment', 'url'=>array('/libraryBooks/admin')),
-//            array('label'=>'Industries Managment', 'url'=>array('/industries/admin')),
-//            array('label'=>'All Job Postings', 'url'=>array('/JobPosting/admin')),
-//            array('label'=>'All Internship', 'url'=>array('/industryInternship/admin')),
-//            array('label'=>'All Consulting Projects', 'url'=>array('/industryProjectWithFaculty/admin')),
-//            array('label'=>'All Live Projects', 'url'=>array('/liveProjects/admin')),
-//            array('label'=>'All Sessions At Campus', 'url'=>array('/industrySession/admin')),
-//            array('label'=>'Add Session Attendance', 'url'=>array('/instituteBatchSessionStudentAttendance/createall')),
-    );
+$caManagment = array( 
+    array('label'=>'Campus Ambassador Management', 'url'=>array('/campusAmbassador/admin')),
+    array('label'=>'CA FAQ Managment', 'url'=>array('/caFaq/admin')),
+    array('label'=>'Colleges Management', 'url'=>array('/colleges/admin')),
+    array('label'=>'Courses Management', 'url'=>array('/courses/admin')),
+    array('label'=>'Year Of Graduation Management', 'url'=>array('/yearOfGraduation/admin')),
+     
+);
+$copManagment = array( 
+      
+            array('label'=>'Interview Management', 'url'=>array('/interviewReadyCompetition/admin')),
+            array('label'=>'Industry Management', 'url'=>array('/industryReadyCompetition/admin')),
+             array('label'=>'Competition Colleges Management', 'url'=>array('/collegesCompetition/admin')),
+     
+);
  $this->widget('bootstrap.widgets.TbNavbar',array(
     'items'=>array(
         array(
@@ -85,7 +80,8 @@ $eduCationManagment = array(
                 array('label'=>'Home', 'url'=>'#'),
                 array('label'=>'Users', 'url'=>array('/usersNew/admin',"role"=>1)),
                 array('label'=>'Web Data Managment', 'items'=>$siteData),
-//                array('label'=>'Educational Data Managment', 'items'=>$eduCationManagment),
+                array('label'=>'Campus Ambassador', 'items'=>$caManagment),
+                array('label'=>'Competetion', 'items'=>$copManagment),
 //                ,
                 array('label'=>'Blog Management', 'items'=>$blogMenu),
                 

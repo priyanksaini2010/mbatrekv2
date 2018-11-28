@@ -79,13 +79,123 @@ var domain_name = '<?php echo $_SERVER['HTTP_HOST'].DIREC;?>';
                                 <div class="error_container">
                                     <p><!--<i class="fa fa-check" id="pop-notification-class" aria-hidden"true"=""></i>-->
                                         <span id="pop-notification-text">
-                                            <span>Thanks for showing interest in  joining revolution to up-skill your peers.</span>
+                                            <span>Thank you for showing interest in joining the revolution to up-skill your peers.</span>
                                             <br /> <br />
-                                            <span>If our team is amazed by your idea we will get back to you with next step :)</span>
+                                            <span>If our team is amazed by your ideas, we will get back to you with the next steps :)</span>
                                             <br /><br />
                                             <span> Stay tuned !!</span>
                                             
                                         </span></p>
+                                </div>
+                                <!-- <button class="md-close">OK</button> -->
+                                <div class="main_register"><div class="site_btn"><a data-dismiss="modal" class="close" href="javascript:void(0);">OK</a></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+         <div id="myModal30" class="modal" data-easein="shake" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!--<div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h4 class="modal-title">Modal header</h4>
+                    </div>-->
+                    <div class="modal-body">
+                        <div class="md-content">
+                            <h3 id="pop-notification-type-2">Registration Successful</h3>
+                            <div class="error_wrap">
+                                <div class="error_container">
+                                    <p><!--<i class="fa fa-check" id="pop-notification-class" aria-hidden"true"=""></i>-->
+                                        <span id="pop-notification-text">
+                                            <span>You have registered successfully to #InterviewReady competition.</span>
+                                            <br /> <br />
+                                            <span>Further information would be provided to you once we have <span style="text-decoration: underline">20 registrations</span> from your college/university</span>
+                                            <br /><br />
+                                            <span>For any query write at -</span>
+                                            <br /><br />
+                                            <span style="text-decoration: underline">contact@mbatrek.com</span><span> or call at +91-9821948355,+91-9821948354</span>
+                                        </span></p>
+                                </div>
+                                <!-- <button class="md-close">OK</button> -->
+                                <div class="main_register"><div class="site_btn"><a data-dismiss="modal" class="close" href="javascript:void(0);">OK</a></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+         <div id="myModal31" class="modal" data-easein="shake" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!--<div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h4 class="modal-title">Modal header</h4>
+                    </div>-->
+                    <div class="modal-body">
+                        <div class="md-content">
+                            <h3 id="pop-notification-type-2">Registration Successful</h3>
+                            <div class="error_wrap">
+                                <div class="error_container">
+                                    <p><!--<i class="fa fa-check" id="pop-notification-class" aria-hidden"true"=""></i>-->
+                                        <span id="pop-notification-text">
+                                            <span>You have registered successfully to #IndustryReady competition.</span>
+                                            <br /> <br />
+                                            <span>Further information would be provided to you once we have <span style="text-decoration: underline">20 registrations</span> from your college/university</span>
+                                            <br /><br />
+                                            <span>For any query write at -</span>
+                                            <br /><br />
+                                            <span style="text-decoration: underline">contact@mbatrek.com</span><span> or call at +91-9821948355,+91-9821948354</span>
+                                        </span></p>
+                                </div>
+                                <!-- <button class="md-close">OK</button> -->
+                                <div class="main_register"><div class="site_btn"><a data-dismiss="modal" class="close" href="javascript:void(0);">OK</a></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+         <div id="myModal32" class="modal" data-easein="shake" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!--<div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h4 class="modal-title">Modal header</h4>
+                    </div>-->
+                    <div class="modal-body">
+                        <div class="md-content">
+                            <h3 id="pop-notification-type-2">Registration Successful</h3>
+                            <div class="error_wrap">
+                                <div class="error_container">
+                                    <p><span>Sorry!</span><br /><span>Currently no coupon is applicable on this Email ID</span><br/><span>Try Login with your College Email ID.</span></p>
+                                </div>
+                                <!-- <button class="md-close">OK</button> -->
+                                <div class="main_register"><div class="site_btn"><a data-dismiss="modal" class="close" href="javascript:void(0);">OK</a></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+         <div id="myModal33" class="modal" data-easein="shake" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!--<div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h4 class="modal-title">Modal header</h4>
+                    </div>-->
+                    <div class="modal-body">
+                        <div class="md-content">
+                            <h3 id="pop-notification-type-2">Thanks</h3>
+                            <div class="error_wrap">
+                                <div class="error_container">
+                                    <p><span>Thank You for reaching out to us! </span><br /><span>We will get back to you soon.</span></p>
                                 </div>
                                 <!-- <button class="md-close">OK</button> -->
                                 <div class="main_register"><div class="site_btn"><a data-dismiss="modal" class="close" href="javascript:void(0);">OK</a></div></div>

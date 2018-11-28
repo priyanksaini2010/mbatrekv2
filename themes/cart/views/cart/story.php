@@ -3,9 +3,10 @@ $type = $_REQUEST['type'];
 switch ($type){
     case 1:
         $text = "Placement Coordinator";
-        $text_bottom = "Want to get these sessions conducted by MBAtrek ‘FREE of COST’…";
-        $left = "How to Leverage 2 Year MBA Program";
+        $text_bottom = "Want to get these sessions conducted by MBAtrek ‘FREE of COST’";
+        $left = "Leverage Your 2 Year MBA";
         $right = "How to Maximize the Opportunity for Placements";
+//        $left_second = "Induction Series…";
         $class = "cordinator_page";
     break;
     case 2:
@@ -17,10 +18,12 @@ switch ($type){
         $right_Second = "Placement Series…";
         $class = "";
           $right_2 = "Leverage your 2 Year MBA";
+          $right_Second_2 = "Induction Series…";
+          
     break;
     case 3:
         $text = "Young Proffesionals";
-        $text_bottom = "Want your career to head in the right direction like these professionals…";
+        $text_bottom = "Want your career to head in the right direction like these professionals";
         $left = "";
         $right = "";
         $class = "profession_success";
@@ -114,7 +117,7 @@ if(!empty($leftContent) || !empty($rightContent) || !empty($rightContent_2)) {
                         </div>
                         <div class="col-md-7">
                             <div class="sucess_info">
-                                <label><?php echo $content->course;?> <?php echo $content->college_or_company;?></label>
+                                <label><?php echo $content->college_or_company;?> <?php echo $content->course;?> </label>
                                 <Span><?php echo $content->author;?></Span>
                             </div>
                         </div>
@@ -123,7 +126,7 @@ if(!empty($leftContent) || !empty($rightContent) || !empty($rightContent_2)) {
                 <?php }?>
             </div>
             <div class="want_to_get">
-                <h3><?php echo $text_bottom;?> <a href="javascript:void(0);">Click Here</a></h3>
+                <h3><?php echo $text_bottom;?> <a href="<?php echo Yii::app()->createUrl("contact-us");?>">Click Here</a></h3>
             </div>
         </div>
     </div>

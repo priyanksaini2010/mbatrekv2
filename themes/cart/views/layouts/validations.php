@@ -6,7 +6,7 @@
             <?php }?>
 <?php } ?>
     <?php if(isset($_REQUEST['thankreg'])){?>
-	 validationMethod("thanks","Thanks for signup with us, please check your email to verify.")
+	 validationMethod("thanks","Thanks for signup with us, please check your email to verify to verify your account.")
     <?php }?>
     <?php if(isset($_REQUEST['thankforin'])){?>
 	 validationMethod("error","Please use MBAtrek registered email address.")
@@ -18,10 +18,16 @@
 	 validationMethod("error","This page is under construction.")
     <?php }?>
     <?php if(isset($_REQUEST['thankc'])){?>
-	 validationMethod("thanks","Thank You for reaching out to us! We will get back to you soon.")
+	 validationMethodThanks("thanks","Thank You for reaching out to us! We will get back to you soon.")
     <?php }?>
     <?php if(isset($_REQUEST['thankscampus'])){?>
 	 specialValidationMethod("thanks","no-message-from-here")
+    <?php }?>
+    <?php if(isset($_REQUEST['thanksinterview'])){?>
+	 specialValidationMethodInterview("thanks","no-message-from-here")
+    <?php }?>
+    <?php if(isset($_REQUEST['thanksindustry'])){?>
+	 specialValidationMethodIndustry("thanks","no-message-from-here")
     <?php }?>
         <?php if(isset($_REQUEST['thanksverify'])){?>
 	 validationMethod("thanks","Thanks for registering with us. You account has been verified now.")
@@ -49,6 +55,10 @@
                             validationMethod("thanks",obj.message)
         //                    location.reload("?thanmscart=1");
                             setInterval(function(){window.location.reload(); }, 3000);
+                        }else if(obj.status == "loginfailed"){
+                             validationMethod("thanks",obj.message)
+        //                    location.reload("?thanmscart=1");
+//                            setInterval(function(){window.location.reload(); }, 3000);
                         }else {
                             validationMethodSpecialCart("error",obj.message)
                              setInterval(function(){window.location.reload(); }, 3000);

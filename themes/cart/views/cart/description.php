@@ -81,14 +81,15 @@ $product = Products::model()->findByPk($id);
     <?php if( $id == 31){?>
         <div class="how_We_engage">
 					<div class="container">
-						
+						<?php  $product = Products::model()->findByAttributes(array("id"=>18));?>
+						<?php  $product2 = Products::model()->findByAttributes(array("id"=>21));?>
 						<ul>
 							<li>
 								<div class="title_eng">
-									<h3>3 Industry Analysis</h3>
+                                                                    <h3><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"18")); ?>">3 Industry Analysis</a></h3>
 								</div>
 								<div class="engage_img">
-									<img src="<?php echo $baseUrl; ?>/images/industry_analysis.png"/>
+                                                                    <a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"18")); ?>"><img src="<?php echo $baseUrl; ?>/images/industry_analysis.png"/></a>
 								</div>
 								<div class="title_descrip">
 									Get a detail analysis of the selected industry according to your fitment
@@ -98,16 +99,16 @@ $product = Products::model()->findByPk($id);
 									<a href="javacript:void(0);">Know More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
 								</div>
 								<div class="price_eng">
-									<label>&#8377 2,500</label>
+									<label>&#8377 <?php echo money($product->price);?></label>
 								</div>
 								<img src="<?php echo $baseUrl; ?>/images/plus_icon.png"/>
 							</li>
 							<li>
 								<div class="title_eng">
-									<h3>5 Company Analysis</h3>
+                                                                    <a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"21")); ?>"><h3>5 Company Analysis</h3></a>
 								</div>
 								<div class="engage_img">
-									<img src="<?php echo $baseUrl; ?>/images/company_analysis.png"/>
+                                                                    <a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"21")); ?>"><img src="<?php echo $baseUrl; ?>/images/company_analysis.png"/></a>
 								</div>
 								
 								<div class="title_descrip">
@@ -117,14 +118,14 @@ $product = Products::model()->findByPk($id);
 									<a href="javacript:void(0);">Know More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
 								</div>
 								<div class="price_eng">
-									<label>&#8377 2,000</label>
+									<label>&#8377 <?php echo money($product2->price);?></label>
 								</div>
 							</li>
 						</ul>
 						<div class="discount_eng">
 							<div class="combo_price">
-								<label>Combo Price &#8377 3,500</label>
-								<span class="discount_line">Total Price &#8377 4,500</span>
+								<label>Combo Price &#8377 <?php echo money($product2->price+$product->price);?></label>
+								<span class="discount_line">Total Price &#8377 <?php echo money($product2->actuall_price+$product->actuall_price);?></span>
 								<span>You save &#8377 1,000 (20%)</span>
 							</div>
 						</div>
@@ -133,16 +134,19 @@ $product = Products::model()->findByPk($id);
     <?php }?>
 	
 	    <?php if( $id == 32){?>
+            <?php  $product = Products::model()->findByAttributes(array("id"=>30));?>
+            <?php  $product2 = Products::model()->findByAttributes(array("id"=>23));?>
+            <?php //  $product3 = Products::model()->findByAttributes(array("id"=>21));?>
         <div class="how_We_engage">
 					<div class="container">
 						
 						<ul>
 							<li>
 								<div class="title_eng">
-									<h3>1 Mock Interviews</h3>
+                                                                    <a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"30")); ?>"><h3>1 Mock Interviews</h3></a>
 								</div>
 								<div class="engage_img">
-									<img src="<?php echo $baseUrl; ?>/images/three_mockp_interview.png"/>
+                                                                    <a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"30")); ?>"><img src="<?php echo $baseUrl; ?>/images/three_mockp_interview.png"/></a>
 								</div>
 								<div class="title_descrip">
 									Practice your answers and understand how to structure the content
@@ -151,16 +155,16 @@ $product = Products::model()->findByPk($id);
 									<a href="javacript:void(0);">Know More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
 								</div>
 								<div class="price_eng">
-									<label>&#8377 1,500</label>
+									<label>&#8377 <?php echo money($product->price);?></label>
 								</div>
 								<img src="<?php echo $baseUrl; ?>/images/plus_icon.png"/>
 							</li>
 							<li>
 								<div class="title_eng">
-									<h3>25 Interview Q&A </h3>
+                                                                    <a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"23")); ?>"><h3>25 Interview Q&A </h3></a>
 								</div>
 								<div class="engage_img">
-									<img src="<?php echo $baseUrl; ?>/images/fifty_mocup_interview.png"/>
+                                                                    <a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"23")); ?>"><img src="<?php echo $baseUrl; ?>/images/fifty_mocup_interview.png"/></a>
 								</div>
 								
 								<div class="title_descrip">
@@ -170,14 +174,14 @@ $product = Products::model()->findByPk($id);
 									<a href="javacript:void(0);">Know More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
 								</div>
 								<div class="price_eng">
-									<label>&#8377 1,250</label>
+									<label>&#8377 <?php echo money($product2->price);?></label>
 								</div>
 							</li>
 						</ul>
 						<div class="discount_eng">
 							<div class="combo_price">
-								<label>Combo Price &#8377 2,250</label>
-								<span class="discount_line">Total Price &#8377 2,750</span>
+								<label>Combo Price &#8377 <?php echo money($product2->price+$product->price);?></label>
+								<span class="discount_line">Total Price &#8377 <?php echo money($product2->actuall_price+$product->actuall_price);?></span>
 								<span>You save &#8377 500 (18%)</span>
 							</div>
 						</div>
@@ -185,47 +189,50 @@ $product = Products::model()->findByPk($id);
                 </div>
     <?php }?>
     <?php if($id == 19){?>
+            <?php  $product = Products::model()->findByAttributes(array("id"=>28));?>
+            <?php  $product2 = Products::model()->findByAttributes(array("id"=>27));?>
+            <?php $product3 = Products::model()->findByAttributes(array("id"=>17));?>
                 <div class="how_We_engage">
 					<div class="container">
 						
 						<ul>
 							<li>
 								<div class="title_eng">
-									<h3>InternACE</h3>
+                                                                    <a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"28")); ?>"><h3>InternACE</h3></a>
 								</div>
 								<div class="engage_img">
-									<img src="<?php echo $baseUrl; ?>/images/internace_icon.png"/>
+                                                                    <a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"27")); ?>"><img src="<?php echo $baseUrl; ?>/images/internace_icon.png"/></a>
 								</div>
 								<div class="title_descrip">
 									Getting ready and relevant for internship
 								</div>
 								<div class="price_eng">
-									<label>&#8377 4,500</label>
+									<label>&#8377 <?php echo money($product->price);?></label>
 								</div>
 								<img src="<?php echo $baseUrl; ?>/images/plus_icon.png"/>
 							</li>
 							<li>
 								<div class="title_eng">
-									<h3>InternPRO</h3>
+                                                                    <a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"27")); ?>"><h3>InternPRO</h3></a>
 								</div>
 								<div class="engage_img">
-									<img src="<?php echo $baseUrl; ?>/images/internPro_icon.png"/>
+                                                                    <a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"27")); ?>"><img src="<?php echo $baseUrl; ?>/images/internPro_icon.png"/></a>
 								</div>
 								<div class="title_descrip">
 									Delivering your best during the internship
 
 								</div>
 								<div class="price_eng">
-									<label>&#8377 4,500</label>
+									<label>&#8377 <?php echo money($product2->price);?></label>
 								</div>
 								<img src="<?php echo $baseUrl; ?>/images/plus_icon.png"/>
 							</li>
 							<li>
 								<div class="title_eng">
-									<h3>InternARISE</h3>
+                                                                    <a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"17")); ?>"><h3>InternARISE</h3></a>
 								</div>
 								<div class="engage_img">
-									<img src="<?php echo $baseUrl; ?>/images/internet_arice_icon.png"/>
+                                                                    <a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"17")); ?>"><img src="<?php echo $baseUrl; ?>/images/internet_arice_icon.png"/></a>
 								</div>
 								<div class="title_descrip">
 									Mapping your internship with final placement
@@ -233,15 +240,15 @@ $product = Products::model()->findByPk($id);
 
 								</div>
 								<div class="price_eng">
-									<label>&#8377 4,500</label>
+									<label>&#8377 <?php echo money($product3->price);?></label>
 								</div>
 								
 							</li>
 						</ul>
 						<div class="discount_eng">
 							<div class="combo_price">
-								<label>Combo Price &#8377 6,750</label>
-								<span class="discount_line">Total Price &#8377 9,000</span>
+								<label>Combo Price &#8377 <?php echo money($product2->price+$product->price+$product3->price);?></label>
+								<span class="discount_line">Total Price &#8377 <?php echo money($product2->actuall_price+$product->actuall_price+$product3->actuall_price);?></span>
 								<span>You save &#8377 2,2250 (25%)</span>
 							</div>
 						</div>
@@ -337,8 +344,12 @@ $product = Products::model()->findByPk($id);
 							<div class="rec_wrap">
 							<img src="<?php echo Yii::app()->baseUrl;?>/assets/products/<?php echo $recon->icon;?>"/>
 							</div>
+                                                    <br />
+                                                    
+                                                    
 						</div>
                         <div class="add_to_Cart_div">
+                                <label> &#8377 <?php echo money($recon->recommendedProduct->price);?></label>
                                 <a href="<?php echo Yii::app()->createUrl("cart/addtocart",array("id"=>$recon->recommended_product_id));?>">Add to Cart</a>
                                 <a href="<?php echo Yii::app()->createUrl("cart/buynow",array("id"=>$recon->recommended_product_id));?>">Buy Now</a>
                             </div>
