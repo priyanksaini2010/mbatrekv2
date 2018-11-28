@@ -61,8 +61,8 @@ class ProductEngage extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'product_id' => 'Product',
-			'description' => 'Description',
-			'description2' => 'Description2',
+			'description' => 'Description(Outside Box)',
+			'description2' => 'Description (Inside Box)',
 			'icon' => 'Icon',
 			'sortOrder' => 'Sort Order',
 		);
