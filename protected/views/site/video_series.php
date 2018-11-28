@@ -3,6 +3,13 @@ $blogs =$models;
 $typ = $_GET['type'];
 
 ?>
+<div class="bread_crum">
+    <ul class="list-inline list-unstyled">
+	<li><a href="javascript:void(0);"><i class="fa fa-home" aria-hidden="true"></i></a> <i class="fa fa-angle-right" aria-hidden="true"></i></li>
+	<li><a href="<?php echo Yii::app()->createUrl('cart/index'); ?>">Home</a> <i class="fa fa-angle-right" aria-hidden="true"></i></li>
+	<li class="active"><a href="javascript:void(0);">Videos</a></li>
+    </ul>
+</div>
 <div class="blog_new_container video_container">
     <div class="top_header_Text">
         <h2>Here is our ‘FREE’ Video Series to help you get</h2>

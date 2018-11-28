@@ -39,9 +39,10 @@ $this->widget('KRichTextEditor', array(
 
 <?php echo $form->textFieldRow($model, 'price', array('class' => 'span5')); ?>
     <br />
-<label for="Products_is_saver" class="required">Is this a saver product in this category<span class="required">*</span>
-<?php echo $form->checkBox($model,'is_saver',array('value'=>1,'uncheckValue'=>0,'checked'=>($model->id=="")?true:$model->is_saver)); ?>
-</label>
+<!--<label for="Products_is_saver" class="required">Is this a saver product in this category<span class="required">*</span>-->
+
+    <?php echo $form->hiddenField($model,'is_saver',array("value"=>0)); ?>
+<!--</label>-->
 
 <br />
 <label for="Products_type" class="required">Product Type <span class="required">*</span></label>
