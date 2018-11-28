@@ -171,6 +171,7 @@ return array(
 	// using Yii::app()->params['paramName']
 	'params'=>array(
 		// this is used in contact page
+		'contactEmail'=>'contact@mbatrek.com',
 		'adminEmail'=>'info@mbatrek.com',
 		'noreply'=>'no-reply@mbatrek.com',
                 'url'=>'https://mbatrek.com/v2/',
