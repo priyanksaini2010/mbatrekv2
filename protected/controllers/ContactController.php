@@ -102,7 +102,7 @@ class ContactController extends Controller
                                 $headers .= "MIME-Version: 1.0\r\n".
                                             "Content-Type: text/html; charset=UTF-8";
                                 
-                                $sentToUser = sendEmail(Yii::app()->params['adminEmail'], $subject,$body,$headers);
+                                $sentToUser = sendEmail(Yii::app()->params['contactEmail'], $subject,$body,$headers);
 				
                                 $body = "Hello ".$_POST['Contact']['first_name']." ".$_POST['Contact']['last_name'].",<br/><br/>"
                                         . "Thanks to contact us. Will get in touch soon: <br/><br/ >"

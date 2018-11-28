@@ -103,7 +103,38 @@ class CartController extends Controller {
 
                 $model->attributes=$_POST['LoginForm'];
                 if($model->validate() && $model->login()){
-                    
+                    $cookieCart = unserialize($_COOKIE['products']);
+                    $criteria = new CDbCriteria;
+                    $criteria->addInCondition("id", $cookieCart);
+                    $products = Products::model()->findAll($criteria);
+
+                    foreach($products as $product){
+                        $modelPre = Cart::model()->findByAttributes(array(
+                            "user_id" =>Yii::app()->user->id,
+                            "product_id" =>$product->id,
+                            "status" => 1,
+                        ));
+
+                        if(empty($modelPre)){
+                            $modelCart = new Cart();
+                            $modelCart->attributes = array(
+                                "user_id" =>Yii::app()->user->id,
+                                "product_id" =>$product->id,
+                                "status" =>1,
+                                "date_created" =>date("Y-m-d h:i:s"),
+                            );
+                            if($modelCart->save()){
+//                                        $this->redirect(Yii::app()->request->urlReferrer);
+                            } else {
+                                foreach($modelCart->getErrors() as $key=>$err){
+
+                                    $this->errors[$key] = $err[0];
+                                    $resp['message'] = "Oops! Some error occured, Please try after some time.";
+                                    die;
+                                }
+                            }
+                        } 
+                    }
                     $domain_name = substr(strrchr($_POST['username'], "@"), 1);
                     $isCouponValid = CouponCode::model()->findByAttributes(array("domain"=>$domain_name));
                    
@@ -158,6 +189,7 @@ class CartController extends Controller {
                     foreach($model->getErrors() as $key=>$errors){
                            $resp['message'] = $errors[0];
                     }
+                    $resp['status'] = "loginfailed";
                 }
             } else {
                  $resp['message'] = "Please enter valid username and password";
@@ -213,7 +245,11 @@ class CartController extends Controller {
                         $_POST['InterviewReadyCompetition']['registeration_date'] = date("Y-m-d h:i:s");
 			$model->attributes=$_POST['InterviewReadyCompetition'];
 			if($model->save()){
-				$this->redirect(array('index','thankscampus'=>1));
+				$this->redirect(array('index','thanksinterview'=>1));
+                        } else {
+                            foreach ($model->getErrors() as $error){
+                                $this->errors['email'] = $error[0];
+                            }
                         }
 		}
 		$this->render("webroot.themes.cart.views.cart.interview",array("model"=>$model));
@@ -231,7 +267,11 @@ class CartController extends Controller {
                         $_POST['IndustryReadyCompetition']['registeration_date'] = date("Y-m-d h:i:s");
 			$model->attributes=$_POST['IndustryReadyCompetition'];
 			if($model->save()){
-				$this->redirect(array('index','thankscampus'=>1));
+				$this->redirect(array('index','thanksindustry'=>1));
+                        } else {
+                            foreach ($model->getErrors() as $error){
+                                $this->errors['email'] = $error[0];
+                            }
                         }
 		}
 		$this->render("webroot.themes.cart.views.cart.industry",array("model"=>$model));
@@ -309,6 +349,7 @@ class CartController extends Controller {
                     }
                 }else {
                     $status['message'] = "<span>Sorry!</span><br /><span>Currently no coupon is applicable on this Email ID</span><br/><span>Try Login with your College Email ID.</span>";
+                    $status['status'] = "notapplied";
                 }
             }
             echo json_encode($status);die;

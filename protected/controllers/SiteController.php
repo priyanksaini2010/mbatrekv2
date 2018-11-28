@@ -5,7 +5,7 @@ class SiteController extends Controller
         public $errors = array();
         public $success = array();
 	/**
-	 * Declares class-based actions.
+	 * Declares class-based actions.    
 	 */
 	 
 	 public function __construct($id) {
@@ -622,6 +622,40 @@ class SiteController extends Controller
 //                            $model2 = Users::model()->findByPk(Yii::app()->user->id);
 //			    $model2->attributes=array("login_count"=>($model2->login_count+1));
 //			    $model2->save(); 
+                            
+                            $cookieCart = unserialize($_COOKIE['products']);
+                            $criteria = new CDbCriteria;
+                            $criteria->addInCondition("id", $cookieCart);
+                            $products = Products::model()->findAll($criteria);
+                           
+                            foreach($products as $product){
+                                $modelPre = Cart::model()->findByAttributes(array(
+                                    "user_id" =>Yii::app()->user->id,
+                                    "product_id" =>$product->id,
+                                    "status" => 1,
+                                ));
+                                 
+                                if(empty($modelPre)){
+                                    $modelCart = new Cart();
+                                    $modelCart->attributes = array(
+                                        "user_id" =>Yii::app()->user->id,
+                                        "product_id" =>$product->id,
+                                        "status" =>1,
+                                        "date_created" =>date("Y-m-d h:i:s"),
+                                    );
+                                    if($modelCart->save()){
+//                                        $this->redirect(Yii::app()->request->urlReferrer);
+                                    } else {
+                                        foreach($modelCart->getErrors() as $key=>$err){
+                                            
+                                            $this->errors[$key] = $err[0];
+                                            
+                                        }
+                                        $this->render("webroot.themes.cart.views.cart.login",array('model'=>$model));
+                                        
+                                    }
+                                } 
+                            }
                             if (Yii::app()->user->admin == 0) {
                                 $this->redirect(Yii::app()->createUrl('/usersNew/admin',array("role"=>1)));
                             }  else {
