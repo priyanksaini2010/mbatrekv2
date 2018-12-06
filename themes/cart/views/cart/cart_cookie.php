@@ -43,7 +43,7 @@ foreach ($products as $c){
                                         <a href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>$icart->id));?>">
                                         <h4><?php echo $icart->description1;?></h4>
                                         </a>
-                                        <a href="<?php echo Yii::app()->createUrl("cart/remove",array("id"=>$icart->id));?>">Remove</a>
+                                        <a  class="remove_cart" href="<?php echo Yii::app()->createUrl("cart/remove",array("id"=>$icart->id));?>">Remove</a>
                                     </li>
                                     <li class="cart_money">
                                         <span>&#8377 <?php echo money($icart->price);?></span>
@@ -116,15 +116,18 @@ foreach ($products as $c){
 ?>
                         <li>
                             <div class="recomended_title">
-                                 <a style="cursor: pointer !important;" href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>$saver->recommendedProduct->id));?>">
-                                <label>
-                                    <?php echo $saver->recommendedProduct->title;?>
-                                    <span>
+								<div class="">
+									<a style="cursor: pointer !important;" href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>$saver->recommendedProduct->id));?>">
+								</div>
+                                <div class="discount_outer">
+									<span class="discount_text"><?php echo $saver->recommendedProduct->title;?></span>
+									 <span>
                                         (<?php echo $saver->short_description;?>)
                                     </span>
-                                </label>
+								</div>
+								<img src="<?php echo $baseUrl;?>/assets/products/<?php echo $saver->icon;?>"/>
                                  </a>
-                                <img src="<?php echo $baseUrl;?>/assets/products/<?php echo $saver->icon;?>"/>
+                                
                             </div>
                             <div class="recomended_price">
                                 <label> &#8377 <?php echo money($saver->recommendedProduct->price);?></label>

@@ -541,7 +541,8 @@ user-select: none;
 .cart_label h4{margin:0;color: #229897;font-size: 	19px;  font-family: 'MyriadPro-Semibold';  line-height: 21px;}
 .check_box {padding: 0 0 16px 17px;}
 .cart_label a{color: #999;font-size: 16px;    padding: 4px 0 0 0;
-    display: inline-block;}
+    display:block;}
+.cart_label a.remove_cart{display:inline-block;}
 .cart_label a:hover{color: #229897;}
 .cart_detail .cart_label{width: 70%;padding:17px 0 0 18px	;}
 .cart_detail .cart_money{width: 15%;text-align:right;float: right; padding: 20px 0 0 0;}
@@ -693,6 +694,7 @@ user-select: none;
 .buy_now ul{background: #f1aa35;    padding:16px 23px 15px 23px;margin: 11px 0 0 0;width: 100%;
     list-style: none;display: inline-block;
     border-radius: 14px;}
+.buy_now a span{font-size:13px;display: block;font-family: 'MyriadPro-Regular';}
 .buy_now ul li{color: #fff;font-size: 17px;}
 .buy_now ul li span{font-weight: normal;font-size: 15px;display: block;}
 .buy_now ul  h2{color: #fff;font-size: 22px;margin:0;    margin: 0 0 7px 0;}
@@ -1085,7 +1087,7 @@ user-select: none;
 .share_post ul li:last-child >a{padding:5px 0 5px 5px;}
 .share_post ul li:last-child  .jssocials-shares .jssocials-share {display: inline-block;}
 .share_post ul li:last-child  .jssocials-shares .jssocials-share a {padding:0px 4px 0px 5px;}
-.share_post ul li:last-child  .jssocials-shares .jssocials-share a i {background: #DD991A;color: #fff;padding: 5px 0px 6px 0px;width: 27px;
+.share_post ul li:last-child  .jssocials-shares .jssocials-share a i {background: #348786;color: #fff;padding: 5px 0px 6px 0px;width: 27px;
 text-align: center;border-radius: 2px;}
 .share_post ul li:last-child  .jssocials-shares .jssocials-share a i:hover{background:#09afb7;}
 .post_information{margin:49px 0 0;width:100%;float:left;}
@@ -1380,6 +1382,7 @@ text-align: center;border-radius: 2px;}
     padding: 48px 0 44px 0;
 }
 .how_We_engage ul li .title_eng h3{color: #348786;font-size: 23px;font-family: 'MyriadPro-Semibold';text-align: center;    margin: 0 0 8px 0;}
+.how_We_engage ul li .title_eng h3 a{color: #348786;}
 .engage_img{padding:0 0 12px 0;}
 .how_We_engage ul li {display: inline-block;list-style: none;  position: relative;  width:21.3%;border:2px solid #348786;  border-radius: 42px;  margin-right: 143px;padding: 26px 20px 13px 20px;}
 .how_We_engage ul li:last-child{margin:0;}
@@ -1734,7 +1737,7 @@ vertical-align:middle;cursor:pointer;}
 .ambastor_container.industry_Ready .earn_point.the_task ul li .value_chain_Text{color: #f3ad02;}
 .ambastor_container.industry_Ready .earn_point.the_task ul li .text_tech{color: #656565;}
 .ambastor_container.industry_Ready .earn_point.the_task ul li label{font-family: 'MyriadPro-Regular';font-weight: normal;font-size: 18px;padding:11px 0 0 0;}
-.ambastor_container.industry_Ready .what_do_u_get .amaster_bulid .col-md-4 h3{color: #348786;font-size: 20px;font-family: 'MyriadPro-Semibold';margin:0;}
+.ambastor_container.industry_Ready .what_do_u_get .amaster_bulid .col-md-4 h3{color: #222;font-size: 20px;font-family: 'MyriadPro-Semibold';margin:0;}
 .ambastor_container.industry_Ready .what_do_u_get.rule_Game .amaster_repeat img{float: left;}
 .ambastor_container.industry_Ready .what_do_u_get.rule_Game .amaster_repeat h3{float: left;    padding-left: 21px;width: 89%;}
 .still_stuck{width: 100%;float: left;}
@@ -1770,7 +1773,7 @@ vertical-align:middle;cursor:pointer;}
     vertical-align: middle;
     float: none;
     width: 40px;
-    height: 77px;
+    height: 52px;
 }
 .top_header_Text{width: 100%;float: left;text-align: center;}
 .top_header_Text h2{color: #348786;margin:0;padding: 0 0 14px 0;font-size: 29px;font-family: 'MyriadPro-Semibold';}
@@ -1821,7 +1824,7 @@ vertical-align:middle;cursor:pointer;}
     vertical-align: top;margin: 2px 0 0 0;
 }
 .discount_outer{display:inline-block;width: 175px;}
-.discount_outer span{font-size:18px;color:#fff;}
+.discount_outer span{font-size:18px;color:#fff;display:block;}
 .profile_div.open_profile_div{display:block!important;}
 .login_wrapper .are_yu{    padding:15px 0 18px 0;}
 .login_wrapper .are_yu ul{padding:0 0 0 15px;}
@@ -1851,7 +1854,7 @@ vertical-align:middle;cursor:pointer;}
 }
 .login-footer .catcha_Code .hint{font-size:17px;}
 .team_description h3 span a span{font-size:22px;}
-.recomended_title .recomended_bound > a{font-size: 17px;
+.recomended_title .recomended_bound > a{font-size: 17px; 
     font-weight: normal;
     color: #fff;
     vertical-align: top;
@@ -1860,4 +1863,21 @@ vertical-align:middle;cursor:pointer;}
     width: 178px;
     vertical-align: middle;
     display: table-cell;
-    height: 71px;}
+    height: 52px;}
+.add_to_Cart_div .new_price{    margin: 0;
+    padding: 0 0 7px 0;
+    height: auto;
+    display: block;
+    width: 100%;
+    font-size: 20px;}
+.what_do_u_get.compus_amastor_page{background:#fff;}
+.recomended_title .recomended_bound .shot_descrptn{display:block;}
+.fq_footer .stuck_bew {color:#348786;}
+.fq_footer .stuck_bew  span{color:#222;}
+.amaster_bulid .fq_footer{margin-top:20px;}
+.blog_details .blog_heading .share_post{margin:-7px 0 0 0;padding:0;border:none;}
+.blog_details .blog_heading .share_post ul li:last-child{padding:0;vertical-align:top;margin: 4px 0 0 0;}
+.blog_details .blog_heading .share_post ul li > a{padding:0;}
+.blog_details .blog_heading ul li{vertical-align:top;}
+.blog_details .blog_heading ul li:last-child .fa-share-alt{color:#348786;font-size:26px;}
+.blog_details .blog_heading ul li:last-child .share_label{font-size:19px;padding:0 6px 0 8px;}

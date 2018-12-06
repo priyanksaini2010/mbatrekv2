@@ -121,7 +121,7 @@
                             <h3>First Runner up </h3>
                             <div class="amaster_repeat">
                                 <img src="<?php echo $baseUrl;?>/images/amazon_gift_icon.png"/>
-                                <h3><span>Amazon Gift Cards  Worth up to</span> ₹ 1,500 </h3>
+                                <h3>Amazon Gift Cards  Worth up to<span> ₹ 1,500</span> </h3>
                             </div>
                             <div class="amaster_repeat">
                                 <img src="<?php echo $baseUrl;?>/images/industry_Ready/free_mba_Trek_icon.png"/>
@@ -182,9 +182,10 @@
                             <a href="<?php echo Yii::app()->createUrl("interview-ready-registeration");?>">Register Now</a>
                         </div>
                     </div>
-                    <div class="still_stuck">
-                        <h4>Still stuck with your query? <span>Contact us</span> at contact@mbatrek.com or <span>Talk to Our </span>Career Advisor at +91 98219 4833  </h4>
-                    </div>
+                    <div class="fq_footer">
+			
+						<label class="stuck_bew"> Still stuck with your  query? <br><span>WhatsApp or Talk to us at- +9821948334</span><br><span>Write us an Email at: contact@mbatrek.com</span></label>
+						</div>
                 </div>
             </div>
         </section>   

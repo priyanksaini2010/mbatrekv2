@@ -157,7 +157,7 @@ if ($model->your_message != '') {
                         </div>
                         <div class="google_map_info">
                             <h3>MBAtrek Private Ltd.</h3>
-                            <label>414 (4th Floor), Suncity Business Tower, </label> <label>Golf Course Road, Sector -54, </label> <label>Gurugram &ndash; 122003, INDIA</label> <label>Email: <a href="mailto:contact@mbatrek.com">contact@mbatrek.com</a></label>
+                            <label>414 (4th Floor), Suncity Business Tower, </label> <label>Golf Course Road, Sector -54, </label> <label>Gurugram &ndash; 122003, INDIA</label> <label>CIN: U74999HR2016PTC057728</label><label>Email: <a href="mailto:contact@mbatrek.com">contact@mbatrek.com</a></label>
 							<label>Phone: +91 9821948334, +91 9821948335</label>
 							</div>
                     </div>

@@ -159,7 +159,7 @@
                                     echo "Preparing For Placements";
                                 break;
                                 case 4:
-                                    echo "Perparing For Internship";
+                                    echo "Preparing For Internship";
                                 break;
                             
                              }?>

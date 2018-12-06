@@ -67,7 +67,7 @@
             </div>
         </div>
     </section> 
-    <section class="what_do_u_get">
+    <section class="what_do_u_get compus_amastor_page">
         <div class="container">
             <div class="compas_heading">
                 <h4>What Do You Get</h4>
@@ -197,7 +197,8 @@
             </div>
             <div class="fq_footer">
 			<!--<label>Still stuck with your problem? <span>Contact us at</span> <span class="color_span"> contact@mbatrek.com</span> or Talk to Our <span>Career Advisor at</span> <span class="color_span">+91 98219 48334</span> </label>-->
-			<label>Have more doubts? Mail us at <a href="mailto:contact@mbatrek.com">contact@mbatrek.com</a> </label>
+			<!--<label>Have more doubts? Mail us at <a href="mailto:contact@mbatrek.com">contact@mbatrek.com</a> </label>-->
+			<label class="stuck_bew"> Still stuck with your  query? <br><span>WhatsApp or Talk to us at- +9821948334</span><br><span>Write us an Email at: contact@mbatrek.com</span></label>
 			</div>
         </div>
     </div>

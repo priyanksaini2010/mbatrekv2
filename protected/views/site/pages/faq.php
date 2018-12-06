@@ -14,7 +14,7 @@ $FaqType = FaqType::model()->findAll();;
 ?>
 <div class="faq_new_container">
     <div class="container">
-        <h3>We at MBAtrek are here to help with all your career development needs Feel Free to Explore.</h3>
+        <h3>We at MBAtrek are here to help you with all your career development needs <br>Feel Free to Explore.</h3>
         <h4>Expand the following drop-downs for answers to frequently asked questions.</h4>
         <div class="faq_Container">
             <div class="tabbable-panel">

@@ -214,7 +214,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                 </span>
 
                                             </p>
-                                            <span class="cta-solve">Help you understand yourself better from a  career perpective</span>
+                                            <span class="cta-solve">Help you understand yourself better from a  career perspective</span>
                                             </span>
                                         </a>
 
@@ -231,7 +231,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                         Sheets</i></span>
                                             </p>
                                           
-                                                <span class="cta-solve">Enable you with a ready set of guids to take to work everyday</span>
+                                                <span class="cta-solve">Enable you with a ready set of guides to take to work everyday</span>
                                         </a>
 
 

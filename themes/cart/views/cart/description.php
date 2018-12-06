@@ -14,7 +14,10 @@ $product = Products::model()->findByPk($id);
             </div>
             <div class="col-md-4">
                 <div class="buy_now">
-                    <a href="javascript:void(0)">&#8377 <?php echo money($product->price); ?></a>
+                    <a href="javascript:void(0)">&#8377 <?php echo money($product->price); ?>
+					<span>Add inclusive of all taxes</span>
+					</a>
+					
                     <div class="order_div">
                         <a href="<?php echo Yii::app()->createUrl("cart/buynow",array("id"=>$product->id));?>">Buy Now</a>
                         <a href="<?php echo Yii::app()->createUrl("cart/addtocart",array("id"=>$product->id));?>">Add to Cart</a>
@@ -143,7 +146,7 @@ $product = Products::model()->findByPk($id);
 						<ul>
 							<li>
 								<div class="title_eng">
-                                                                    <a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"30")); ?>"><h3>1 Mock Interviews</h3></a>
+                                                                    <a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"30")); ?>"><h3>1 Mock Interview</h3></a>
 								</div>
 								<div class="engage_img">
                                                                     <a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"30")); ?>"><img src="<?php echo $baseUrl; ?>/images/three_mockp_interview.png"/></a>
@@ -332,10 +335,10 @@ $product = Products::model()->findByPk($id);
                    
                     <div class="recomended_title">
 						<div class="recomended_bound">
-                                                     <a style="cursor: pointer !important;" href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>$recon->recommendedProduct->id));?>">
+                                                     <a  href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>$recon->recommendedProduct->id));?>">
 							
-							   <?php echo $recon->recommendedProduct->title;?>
-								<span>
+								<span><?php echo $recon->recommendedProduct->title;?></span>
+								<span class="shot_descrptn">
 									(<?php echo $recon->short_description;?>)
 								</span>
 								
@@ -349,7 +352,7 @@ $product = Products::model()->findByPk($id);
                                                     
 						</div>
                         <div class="add_to_Cart_div">
-                                <label> &#8377 <?php echo money($recon->recommendedProduct->price);?></label>
+                                <label class="new_price"> &#8377 <?php echo money($recon->recommendedProduct->price);?></label>
                                 <a href="<?php echo Yii::app()->createUrl("cart/addtocart",array("id"=>$recon->recommended_product_id));?>">Add to Cart</a>
                                 <a href="<?php echo Yii::app()->createUrl("cart/buynow",array("id"=>$recon->recommended_product_id));?>">Buy Now</a>
                             </div>

@@ -51,7 +51,7 @@
 										<a href="<?php echo Yii::app()->createUrl("site/forgot");?>">Forgot Password?</a>
 									</div>
 									<div class="signu_div">
-											<span>Don’t have an ? account </span>
+											<span>Don’t have an account ? </span>
                                                                                         <a href="<?php echo Yii::app()->createUrl("cart/register");?>"> Sign up now</a>
 									</div>
 									 

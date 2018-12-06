@@ -22,19 +22,23 @@
                     <ul class="list-inline list-unstyled">
                         <li><span class="posted_by">By: <?php echo ucfirst($model->author);?></span></li>
                         <li><span class="posted_on">On:  <?php echo date("d M, Y",  strtotime($model->date_created));?></span></li>
+						<li>
+							
+						<div class="share_post">
+                            <ul class="list-inline list-unstyled">
+                                <!--<li><a class="comment_post" href="javascript:void(0);">0Comments</a></li>-->
+                                <li><i class="fa fa-share-alt" aria-hidden="true"></i><span class="share_label">Share</span> <a href="javascript:void(0);" class="share_post_b jssocials" id="share"> 
+                                    <div class="jssocials-shares">&nbsp;</div>
+                                    </a> </li>
+                            </ul>
+                       </div>
+						</li>
                     </ul>
                 </div>
                 <div class="blog_header"><img class="img-responsive" src="<?php echo Yii::app()->baseUrl;?>/assets/blogs/<?php echo $model->banner_image;;?>" alt="" /></div>
                 <div class="row">
                     <div class="col-md-9 col-sm-9 col-xs-12">
-                       <div class="share_post">
-                            <ul class="list-inline list-unstyled">
-                                <!--<li><a class="comment_post" href="javascript:void(0);">0Comments</a></li>-->
-                                <li><a href="javascript:void(0);" class="share_post_b jssocials" id="share"> 
-                                    <div class="jssocials-shares">&nbsp;</div>
-                                    </a> </li>
-                            </ul>
-                       </div>
+                       
                         <div class="post_information">
                         <?php echo $model->content; ?>
                     </div> 

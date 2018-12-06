@@ -59,7 +59,7 @@ if(isset(Yii::app()->user->id)){
                                         <a href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>$icart->product->id));?>">
                                         <h4><?php echo $icart->product->description1;?></h4>
                                         </a>
-                                        <a href="<?php echo Yii::app()->createUrl("cart/remove",array("id"=>$icart->product->id));?>">Remove</a>
+                                        <a class="remove_cart" href="<?php echo Yii::app()->createUrl("cart/remove",array("id"=>$icart->product->id));?>">Remove</a>
                                     </li>
                                     <li class="cart_money">
                                         <span>&#8377 <?php echo money($icart->product->price);?></span>
@@ -166,7 +166,7 @@ if(isset(Yii::app()->user->id)){
                                  <a  href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>$saver->recommendedProduct->id));?>">
 									<div class="discount_outer">
                                     <span class="discount_text"><?php echo $saver->recommendedProduct->title;?></span>
-                                    <span>
+                                    <span class="shot_descrptn">
                                         (<?php echo $saver->short_description;?>)
                                     </span>
                               </div>
