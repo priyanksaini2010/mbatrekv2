@@ -57,14 +57,15 @@ foreach ($products as $c){
                                     <?php }?>
                                 
                             </div>
-                            <a class="View_cart" href="<?php echo Yii::app()->createUrl("cart/cart");?>">View Cart</a>
+                            <!--<a class="View_cart" href="<?php // echo Yii::app()->createUrl("cart/cart");?>">View Cart</a>-->
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="card_price">
                             <div class="price_cart">
-                                <label>GSTIN : XXXXXX</label>
+                                
                                 <label>Sub Total (<?php echo count($products)>1?count($products)." Items":count($products)." Item";?>): <span> &#8377 <?php echo money($total);?></span></label>
+                                <span><input type="text" class="input_field" name="GSTIN" placeholder="GSTIN"></span>
                                 <a href="<?php echo Yii::app()->createUrl("cart/checkout");?>">Checkout</a>
                             </div>
                             <span class="promocode">Have a promocode? Enter here</span>
@@ -112,7 +113,10 @@ foreach ($products as $c){
                         $array = array();
                         $array2 = array();
                         foreach($products as $c){
-                            $array2[] = $c->product->id;
+                            $array2[] = $c->id;
+                        }
+                        foreach($products as $c){
+                            
                         foreach($c->productRecommendedValueSaverPacks as $saver){
                         if(!in_array($saver->recommendedProduct->id,$array) && !in_array($saver->recommendedProduct->id,$array2)){
                             $array[] = $saver->recommendedProduct->id;

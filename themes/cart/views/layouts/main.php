@@ -112,11 +112,69 @@ var domain_name = '<?php echo $_SERVER['HTTP_HOST'].DIREC;?>';
                                         <span id="pop-notification-text">
                                             <span>You have registered successfully to #InterviewReady competition.</span>
                                             <br /> <br />
-                                            <span>Further information would be provided to you once we have <span style="text-decoration: underline">10 registrations</span> from your college/university</span>
+                                            <span>Further information would be provided to you once we have <span style="text-decoration: underline">20 registrations</span> from your college/university</span>
                                             <br /><br />
                                             <span>For any query write at -</span>
                                             <br /><br />
                                             <span style="text-decoration: underline">contact@mbatrek.com</span><span> or call at &nbsp;&nbsp;&nbsp;<br/>+91-9821948355,+91-9821948354</span>
+                                        </span></p>
+                                </div>
+                                <!-- <button class="md-close">OK</button> -->
+                                <div class="main_register"><div class="site_btn"><a data-dismiss="modal" class="close" href="javascript:void(0);">OK</a></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+         <div id="myModal34" class="modal" data-easein="shake" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!--<div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h4 class="modal-title">Modal header</h4>
+                    </div>-->
+                    <div class="modal-body">
+                        <div class="md-content">
+                            <h3 id="pop-notification-type-2">Error</h3>
+                            <div class="error_wrap">
+                                <div class="error_container">
+                                    <p><!--<i class="fa fa-check" id="pop-notification-class" aria-hidden"true"=""></i>-->
+                                        <span id="pop-notification-text">
+                                            <span>Kindly try another password!</span>
+                                            <br /> <br />
+                                            <span>Password length should be 8 characters and it should be alphanumeric.</span>
+                                            <br /><br />
+                                            <span>Remember, Special Characters are not allowed. </span>
+                                        </span></p>
+                                </div>
+                                <!-- <button class="md-close">OK</button> -->
+                                <div class="main_register"><div class="site_btn"><a data-dismiss="modal" class="close" href="javascript:void(0);">OK</a></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+         <div id="myModal35" class="modal" data-easein="shake" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!--<div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h4 class="modal-title">Modal header</h4>
+                    </div>-->
+                    <div class="modal-body">
+                        <div class="md-content">
+                            <h3 id="pop-notification-type-2">Error</h3>
+                            <div class="error_wrap">
+                                <div class="error_container">
+                                    <p><!--<i class="fa fa-check" id="pop-notification-class" aria-hidden"true"=""></i>-->
+                                        <span id="pop-notification-text">
+                                            <span>This Email ID is already registered with us.</span>
+                                            <br /> <br />
+                                            <span>Kindly Login to access your account.</span>
                                         </span></p>
                                 </div>
                                 <!-- <button class="md-close">OK</button> -->
@@ -144,7 +202,7 @@ var domain_name = '<?php echo $_SERVER['HTTP_HOST'].DIREC;?>';
                                         <span id="pop-notification-text">
                                             <span>You have registered successfully to #IndustryReady competition.</span>
                                             <br /> <br />
-                                            <span>Further information would be provided to you once we have <span style="text-decoration: underline">10 registrations</span> from your college/university</span>
+                                            <span>Further information would be provided to you once we have <span style="text-decoration: underline">10 teams registrations</span> from your college/university</span>
                                             <br /><br />
                                             <span>For any query write at -</span>
                                             <br /><br />

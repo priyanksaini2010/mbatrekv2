@@ -44,6 +44,11 @@ function validationMethod(id,text){
             $("#pop-notification-class").addClass("fa-check");
             $("#pop-notification-class").removeClass("fa-warning");
             break;
+        case "congrats":
+            $("#pop-notification-type").text("Congratulations!");
+            $("#pop-notification-class").addClass("fa-check");
+            $("#pop-notification-class").removeClass("fa-warning");
+            break;
     }
      $("#pop-notification-text").text(text);
     $('#myModal27').modal('show');
@@ -54,6 +59,7 @@ function validationMethodNotApplied(id,text){
     $('#myModal32').modal('show');
 //    alert(text);
 }
+
 function validationMethodThanks(id,text){
     $('#myModal33').modal('show');
 //    alert(text);
@@ -120,11 +126,11 @@ $(document).ready(function(){
             validationMethod("error","Please enter password.");return false;
         }
         if ($("#UsersNew_password").val().length < 8){
-            validationMethod("error","Password  should be atleast 8 characters and should be alphanumeric, can not contain special chearacters.");
+            $('#myModal34').modal('show');;
             return false;
         }
         if (!passwords($("#UsersNew_password").val())){
-            validationMethod("error","Password  should be atleast 8 characters and should be alphanumeric, can not contain special chearacters.");
+            $('#myModal34').modal('show');
             return false;
         }
         if ($("#UsersNew_cpassword").val() == ""){
@@ -395,7 +401,7 @@ $(document).ready(function(){
                 var obj = $.parseJSON(data);
                 if(obj.status == "success"){
 //                    window.location.refresh;
-                    validationMethod("thanks",obj.message)
+                    validationMethod("congrats",obj.message)
 //                    location.reload("?thanmscart=1");
                     setInterval(function(){window.location.reload(); }, 3000);
                 } else if(obj.status == "notapplied"){

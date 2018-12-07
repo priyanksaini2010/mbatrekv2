@@ -1,12 +1,16 @@
 <script>
     
     <?php if (isset($this->errors) && count($this->errors) > 0) { ?>
-            <?php foreach($this->errors as $error){?>
+            <?php foreach($this->errors as $key=>$error){?>
+                <?php if($key == "emailexist"){?>
+           $('#myModal35').modal('show');
+        <?php }else {?>
             validationMethod("error","<?php echo $error;?>")
+        <?php }?>
             <?php }?>
 <?php } ?>
     <?php if(isset($_REQUEST['thankreg'])){?>
-	 validationMethod("thanks","Thanks for signup with us, please check your email to verify to verify your account.")
+	 validationMethod("thanks","Thanks for signup with us, please check your email to verify your account.")
     <?php }?>
     <?php if(isset($_REQUEST['thankforin'])){?>
 	 validationMethod("error","Please use MBAtrek registered email address.")

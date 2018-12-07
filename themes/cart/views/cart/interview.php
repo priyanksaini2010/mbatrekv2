@@ -29,17 +29,17 @@ $yog = CHtml::listData(YearOfGraduation::model()->findAll($criteria), "id", "yea
                                 <li>
                                     <img src="<?php echo $baseUrl;?>/images/industry_Ready/register_entry.png"/>
                                     <span>Wow us with your answers</span>
-                                    <img class="arrow_intervew" src="<?php echo $baseUrl;?>/images/industry_Ready/arror_right_interview.png"/>
+                                    <img class="arrow_intervew" src="<?php echo $baseUrl;?>/images/industry_Ready/arrow_industry.png"/>
                                 </li>
                                 <li>
                                     <img src="<?php echo $baseUrl;?>/images/industry_Ready/upload_documents.png"/>
                                     <span>Send a video showing your awesomeness</span>
-                                    <img class="arrow_intervew" src="<?php echo $baseUrl;?>/images/industry_Ready/arror_right_interview.png"/>
+                                    <img class="arrow_intervew" src="<?php echo $baseUrl;?>/images/industry_Ready/arrow_industry.png"/>
                                 </li>
                                 <li>
                                     <img src="<?php echo $baseUrl;?>/images/industry_Ready/mbatrek_visit_Compas.png"/>
                                     <span>Final interview over skype</span>
-                                    <img class="arrow_intervew" src="<?php echo $baseUrl;?>/images/industry_Ready/arror_right_interview.png"/>
+                                    <img class="arrow_intervew" src="<?php echo $baseUrl;?>/images/industry_Ready/arrow_industry.png"/>
                                 </li>
                                 <li>
                                     <img src="<?php echo $baseUrl;?>/images/industry_Ready/result_declartion_interviw.png"/>

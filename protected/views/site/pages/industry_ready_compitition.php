@@ -199,7 +199,7 @@
                     </div>
                     <div class="fq_footer">
 			
-						<label class="stuck_bew"> Still stuck with your  query? <br><span>WhatsApp or Talk to us at- +9821948334</span><br><span>Write us an Email at: contact@mbatrek.com</span></label>
+						<label class="stuck_bew"> Still stuck with your  query? <br><span>WhatsApp or Talk to us at- +91 821948334</span><br><span>Write us an Email at: contact@mbatrek.com</span></label>
 						</div>
                 </div>
             </div>

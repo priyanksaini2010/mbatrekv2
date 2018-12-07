@@ -75,14 +75,14 @@ class CaFaqController extends Controller
 	public function actionCreate()
 	{
                 $this->layout = 'webroot.themes.bootstrap.views.layouts.main';
-		$model=new Faq;
+		$model=new CaFaq;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Faq']))
+		if(isset($_POST['CaFaq']))
 		{
-			$model->attributes=$_POST['Faq'];
+			$model->attributes=$_POST['CaFaq'];
 			if($model->save()){
                             Yii::app()->user->setFlash('success', "CA FAQ added successfully.");
                             $this->redirect(array('admin','id'=>$model->id));
@@ -107,7 +107,7 @@ class CaFaqController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Faq']))
+		if(isset($_POST['CaFaq']))
 		{
 			$model->attributes=$_POST['Faq'];
 			if($model->save()){

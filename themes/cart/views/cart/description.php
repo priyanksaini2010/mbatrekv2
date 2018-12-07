@@ -16,7 +16,7 @@ $productActuall = Products::model()->findByPk($id);
             <div class="col-md-4">
                 <div class="buy_now">
                     <a href="javascript:void(0)">&#8377 <?php echo money($product->price); ?>
-					<span>Add inclusive of all taxes</span>
+					<span>Inclusive of all taxes</span>
 					</a>
 					
                     <div class="order_div">
@@ -354,7 +354,7 @@ $productActuall = Products::model()->findByPk($id);
                                                     
 						</div>
                         <div class="add_to_Cart_div">
-                                <label class="new_price"> &#8377 <?php echo money($recon->recommendedProduct->price);?></label>
+                                <label class="new_price">Price &#8377 <?php echo money($recon->recommendedProduct->price);?></label>
                                 <a href="<?php echo Yii::app()->createUrl("cart/addtocart",array("id"=>$recon->recommended_product_id));?>">Add to Cart</a>
                                 <a href="<?php echo Yii::app()->createUrl("cart/buynow",array("id"=>$recon->recommended_product_id));?>">Buy Now</a>
                             </div>

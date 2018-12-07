@@ -162,11 +162,11 @@ class CartController extends Controller {
                                     $amount = $isCouponValid->discount;
                                     switch ($isCouponValid->discount_type){
                                         case 1:
-                                            $resp['message'] = "A promo code is successfully applied to your college id. You have received ".$amount."% off discount.";
+                                            $resp['message'] = "You have successfully received ".$amount."% off on your cart.";
                                             break;
                                         case 2:
                                             $resp['message'] = "A Discount of Rs.".money($amount)."% have been applied successfully.";
-                                            $resp['message'] = "A promo code is successfully applied to your college id. You have received Rs.".money($amount)." off discount.";
+                                            $resp['message'] = "You have successfully received Rs.".money($amount)." off on your cart.";
                                             break;
                                     }
 
@@ -179,7 +179,7 @@ class CartController extends Controller {
                             }
 
                         } else {
-                             
+                            $resp['status'] = "success";
                             $resp['message'] = "Discount have been availed for this email address.";
                         }
                     }else {
@@ -309,7 +309,7 @@ class CartController extends Controller {
                 $userEmail = UsersNew::model()->findByPk( Yii::app()->user->id);
                 
                 if(!empty($isCouponValid)) {
-                    if($userEmail != $_POST['code']){
+                    if($userEmail->email != $_POST['code']){
                         $status['message'] = "Please login with ".$_POST['code']." to avail discount.";
                         echo json_encode($status);die;
                     }
@@ -335,11 +335,13 @@ class CartController extends Controller {
                                 $amount = $isCouponValid->discount;
                                 switch ($isCouponValid->discount_type){
                                     case 1:
-                                        $status['message'] = "A promo code is successfully applied to your college id. You have received ".$amount."% off discount.";
+//                                        $status['message'] = "A promo code is successfully applied to your college id. You have received ".$amount."% off discount.";
+                                        $status['message'] = "You have successfully received ".$amount."% off on your cart.";
                                         break;
                                     case 2:
-                                        $status['message'] = "A Discount of Rs.".money($amount)."% have been applied successfully.";
-                                        $status['message'] = "A promo code is successfully applied to your college id. You have received Rs.".money($amount)." off discount.";
+//                                        $status['message'] = "A Discount of Rs.".money($amount)."% have been applied successfully.";
+//                                        $status['message'] = "A promo code is successfully applied to your college id. You have received Rs.".money($amount)." off discount.";
+                                        $status['message'] = "You have successfully received Rs".money($amount)."% off on your cart.";
                                         break;
                                 }
                                 
@@ -620,15 +622,16 @@ class CartController extends Controller {
                                             "Content-Type: text/html; charset=UTF-8";
 
                         $sentToUser = sendEmail($_POST['UsersNew']['email'], $subject,$body,$headers);
-                        $this->refresh(true,"?thankreg=1");
+//                        $this->refresh(true,"?thankreg=1");
+                        $this->redirect(Yii::app()->createUrl("cart/index",array("thankreg"=>1)));
                     } else {
                         foreach ($model->getErrors() as $error){
                             $this->errors['email'] = $error[0];
                         }
                     }
                 } catch (Exception $ex) {
-                    $model->addError('email', 'Email already exist');
-                    $this->errors['email'] = 'Email already exist';
+                    $model->addError('emailexist', 'This Email ID is already registered with us.Kindly Login to access your account');
+                    $this->errors['emailexist'] = 'This Email ID is already registered with us.Kindly Login to access your account';
                 }
             }
             $this->layout = getCartLayot();

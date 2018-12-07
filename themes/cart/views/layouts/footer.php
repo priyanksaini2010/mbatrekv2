@@ -11,7 +11,7 @@
                                 </div>
                                 <div class="footer-logo-wrapper">
                                     <span class="footer-logo">
-                                            <a href="#"><img src="<?php echo $baseUrl; ?>/images/logo.png" alt="MBAtrek" /></a>
+                                        <a href="<?php echo Yii::app()->createUrl("cart/index");?>"><img src="<?php echo $baseUrl; ?>/images/logo.png" alt="MBAtrek" /></a>
                                     </span>
                                     <span class="copyright">© Copyright <?php echo date("Y");?> MBAtrek TM.  All rights reserved</span>
                                 </div>

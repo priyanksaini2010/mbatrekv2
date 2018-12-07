@@ -93,7 +93,7 @@
 									 <li class="kopie"><a href="#">#InterviewReady </a></li>-->
 									<li class="kopie"><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"18")); ?>">Industry Analysis</a></li>	
 									<li class="kopie"><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"21")); ?>">Company Analysis</a></li>
-									<li class="kopie"><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"29")); ?>">Job Fitment Analysis </a></li>
+									<!--<li class="kopie"><a href="<?php // echo Yii::app()->createUrl('cart/description', array("id"=>"29")); ?>">Job Fitment Analysis </a></li>-->
 									<li class="kopie"><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"25")); ?>">Resume / CV Diagnostic</a></li>
 									<li class="kopie"><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"24")); ?>">LinkedIn Diagnostic </a></li>
 									<li class="kopie"><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"30")); ?>">Mock Interview </a></li>
@@ -129,7 +129,7 @@
                     
                   </ul>                
                 </li>
-								<li class="success"><a href="<?php echo Yii::app()->createUrl('our-story'); ?>">Success Stories</a>
+								<li class="success"><a href="#<?php // echo Yii::app()->createUrl('our-story'); ?>">Success Stories</a>
 								<ul >
 										<li><a href="<?php echo Yii::app()->createUrl('cart/story', array("type"=>"2")); ?>">Students </a>
 										<!--<ul >
@@ -143,7 +143,7 @@
 											<li><a href="#">#Campus2Corporate</a></li>
 										</ul>
 									</li>-->
-									<li><a href="<?php echo Yii::app()->createUrl('cart/story', array("type"=>"3")); ?>">Young Professionals </a>
+									<!--<li><a href="<?php // echo Yii::app()->createUrl('cart/story', array("type"=>"3")); ?>">Young Professionals </a>-->
 										
 										<!--<ul >
 											<li><a href="#">#Career Planning</a></li>

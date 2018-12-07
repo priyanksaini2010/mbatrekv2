@@ -2,7 +2,6 @@
 <div class="bread_crum">
     <ul class="list-inline list-unstyled">
 	<li><a href="javascript:void(0);"><i class="fa fa-home" aria-hidden="true"></i></a> <i class="fa fa-angle-right" aria-hidden="true"></i></li>
-	<li><a href="<?php echo Yii::app()->createUrl('cart/index'); ?>">Home</a> <i class="fa fa-angle-right" aria-hidden="true"></i></li>
 	<li class="active"><a href="javascript:void(0);">Campus Ambassador Program</a></li>
     </ul>
 </div>
@@ -169,14 +168,14 @@
                         $counter = 1;
                         foreach ($FaqType as $faq){?>
                         <!--<li ><a class="active" href="#tab_default_1" data-toggle="tab"> Student </a></li>-->
-                        <li><a <?php if($counter == 1){?>class="active"<?php }?> href="#tab_default_<?php echo $faq->id;?>" data-toggle="tab"> <?php echo ucfirst($faq->name);?> </a></li>
+                        <li <?php if($counter == 1){?>class="active"<?php }?>><a  href="#tab_default_<?php echo $faq->id;?>" data-toggle="tab"> <?php echo ucfirst($faq->name);?> </a></li>
                         <!--<li><a href="#tab_default_3" data-toggle="tab"> Industry </a></li>-->
                         <?php $counter++;}?>
                     </ul>
                      <div class="tab-content">
-                    <?php foreach ($FaqType as $faq){?>
+                    <?php $counter = 1;foreach ($FaqType as $faq){?>
                    
-                        <div id="tab_default_<?php echo $faq->id;?>" class="tab-pane active">
+                        <div id="tab_default_<?php echo $faq->id;?>" class="tab-pane <?php if($counter == 1){?>active<?php }?>">
                             <ul id="" class="accordion">
                                 <?php 
                                 $criteria = new CDbCriteria;
@@ -196,7 +195,7 @@
                         </div>
                         
                     
-                      <?php }?>
+                      <?php $counter++;}?>
                          </div>
                 </div>
             </div>

@@ -73,13 +73,13 @@ if(isset(Yii::app()->user->id)){
                                     <?php }?>
                                
                             </div>
-                            <a class="View_cart" href="<?php echo Yii::app()->createUrl("cart/cart");?>">View Cart</a>
+                            <!--<a class="View_cart" href="<?php // echo Yii::app()->createUrl("cart/cart");?>">View Cart</a>-->
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="card_price">
                             <div class="price_cart">
-                                <label>GSTIN : XXXXXX</label>
+                               
                                 <label>Sub Total (<?php echo count($cart)>1?count($cart)." Items":count($cart)." Item";?>): <span> &#8377 <?php echo money($total);?></span></label>
                                 <?php if(!empty($coupon)){?>
                                  <label>You Save : <span> &#8377 <?php 
@@ -89,10 +89,11 @@ if(isset(Yii::app()->user->id)){
                                          $total_dis = $discount;
                                     }
                                     echo money($total_dis);
-                                    echo  "(".money(ceil(($total_dis/$total)*100))."%)";
+                                    echo  "(".money(($total_dis/$total)*100)."%)";
                                  ?></span></label>
                                 <label> Total : <span> &#8377 <?php echo money($total - $total_dis);?></span></label>
                                 <?php }?>
+                                <span><input type="text" class="input_field" name="GSTIN" placeholder="GSTIN"></span>
                                 <a href="<?php echo Yii::app()->createUrl("cart/checkout");?>">Checkout</a>
                             </div> 
                             <?php if(empty($coupon)){?>
@@ -159,7 +160,10 @@ if(isset(Yii::app()->user->id)){
                          $array = array();
                          $array2 = array();
                         foreach($cart as $c){
-                           $array2[] = $c->product->id;
+                            $array2[] = $c->product->id;
+                        }
+                        foreach($cart as $c){
+                           
                         foreach($c->product->productRecommendedValueSaverPacks as $saver){
                         if(!in_array($saver->recommendedProduct->id,$array) && !in_array($saver->recommendedProduct->id,$array2)){
                             $array[] = $saver->recommendedProduct->id;
