@@ -627,7 +627,7 @@ class SiteController extends Controller
                             $criteria = new CDbCriteria;
                             $criteria->addInCondition("id", $cookieCart);
                             $products = Products::model()->findAll($criteria);
-                           
+                            setcookie('products', null, -1, DIREC);
                             foreach($products as $product){
                                 $modelPre = Cart::model()->findByAttributes(array(
                                     "user_id" =>Yii::app()->user->id,

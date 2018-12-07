@@ -1881,3 +1881,6 @@ vertical-align:middle;cursor:pointer;}
 .blog_details .blog_heading ul li{vertical-align:top;}
 .blog_details .blog_heading ul li:last-child .fa-share-alt{color:#348786;font-size:26px;}
 .blog_details .blog_heading ul li:last-child .share_label{font-size:19px;padding:0 6px 0 8px;}
+/* .cart-wrapper.hide_cart{display:none!important;} */
+.cart.hide_cart .cart-wrapper{display:block!important;}
+.cart .cart-wrapper{display:none!important;}

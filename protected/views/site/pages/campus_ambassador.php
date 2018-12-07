@@ -173,12 +173,16 @@
                         <!--<li><a href="#tab_default_3" data-toggle="tab"> Industry </a></li>-->
                         <?php $counter++;}?>
                     </ul>
+                     <div class="tab-content">
                     <?php foreach ($FaqType as $faq){?>
-                    <div class="tab-content">
+                   
                         <div id="tab_default_<?php echo $faq->id;?>" class="tab-pane active">
                             <ul id="" class="accordion">
                                 <?php 
-                                    $dataArray  = CaFaq::model()->findAllByAttributes(array("type" => $faq->id));
+                                $criteria = new CDbCriteria;
+                                $criteria->addCondition("type = ".$faq->id);
+                                $criteria->order = "sortOrder asc";
+                                $dataArray  = CaFaq::model()->findAll($criteria);
                                     foreach ($dataArray as $data){
                                 ?>
                                 <li>
@@ -191,14 +195,15 @@
                             </ul>
                         </div>
                         
-                    </div>
+                    
                       <?php }?>
+                         </div>
                 </div>
             </div>
             <div class="fq_footer">
 			<!--<label>Still stuck with your problem? <span>Contact us at</span> <span class="color_span"> contact@mbatrek.com</span> or Talk to Our <span>Career Advisor at</span> <span class="color_span">+91 98219 48334</span> </label>-->
 			<!--<label>Have more doubts? Mail us at <a href="mailto:contact@mbatrek.com">contact@mbatrek.com</a> </label>-->
-			<label class="stuck_bew"> Still stuck with your  query? <br><span>WhatsApp or Talk to us at- +9821948334</span><br><span>Write us an Email at: contact@mbatrek.com</span></label>
+                        <label class="stuck_bew"> Still stuck with your  query? <br><span>WhatsApp or Talk to us at- +9821948334</span><br><span>Write us an Email at: <a href="mailto:contact@mbatrek.com"><span class="color_span"> contact@mbatrek.com</span></a></span></label>
 			</div>
         </div>
     </div>

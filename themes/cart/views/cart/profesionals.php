@@ -283,10 +283,10 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
 
                                         </div>
                                         <div class="student-cta1-bottom-sub-title">
-                                            Price &#8377  <?php echo money($saver->actuall_price);?>
+                                            Price &#8377  <span style="text-decoration:line-through;"><?php echo money($saver->actuall_price);?></span>
 
                                             <span class="new-price">Special Offer: &#8377 <?php echo money($saver->price);?><br>
-                                                (&#8377 <?php echo money(ceil($saver->actuall_price/12));?> per Month)</span>
+                                                (&#8377 <?php echo money(ceil($saver->price/12));?> per Month)</span>
                                         </div>
                                         <div class="buy-and-cart">
                                             <a href="<?php echo Yii::app()->createUrl("cart/buynow",array("id"=>$saver->id));?>">buy now</a>
@@ -318,7 +318,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                 <div class="student-cta2-inner">
                                                     <ul class="student-cta-listing">
                                                 <?php 
-                                                    $products = Products::model()->findAllByAttributes(array("product_sub_category_id"=>2,"type"=>1,"status"=>1,"is_saver"=>0));
+                                                    $products = Products::model()->findAllByAttributes(array("product_sub_category_id"=>2,"type"=>1,"status"=>1));
                                                     foreach ($products as $prod){
                                                 ?>
                                                         <li>
@@ -374,7 +374,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                             <a class="scroll_to" href="#interview_ready"><img src="/v2/themes/cart/images/blue-arrow-down.jpg"></a>
                                         </div>
                                         </div>
-                                       <?php $products = Products::model()->findAllByAttributes(array("product_sub_category_id"=>3,"type"=>1,"status"=>1,"is_saver"=>0));?>
+                                       <?php $products = Products::model()->findAllByAttributes(array("product_sub_category_id"=>3,"type"=>1,"status"=>1));?>
                                         <?php if(!empty($products)){?>
                                         <div class="right-choice-inner2">
                                             <div class="right-choice-inner-title">

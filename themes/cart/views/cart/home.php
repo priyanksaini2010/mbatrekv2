@@ -2,7 +2,10 @@
 <?php $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/themes/cart"); ?>
 <div class="home_page_slider">
 	<ul class="rslides" id="slider1">
-            <?php foreach ( Banners::model()->findAll()as $banner){?>
+            <?php
+            $criteria = new CDbCriteria;
+            $criteria->order = "sortOrder asc";
+            foreach ( Banners::model()->findAll($criteria)as $banner){?>
 		<li><img src="<?php echo Yii::app()->request->baseUrl; ?>/assets/Banners/<?php echo $banner->image;?>" alt=""></li>
 	    <?php }?>
 	</ul>

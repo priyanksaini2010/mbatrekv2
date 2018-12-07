@@ -305,7 +305,14 @@ class CartController extends Controller {
                 
                 $domain_name = substr(strrchr($_POST['code'], "@"), 1);
                 $isCouponValid = CouponCode::model()->findByAttributes(array("domain"=>$domain_name));
+                //Only Login User can use his email as acoupon
+                $userEmail = UsersNew::model()->findByPk( Yii::app()->user->id);
+                
                 if(!empty($isCouponValid)) {
+                    if($userEmail != $_POST['code']){
+                        $status['message'] = "Please login with ".$_POST['code']." to avail discount.";
+                        echo json_encode($status);die;
+                    }
                     $isThisUsed = CouponUsage::model()->findByAttributes(array("email_used"=>$_POST['code']));
                     if(empty($isThisUsed)){
                         $cart = Cart::model()->findByAttributes(array("user_id" => Yii::app()->user->id, "status" => 1));

@@ -39,6 +39,14 @@ $typ = $_GET['type'];
                         <div class="blog_block">
                             <div class="block_Titke">
                                 <h1>  <?php echo $blog->title;?></h1>
+                                <div class="share_post">
+                                <ul class="list-inline list-unstyled">
+                                    <!--<li><a class="comment_post" href="javascript:void(0);">0Comments</a></li>-->
+                                    <li><a href="javascript:void(0);" class="share_post_b jssocials" id="share"> 
+                                        <div class="jssocials-shares">&nbsp;</div>
+                                        </a> </li>
+                                </ul>
+                           </div>
                                 <h2>  <?php echo $blog->content;?></h2>
                             </div>
                             <div class="blog_img">

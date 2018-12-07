@@ -63,6 +63,7 @@ foreach ($products as $c){
                     <div class="col-md-4">
                         <div class="card_price">
                             <div class="price_cart">
+                                <label>GSTIN : XXXXXX</label>
                                 <label>Sub Total (<?php echo count($products)>1?count($products)." Items":count($products)." Item";?>): <span> &#8377 <?php echo money($total);?></span></label>
                                 <a href="<?php echo Yii::app()->createUrl("cart/checkout");?>">Checkout</a>
                             </div>
@@ -108,10 +109,12 @@ foreach ($products as $c){
                     <ul>
                         <?php 
 //                        $cart = Cart::model()->findAllByAttributes(array("user_id" => Yii::app()->user->id, "status" => 1));
+                        $array = array();
+                        $array2 = array();
                         foreach($products as $c){
-                            $array = array();
+                            $array2[] = $c->product->id;
                         foreach($c->productRecommendedValueSaverPacks as $saver){
-                        if(!in_array($saver->recommendedProduct->id,$array)){
+                        if(!in_array($saver->recommendedProduct->id,$array) && !in_array($saver->recommendedProduct->id,$array2)){
                             $array[] = $saver->recommendedProduct->id;
 ?>
                         <li>

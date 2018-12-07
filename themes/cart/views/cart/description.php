@@ -1,5 +1,6 @@
 <?php
 $product = Products::model()->findByPk($id);
+$productActuall = Products::model()->findByPk($id);
 ?>
 <?php $this->setPageTitle( $product->title); ?>
 <div class="comany_conainer">
@@ -99,7 +100,7 @@ $product = Products::model()->findByPk($id);
 
 								</div>
 								<div class="know_more_combo">
-									<a href="javacript:void(0);">Know More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+									<a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"18")); ?>">Know More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
 								</div>
 								<div class="price_eng">
 									<label>&#8377 <?php echo money($product->price);?></label>
@@ -118,7 +119,7 @@ $product = Products::model()->findByPk($id);
 									Get a detail analysis of the selected company according to your fitment
 								</div>
 								<div class="know_more_combo">
-									<a href="javacript:void(0);">Know More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+									<a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"21")); ?>">Know More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
 								</div>
 								<div class="price_eng">
 									<label>&#8377 <?php echo money($product2->price);?></label>
@@ -127,7 +128,7 @@ $product = Products::model()->findByPk($id);
 						</ul>
 						<div class="discount_eng">
 							<div class="combo_price">
-								<label>Combo Price &#8377 <?php echo money($product2->price+$product->price);?></label>
+								<label>Combo Price &#8377 <?php echo money($productActuall->price);?></label>
 								<span class="discount_line">Total Price &#8377 <?php echo money($product2->actuall_price+$product->actuall_price);?></span>
 								<span>You save &#8377 1,000 (20%)</span>
 							</div>
@@ -155,7 +156,7 @@ $product = Products::model()->findByPk($id);
 									Practice your answers and understand how to structure the content
 								</div>
 								<div class="know_more_combo">
-									<a href="javacript:void(0);">Know More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+									<a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"30")); ?>">Know More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
 								</div>
 								<div class="price_eng">
 									<label>&#8377 <?php echo money($product->price);?></label>
@@ -174,7 +175,7 @@ $product = Products::model()->findByPk($id);
 									Know the questions asked in your dream company and how to answer them
 								</div>
 								<div class="know_more_combo">
-									<a href="javacript:void(0);">Know More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+									<a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"23")); ?>">Know More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
 								</div>
 								<div class="price_eng">
 									<label>&#8377 <?php echo money($product2->price);?></label>
@@ -183,7 +184,7 @@ $product = Products::model()->findByPk($id);
 						</ul>
 						<div class="discount_eng">
 							<div class="combo_price">
-								<label>Combo Price &#8377 <?php echo money($product2->price+$product->price);?></label>
+								<label>Combo Price &#8377  <?php echo money($productActuall->price);?></label>
 								<span class="discount_line">Total Price &#8377 <?php echo money($product2->actuall_price+$product->actuall_price);?></span>
 								<span>You save &#8377 500 (18%)</span>
 							</div>
@@ -250,7 +251,7 @@ $product = Products::model()->findByPk($id);
 						</ul>
 						<div class="discount_eng">
 							<div class="combo_price">
-								<label>Combo Price &#8377 <?php echo money($product2->price+$product->price+$product3->price);?></label>
+								<label>Combo Price &#8377  <?php echo money($productActuall->price);?></label>
 								<span class="discount_line">Total Price &#8377 <?php echo money($product2->actuall_price+$product->actuall_price+$product3->actuall_price);?></span>
 								<span>You save &#8377 2,2250 (25%)</span>
 							</div>
@@ -327,6 +328,7 @@ $product = Products::model()->findByPk($id);
         </div>
         <?php // }?>
         <div class="our_recomanded product_recomnd">
+             <?php  $product = Products::model()->findByAttributes(array("id"=>$id));?>
             <h4>Recommended Value Saver Packages </h4>
             <ul>
                 <?php foreach($product->productRecommendedValueSaverPacks as $recon){?>

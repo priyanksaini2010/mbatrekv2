@@ -31,7 +31,7 @@ class Faq extends CActiveRecord
 			array('type', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, type, question, answer', 'safe', 'on'=>'search'),
+			array('id, type, question, answer, sortOrder', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -56,6 +56,7 @@ class Faq extends CActiveRecord
 			'type' => 'Type',
 			'question' => 'Question',
 			'answer' => 'Answer',
+                        'sortOrder' => 'Sort Order',
 		);
 	}
 
@@ -81,9 +82,14 @@ class Faq extends CActiveRecord
 		$criteria->compare('type',$this->type);
 		$criteria->compare('question',$this->question,true);
 		$criteria->compare('answer',$this->answer,true);
-
+                $criteria->compare('sortOrder',$this->sortOrder);
+                $criteria->order = "sortOrder asc";
+                $criteria->limit = 1000;
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+                        'pagination' => array(
+                                            'pageSize' => 1000,
+                                        ),
 		));
 	}
 

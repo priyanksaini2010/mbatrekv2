@@ -79,15 +79,17 @@ if(isset(Yii::app()->user->id)){
                     <div class="col-md-4">
                         <div class="card_price">
                             <div class="price_cart">
+                                <label>GSTIN : XXXXXX</label>
                                 <label>Sub Total (<?php echo count($cart)>1?count($cart)." Items":count($cart)." Item";?>): <span> &#8377 <?php echo money($total);?></span></label>
                                 <?php if(!empty($coupon)){?>
-                                 <label>Discount : <span> &#8377 <?php 
+                                 <label>You Save : <span> &#8377 <?php 
                                     if($discount_type == 1){
-                                        echo $total_dis = money(ceil(($total * $discount)/100));
+                                         $total_dis = ceil(($total * $discount)/100);
                                     }else {
-                                        echo $total_dis = money($discount);
+                                         $total_dis = $discount;
                                     }
-                                 
+                                    echo money($total_dis);
+                                    echo  "(".money(ceil(($total_dis/$total)*100))."%)";
                                  ?></span></label>
                                 <label> Total : <span> &#8377 <?php echo money($total - $total_dis);?></span></label>
                                 <?php }?>
@@ -155,10 +157,11 @@ if(isset(Yii::app()->user->id)){
                         <?php 
 //                        $cart = Cart::model()->findAllByAttributes(array("user_id" => Yii::app()->user->id, "status" => 1));
                          $array = array();
+                         $array2 = array();
                         foreach($cart as $c){
-                           
+                           $array2[] = $c->product->id;
                         foreach($c->product->productRecommendedValueSaverPacks as $saver){
-                        if(!in_array($saver->recommendedProduct->id,$array)){
+                        if(!in_array($saver->recommendedProduct->id,$array) && !in_array($saver->recommendedProduct->id,$array2)){
                             $array[] = $saver->recommendedProduct->id;
 ?>
                         <li>

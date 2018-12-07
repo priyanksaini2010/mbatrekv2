@@ -56,7 +56,7 @@
         //                    location.reload("?thanmscart=1");
                             setInterval(function(){window.location.reload(); }, 3000);
                         }else if(obj.status == "loginfailed"){
-                             validationMethod("thanks",obj.message)
+                             validationMethod("error",obj.message)
         //                    location.reload("?thanmscart=1");
 //                            setInterval(function(){window.location.reload(); }, 3000);
                         }else {

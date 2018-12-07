@@ -28,12 +28,17 @@ $FaqType = FaqType::model()->findAll();;
                         <!--<li><a href="#tab_default_3" data-toggle="tab"> Industry </a></li>-->
                         <?php $counter++;}?>
                     </ul>
+                     <div class="tab-content">
                     <?php foreach ($FaqType as $faq){?>
-                    <div class="tab-content">
+                   
                         <div id="tab_default_<?php echo $faq->id;?>" class="tab-pane active">
                             <ul id="" class="accordion">
                                 <?php 
-                                    $dataArray  = Faq::model()->findAllByAttributes(array("type" => $faq->id));
+                                
+                                $criteria = new CDbCriteria;
+                                $criteria->addCondition("type = ".$faq->id);
+                                $criteria->order = "sortOrder asc";
+                                $dataArray  = Faq::model()->findAll($criteria);
                                     foreach ($dataArray as $data){
                                 ?>
                                 <li>
@@ -46,8 +51,9 @@ $FaqType = FaqType::model()->findAll();;
                             </ul>
                         </div>
                         
-                    </div>
+                   
                       <?php }?>
+                          </div>
                 </div>
             </div>
             

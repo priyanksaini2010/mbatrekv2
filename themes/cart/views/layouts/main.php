@@ -112,11 +112,11 @@ var domain_name = '<?php echo $_SERVER['HTTP_HOST'].DIREC;?>';
                                         <span id="pop-notification-text">
                                             <span>You have registered successfully to #InterviewReady competition.</span>
                                             <br /> <br />
-                                            <span>Further information would be provided to you once we have <span style="text-decoration: underline">20 registrations</span> from your college/university</span>
+                                            <span>Further information would be provided to you once we have <span style="text-decoration: underline">10 registrations</span> from your college/university</span>
                                             <br /><br />
                                             <span>For any query write at -</span>
                                             <br /><br />
-                                            <span style="text-decoration: underline">contact@mbatrek.com</span><span> or call at +91-9821948355,+91-9821948354</span>
+                                            <span style="text-decoration: underline">contact@mbatrek.com</span><span> or call at &nbsp;&nbsp;&nbsp;<br/>+91-9821948355,+91-9821948354</span>
                                         </span></p>
                                 </div>
                                 <!-- <button class="md-close">OK</button> -->
@@ -144,11 +144,11 @@ var domain_name = '<?php echo $_SERVER['HTTP_HOST'].DIREC;?>';
                                         <span id="pop-notification-text">
                                             <span>You have registered successfully to #IndustryReady competition.</span>
                                             <br /> <br />
-                                            <span>Further information would be provided to you once we have <span style="text-decoration: underline">20 registrations</span> from your college/university</span>
+                                            <span>Further information would be provided to you once we have <span style="text-decoration: underline">10 registrations</span> from your college/university</span>
                                             <br /><br />
                                             <span>For any query write at -</span>
                                             <br /><br />
-                                            <span style="text-decoration: underline">contact@mbatrek.com</span><span> or call at +91-9821948355,+91-9821948354</span>
+                                            <span style="text-decoration: underline">contact@mbatrek.com</span><span> or call at <br/>+91-9821948355,+91-9821948354</span>
                                         </span></p>
                                 </div>
                                 <!-- <button class="md-close">OK</button> -->

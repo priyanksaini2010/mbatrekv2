@@ -31,7 +31,7 @@ class BannersController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','admin','delete'),
+				'actions'=>array('create','update','admin','delete','sort'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -43,7 +43,20 @@ class BannersController extends Controller
 			),
 		);
 	}
+        public function actionSort()
+        {
 
+                if (isset($_POST['items']) && is_array($_POST['items'])) {
+                        $i = 0;
+                        
+                        foreach ($_POST['items'] as $item) {
+                                $project = $this->loadModel($item);
+                                $project->sortOrder = $i;
+                                $project->save();
+                                $i++;
+                        }
+                }
+        }
 	/**
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed

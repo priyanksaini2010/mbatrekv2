@@ -29,7 +29,7 @@ class Banners extends CActiveRecord
 			array('image', 'length', 'max'=>1555),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, image', 'safe', 'on'=>'search'),
+			array('id, image, sortOrder', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -52,6 +52,7 @@ class Banners extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'image' => 'Image',
+                         'sortOrder' => 'Sort Order',
 		);
 	}
 
@@ -75,9 +76,13 @@ class Banners extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('image',$this->image,true);
-
+                 $criteria->order = "sortOrder asc";
+                $criteria->limit = 1000;
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+                    'pagination' => array(
+                                            'pageSize' => 1000,
+                                        ),
 		));
 	}
 

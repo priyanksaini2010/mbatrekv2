@@ -92,6 +92,7 @@ $(document).ready(function(){
      });
  });
 $(document).ready(function(){
+    
      $("#share").jsSocials({
     showLabel: false,
     showCount: false,
@@ -119,10 +120,11 @@ $(document).ready(function(){
             validationMethod("error","Please enter password.");return false;
         }
         if ($("#UsersNew_password").val().length < 8){
-            validationMethod("error","Password length should be  atleast 8 characters.");return false;
+            validationMethod("error","Password  should be atleast 8 characters and should be alphanumeric, can not contain special chearacters.");
+            return false;
         }
         if (!passwords($("#UsersNew_password").val())){
-            validationMethod("error","Password length should be alphanumeric, can not contain special chearacters.");
+            validationMethod("error","Password  should be atleast 8 characters and should be alphanumeric, can not contain special chearacters.");
             return false;
         }
         if ($("#UsersNew_cpassword").val() == ""){

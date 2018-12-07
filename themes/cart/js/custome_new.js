@@ -267,3 +267,17 @@ $(document).ready(function() {
     });
 });
 /* ========End Register Form======= */
+/* $(document).ready(function(){
+	$('#cart-link').click(function(e){
+		$('.cart').toggleClass("hide_cart");
+		e.stopPropagation();
+		$(document).on("click", function(e) {
+			if ($(e.target).is(".cart") === false) {
+			  $(".cart").removeClass("hide_cart");
+			}
+		});
+	});
+	
+	
+}); */
+  

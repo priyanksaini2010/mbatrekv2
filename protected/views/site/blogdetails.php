@@ -1,4 +1,4 @@
-<?php $this->setPageTitle('Blogs Details'); ?>
+<?php $this->setPageTitle($model->title); ?>
 <div class="blog_new_container_details">
     <div class="blog_header">
     <!--    <div class="container">
