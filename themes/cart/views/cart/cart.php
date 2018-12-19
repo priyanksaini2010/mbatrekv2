@@ -93,8 +93,9 @@ if(isset(Yii::app()->user->id)){
                                  ?></span></label>
                                 <label> Total : <span> &#8377 <?php echo money($total - $total_dis);?></span></label>
                                 <?php }?>
-                                <span><input type="text" class="input_field" name="GSTIN" placeholder="GSTIN"></span>
+                                
                                 <a href="<?php echo Yii::app()->createUrl("cart/checkout");?>">Checkout</a>
+								<span><input type="text" class="input_field" name="GSTIN" placeholder="GSTIN ( if applicable )"></span>
                             </div> 
                             <?php if(empty($coupon)){?>
                             <span class="promocode">Have a promocode? Enter here</span>
@@ -193,7 +194,7 @@ if(isset(Yii::app()->user->id)){
                 <?php }?>
 				<div class="need_help">
 					<span>
-                                            Need Help? Visit the <a href="<?php echo Yii::app()->createUrl("frequently-asked-questions");?>">FAQ</a> or <a href="<?php echo Yii::app()->createUrl("contact-us");?>">Contact Us</a>
+                                            Need Help? Visit the <a href="<?php echo Yii::app()->createUrl("frequently-asked-questions");?>">FAQs</a> or <a href="<?php echo Yii::app()->createUrl("contact-us");?>">Contact Us</a>
 					</span>
 				</div>
             </div>

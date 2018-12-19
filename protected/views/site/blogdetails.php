@@ -15,7 +15,6 @@
     </div>-->
     <div class="container">
         <div class="blog_container">
-            <h3>Helping you make the most of your career</h3>
             <div class="blog_details">
                 <div class="blog_heading">
                     <h2><?php echo $model->title; ?></h2>

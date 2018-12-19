@@ -32,7 +32,7 @@
 							
 							<?php if($model->username != ''){ $data =  array('for' => "firstname",'class' => 'active');}else{$data =  array('for' => "firstname");};?>
 							
-							<?php echo $form->textField($model, 'username', array('class'=>"form-control","placeholder"=>"Mbatrek Id")); ?>
+							<?php echo $form->textField($model, 'username', array('class'=>"form-control","placeholder"=>"Email Id")); ?>
 							
 							<?php if($model->password != ''){ $data =  array('for' => "firstname",'class' => 'active');}else{$data =  array('for' => "firstname");};?>
 							

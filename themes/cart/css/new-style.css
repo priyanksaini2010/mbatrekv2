@@ -1199,6 +1199,8 @@ text-align: center;border-radius: 2px;}
 .ground_mbatrek{width: 100%;float: left;}
 .ground_mbatrek h3{font-size: 29px;font-family: 'MyriadPro-Semibold';color: #348786;margin:0;padding: 0 0 18px 0;text-align: center;}
 .event_container{width: 100%;float: left;}
+.event_container .event_text p{color: #222;}
+.event_container .event_text p span{color: #348786;font-family: 'MyriadPro-Semibold';}
 .event_container h4{font-size: 26px;text-align:left;font-family: 'MyriadPro-Semibold';color: #348786;    padding: 0 0 20px 0;margin:0;}
 .eventbanner{width: 100%;float: left;    padding: 0 0px 8px 0;    margin: 0 0 29px 0;border-bottom: 1px solid #ccc;}
 .eventbanner img{width: 100%;}
@@ -1557,7 +1559,7 @@ text-align: center;border-radius: 2px;}
 .amaster_repeat h3{margin:0;font-weight: normal;color: #222;padding: 21px 0 0 0;    line-height: 30px;}
 .amaster_repeat h3 span{color: #348786;font-family: 'MyriadPro-Semibold';display: inline;}
 .compas_heading h3{font-family: 'MyriadPro-Semibold';font-size: 39px;margin:0;color: #73942f;}
-.compas_heading h4{font-family: 'MyriadPro-Semibold';font-size:29px;margin:0;color: #348786;margin:0;padding: 22px 0 0 0;}
+.compas_heading h4{font-family: 'MyriadPro-Semibold';font-size:29px;margin:0;color: #348786;margin:0;padding: 22px 0 0 0;line-height: 39px;}
 .earn_point{width: 100%;float: left;background: #e7e7e7;margin:50px 0 28px 0;}
 .what_you_will_Get .earn_point{margin-bottom:0;}
 .earn_container{width: 100%;float: left;text-align: center;padding: 38px 0 30px 0;}
@@ -1591,8 +1593,8 @@ text-align: center;border-radius: 2px;}
 .form_amster_field .application_submit:hover{background: #348786;}
 .form_amster_field label{color: #222;display: block;font-family: 'MyriadPro-Regular';font-size: 20px;font-weight: normal;}
 .form_amster_field label em{color:red;font-style: normal;}
-.form_amster_field  input[type="text"]{color: #222;width: 100%;border:1px solid #348786;padding: 10px 10px;}
-.form_amster_field  select{width: 100%;color: #222;border:1px solid #348786;padding: 10px;font-size: 20px;}
+.form_amster_field  input[type="text"]{color: #222;width: 100%;border:1px solid #999;padding: 10px 10px;}
+.form_amster_field  select{width: 100%;color: #777;padding: 10px;font-size: 16px;height:47px;}
 .form_amster_field  textarea{width: 100%;color: #222;border:1px solid #348786;padding: 10px;font-size: 20px;resize: none;}
 
 .are_yu input[type=radio].css-checkbox {position:absolute; z-index:-1000; left:-1000px; overflow: hidden; clip: rect(0 0 0 0); height:1px; width:1px; margin:-1px; padding:0; border:0;}
@@ -1895,3 +1897,26 @@ vertical-align:middle;cursor:pointer;}
     box-sizing: border-box;
     box-shadow: none;}
 .support_managment .support_aligment.pull-right ul{background-image:url('../images/summery_action.png');}
+.indusry_new_form{width:100%;float:left;}
+.indusry_new_form .team_member{border:1px solid #999;text-align:center;width:100%;color:#348786;font-size:20px;font-family: 'MyriadPro-Semibold';padding:15px 20px 15px 20px;}
+.indusry_new_form .form_amster_field input[type="text"]{height:47px;}
+.profile_container >h3{text-align:center;color:#348786;font-size:29px;font-family: 'MyriadPro-Semibold';    margin: 0 0 40px 0;}
+.profile_user{width:500px;margin:auto;    overflow: hidden;} 
+.profile_user .profile_user{font-family: 'MyriadPro-Semibold';font-size:17px;}
+.profile_user .col-md-12 .col-md-8 input[type="text"]{font-family: 'MyriadPro-Regular';font-size:17px;width:100%;border:1px solid #999;padding:6px 0 6px 10px;}
+.profile_user .col-md-12{margin-bottom:20px;}
+.profile_user .col-md-12 .profile_btn{background:#348786;color:#fff;font-size:18px;display:inline-block;border:none;padding:6px 20px 6px 20px;border-radius:5px;margin-right: 10px;margin-top: 20px;border:1px solid transparent;}
+.profile_user .col-md-12 .profile_btn:hover{background:#fff;color:#348786;border:1px solid #348786;}
+
+.cart_area_wrapper.past_orders{margin-top:30px;} 
+.cart_area_wrapper.past_orders .past-order_Text{text-align: center;color: #348786;display: block;padding: 0 0 29px 0;} 
+.cart_area_wrapper.past_orders .cart_label label{color: #348786;display: block;padding: 0 0 0px 0;font-family: 'MyriadPro-Regular';font-weight: normal;} 
+.puchase_id{width:100%;float: left;}
+.cart_area_wrapper.past_orders .cart_label .puchase_id .id_pur{padding:0;color:#222;display: inline-block;}
+.cart_area_wrapper.past_orders .cart_detail .cart_label{padding-top:0;width: 29%;}
+.cart_area_wrapper.past_orders .cart_label .puchase_id .id_pur span{padding:0;color:#999;}
+.cart_area_wrapper.past_orders .cart_repeat{    margin-bottom: 20px;}
+.cart_money .help_div{width: 100%;float: left;margin-bottom: 7px;}
+.cart_money .help_div a{background: #348786;color:#fff;font-size: 17px;display: inline-block;padding: 4px 14px 3px 14px;border-radius: 5px;min-width: 132px;text-align: center;}
+.cart_money .review_div{width: 100%;float: left;}
+.cart_money .review_div a{background: #348786;color:#fff;font-size: 17px;display: inline-block;padding: 4px 14px 3px 14px;border-radius: 5px;min-width: 132px;text-align: center;}

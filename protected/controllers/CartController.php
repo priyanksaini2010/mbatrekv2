@@ -77,6 +77,7 @@ class CartController extends Controller {
         }
         
 	public function actionVerify($id){
+
 	    $user = UsersNew::model()->findByPk($id);
 	    if(empty($user)){
 		$this->errors["error"] = "You are not registered with us!";
@@ -87,7 +88,7 @@ class CartController extends Controller {
 		if($user->save()){
 		   $this->redirect(array('index','thanksverify'=>1));
 		}else {
-		    foreach($model->getErrors() as $key=>$err){
+		    foreach($user->getErrors() as $key=>$err){
                             $this->errors[$key] = $err;
 		    }
 		}

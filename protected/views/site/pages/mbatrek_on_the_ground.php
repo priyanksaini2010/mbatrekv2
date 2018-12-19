@@ -10,7 +10,7 @@
 
 <div class="ground_mbatrek">
     <div class="container">
-        <h3>Events</h3>
+        <h3>MBAtrek@Campus</h3>
         <?php
         
         $criteria = new CDbCriteria;

@@ -30,7 +30,6 @@ $typ = $_GET['type'];
     </div>
     <div class="container">
         <div class="blog_container">
-            <h3>Helping you make the most of your career</h3>
             <div class="our_blog">
                 <div class="row">
                     <?php foreach ($blogs as $blog){?>

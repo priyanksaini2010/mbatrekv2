@@ -13,9 +13,9 @@ switch ($type){
         $text = "Students";
         $text_bottom = "Want to get these awesome career impacting packages ";
         $left = "#YouBeTheExecutive";
-        $left_second = "Internship Series…";
+        $left_second = " Internship and Placement Series...";
         $right = "#Campus2Corporate";
-        $right_Second = "Placement Series…";
+        $right_Second = "Program Feedback...";
         $class = "";
           $right_2 = "Leverage your 2 Year MBA";
           $right_Second_2 = "Induction Series…";
