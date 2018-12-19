@@ -611,12 +611,13 @@ class CartController extends Controller {
                  
                     if($model->save()){
                         $subject = "Your Account Has Been Created";
-                        $template = getTemplate("register");
+                        $template = getTemplate("verify");
                         $name = ucfirst($_POST['UsersNew']['full_name']);
                         $body = str_replace("{{SUBJECT}}", $subject, $template);
                         $body = str_replace("{{NAME}}", $name, $body);
                         $link = Yii::app()->params['url']."cart/verify?id=".$model->id;
                         $body = str_replace("{{LINK}}", $link, $body);
+			pr($body);
                         $headers="From: ".Yii::app()->params['adminEmail']." <".Yii::app()->params['adminEmail']."> \r\n".
                                         "Reply-To: ".Yii::app()->params['adminEmail']." \r\n";
                         $headers .= "MIME-Version: 1.0\r\n".

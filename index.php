@@ -294,6 +294,8 @@ function getTemplate($type){
 	$content = file_get_contents('template_images/institute_admin.html');
     } else if($type == "register"){
         $content = file_get_contents('template_images/register.html');
+    }else if($type == "verify"){
+        $content = file_get_contents('template_images/varify_accound.html');
     }
     else {
 	$content = file_get_contents('template_images/institute.html');
