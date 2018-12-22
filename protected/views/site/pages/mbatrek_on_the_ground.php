@@ -1,5 +1,4 @@
-
-<?php $this->setPageTitle('MBAtrek on the ground'); ?>
+<?php $this->setPageTitle('At Campus'); ?>
 <div class="bread_crum">
     <ul class="list-inline list-unstyled">
         <li><a href="javascript:void(0);"><i class="fa fa-home" aria-hidden="true"></i></a> <i class="fa fa-angle-right" aria-hidden="true"></i></li>
