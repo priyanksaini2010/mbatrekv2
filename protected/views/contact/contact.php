@@ -1,3 +1,4 @@
+<?php $this->setPageTitle('Contact Us'); ?>
 <div class="contact_container_page">
     <div class="container">
         <div class="maine_contact_heading">
