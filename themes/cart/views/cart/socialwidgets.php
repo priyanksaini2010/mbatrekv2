@@ -44,7 +44,12 @@
 					?>
 					<ul>
 						<li class="instagram-image">
-							<img src="<?php echo $feed->images->standard_resolution->url;?>" height="200" width="200">
+                                                        <?php if(isset($feed->videos->standard_resolution->url)){?>
+                                                        <video src="<?php echo $feed->images->standard_resolution->url;?>" height="200" width="200" type="video/mp4"></video>
+							
+                                                        <?php }else {?>
+                                                        <img src="<?php echo $feed->images->standard_resolution->url;?>" height="200" width="200">
+                                                        <?php }?>
 							<!--<img src="<?php // echo $feedLin->updateContent->companyStatusUpdate->share->content->eyebrowUrl;?>" height="280" width="150">-->
 						</li>
 						<li>

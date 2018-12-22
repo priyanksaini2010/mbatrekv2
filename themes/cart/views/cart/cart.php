@@ -1,3 +1,4 @@
+<?php $this->setPageTitle('View Cart'); ?>
 <?php 
 if(isset(Yii::app()->user->id)){
   $cart = Cart::model()->findAllByAttributes(array("user_id" => Yii::app()->user->id, "status" => 1));

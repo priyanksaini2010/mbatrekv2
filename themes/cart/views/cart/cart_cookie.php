@@ -1,3 +1,4 @@
+<?php $this->setPageTitle('View Cart'); ?>
 <?php 
 $cookieCart = unserialize($_COOKIE['products']);
 $criteria = new CDbCriteria;
