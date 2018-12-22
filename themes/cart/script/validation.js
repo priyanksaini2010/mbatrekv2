@@ -106,7 +106,7 @@ $(document).ready(function(){
 })
     //Registeration Form Validation
     $(".cart-remove").click(function(){
-            if(confirm("Are you sure you wantsdds to remove this product from your cart?")){
+            if(confirm("Are you sure you want to remove this product from your cart?")){
                 window.location.href = 'https://'+domain_name+"cart/removeCart?p="+$(this).val();
             }
         });
