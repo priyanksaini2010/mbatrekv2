@@ -30,7 +30,7 @@ $typ = $_GET['type'];
     </div>
     <div class="container">
         <div class="blog_container">
-            <div class="our_blog">
+            <div class="our_blog videos">
                 <div class="row">
                     <?php foreach ($blogs as $blog){?>
                         <div class="blog_video_repeat">
@@ -41,30 +41,22 @@ $typ = $_GET['type'];
                                 <div class="share_post">
                                 <ul class="list-inline list-unstyled">
                                     <!--<li><a class="comment_post" href="javascript:void(0);">0Comments</a></li>-->
-                                    <li><a href="javascript:void(0);" class="share_post_b jssocials" id="share"> 
+                                    <li><i class="fa fa-share-alt" aria-hidden="true"></i><span class="share_label">Share</span><a href="javascript:void(0);" class="share_post_b jssocials" id="share"> 
                                         <div class="jssocials-shares">&nbsp;</div>
                                         </a> </li>
                                 </ul>
                            </div>
                                 <h2>  <?php echo $blog->content;?></h2>
                             </div>
-                            <div class="blog_img">
+                            <div class="blog_img ">
                                 <?php echo $blog->youtube_video_link;?>
                             </div>
-                            <div class="share_post">
-                                <ul class="list-inline list-unstyled">
-                                    <!--<li><a class="comment_post" href="javascript:void(0);">0Comments</a></li>-->
-                                    <li><a href="javascript:void(0);" class="share_post_b jssocials" id="share"> 
-                                        <div class="jssocials-shares">&nbsp;</div>
-                                        </a> </li>
-                                </ul>
-                           </div>
+                            
                         </div>
                     </div>
                     </div>
                     <?php }?>
                     
-                    <div class="col-md-12 col-sm-12 col-xs-12">&nbsp;</div>
                 </div>
             </div>
         </div>

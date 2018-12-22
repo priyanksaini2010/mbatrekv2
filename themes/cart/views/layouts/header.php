@@ -115,7 +115,7 @@
                                             <a href="<?php echo Yii::app()->createUrl('site/page',array("view"=>"educational_institute")); ?>">Educational Institutes</a>
                                         </li>
                                         <li>
-                                            <a href="<?php echo Yii::app()->createUrl('company'); ?>">Companies</a>
+                                            <a href="<?php echo Yii::app()->createUrl('companies'); ?>">Companies</a>
                                         </li>
                   </ul>                
                 </li>
