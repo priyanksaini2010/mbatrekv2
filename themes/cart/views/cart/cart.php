@@ -89,7 +89,7 @@ if(isset(Yii::app()->user->id)){
                                          $total_dis = $discount;
                                     }
                                     echo money($total_dis);
-                                    echo  "(".money(($total_dis/$total)*100)."%)";
+//                                    echo  "(".money(($total_dis/$total)*100)."%)";
                                  ?></span></label>
                                 <label> Total : <span> &#8377 <?php echo money($total - $total_dis);?></span></label>
                                 <?php }?>
