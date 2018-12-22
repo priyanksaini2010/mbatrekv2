@@ -97,7 +97,7 @@ foreach ($products as $c){
 								<div class="phAnimate"><label for="lastname">Password: <em>*</em></label> 
                                                                     <input class="input_field" placeholder="" name="LoginForm[password]" id="LoginForm_password" type="password"></div>
 								<div class="promo_btn">
-									<input type="button" id="login-form-submit" value="Submit" name="submit" />
+									<input type="button" class="apply-promo" id="login-form-submit" value="Submit" name="submit" />
 								</div>
 							</div>
                                         <?php $this->endWidget();?>       

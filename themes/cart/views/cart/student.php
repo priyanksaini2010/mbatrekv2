@@ -28,12 +28,17 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
     <?php $data  = ContentJson::model()->findByAttributes(array("page"=>"student_page"));
         echo $data->data;
     ?>
-    <div class="student-title">
+    <div class="student-title" >
         <div class="container">
             <div class="student-title-inner">
                 <?php echo $category->category;?>
             </div>
+            
         </div>
+        
+    </div>
+    <div class="container" >
+         <div class="sub_title" id="Firstfollow">Let us help you maximaize your internship opportunity...</div>
     </div>
     <div class="student-cta1">
         <div class="container">
