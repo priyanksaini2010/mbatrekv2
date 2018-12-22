@@ -10,7 +10,7 @@ switch ($type){
         $class = "cordinator_page";
     break;
     case 2:
-        $text = "Students";
+        $text = "Student";
         $text_bottom = "Want to get these awesome career impacting packages ";
         $left = "#YouBeTheExecutive";
         $left_second = " Internship and Placement Series...";
@@ -31,7 +31,7 @@ switch ($type){
     break;
 }
 
-$this->setPageTitle( $text." Success Story");
+$this->setPageTitle( $text." Stories");
 $leftContent = SuccessStory::model()->findAllByAttributes(array("type"=>$type,"sub_type"=>1));
 $rightContent = SuccessStory::model()->findAllByAttributes(array("type"=>$type,"sub_type"=>2));
 $rightContent_2 = SuccessStory::model()->findAllByAttributes(array("type"=>$type,"sub_type"=>3));

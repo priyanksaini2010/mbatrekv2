@@ -93,7 +93,7 @@
     ?>
                     <div class="cart-wrapper">
                                 <div class="cart-heading">
-                                    <div class="cart-title">items</div>
+                                    <div class="cart-title">Products</div>
                                     <div class="cart-price">Price (in &#8377)</div>
                                 </div>
                                 <?php

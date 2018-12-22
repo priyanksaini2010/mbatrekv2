@@ -11,7 +11,7 @@
 	<li class="active"><a href="javascript:void(0);">Copyright Notice</a></li>
     </ul>
 </div>-->
-<?php $this->setPageTitle('Copyright'); ?>
+<?php $this->setPageTitle('Copyright Notice'); ?>
 <div class="bread_crum">
     <ul class="list-inline list-unstyled">
 	<li><a href="javascript:void(0);"><i class="fa fa-home" aria-hidden="true"></i></a> <i class="fa fa-angle-right" aria-hidden="true"></i></li>

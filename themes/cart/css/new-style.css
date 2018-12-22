@@ -1482,9 +1482,9 @@ text-align: center;border-radius: 2px;}
 .home_sec_2.social_media .global_experiance{padding:16px 0 2px 0;}
 .promo_card_apply{border:1px solid #348786;width:100%;position:absolute;background:#fff;padding:13px 20px 20px 20px;border-radius: 8px;display:none;    margin: 6px 0 0 0;z-index:9;}
 .promo_btn{width:100%;float:left;text-align:center;}
-.promo_card_apply .promo_btn input[type="submit"]{border:none;background:#348786;color:#fff;display:inline-block;border:1px solid #348786;transition:all 0.3s; padding: 7px 17px 6px 17px;font-size: 18px;border-radius: 8px;}
+.promo_card_apply .promo_btn input[type="submit"],.promo_card_apply .promo_btn input[type="button"]{border:none;background:#348786;color:#fff;display:inline-block;border:1px solid #348786;transition:all 0.3s; padding: 7px 17px 6px 17px;font-size: 18px;border-radius: 8px;}
 .promo_card_apply .input_field{border-color:#348786;font-weight:normal;}
-.promo_card_apply .promo_btn input[type="submit"]:hover{border:1px solid #348786;background:#fff;color:#348786;}
+.promo_card_apply .promo_btn input[type="submit"],.promo_card_apply .promo_btn input[type="button"]:hover{border:1px solid #348786;background:#fff;color:#348786;}
 .promo_card_apply > label{font-size:18px;}
 .promo_card_apply .promo_btn input[type="submit"]:focus{outline:0;}
 .card_price.open_promo .promo_card_apply{display:block;}
@@ -1953,3 +1953,19 @@ vertical-align:middle;cursor:pointer;}
     display: inline-block;}
 .our_blog.videos .blog_img{border:0;}
 .our_blog.videos .row .blog_video_repeat:last-child{border:0;}
+.feeds_blocks ul {
+    background: #ddd;
+    padding: 9px;
+    margin-bottom: 7px;
+}
+.linked_in_feeds ul li.instagram-image{text-align: center;}
+.contact_Details_team a{    color: #229897;
+    font-size: 18px;
+    display: block;
+    font-weight: normal;}
+.studen-wrapper .sub_title{    font-size: 40px;
+    color: rgb(166,166,166);
+    font-weight: bold;
+    text-align: center;
+    font-family: 'MyriadPro-Semibold';    padding: 42px 0 0 0;} 
+.cart-wrapper .total >a{padding:7px 16px 2px 12px;}

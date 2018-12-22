@@ -38,7 +38,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
         
     </div>
     <div class="container" >
-         <div class="sub_title" id="Firstfollow">Let us help you maximaize your internship opportunity...</div>
+         <div class="sub_title" id="Firstfollow">Let us help you maximize your internship opportunity...</div>
     </div>
     <div class="student-cta1">
         <div class="container">
@@ -105,7 +105,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
             </div>
         </div>
     </div>
-    <div class="student-placement-title" id="followed_by" > 
+    <div class="student-placement-title"  > 
         <div class="container">
             <div class="student-placement-title-inner">
                  <?php echo $category2->category;?>
@@ -157,7 +157,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
              if(!empty($saver)){?>
                 <div class="student-cta1-bottom">
                     <div class="student-cta1-bottom-inner">
-                        <div class="student-cta1-bottom-title">
+                        <div class="student-cta1-bottom-title"> 
                            <?php echo $saver->title;?>
                         </div>
                         <div class="student-cta1-bottom-sub-title">

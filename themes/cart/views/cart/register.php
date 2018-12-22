@@ -1,3 +1,4 @@
+<?php $this->setPageTitle( "Sign Up");?>
 <div class="login_container">
     <div class="container">
         <div class="row">

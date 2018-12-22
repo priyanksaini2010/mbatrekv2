@@ -1,4 +1,4 @@
-<?php $this->setPageTitle('#industryReady - Registeration'); 
+<?php $this->setPageTitle('#IndustryReady - Registeration'); 
 $criteria=new CDbCriteria;
 $criteria->order = "sortOrder asc";
 $colleges = CHtml::listData(CollegesCompetition::model()->findAll($criteria), "id", "name");
