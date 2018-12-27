@@ -1,25 +1,25 @@
 <?php
 // Ia m comment
 // I am also:wq
-//$link = mysqli_connect("localhost","newuser","password","mbatrek_v2");
-//$SQL = "select id from  blogs";
-//$rs = mysqli_query($link,$SQL) ;
-//global $blogUrlsForRules;
-//$blogUrlsForRules = array();
-//if(mysqli_num_rows($rs) > 0){
-//
-//    while($row = mysqli_fetch_assoc($rs)){
-//        $blogUrlsForRules["blog/".$row['id']] = "site/blogdetails/".$row['id'];
-//    }
-//
-//}
-//mysqli_close($link);
-//if (!$link) {
-//    echo "Error: Unable to connect to MySQL." . PHP_EOL;
-//    echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
-//    echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
-//    exit;
-//}
+$link = mysqli_connect("localhost","mbatrek_v2","mbatrek_v2","mbatrek_v2");
+$SQL = "select id from  blogs";
+$rs = mysqli_query($link,$SQL) ;
+global $blogUrlsForRules;
+$blogUrlsForRules = array();
+if(mysqli_num_rows($rs) > 0){
+
+    while($row = mysqli_fetch_assoc($rs)){
+        $blogUrlsForRules["blogs/".$row['id']] = "site/blogdetails/id/".$row['id'];
+    }
+
+}
+mysqli_close($link);
+if (!$link) {
+    echo "Error: Unable to connect to MySQL." . PHP_EOL;
+    echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
+    echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
+    exit;
+}
 error_reporting(E_ERROR);
 date_default_timezone_set("Asia/Kolkata");
 //const BLOGURLS = $blogUrls;

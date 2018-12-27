@@ -1,5 +1,5 @@
 <?php
-//global $blogUrlsForRules;
+global $blogUrlsForRules;
 //print_r($blogUrlsForRules);
 $ruleArray = array(
     'our-story' => 'site/page/view/mbatrek_story',
@@ -42,6 +42,7 @@ $ruleArray = array(
     'blogs/recent-updates' => 'site/blogs/type/1',
     'blogs/job-ready' => 'site/blogs/type/2',
     'blogs/cxo-thoughts' => 'site/blogs/type/3',
+    'blogs/details/3' => 'site/blogdetails/id/3',
     'contact-us' => 'contact/create/contact',
     'login' => 'site/login',
     'students' => 'cart/student',
@@ -51,8 +52,9 @@ $ruleArray = array(
     '<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
     '<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 );
-//$tempUrl = array_merge($blogUrlsForRules,$ruleArray);
-//$ruleArray = $tempUrl;
+$tempUrl = array_merge($blogUrlsForRules,$ruleArray);
+$ruleArray = $tempUrl;
+$flag = false;
 //echo "<pre>";print_r($ruleArray);die;
 // uncomment the following to def   ine a path alias
 // Yii::setPathOfAlias('local','path/to/local-folder');
@@ -150,7 +152,7 @@ return array(
 		
 		'urlManager'=>array(
 			'urlFormat'=>'path',
-			'showScriptName'=>false,
+			'showScriptName'=>$flag,
 //			'caseSensitive'=>false, 
 			'rules'=>$ruleArray,
 		),
