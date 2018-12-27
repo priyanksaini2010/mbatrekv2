@@ -136,6 +136,7 @@ return array(
 				'login' => 'site/login',
                 'students' => 'cart/student',
                 'professionals' => 'cart/profesionals',
+                'institutes' => 'site/page/view/educational_institute',
                 '<controller:\w+>/<id:\d+>'=>'<controller>/view',
                 '<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',

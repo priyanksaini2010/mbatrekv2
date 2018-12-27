@@ -58,7 +58,7 @@
                     </div>
                     <div class="col-xs-12 col-md-6 col-lg-3 cta-home">
                             <div class="cta-home-wrap">
-                            <a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"educational_institute")); ?>" class="cta-link1">
+                            <a href="<?php echo Yii::app()->createUrl('institutes'); ?>" class="cta-link1">
                                 <span class="cta-img"><img src="<?php echo $baseUrl; ?>/images/education_institute.png"></span>
                                 <span class="cta-title">Educational Institute</span>
                             </a>
@@ -67,7 +67,7 @@
                                 Transform your institution from a center of academic learning to career building
                                 </h4>
                                 <div class="cta-link2">
-                                <a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"educational_institute")); ?>">Transform into a career building institution >></a>
+                                <a href="<?php echo Yii::app()->createUrl('institutes'); ?>">Transform into a career building institution >></a>
                                 </div>
                            </div>
                             </div>
