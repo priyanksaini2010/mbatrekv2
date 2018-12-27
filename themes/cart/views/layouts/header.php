@@ -112,7 +112,7 @@
 						</ul>
 					</li>
                                         <li>
-                                            <a href="<?php echo Yii::app()->createUrl('site/page',array("view"=>"educational_institute")); ?>">Educational Institutes</a>
+                                            <a href="<?php echo Yii::app()->createUrl('institutes'); ?>">Educational Institutes</a>
                                         </li>
                                         <li>
                                             <a href="<?php echo Yii::app()->createUrl('companies'); ?>">Companies</a>
