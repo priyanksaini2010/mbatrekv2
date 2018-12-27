@@ -162,7 +162,7 @@
                   </ul>
 				</li>
 
-                <li class="contact"><a href="<?php echo Yii::app()->createUrl('contact-us'); ?>">Contact Us</a></li>
+                <li class="contact"><a href="<?php echo Yii::app()->createUrl('contact'); ?>">Contact Us</a></li>
             </ul>
             
             
