@@ -24,7 +24,7 @@
                     </div>
                     <div class="col-xs-12 col-md-6 col-lg-3 cta-home">
                         <div class="cta-home-wrap">
-                        <a href="<?php echo Yii::app()->createUrl('cart/student'); ?>" class="cta-link1">
+                        <a href="<?php echo Yii::app()->createUrl('students'); ?>" class="cta-link1">
                             <span class="cta-img"><img src="<?php echo $baseUrl; ?>/images/student_icon.png">
 							</span>
                             <span class="cta-title">Student</span>
@@ -34,7 +34,7 @@
                               Enhance your preparation and skill-sets to get the right role and setup for a successful career
                             </h4>
                             <div class="cta-link2">
-                              <a href="<?php echo Yii::app()->createUrl('cart/student'); ?>">Start your preparation for Internship / Placement >></a>
+                              <a href="<?php echo Yii::app()->createUrl('students'); ?>">Start your preparation for Internship / Placement >></a>
                              </div>
                         </div>
                         

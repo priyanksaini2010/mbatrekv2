@@ -48,7 +48,7 @@
                   <a href="javascript:void(0);" >Our Services </a>		
                   <ul>
                     <li>
-						<a href="<?php echo Yii::app()->createUrl('cart/student'); ?>">Students <i class="pull-right fa fa-angle-double-right" aria-hidden="true"></i></a>
+						<a href="<?php echo Yii::app()->createUrl('students'); ?>">Students <i class="pull-right fa fa-angle-double-right" aria-hidden="true"></i></a>
 						<ul>
 							<li>
 								<a href="#">Offerings <i class="pull-right fa fa-angle-double-right" aria-hidden="true"></i></a>
