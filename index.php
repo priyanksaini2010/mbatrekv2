@@ -1,7 +1,7 @@
 <?php
 // Ia m comment
 // I am also:wq
-$link = mysqli_connect("localhost","mbatrek_v2","mbatrek_v2","mbatrek_v2");
+$link = mysqli_connect("localhost","mbatrek_admin","mbatrek_admin","mbatrek_v2");
 $SQL = "select id from  blogs";
 $rs = mysqli_query($link,$SQL) ;
 global $blogUrlsForRules;
