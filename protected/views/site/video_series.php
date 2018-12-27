@@ -17,13 +17,13 @@ $typ = $_GET['type'];
     <div class="blog_header">
         <div class="container">
             <div class="col-md-4">
-                <div class="header_btn"><a class="<?php echo $typ == 1?"active_high":"";?>" href="<?php echo Yii::app()->createUrl("site/videos",array("type"=>1));?>">#InterviewReady</a></div>
+                <div class="header_btn"><a class="<?php echo $typ == 1?"active_high":"";?>" href="<?php echo Yii::app()->createUrl('videos/interview-ready');?>">#InterviewReady</a></div>
             </div>
             <div class="col-md-4">
-                <div class="header_btn"><a class="<?php echo $typ == 2?"active_high":"";?>" href="<?php echo Yii::app()->createUrl("site/videos",array("type"=>2));?>">#InternGo</a></div>
+                <div class="header_btn"><a class="<?php echo $typ == 2?"active_high":"";?>" href="<?php echo Yii::app()->createUrl('videos/interngo');?>">#InternGo</a></div>
             </div>
             <div class="col-md-4">
-                <div class="header_btn"><a class="<?php echo $typ == 3?"active_high":"";?>"  href="<?php echo Yii::app()->createUrl("site/videos",array("type"=>3));?>">CXO's Thoughts</a></div>
+                <div class="header_btn"><a class="<?php echo $typ == 3?"active_high":"";?>"  href="<?php echo Yii::app()->createUrl('videos/cxo-thoughts');?>">CXO's Thoughts</a></div>
             </div>
         </div>
     </div>
