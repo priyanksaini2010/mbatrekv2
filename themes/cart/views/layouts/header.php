@@ -131,7 +131,7 @@
                 </li>
 								<li class="success"><a href="#<?php // echo Yii::app()->createUrl('our-story'); ?>">Success Stories</a>
 								<ul >
-										<li><a href="<?php echo Yii::app()->createUrl('cart/story', array("type"=>"2")); ?>">Students </a>
+										<li><a href="<?php echo Yii::app()->createUrl('success/students'); ?>">Students </a>
 										<!--<ul >
 											<li><a href="#">#YouBeTheExecutive </a></li>
 											<li><a href="#">#Campus2Corporate</a></li>

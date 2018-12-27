@@ -15,6 +15,7 @@ $ruleArray = array(
     'e-brouchers' => 'site/page/view/download_ebrochersform',
     'videos' => 'site/page/view/videos',
     'handbook' => 'site/page/view/handbook',
+    'success/students' => "cart/story/type/2",
     'videos' => 'site/videos/type/1',
     'videos/interview-ready' => 'site/videos/type/1',
     'videos/interngo' => 'site/videos/type/2',
@@ -188,6 +189,6 @@ return array(
 		'contactEmail'=>'contact@mbatrek.com',
 		'adminEmail'=>'info@mbatrek.com',
 		'noreply'=>'no-reply@mbatrek.com',
-                'url'=>'https://mbatrek.com/v2/',
+                'url'=>'https://mbatrek.com/',
 	),
 );
