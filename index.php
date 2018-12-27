@@ -4,7 +4,7 @@
 
 error_reporting(E_ERROR);
 date_default_timezone_set("Asia/Kolkata");
-const DIREC = "/v2/";
+const DIREC = "/";
 const BACK_COLOR = 0xFFFFFF;
 require_once 'payment_lib/PaytmKit/lib/config_paytm.php';
 require_once 'payment_lib/PaytmKit/lib/encdec_paytm.php';
@@ -94,15 +94,16 @@ function getInstaFeeds(){
 //    pr($data);
     return $data;
 }
+//pr(getInstaFeeds());
 function getLinkedInFeeds(){
-    $code = generateRandomString(10);
-//    $code = "AQS56H56i6WHKP8a_f4U0cDz1k0kKpmD7r-oGcaC1IaTyA7enWZ8TBOvp9nmBOqnjT6cJPK5aMeITBGaj_H_mcRJqWGv6Opg2nQvJ8_w9ItW45zeA2-YQxCic8MGjeXEDcVVTh5XUaKzpiBSbOoElOmBKpbqz9PLONMK0tIDzi5GeFUkQTrsLp3lJ07DjA";
+//    $code = generateRandomString(10);
+////    $code = "AQS56H56i6WHKP8a_f4U0cDz1k0kKpmD7r-oGcaC1IaTyA7enWZ8TBOvp9nmBOqnjT6cJPK5aMeITBGaj_H_mcRJqWGv6Opg2nQvJ8_w9ItW45zeA2-YQxCic8MGjeXEDcVVTh5XUaKzpiBSbOoElOmBKpbqz9PLONMK0tIDzi5GeFUkQTrsLp3lJ07DjA";
 //    $url = "https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=819f0m0m8h76le";
-//    $url .= "&redirect_uri=".urlencode("https://localhost/v3/callback.php");
+//    $url .= "&redirect_uri=".urlencode("https://mbatrek.com/callback.php");
 //    $url .= "&state=".$token."&scope=rw_company_admin";
 //    pr($url);
-    
-    $token = "AQWOU03ygilhdpae6Iz3NQ0hGS7XxzV4bNT45wpWPrZgxqqvhAxMcLfpCDof0zsZMe5ArDOr5xPWFMoHYHdM_6HG2pD90kRrv2Cn5JFMiO5w_5E9ZTd83zCuTAjejFyWqMF1QWbcUNa-nM6XZv2J67obwzmu_5bEoY0VPZfsX1cS4ZnOOuA6V77AEDA9Qtx1wRJTMCUg3DYpRqIJGXbV8lakR05vl1lUO5CqYPCzTnbqNWWTH9Z9wb2356B7ep9JDy8zQNEfmUnoFKo64feFD1fU8HWG_SxojZvRTdO6FTXKUdFO3hik8F2TUKOBPyMOAwxz8_W_TyY0H_PveCYlQKnLhOzStA";
+//    
+    $token = "AQU_QIUG7O2YhOl53WBWD3RT1ZA5kwGzwvdB6xqdHmFbzT7qpEQfWDM4XnvDFdnt5S1YLwlGHCoUn2jhabuhHOVulem6LNeVr8W4P4YVKZ1tXfqH1ch_zBcgjxLqfms5AJOUhxanc-PYuR4OVEo8sHCJAbHhc6pWvLCnzf3SZ8FGLhx3QAoW3WgKHE49ihFF4wQszJ1rQPFyl6HZM8Vnwteuv55H0sDqrC4mYtY_Sjv4cmCLlHMHe-Auqxo4Iko3RUf9f_aH8qFDRVwQ_-g1o0yoIguFH_4gh3TCz9v9DyFWnzcOQrGDbOokeacc00FuiW5fulK3K5tF59m4yWHY8fJm9QZR_Q";
     $url = "https://api.linkedin.com/v1/companies/7955944/updates";    
     $headers = array(
       'Authorization: Bearer ' . $token,
@@ -115,6 +116,7 @@ function getLinkedInFeeds(){
     $response = curl_exec($ch);
     curl_close($ch);
     $data = (array)json_decode($response);
+//    pr($data);
     return $data;
 
 }
@@ -329,7 +331,7 @@ $yii=dirname(__FILE__).'/yii/framework/yii.php';
 $config=dirname(__FILE__).'/protected/config/main.php';
 
 // remove the following lines when in production mode
-defined('YII_DEBUG') or define('YII_DEBUG',true);
+//defined('YII_DEBUG') or define('YII_DEBUG',true);
 // specify how many levels of call stack should be shown in each log message
 defined('YII_TRACE_LEVEL') or define('YII_TRACE_LEVEL',3);
 
