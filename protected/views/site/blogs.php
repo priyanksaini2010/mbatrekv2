@@ -56,10 +56,10 @@ if(!isset($_GET['type'])){
                             </ul>
                             <div class="blog_img"><img class="img-responsive" src="<?php echo Yii::app()->baseUrl;?>/assets/blogs/<?php echo $blog->background_image;?>" alt="" /></div>
                             <div class="blog_content">
-                                <div class="blog_info"><a href="<?php echo Yii::app()->createUrl("blogs/details/".$blog->id);?>"><?php echo $blog->title;?></a>
+                                <div class="blog_info"><a href="<?php echo Yii::app()->createUrl("blogs/".$blog->id);?>"><?php echo $blog->title;?></a>
                                     <p><?php echo trim_text($blog->content, 80);?>.</p>
                                     <div class="blog_btn">
-                                        <div class="site_btn"><a class="raised ripple has-ripple" href="<?php echo Yii::app()->createUrl("blogs/details/".$blog->id);?>">Read more</a></div>
+                                        <div class="site_btn"><a class="raised ripple has-ripple" href="<?php echo Yii::app()->createUrl("blogs/".$blog->id);?>">Read more</a></div>
                                     </div>
                                 </div>
                             </div>
