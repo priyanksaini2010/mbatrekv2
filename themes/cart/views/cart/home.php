@@ -42,7 +42,7 @@
                     </div>
                     <div class="col-xs-12 col-md-6 col-lg-3 cta-home">
                             <div class="cta-home-wrap">
-                            <a href="<?php echo Yii::app()->createUrl('cart/profesionals'); ?>" class="cta-link1">
+                            <a href="<?php echo Yii::app()->createUrl('professionals'); ?>" class="cta-link1">
                                 <span class="cta-img"><img src="<?php echo $baseUrl; ?>/images/professional_icon.png"></span>
                                 <span class="cta-title">Young Professional</span>
                             </a>
@@ -51,7 +51,7 @@
                                 Understand how to survive and connect with people in the initial stages of your career
                                 </h4>
                                 <div class="cta-link2">
-                                <a href="<?php echo Yii::app()->createUrl('cart/profesionals'); ?>">Kick-Start your first year at the job and your career >></a>
+                                <a href="<?php echo Yii::app()->createUrl('professionals'); ?>">Kick-Start your first year at the job and your career >></a>
                                 </div>
                            </div>
                             </div>

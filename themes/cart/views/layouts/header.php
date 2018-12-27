@@ -84,7 +84,7 @@
 						</ul>
 					</li>
                     <li>
-						<a href="<?php echo Yii::app()->createUrl('cart/profesionals'); ?>">Young Professionals <i class="pull-right fa fa-angle-double-right" aria-hidden="true"></i></a>
+						<a href="<?php echo Yii::app()->createUrl('professionals'); ?>">Young Professionals <i class="pull-right fa fa-angle-double-right" aria-hidden="true"></i></a>
 						<ul>
 							<li><a href="#" >Offerings <i class="pull-right fa fa-angle-double-right" aria-hidden="true"></i></a>
 								<ul>
