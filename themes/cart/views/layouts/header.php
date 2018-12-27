@@ -13,12 +13,12 @@
         <span class="icon-bar"></span>
       </button>
 	  <div class="logo">
-     <a href="<?php echo Yii::app()->createUrl('cart/index'); ?>">
+     <a href="<?php echo Yii::app()->getHomeUrl(); ?>">
 	 <img src="<?php echo $baseUrl; ?>/images/logo.png" alt="MBAtrek" class="img-responsive" />
 	 </a>
 	 </div>
 	 <div class="logo2">
-	 <a href="<?php echo Yii::app()->createUrl('cart/index'); ?>">
+	 <a href="<?php echo Yii::app()->getHomeUrl(); ?>">
 	 <img src="<?php echo $baseUrl; ?>/images/logo2.png" alt="MBAtrek" class="img-responsive" />
 	 </a>
 	 </div>
