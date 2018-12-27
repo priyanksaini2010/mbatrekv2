@@ -16,13 +16,13 @@ if(!isset($_GET['type'])){
     <div class="blog_header">
         <div class="container">
             <div class="col-md-4">
-                <div class="header_btn"><a class="<?php echo $typ == 1?"active_high":"";?>" href="<?php echo Yii::app()->createUrl("site/blogs",array("type"=>1));?>">Career Preparation</a></div>
+                <div class="header_btn"><a class="<?php echo $typ == 1?"active_high":"";?>" href="<?php echo Yii::app()->createUrl('blogs/recent-updates');?>">Career Preparation</a></div>
             </div>
             <div class="col-md-4">
-                <div class="header_btn"><a class="<?php echo $typ == 2?"active_high":"";?>" href="<?php echo Yii::app()->createUrl("site/blogs",array("type"=>2));?>">Job Ready</a></div>
+                <div class="header_btn"><a class="<?php echo $typ == 2?"active_high":"";?>" href="<?php echo Yii::app()->createUrl('blogs/job-ready');?>">Job Ready</a></div>
             </div>
             <div class="col-md-4">
-                <div class="header_btn"><a class="<?php echo $typ == 3?"active_high":"";?>"  href="<?php echo Yii::app()->createUrl("site/blogs",array("type"=>3));?>">CXO's Thoughts</a></div>
+                <div class="header_btn"><a class="<?php echo $typ == 3?"active_high":"";?>"  href="<?php echo Yii::app()->createUrl('blogs/cxo-thoughts');?>">CXO's Thoughts</a></div>
             </div>
         </div>
     </div>
