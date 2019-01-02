@@ -33,7 +33,7 @@ class CartController extends Controller {
             return array(
                 array('allow', // allow all users to perform 'index' and 'view' actions
                     'actions' => array('captcha','removeCoupon','industry','interview','index', 'view','student',"addtocart","cart","remove","buynow","verify", 
-                                        'profesionals','institutes','register',"description","checkout","removeCart","applypromo","story","campus","loginandapply"),
+                                        'profesionals','institutes','register',"description","checkout","removeCart","applypromo","story","campus","loginandapply","applygstin"),
                     'users' => array('*'),
                 ),
                 array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -198,6 +198,24 @@ class CartController extends Controller {
             echo json_encode($resp);
             die;
         }
+
+    public function actionApplygstin(){
+        $resp = array("status"=>"failure","message" => "Opps, that didn't work please try again");
+        $cart = Cart::model()->findByAttributes(array("user_id"=>Yii::app()->user->id));
+        if (!empty($cart)){
+            $cart->attributes = array("gstin"=>$_POST['gstin']);
+            if($cart->save()){
+                $resp = array("status"=>"success","message" => "GSTIN Applied successfully");
+            }else {
+//                $error = json_encode($cart->getErrors());
+                $error = "Oops! that didn't work, please try again.";
+                $resp['message'] = $error;
+            }
+        }
+        echo json_encode($resp);
+        die;
+    }
+
 	public function actionIndex(){
 		$this->layout = getCartLayot();
 		$this->render("webroot.themes.cart.views.cart.home",array());

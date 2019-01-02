@@ -34,9 +34,10 @@ class Cart extends CActiveRecord
 		return array(
 			array('user_id, product_id, date_created, status', 'required'),
 			array('user_id, product_id, status', 'numerical', 'integerOnly'=>true),
+            array('gstin', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, user_id, product_id, date_created, status', 'safe', 'on'=>'search'),
+			array('id, user_id, product_id, gstin,date_created, status', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -50,6 +51,7 @@ class Cart extends CActiveRecord
 		return array(
 			'user' => array(self::BELONGS_TO, 'UsersNew', 'user_id'),
 			'product' => array(self::BELONGS_TO, 'Products', 'product_id'),
+            'couponUsages' => array(self::HAS_MANY, 'CouponUsage', 'cart_id'),
 		);
 	}
 
@@ -64,6 +66,7 @@ class Cart extends CActiveRecord
 			'product_id' => 'Product',
 			'date_created' => 'Date Created',
 			'status' => 'Status',
+            'gstin' => 'Gstin',
 		);
 	}
 
@@ -87,6 +90,7 @@ class Cart extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('user_id',$this->user_id);
+        $criteria->compare('gstin',$this->gstin,true);
 		$criteria->compare('product_id',$this->product_id);
 		$criteria->compare('date_created',$this->date_created,true);
 		$criteria->compare('status',$this->status);

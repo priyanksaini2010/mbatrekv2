@@ -110,6 +110,28 @@ $(document).ready(function(){
                 window.location.href = 'https://'+domain_name+"cart/removeCart?p="+$(this).val();
             }
         });
+     $("#gstin").change(function(){
+         $.ajax({
+             url : "applygstin",
+             type : "post",
+             data : {
+                 gstin : $("#gstin").val()
+             },
+             success : function(data){
+                 var obj = $.parseJSON(data);
+                 if(obj.status == "success"){
+//                    window.location.refresh;
+                     validationMethod("congrats",obj.message)
+//                    location.reload("?thanmscart=1");
+                     setInterval(function(){window.location.reload(); }, 3000);
+                 } else {
+                     validationMethod("error",obj.message)
+                 }
+
+             }
+
+         });
+     });
     $("#register-form").submit(function(){
         
         if ($("#UsersNew_full_name").val() == ""){
