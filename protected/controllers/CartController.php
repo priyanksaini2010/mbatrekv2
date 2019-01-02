@@ -642,6 +642,8 @@ class CartController extends Controller {
                                             "Content-Type: text/html; charset=UTF-8";
 
                         $sentToUser = sendEmail($_POST['UsersNew']['email'], $subject,$body,$headers);
+                        $subject = "New Account has been created.";
+                        $sentToAdmin = sendEmail(Yii::app()->params['adminEmail'], $subject,$body,$headers);
 //                        $this->refresh(true,"?thankreg=1");
                         $this->redirect(Yii::app()->createUrl("cart/index",array("thankreg"=>1)));
                     } else {
