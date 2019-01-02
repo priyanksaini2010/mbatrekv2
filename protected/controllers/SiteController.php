@@ -39,7 +39,25 @@ class SiteController extends Controller
 		// using the default layout 'protected/views/layouts/main.php'
 		$this->render('index');
 	}
-        
+    public function actionRetrieve(){
+        $model = new UsersNew;
+        if(!empty($_POST['UsersNew'])){
+            $keys = array_keys($_GET);
+            $user_id = base64_decode($keys[0]);
+            $user = UsersNew::model()->findByPk($user_id);
+            if (!empty($user)) {
+                $user->attributes = array("password"=>$_POST['UsersNew']['password']);
+                if($user->save()){
+                    $this->redirect(Yii::app()->createUrl("site/login",array("resetdone"=>1)));
+                } else{
+                    pr($user->getErrors());
+                }
+            } else {
+                $this->redirect(Yii::app()->createUrl("site/error"));
+            }
+        }
+        $this->render('retrieve',  array('model'=>$model));
+    }
         /**
          * Register Industry/Institute
          */
@@ -111,7 +129,9 @@ class SiteController extends Controller
 				$name = ucfirst($find->full_name);
 				$body = str_replace("{{SUBJECT}}", $subject, $template);
 				$body = str_replace("{{NAME}}", $name, $body);
-				$body = str_replace("{{PASSWORD}}", $find->password, $body);
+				$link = Yii::app()->createUrl("site/retrieve",array("id"=>base64_encode($find->id)));
+				$body = str_replace("{{PASSWORD}}", $link, $body);
+				pr($body);
                     $headers="From: ".Yii::app()->params['adminEmail']." <".Yii::app()->params['adminEmail']."> \r\n".
                             "Reply-To: ".Yii::app()->params['adminEmail']." \r\n";
 

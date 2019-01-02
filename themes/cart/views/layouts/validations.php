@@ -9,6 +9,9 @@
         <?php }?>
             <?php }?>
 <?php } ?>
+    <?php if(isset($_REQUEST['resetdone'])){?>
+    validationMethod("thanks","Your password has been reset successfully. Please login with your new password")
+    <?php }?>
     <?php if(isset($_REQUEST['thankreg'])){?>
 	 validationMethod("thanks","Thanks for signup with us, please check your email to verify your account.")
     <?php }?>

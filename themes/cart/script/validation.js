@@ -132,6 +132,22 @@ $(document).ready(function(){
 
          });
      });
+     $("#retrieve-form").submit(function(){
+         if ($("#UsersNew_password").val() == ""){
+             validationMethod("error","Please enter password.");return false;
+         }
+         if ($("#UsersNew_password").val().length < 8){
+             $('#myModal34').modal('show');;
+             return false;
+         }
+         if (!passwords($("#UsersNew_password").val())){
+             $('#myModal34').modal('show');
+             return false;
+         }
+         if ($("#UsersNew_cpassword").val() == ""){
+             validationMethod("error","Please confirm password.");return false;
+         }
+     })
     $("#register-form").submit(function(){
         
         if ($("#UsersNew_full_name").val() == ""){
