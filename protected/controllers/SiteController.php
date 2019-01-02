@@ -131,7 +131,7 @@ class SiteController extends Controller
 				$body = str_replace("{{NAME}}", $name, $body);
 				$link = Yii::app()->createUrl("site/retrieve",array("id"=>base64_encode($find->id)));
 				$body = str_replace("{{PASSWORD}}", $link, $body);
-				pr($body);
+
                     $headers="From: ".Yii::app()->params['adminEmail']." <".Yii::app()->params['adminEmail']."> \r\n".
                             "Reply-To: ".Yii::app()->params['adminEmail']." \r\n";
 
