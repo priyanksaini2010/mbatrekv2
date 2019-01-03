@@ -1,6 +1,6 @@
 <?php $this->setPageTitle('Home'); ?>
 <?php $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/themes/cart"); ?>
-<div class="home_page_slider">
+<div class="home_page_slider" style="z-index: 0">
 	<ul class="rslides" id="slider1">
             <?php
             $criteria = new CDbCriteria;
