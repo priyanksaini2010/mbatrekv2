@@ -33,7 +33,7 @@ class CartController extends Controller {
             return array(
                 array('allow', // allow all users to perform 'index' and 'view' actions
                     'actions' => array('captcha','removeCoupon','industry','interview','index', 'view','student',"addtocart","cart","remove","buynow","verify", 
-                                        'profesionals','institutes','register',"description","checkout","removeCart","applypromo","story","campus","loginandapply","applygstin"),
+                                        'profesionals','institutes','register',"description","checkout","removeCart","applypromo","story","campus","loginandapply","applygstin","clearcart"),
                     'users' => array('*'),
                 ),
                 array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -59,6 +59,23 @@ class CartController extends Controller {
                 ),
             );
 	}
+
+	    public function actionClearcart(){
+            if(isset(Yii::app()->user->id)){
+                $items = Cart::model()->findAllByAttributes(array("user_id"=>Yii::app()->user->id,"status"=>1));
+                if(!empty($items)){
+                    foreach ($items as $item){
+                        $model = Cart::model()->findByPk($item->id);
+                        $model->delete();
+                    }
+                }
+            }else{
+                if(isset($_COOKIE['products'])){
+                    setcookie("products",$_COOKIE['products'],strtotime( '-30 days' ),DIREC);
+                }
+            }
+            $this->redirect(Yii::app()->request->urlReferrer);
+        }
         public function actionRemoveCoupon(){
             if(isset(Yii::app()->user->id)){
                 
@@ -635,7 +652,7 @@ class CartController extends Controller {
                         $body = str_replace("{{NAME}}", $name, $body);
                         $link = Yii::app()->params['url']."cart/verify?id=".$model->id;
                         $body = str_replace("{{LINK}}", $link, $body);
-			pr($body);
+
                         $headers="From: ".Yii::app()->params['adminEmail']." <".Yii::app()->params['adminEmail']."> \r\n".
                                         "Reply-To: ".Yii::app()->params['adminEmail']." \r\n";
                         $headers .= "MIME-Version: 1.0\r\n".
