@@ -43,9 +43,7 @@ class SiteController extends Controller
         $model = new UsersNew;
         if(!empty($_POST['UsersNew'])){
             $keys = array_keys($_GET);
-            pr($_GET,false);
-            pr($_REQUEST);
-            $user_id = base64_decode($keys[0]);
+                $user_id = base64_decode($_GET['id']);
             $user = UsersNew::model()->findByPk($user_id);
             if (!empty($user)) {
                 $user->attributes = array("password"=>$_POST['UsersNew']['password']);
