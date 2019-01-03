@@ -129,7 +129,8 @@ class SiteController extends Controller
 				$name = ucfirst($find->full_name);
 				$body = str_replace("{{SUBJECT}}", $subject, $template);
 				$body = str_replace("{{NAME}}", $name, $body);
-				$link = Yii::app()->createUrl("site/retrieve",array("id"=>base64_encode($find->id)));
+//				$link = Yii::app()->createUrl("site/retrieve",array("id"=>base64_encode($find->id)));
+				$link = Yii::app()->params['adminEmail']."site/retrieve?id=".base64_encode($find->id);
 				$body = str_replace("{{PASSWORD}}", $link, $body);
 
                     $headers="From: ".Yii::app()->params['adminEmail']." <".Yii::app()->params['adminEmail']."> \r\n".
