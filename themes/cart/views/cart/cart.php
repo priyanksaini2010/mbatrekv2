@@ -100,7 +100,7 @@ if(isset(Yii::app()->user->id)){
 								<span>
                                     <input type="text" value="<?php echo $cartID->gstin;?>" class="input_field" id="gstin" name="GSTIN" placeholder="GSTIN ( if applicable )">
                                     <br />
-                                    <?php if($cartID->gstin != ""){?>
+                                    <?php if($cartID->gstin == ""){?>
                                     <a href="javascript:void('0')" id="gstin-apply">Apply GSTIN</a>
                                     <?php }?>
                                 </span>

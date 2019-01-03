@@ -110,7 +110,13 @@ $(document).ready(function(){
                 window.location.href = 'https://'+domain_name+"cart/removeCart?p="+$(this).val();
             }
         });
-     $("#gstin").change(function(){
+    $("#clear-cart").click(function(e){
+        e.preventDefault();
+        if(confirm("Are you sure you want remove all products from your cart?")){
+            window.location.href = 'https://'+domain_name+"cart/clearcart";
+        }
+    });
+     $("#gstin-apply").click(function(){
          $.ajax({
              url : "applygstin",
              type : "post",

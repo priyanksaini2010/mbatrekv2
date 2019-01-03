@@ -1,15 +1,30 @@
 <?php
 // Ia m comment
 // I am also:wq
-$link = mysqli_connect("localhost","mbatrek_admin","mbatrek_admin","mbatrek_v2");
+$link = mysqli_connect("localhost","newuser","password","mbatrek_v2");
 $SQL = "select id from  blogs";
+$SQLPRODS = "select id,title from  products";
 $rs = mysqli_query($link,$SQL) ;
+$rsprods = mysqli_query($link,$SQLPRODS) ;
+
 global $blogUrlsForRules;
+global $productsUrlsForRules;
+
 $blogUrlsForRules = array();
 if(mysqli_num_rows($rs) > 0){
 
     while($row = mysqli_fetch_assoc($rs)){
         $blogUrlsForRules["blogs/".$row['id']] = "site/blogdetails/id/".$row['id'];
+    }
+
+}
+if(mysqli_num_rows($rsprods) > 0){
+
+    while($rows = mysqli_fetch_assoc($rsprods)){
+        $url = str_replace("#","",$rows['title']);
+        $url = str_replace(" ","-",$url);
+        $url = strtolower($url);
+        $productsUrlsForRules[$url] = "cart/description/id/".$rows['id'];
     }
 
 }
