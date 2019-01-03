@@ -5,7 +5,7 @@ ul,ol{margin:0;}
 	 background:none; 
 	 border:none; 
 }
-.navbar-collapse {
+.navigate {
 	 padding-right:0; 
 	 padding-left:0; 
 	
@@ -358,8 +358,9 @@ p.section-pra {
 @media screen and (max-width: 992px) and (min-width: 320px){
 
 .navbar-header {
-	margin: auto !important;
-	width: 100%;
+	 margin: 7px 0 0 0!important;
+	width: auto;
+	display:inline-block;
 	max-width: 289px;
 	float: none;
 	
@@ -878,6 +879,11 @@ user-select: none;
   text-decoration: none;
 }  
   
+@media (max-width: 1024px) {
+	header .mobile_menu{display:inline-block;float: right;margin: 10px 12px 0px 0;}
+	header .navbar .nav{display:none;}
+	header .navigate{display:inline-block;    float: right;margin: 17px 0 0 0;}
+}
 @media (max-width: 767px) {
 
   .navbar-nav  {
@@ -1279,14 +1285,14 @@ text-align: center;border-radius: 2px;}
     transition: top 0.4s ease,opacity 0.4s ease,visibility 0.4s ease;
 	
 	}
-.navbar-collapse > .navbar-nav > li:hover >ul
+.navigate > .navbar-nav > li:hover >ul
 {
 	top:48px;
 	visibility:visible;
 	opacity:1;
 	    z-index: 9;
 }
-.navbar-collapse > .navbar-nav > li >ul >li:first-child:after
+.navigate > .navbar-nav > li >ul >li:first-child:after
 {
 	position: absolute;
 	content: "\f0d8";
@@ -1304,14 +1310,14 @@ text-align: center;border-radius: 2px;}
 .navbar-nav li ul li a{color:#fff;font-size:15px;display:block;font-family: 'MyriadPro-Regular';padding:7px 7px 4px 7px;}
 
 /* second tire */
-.navbar-collapse > .navbar-nav > li >ul >li >ul
+.navigate > .navbar-nav > li >ul >li >ul
 {
 	 left: 101%;
 	  padding-top: 0;
 }
-.navbar-collapse > .navbar-nav > li >ul >li:hover >a{background:#fff;color:#348786}
-.navbar-collapse > .navbar-nav > li >ul >li >ul li:hover >a{background:#fff;color:#348786}
-.navbar-collapse > .navbar-nav > li >ul >li:hover >ul
+.navigate > .navbar-nav > li >ul >li:hover >a{background:#fff;color:#348786}
+.navigate > .navbar-nav > li >ul >li >ul li:hover >a{background:#fff;color:#348786}
+.navigate > .navbar-nav > li >ul >li:hover >ul
 {
 	top: 0;
     visibility: visible;
@@ -1319,13 +1325,13 @@ text-align: center;border-radius: 2px;}
 }
 
 /* third tire */
-.navbar-collapse > .navbar-nav > li >ul >li >ul>li >ul
+.navigate > .navbar-nav > li >ul >li >ul>li >ul
 {
 	z-index:1;
 	left: 101%;
     padding-top: 0;
 }
-.navbar-collapse > .navbar-nav > li >ul >li >ul>li:hover ul
+.navigate > .navbar-nav > li >ul >li >ul>li:hover ul
 {
 	top: 0px;
     visibility: visible;
@@ -1609,7 +1615,7 @@ vertical-align:middle;cursor:pointer;}
 -moz-user-select: none;-ms-user-select: none;user-select: none;}
 .linked_in_feeds{width:100%;float:left;border:1px solid #EBEDF0;}
 .linked_in_feeds ul li{display:block;list-style:none;margin-bottom:20px;}
-.feeds_blocks{padding:0 10px;width:100%;float:left;height:395px;overflow-y:scroll;}
+.feeds_blocks{padding:0 10px;width:100%;float:left;height:395px;overflow-y:scroll;background: #f5f6f7;}
 .feeds_blocks .youtube-video iframe{width:100%;}
 .linked_header{width:100%;float:left;border-bottom: 1px solid #EBEDF0;
     padding: 0 0 29px 12px;
@@ -1802,16 +1808,16 @@ vertical-align:middle;cursor:pointer;}
     margin: 60px 0 48px 0;}
 .our_company_page .leader_shipt_div{margin-top:20px;}
 .our_company_page .manager_div{margin-top:0;}
-.our_company_page .how_we_Deliver .manager_div{margin-top:60px;}
-.show_content_alok.active_team >a img.witho_hover{display:none;}
-.show_content_alok.active_team >a img.hover_img{display:block;}
-.show_content_alok.active_team h3{color:#348786;}
+/* .our_company_page .how_we_Deliver .manager_div{margin-top:60px;} */
+/* .show_content_alok.active_team >a img.witho_hover{display:none;} */
+/* .show_content_alok.active_team >a img.hover_img{display:block;} */
+/* .show_content_alok.active_team h3{color:#348786;} */
 .show_content_abhishek.active_team >a img.witho_hover{display:none;}
 .show_content_abhishek.active_team >a img.hover_img{display:block;}
 .show_content_abhishek.active_team h3{color:#348786;}
-.ayushi_info.active_team >a img.witho_hover{display:none;}
-.ayushi_info.active_team >a img.hover_img{display:block;}
-.ayushi_info.active_team h3{color:#348786;}
+/* .ayushi_info.active_team >a img.witho_hover{display:none;} */
+/* .ayushi_info.active_team >a img.hover_img{display:block;} */
+/* .ayushi_info.active_team h3{color:#348786;} */
 .rahul_info.active_team >a img.witho_hover{display:none;}
 .rahul_info.active_team >a img.hover_img{display:block;}
 .rahul_info.active_team h3{color:#348786;}
@@ -1954,9 +1960,9 @@ vertical-align:middle;cursor:pointer;}
 .our_blog.videos .blog_img{border:0;}
 .our_blog.videos .row .blog_video_repeat:last-child{border:0;}
 .feeds_blocks ul {
-    background: #ddd;
+    box-shadow:0 1px 2px rgba(0, 0, 0, .12);
     padding: 9px;
-    margin-bottom: 7px;
+    margin-bottom:11px;background: #fff;
 }
 .linked_in_feeds ul li.instagram-image{text-align: center;}
 .contact_Details_team a{    color: #229897;
@@ -1969,3 +1975,24 @@ vertical-align:middle;cursor:pointer;}
     text-align: center;
     font-family: 'MyriadPro-Semibold';    padding: 42px 0 0 0;} 
 .cart-wrapper .total >a{padding:7px 16px 2px 12px;}
+.mobile_menu {display:none;}
+.mobile_menu .menu-text a{display:inline-block;color:#fff;font-size:20px;}
+.mobile_menu .menu-text a i{margin-right:10px;}
+/* .mm-wrapper_opened header .mobile_menu{float:left;} 
+.mm-wrapper_opened header .mobile_menu .menu-text a .fa-bars{display:none;}
+.mm-wrapper_opened header .mobile_menu .menu-text a .menu_open{display:none;} */
+.mm-panel, .mm-panels{background:#348786!important;}
+.mm-panels .mm-listview li a{color:#fff;    font-size: 17px;}
+.mm-panels .mm-panel{padding:25px 0 0 0px;}
+.mm-panels>.mm-panel>.mm-listview{margin:0!important;}
+.mm-listitem:after{left:0!important;border-color:#fff!important;}
+.mm-panels .mm-panel .mm-navbar a{color:#fff;font-size:17px;}
+.mm-navbar{border-color:#fff!important;}
+.mm-btn_next:after{border-color:#fff!important;}
+.mm-btn_prev:before{border-color:#fff!important;}
+.mm-menu_offcanvas{border-right:2px solid #fff;}
+.mm-navbar{background:#348786!important;}
+/* header .mobile_menu .menu-text a .fa-times{display:none;}
+header .mobile_menu .menu-text a .menu_cancle{display:none;}
+.mm-wrapper_opened header .mobile_menu .menu-text a .fa-times{display:inline-block;}
+.mm-wrapper_opened header .mobile_menu .menu-text a .menu_cancle{display:inline-block;} */

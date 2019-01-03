@@ -6,12 +6,12 @@
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+      <!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-      </button>
+      </button>-->
 	  <div class="logo">
      <a href="<?php echo Yii::app()->getHomeUrl(); ?>">
 	 <img src="<?php echo $baseUrl; ?>/images/logo.png" alt="MBAtrek" class="img-responsive" />
@@ -25,7 +25,7 @@
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <div class="navigate">
             <ul class="nav navbar-nav navi">
                 
                
@@ -163,8 +163,52 @@
 				</li>
 
                 <li class="contact"><a href="<?php echo Yii::app()->createUrl('contact'); ?>">Contact Us</a></li>
+				
             </ul>
-            
+            <div class="mobile_menu">
+					<div class="menu-text"> 
+						<a href="#menu"><i class="fa fa-bars" aria-hidden="true"></i><span class="menu_open">Menu</span><!--<i class="fa fa-times" aria-hidden="true"></i><span class="menu_cancle">Close</span>--></a>  
+					</div>
+					<nav id="menu">
+						<ul>
+							<li><a href="#">Home</a></li>
+							<li><span>About us</span>
+								<ul>
+									<li><a href="#about/history">Introduction to MBAtrek</a></li>
+									<li><a href="#about/history">How are we different</a></li>
+									<li><a href="#about/history">Our Team</a></li>
+								</ul>
+							</li>
+							<li><span>Our Services </span>
+								<ul>
+									<li><span>Students</span>
+										<ul>
+											<li><span>Offerings</span>
+												<ul>
+													<li><a href="#about/team/management">Resume / CV Diagnostic</a></li>
+													<li><a href="#about/team/sales">Linkedin Diagnostic</a></li>
+													<li><a href="#about/team/sales">Mock Interview</a></li>
+													<li><a href="#about/team/sales">Interview Q & A</a></li>
+													<li><a href="#about/team/sales">Industry Analysis</a></li>
+													<li><a href="#about/team/sales">Company Analysis</a></li>
+													<li><a href="#about/team/sales">Cracking the GD</a></li>
+												</ul>
+											</li>
+											<li><a href="#about/team/sales">Packages</a></li>
+										</ul>
+									</li>
+									<li><a href="#about/history">Young Professionals </a></li>
+									<li><a href="#about/history">Educational Institutes</a></li>
+									<li><a href="#about/history">Companies</a></li>
+									
+									
+								</ul>
+							</li>
+							<li><a href="#contact">Contact</a></li>
+
+						</ul>
+					</nav>
+				</div>
             
         </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

@@ -8,4 +8,5 @@
 <link href="<?php echo $baseUrl; ?>/css/new-style.css" rel="stylesheet" type="text/css" />
 <link href="<?php echo $baseUrl; ?>/css/animate.css" rel="stylesheet" type="text/css" />
 <link href="<?php echo $baseUrl; ?>/css/font-awesome.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo $baseUrl; ?>/css/jquery.mmenu.css" rel="stylesheet" type="text/css" />
 

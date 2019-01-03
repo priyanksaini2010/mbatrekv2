@@ -9,7 +9,14 @@
 		<script src="<?php echo $baseUrl; ?>/js/custome_new.js"></script>
 		<script src="<?php echo $baseUrl; ?>/js/responsiveslides.min.js"></script>
 		<script src="<?php echo $baseUrl; ?>/js/jquery.waypoints.min.js"></script>
-                <script src="<?php echo $baseUrl;?>/js/jssocials.min.js"></script>
+		<script src="<?php echo $baseUrl;?>/js/jssocials.min.js"></script>
+		<script src="<?php echo $baseUrl;?>/js/jquery.mmenu.js"></script>
+
+<script type="text/javascript">
+	$(function() {
+		$('nav#menu').mmenu();
+	});
+</script>
 <!------ Include the above in your HEAD tag ---------->
 <script>
 		
