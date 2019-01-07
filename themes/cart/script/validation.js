@@ -326,6 +326,37 @@ $(document).ready(function(){
         
         return true;
     });
+    $("#profile-save").click(function(){
+        if ($("#profile-mobile-number").val() == "" || !phonenumber($("#profile-mobile-number").val())){
+            validationMethod("error","Please enter valid mobile number.");
+            return false;
+        }
+        $("#profile-form").submit();
+    })
+    $("#change-password-save").click(function(){
+        if ($("#old-password").val() == ""){
+            validationMethod("error","Please enter old password.");return false;
+        }
+        if ($("#new-password").val() == ""){
+            validationMethod("error","Please enter password.");return false;
+        }
+        if ($("#new-password").val().length < 8){
+            $('#myModal34').modal('show');;
+            return false;
+        }
+        if (!passwords($("#new-password").val())){
+            $('#myModal34').modal('show');
+            return false;
+        }
+        if ($("#confirm-password").val() == ""){
+            validationMethod("error","Please confirm password.");return false;
+        }
+
+        if ($("#new-password").val() != $("#confirm-password").val()){
+            validationMethod("error","Confirm password and Password must be same.");return false;
+        }
+        $("#cp-form").submit();
+    })
     
     $("#industry-ready-form").submit(function(){
         if ($("#IndustryReadyCompetition_first_name").val() == ""){

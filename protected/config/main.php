@@ -49,6 +49,9 @@ $ruleArray = array(
     'login' => 'site/login',
     'students' => 'cart/student',
     'professionals' => 'cart/profesionals',
+    'update-profile' => 'cart/profile',
+    'change-password'=>'cart/changepassword',
+    'past-order'=>'cart/pastorder.php',
     'institutes' => 'site/page/view/educational_institute',
     '<controller:\w+>/<id:\d+>'=>'<controller>/view',
     '<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
@@ -57,7 +60,7 @@ $ruleArray = array(
 $tempUrl = array_merge($blogUrlsForRules,$ruleArray);
 $tempUrl2 = array_merge($productsUrlsForRules,$tempUrl);
 $ruleArray = $tempUrl2;
-$flag = true;
+$flag = false;
 //echo "<pre>";print_r($ruleArray);die;
 // uncomment the following to def   ine a path alias
 // Yii::setPathOfAlias('local','path/to/local-folder');

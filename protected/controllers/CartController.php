@@ -33,7 +33,8 @@ class CartController extends Controller {
             return array(
                 array('allow', // allow all users to perform 'index' and 'view' actions
                     'actions' => array('captcha','removeCoupon','industry','interview','index', 'view','student',"addtocart","cart","remove","buynow","verify", 
-                                        'profesionals','institutes','register',"description","checkout","removeCart","applypromo","story","campus","loginandapply","applygstin","clearcart"),
+                                        'profesionals','institutes','register',"description","checkout","removeCart","applypromo","story","campus","loginandapply","applygstin","clearcart",
+                                        "profile","pastorder","changepassword"),
                     'users' => array('*'),
                 ),
                 array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -676,6 +677,44 @@ class CartController extends Controller {
             $this->layout = getCartLayot();
             $this->render("webroot.themes.cart.views.cart.register",array('model'=>$model));
         }
-       
+
+        public function actionProfile(){
+            $model = UsersNew::model()->findByPk(Yii::app()->user->id);
+            if(!empty($_POST['UsersNew'])){
+                $model->attributes = $_POST['UsersNew'];
+                if($model->save()){
+                    $this->refresh(true,"?thankprofile=1");
+                } else {
+                    $errors = json_encode($model->getErrors());
+                    Yii::log("Error: Profile Update Failure: ".$errors);
+                }
+            }
+            $this->render("webroot.themes.cart.views.cart.profile",array('model'=>$model));
+        }
+
+        public function actionPastorder(){
+            $this->render("webroot.themes.cart.views.cart.pastorder",array('model'=>$model));
+        }
+
+        public function actionChangepassword(){
+            $model = UsersNew::model()->findByPk(Yii::app()->user->id);
+            if(!empty($_POST['UsersNew'])){
+                if($_POST['UsersNew']['old- password'] != $model->password){
+                    $model->addError('passwordmatch', 'Please enter correct old password.');
+                    $this->errors['passwordmatch'] = 'Please enter correct old password.';
+                } else{
+                    $model->attributes = $_POST['UsersNew'];
+                    if($model->save()){
+                        $this->refresh(true,"?thankcp=1");
+                    } else {
+                        $errors = json_encode($model->getErrors());
+                        Yii::log("Error: Profile Update Failure: ".$errors);
+                    }
+                }
+
+            }
+            $this->render("webroot.themes.cart.views.cart.changepassword",array('model'=>$model));
+        }
+
 }
-		
+

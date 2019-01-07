@@ -12,6 +12,12 @@
     <?php if(isset($_REQUEST['resetdone'])){?>
     validationMethod("thanks","Your password has been reset successfully. Please login with your new password")
     <?php }?>
+    <?php if(isset($_REQUEST['thankprofile'])){?>
+    validationMethod("thanks","Your profile has been updated successfully.")
+    <?php }?>
+    <?php if(isset($_REQUEST['thankcp'])){?>
+    validationMethod("thanks","Your password has been updated successfully.")
+    <?php }?>
     <?php if(isset($_REQUEST['thankreg'])){?>
 	 //validationMethod("thanks","Thanks for signup with us, please check your email to verify your account.")
     $('#myModal40').modal('show');

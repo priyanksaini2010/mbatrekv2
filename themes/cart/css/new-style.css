@@ -2070,3 +2070,4 @@ header .mobile_menu .menu-text a .menu_cancle{display:none;}
  main{-webkit-transition: -webkit-transform .4s ease; transition: -webkit-transform .4s ease;  -o-transition: transform .4s ease; transition: transform .4s ease; transition: transform .4s ease,-webkit-transform .4s ease;  z-index: 1;}
 .home_page_slider ul li {list-style: none;}
 .mm-wrapper__blocker{background:rgba(0,0,0,0.8)!important;}
+.profile_user .col-md-12 .col-md-8 input[type="password"]{font-family: 'MyriadPro-Regular';font-size:17px;width:100%;border:1px solid #999;padding:6px 0 6px 10px;}

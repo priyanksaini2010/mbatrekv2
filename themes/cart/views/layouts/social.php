@@ -24,8 +24,8 @@
                         <a class="profile_open" href="#">Logout</a>
 						<div class="profile_div">
 							<ul>
-								<li><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"profile")); ?>">My Profile</a></li>
-								<li><a href="<?php echo Yii::app()->createUrl('site/page', array("view"=>"past_order")); ?>">Past Orders</a></li>
+								<li><a href="<?php echo Yii::app()->createUrl("update-profile"); ?>">My Profile</a></li>
+								<li><a href="<?php echo Yii::app()->createUrl("past-order"); ?>">Past Orders</a></li>
 								<li><a href="<?php echo Yii::app()->createUrl('site/logout'); ?>">Logout</a></li>
 							</ul>
 						</div>
