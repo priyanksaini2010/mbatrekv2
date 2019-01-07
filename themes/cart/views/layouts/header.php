@@ -88,15 +88,15 @@
                                     <li class="kopie"><a href="<?php echo Yii::app()->createUrl('resume-diagnostic'); ?>">Resume / CV Diagnostic</a></li>
                                     <li class="kopie"><a href="<?php echo Yii::app()->createUrl('linkedin-diagnostic'); ?>">LinkedIn Diagnostic</a></li>
                                     <li class="kopie"><a href="<?php echo Yii::app()->createUrl('mock-interview'); ?>">Mock Interview</a></li>
-                                    <li class="kopie"><a href="javascript:void(0);">Interview Q & A</a></li>
+                                    <li class="kopie"><a href="<?php echo Yii::app()->createUrl('interview-q&a'); ?>">Interview Q & A</a></li>
 								</ul>
 							</li>      
 							<li><a href="#" >Packages <i class="pull-right fa fa-angle-double-right" aria-hidden="true"></i></a>
 								<ul>
 									<!--<li class="kopie"><a href="#">Industry Ana</a></li>
 									<li ><a href="#">Compus2Corporate</a></li>-->
-                                    <li class="kopie><a href="<?php echo Yii::app()->createUrl('career-planning'); ?>">#CareerPlanning</a></li>
-                                    <li class="kopie><a href="<?php echo Yii::app()->createUrl('industry-ready'); ?>">#IndustryReady</a></li>
+                                    <li class="kopie"><a href="<?php echo Yii::app()->createUrl('career-planning'); ?>">#CareerPlanning</a></li>
+                                    <li class="kopie"><a href="<?php echo Yii::app()->createUrl('industry-ready'); ?>">#IndustryReady</a></li>
                                     <li class="kopie"><a href="<?php echo Yii::app()->createUrl('interview-ready'); ?>">#InterviewReady</a></li>
 								</ul>
 							</li>     						
