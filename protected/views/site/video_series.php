@@ -40,9 +40,16 @@ $typ = $_GET['type'];
                                 <div class="share_post">
                                 <ul class="list-inline list-unstyled">
                                     <!--<li><a class="comment_post" href="javascript:void(0);">0Comments</a></li>-->
-                                    <li><i class="fa fa-share-alt" aria-hidden="true"></i><span class="share_label">Share</span><a href="javascript:void(0);" class="share_post_b jssocials" id="share"> 
-                                        <div class="jssocials-shares">&nbsp;</div>
-                                        </a> </li>
+                                    <li>
+                                        <i class="fa fa-share-alt" aria-hidden="true"></i>
+                                        <span class="share_label">Share</span>
+                                        <ul>
+                                            <li><a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo Yii::app()->params['url']."videos/";?>&title=<?php echo $blog->title;?>&summary=<?php echo $blog->content;?>&source=<?php echo urlencode($blog->youtube_video_link);?>" class="linked_icon" target="_blank"><i class="fa fa-linkedin" aria-hidden="true" target="_blank"></i></a></li>
+                                            <li><a href="http://www.facebook.com/sharer.php?s=100&amp;p[title]=<?php echo $blog->title;?>&amp;p[summary]=<?php echo $blog->content;?>&amp;p[url]=<?php echo Yii::app()->params['url']."videos/";?>&t&amp;&p[images][0]=<?php echo urlencode($blog->youtube_video_link);?>" class="facebook_icon" target="_blank"><i class="fa fa-facebook" aria-hidden="true" target="_blank"></i></a></li>
+                                            <li><a href="http://twitter.com/share?text=<?php echo urlencode($blog->title);?>&&url=<?php echo urlencode(Yii::app()->params['url']."videos/");?>" class="twitter_icon" target="_blank"><i class="fa fa-twitter" aria-hidden="true" target="_blank"></i></a></li>
+                                            <li><a href="mailto:?subject=<?php echo urlencode($blog->title);?>&body=<?php echo urlencode(Yii::app()->params['url']."videos/");?>" class="quora_icon" target="_blank"><i class="fa fa-at jssocials-share-logo" aria-hidden="true" target="_blank"></i></a></li>
+                                        </ul>
+                                     </li>
                                 </ul>
                            </div>
                                 <h2>  <?php echo $blog->content;?></h2>

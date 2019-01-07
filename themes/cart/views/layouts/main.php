@@ -170,11 +170,11 @@ var domain_name = '<?php echo $_SERVER['HTTP_HOST'].DIREC;?>';
                             <h3 id="pop-notification-type-2">Thanks</h3>
                             <div class="error_wrap">
                                 <div class="error_container">
-                                    <p><i class="fa fa-check" id="pop-notification-class" aria-hidden"true"=""></i>
+                                    <p>
                                         <span id="pop-notification-text">
-                                            <span>Thank you for registering with MBAtrek, Please check your email to verify acount.</span>
+                                            <span>Thank you for registering with MBAtrek, Please check your email to verify account.</span>
                                             <br /> <br />
-                                           <i class="fa fa-check" id="pop-notification-class" aria-hidden"true"=""></i> <span>Check your SPAM if you have not recieved the email.</span>
+                                           <span>Check your SPAM if you have not recieved the email.</span>
                                             <br /><br />
                                         </span></p>
                                 </div>
