@@ -34,7 +34,7 @@ foreach ($products as $c){
                                         $total = $total +  $icart->price;
                                     ?>
                                         <?php
-                                        $url = str_replace("#","",$icart->product->title);
+                                        $url = str_replace("#","",$icart->title);
                                         $url = str_replace(" ","-",$url);
                                         $url = strtolower($url);
                                         ?>
