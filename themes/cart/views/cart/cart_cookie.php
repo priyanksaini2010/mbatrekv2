@@ -33,6 +33,8 @@ foreach ($products as $c){
                                     foreach($products as $iKey=>$icart){
                                         $total = $total +  $icart->price;
                                     ?>
+
+
                                         <?php
                                         $url = str_replace("#","",$icart->title);
                                         $url = str_replace(" ","-",$url);
