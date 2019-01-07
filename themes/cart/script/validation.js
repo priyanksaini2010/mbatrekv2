@@ -161,6 +161,9 @@ $(document).ready(function(){
          if ($("#UsersNew_cpassword").val() == ""){
              validationMethod("error","Please confirm password.");return false;
          }
+         if ($("#UsersNew_cpassword").val() == $("#UsersNew_password").val()){
+             validationMethod("error","Confirm password and Password must be same.");return false;
+         }
      })
     $("#register-form").submit(function(){
         
