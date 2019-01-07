@@ -47,17 +47,22 @@ if(isset(Yii::app()->user->id)){
                                     ?>
                                     <ul>
                                     <li class="cart_icon">
-                                        <a href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>$icart->product->id));?>">
+                                        <?php
+                                        $url = str_replace("#","",$icart->product->title);
+                                        $url = str_replace(" ","-",$url);
+                                        $url = strtolower($url);
+                                        ?>
+                                        <a href="<?php echo Yii::app()->createUrl($url);?>">
                                         <img height="44" width="41" src="<?php echo $baseUrl;?>/assets/products/<?php echo $icart->product->home_page_icon;?>"/>
                                         </a>
                                         <span>
-                                            <a href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>$icart->product->id));?>">
+                                            <a href="<?php echo Yii::app()->createUrl($url);?>">
                                                 <?php echo $icart->product->title;?>
                                             </a>
                                         </span>
                                     </li>
                                     <li class="cart_label">
-                                        <a href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>$icart->product->id));?>">
+                                        <a href="<?php echo Yii::app()->createUrl($url);?>">
                                         <h4><?php echo $icart->product->description1;?></h4>
                                         </a>
                                         <a class="remove_cart" href="<?php echo Yii::app()->createUrl("cart/remove",array("id"=>$icart->product->id));?>">Remove</a>
@@ -100,7 +105,7 @@ if(isset(Yii::app()->user->id)){
 								<span>
                                     <input type="text" value="<?php echo $cartID->gstin;?>" class="input_field" id="gstin" name="GSTIN" placeholder="GSTIN ( if applicable )">
                                     <br />
-                                    <?php if($cartID->gstin =''= ""){?>
+                                    <?php if($cartID->gstin == ""){?>
                                     <a href="javascript:void('0')" id="gstin-apply">Apply GSTIN</a>
                                     <?php }?>
                                 </span>

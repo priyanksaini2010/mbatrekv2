@@ -33,15 +33,20 @@ foreach ($products as $c){
                                     foreach($products as $iKey=>$icart){
                                         $total = $total +  $icart->price;
                                     ?>
+                                        <?php
+                                        $url = str_replace("#","",$icart->product->title);
+                                        $url = str_replace(" ","-",$url);
+                                        $url = strtolower($url);
+                                        ?>
 <ul class="list-inline">
                                     <li class="cart_icon">
-                                        <a href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>$icart->id));?>">
+                                        <a href="<?php echo Yii::app()->createUrl($url);?>">
                                         <img height="44" width="41" src="<?php echo $baseUrl;?>/assets/products/<?php echo $icart->home_page_icon;?>"/>
                                         <span><?php echo $icart->title;?></span>
                                         </a>
                                     </li>
                                     <li class="cart_label">
-                                        <a href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>$icart->id));?>">
+                                        <a href="<?php echo Yii::app()->createUrl($url);?>">
                                         <h4><?php echo $icart->description1;?></h4>
                                         </a>
                                         <a  class="remove_cart" href="<?php echo Yii::app()->createUrl("cart/remove",array("id"=>$icart->id));?>">Remove</a>
@@ -150,4 +155,4 @@ foreach ($products as $c){
             </div>
         </div>
     </div>
-</div>  
+</div>
