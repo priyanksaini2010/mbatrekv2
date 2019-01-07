@@ -1,14 +1,23 @@
 <?php
 
 /**
- * This is the model class for table "interview_ready_competition".
+ * This is the model class for table "industry_ready_competition".
  *
- * The followings are the available columns in table 'interview_ready_competition':
+ * The followings are the available columns in table 'industry_ready_competition':
  * @property integer $id
  * @property string $first_name
  * @property string $last_name
  * @property string $mobile_number
  * @property string $email_id
+ * @property string $team_name
+ * @property string $first_name_1
+ * @property string $last_name_1
+ * @property string $mobile_number_1
+ * @property string $email_Id_1
+ * @property string $first_name_2
+ * @property string $last_name_2
+ * @property string $mobile_number_2
+ * @property string $email_Id_2
  * @property integer $mba_batch
  * @property integer $college
  * @property string $name_of_college
@@ -16,14 +25,9 @@
  * @property string $question_2
  * @property string $question_3
  * @property string $registeration_date
- *
- * The followings are the available model relations:
- * @property YearOfGraduation $mbaBatch
- * @property Colleges $college0
  */
 class IndustryReadyCompetition extends CActiveRecord
 {
-        public $verifyCode;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -40,14 +44,13 @@ class IndustryReadyCompetition extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('first_name, last_name, mobile_number, email_id, mba_batch, college, registeration_date', 'required'),
+			array('first_name, last_name, mobile_number, email_id, team_name, first_name_1, last_name_1, mobile_number_1, email_Id_1, first_name_2, last_name_2, mobile_number_2, email_Id_2, mba_batch, college, registeration_date', 'required'),
 			array('mba_batch, college', 'numerical', 'integerOnly'=>true),
-			array('first_name, last_name, mobile_number, email_id, name_of_college', 'length', 'max'=>255),
-			array('question_1, question_2,question_3', 'safe'),
-                        array('verifyCode', 'captcha', 'allowEmpty'=>!CCaptcha::checkRequirements()),
+			array('first_name, last_name, mobile_number, email_id, team_name, first_name_1, last_name_1, mobile_number_1, email_Id_1, first_name_2, last_name_2, mobile_number_2, email_Id_2, name_of_college', 'length', 'max'=>255),
+			array('question_1, question_2, question_3', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, first_name, last_name, mobile_number, email_id, mba_batch, college, name_of_college, question_1, question_2, question_3, registeration_date', 'safe', 'on'=>'search'),
+			array('id, first_name, last_name, mobile_number, email_id, team_name, first_name_1, last_name_1, mobile_number_1, email_Id_1, first_name_2, last_name_2, mobile_number_2, email_Id_2, mba_batch, college, name_of_college, question_1, question_2, question_3, registeration_date', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -58,10 +61,10 @@ class IndustryReadyCompetition extends CActiveRecord
 	{
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
-		return array(
-			'mbaBatch' => array(self::BELONGS_TO, 'YearOfGraduation', 'mba_batch'),
-			'college0' => array(self::BELONGS_TO, 'Colleges', 'college'),
-		);
+        return array(
+            'mbaBatch' => array(self::BELONGS_TO, 'YearOfGraduation', 'mba_batch'),
+            'college0' => array(self::BELONGS_TO, 'Colleges', 'college'),
+        );
 	}
 
 	/**
@@ -75,12 +78,21 @@ class IndustryReadyCompetition extends CActiveRecord
 			'last_name' => 'Last Name',
 			'mobile_number' => 'Mobile Number',
 			'email_id' => 'Email',
+			'team_name' => 'Team Name',
+			'first_name_1' => 'First Name 1',
+			'last_name_1' => 'Last Name 1',
+			'mobile_number_1' => 'Mobile Number 1',
+			'email_Id_1' => 'Email Id 1',
+			'first_name_2' => 'First Name 2',
+			'last_name_2' => 'Last Name 2',
+			'mobile_number_2' => 'Mobile Number 2',
+			'email_Id_2' => 'Email Id 2',
 			'mba_batch' => 'Mba Batch',
 			'college' => 'College',
 			'name_of_college' => 'Name Of College',
-			'question_1' => 'Name of your Student Placement Coordinator / Student Committee Member <span class="required">*</span>',
-			'question_2' => 'Email of your Student Placement Coordinator / Student Committee Member <span class="required">*</span>',
-			'question_3' => 'Mobile No of your Student Placement Coordinator / Student Committee Member',
+			'question_1' => 'Question 1',
+			'question_2' => 'Question 2',
+			'question_3' => 'Question 3',
 			'registeration_date' => 'Registeration Date',
 		);
 	}
@@ -108,6 +120,15 @@ class IndustryReadyCompetition extends CActiveRecord
 		$criteria->compare('last_name',$this->last_name,true);
 		$criteria->compare('mobile_number',$this->mobile_number,true);
 		$criteria->compare('email_id',$this->email_id,true);
+		$criteria->compare('team_name',$this->team_name,true);
+		$criteria->compare('first_name_1',$this->first_name_1,true);
+		$criteria->compare('last_name_1',$this->last_name_1,true);
+		$criteria->compare('mobile_number_1',$this->mobile_number_1,true);
+		$criteria->compare('email_Id_1',$this->email_Id_1,true);
+		$criteria->compare('first_name_2',$this->first_name_2,true);
+		$criteria->compare('last_name_2',$this->last_name_2,true);
+		$criteria->compare('mobile_number_2',$this->mobile_number_2,true);
+		$criteria->compare('email_Id_2',$this->email_Id_2,true);
 		$criteria->compare('mba_batch',$this->mba_batch);
 		$criteria->compare('college',$this->college);
 		$criteria->compare('name_of_college',$this->name_of_college,true);
@@ -115,7 +136,7 @@ class IndustryReadyCompetition extends CActiveRecord
 		$criteria->compare('question_2',$this->question_2,true);
 		$criteria->compare('question_3',$this->question_3,true);
 		$criteria->compare('registeration_date',$this->registeration_date,true);
-                $criteria->order = "id desc";
+        $criteria->order = "id desc";
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
@@ -125,7 +146,7 @@ class IndustryReadyCompetition extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return InterviewReadyCompetition the static model class
+	 * @return IndustryReadyCompetition the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
