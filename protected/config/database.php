@@ -7,8 +7,8 @@ return array(
 	
 	'connectionString' => 'mysql:host=localhost;dbname=mbatrek_v2',
 	'emulatePrepare' => true,
-	'username' => 'newuser',
-	'password' => 'password',
+	'username' => 'mbatrek_admin',
+	'password' => 'mbatrek_admin',
 	'charset' => 'utf8',
 	
 );

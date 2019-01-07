@@ -1,7 +1,7 @@
 <?php
 // Ia m comment
 // I am also:wq
-$link = mysqli_connect("localhost","newuser","password","mbatrek_v2");
+$link = mysqli_connect("localhost","mbatrek_admin","mbatrek_admin","mbatrek_v2");
 $SQL = "select id from  blogs";
 $SQLPRODS = "select id,title from  products";
 $rs = mysqli_query($link,$SQL) ;
