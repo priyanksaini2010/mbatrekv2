@@ -106,10 +106,18 @@ $(document).ready(function(){
 })
     //Registeration Form Validation
     $(".cart-remove").click(function(){
-            if(confirm("Are you sure you want to remove this product from your cart?")){
-                window.location.href = 'https://'+domain_name+"cart/removeCart?p="+$(this).val();
-            }
-        });
+        $("#remove-yes").attr("alt",$(this).val())
+        $("#myModal-removecart").show()
+            // if(confirm("Are you sure you want to remove this product from your cart?")){
+            //     window.location.href = 'https://'+domain_name+"cart/removeCart?p="+$(this).val();
+            // }
+    });
+    $("#remove-no").click(function(){
+        $("#myModal-removecart").hide()
+    });
+    $("#remove-yes").click(function(){
+        window.location.href = 'https://'+domain_name+"cart/removeCart?p="+$(this).attr("alt");
+    });
     $("#clear-cart").click(function(e){
         e.preventDefault();
         if(confirm("Are you sure you want remove all products from your cart?")){
