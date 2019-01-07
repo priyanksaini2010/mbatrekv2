@@ -177,8 +177,12 @@
                             </a>
                         </div>
                         <div class="categories_container">
-                            <?php foreach ($products as $product){?>
-							<a href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>$product->id));?>">
+                            <?php foreach ($products as $product){
+                                $url = str_replace("#","",$product->title);
+                                $url = str_replace(" ","-",$url);
+                                $url = strtolower($url);
+                            ?>
+							<a href="<?php echo Yii::app()->createUrl($url);?>">
 								<div class="repeat_categories">
 									<div class="repeat_icon">
 										<img src="<?php echo Yii::app()->request->baseUrl; ?>/assets/products/<?php echo $product->home_page_icon;?>"/>
