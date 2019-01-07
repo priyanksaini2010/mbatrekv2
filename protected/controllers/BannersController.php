@@ -139,7 +139,7 @@ class BannersController extends Controller
                              $_POST['Banners']['image'] = $model->image;
                         }
                         
-			$model->attributes=$_POST['EventGallery'];
+			$model->attributes=$_POST['Banners'];
 			if($model->save()){
                             Yii::app()->user->setFlash('success', "Banner Updated Successfully."); 
                             $this->redirect(array('admin'));

@@ -9,8 +9,9 @@
 	<p class="help-block">Fields with <span class="required">*</span> are required.</p>
 
 	<?php echo $form->errorSummary($model); ?>
+    <?php echo $form->textFieldRow($model,'link',array('class'=>'span5','maxlength'=>256)); ?>
 
-	<?php echo $form->fileFieldRow($model,'image',array('class'=>'span5','maxlength'=>1555)); ?>
+<?php echo $form->fileFieldRow($model,'image',array('class'=>'span5','maxlength'=>1555)); ?>
         <span>  Image should be 1900 X 500 px</span>
         <?php if($model->isNewRecord)?>
         <img src="<?php echo Yii::app()->baseUrl;?>/assets/Banners/<?php echo $model->image; ?>" height="500px" width="1000px"/>

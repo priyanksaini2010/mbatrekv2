@@ -5,8 +5,16 @@
             <?php
             $criteria = new CDbCriteria;
             $criteria->order = "sortOrder asc";
-            foreach ( Banners::model()->findAll($criteria)as $banner){?>
+            foreach ( Banners::model()->findAll($criteria)as $banner){
+                if(!empty($banner->link)){
+                ?>
+                    <a href="<?php echo $banner->link?>" target="_blank">
+                <?php }?>
 		<li><img src="<?php echo Yii::app()->request->baseUrl; ?>/assets/Banners/<?php echo $banner->image;?>" alt=""></li>
+                        <?php if(!empty($banner->link)){
+                        ?>
+                    </a>
+                            <?php }?>
 	    <?php }?>
 	</ul>
 </div>
