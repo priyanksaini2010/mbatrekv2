@@ -253,7 +253,7 @@ $productActuall = Products::model()->findByPk($id);
 							<div class="combo_price">
 								<label>Combo Price &#8377  <?php echo money($productActuall->price);?></label>
 								<span class="discount_line">Total Price &#8377 <?php echo money($product2->actuall_price+$product->actuall_price+$product3->actuall_price);?></span>
-								<span>You save &#8377 2,2250 (25%)</span>
+								<span>You save &#8377 2,100 (30%)</span>
 							</div>
 						</div>
 					</div>

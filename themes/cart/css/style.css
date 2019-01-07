@@ -1230,6 +1230,7 @@ footer .footer-logo{
     .home-cta-wrapper{
         max-width: 550px;
         margin: 0 auto;
+		float:none;
     }
     .student-journey-inner .student-ready{
         max-width: 50%;
@@ -1318,7 +1319,7 @@ footer .footer-logo{
         display: inline-block;
         vertical-align: top;
         width: 100%;
-        margin: 10px 0;
+        margin: 0px 0;
     }
     .cart-wrapper{
         right: -38px;

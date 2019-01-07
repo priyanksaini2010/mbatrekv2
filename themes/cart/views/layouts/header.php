@@ -171,12 +171,12 @@
 					</div>
 					<nav id="menu">
 						<ul>
-							<li><a href="#">Home</a></li>
+							<li><a href="/">Home</a></li>
 							<li><span>About us</span>
 								<ul>
-									<li><a href="#about/history">Introduction to MBAtrek</a></li>
-									<li><a href="#about/history">How are we different</a></li>
-									<li><a href="#about/history">Our Team</a></li>
+									<li><a href="<?php echo Yii::app()->createUrl('our-story'); ?>">Introduction to MBAtrek</a></li>
+									<li><a href="<?php echo Yii::app()->createUrl('how-are-we-different'); ?>">How are we different</a></li>
+									<li><a href="<?php echo Yii::app()->createUrl("our-team"); ?>">Our Team</a></li>
 								</ul>
 							</li>
 							<li><span>Our Services </span>
@@ -185,27 +185,73 @@
 										<ul>
 											<li><span>Offerings</span>
 												<ul>
-													<li><a href="#about/team/management">Resume / CV Diagnostic</a></li>
-													<li><a href="#about/team/sales">Linkedin Diagnostic</a></li>
-													<li><a href="#about/team/sales">Mock Interview</a></li>
-													<li><a href="#about/team/sales">Interview Q & A</a></li>
-													<li><a href="#about/team/sales">Industry Analysis</a></li>
-													<li><a href="#about/team/sales">Company Analysis</a></li>
-													<li><a href="#about/team/sales">Cracking the GD</a></li>
+													<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"25")); ?>">Resume / CV Diagnostic</a></li>
+													<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"24")); ?>">Linkedin Diagnostic</a></li>
+													<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"30")); ?>">Mock Interview</a></li>
+													<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"23")); ?>">Interview Q & A</a></li>
+													<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"18")); ?>">Industry Analysis</a></li>
+													<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"21")); ?>">Company Analysis</a></li>
+													<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"22")); ?>">Cracking the GD</a></li>
 												</ul>
 											</li>
-											<li><a href="#about/team/sales">Packages</a></li>
+											<li><span>Packages</span>
+												<ul>
+													<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"19")); ?>">InternGO</a></li>
+													<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"28")); ?>">InternACE</a></li>
+													<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"27")); ?>">InternPRO</a></li>
+													<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"17")); ?>">InternARISE</a></li>
+													<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"34")); ?>">Campus2Corporate</a></li>
+													<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"31")); ?>">#IndustryReady</a></li>
+													<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"32")); ?>">#InterviewReady</a></li>
+												</ul>
+											</li>
 										</ul>
 									</li>
-									<li><a href="#about/history">Young Professionals </a></li>
-									<li><a href="#about/history">Educational Institutes</a></li>
-									<li><a href="#about/history">Companies</a></li>
-									
-									
+									<li><span>Young Professionals</span>
+										<ul>
+											<li><span>Offerings</span>
+												<ul>
+													<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"18")); ?>">Industry Analysis</a></li>
+													<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"21")); ?>">Company Analysis</a></li>
+													<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"25")); ?>">Resume / CV Diagnostic</a></li>
+													<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"24")); ?>">LinkedIn Diagnostic</a></li>
+													<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"30")); ?>">Mock Interview</a></li>
+													<li><a href="javascript:void(0);">Interview Q & A</a></li>
+												</ul>
+											</li>
+											<li><span>Packages</span>
+												<ul>
+													<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"33")); ?>">#CareerPlanning</a></li>
+													<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"31")); ?>">#IndustryReady</a></li>
+													<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"32")); ?>">#InterviewReady</a></li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+									<li><a href="<?php echo Yii::app()->createUrl('institutes'); ?>">Educational Institutes</a></li>
+									<li><a href="<?php echo Yii::app()->createUrl('companies'); ?>">Companies</a></li>
 								</ul>
 							</li>
-							<li><a href="#contact">Contact</a></li>
-
+							<li><span>Insights</span>
+								<ul>
+									<li><a href="<?php echo Yii::app()->createUrl('blogs'); ?>">Blogs / Article</a></li>
+									<li><a href="<?php echo Yii::app()->createUrl('videos'); ?>">Videos</a></li>
+								</ul>
+							</li>
+							<li><span>Success Stories</span>
+								<ul>
+									<li><a href="<?php echo Yii::app()->createUrl('success/students'); ?>">Students</a></li>
+								</ul>
+							</li>
+							<li><span>Campus Connect</span>
+								<ul>
+									<li><a href="<?php echo Yii::app()->createUrl('campus-abassador'); ?>">Campus Ambassador Program</a></li>
+									<li><a href="<?php echo Yii::app()->createUrl('interview-ready-competition'); ?>">#InterviewReady Competition</a></li>
+									<li><a href="<?php echo Yii::app()->createUrl('industry-ready-competition'); ?>">#IndustryReady Competition</a></li>
+									<li><a href="<?php echo Yii::app()->createUrl('mbatrek-on-the-ground'); ?>">MBAtrek@Campus</a></li>
+								</ul>
+							</li>
+							<li class="contact"><a href="<?php echo Yii::app()->createUrl('contact'); ?>">Contact Us</a></li>
 						</ul>
 					</nav>
 				</div>
