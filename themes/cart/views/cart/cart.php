@@ -97,7 +97,13 @@ if(isset(Yii::app()->user->id)){
                                 <?php }?>
                                 
                                 <a href="<?php echo Yii::app()->createUrl("cart/checkout");?>">Checkout</a>
-								<span><input type="text" value="<?php echo $cartID->gstin;      ?>" class="input_field" id="gstin" name="GSTIN" placeholder="GSTIN ( if applicable )"></span>
+								<span>
+                                    <input type="text" value="<?php echo $cartID->gstin;?>" class="input_field" id="gstin" name="GSTIN" placeholder="GSTIN ( if applicable )">
+                                    <br />
+                                    <?php if($cartID->gstin == ""){?>
+                                    <a href="javascript:void('0')" id="gstin-apply">Apply GSTIN</a>
+                                    <?php }?>
+                                </span>
                             </div> 
                             <?php if(empty($coupon)){?>
                             <span class="promocode">Have a promocode? Enter here</span>
