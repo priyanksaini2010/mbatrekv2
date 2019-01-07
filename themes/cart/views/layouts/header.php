@@ -53,32 +53,27 @@
 							<li>
 								<a href="#">Offerings <i class="pull-right fa fa-angle-double-right" aria-hidden="true"></i></a>
 								<ul>
-                                                                    
-									<li class="kopie"><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"25")); ?>">Resume / CV Diagnostic</a></li>
-									<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"24")); ?>">Linkedin Diagnostic</a></li>
-									<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"30")); ?>">Mock Interview</a></li>
-									<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"23")); ?>">Interview Q & A</a></li>
-									<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"18")); ?>">Industry Analysis</a></li>
-									<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"21")); ?>">Company Analysis</a></li>
-									<!--<li><a href="<?php // echo Yii::app()->createUrl('cart/description', array("id"=>"29")); ?>">Job Fitment Analysis</a></li>-->
-									<li><a href="<?php echo Yii::app()->createUrl('cracking-the-gd'); ?>">Cracking the GD</a></li>
-									<!--<li><a href="#">InternACE</a></li>
-									<li><a href="#">InternPRO</a></li>
-									<li><a href="https://mbatrek.com/v/index.php?r=cart/description&id=17">InternARISE</a></li>-->
+
+                                    <ul>
+                                        <li><a href="<?php echo Yii::app()->createUrl('resume-diagnostic'); ?>">Resume / CV Diagnostic</a></li>
+                                        <li><a href="<?php echo Yii::app()->createUrl('linkedin-diagnostic'); ?>">Linkedin Diagnostic</a></li>
+                                        <li><a href="<?php echo Yii::app()->createUrl('mock-interview'); ?>">Mock Interview</a></li>
+                                        <li><a href="<?php echo Yii::app()->createUrl('interview-q&a'); ?>">Interview Q & A</a></li>
+                                        <li><a href="<?php echo Yii::app()->createUrl('industry-analysis'); ?>">Industry Analysis</a></li>
+                                        <li><a href="<?php echo Yii::app()->createUrl('company-analysis-'); ?>">Company Analysis</a></li>
+                                        <li><a href="<?php echo Yii::app()->createUrl('cracking-the-gd'); ?>">Cracking the GD</a></li>
+                                    </ul>
 								</ul>
 							</li>     
 							<li><a href="#">Packages <i class="pull-right fa fa-angle-double-right" aria-hidden="true"></i></a> 
 								<ul>
-									<li class="kopie"><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"19")); ?>">InternGO</a></li>
-<!--<li><a href="https://mbatrek.com/v2/index.php?r=cart/description&id=22">Cracking GD</a></li>-->
-                                                                        <li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"28")); ?>">InternACE</a></li>
-                                                                        <li><a href="<?php echo Yii::app()->createUrl('intern-pro'); ?>">InternPRO</a></li>
-<li><a href="<?php echo Yii::app()->createUrl("intern-arise"); ?>">InternARISE</a></li>
-    
-								
-	<li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"34")); ?>">Campus2Corporate</a></li>
-        <li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"31")); ?>">#IndustryReady </a></li>
-    <li><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"32")); ?>">#InterviewReady </a></li>
+                                    <li><a href="<?php echo Yii::app()->createUrl('intern-go'); ?>">InternGO</a></li>
+                                    <li><a href="<?php echo Yii::app()->createUrl('intern-ace'); ?>">InternACE</a></li>
+                                    <li><a href="<?php echo Yii::app()->createUrl('intern-pro'); ?>">InternPRO</a></li>
+                                    <li><a href="<?php echo Yii::app()->createUrl('intern-arise'); ?>">InternARISE</a></li>
+                                    <li><a href="<?php echo Yii::app()->createUrl('campus-2-corporate'); ?>">Campus2Corporate</a></li>
+                                    <li><a href="<?php echo Yii::app()->createUrl('industry-ready'); ?>">#IndustryReady</a></li>
+                                    <li><a href="<?php echo Yii::app()->createUrl('interview-ready'); ?>">#InterviewReady</a></li>
 								</ul>
 							</li>     						
 						</ul>
@@ -88,25 +83,21 @@
 						<ul>
 							<li><a href="#" >Offerings <i class="pull-right fa fa-angle-double-right" aria-hidden="true"></i></a>
 								<ul>
-									<!--<li class="kopie"><a href="#">#CareerPlanning </a></li>
-									 <li class="kopie"><a href="#">#IndustryReady </a></li>
-									 <li class="kopie"><a href="#">#InterviewReady </a></li>-->
-									<li class="kopie"><a href="<?php echo Yii::app()->createUrl('industry-analysis'); ?>">Industry Analysis</a></li>
-									<li class="kopie"><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"21")); ?>">Company Analysis</a></li>
-									<!--<li class="kopie"><a href="<?php // echo Yii::app()->createUrl('cart/description', array("id"=>"29")); ?>">Job Fitment Analysis </a></li>-->
-									<li class="kopie"><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"25")); ?>">Resume / CV Diagnostic</a></li>
-									<li class="kopie"><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"24")); ?>">LinkedIn Diagnostic </a></li>
-									<li class="kopie"><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"30")); ?>">Mock Interview </a></li>
-									<li class="kopie"><a href="<?php echo Yii::app()->createUrl('interview-q&a');?>">Interview Q & A</a></li>
+                                    <li class="kopie"><a href="<?php echo Yii::app()->createUrl('industry-analysis'); ?>">Industry Analysis</a></li>
+                                    <li class="kopie"><a href="<?php echo Yii::app()->createUrl('company-analysis-'); ?>">Company Analysis</a></li>
+                                    <li class="kopie"><a href="<?php echo Yii::app()->createUrl('resume-diagnostic'); ?>">Resume / CV Diagnostic</a></li>
+                                    <li class="kopie"><a href="<?php echo Yii::app()->createUrl('linkedin-diagnostic'); ?>">LinkedIn Diagnostic</a></li>
+                                    <li class="kopie"><a href="<?php echo Yii::app()->createUrl('mock-interview'); ?>">Mock Interview</a></li>
+                                    <li class="kopie"><a href="javascript:void(0);">Interview Q & A</a></li>
 								</ul>
 							</li>      
 							<li><a href="#" >Packages <i class="pull-right fa fa-angle-double-right" aria-hidden="true"></i></a>
 								<ul>
 									<!--<li class="kopie"><a href="#">Industry Ana</a></li>
-									<li><a href="#">Compus2Corporate</a></li>-->
-									<li class="kopie"><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"33")); ?>">#CareerPlanning </a></li>
-                                                                         <li class="kopie"><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"31")); ?>">#IndustryReady </a></li>
-                                                                         <li class="kopie"><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"32")); ?>">#InterviewReady </a></li>
+									<li ><a href="#">Compus2Corporate</a></li>-->
+                                    <li class="kopie><a href="<?php echo Yii::app()->createUrl('career-planning'); ?>">#CareerPlanning</a></li>
+                                    <li class="kopie><a href="<?php echo Yii::app()->createUrl('industry-ready'); ?>">#IndustryReady</a></li>
+                                    <li class="kopie"><a href="<?php echo Yii::app()->createUrl('interview-ready'); ?>">#InterviewReady</a></li>
 								</ul>
 							</li>     						
 						</ul>
