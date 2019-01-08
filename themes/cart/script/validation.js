@@ -16,7 +16,8 @@ function phonenumber(mobNum)
 }
 function passwords(pass)
 {
-    var filter = /^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]+$/;
+    // var filter = /^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]+$/;
+    var filter = /^[-@./#&+\w\s]*$/;
 
     if (filter.test(pass)) {
         if (pass.length >= 8) {
