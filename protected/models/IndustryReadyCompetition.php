@@ -28,6 +28,7 @@
  */
 class IndustryReadyCompetition extends CActiveRecord
 {
+    public $verifyCode;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -48,6 +49,7 @@ class IndustryReadyCompetition extends CActiveRecord
 			array('mba_batch, college', 'numerical', 'integerOnly'=>true),
 			array('first_name, last_name, mobile_number, email_id, team_name, first_name_1, last_name_1, mobile_number_1, email_Id_1, first_name_2, last_name_2, mobile_number_2, email_Id_2, name_of_college', 'length', 'max'=>255),
 			array('question_1, question_2, question_3', 'safe'),
+            array('verifyCode', 'captcha', 'allowEmpty'=>!CCaptcha::checkRequirements()),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, first_name, last_name, mobile_number, email_id, team_name, first_name_1, last_name_1, mobile_number_1, email_Id_1, first_name_2, last_name_2, mobile_number_2, email_Id_2, mba_batch, college, name_of_college, question_1, question_2, question_3, registeration_date', 'safe', 'on'=>'search'),
@@ -77,23 +79,23 @@ class IndustryReadyCompetition extends CActiveRecord
 			'first_name' => 'First Name',
 			'last_name' => 'Last Name',
 			'mobile_number' => 'Mobile Number',
-			'email_id' => 'Email',
-			'team_name' => 'Team Name',
-			'first_name_1' => 'First Name 1',
-			'last_name_1' => 'Last Name 1',
-			'mobile_number_1' => 'Mobile Number 1',
-			'email_Id_1' => 'Email Id 1',
-			'first_name_2' => 'First Name 2',
-			'last_name_2' => 'Last Name 2',
-			'mobile_number_2' => 'Mobile Number 2',
-			'email_Id_2' => 'Email Id 2',
+			'email_id' => 'Email Id',
+			'team_name' => 'Name of Your Team',
+			'first_name_1' => 'First Name',
+			'last_name_1' => 'Last Name',
+			'mobile_number_1' => 'Mobile Number',
+			'email_Id_1' => 'Email Id',
+			'first_name_2' => 'First Name',
+			'last_name_2' => 'Last Name',
+			'mobile_number_2' => 'Mobile Number',
+			'email_Id_2' => 'Email Id',
 			'mba_batch' => 'Mba Batch',
 			'college' => 'College',
 			'name_of_college' => 'Name Of College',
-			'question_1' => 'Question 1',
-			'question_2' => 'Question 2',
-			'question_3' => 'Question 3',
-			'registeration_date' => 'Registeration Date',
+			'question_1' => 'Name of your Student Placement Coordinator / Student Committee Member',
+			'question_2' => 'Email of your Student Placement Coordinator / Student Committee Member * ',
+			'question_3' => 'Mobile No of your Student Placement Coordinator / Student Committee Member',
+			'registeration_date' => 'Registration Date',
 		);
 	}
 

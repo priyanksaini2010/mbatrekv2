@@ -49,6 +49,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                         <li>
                         <div class="intern-type">
                             <div class="top-icon">
+
                                 <a href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>$prod->id));?>">
                                     <img src="<?php echo Yii::app()->request->baseUrl;?>/assets/products/<?php echo $prod->logo;?>">
                                 </a>

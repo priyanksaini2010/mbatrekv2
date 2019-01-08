@@ -369,22 +369,62 @@ $(document).ready(function(){
         $("#cp-form").submit();
     })
     
-    $("#industry-ready-form").submit(function(){
+    $("#industry-ready-form-updated").submit(function(){
+
+        if ($("#IndustryReadyCompetition_team_name").val() == ""){
+            validationMethod("error","Please enter your team name.");
+            return false;
+        }
+
+        //Member 1 Validation
         if ($("#IndustryReadyCompetition_first_name").val() == ""){
-            validationMethod("error","Please enter first name.");
+            validationMethod("error","Please enter first name of member 1.");
             return false;
         }
         if ($("#IndustryReadyCompetition_last_name").val() == ""){
-            validationMethod("error","Please enter last name.");
+            validationMethod("error","Please enter last name of member 1.");
             return false;
         }
         if ($("#IndustryReadyCompetition_mobile_number").val() == "" || !phonenumber($("#IndustryReadyCompetition_mobile_number").val())){
-            validationMethod("error","Please enter valid mobile number.");
+            validationMethod("error","Please enter valid mobile number of member 1.");
             return false;
         }
         if ($("#IndustryReadyCompetition_email_id").val() == "" || !validateEmail($("#IndustryReadyCompetition_email_id").val())){
-            validationMethod("error","Please enter valid email.");return false;
+            validationMethod("error","Please enter valid email of member 1.");return false;
         }
+        //Member 2 Validations
+        if ($("#IndustryReadyCompetition_first_name_1").val() == ""){
+            validationMethod("error","Please enter first name of member 2.");
+            return false;
+        }
+        if ($("#IndustryReadyCompetition_last_name_1").val() == ""){
+            validationMethod("error","Please enter last name of member 2.");
+            return false;
+        }
+        if ($("#IndustryReadyCompetition_mobile_number_1").val() == "" || !phonenumber($("#IndustryReadyCompetition_mobile_number_1").val())){
+            validationMethod("error","Please enter valid mobile number of member 2.");
+            return false;
+        }
+        if ($("#IndustryReadyCompetition_email_Id_1").val() == "" || !validateEmail($("#IndustryReadyCompetition_email_Id_1").val())){
+            validationMethod("error","Please enter valid email of member 2.");return false;
+        }
+        //Member 3 Validation
+        if ($("#IndustryReadyCompetition_first_name_2").val() == ""){
+            validationMethod("error","Please enter first name of member 3.");
+            return false;
+        }
+        if ($("#IndustryReadyCompetition_last_name_2").val() == ""){
+            validationMethod("error","Please enter last name of member 3.");
+            return false;
+        }
+        if ($("#IndustryReadyCompetition_mobile_number_2").val() == "" || !phonenumber($("#IndustryReadyCompetition_mobile_number_2").val())){
+            validationMethod("error","Please enter valid mobile number of member 3.");
+            return false;
+        }
+        if ($("#IndustryReadyCompetition_email_Id_2").val() == "" || !validateEmail($("#IndustryReadyCompetition_email_Id_2").val())){
+            validationMethod("error","Please enter valid email of member 3.");return false;
+        }
+        //Member Validation Ends
         if ($("#IndustryReadyCompetition_mba_batch").val() == ""){
             validationMethod("error","Please select a MBA batch.");
             return false;
@@ -427,17 +467,17 @@ $(document).ready(function(){
 //        }
         
         
-        return true;
+        return false;
     });
     $("#IndustryReadyCompetition_college").change(function(){
         
         if($(this).val() == 4){
-            $("#name_of_college").show();
+            $("#IndustryReadyCompetition_name_of_college").show();
             $("#question_1").show();
             $("#question_2").show();
             $("#question_3").show();
         } else {
-            $("#name_of_college").hide();
+            $("#IndustryReadyCompetition_name_of_college").hide();
             $("#question_1").hide();
             $("#question_2").hide();
             $("#question_3").hide();
