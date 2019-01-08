@@ -144,9 +144,9 @@ var domain_name = '<?php echo $_SERVER['HTTP_HOST'].DIREC;?>';
                                         <span id="pop-notification-text">
                                             <span>Kindly try another password!</span>
                                             <br /> <br />
-                                            <span>Password length should be 8 characters and it should be alphanumeric.</span>
+                                            <span>Password length should be 8 characters and it should be alphanumeric can contain  special characters (_, @, ., /, #, &, + and -).</span>
                                             <br /><br />
-                                            <span>Remember, Special Characters are not allowed. </span>
+<!--                                            <span>Remember, Special Characters are not allowed. </span>-->
                                         </span></p>
                                 </div>
                                 <!-- <button class="md-close">OK</button> -->
