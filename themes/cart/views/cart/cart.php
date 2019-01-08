@@ -104,7 +104,7 @@ if(isset(Yii::app()->user->id)){
                                 <a href="<?php echo Yii::app()->createUrl("cart/checkout");?>">Checkout</a>
 								<span>
                                     <input type="text" value="<?php echo $cartID->gstin;?>" class="input_field" id="gstin" name="GSTIN" placeholder="GSTIN ( if applicable )">
-                                    <?php if(isset($_GET['update']) && $_GET['update'] !=1){?>
+                                    <?php if($cartID->gstin != "" && !isset($_GET['update']) && $_GET['update'] !=1){?>
                                     <a href="<?php echo Yii::app()->createUrl("cart/cart",array("update"=>1));?>"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                                     <?php }else if(isset($_GET['update']) && $_GET['update'] ==1){?>
                                         <a href="javascript:void('0')" id="gstin-apply">Apply GSTIN</a>
