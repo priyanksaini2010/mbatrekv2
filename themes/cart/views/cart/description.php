@@ -87,7 +87,7 @@ $productActuall = Products::model()->findByPk($id);
 					<div class="container">
 						<?php  $product = Products::model()->findByAttributes(array("id"=>18));?>
 						<?php  $product2 = Products::model()->findByAttributes(array("id"=>21));?>
-						<ul>
+						<ul class="industry_3_analyis">
 							<li>
 								<div class="title_eng">
                                                                     <h3><a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"18")); ?>">3 Industry Analysis</a></h3>
@@ -144,7 +144,7 @@ $productActuall = Products::model()->findByPk($id);
         <div class="how_We_engage">
 					<div class="container">
 						
-						<ul>
+						<ul class="industy_1_to_25">
 							<li>
 								<div class="title_eng">
                                                                     <a href="<?php echo Yii::app()->createUrl('cart/description', array("id"=>"30")); ?>"><h3>1 Mock Interview</h3></a>

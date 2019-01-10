@@ -1035,12 +1035,16 @@ main .home_page_slider .rslides_nav{    width: 31px; background-size: 100%;heigh
 	.our_Team_mbatrek .our_team_block ul li a{    min-height: 28vw;font-size: 3vw;}
 	.our_Team_mbatrek .our_team_block.intern_Team ul li{    width: 144px;}
 	.comany_conainer .how_We_engage ul li{width:100%;margin:0 0 40px 0;}
-	.comany_conainer .how_We_engage ul li > img{display:none;}
+	.comany_conainer .how_We_engage ul li > img{right: 0; left: 0;  margin: auto; bottom: -157px;}
+	.comany_conainer .how_We_engage ul.industry_3_analyis li > img{bottom: -208px;}
+	.comany_conainer .how_We_engage ul.industy_1_to_25 li > img{bottom: -205px;}
 	.comany_conainer .how_We_contaner ul li{width:100%;background: #fff;  padding: 10px 19px 20px 20px;}
 	.comany_conainer .how_We_contaner ul li .arrow_big{  transform: rotate(90deg);-webkit-transform: rotate(90deg);-moz-transform: rotate(90deg);  right: 0; left: 0;  margin: auto; bottom: -40px; top: auto;}
 	.comany_conainer .how_We_contaner ul li span.step_up{width:100%;min-height:54px;position:static;}
 	.comany_conainer .how_We_contaner ul li span.four_line{min-height:auto;padding: 12px 0 29px 0;}
 	.comany_conainer .how_We_contaner ul li span{min-height:auto;}
+	.comany_conainer .how_We_contaner ul {padding:0;}
+	.comany_conainer .how_We_contaner{padding-bottom:27px;}
 	
 }
  
