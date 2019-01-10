@@ -178,7 +178,7 @@
                         </div>
                         <div class="categories_container">
                             <?php foreach ($products as $product){
-                                $url = str_replace("#","",$product->title);
+                                $url = str_replace("#","",rtrim($product->title));
                                 $url = str_replace(" ","-",$url);
                                 $url = strtolower($url);
                             ?>

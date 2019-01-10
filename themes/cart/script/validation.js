@@ -162,7 +162,7 @@ $(document).ready(function(){
          if ($("#UsersNew_cpassword").val() == ""){
              validationMethod("error","Please confirm password.");return false;
          }
-         if ($("#UsersNew_cpassword").val() == $("#UsersNew_password").val()){
+         if ($("#UsersNew_cpassword").val() != $("#UsersNew_password").val()){
              validationMethod("error","Confirm password and Password must be same.");return false;
          }
      })
@@ -191,6 +191,9 @@ $(document).ready(function(){
         }
         if ($("#UsersNew_cpassword").val() == ""){
             validationMethod("error","Please confirm password.");return false;
+        }
+        if ($("#UsersNew_mobile_number").val() == ""  || !phonenumber($("#UsersNew_mobile_number").val())){
+            validationMethod("error","Please valid mobile number.");return false;
         }
         
         if(!$('#radio2').is(':checked') && !$('#radio3').is(':checked')) {

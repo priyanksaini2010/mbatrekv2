@@ -9,6 +9,7 @@ $ruleArray = array(
     'abhishek-srivastava' => 'site/page/view/abhishek',
     'alok-srivastava' => 'site/page/view/alok',
     'mbatrek-on-the-ground' => 'site/page/view/mbatrek_on_the_ground',
+    'mbatrek-campus' => 'site/page/view/mbatrek_on_the_ground',
     'support' => 'site/page/view/support',
     'interview-ready-registeration' => 'cart/interview',
     'industry-ready-registeration' => 'cart/industry',
@@ -23,7 +24,7 @@ $ruleArray = array(
     'videos/interngo' => 'site/videos/type/2',
     'videos/cxo-thoughts' => 'site/videos/type/3',
     'event-gallery' => 'site/page/view/event_gallery',
-    'campus-abassador' => 'site/page/view/campus_ambassador',
+    'campus-ambassador' => 'site/page/view/campus_ambassador',
     'campus-abassador-register' => 'cart/campus',
     'remove-coupon' => 'cart/removeCoupon',
     'copyright-notice' => 'site/page/view/copyright_notice',
@@ -48,6 +49,9 @@ $ruleArray = array(
     'contact' => 'contact/create/contact',
     'login' => 'site/login',
     'students' => 'cart/student',
+    'cart' => 'cart/cart',
+    'register' => 'cart/register',
+    'forgot-password' => 'site/forgot',
     'professionals' => 'cart/profesionals',
     'update-profile' => 'cart/profile',
     'change-password'=>'cart/changepassword',
@@ -59,6 +63,7 @@ $ruleArray = array(
 );
 $tempUrl = array_merge($blogUrlsForRules,$ruleArray);
 $tempUrl2 = array_merge($productsUrlsForRules,$tempUrl);
+//pr($productsUrlsForRules);
 $ruleArray = $tempUrl2;
 $flag = false;
 //echo "<pre>";print_r($ruleArray);die;

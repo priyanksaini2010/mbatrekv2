@@ -693,6 +693,7 @@ class CartController extends Controller {
         }
 
         public function actionPastorder(){
+            $model = new UsersNew();
             $this->render("webroot.themes.cart.views.cart.pastorder",array('model'=>$model));
         }
 
