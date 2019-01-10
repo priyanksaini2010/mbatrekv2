@@ -60,7 +60,7 @@
                                         <li><a href="<?php echo Yii::app()->createUrl('mock-interview'); ?>">Mock Interview</a></li>
                                         <li><a href="<?php echo Yii::app()->createUrl('interview-q&a'); ?>">Interview Q & A</a></li>
                                         <li><a href="<?php echo Yii::app()->createUrl('industry-analysis'); ?>">Industry Analysis</a></li>
-                                        <li><a href="<?php echo Yii::app()->createUrl('company-analysis-'); ?>">Company Analysis</a></li>
+                                        <li><a href="<?php echo Yii::app()->createUrl('company-analysis'); ?>">Company Analysis</a></li>
                                         <li><a href="<?php echo Yii::app()->createUrl('cracking-the-gd'); ?>">Cracking the GD</a></li>
                                     </ul>
 								</ul>
@@ -84,7 +84,7 @@
 							<li><a href="#" >Offerings <i class="pull-right fa fa-angle-double-right" aria-hidden="true"></i></a>
 								<ul>
                                     <li class="kopie"><a href="<?php echo Yii::app()->createUrl('industry-analysis'); ?>">Industry Analysis</a></li>
-                                    <li class="kopie"><a href="<?php echo Yii::app()->createUrl('company-analysis-'); ?>">Company Analysis</a></li>
+                                    <li class="kopie"><a href="<?php echo Yii::app()->createUrl('company-analysis'); ?>">Company Analysis</a></li>
                                     <li class="kopie"><a href="<?php echo Yii::app()->createUrl('resume-diagnostic'); ?>">Resume / CV Diagnostic</a></li>
                                     <li class="kopie"><a href="<?php echo Yii::app()->createUrl('linkedin-diagnostic'); ?>">LinkedIn Diagnostic</a></li>
                                     <li class="kopie"><a href="<?php echo Yii::app()->createUrl('mock-interview'); ?>">Mock Interview</a></li>
@@ -146,10 +146,10 @@
 							</li>
                 <li class="faq"><a href="javascript:void(0);">Campus Connect</a>
 									<ul >
-                    <li><a href="<?php echo Yii::app()->createUrl('campus-abassador'); ?>">Campus Ambassador Program</a></li>
+                    <li><a href="<?php echo Yii::app()->createUrl('campus-ambassador'); ?>">Campus Ambassador Program</a></li>
                     <li><a href="<?php echo Yii::app()->createUrl('interview-ready-competition'); ?>">#InterviewReady Competition</a></li>
                     <li><a href="<?php echo Yii::app()->createUrl('industry-ready-competition'); ?>">#IndustryReady Competition</a></li>
-                    <li><a href="<?php echo Yii::app()->createUrl('mbatrek-on-the-ground'); ?>">MBAtrek@Campus</a></li>
+                    <li><a href="<?php echo Yii::app()->createUrl('mbatrek-campus'); ?>">MBAtrek@Campus</a></li>
                   </ul>
 				</li>
 
@@ -181,7 +181,7 @@
 													<li><a href="<?php echo Yii::app()->createUrl('mock-interview'); ?>">Mock Interview</a></li>
 													<li><a href="<?php echo Yii::app()->createUrl('interview-q&a'); ?>">Interview Q & A</a></li>
 													<li><a href="<?php echo Yii::app()->createUrl('industry-analysis'); ?>">Industry Analysis</a></li>
-													<li><a href="<?php echo Yii::app()->createUrl('company-analysis-'); ?>">Company Analysis</a></li>
+													<li><a href="<?php echo Yii::app()->createUrl('company-analysis'); ?>">Company Analysis</a></li>
 													<li><a href="<?php echo Yii::app()->createUrl('cracking-the-gd'); ?>">Cracking the GD</a></li>
 												</ul>
 											</li>
@@ -203,7 +203,7 @@
 											<li><span>Offerings</span>
 												<ul>
 													<li><a href="<?php echo Yii::app()->createUrl('industry-analysis'); ?>">Industry Analysis</a></li>
-													<li><a href="<?php echo Yii::app()->createUrl('company-analysis-'); ?>">Company Analysis</a></li>
+													<li><a href="<?php echo Yii::app()->createUrl('company-analysis'); ?>">Company Analysis</a></li>
 													<li><a href="<?php echo Yii::app()->createUrl('resume-diagnostic'); ?>">Resume / CV Diagnostic</a></li>
 													<li><a href="<?php echo Yii::app()->createUrl('linkedin-diagnostic'); ?>">LinkedIn Diagnostic</a></li>
 													<li><a href="<?php echo Yii::app()->createUrl('mock-interview'); ?>">Mock Interview</a></li>

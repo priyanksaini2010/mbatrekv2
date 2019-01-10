@@ -36,7 +36,7 @@ foreach ($products as $c){
 
 
                                         <?php
-                                        $url = str_replace("#","",$icart->title);
+                                        $url = str_replace("#","",rtrim($icart->title));
                                         $url = str_replace(" ","-",$url);
                                         $url = strtolower($url);
                                         ?>

@@ -23,7 +23,9 @@
                         <?php echo $form->passwordField($model, 'password', array('class' => "form-control","placeholder"=>"Password*")); ?>
                         <input type="password" class="form-control" placeholder="Confirm Password*" id="UsersNew_cpassword"> 
                         <span class="password_rule">(Should be 8 character long and alphanumeric, special characters are not allowed)</span>
-						<!--
+                        <?php if($model->mobile_number != ''){ $data =  array('for' => "firstname",'class' => 'active');}else{$data =  array('for' => "firstname");};?>
+                        <?php echo $form->textField($model, 'mobile_number', array('class' => "form-control","placeholder"=>"Mobile Number*")); ?>
+                        <!--
                         <input type="radio" name="UsersNew[role]" checked="checked" value="1" id="checkboxG1_radio1" class="css-checkbox" />College Student 
                         <input type="radio" name="UsersNew[role]" value="2" id="checkboxG1_radio2" class="css-checkbox" />Young Professional-->
 						<div class="are_yu"><label>Are You?</label>

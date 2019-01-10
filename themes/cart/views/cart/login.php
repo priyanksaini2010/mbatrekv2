@@ -47,11 +47,11 @@
 								<div class="col-xs-12 col-md-12">
 									<div class="left-section">
 										<span>Or</span>
-										<a href="<?php echo Yii::app()->createUrl("site/forgot");?>">Forgot Password?</a>
+										<a href="<?php echo Yii::app()->createUrl("forgot-password");?>">Forgot Password?</a>
 									</div>
 									<div class="signu_div">
 											<span>Don’t have an account ? </span>
-                                                                                        <a href="<?php echo Yii::app()->createUrl("cart/register");?>"> Sign up now</a>
+                                                                                        <a href="<?php echo Yii::app()->createUrl("register");?>"> Sign up now</a>
 									</div>
 									 
 								</div>

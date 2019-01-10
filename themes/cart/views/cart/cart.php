@@ -48,7 +48,8 @@ if(isset(Yii::app()->user->id)){
                                     <ul>
                                     <li class="cart_icon">
                                         <?php
-                                        $url = str_replace("#","",$icart->product->title);
+                                        $url = str_replace("#","",rtrim($icart->product->title));
+
                                         $url = str_replace(" ","-",$url);
                                         $url = strtolower($url);
                                         ?>
