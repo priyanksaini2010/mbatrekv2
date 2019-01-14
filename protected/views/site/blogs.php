@@ -16,7 +16,7 @@ if(!isset($_GET['type'])){
     <div class="blog_header">
         <div class="container">
             <div class="col-md-4">
-                <div class="header_btn"><a class="<?php echo $typ == 1?"active_high":"";?>" href="<?php echo Yii::app()->createUrl('blogs/recent-updates');?>">Career Preparation</a></div>
+                <div class="header_btn"><a class="<?php echo $typ == 1?"active_high":"";?>" href="<?php echo Yii::app()->createUrl('blogs/career-preparation');?>">Career Preparation</a></div>
             </div>
             <div class="col-md-4">
                 <div class="header_btn"><a class="<?php echo $typ == 2?"active_high":"";?>" href="<?php echo Yii::app()->createUrl('blogs/job-ready');?>">Job Ready</a></div>
