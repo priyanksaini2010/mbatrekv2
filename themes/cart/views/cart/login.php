@@ -42,7 +42,7 @@
 						<div class="login-footer">
 							<div class="row">
 								<div class="col-xs-12 col-md-12 text-center">
-									<?php echo CHtml::submitButton('Login',array('class'=>"btn btn-large btn-danger")); ?>
+									<?php echo CHtml::submitButton('Login',array('class'=>"btn btn-large btn-danger","id"=>"login-submit")); ?>
 								</div>
 								<div class="col-xs-12 col-md-12">
 									<div class="left-section">
