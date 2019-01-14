@@ -382,15 +382,32 @@ class CartController extends Controller {
 
 		if(isset($_POST['CampusAmbassador']))
 		{
-                        $_POST['CampusAmbassador']['registeration_date'] = date("Y-m-d h:i:s");
+            $_POST['CampusAmbassador']['registeration_date'] = date("Y-m-d h:i:s");
 			$model->attributes=$_POST['CampusAmbassador'];
 			if($model->save()){
+
+			    //Sending Mail
+                $subject = "MBAtrek | Campus Ambassador | Registeration";
+                $template = getTemplate("ca");
+                $body = str_replace("{{SUBJECT}}", $subject, $template);
+
+                $headers="From: ".Yii::app()->params['adminEmail']." <".Yii::app()->params['adminEmail']."> \r\n".
+                    "Reply-To: ".Yii::app()->params['adminEmail']." \r\n";
+                $headers .= "MIME-Version: 1.0\r\n".
+                    "Content-Type: text/html; charset=UTF-8";
+                //Sending To User
+                $sentToUser = sendEmail($_POST['CampusAmbassador']['email_id'], $subject,$body,$headers);
+                //Sending To Admin
+                $subject = "MBAtrek | New Campus Ambassador | Registeration";
+                $sentToAdmin = sendEmail(Yii::app()->params['adminEmail'], $subject,$body,$headers);
+
+
 				$this->redirect(array('index','thankscampus'=>1));
-                        } else {
-                            foreach ($model->getErrors() as $error){
-                                $this->errors['email'] = $error[0];
-                            }
-                        }
+            } else {
+                foreach ($model->getErrors() as $error){
+                    $this->errors['email'] = $error[0];
+                }
+            }
 		}
 		$this->render("webroot.themes.cart.views.cart.campus",array("model"=>$model));
 
