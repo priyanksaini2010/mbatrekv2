@@ -172,7 +172,9 @@ var domain_name = '<?php echo $_SERVER['HTTP_HOST'].DIREC;?>';
                                 <div class="error_container">
                                     <p>
                                         <span id="pop-notification-text">
-                                            <span>Thank you for registering with MBAtrek, Please check your email to verify account.</span>
+                                            <span>Thank you for registering with MBAtrek</span>
+                                            <br /><br />
+                                            <span>Please check your email to verify account.</span>
                                             <br /> <br />
                                            <span>Check your SPAM if you have not recieved the email.</span>
                                             <br /><br />
