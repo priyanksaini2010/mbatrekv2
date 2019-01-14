@@ -44,7 +44,8 @@
 	 specialValidationMethodIndustry("thanks","no-message-from-here")
     <?php }?>
         <?php if(isset($_REQUEST['thanksverify'])){?>
-	 validationMethod("congrats","Thanks for registering with us. Your account has been verified now.")
+	 // validationMethod("congrats","Thanks for registering with us. Your account has been verified now.")
+    $('#myModal50').modal('show');
     <?php }?>
     <?php if(isset($_REQUEST['thanmscart'])){
         $type = ""
