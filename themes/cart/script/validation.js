@@ -477,14 +477,15 @@ $(document).ready(function(){
         
         if($(this).val() == 4){
             $("#IndustryReadyCompetition_name_of_college").show();
-            $("#question_1").show();
-            $("#question_2").show();
-            $("#question_3").show();
+            $("#IndustryReadyCompetition_question_2").show();
+            $("#IndustryReadyCompetition_question_1").show();
+            $("#IndustryReadyCompetition_question_3").show();
+
         } else {
             $("#IndustryReadyCompetition_name_of_college").hide();
-            $("#question_1").hide();
-            $("#question_2").hide();
-            $("#question_3").hide();
+            $("#IndustryReadyCompetition_question_1").hide();
+            $("#IndustryReadyCompetition_question_2").hide();
+            $("#IndustryReadyCompetition_question_3").hide();
         }
     });
     $("#InterviewReadyCompetition_college").change(function(){
