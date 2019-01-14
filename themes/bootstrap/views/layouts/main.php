@@ -32,8 +32,8 @@ $siteData = array(
 			array('label'=>'Coupon Managment', 'url'=>array('/couponCode/admin')),
             array('label'=>'Content Managment', 'url'=>array('/contentJson/admin')),
      array('label'=>'Banners Managment', 'url'=>array('/banners/admin')),
-//            array('label'=>'Feedback Managment', 'url'=>array('/feedback/admin')),
-//            array('label'=>'Contact Managment', 'url'=>array('/contact/admin')),
+            array('label'=>'Feedback Managment', 'url'=>array('/feedback/admin')),
+            array('label'=>'Contact Managment', 'url'=>array('/contact/admin')),
             array('label'=>'FAQ Managment', 'url'=>array('/faq/admin')),
            
 //            array('label'=>'FAQ Analysis', 'url'=>array('/faqAnalysis/admin')),
