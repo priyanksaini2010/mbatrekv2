@@ -944,6 +944,12 @@ user-select: none;
 	.comany_conainer .our_recomanded ul li{width: 26%;}
 	.comany_conainer .how_We_engage ul li{    margin: 0 40px 35px 40px;width: 261px;}
 	.comany_conainer .how_We_engage ul li > img{right: -6vw;}
+	.studen-wrapper .student-journey{display:none;}
+	.studen-wrapper >.student-title:nth-child(2){display:none;}
+	.student-top.young_top .student-internship .icon-holder{display:inline-block;}
+	.student-top.young_top .student-internship .icon-holder a .yound_need_help{margin:35px 64px 0px 29px;}
+	.student-top.young_top .student-placement {margin-bottom:43px;}
+	.step_professional .brecket_div{display:none;}
 	
 }
 @media (max-width: 991px) {
@@ -961,8 +967,15 @@ user-select: none;
 	.mbatek_strory .transfor_process .mbatrek_arrow ul li img.arrow_track{top: 13px;right: -20px;}
 	.mbatek_strory .transfor_process .mbatrek_arrow ul li{width:30%;}
 	main .our_Team_mbatrek .our_team_block ul li h3{font-size: 14px;}
-	
 	.comany_conainer .key_outcomes ul li{margin-bottom:20px;}
+	.studen-wrapper .student-top .icon-holder a{display:inline-block;}
+	.studen-wrapper .student-top .icon-holder a .icon{width:100%;max-width:100%;}
+	.studen-wrapper .student-top .icon-holder a .icon .icon-title{display:block;}
+	.studen-wrapper .student-top .icon-holder a .icon >img{width:100px;}
+	.studen-wrapper .student-top .student-internship .icon-holder .icon-title{margin-top:16px;}
+	.studen-wrapper .student-top .icon-holder a .icon-text{max-width:100%;}
+	.studen-wrapper .student-cta1 ul.student-cta1-listing > li .intern-type{padding:73px 19px 30px;}
+	.studen-wrapper .student-cta1-bottom-inner .buy-and-cart a{padding:7px 0 3px 0;min-width: 123px;}
 	
 }
 @media (max-width: 548px) {
@@ -1045,6 +1058,7 @@ main .home_page_slider .rslides_nav{    width: 31px; background-size: 100%;heigh
 	.comany_conainer .how_We_contaner ul li span{min-height:auto;}
 	.comany_conainer .how_We_contaner ul {padding:0;}
 	.comany_conainer .how_We_contaner{padding-bottom:27px;}
+	
 	
 }
  

@@ -1189,8 +1189,8 @@ footer .footer-logo{
         font-size: 16px;
     }
     .student-cta1 ul.student-cta1-listing > li{
-        width: 32%;
-        margin: 0 3px;
+        width: 299px;
+        margin: 0 3px 96px 0;
     }
     .student-cta1 .intern-link a{
         margin: 0 6px;
@@ -1347,7 +1347,7 @@ footer .footer-logo{
     }
     .icon-text{
         font-size: 16px;
-        padding: 15px;
+        padding: 41px 53px 40px 53px;
     }
     .student-title-inner{
         font-size: 26px;
