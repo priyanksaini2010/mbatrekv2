@@ -70,7 +70,26 @@ foreach ($products as $c){
                     </div>
                     <div class="col-md-4">
                         <div class="card_price">
+                            <div class="price_cart">
 
+                                <label>Sub Total (<?php echo count($icart)>1?count($icart)." Items":count($icart)." Item";?>): <span> &#8377 <?php echo money($total);?></span></label>
+                                <?php if(!empty($coupon)){?>
+                                    <label>You Save : <span> &#8377 <?php
+                                            if($discount_type == 1){
+                                                $total_dis = ceil(($total * $discount)/100);
+                                            }else {
+                                                $total_dis = $discount;
+                                            }
+                                            echo money($total_dis);
+                                            //                                    echo  "(".money(($total_dis/$total)*100)."%)";
+
+                                            ?></span></label>
+                                    <label> Total : <span> &#8377 <?php echo money($total - $total_dis);?></span></label>
+                                <?php }?>
+
+                                <a id="checkout-login" href="<?php echo Yii::app()->createUrl("login");?>">Checkout</a>
+
+                            </div>
                             <span class="promocode">Have a promocode? Enter here</span>
 							<?php if (!isset(Yii::app()->user->id)){?>
                                 <?php

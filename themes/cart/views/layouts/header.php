@@ -45,20 +45,20 @@
                   </ul>
                 </li>
                 <li class="service">
-                  <a href="javascript:void(0);" >Our Services </a>		
+                  <a id="our-services" href="javascript:void(0);" >Our Services </a>		
                   <ul>
                     <li>
-						<a href="<?php echo Yii::app()->createUrl('students'); ?>">Students <i class="pull-right fa fa-angle-double-right" aria-hidden="true"></i></a>
+						<a id="students" href="<?php echo Yii::app()->createUrl('students'); ?>">Students <i class="pull-right fa fa-angle-double-right" aria-hidden="true"></i></a>
 						<ul>
 							<li>
-								<a href="#">Offerings <i class="pull-right fa fa-angle-double-right" aria-hidden="true"></i></a>
+								<a  id="students-offerings" href="#">Offerings <i class="pull-right fa fa-angle-double-right" aria-hidden="true"></i></a>
 								<ul>
 
                                     <ul>
-                                        <li><a href="<?php echo Yii::app()->createUrl('resume-diagnostic'); ?>">Resume / CV Diagnostic</a></li>
-                                        <li><a href="<?php echo Yii::app()->createUrl('linkedin-diagnostic'); ?>">Linkedin Diagnostic</a></li>
-                                        <li><a href="<?php echo Yii::app()->createUrl('mock-interview'); ?>">Mock Interview</a></li>
-                                        <li><a href="<?php echo Yii::app()->createUrl('interview-q&a'); ?>">Interview Q & A</a></li>
+                                        <li ><a id="resume-diagnostic" href="<?php echo Yii::app()->createUrl('resume-diagnostic'); ?>">Resume / CV Diagnostic</a></li>
+                                        <li><a id="linkedin-diagnostic" href="<?php echo Yii::app()->createUrl('linkedin-diagnostic'); ?>">Linkedin Diagnostic</a></li>
+                                        <li><a id="mock-interview"  href="<?php echo Yii::app()->createUrl('mock-interview'); ?>">Mock Interview</a></li>
+                                        <li><a id="interview-q&a" href="<?php echo Yii::app()->createUrl('interview-q&a'); ?>">Interview Q & A</a></li>
                                         <li><a href="<?php echo Yii::app()->createUrl('industry-analysis'); ?>">Industry Analysis</a></li>
                                         <li><a href="<?php echo Yii::app()->createUrl('company-analysis'); ?>">Company Analysis</a></li>
                                         <li><a href="<?php echo Yii::app()->createUrl('cracking-the-gd'); ?>">Cracking the GD</a></li>
@@ -67,7 +67,7 @@
 							</li>     
 							<li><a href="#">Packages <i class="pull-right fa fa-angle-double-right" aria-hidden="true"></i></a> 
 								<ul>
-                                    <li><a href="<?php echo Yii::app()->createUrl('intern-go'); ?>">InternGO</a></li>
+                                    <li><a id="intern-go" href="<?php echo Yii::app()->createUrl('intern-go'); ?>">InternGO</a></li>
                                     <li><a href="<?php echo Yii::app()->createUrl('intern-ace'); ?>">InternACE</a></li>
                                     <li><a href="<?php echo Yii::app()->createUrl('intern-pro'); ?>">InternPRO</a></li>
                                     <li><a href="<?php echo Yii::app()->createUrl('intern-arise'); ?>">InternARISE</a></li>

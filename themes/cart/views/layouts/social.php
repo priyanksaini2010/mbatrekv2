@@ -120,7 +120,7 @@
                                     <span class="total-price"><?php echo money($total);?></span>
                                 </div>
                                 <div class="total">
-                                    <a style="background: none;" href="<?php echo Yii::app()->createUrl("cart",array());?>">View Cart</a>
+                                    <a style="background: none;" id="view-cart" href="<?php echo Yii::app()->createUrl("cart",array());?>">View Cart</a>
                                     <a style="background: none;" id="clear-cart" href="<?php echo Yii::app()->createUrl("cart/clearcart",array());?>">Clear Cart</a>
                                 </div>
 
