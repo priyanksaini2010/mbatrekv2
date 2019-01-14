@@ -875,17 +875,19 @@ class SiteController extends Controller
             
             $criteria=new CDbCriteria();
             $criteria->order = "date_updated desc";
-            $count=  Blogs::model()->count($criteria);
-            $pages=new CPagination($count);
-
-            // results per page
-            $pages->pageSize=4;
-            $pages->applyLimit($criteria);
+            $criteria->limit = 4;
+//            $count=  Blogs::model()->count($criteria);
+//            $pages=new CPagination($count);
+//
+//            // results per page
+//            $pages->pageSize=4;
+//            $pages->applyLimit($criteria);
             $latest=Blogs::model()->findAll($criteria);
+
             // display the login form
             $this->render('blogdetails', array(
                 'model' => $model,
-                'latests' => $latest,
+                'latest' => $latest,
             ));
 	}
         
