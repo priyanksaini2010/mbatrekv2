@@ -38,12 +38,16 @@ $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
                             'theme_advanced_statusbar_location' => 'bottom',
                         ),
                     )); ?>
+    <?php echo $form->textFieldRow($model,'date_created',array('class'=>'span5','maxlength'=>255)); ?>
+    <span>
+        Please Enter Date in Y-m-d h:i:s format e.g. <?php echo date("Y-m-d h:i:s");?>
+    </span>
 	<?php
-            if($model->isNewRecord) {
-                echo $form->hiddenField($model,'date_created',array('value'=>date("Y-m-d h:i:s")));
-            } else {
-                echo $form->hiddenField($model,'date_created',array('value'=>$model->date_created));
-            }
+//            if($model->isNewRecord) {
+//                echo $form->hiddenField($model,'date_created',array('value'=>date("Y-m-d h:i:s")));
+//            } else {
+//                echo $form->hiddenField($model,'date_created',array('value'=>$model->date_created));
+//            }
         ?>
 	<?php echo $form->hiddenField($model,'date_updated',array('value'=>date("Y-m-d h:i:s"))); ?>
 
