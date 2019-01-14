@@ -22,6 +22,7 @@ $this->menu=array(
 		'full_name',
 		'email',
 		'password',
+        'mobile_number',
 //		'update_subscription',
                 array(
                         'header'=>"Role",
