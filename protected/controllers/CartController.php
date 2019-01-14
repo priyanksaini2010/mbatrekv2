@@ -34,7 +34,7 @@ class CartController extends Controller {
                 array('allow', // allow all users to perform 'index' and 'view' actions
                     'actions' => array('captcha','removeCoupon','industry','interview','index', 'view','student',"addtocart","cart","remove","buynow","verify", 
                                         'profesionals','institutes','register',"description","checkout","removeCart","applypromo","story","campus","loginandapply","applygstin","clearcart",
-                                        "profile","pastorder","changepassword"),
+                                        "profile","pastorder","changepassword","checkout","gateway","payusurl","postpayment"),
                     'users' => array('*'),
                 ),
                 array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -60,7 +60,132 @@ class CartController extends Controller {
                 ),
             );
 	}
+        public function actionGateway(){
+            $this->layout = getCartLayot();
+            $this->render("webroot.themes.cart.views.cart.gateway",array());
+        }
 
+        public function actionPostpayment($status){
+            $this->layout = getCartLayot();
+            $flash = Yii::app()->user->getFlashes();
+            $order = CustomerOrder::model()->findByPk($flash['order_id']);
+            if($order->payment_gateway == 1){
+                $response = PayuResponse::model()->findByAttributes(array("order_id"=>$order->id));
+            } else if($order->payment_gateway == 2){
+                $response = PayuResponse::model()->findByAttributes(array("order_id"=>$order->id));
+                $responseBack = json_decode($response->response);
+                $reason = $responseBack->error_Message;
+            }
+            if($status == 2){
+                $this->render("webroot.themes.cart.views.cart.success");
+            } else {
+
+                $this->render("webroot.themes.cart.views.cart.failure",array("reason"=>$reason));
+            }
+        }
+
+        public function actionPayusurl(){
+
+            $order = CustomerOrder::model()->findByAttributes(array("ordfer_hash"=>$_REQUEST['txnid']));
+            $cartData = Cart::model()->findAllByAttributes(array("order_id"=>$order->id));
+            switch ($_REQUEST['status']){
+                case "success":
+                    $status = 2;
+                break;
+                default:
+                    $status = 3;
+                    break;
+            }
+            $order->attributes = array("status"=>$status);
+            if($order->save()){
+                $payuModel = new PayuResponse();
+                $payuModel->attributes = array(
+                    "order_id" => $order->id,
+                    "payu_response" => json_encode($_REQUEST),
+                    "date_created" => date("Y-m-d h:i:s"),
+                );
+                if($payuModel->save()){
+                    foreach($cartData as $item){
+                        $itemModel = Cart::model()->findByPk($item->id);
+                        $itemModel->attributes = array("status"=>2);
+                        if($itemModel->save()){
+
+                        } else{
+                            pr($itemModel->getErrors());
+                        }
+                    }
+
+                    if($status == 2){
+                        Yii::app()->user->setFlash('order_id', $order->id);
+                        $this->redirect(Yii::app()->createUrl("success"));
+                    } else {
+                        Yii::app()->user->setFlash('order_id', $order->id);
+                        $this->redirect(Yii::app()->createUrl("failure"));
+                    }
+
+
+                } else {
+                    pr($payuModel->getErrors());
+                }
+            } else {
+                pr($order->getErrors());
+            }
+        }
+
+	    public function actionCheckout($paymentGateWay){
+            $this->layout = false;
+            $cartData = Cart::model()->findAllByAttributes(array("user_id"=>Yii::app()->user->id,"status"=>1));
+            $userData = UsersNew::model()->findByPk(Yii::app()->user->id);
+            $order = new CustomerOrder();
+            $amount = 0;
+            foreach($cartData as $items){
+                $amount = $amount  + $items->product->price;
+            }
+            $order->attributes = array(
+                                        "user_id" => Yii::app()->user->id,
+                                        "ordfer_hash" => md5(generateRandomString(10)),
+                                        "order_amount" => $amount,
+                                        "payment_gateway" => $paymentGateWay,
+                                        "status" => 1,
+                                        "date_created" => date("Y-m-d h:i:s")
+                                    );
+
+            if($order->save()) {
+                foreach($cartData as $item){
+                    $itemModel = Cart::model()->findByPk($item->id);
+                    $itemModel->attributes = array("order_id"=>$order->id);
+                    if($itemModel->save()){
+                        $attribsArray = array(
+                            "transaction_id"=>$order->ordfer_hash,
+                            "email"=>$userData->email,
+                            "amount"=>$amount,
+                            "product_info"=>"MBATrek Subscription",
+                            "name"=>$userData->full_name,
+                            "mobile"=>$userData->mobile_number,
+                        );
+                        switch ($paymentGateWay){
+                            case 1:
+
+                                $this->render("webroot.themes.cart.views.cart.paytm",array("params"=>$attribsArray));
+                                break;
+                            case 2:
+                                $attribsArray['udf5'] = "BOLT_KIT_PHP7";
+                                $attribsArray['surl'] = "https://mbatrek.com/cart/payusurl";
+                                $hash=hash('sha512', Yii::app()->params['payu_merchant_id'].'|'.$attribsArray['transaction_id'].'|'.$attribsArray['amount'].'|'.$attribsArray['product_info'].'|'.$attribsArray['name'].'|'.$attribsArray['email'].'|||||'.$attribsArray['udf5'].'||||||'.Yii::app()->params['payu_salt']);
+                                $attribsArray['hash'] = $hash;
+                                $this->render("webroot.themes.cart.views.cart.payu",array("params"=>$attribsArray));
+                                break;
+                        }
+                    } else {
+                        pr($itemModel->getErrors());
+                    }
+                }
+
+            }else{
+                pr($order->getErrors());
+            }
+
+        }
 	    public function actionClearcart(){
             if(isset(Yii::app()->user->id)){
                 $items = Cart::model()->findAllByAttributes(array("user_id"=>Yii::app()->user->id,"status"=>1));
@@ -401,13 +526,13 @@ class CartController extends Controller {
             echo json_encode($status);die;
         }
         
-        public function actionCheckout(){
-            if(!isset(Yii::app()->user->id)){
-                 $this->redirect(array("site/login"));
-            }else {
-                $this->redirect(array("cart/checkout","underconst"=>1));
-            }
-        }
+//        public function actionCheckout(){
+//            if(!isset(Yii::app()->user->id)){
+//                 $this->redirect(array("site/login"));
+//            }else {
+//                $this->redirect(array("cart/checkout","underconst"=>1));
+//            }
+//        }
 
 
         public function actionAddtocart($id){

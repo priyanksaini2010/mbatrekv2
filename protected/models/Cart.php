@@ -33,7 +33,7 @@ class Cart extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('user_id, product_id, date_created, status', 'required'),
-			array('user_id, product_id, status', 'numerical', 'integerOnly'=>true),
+			array('user_id, product_id, status,order_id', 'numerical', 'integerOnly'=>true),
             array('gstin', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
@@ -52,6 +52,7 @@ class Cart extends CActiveRecord
 			'user' => array(self::BELONGS_TO, 'UsersNew', 'user_id'),
 			'product' => array(self::BELONGS_TO, 'Products', 'product_id'),
             'couponUsages' => array(self::HAS_MANY, 'CouponUsage', 'cart_id'),
+            'order' => array(self::BELONGS_TO, 'CustomerOrder', 'order_id'),
 		);
 	}
 
@@ -67,6 +68,7 @@ class Cart extends CActiveRecord
 			'date_created' => 'Date Created',
 			'status' => 'Status',
             'gstin' => 'Gstin',
+            'order_id' => "Order"
 		);
 	}
 
@@ -94,7 +96,7 @@ class Cart extends CActiveRecord
 		$criteria->compare('product_id',$this->product_id);
 		$criteria->compare('date_created',$this->date_created,true);
 		$criteria->compare('status',$this->status);
-
+        $criteria->compare('order_id',$this->order_id);
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));

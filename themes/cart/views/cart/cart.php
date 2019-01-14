@@ -102,7 +102,7 @@ if(isset(Yii::app()->user->id)){
                                 <label> Total : <span> &#8377 <?php echo money($total - $total_dis);?></span></label>
                                 <?php }?>
                                 
-                                <a href="<?php echo Yii::app()->createUrl("cart/checkout");?>">Checkout</a>
+                                <a href="<?php echo Yii::app()->createUrl("choose-payment-gateway");?>">Checkout</a>
 								<span>
                                     <input type="text" value="<?php echo $cartID->gstin;?>" class="input_field" id="gstin" name="GSTIN" placeholder="GSTIN ( if applicable )">
                                     <?php if($cartID->gstin != "" && !isset($_GET['update']) && $_GET['update'] !=1){?>

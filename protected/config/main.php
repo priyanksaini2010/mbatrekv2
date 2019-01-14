@@ -56,6 +56,11 @@ $ruleArray = array(
     'update-profile' => 'cart/profile',
     'change-password'=>'cart/changepassword',
     'past-order'=>'cart/pastorder.php',
+    "choose-payment-gateway" => "cart/gateway",
+    "paytm-checkout" => "cart/checkout/paymentGateWay/1",
+    "payu-checkout" => "cart/checkout/paymentGateWay/2",
+    "success" => "cart/postpayment/status/2",
+    "failure" => "cart/postpayment/status/3",
     'institutes' => 'site/page/view/educational_institute',
     '<controller:\w+>/<id:\d+>'=>'<controller>/view',
     '<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
@@ -202,6 +207,13 @@ return array(
 		'contactEmail'=>'contact@mbatrek.com',
 		'adminEmail'=>'info@mbatrek.com',
 		'noreply'=>'no-reply@mbatrek.com',
-                'url'=>'https://mbatrek.com/',
+        'url'=>'https://mbatrek.com/',
+//        "payu_merchant_id" => "uTUmfIq7",
+//        "payu_salt" => "ZbJSYLBwUJ",
+        "payu_merchant_id" => "gtKFFx",
+        "payu_salt" => "eCwWELxi",
+        "payu_url" => "https://secure.payu.in/_payment",
+        "payu_test_url" => "https://test.payu.in/_payment"
+//        "payu_test_url" => "https://secure.payu.in/_payment"
 	),
 );

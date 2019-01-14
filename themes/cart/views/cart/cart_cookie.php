@@ -70,13 +70,7 @@ foreach ($products as $c){
                     </div>
                     <div class="col-md-4">
                         <div class="card_price">
-                            <div class="price_cart">
-                                
-                                <label>Sub Total (<?php echo count($products)>1?count($products)." Items":count($products)." Item";?>): <span> &#8377 <?php echo money($total);?></span></label>
-                               
-                                <a href="<?php echo Yii::app()->createUrl("cart/checkout");?>">Checkout</a>
-                                <span><input type="text" class="input_field" name="GSTIN" placeholder="GSTIN ( if applicable )"></span>
-                            </div>
+
                             <span class="promocode">Have a promocode? Enter here</span>
 							<?php if (!isset(Yii::app()->user->id)){?>
                                 <?php

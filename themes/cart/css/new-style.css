@@ -2121,4 +2121,36 @@ header .mobile_menu .menu-text a .menu_cancle{display:none;}
  main{-webkit-transition: -webkit-transform .4s ease; transition: -webkit-transform .4s ease;  -o-transition: transform .4s ease; transition: transform .4s ease; transition: transform .4s ease,-webkit-transform .4s ease;  z-index: 1;}
 .home_page_slider ul li {list-style: none;}
 .mm-wrapper__blocker{background:rgba(0,0,0,0.8)!important;}
+
+
 .profile_user .col-md-12 .col-md-8 input[type="password"]{font-family: 'MyriadPro-Regular';font-size:17px;width:100%;border:1px solid #999;padding:6px 0 6px 10px;}
+
+
+
+
+.payment_select{width: 100%;float: left;}
+.payment_block{width: 100%;float: left;}
+.payment_block .payment_heading{color: #348786;font-size: 40px;margin:0;padding: 0 0 38px 0;font-family: 'MyriadPro-Semibold';}
+.img_payment{width: 26%;float: left;}
+.img_payment img{width: 100%;}
+.payment_button a{    transition: all 0.3s;
+	display: inline-block;
+	background: #348786;
+	font-size: 20px;
+	font-family: 'MyriadPro-Semibold';
+	color: #fff;
+	padding: 10px 30px 10px 30px;
+	border-radius: 6px;border:1px solid transparent;}
+.payment_button a:hover{color: #348786;background: #fff;border: 1px solid;}
+.payment_select ul li{list-style: none;width: 100%;float: left;margin: 0 0 53px 0;}
+.payment_button{width: 70%;float: left;padding: 50px 0 0 50px;}
+.order_sumery{width: 100%;float: left;border:2px solid #348786;border-radius: 20%;padding: 32px 50px;text-align: center;}
+.order_sumery h3{font-family: 'MyriadPro-Semibold';font-size: 29px;margin:0 0 15px 0;;color: #000;}
+.order_sumery ul li{list-style: none;}
+.order_icon{display: inline-block;width: 71px;text-align: center;}
+.order_icon img{width: 100%;}
+.order_icon span{color: #348786;display: block;font-family: 'MyriadPro-Regular';font-weight: normal;font-size: 18px;padding: 7px 0 0 0;}
+.order_rs{width: auto;display: inline-block;vertical-align: top;padding: 44px 0 0 26px;}
+.order_rs span{font-family: 'MyriadPro-Semibold';font-size: 24px;color: #348786;}
+.total_payment{width: 100%;float: left;text-align: center;padding:20px 0 0 0px;}
+.to
