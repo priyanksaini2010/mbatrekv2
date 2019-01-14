@@ -7,7 +7,7 @@ $baseUrl = Yii::app()->request->baseUrl;;
 <div class="bread_crum">
     <ul class="list-inline list-unstyled">
         <li><a href="<?php echo Yii::app()->getHomeUrl(); ?>"><i class="fa fa-home" aria-hidden="true"></i></a> <i class="fa fa-angle-right" aria-hidden="true"></i></li>
-        <li class="active"><a href="javascript:void(0);">Past Orders</a></li>
+        <li class="active"><a href="javascript:void(0);">Past <Orders></Orders></a></li>
     </ul>
 </div>
 <div class="page-wrapper">
@@ -53,12 +53,12 @@ $baseUrl = Yii::app()->request->baseUrl;;
                                         </li>
                                         <li class="cart_money">
                                             <div class="help_div">
-                                                <a href="javascript:void(0);">Need Help</a>
+                                                <a href="<?php echo Yii::app()->createUrl("frequently-asked-questions");?>">Need Help</a>
                                             </div>
-                                            <div class="review_div">
-                                                <a href="javascript:void(0);">Write a Review
-                                                </a>
-                                            </div>
+<!--                                            <div class="review_div">-->
+<!--                                                <a href="javascript:void(0);">Write a Review-->
+<!--                                                </a>-->
+<!--                                            </div>-->
                                         </li></ul>
 
 
