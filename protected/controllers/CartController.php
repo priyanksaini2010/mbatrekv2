@@ -73,7 +73,7 @@ class CartController extends Controller {
                 $response = PayuResponse::model()->findByAttributes(array("order_id"=>$order->id));
             } else if($order->payment_gateway == 2){
                 $response = PayuResponse::model()->findByAttributes(array("order_id"=>$order->id));
-                $responseBack = json_decode($response->response);
+                $responseBack = json_decode($response->payu_response);
                 $reason = $responseBack->error_Message;
             }
             if($status == 2){
