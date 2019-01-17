@@ -460,7 +460,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                 <div class="student-cta1-bottom-inner" id="interview_ready" >
                                                     <div class="student-cta1-bottom-title">
                                                         Interview Ready Combo Package
-                                                    <span class="combol_sub_Text">(50 Q & A + 3 Mock Interviews)</span>
+                                                    <span class="combol_sub_Text">(25 Q & A + 1 Mock Interview)</span>
                                                     </div>
                                                     <div class="student-cta1-bottom-sub-title">
                                                         Price ₹  <div class="line_trgh_com"><?php echo money($product->actuall_price);?></div><br>

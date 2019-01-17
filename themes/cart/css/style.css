@@ -1470,12 +1470,12 @@ footer .footer-logo{
         font-size: 20px;
     }
     .student-cta1-bottom-inner .buy-and-cart a{
-        margin: 0 5px;
+        margin: 0 5px 6px 5px;
     }
     .student-placement-title .student-placement-title-inner{
         font-size: 34px;
     }
-    .student-cta2 ul.student-cta-listing > li{
+    body .student-cta2 ul.student-cta-listing > li{
         width: 100%;
         margin: 0 0 110px;
     }
