@@ -185,19 +185,19 @@ $yog = CHtml::listData(YearOfGraduation::model()->findAll($criteria), "id", "yea
 											<div class="col-md-12">
 												<div class="form_amster_field">
 <!--													<input type="text" placeholder="Name of your Student Placement Coordinator / Student Committee Member *"/>-->
-                                                    <?php echo $form->textAreaRow($model,'question_1',array('rows'=>6, 'cols'=>50, 'class'=>'span8','label'=>false,'placeholder'=>$model->getAttributeLabel("question_1"))); ?>
+                                                    <?php echo $form->textAreaRow($model,'question_1',array("style"=>"display:none",'rows'=>6, 'cols'=>50, 'class'=>'span8','label'=>false,'placeholder'=>$model->getAttributeLabel("question_1"))); ?>
 												</div>
 											</div>
 											<div class="col-md-12">
 												<div class="form_amster_field">
 <!--													<input type="text" placeholder="Email of your Student Placement Coordinator / Student Committee Member * "/>-->
-                                                    <?php echo $form->textAreaRow($model,'question_2',array('rows'=>6, 'cols'=>50, 'class'=>'span8','label'=>false,'placeholder'=>$model->getAttributeLabel("question_2"))); ?>
+                                                    <?php echo $form->textAreaRow($model,'question_2',array("style"=>"display:none",'rows'=>6, 'cols'=>50, 'class'=>'span8','label'=>false,'placeholder'=>$model->getAttributeLabel("question_2"))); ?>
 												</div>
 											</div>
 											<div class="col-md-12">
 												<div class="form_amster_field">
 <!--													<input type="text" placeholder="Mobile No of your Student Placement Coordinator / Student Committee Member"/>-->
-                                                    <?php echo $form->textAreaRow($model,'question_3',array('rows'=>6, 'cols'=>50, 'class'=>'span8','label'=>false,'placeholder'=>$model->getAttributeLabel("question_3"))); ?>
+                                                    <?php echo $form->textAreaRow($model,'question_3',array("style"=>"display:none",'rows'=>6, 'cols'=>50, 'class'=>'span8','label'=>false,'placeholder'=>$model->getAttributeLabel("question_3"))); ?>
 												</div>
 											</div>
                                             <?php if (CCaptcha::checkRequirements()): ?>
@@ -207,8 +207,8 @@ $yog = CHtml::listData(YearOfGraduation::model()->findAll($criteria), "id", "yea
                                                         <?php $this->widget('CCaptcha'); ?>
                                                         <?php echo $form->textField($model, 'verifyCode'); ?>
                                                     </div>
-                                                    <div class="hint">Please enter the letters as they are shown in the image above.
-                                                        <br/>Letters are not case-sensitive.</div>
+                                                    <div class="hint">Please enter the characters as they are shown in the image above.
+                                                        <br/>Characters are not case-sensitive.</div>
                                                     <?php echo $form->error($model, 'verifyCode'); ?>
                                                 </div>
                                             <?php endif; ?>
