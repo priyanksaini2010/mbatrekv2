@@ -283,12 +283,12 @@ var domain_name = '<?php echo $_SERVER['HTTP_HOST'].DIREC;?>';
                     </div>-->
                     <div class="modal-body">
                         <div class="md-content">
-                            <h3 id="pop-notification-type-2">Clear Cart</h3>
+                            <h3 id="pop-notification-type-2">Confirm Action</h3>
                             <div class="error_wrap">
                                 <div class="error_container">
                                     <p><!--<i class="fa fa-check" id="pop-notification-class" aria-hidden"true"=""></i>-->
                                         <span id="pop-notification-text">
-                                            <span>Are you sure you want to remove all item from your cart?</span>
+                                            <span>Are you sure you want to remove all products from your cart?</span>
                                         <button type="button" value="Yes" alt="" id="clear-yes">Yes</button>
                                         <button type="button" value="No" id="clear-no">No</button>
                                         </span></p>
