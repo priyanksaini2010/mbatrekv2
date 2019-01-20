@@ -1,4 +1,4 @@
-<?php $this->setPageTitle('Payment Failed');
+<?php $this->setPageTitle('Payment Successfull');
 $baseUrl = Yii::app()->request->baseUrl;
 ?>
 
