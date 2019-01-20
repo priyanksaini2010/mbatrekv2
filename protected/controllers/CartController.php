@@ -749,7 +749,7 @@ class CartController extends Controller {
                         "date_created" =>date("Y-m-d h:i:s"),
                     );
                     if($model->save()){
-                        $this->redirect(Yii::app()->createUrl("cart/cart"));
+                        $this->redirect(Yii::app()->createUrl("choose-payment-gateway"));
                     } else {
 
                         foreach($model->getErrors() as $key=>$err){
