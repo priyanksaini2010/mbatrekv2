@@ -39,7 +39,7 @@
 						<img src="<?php echo $baseUrl; ?>/images/linked_img.jpg"/>
 						<h2>MBAtrek Private Limited</h2>
 
-                        <a href="https://www.instagram.com/mbatrek/">Follow Us on Instagram</a>
+                        <a target="_blank" href="https://www.instagram.com/mbatrek/">Follow Us on Instagram</a>
 					</div>
 					<div class="feeds_blocks">
 					<?php $feeds = getInstaFeeds();
