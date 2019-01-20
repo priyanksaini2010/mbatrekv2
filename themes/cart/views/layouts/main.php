@@ -255,18 +255,46 @@ var domain_name = '<?php echo $_SERVER['HTTP_HOST'].DIREC;?>';
                     </div>-->
                     <div class="modal-body">
                         <div class="md-content">
-                            <h3 id="pop-notification-type-2">Registration Successful</h3>
+                            <h3 id="pop-notification-type-2">Remove Item</h3>
                             <div class="error_wrap">
                                 <div class="error_container">
                                     <p><!--<i class="fa fa-check" id="pop-notification-class" aria-hidden"true"=""></i>-->
                                         <span id="pop-notification-text">
-                                            <span>Are you sure you want to remove this item from your cart.</span>
+                                            <span>Are you sure you want to remove this item from your cart?</span>
                                         <button type="button" value="Yes" alt="" id="remove-yes">Yes</button>
                                         <button type="button" value="No" id="remove-no">No</button>
                                         </span></p>
                                 </div>
                                 <!-- <button class="md-close">OK</button> -->
 <!--                                <div class="main_register"><div class="site_btn"><a data-dismiss="modal" class="close" href="javascript:void(0);">OK</a></div></div>-->
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div id="myModal-clearcart" class="modal" data-easein="shake" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!--<div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h4 class="modal-title">Modal header</h4>
+                    </div>-->
+                    <div class="modal-body">
+                        <div class="md-content">
+                            <h3 id="pop-notification-type-2">Clear Cart</h3>
+                            <div class="error_wrap">
+                                <div class="error_container">
+                                    <p><!--<i class="fa fa-check" id="pop-notification-class" aria-hidden"true"=""></i>-->
+                                        <span id="pop-notification-text">
+                                            <span>Are you sure you want to remove all item from your cart?</span>
+                                        <button type="button" value="Yes" alt="" id="clear-yes">Yes</button>
+                                        <button type="button" value="No" id="clear-no">No</button>
+                                        </span></p>
+                                </div>
+                                <!-- <button class="md-close">OK</button> -->
+                                <!--                                <div class="main_register"><div class="site_btn"><a data-dismiss="modal" class="close" href="javascript:void(0);">OK</a></div></div>-->
                             </div>
                         </div>
                     </div>

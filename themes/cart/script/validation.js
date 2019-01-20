@@ -121,9 +121,17 @@ $(document).ready(function(){
     });
     $("#clear-cart").click(function(e){
         e.preventDefault();
-        if(confirm("Are you sure you want remove all products from your cart?")){
-            window.location.href = 'https://'+domain_name+"cart/clearcart";
-        }
+        // $("#remove-yes").attr("alt",$(this).val())
+        $("#myModal-clearcart").show()
+        // if(confirm("Are you sure you want remove all products from your cart?")){
+        //     window.location.href = 'https://'+domain_name+"cart/clearcart";
+        // }
+    });
+    $("#clear-no").click(function(){
+        $("#myModal-clearcart").hide()
+    });
+    $("#clear-yes").click(function(){
+        window.location.href = 'https://'+domain_name+"cart/clearcart";
     });
      $("#gstin-apply").click(function(){
          $.ajax({
