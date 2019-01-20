@@ -11,7 +11,9 @@
 				<div class="linked_in_feeds">
 					<div class="linked_header">
 						<img src="<?php echo $baseUrl; ?>/images/linked_img.jpg"/>
-						<h2>LinkedIn</h2>
+						<h2>MBAtrek Private Limited</h2>
+                        <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
+                        <script type="IN/FollowCompany" data-id="7955944" data-counter="top"></script>
 					</div>
 					<div class="feeds_blocks">
 					<?php $feeds = getLinkedInFeeds();
@@ -35,7 +37,9 @@
 				<div class="linked_in_feeds">
 					<div class="linked_header">
 						<img src="<?php echo $baseUrl; ?>/images/linked_img.jpg"/>
-						<h2>Instagram</h2>
+						<h2>MBAtrek Private Limited</h2>
+
+                        <a href="https://www.instagram.com/mbatrek/">Follow Us on Instagram</a>
 					</div>
 					<div class="feeds_blocks">
 					<?php $feeds = getInstaFeeds();
@@ -64,7 +68,10 @@
 			<div class="linked_in_feeds">
 					<div class="linked_header">
 						<img src="<?php echo $baseUrl; ?>/images/linked_img.jpg"/>
-						<h2>Youtube</h2>
+						<h2>MBAtrek Private Limited</h2>
+                        <script src="https://apis.google.com/js/platform.js"></script>
+
+                        <div class="g-ytsubscribe" data-channelid="UCJg7bO36Hii_AXTDL6TLY4A" data-layout="default" data-count="default"></div>
 					</div>
 					<div class="feeds_blocks">
                 <?php $feeds = getYoutubeFeeds();
