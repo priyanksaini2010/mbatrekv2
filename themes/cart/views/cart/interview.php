@@ -124,7 +124,7 @@ $yog = CHtml::listData(YearOfGraduation::model()->findAll($criteria), "id", "yea
                                     <?php echo $form->textField($model, 'verifyCode'); ?>
                                 </div>
                                 <div class="hint">Please enter the characters as they are shown in the image above.
-                                    <br/>characters are not case-sensitive.</div>
+                                    <br/>Characters are not case-sensitive.</div>
                                 <?php echo $form->error($model, 'verifyCode'); ?>
                             </div>
                         <?php endif; ?>
