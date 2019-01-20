@@ -125,7 +125,7 @@ if(!empty($leftContent) || !empty($rightContent) || !empty($rightContent_2)) {
                 <?php }?>
             </div>
             <div class="want_to_get">
-                <h3><?php echo $text_bottom;?> <a href="<?php echo Yii::app()->createUrl("contact-us");?>">Click Here</a></h3>
+                <h3><?php echo $text_bottom;?> <a href="<?php echo Yii::app()->createUrl("contact");?>">Click Here</a></h3>
             </div>
         </div>
     </div>
