@@ -680,7 +680,12 @@ class SiteController extends Controller
                             if (Yii::app()->user->admin == 0) {
                                 $this->redirect(Yii::app()->createUrl('/usersNew/admin',array("role"=>1)));
                             }  else {
-                                $this->redirect(Yii::app()->createUrl('cart/index'));
+                                if($_REQUEST['b'] == 1){
+                                    $this->redirect(Yii::app()->createUrl("choose-payment-gateway"));
+                                }else {
+                                    $this->redirect(Yii::app()->createUrl('cart/index'));
+                                }
+
                             }
                         } else {
                             foreach($model->getErrors() as $key=>$errors){

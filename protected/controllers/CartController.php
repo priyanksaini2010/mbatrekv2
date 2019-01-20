@@ -764,7 +764,22 @@ class CartController extends Controller {
                 
                 
             }else {
-                $this->redirect(Yii::app()->createUrl("site/login"));
+                if(isset($_COOKIE['products'])){
+
+                    $cookieCart = unserialize($_COOKIE['products']);
+                    if(!in_array($id,$cookieCart)){
+                        $cookieCart[] = $id;
+                        setcookie("products", serialize($cookieCart),strtotime( '+30 days' ),DIREC);
+                    } else {
+                        $this->errors["exist"] = "This product already exist in your cart.";
+                        $this->render("webroot.themes.cart.views.cart.cart",array());
+                    }
+                } else {
+
+                    $cookieCart = array($id);
+                    setcookie("products", serialize($cookieCart),strtotime( '+30 days' ),DIREC);
+                }
+                $this->redirect(Yii::app()->createUrl("site/login",array("b"=>1)));
             }
         }
 
