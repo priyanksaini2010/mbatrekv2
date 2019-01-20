@@ -50,10 +50,7 @@ if(!isset($_GET['type'])){
                     <?php foreach ($blogs as $blog){?>
                     <div class="col-md-4 col-sm-4 col-xs-6">
                         <div class="blog_block">
-                            <ul class="list-unstyled">
-                                <li><span class="date_blog"><?php echo date("d", strtotime($blog->date_created));?></span> <span class="month_blog"><?php echo date("M", strtotime($blog->date_created));?></span></li>
-                                <!--<li><img src="images/comment_icon.png" alt="" /> <span class="comment_blog"><//?php //echo date("y", strtotime($blog->date_created));?></span></li>-->
-                            </ul>
+
                             <div class="blog_img"><img class="img-responsive" src="<?php echo Yii::app()->baseUrl;?>/assets/blogs/<?php echo $blog->background_image;?>" alt="" /></div>
                             <div class="blog_content">
                                 <div class="blog_info"><a href="<?php echo Yii::app()->createUrl("blogs/".$blog->id);?>"><?php echo $blog->title;?></a>
