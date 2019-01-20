@@ -33,7 +33,8 @@
                         <label class="profile_user">Mobile Number:</label>
                     </div>
                     <div class="col-md-8">
-                        <input type="text" name="UsersNew[mobile_number]" id="profile-mobile-number" value="<?php echo $model->mobile_number;?>" placeholder="<?php echo $model->mobile_number;?>"/>
+                        <input type="text" autofocus="autofocus" name="UsersNew[mobile_number]" id="profile-mobile-number" value="<?php echo $model->mobile_number;?>" placeholder="<?php echo $model->mobile_number;?>"/>
+                        <a href="javascript:void('0')"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                     </div>
                 </div>
                 <div class="col-md-12">
