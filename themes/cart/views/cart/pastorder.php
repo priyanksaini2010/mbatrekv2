@@ -67,6 +67,11 @@ $baseUrl = Yii::app()->request->baseUrl;;
 
                                 <!--<a class="View_cart" href="">View Cart</a>-->
                             </div>
+							<div class="no_past_order">
+								<p>No order yet ! would you like to check out are Career Basket ?</p>
+								<a href="javascript:void(0);">Yes</a>
+								<a href="javascript:void(0);">Latter</a>
+							</div>
                         </div>
 
                     </div>

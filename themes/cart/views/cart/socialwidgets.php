@@ -38,8 +38,9 @@
 					<div class="linked_header">
 						<img src="<?php echo $baseUrl; ?>/images/linked_img.jpg"/>
 						<h2>MBAtrek Private Limited</h2>
-
-                        <a target="_blank" href="https://www.instagram.com/mbatrek/">Follow Us on Instagram</a>
+						<div class="linked_link">
+                        <a class="" target="_blank" href="https://www.instagram.com/mbatrek/">Follow Us on Instagram</a>
+						</div>
 					</div>
 					<div class="feeds_blocks">
 					<?php $feeds = getInstaFeeds();
