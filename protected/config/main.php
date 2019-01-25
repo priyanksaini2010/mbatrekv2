@@ -51,6 +51,7 @@ $ruleArray = array(
     'students' => 'cart/student',
     'cart' => 'cart/cart',
     'applypromo' => 'cart/applypromo',
+    'applygstin' => 'cart/applygstin',
     'register' => 'cart/register',
     'forgot-password' => 'site/forgot',
     'professionals' => 'cart/profesionals',
