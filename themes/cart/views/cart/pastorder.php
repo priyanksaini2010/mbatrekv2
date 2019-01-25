@@ -17,9 +17,12 @@ $baseUrl = Yii::app()->request->baseUrl;;
                 <div class="cart_wrapper">
 
                     <div class="row">
+
                         <div class="col-md-12">
+                            <?php if(!empty($orders)){?>
                             <div class="cart_detail">
                                 <h3 class="past-order_Text">Past Orders </h3>
+
                                 <?php foreach ($orders as $order){
                                     foreach($order->carts as $item){
                                         $url = str_replace("#","",rtrim($item->product->title));
@@ -65,13 +68,16 @@ $baseUrl = Yii::app()->request->baseUrl;;
                                 </div>
                                 <?php }}?>
 
+
                                 <!--<a class="View_cart" href="">View Cart</a>-->
                             </div>
+                            <?php }else{?>
 							<div class="no_past_order">
 								<p>No order yet ! would you like to check out are Career Basket ?</p>
 								<a href="javascript:void(0);">Yes</a>
 								<a href="javascript:void(0);">Latter</a>
 							</div>
+                            <?php }?>
                         </div>
 
                     </div>
