@@ -8,8 +8,20 @@ $productActuall = Products::model()->findByPk($id);
         <div class="row">
             <div class="col-md-8">
                 <div class="company_left">
-                    <h3><?php echo $product->title; ?>
-                    </h3>
+                    <h3><?php echo $product->title; ?> </h3>
+					<div class="sample_block">
+						<ul>
+							<li>
+								<a href="javascript:void(0);"><img src="images/abc.png"/></a>
+							</li>
+							<li>
+								<a href="javascript:void(0);"><img src="images/abc.png"/></a>
+							</li>
+							<li>
+								<a href="javascript:void(0);"><img src="images/abc.png"/></a>
+							</li>
+						</ul>
+					</div>
                     <?php echo $product->description; ?>
                 </div>
             </div>

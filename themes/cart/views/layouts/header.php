@@ -52,7 +52,7 @@
 						<ul>
 							<li>
 								<a  id="students-offerings" href="#">Offerings <i class="pull-right fa fa-angle-double-right" aria-hidden="true"></i></a>
-								<ul>
+								
 
                                     <ul>
                                         <li ><a id="resume-diagnostic" href="<?php echo Yii::app()->createUrl('resume-diagnostic'); ?>">Resume / CV Diagnostic</a></li>
@@ -63,7 +63,7 @@
                                         <li><a href="<?php echo Yii::app()->createUrl('company-analysis'); ?>">Company Analysis</a></li>
                                         <li><a href="<?php echo Yii::app()->createUrl('cracking-the-gd'); ?>">Cracking the GD</a></li>
                                     </ul>
-								</ul>
+								
 							</li>     
 							<li><a href="#">Packages <i class="pull-right fa fa-angle-double-right" aria-hidden="true"></i></a> 
 								<ul>

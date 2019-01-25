@@ -302,7 +302,7 @@ padding: 7px 0 7px 0;border-radius:2px;
 .home-cta-wrapper{width: 100%;float: left;}
 main{
     padding: 45px 0 20px;
-    width: 100%;float: left;
+    width: 100%;display:inline-block;
 }
 footer{
     background: url("../images/footer-bg.png");
