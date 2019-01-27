@@ -45,7 +45,7 @@ class IndustryReadyCompetition extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('first_name, last_name, mobile_number, email_id, team_name, first_name_1, last_name_1, mobile_number_1, email_Id_1, first_name_2, last_name_2, mobile_number_2, email_Id_2, mba_batch, college, registeration_date', 'required'),
+			array('first_name, last_name, mobile_number, email_id, team_name, first_name_1, last_name_1, mobile_number_1, email_Id_1,mba_batch, college, registeration_date', 'required'),
 			array('mba_batch, college', 'numerical', 'integerOnly'=>true),
 			array('first_name, last_name, mobile_number, email_id, team_name, first_name_1, last_name_1, mobile_number_1, email_Id_1, first_name_2, last_name_2, mobile_number_2, email_Id_2, name_of_college', 'length', 'max'=>255),
 			array('question_1, question_2, question_3', 'safe'),
@@ -84,10 +84,10 @@ class IndustryReadyCompetition extends CActiveRecord
 			'first_name_1' => 'First Name *',
 			'last_name_1' => 'Last Name *',
 			'mobile_number_1' => 'Mobile Number *',
-			'email_Id_1' => 'Email Id *',
-			'first_name_2' => 'First Name *',
-			'last_name_2' => 'Last Name *',
-			'mobile_number_2' => 'Mobile Number *',
+			'email_Id_1' => 'Email Id',
+			'first_name_2' => 'First Name',
+			'last_name_2' => 'Last Name',
+			'mobile_number_2' => 'Mobile Number',
 			'email_Id_2' => 'Email Id *',
 			'mba_batch' => 'Mba Batch',
 			'college' => 'College',

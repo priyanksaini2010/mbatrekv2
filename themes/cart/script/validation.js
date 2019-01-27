@@ -5,7 +5,7 @@ function phonenumber(mobNum)
 
     if (filter.test(mobNum)) {
         if (mobNum.length == 10) {
-            return true
+            return true;
         } else {
             return false;
         }
@@ -21,7 +21,7 @@ function passwords(pass)
 
     if (filter.test(pass)) {
         if (pass.length >= 8) {
-            return true
+            return true;
         } else {
             return false;
         }
@@ -421,21 +421,21 @@ $(document).ready(function(){
             validationMethod("error","Please enter valid email of member 2.");return false;
         }
         //Member 3 Validation
-        if ($("#IndustryReadyCompetition_first_name_2").val() == ""){
-            validationMethod("error","Please enter first name of member 3.");
-            return false;
-        }
-        if ($("#IndustryReadyCompetition_last_name_2").val() == ""){
-            validationMethod("error","Please enter last name of member 3.");
-            return false;
-        }
-        if ($("#IndustryReadyCompetition_mobile_number_2").val() == "" || !phonenumber($("#IndustryReadyCompetition_mobile_number_2").val())){
-            validationMethod("error","Please enter valid mobile number of member 3.");
-            return false;
-        }
-        if ($("#IndustryReadyCompetition_email_Id_2").val() == "" || !validateEmail($("#IndustryReadyCompetition_email_Id_2").val())){
-            validationMethod("error","Please enter valid email of member 3.");return false;
-        }
+        // if ($("#IndustryReadyCompetition_first_name_2").val() == ""){
+        //     validationMethod("error","Please enter first name of member 3.");
+        //     return false;
+        // }
+        // if ($("#IndustryReadyCompetition_last_name_2").val() == ""){
+        //     validationMethod("error","Please enter last name of member 3.");
+        //     return false;
+        // }
+        // if ($("#IndustryReadyCompetition_mobile_number_2").val() == "" || !phonenumber($("#IndustryReadyCompetition_mobile_number_2").val())){
+        //     validationMethod("error","Please enter valid mobile number of member 3.");
+        //     return false;
+        // }
+        // if ($("#IndustryReadyCompetition_email_Id_2").val() == "" || !validateEmail($("#IndustryReadyCompetition_email_Id_2").val())){
+        //     validationMethod("error","Please enter valid email of member 3.");return false;
+        // }
         //Member Validation Ends
         if ($("#IndustryReadyCompetition_mba_batch").val() == ""){
             validationMethod("error","Please select a MBA batch.");
