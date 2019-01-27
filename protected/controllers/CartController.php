@@ -50,7 +50,32 @@ class CartController extends Controller {
                 ),
             );
         }
-          
+
+        private function sendOrderMail($params, $status = 1){
+            if($status == 1){
+                $subjectAdmin = "New Order Recieved";
+                $subject = "Your Order Was Successfull";
+                $template = getTemplate("order_success");
+            } else {
+                $subjectAdmin = "Order Failed";
+                $subject = "Your Order Was Failed";
+                $template = getTemplate("order_failure");
+            }
+
+            $body = str_replace("{{ORDER_ID}}", $params['order_id'], $template);
+
+            $headers="From: ".Yii::app()->params['adminEmail']." <".Yii::app()->params['adminEmail']."> \r\n".
+                "Reply-To: ".Yii::app()->params['adminEmail']." \r\n";
+            $headers .= "MIME-Version: 1.0\r\n".
+                "Content-Type: text/html; charset=UTF-8";
+
+            $sentToUser = sendEmail($params['email'], $subject,$body,$headers);
+
+            $sentToAdmin = sendEmail(Yii::app()->params['adminEmail'], $subjectAdmin,$body,$headers);
+            if($sentToUser && $sentToAdmin){
+                return true;
+            }
+        }
         public function actions(){
             return array(
                 // captcha action renders the CAPTCHA image displayed on the contact page
@@ -85,6 +110,7 @@ class CartController extends Controller {
         }
         public function actionPaytmsurl(){
 //            pr($_REQUEST);
+            $userData = UsersNew::model()->findByPk(Yii::app()->user->id);
             $order = CustomerOrder::model()->findByAttributes(array("ordfer_hash"=>$_REQUEST['ORDERID']));
             $cartData = Cart::model()->findAllByAttributes(array("order_id"=>$order->id));
             switch ($_REQUEST['STATUS']){
@@ -113,11 +139,14 @@ class CartController extends Controller {
                             pr($itemModel->getErrors());
                         }
                     }
-
+                    $mailParams = array("order_id"=>$order->ordfer_hash,"email"=>$userData->email);
                     if($status == 2){
+
+                        $this->sendOrderMail($mailParams,1);
                         Yii::app()->user->setFlash('order_id', $order->id);
                         $this->redirect(Yii::app()->createUrl("success"));
                     } else {
+                        $this->sendOrderMail($mailParams,2);
                         Yii::app()->user->setFlash('order_id', $order->id);
                         $this->redirect(Yii::app()->createUrl("failure"));
                     }
@@ -131,7 +160,7 @@ class CartController extends Controller {
             }
         }
         public function actionPayusurl(){
-
+            $userData = UsersNew::model()->findByPk(Yii::app()->user->id);
             $order = CustomerOrder::model()->findByAttributes(array("ordfer_hash"=>$_REQUEST['txnid']));
             $cartData = Cart::model()->findAllByAttributes(array("order_id"=>$order->id));
             switch ($_REQUEST['status']){
@@ -160,11 +189,13 @@ class CartController extends Controller {
                             pr($itemModel->getErrors());
                         }
                     }
-
+                    $mailParams = array("order_id"=>$order->ordfer_hash,"email"=>$userData->email);
                     if($status == 2){
+                        $this->sendOrderMail($mailParams,1);
                         Yii::app()->user->setFlash('order_id', $order->id);
                         $this->redirect(Yii::app()->createUrl("success"));
                     } else {
+                        $this->sendOrderMail($mailParams,2);
                         Yii::app()->user->setFlash('order_id', $order->id);
                         $this->redirect(Yii::app()->createUrl("failure"));
                     }
@@ -189,7 +220,7 @@ class CartController extends Controller {
             }
             $order->attributes = array(
                                         "user_id" => Yii::app()->user->id,
-                                        "ordfer_hash" => md5(generateRandomString(4)),
+                                        "ordfer_hash" => generateRandomString(6),
                                         "order_amount" => $amount,
                                         "payment_gateway" => $paymentGateWay,
                                         "status" => 1,
@@ -424,9 +455,15 @@ class CartController extends Controller {
 		$this->layout = getCartLayot();
 		$this->render("webroot.themes.cart.views.cart.home",array());
 	}
-	public function actionStory(){
+	public function actionStory($subtype=1){
 		$this->layout = getCartLayot();
-		$this->render("webroot.themes.cart.views.cart.story",array());
+        $criteria=new CDbCriteria();
+//        $criteria->order = "date_updated desc";
+        $criteria->addCondition("sub_type = ".$subtype);
+        $models=SuccessStory::model()->findAll($criteria);
+
+
+		$this->render("webroot.themes.cart.views.cart.story",array("models"=>$models,"subtype"=>$subtype));
 	}
 	
 	public function actionStudent(){
@@ -873,9 +910,9 @@ class CartController extends Controller {
                         $body = str_replace("{{LINK}}", $link, $body);
 
                         $headers="From: ".Yii::app()->params['adminEmail']." <".Yii::app()->params['adminEmail']."> \r\n".
-                                        "Reply-To: ".Yii::app()->params['adminEmail']." \r\n";
+                            "Reply-To: ".Yii::app()->params['adminEmail']." \r\n";
                         $headers .= "MIME-Version: 1.0\r\n".
-                                            "Content-Type: text/html; charset=UTF-8";
+                            "Content-Type: text/html; charset=UTF-8";
 
                         $sentToUser = sendEmail($_POST['UsersNew']['email'], $subject,$body,$headers);
                         $subject = "New Account has been created.";
