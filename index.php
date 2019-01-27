@@ -1,7 +1,13 @@
 <?php
 // Ia m comment
 // I am also:wq
-$link = mysqli_connect("localhost","mbatrek_admin","mbatrek_admin","mbatrek_v2");
+$env = "PROD";
+if($env == "LOCAL"){
+    $link = mysqli_connect("localhost","root","","mbatrek_v2");
+} else {
+    $link = mysqli_connect("localhost","mbatrek_admin","mbatrek_admin","mbatrek_v2");
+}
+
 $SQL = "select id from  blogs";
 $SQLPRODS = "select id,title from  products";
 $rs = mysqli_query($link,$SQL) ;
@@ -332,6 +338,12 @@ function getTemplate($type){
         $content = file_get_contents('template_images/register.html');
     }else if($type == "verify"){
         $content = file_get_contents('template_images/varify_accound.html');
+    } else if($type == "order_success"){
+        $content = file_get_contents('template_images/order_success.html');
+    } else if($type == "order_failure"){
+        $content = file_get_contents('template_images/order_fail.html');
+    }  else if($type == "ca"){
+        $content = file_get_contents('template_images/compus_amastor.html');
     }
     else {
 	$content = file_get_contents('template_images/institute.html');
