@@ -10,17 +10,25 @@ $productActuall = Products::model()->findByPk($id);
                 <div class="company_left">
                     <h3><?php echo $product->title; ?> </h3>
 					<div class="sample_block">
+                    <?php if($product->sample_1 != "" || $product->sample_2 != "" || $product->sample_3 != ""){?>
 						<ul>
-							<li>
-								<a href="javascript:void(0);"><img src="images/abc.png"/></a>
-							</li>
-							<li>
-								<a href="javascript:void(0);"><img src="images/abc.png"/></a>
-							</li>
-							<li>
-								<a href="javascript:void(0);"><img src="images/abc.png"/></a>
-							</li>
-						</ul>
+                            <?php if(!empty($product->sample_1)&& $product->sample_1 != ""){?>
+                                <li>
+                                    <a href="javascript:void(0);"><img src="<?php echo Yii::app()->baseUrl;?>/assets/products/<?php echo $product->sample_1; ?>"/></a>
+                                </li>
+                            <?php }?>
+                            <?php if(!empty($product->sample_2)&& $product->sample_2 != ""){?>
+                                <li>
+                                    <a href="javascript:void(0);"><img src="<?php echo Yii::app()->baseUrl;?>/assets/products/<?php echo $product->sample_2; ?>"/></a>
+                                </li>
+                            <?php }?>
+                            <?php if(!empty($product->sample_3)&& $product->sample_3 != ""){?>
+                                <li>
+                                    <a href="javascript:void(0);"><img src="<?php echo Yii::app()->baseUrl;?>/assets/products/<?php echo $product->sample_3; ?>"/></a>
+                                </li>
+                            <?php }?>
+                       </ul>
+                    <?php }?>
 					</div>
                     <?php echo $product->description; ?>
                 </div>
