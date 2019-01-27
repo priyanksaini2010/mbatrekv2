@@ -51,6 +51,7 @@ class Products extends CActiveRecord
 			array('actuall_price, price', 'numerical'),
 			array('title, logo, description1', 'length', 'max'=>255),
 			array('home_page_icon', 'length', 'max'=>250),
+            array('sample_1, sample_2, sample_3', 'length', 'max'=>500),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, title, logo, actuall_price, description, description1, price, type, is_saver, product_sub_category_id, home_page_icon, home_page_bucket, status', 'safe', 'on'=>'search'),
@@ -94,6 +95,9 @@ class Products extends CActiveRecord
 			'product_sub_category_id' => 'Product Sub Category',
 			'home_page_icon' => 'Home Page Icon',
 			'home_page_bucket' => 'Home Page Bucket',
+            'sample_1' => 'Sample 1',
+            'sample_2' => 'Sample 2',
+            'sample_3' => 'Sample 3',
 			'status' => 'Status',
                         'sortOrder' => 'Sort Order',
 		);
@@ -129,6 +133,9 @@ class Products extends CActiveRecord
 		$criteria->compare('product_sub_category_id',$this->product_sub_category_id);
 		$criteria->compare('home_page_icon',$this->home_page_icon,true);
 		$criteria->compare('home_page_bucket',$this->home_page_bucket);
+        $criteria->compare('sample_1',$this->sample_1,true);
+        $criteria->compare('sample_2',$this->sample_2,true);
+        $criteria->compare('sample_3',$this->sample_3,true);
 		$criteria->compare('status',$this->status);
                 $criteria->order = "id desc";
                 $criteria->order = "sortOrder asc";

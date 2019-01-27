@@ -97,6 +97,15 @@ class ProductsController extends Controller
                             $tmp_name = $_FILES['Products']['tmp_name']['home_page_icon'];
                             move_uploaded_file($tmp_name, $path . "/" . $fileName);
                             $_POST['Products']['home_page_icon'] = $fileName;
+                            $tmp_name = $_FILES['Products']['tmp_name']['sample_1'];
+                            move_uploaded_file($tmp_name, $path . "/" . $fileName);
+                            $_POST['Products']['sample_1'] = $fileName;
+                            $tmp_name = $_FILES['Products']['tmp_name']['sample_2'];
+                            move_uploaded_file($tmp_name, $path . "/" . $fileName);
+                            $_POST['Products']['sample_2'] = $fileName;
+                            $tmp_name = $_FILES['Products']['tmp_name']['sample_3'];
+                            move_uploaded_file($tmp_name, $path . "/" . $fileName);
+                            $_POST['Products']['sample_3'] = $fileName;
 
                         }
 			$model->attributes=$_POST['Products'];
@@ -136,27 +145,54 @@ class ProductsController extends Controller
                         if (!is_dir($path)) {
                             CFileHelper::createDirectory($path, null, true);
                         }
+//                        pr($_FILES);
                         if (!empty($_FILES)) {
-                            if($_FILES['Products']['name']['logo'] != ""){
-                            $fileName = rand() . str_replace(" ", "", $_FILES['Products']['name']['logo']);  // random number + file name
-                            $tmp_name = $_FILES['Products']['tmp_name']['logo'];
-                            move_uploaded_file($tmp_name, $path . "/" . $fileName);
-                            $_POST['Products']['logo'] = $fileName;
+                                if($_FILES['Products']['name']['logo'] != ""){
+                                $fileName = rand() . str_replace(" ", "", $_FILES['Products']['name']['logo']);  // random number + file name
+                                $tmp_name = $_FILES['Products']['tmp_name']['logo'];
+                                move_uploaded_file($tmp_name, $path . "/" . $fileName);
+                                $_POST['Products']['logo'] = $fileName;
                             } else {
                                  $_POST['Products']['logo'] = $model->logo;
                             }
-                        if($_FILES['Products']['name']['home_page_icon'] != ""){
-                            $fileName = rand() . str_replace(" ", "", $_FILES['Products']['name']['home_page_icon']);  // random number + file name
-                            $tmp_name = $_FILES['Products']['tmp_name']['home_page_icon'];
-                            move_uploaded_file($tmp_name, $path . "/" . $fileName);
+                            if($_FILES['Products']['name']['home_page_icon'] != ""){
+                                $fileName = rand() . str_replace(" ", "", $_FILES['Products']['name']['home_page_icon']);  // random number + file name
+                                $tmp_name = $_FILES['Products']['tmp_name']['home_page_icon'];
+                                move_uploaded_file($tmp_name, $path . "/" . $fileName);
                             $_POST['Products']['home_page_icon'] = $fileName;
-                            
                             } else {
                                  $_POST['Products']['home_page_icon'] = $model->home_page_icon;
+                            }
+                            if($_FILES['Products']['name']['sample_1'] != ""){
+                                $fileName = rand() . str_replace(" ", "", $_FILES['Products']['name']['sample_1']);  // random number + file name
+                                $tmp_name = $_FILES['Products']['tmp_name']['sample_1'];
+                                move_uploaded_file($tmp_name, $path . "/" . $fileName);
+                                $_POST['Products']['sample_1'] = $fileName;
+                            } else {
+                                $_POST['Products']['sample_1'] = $model->sample_1;
+                            }
+                            if($_FILES['Products']['name']['sample_2'] != ""){
+                                $fileName = rand() . str_replace(" ", "", $_FILES['Products']['name']['sample_2']);  // random number + file name
+                                $tmp_name = $_FILES['Products']['tmp_name']['sample_2'];
+                                move_uploaded_file($tmp_name, $path . "/" . $fileName);
+                                $_POST['Products']['sample_2'] = $fileName;
+                            } else {
+                                $_POST['Products']['sample_2'] = $model->sample_2;
+                            }
+                            if($_FILES['Products']['name']['sample_3'] != ""){
+                                $fileName = rand() . str_replace(" ", "", $_FILES['Products']['name']['sample_3']);  // random number + file name
+                                $tmp_name = $_FILES['Products']['tmp_name']['sample_3'];
+                                move_uploaded_file($tmp_name, $path . "/" . $fileName);
+                                $_POST['Products']['sample_3'] = $fileName;
+                            } else {
+                                $_POST['Products']['sample_3'] = $model->sample_3;
                             }
                         } else {
                             $_POST['Products']['logo'] = $model->logo;
                             $_POST['Products']['home_page_icon'] = $model->home_page_icon;
+                            $_POST['Products']['sample_1'] = $model->sample_1;
+                            $_POST['Products']['sample_2'] = $model->sample_2;
+                            $_POST['Products']['sample_3'] = $model->sample_3;
                         }
 			$model->attributes=$_POST['Products'];
 //                        pr($model->attributes);

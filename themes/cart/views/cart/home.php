@@ -158,7 +158,7 @@
                     ?>
                     <li>
                         <div class="bulid_button">
-                            <a href="">
+                            <a style="cursor: default;" href="javascript:void('0');">
                             <?php switch($a){
                                 case 1:
                                     echo "Build your own Brand";
