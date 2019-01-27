@@ -34,7 +34,7 @@ class CartController extends Controller {
                 array('allow', // allow all users to perform 'index' and 'view' actions
                     'actions' => array('captcha','removeCoupon','industry','interview','index', 'view','student',"addtocart","cart","remove","buynow","verify", 
                                         'profesionals','institutes','register',"description","checkout","removeCart","applypromo","story","campus","loginandapply","applygstin","clearcart",
-                                        "profile","pastorder","changepassword","checkout","gateway","payusurl","postpayment"),
+                                        "profile","pastorder","changepassword","checkout","gateway","payusurl","postpayment","paytmsurl"),
                     'users' => array('*'),
                 ),
                 array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -83,7 +83,53 @@ class CartController extends Controller {
                 $this->render("webroot.themes.cart.views.cart.failure",array("reason"=>$reason));
             }
         }
+        public function actionPaytmsurl(){
+//            pr($_REQUEST);
+            $order = CustomerOrder::model()->findByAttributes(array("ordfer_hash"=>$_REQUEST['ORDERID']));
+            $cartData = Cart::model()->findAllByAttributes(array("order_id"=>$order->id));
+            switch ($_REQUEST['STATUS']){
+                case "TXN_SUCCESS":
+                    $status = 2;
+                    break;
+                default:
+                    $status = 3;
+                    break;
+            }
+            $order->attributes = array("status"=>$status);
+            if($order->save()){
+                $payuModel = new PaytmResponse();
+                $payuModel->attributes = array(
+                    "order_id" => $order->id,
+                    "payu_response" => json_encode($_REQUEST),
+                    "date_created" => date("Y-m-d h:i:s"),
+                );
+                if($payuModel->save()){
+                    foreach($cartData as $item){
+                        $itemModel = Cart::model()->findByPk($item->id);
+                        $itemModel->attributes = array("status"=>2);
+                        if($itemModel->save()){
 
+                        } else{
+                            pr($itemModel->getErrors());
+                        }
+                    }
+
+                    if($status == 2){
+                        Yii::app()->user->setFlash('order_id', $order->id);
+                        $this->redirect(Yii::app()->createUrl("success"));
+                    } else {
+                        Yii::app()->user->setFlash('order_id', $order->id);
+                        $this->redirect(Yii::app()->createUrl("failure"));
+                    }
+
+
+                } else {
+                    pr($payuModel->getErrors());
+                }
+            } else {
+                pr($order->getErrors());
+            }
+        }
         public function actionPayusurl(){
 
             $order = CustomerOrder::model()->findByAttributes(array("ordfer_hash"=>$_REQUEST['txnid']));
@@ -143,7 +189,7 @@ class CartController extends Controller {
             }
             $order->attributes = array(
                                         "user_id" => Yii::app()->user->id,
-                                        "ordfer_hash" => md5(generateRandomString(10)),
+                                        "ordfer_hash" => md5(generateRandomString(4)),
                                         "order_amount" => $amount,
                                         "payment_gateway" => $paymentGateWay,
                                         "status" => 1,
@@ -164,10 +210,24 @@ class CartController extends Controller {
                             "mobile"=>$userData->mobile_number,
                         );
                         switch ($paymentGateWay){
+                            //PayTm
                             case 1:
-
-                                $this->render("webroot.themes.cart.views.cart.paytm",array("params"=>$attribsArray));
+                                $paramList = array();
+                                $paramList["TXN_AMOUNT"] = $amount;
+                                $paramList["MID"] = PAYTM_MERCHANT_MID;
+                                $paramList["ORDER_ID"] = $order->ordfer_hash;
+                                $paramList["CUST_ID"] = "MBATREKTEST".$userData->id;
+                                $paramList["INDUSTRY_TYPE_ID"] = "Retail";
+                                $paramList["CHANNEL_ID"] = "WEB";
+                                $paramList["CALLBACK_URL"] = PAYTM_CALLBACK_URL;
+                                $paramList["WEBSITE"] = PAYTM_MERCHANT_WEBSITE;
+                                $paramList["MSISDN"] = $userData->mobile_number; //Mobile number of customer
+                                $paramList["EMAIL"] = $userData->email; //Email ID of customer
+                                $paramList["VERIFIED_BY"] = "EMAIL"; //
+                                $paramList["IS_USER_VERIFIED"] = "YES"; //
+                                $this->render("webroot.themes.cart.views.cart.pytm",array("paramList"=>$paramList));
                                 break;
+                            //Payu
                             case 2:
                                 $attribsArray['udf5'] = "BOLT_KIT_PHP7";
                                 $attribsArray['surl'] = "https://mbatrek.com/cart/payusurl";

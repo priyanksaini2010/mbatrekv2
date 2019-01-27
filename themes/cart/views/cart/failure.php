@@ -1,5 +1,9 @@
 <?php $this->setPageTitle('Payment Failed');
 $baseUrl = Yii::app()->request->baseUrl;
+$criteria = new CDbCriteria();
+$criteria->order = "id desc";
+$criteria->limit = 1;
+$recentOrder = CustomerOrder::model()->find($criteria);
 ?>
 
 <div class="bread_crum">
@@ -11,7 +15,7 @@ $baseUrl = Yii::app()->request->baseUrl;
 <div class="sucess_container failure">
     <div class="container">
         <div class="sucess_block">
-			<h2>Oh no, your payment failed for Order #56678</h2>
+			<h2>Oh no, your payment failed for Order #<?php echo $recentOrder->ordfer_hash;?></h2>
 			<div class="smile_icon">
 				<img src="images/sad_smilie.png"/>
 			</div>
