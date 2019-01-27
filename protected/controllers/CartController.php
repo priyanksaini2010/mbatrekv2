@@ -485,7 +485,7 @@ class CartController extends Controller {
 			if($model->save()){
 
 			    //Sending Mail
-                $subject = "MBAtrek | Campus Ambassador | Registeration";
+                $subject = "MBAtrek | Campus Ambassador | Registration";
                 $template = getTemplate("ca");
                 $body = str_replace("{{SUBJECT}}", $subject, $template);
 
@@ -496,7 +496,7 @@ class CartController extends Controller {
                 //Sending To User
                 $sentToUser = sendEmail($_POST['CampusAmbassador']['email_id'], $subject,$body,$headers);
                 //Sending To Admin
-                $subject = "MBAtrek | New Campus Ambassador | Registeration";
+                $subject = "MBAtrek | New Campus Ambassador | Registration";
                 $sentToAdmin = sendEmail(Yii::app()->params['adminEmail'], $subject,$body,$headers);
 
 
