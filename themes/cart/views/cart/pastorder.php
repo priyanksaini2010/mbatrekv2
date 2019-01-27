@@ -19,11 +19,12 @@ $baseUrl = Yii::app()->request->baseUrl;;
                     <div class="row">
 
                         <div class="col-md-12">
-                            <?php if(!empty($orders)){?>
+                            <?php if(!empty($orders)){  ?>
                             <div class="cart_detail">
                                 <h3 class="past-order_Text">Past Orders </h3>
 
                                 <?php foreach ($orders as $order){
+
                                     foreach($order->carts as $item){
                                         $url = str_replace("#","",rtrim($item->product->title));
 

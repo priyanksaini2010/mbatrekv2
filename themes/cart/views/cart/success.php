@@ -1,5 +1,18 @@
 <?php $this->setPageTitle('Payment Successfull');
 $baseUrl = Yii::app()->request->baseUrl;
+$criteria = new CDbCriteria();
+$criteria->order = "id desc";
+$criteria->limit = 1;
+$recentOrder = CustomerOrder::model()->find($criteria);
+//pr($recentOrder->carts[0]->product->title);
+$hasRecommendation = false;
+foreach ($recentOrder->carts as $c){
+    if(count($c->product->productRecommendedValueSaverPacks) > 0){
+//        pr($c->product->productRecommendedValueSaverPacks);
+        $hasRecommendation = true;
+        break;
+    }
+}
 ?>
 
 <div class="bread_crum">
@@ -13,7 +26,7 @@ $baseUrl = Yii::app()->request->baseUrl;
         <div class="sucess_block">
 			<h2>Order Successful!</h2>
 			<div class="smile_icon">
-				<img src="images/smile_icon.png"/>
+				<img src="<?php echo $baseUrl;?>/images/smile_icon.png"/>
 			</div>
 			<div class="order_div">
 				<h2>Your Order #6678899  has been successfully placed.</h2>
@@ -21,98 +34,46 @@ $baseUrl = Yii::app()->request->baseUrl;
 				<h3>You will receive a GST Invoice within 3 - 5 business days on your registered Email ID</h3>
 				<div class="our_recomanded product_recomnd">
                          <h4>Recommended Value Saver Packages </h4>
+            <?php if($hasRecommendation){?>
             <ul>
-                                
+                <?php
+                    //                        $cart = Cart::model()->findAllByAttributes(array("user_id" => Yii::app()->user->id, "status" => 1));
+                    $array = array();
+                    $array2 = array();
+                    foreach($recentOrder->carts as $c){
+                        $array2[] = $c->product->id;
+                    }
+                    foreach($recentOrder->carts as $c){
+
+                    foreach($c->product->productRecommendedValueSaverPacks as $saver){
+                    if(!in_array($saver->recommendedProduct->id,$array) && !in_array($saver->recommendedProduct->id,$array2)){
+                    $array[] = $saver->recommendedProduct->id;
+                ?>
                 <li>
-                   
                     <div class="recomended_title">
 						<div class="recomended_bound">
-                                                     <a href="/cart/description/30">
-							
-								<span>Mock Interview</span>
+                            <a  href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>$saver->recommendedProduct->id));?>">
+                                <span><?php echo $saver->recommendedProduct->title;?></span>
 								<span class="shot_descrptn">
-									(1 round of interview)
+									(<?php echo $saver->short_description;?>)
 								</span>
-								
-							
-                                                          </a>
+                            </a>
 							<div class="rec_wrap">
-							<img src="/assets/products/G6syAxftA7MockInterview-White.svg">
+                                <img src="<?php echo $baseUrl;?>/assets/products/<?php echo $saver->icon;?>"/>
 							</div>
-                                                    <br>
-                                                    
-                                                    
-						</div>
+                            <br>
+                        </div>
                         <div class="add_to_Cart_div">
-                                <label class="new_price">Price ₹ 1,000</label>
-                                <a href="/cart/addtocart/30">Add to Cart</a>
-                                <a href="/cart/buynow/30">Buy Now</a>
-                            </div>
+                            <label class="new_price">Price &#8377 <?php echo money($saver->recommendedProduct->price);?></label>
+                                <a href="<?php echo Yii::app()->createUrl("cart/addtocart",array("id"=>$saver->recommendedProduct->id));    ?>">Add to Cart</a>
+                                <a href="<?php echo Yii::app()->createUrl("cart/buynow",array("id"=>$saver->recommendedProduct->id));    ?>">Buy Now</a>
+                        </div>
                     </div>
-                         
                 </li>
+                <?php }}}?>
               
-                                
-                <li>
-                   
-                    <div class="recomended_title">
-						<div class="recomended_bound">
-                                                     <a href="/cart/description/32">
-							
-								<span>#Interview Ready</span>
-								<span class="shot_descrptn">
-									(Get your story right)
-								</span>
-								
-							
-                                                          </a>
-							<div class="rec_wrap">
-							<img src="/assets/products/ICsshM6OrWInterviewReady-White.svg">
-							</div>
-                                                    <br>
-                                                    
-                                                    
-						</div>
-                        <div class="add_to_Cart_div">
-                                <label class="new_price">Price ₹ 1,250</label>
-                                <a href="/cart/addtocart/32">Add to Cart</a>
-                                <a href="/cart/buynow/32">Buy Now</a>
-                            </div>
-                    </div>
-                         
-                </li>
-              
-                                
-                <li>
-                   
-                    <div class="recomended_title">
-						<div class="recomended_bound">
-                                                     <a href="/cart/description/22">
-							
-								<span>Cracking the GD</span>
-								<span class="shot_descrptn">
-									(Pick the right role)
-								</span>
-								
-							
-                                                          </a>
-							<div class="rec_wrap">
-							<img src="/assets/products/upaFquBJFDMockGD-White.svg">
-							</div>
-                                                    <br>
-                                                    
-                                                    
-						</div>
-                        <div class="add_to_Cart_div">
-                                <label class="new_price">Price ₹ 650</label>
-                                <a href="/cart/addtocart/22">Add to Cart</a>
-                                <a href="/cart/buynow/22">Buy Now</a>
-                            </div>
-                    </div>
-                         
-                </li>
-              
-                            </ul>
+            </ul>
+            <?php }?>
         </div>
 		<div class="any_query">
 			<h3>Do you have any query?</br>
