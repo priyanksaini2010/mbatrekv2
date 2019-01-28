@@ -84,7 +84,7 @@ class IndustryReadyCompetition extends CActiveRecord
 			'first_name_1' => 'First Name *',
 			'last_name_1' => 'Last Name *',
 			'mobile_number_1' => 'Mobile Number *',
-			'email_Id_1' => 'Email Id',
+			'email_Id_1' => 'Email Id *',
 			'first_name_2' => 'First Name',
 			'last_name_2' => 'Last Name',
 			'mobile_number_2' => 'Mobile Number',
