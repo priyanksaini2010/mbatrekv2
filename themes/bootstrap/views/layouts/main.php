@@ -27,6 +27,10 @@ $blogMenu = array(
         array('label'=>'Blog Managment', 'url'=>array('/blogs/admin')),
         array('label'=>'Videos Managment', 'url'=>array('/videos/admin')),
     );
+$orderMenu = array(
+        array('label'=>'Successfull Orders', 'url'=>array('/customerOrder/admin/status/2')),
+        array('label'=>'Failed Orders', 'url'=>array('/customerOrder/admin/status/3')),
+    );
 $siteData = array(
 			array('label'=>'Product Managment', 'url'=>array('/products/admin')),
 			array('label'=>'Coupon Managment', 'url'=>array('/couponCode/admin')),
@@ -84,7 +88,7 @@ $copManagment = array(
                 array('label'=>'Competetion', 'items'=>$copManagment),
 //                ,
                 array('label'=>'Blog Management', 'items'=>$blogMenu),
-                
+                array('label'=>'Orders Management', 'items'=>$orderMenu),
                 array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
             ),
         ),
@@ -144,7 +148,7 @@ $copManagment = array(
     $(document).ready(function() {
              $('img').each(function () {
                     var src =  $(this).attr('src');
-                    src = '/v2/'+src;
+                    src = '/'+src;
                     $(this).attr('src', src);
                 });
                 $("#example10").dateDropdowns({

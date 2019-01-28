@@ -1,29 +1,76 @@
 <?php
 $this->breadcrumbs=array(
-	'Customer Orders'=>array('index'),
-	$model->id,
+	'Customer Orders'=>array('customerOrder/admin/status/'.$model->status),
+	'Details',
 );
 
-$this->menu=array(
-	array('label'=>'List CustomerOrder','url'=>array('index')),
-	array('label'=>'Create CustomerOrder','url'=>array('create')),
-	array('label'=>'Update CustomerOrder','url'=>array('update','id'=>$model->id)),
-	array('label'=>'Delete CustomerOrder','url'=>'#','linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage CustomerOrder','url'=>array('admin')),
-);
 ?>
 
-<h1>View CustomerOrder #<?php echo $model->id; ?></h1>
+<h1>Order Details</h1>
 
-<?php $this->widget('bootstrap.widgets.TbDetailView',array(
-	'data'=>$model,
-	'attributes'=>array(
-		'id',
-		'ordfer_hash',
-		'user_id',
-		'order_amount',
-		'payment_gateway',
-		'status',
-		'date_created',
-	),
-)); ?>
+<table class="table">
+    <thead>
+    <tr>
+        <?php
+        $new = new Products();
+
+        foreach($model as $key=>$mod){?>
+            <th><?php echo $new->getAttributeLabel($key);?></th>
+
+        <?php }?>
+    </tr>
+    </thead>
+    <tr>
+        <?php foreach($model as $key=>$mod){?>
+        <td>
+            <?php
+                switch ($key){
+                    case "status":
+                            if($mod == 2){
+                                echo "Order Successfull";
+                            } else if($mod == 3){
+                                echo "Order Failed";
+                            }
+                        break;
+                    case "payment_gateway":
+                        if($mod == 1){
+                            echo "Paytm";
+                        } else if($mod == 2){
+                            echo "Payu";
+                        }
+                        break;
+                    case "user_id":
+                        echo $model->user->full_name."(".$mod.")";
+                        break;
+                    default:
+                        echo $mod;
+                        break;
+                }
+            ?>
+        </td>
+        <?php }?>
+    </tr>
+</table>
+    <br />
+    <h1>Order Items</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th> Product Name </th>
+                <th> Product Price </th>
+            </tr>
+
+        </thead>
+
+            <?php foreach($model->carts as $item){?>
+             <tr>
+                <td>
+                    <?php echo $item->product->title;?>
+                </td>
+                <td>
+                    <?php echo $item->product->price;?>
+                </td>
+            </tr>
+            <?php }?>
+
+    </table>
