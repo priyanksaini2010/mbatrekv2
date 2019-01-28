@@ -80,9 +80,9 @@ var domain_name = '<?php echo $_SERVER['HTTP_HOST'].DIREC;?>';
                                     <p><!--<i class="fa fa-check" id="pop-notification-class" aria-hidden"true"=""></i>-->
                                         <span id="pop-notification-text">
                                             <span>Thank you for showing interest in joining the revolution to up-skill your peers.</span>
-                                            <br /> <br />
+                                            <br />
                                             <span>If our team is amazed by your ideas, we will get back to you with the next steps :)</span>
-                                            <br /><br />
+                                            <br />
                                             <span> Stay tuned !!</span>
                                             
                                         </span></p>
@@ -111,11 +111,11 @@ var domain_name = '<?php echo $_SERVER['HTTP_HOST'].DIREC;?>';
                                     <p><!--<i class="fa fa-check" id="pop-notification-class" aria-hidden"true"=""></i>-->
                                         <span id="pop-notification-text">
                                             <span>You have registered successfully to #InterviewReady competition.</span>
-                                            <br /> <br />
+                                            <br />
                                             <span>Further information would be provided to you once we have <span style="text-decoration: underline">20 registrations</span> from your college/university</span>
-                                            <br /><br />
+                                            <br />
                                             <span>For any query write at -</span>
-                                            <br /><br />
+                                            <br />
                                             <span style="text-decoration: underline">contact@mbatrek.com</span><span> or call at &nbsp;&nbsp;&nbsp;<br/>+91-9821948355,+91-9821948354</span>
                                         </span></p>
                                 </div>
@@ -173,11 +173,11 @@ var domain_name = '<?php echo $_SERVER['HTTP_HOST'].DIREC;?>';
                                     <p>
                                         <span id="pop-notification-text">
                                             <span>Thank you for registering with MBAtrek</span>
-                                            <br /><br />
+                                            <br />
                                             <span>Please check your email to verify account.</span>
-                                            <br /> <br />
+                                            <br />
                                            <span>Check your SPAM if you have not recieved the email.</span>
-                                            <br /><br />
+                                            <br />
                                         </span></p>
                                 </div>
                                 <!-- <button class="md-close">OK</button> -->
