@@ -89,7 +89,7 @@ $yog = CHtml::listData(YearOfGraduation::model()->findAll($criteria), "id", "yea
 											</div>
 											<div class="col-md-6">
 												<div class="form_amster_field">
-                                                    <?php echo $form->textFieldRow($model,'email_id',array('class'=>'span5','maxlength'=>255,'label'=>false,'placeholder'=>$model->getAttributeLabel("email__id"))); ?>
+                                                    <?php echo $form->textFieldRow($model,'email_id',array('class'=>'span5','maxlength'=>255,'label'=>false,'placeholder'=>$model->getAttributeLabel("email_id"))); ?>
 												</div>
 											</div>
 											<div class="col-md-6">
