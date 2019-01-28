@@ -50,7 +50,7 @@ $baseUrl = Yii::app()->request->baseUrl;;
                                             <label>Understand how to make best use of the internship</label>
                                             <div class="puchase_id">
                                                 <label class="id_pur"><span>Purchase ID:</span> <?php echo $order->ordfer_hash;?></label>
-                                                <label class="id_pur pull-right"><span>Amount Paid:</span> ₹<?php echo money($order->order_amount);?></label>
+                                                <label class="id_pur pull-right"><span>Amount Paid:</span> ₹<?php echo money($item->product->price);?></label>
                                                 <div class="clearfix"></div>
                                                 <label class="id_pur"><span>Purchased On:</span> <?php echo date("D, M, dS ‘y",strtotime($order->date_created));?></label>
                                             </div>
