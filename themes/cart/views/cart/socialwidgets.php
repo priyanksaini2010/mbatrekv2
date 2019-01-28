@@ -10,7 +10,7 @@
             <div class="col-md-4">
 				<div class="linked_in_feeds">
 					<div class="linked_header">
-						<img src="<?php echo $baseUrl; ?>/images/linked_img.jpg"/>
+                        <a href="https://www.linkedin.com/company/mbatrek-private-ltd/" target="_blank"><img src="<?php echo $baseUrl; ?>/images/linked_img.jpg"/></a>
                         <a href="https://www.linkedin.com/company/mbatrek-private-ltd/" target="_blank"><h2>MBAtrek Private Limited</h2></a>
                         <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
                         <script type="IN/FollowCompany" data-id="7955944" data-counter="top"></script>
@@ -36,7 +36,7 @@
             <div class="col-md-4">
 				<div class="linked_in_feeds">
 					<div class="linked_header">
-						<img src="<?php echo $baseUrl; ?>/images/linked_img.jpg"/>
+                        <a href="https://www.instagram.com/mbatrek/" target="_blank"><img src="<?php echo $baseUrl; ?>/images/linked_img.jpg"/></a>
                         <a href="https://www.instagram.com/mbatrek/" target="_blank"><h2>MBAtrek Private Limited</h2></a>
 						<div class="linked_link">
                         <a class="" target="_blank" href="https://www.instagram.com/mbatrek/"><i class="fa fa-instagram" aria-hidden="true"></i> Follow Us on Instagram</a>
@@ -68,7 +68,7 @@
             <div class="col-md-4">
 			<div class="linked_in_feeds">
 					<div class="linked_header">
-						<img src="<?php echo $baseUrl; ?>/images/linked_img.jpg"/>
+                        <a href="https://www.youtube.com/channel/UCJg7bO36Hii_AXTDL6TLY4A" target="_blank"><img src="<?php echo $baseUrl; ?>/images/linked_img.jpg"/></a>
                         <a href="https://www.youtube.com/channel/UCJg7bO36Hii_AXTDL6TLY4A" target="_blank"><h2>MBAtrek Private Limited</h2></a>
                         <script src="https://apis.google.com/js/platform.js"></script>
 
