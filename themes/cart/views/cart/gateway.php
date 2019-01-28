@@ -45,6 +45,9 @@ if(!empty($coupon)){
                 <div class="col-md-4">
                     <div class="order_sumery">
                         <h3>Order Summary  </h3>
+						 <div class="total_payment">
+                            <label>Total (2 Item): <span>&#8377 <?php echo money($total);?></span></label>
+                        </div>
                         <ul>
                             <?php
                             $total = 0;
@@ -66,9 +69,7 @@ if(!empty($coupon)){
                             </li>
                            <?php }?>
                         </ul>
-                        <div class="total_payment">
-                            <label>Total (2 Item): <span>&#8377 <?php echo money($total);?></span></label>
-                        </div>
+                       
                     </div>
                 </div>
             </div>

@@ -76,7 +76,7 @@ $baseUrl = Yii::app()->request->baseUrl;;
 							<div class="no_past_order">
 								<p>No order yet ! would you like to check out are Career Basket ?</p>
 								<a href="<?php echo Yii::app()->createUrl("students");?>">Yes</a>
-								<a href="<?php echo Yii::app()->getHomeUrl(); ?>">Latter</a>
+								<a href="<?php echo Yii::app()->getHomeUrl(); ?>">Later</a>
 							</div>
                             <?php }?>
                         </div>
