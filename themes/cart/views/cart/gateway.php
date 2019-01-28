@@ -43,10 +43,16 @@ if(!empty($coupon)){
                     </div>
                 </div>
                 <div class="col-md-4">
+                    <?php
+                    $total = 0;
+                    foreach($cart as $itcart) {
+                        $total = $total + $itcart->product->price;
+                    }
+                    ?>
                     <div class="order_sumery">
                         <h3>Order Summary  </h3>
 						 <div class="total_payment">
-                            <label>Total (2 Item): <span>&#8377 <?php echo money($total);?></span></label>
+                            <label>Total (<?php echo count($cart)?> Item): <span>&#8377 <?php echo money($total);$total = 0;?></span></label>
                         </div>
                         <ul>
                             <?php
