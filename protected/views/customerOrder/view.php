@@ -56,10 +56,10 @@ $this->breadcrumbs=array(
         </td>
         <?php }?>
         <td>
-            <php echo $model->user->email;?>
+            <?php echo $model->user->email;?>
         </td>
         <td>
-            <php echo $model->user->mobile_number;?>
+            <?php echo $model->user->mobile_number;?>
         </td>
     </tr>
 </table>
