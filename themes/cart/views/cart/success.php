@@ -3,6 +3,7 @@ $baseUrl = Yii::app()->request->baseUrl;
 $criteria = new CDbCriteria();
 $criteria->order = "id desc";
 $criteria->limit = 1;
+$criteria->addCondition("user_id = ".Yii::app()->user->id);
 $recentOrder = CustomerOrder::model()->find($criteria);
 //pr($recentOrder->carts[0]->product->title);
 $hasRecommendation = false;
