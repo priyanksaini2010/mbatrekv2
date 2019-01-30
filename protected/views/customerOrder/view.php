@@ -18,6 +18,12 @@ $this->breadcrumbs=array(
             <th><?php echo $new->getAttributeLabel($key);?></th>
 
         <?php }?>
+        <th>
+            User Email
+        </th>
+        <th>
+            User Mobile Number
+        </th>
     </tr>
     </thead>
     <tr>
@@ -49,6 +55,12 @@ $this->breadcrumbs=array(
             ?>
         </td>
         <?php }?>
+        <td>
+            <php echo $model->user->email;>
+        </td>
+        <td>
+            <php echo $model->user->mobile_number;>
+        </td>
     </tr>
 </table>
     <br />
