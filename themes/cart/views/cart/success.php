@@ -33,13 +33,20 @@ foreach ($recentOrder->carts as $c){
 				<h2>Your Order #<?php echo $recentOrder->ordfer_hash;?> worth <span class="rs_order">&#8377; <?php echo money($recentOrder->order_amount);?> </span> has been successfully placed.</h2>
 				<h3 class="one_of">One of our <span>Career Advisors</span> will contact you within one business day to take you on your career development journey using our below service(s);</h3>
 				<div class="our_more_product">
-                    <?php foreach($recentOrder->carts as $cart){
+                    <?php
+                    $total = count($recentOrder->carts);
+                    foreach($recentOrder->carts as $key=>$cart){
                         $url = str_replace("#","",rtrim($cart->product->title));
                         $url = str_replace(" ","-",$url);
                         $url = strtolower($url);
                     ?>
 					<a href="<?php echo Yii::app()->createUrl($url);?>"><?php echo $cart->product->title;?></a>
-					 <?php }?>
+
+                 <?php
+                    if($key < ($total - 1)){
+                        echo ",";
+                    }
+                }?>
 				</div>
 				<h3>You will receive a GST Invoice within 3 - 5 business days on your registered Email ID</h3>
 				
