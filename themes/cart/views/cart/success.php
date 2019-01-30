@@ -29,7 +29,7 @@ foreach ($recentOrder->carts as $c){
 				<img src="<?php echo $baseUrl;?>/images/smile_icon.png"/>
 			</div>
 			<div class="order_div">
-				<h2>Your Order #<?php echo $recentOrder->ordfer_hash;?> worth <span class="rs_order">&#8377; <?php echo money($recentOrder->amount);?> </span> has been successfully placed.</h2>
+				<h2>Your Order #<?php echo $recentOrder->ordfer_hash;?> worth <span class="rs_order">&#8377; <?php echo money($recentOrder->order_amount);?> </span> has been successfully placed.</h2>
 				<h3 class="one_of">One of our <span>Career Advisors</span> will contact you within one business day to take you on your career development journey using our below service(s);</h3>
 				<div class="our_more_product">
                     <?php foreach($recentOrde->carts as $cart){
