@@ -118,7 +118,7 @@ ul,ol{margin:0;}
 
 
 .logo{width: auto;
-
+margin-right: 8px;
 max-width: 60px;
 
 float: left;}
@@ -2268,7 +2268,7 @@ header .mobile_menu .menu-text a .menu_cancle{display:none;}
 .order_sumery ul li{list-style: none;width:100%;float:left;margin:0 0 11px 0;}
 .order_sumery ul li:last-child{margin-bottom:0;}
 .order_icon{display: inline-block;    float: left; text-align:center; width: 119px;}
-.order_icon img{width: 71px;}
+.order_icon img{width: 71px;height:71px;}
 .order_icon span{color: #348786;display: block;font-family: 'MyriadPro-Regular';font-weight: normal;font-size: 18px;padding: 7px 0 0 0;}
 .order_rs{width: auto;display: inline-block;vertical-align: top;padding: 39px 0 0 0px;}
 .order_rs span{font-family: 'MyriadPro-Semibold';font-size: 24px;color: #348786;}
@@ -2305,7 +2305,7 @@ header .mobile_menu .menu-text a .menu_cancle{display:none;}
 .smile_icon img{display:inline-block;}
 .order_div{Width:100%;float:left;}
 .order_div h2{color:#222;font-family: 'MyriadPro-Regular';font-size: 29px;margin:9px 0 0 0;}
-.order_div h3{color:#222;font-family: 'MyriadPro-Regular';font-size: 29px;margin:29px auto auto auto;line-height: 1.3;max-width:610px;}
+.order_div h3{color:#222;font-family: 'MyriadPro-Regular';font-size: 29px;margin:14px auto auto auto;line-height: 1.3;max-width:610px;}
 .order_div h3 span{color:#348786;font-family: 'MyriadPro-Semibold';}
 .order_div h3.one_of{margin:29px auto auto auto;max-width:970px;}
 .order_div .our_recomanded .recomended_bound a{background:none;}
@@ -2321,3 +2321,4 @@ main .sucess_container.failure .any_query h3{font-style:normal;}
 .sample_block{width:100%;float:left;}
 .sample_block ul li{list-style:none;display:inline-block;width:118px;background-image:none;padding:0 0 18px 17px;}
 #myModal-clearcart .error_container #pop-notification-text{display:block;text-align:center;}
+.order_div .our_more_product a{background:none;padding:0;color:#348786;width:auto;display:inline-block;margin:15px 0px 0px 0;font-size:22px;font-family: 'MyriadPro-Semibold';}
