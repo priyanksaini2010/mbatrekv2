@@ -217,8 +217,8 @@ return array(
         "payu_salt" => "ZbJSYLBwUJ",
 //        "payu_merchant_id" => "gtKFFx",
 //        "payu_salt" => "eCwWELxi",
-        "payu_url" => "https://secure.payu.in/_payment",
-        "payu_test_url" => "https://test.payu.in/_payment"
+        "payu_test_url" => "https://secure.payu.in/_payment",
+//        "payu_test_url" => "https://test.payu.in/_payment"
 //        "payu_test_url" => "https://secure.payu.in/_payment"
 	),
 );
