@@ -976,6 +976,7 @@ user-select: none;
 	.engament_model ul li:last-child{padding-top:0;}
 	.team_container{padding-bottom:26px;}
 	.company_left{width:100%;}
+	.ambastor_container .earn_container ul li{width:200px;margin-bottom:20px;}
 	
 }
 @media (max-width: 991px) {
@@ -1006,6 +1007,11 @@ user-select: none;
 	.studen-wrapper .student-top .icon-holder a .icon-text{max-width:100%;}
 	.studen-wrapper .student-cta1 ul.student-cta1-listing > li .intern-type{padding:73px 19px 30px;}
 	.studen-wrapper .student-cta1-bottom-inner .buy-and-cart a{padding:7px 0 3px 0;min-width: 123px;}
+	body .support_managment .row .support_aligment .support_block ul{padding:146px 0 0px 0;}
+	.our_company_page .student-top .icon-holder .icon-text{    max-width: 91%;
+    padding: 41px 13px 40px 13px;}
+	.blog_new_container .blog_header .header_btn a{font-size:14px;padding: 8px 10px 6px 10px;}
+	.blog_new_container .blog_header .col-xs-4{padding:0;}
 	
 }
 @media (max-width: 548px) {
@@ -1112,7 +1118,20 @@ main .home_page_slider .rslides_nav{    width: 31px; background-size: 100%;heigh
     width: 32%;}
 	.main-helping .row .col-md-12 .row{margin:0;}
 	.student-cta2 ul.student-cta-listing > li .intern-type{    padding: 79px 14px 30px;}
-	
+	.our_company_page .helping_ready .journey-1 ul{width:100%;text-align:center;}
+	.our_company_page .helping_ready .journey2-list ul{width:100%;text-align:center;}
+	.our_company_page .bulid_your_next .arrow-icon{margin-bottom:0;}
+	body .our_company_page .manager_div{    margin-top: 50px;margin-bottom: 0px;}
+	body .our_company_page .empower_manager .manager_div{margin-top:0px;}
+	.our_company_page .empower_manager{margin-top:0;}
+	.our_company_page .manger_categories ul li{width: 305px;    margin-bottom: 40px;vertical-align:top;}
+	.our_company_page .how_we_Deliver .manger_categories ul li{width:150px;}
+	.our_company_page .student-top .icon-holder .icon{    max-width: 100%; width: 100%;padding:0;}
+	.our_company_page .student-top .icon-holder .icon-text{float:none;}
+	body .key_Area_cover .manger_categories ul li{width: 190px;}
+	body .support_managment .row .support_aligment{padding: 0 0 40px 60px;width:100%;}
+	body .blog_new_container.student_story .blog_video_repeat{width:100%;}
+	body .faq_Container .tabbable-panel .nav li{margin-bottom:1px;}
 }
  
 @media (min-width: 768px) {
@@ -2330,3 +2349,4 @@ main .sucess_container.failure .any_query h3{font-style:normal;}
 .order_div .our_more_product a{background:none;padding:0;color:#348786;width:auto;display:inline-block;margin:15px 0px 0px 0;font-size:22px;font-family: 'MyriadPro-Semibold';}
 .blog_new_container.student_story .blog_video_repeat{width:50%;}
 .blog_new_container.student_story .blog_video_repeat .blog_block{margin-bottom:0;}
+.our_company_page .manager_div{margin-top:80px;}

@@ -15,13 +15,13 @@ if(!isset($_GET['type'])){
 <div class="blog_new_container">
     <div class="blog_header">
         <div class="container">
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-4 col-xs-4">
                 <div class="header_btn"><a class="<?php echo $typ == 1?"active_high":"";?>" href="<?php echo Yii::app()->createUrl('blogs/career-preparation');?>">Career Preparation</a></div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-4 col-xs-4">
                 <div class="header_btn"><a class="<?php echo $typ == 2?"active_high":"";?>" href="<?php echo Yii::app()->createUrl('blogs/job-ready');?>">Job Ready</a></div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-4 col-xs-4">
                 <div class="header_btn"><a class="<?php echo $typ == 3?"active_high":"";?>"  href="<?php echo Yii::app()->createUrl('blogs/cxo-thoughts');?>">CXO's Thoughts</a></div>
             </div>
         </div>
@@ -48,7 +48,7 @@ if(!isset($_GET['type'])){
             <div class="our_blog">
                 <div class="row">
                     <?php foreach ($blogs as $blog){?>
-                    <div class="col-md-4 col-sm-4 col-xs-6">
+                    <div class="col-md-4 col-sm-6 col-xs-12">
                         <div class="blog_block">
 
                             <div class="blog_img"><img class="img-responsive" src="<?php echo Yii::app()->baseUrl;?>/assets/blogs/<?php echo $blog->background_image;?>" alt="" /></div>

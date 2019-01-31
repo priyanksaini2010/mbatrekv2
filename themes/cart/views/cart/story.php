@@ -16,13 +16,13 @@ $typ = $subtype;
     </div>
     <div class="blog_header">
         <div class="container">
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-4 col-xs-12">
                 <div class="header_btn"><a class="<?php echo $typ == 1?"active_high":"";?>" href="<?php echo Yii::app()->createUrl('success/story/you-be-the-executive');?>">#YouBeTheExecutive</a></div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-4 col-xs-12">
                 <div class="header_btn"><a class="<?php echo $typ == 2?"active_high":"";?>" href="<?php echo Yii::app()->createUrl('success/story/campus-2-corporate');?>">#Campus2Corporate</a></div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-4 col-xs-12">
                 <div class="header_btn"><a class="<?php echo $typ == 3?"active_high":"";?>"  href="<?php echo Yii::app()->createUrl('success/story/leverage-your-2-year-mba');?>">Leverage Your 2 Year MBA</a></div>
             </div>
         </div>
