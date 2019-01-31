@@ -9,7 +9,7 @@ $typ = $subtype;
         <li class="active"><a href="javascript:void(0);">Student Stories</a></li>
     </ul>
 </div>
-<div class="blog_new_container video_container">
+<div class="blog_new_container video_container student_story">
     <div class="top_header_Text">
         <h2>What Student say about MBAtrek</h2>
 
@@ -33,7 +33,7 @@ $typ = $subtype;
                 <div class="row">
                     <?php foreach ($blogs as $blog){?>
                         <div class="blog_video_repeat">
-                            <div class="col-md-7 col-sm-7 col-xs-7">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
                                 <div class="blog_block">
                                     <div class="block_Titke">
                                         <h1>  <?php echo $blog->college_or_company;?>&nbsp;<?php echo $blog->course;?></h1>

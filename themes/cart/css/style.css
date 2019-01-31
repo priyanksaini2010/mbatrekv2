@@ -321,9 +321,13 @@ footer .footer-wrap{
     text-align: center;
 }
 footer .footer-logo{
-    max-width: 60px;
+    max-width: 74px;
     display: inline-block;
     vertical-align: top;
+}
+footer .footer-logo a svg {
+    width: 74px;
+    height: 71px;
 }
 .footer-wrap .footer-menu1{
    display: inline-block;

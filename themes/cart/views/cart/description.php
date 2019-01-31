@@ -6,7 +6,7 @@ $productActuall = Products::model()->findByPk($id);
 <div class="comany_conainer">
     <div class="container">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-8 col-xs-12">
                 <div class="company_left">
                     <h3><?php echo $product->title; ?> </h3>
 					<div class="sample_block">
