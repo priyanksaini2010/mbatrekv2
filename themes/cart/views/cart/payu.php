@@ -10,7 +10,7 @@ $paramList["phone"] = $params['mobile'];
 $paramList["hash"] = $params['hash'];
 $paramList["surl"] = $params['surl'];
 $paramList["udf5"] = $params['udf5'];
-$paramList["service_provider"] = $params['payu_paisa'];
+$paramList["service_provider"] = 'payu_paisa';
 ?>
 
 <html>
