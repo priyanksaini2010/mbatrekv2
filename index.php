@@ -2,9 +2,14 @@
 // Ia m comment
 // I am also:wq
 $env = "PROD";
+global $payuSurl;
 if($env == "LOCAL"){
+    error_reporting(E_ALL);
+    $payuSurl = "https://localhost/mbt/cart/payusurl";
     $link = mysqli_connect("localhost","root","","mbatrek_v2");
 } else {
+    error_reporting(E_ERROR);
+    $payuSurl =  "https://mbatrek.com/cart/payusurl";
     $link = mysqli_connect("localhost","mbatrek_admin","mbatrek_admin","mbatrek_v2");
 }
 
@@ -27,7 +32,7 @@ if(mysqli_num_rows($rs) > 0){
 if(mysqli_num_rows($rsprods) > 0){
 
     while($rows = mysqli_fetch_assoc($rsprods)){
-        $url = str_replace("#","",$rows['title']);
+        $url = str_replace("#","",rtrim($rows['title']));
         $url = str_replace(" ","-",$url);
         $url = strtolower($url);
         $productsUrlsForRules[$url] = "cart/description/id/".$rows['id'];
@@ -41,13 +46,14 @@ if (!$link) {
     echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
     exit;
 }
-error_reporting(E_ERROR);
+
 date_default_timezone_set("Asia/Kolkata");
 //const BLOGURLS = $blogUrls;
 const DIREC = "/";
 const BACK_COLOR = 0xFFFFFF;
 require_once 'payment_lib/PaytmKit/lib/config_paytm.php';
 require_once 'payment_lib/PaytmKit/lib/encdec_paytm.php';
+require_once 'PHPExcel/Classes/PHPExcel.php';
 //require_once ('linkedinwp/oauth/linkedinoauth.php');
 function money($number){
     return number_format($number, 0, '.', ',');
