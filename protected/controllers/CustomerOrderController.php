@@ -147,12 +147,7 @@ class CustomerOrderController extends Controller
 	 */
 	public function actionAdmin($status, $task = "")
 	{
-		$model=new CustomerOrder('search');
-		$model->unsetAttributes();  // clear any default values
-        $_GET['CustomerOrder']['status'] = $status;
-		if(isset($_GET['CustomerOrder']))
-			$model->attributes=$_GET['CustomerOrder'];
-        if ($task == "xls") {
+		if ($task == "xls") {
             $objPHPExcel = new PHPExcel();
             // Set document properties
 
@@ -216,10 +211,14 @@ class CustomerOrderController extends Controller
             header ('Pragma: public'); // HTTP/1.0
 
             $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
-            $objWriter->save('php://output');
+//            $objWriter->save('php://output');
             exit;
         }
-
+        $model=new CustomerOrder('search');
+        $model->unsetAttributes();  // clear any default values
+        $_GET['CustomerOrder']['status'] = $status;
+        if(isset($_GET['CustomerOrder']))
+            $model->attributes=$_GET['CustomerOrder'];
 		$this->render('admin',array(
 		    'status' => $status,
 			'model'=>$model,
