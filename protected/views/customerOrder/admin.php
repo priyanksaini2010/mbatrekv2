@@ -8,7 +8,7 @@ $this->breadcrumbs=array(
 
 <h1><?php echo $status == 2?"Success":"Failed";?> Orders</h1>
 
-<a href="<?php echo Yii::app()->createUrl("customerOrder/admin/status/".$status."/task/xls");?>"> <button class="btn btn-info" h">Export To XLSX</button></a>
+<a href="<?php echo Yii::app()->createUrl("customerOrder/admin/status/".$status."/task/xls");?>"> <button class="btn btn-info" h">Export To Excel</button></a>
 <?php
 $grid =  $this->widget('bootstrap.widgets.TbGridView',array(
 	'id'=>'customer-order-grid',
