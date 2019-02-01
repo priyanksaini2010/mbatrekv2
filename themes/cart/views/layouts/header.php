@@ -255,7 +255,7 @@
 							</li>
 							<li><span>Campus Connect</span>
 								<ul>
-									<li><a href="<?php echo Yii::app()->createUrl('campus-abassador'); ?>">Campus Ambassador Program</a></li>
+									<li><a href="<?php echo Yii::app()->createUrl('campus-ambassador'); ?>">Campus Ambassador Program</a></li>
 									<li><a href="<?php echo Yii::app()->createUrl('interview-ready-competition'); ?>">#InterviewReady Competition</a></li>
 									<li><a href="<?php echo Yii::app()->createUrl('industry-ready-competition'); ?>">#IndustryReady Competition</a></li>
 									<li><a href="<?php echo Yii::app()->createUrl('mbatrek-on-the-ground'); ?>">MBAtrek@Campus</a></li>
