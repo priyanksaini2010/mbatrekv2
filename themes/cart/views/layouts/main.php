@@ -143,9 +143,9 @@ var domain_name = '<?php echo $_SERVER['HTTP_HOST'].DIREC;?>';
                                     <p><!--<i class="fa fa-check" id="pop-notification-class" aria-hidden"true"=""></i>-->
                                         <span id="pop-notification-text">
                                             <span>Kindly try another password!</span>
-                                            <br /> <br />
+                                          <br />
                                             <span>Password length should be 8 characters and it should be alphanumeric can contain  special characters (_, @, ., /, #, &, + and -).</span>
-                                            <br /><br />
+                                           <br />
 <!--                                            <span>Remember, Special Characters are not allowed. </span>-->
                                         </span></p>
                                 </div>
@@ -204,7 +204,7 @@ var domain_name = '<?php echo $_SERVER['HTTP_HOST'].DIREC;?>';
                                     <p>
                                         <span id="pop-notification-text">
                                             <span>Thank you for registering with us</span>
-                                            <br /><br />
+                                            <br />
                                             <span>Your account has been verified now.</span>
 
                                         </span></p>
@@ -233,7 +233,7 @@ var domain_name = '<?php echo $_SERVER['HTTP_HOST'].DIREC;?>';
                                     <p><!--<i class="fa fa-check" id="pop-notification-class" aria-hidden"true"=""></i>-->
                                         <span id="pop-notification-text">
                                             <span>This Email ID is already registered with us.</span>
-                                            <br /> <br />
+                                           <br />
                                             <span>Kindly Login to access your account.</span>
                                         </span></p>
                                 </div>
@@ -317,11 +317,11 @@ var domain_name = '<?php echo $_SERVER['HTTP_HOST'].DIREC;?>';
                                     <p><!--<i class="fa fa-check" id="pop-notification-class" aria-hidden"true"=""></i>-->
                                         <span id="pop-notification-text">
                                             <span>You have registered successfully to #IndustryReady competition.</span>
-                                            <br /> <br />
+                                            <br />
                                             <span>Further information would be provided to you once we have <span style="text-decoration: underline">10 teams registrations</span> from your college/university</span>
-                                            <br /><br />
+                                            <br />
                                             <span>For any query write at -</span>
-                                            <br /><br />
+                                            <br />
                                             <span style="text-decoration: underline">contact@mbatrek.com</span><span> or call at <br/>+91-9821948355,+91-9821948354</span>
                                         </span></p>
                                 </div>
@@ -394,7 +394,7 @@ var domain_name = '<?php echo $_SERVER['HTTP_HOST'].DIREC;?>';
                                 <div class="error_container">
                                     <p><!--<i class="fa fa-check" id="pop-notification-class" aria-hidden"true"=""></i>-->
                                         <span>Sorry!</span>
-                                        <br /><br />
+                                        <br />
                                         <span>Currently no coupon is applicable on this Email ID</span><br/><br />
                                         <span>Try Login with your College Email ID.</span>
                                     </p>
