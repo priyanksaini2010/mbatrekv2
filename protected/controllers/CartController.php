@@ -60,9 +60,9 @@ class CartController extends Controller {
                 $subject = "Your Order Was Failed";
                 $template = getTemplate("order_failure");
             }
-            pr($params,false);
+
             $body = str_replace("{{ORDER_ID}}", $params['order_id'], $template);
-            $body = str_replace("{{AMOUNT}}", money($params['order_amount']), $body);
+            $body = str_replace("{{AMOUNT}}", money($params['amount']), $body);
             $body = str_replace("{{LIST}}", $params['list'], $body);
             pr($body);
             $headers="From: ".Yii::app()->params['adminEmail']." <".Yii::app()->params['adminEmail']."> \r\n".
