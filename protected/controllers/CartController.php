@@ -64,7 +64,7 @@ class CartController extends Controller {
             $body = str_replace("{{ORDER_ID}}", $params['order_id'], $template);
             $body = str_replace("{{AMOUNT}}", money($params['amount']), $body);
             $body = str_replace("{{LIST}}", $params['list'], $body);
-            pr($body);
+
             $headers="From: ".Yii::app()->params['adminEmail']." <".Yii::app()->params['adminEmail']."> \r\n".
                 "Reply-To: ".Yii::app()->params['adminEmail']." \r\n";
             $headers .= "MIME-Version: 1.0\r\n".
