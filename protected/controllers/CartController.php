@@ -1,5 +1,4 @@
 <?php
-
 class CartController extends Controller {
 
     public $errors = array();
@@ -63,6 +62,8 @@ class CartController extends Controller {
             }
 
             $body = str_replace("{{ORDER_ID}}", $params['order_id'], $template);
+            $body = str_replace("{{AMOUNT}}", money($params['order_amount']), $body);
+            $body = str_replace("{{LIST}}", money($params['list']), $body);
 
             $headers="From: ".Yii::app()->params['adminEmail']." <".Yii::app()->params['adminEmail']."> \r\n".
                 "Reply-To: ".Yii::app()->params['adminEmail']." \r\n";
@@ -130,7 +131,12 @@ class CartController extends Controller {
                     "date_created" => date("Y-m-d h:i:s"),
                 );
                 if($payuModel->save()){
+                    $list = "";
                     foreach($cartData as $item){
+                        $url = str_replace("#","",rtrim($item->product->title));
+                        $url = str_replace(" ","-",$url);
+                        $url = strtolower($url);
+                        $list .= "<a href='https://mbatrek.com/".$url."' target='_blank'>".$item->product->title."</a>";
                         $itemModel = Cart::model()->findByPk($item->id);
                         $itemModel->attributes = array("status"=>2);
                         if($itemModel->save()){
@@ -139,7 +145,12 @@ class CartController extends Controller {
                             pr($itemModel->getErrors());
                         }
                     }
-                    $mailParams = array("order_id"=>$order->ordfer_hash,"email"=>$userData->email);
+                    $mailParams = array(
+                                        "order_id"=>$order->ordfer_hash,
+                                        "email"=>$userData->email,
+                                        "amount"=>$order->order_amount,
+                                        "list" => $list
+                                    );
                     if($status == 2){
 
                         $this->sendOrderMail($mailParams,1);
@@ -180,7 +191,12 @@ class CartController extends Controller {
                     "date_created" => date("Y-m-d h:i:s"),
                 );
                 if($payuModel->save()){
+                    $list = "";
                     foreach($cartData as $item){
+                        $url = str_replace("#","",rtrim($item->product->title));
+                        $url = str_replace(" ","-",$url);
+                        $url = strtolower($url);
+                        $list .= "<a href='https://mbatrek.com/".$url."' target='_blank'>".$item->product->title."</a>";
                         $itemModel = Cart::model()->findByPk($item->id);
                         $itemModel->attributes = array("status"=>2);
                         if($itemModel->save()){
@@ -189,7 +205,12 @@ class CartController extends Controller {
                             pr($itemModel->getErrors());
                         }
                     }
-                    $mailParams = array("order_id"=>$order->ordfer_hash,"email"=>$userData->email);
+                    $mailParams = array(
+                        "order_id"=>$order->ordfer_hash,
+                        "email"=>$userData->email,
+                        "amount"=>$order->order_amount,
+                        "list" => $list
+                    );
                     if($status == 2){
                         $this->sendOrderMail($mailParams,1);
                         Yii::app()->user->setFlash('order_id', $order->id);
@@ -261,7 +282,7 @@ class CartController extends Controller {
                             //Payu
                             case 2:
                                 $attribsArray['udf5'] = "BOLT_KIT_PHP7";
-                                $attribsArray['surl'] = "https://mbatrek.com/cart/payusurl";
+                                $attribsArray['surl'] =  "https://mbatrek.com/cart/payusurl";
 //                                $attribsArray['surl'] = "https://localhost/mbt/cart/payusurl";
                                 $hash=hash('sha512', Yii::app()->params['payu_merchant_id'].'|'.$attribsArray['transaction_id'].'|'.$attribsArray['amount'].'|'.$attribsArray['product_info'].'|'.$attribsArray['name'].'|'.$attribsArray['email'].'|||||'.$attribsArray['udf5'].'||||||'.Yii::app()->params['payu_salt']);
                                 $attribsArray['hash'] = $hash;
