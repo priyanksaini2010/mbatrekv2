@@ -123,7 +123,14 @@ class CustomerOrderController extends Controller
 		else
 			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
 	}
-
+    public function behaviors() {
+        return array(
+            'exportableGrid' => array(
+                'class' => 'application.components.ExportableGridBehavior',
+                'filename' => 'CustomerOrders.csv',
+                'csvDelimiter' => ';', //i.e. Excel friendly csv delimiter
+            ));
+    }
 	/**
 	 * Lists all models.
 	 */
@@ -145,6 +152,73 @@ class CustomerOrderController extends Controller
         $_GET['CustomerOrder']['status'] = $status;
 		if(isset($_GET['CustomerOrder']))
 			$model->attributes=$_GET['CustomerOrder'];
+        if ($this->isExportRequest()) {
+            $objPHPExcel = new PHPExcel();
+            // Set document properties
+
+            $headers = array(
+                "Order Id",
+                "Order Amount",
+                "User Name",
+                "User Email",
+                "User Phone Number",
+                "Payment Gateway",
+                "Order Date",
+                "Order Items"
+            );
+            $objPHPExcel->setActiveSheetIndex(0);
+            $rowCount = 1;
+            $colCount = 0;
+            foreach($headers as $head){
+                $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($colCount,$rowCount,$head);
+                $objPHPExcel->getActiveSheet()->getStyleByColumnAndRow($colCount,$rowCount)->getFont()->setBold("true");
+                $colCount++;
+            }
+            $colCount = 0;
+            $rowCount = $rowCount + 1;
+            $data = CustomerOrder::model()->findAllByAttributes(array("status"=>$status));
+            foreach ($data as $row){
+                $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($colCount,$rowCount,$row->ordfer_hash);$colCount++;
+                $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($colCount,$rowCount,"Rs.".money($row->order_amount));$colCount++;
+                $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($colCount,$rowCount,$row->user->full_name);$colCount++;
+                $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($colCount,$rowCount,$row->user->email);$colCount++;
+                $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($colCount,$rowCount,$row->user->mobile_number);$colCount++;
+                if($row->payment_gateway == 1){
+                    $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($colCount,$rowCount,"PayTm");$colCount++;
+                } else{
+                    $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($colCount,$rowCount,"Payu");$colCount++;
+                }
+                $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($colCount,$rowCount,$row->date_created);$colCount++;
+                $list = "";
+                foreach ($row->carts as $key=>$item){
+                    $list .= ($key+1).". ".$item->product->title."\n";
+                }
+                $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($colCount,$rowCount,$list);
+                $objPHPExcel->getActiveSheet()->getStyleByColumnAndRow($colCount,$rowCount)->getAlignment()->setWrapText(true);
+
+                $colCount = 0;
+                $rowCount++;
+            }
+
+
+
+            header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+            if($status == 2){
+                header('Content-Disposition: attachment;filename="successfull_orders.xlsx"');
+            } else {
+                header('Content-Disposition: attachment;filename="failed_orders.xlsx"');
+            }
+            header('Cache-Control: max-age=0');
+            header('Cache-Control: max-age=1');
+            header ('Expires: Mon, 26 Jul 1997 05:00:00 GMT'); // Date in the past
+            header ('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT'); // always modified
+            header ('Cache-Control: cache, must-revalidate'); // HTTP/1.1
+            header ('Pragma: public'); // HTTP/1.0
+
+            $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
+            $objWriter->save('php://output');
+            exit;
+        }
 
 		$this->render('admin',array(
 		    'status' => $status,
