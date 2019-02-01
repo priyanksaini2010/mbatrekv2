@@ -9,7 +9,8 @@ $this->breadcrumbs=array(
 <h1><?php echo $status == 2?"Success":"Failed";?> Orders</h1>
 
 
-<?php $this->widget('bootstrap.widgets.TbGridView',array(
+<?php
+$grid =  $this->widget('bootstrap.widgets.TbGridView',array(
 	'id'=>'customer-order-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
@@ -27,4 +28,8 @@ $this->breadcrumbs=array(
             'template' => '{view}'
 		),
 	),
-)); ?>
+));
+
+
+$this->renderExportGridButton($grid,'Export To XLSX',array('class'=>'btn btn-info pull-right'));
+?>
