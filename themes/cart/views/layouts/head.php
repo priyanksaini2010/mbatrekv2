@@ -9,4 +9,12 @@
 <link href="<?php echo $baseUrl; ?>/css/animate.css" rel="stylesheet" type="text/css" />
 <link href="<?php echo $baseUrl; ?>/css/font-awesome.css" rel="stylesheet" type="text/css" />
 <link href="<?php echo $baseUrl; ?>/css/jquery.mmenu.css" rel="stylesheet" type="text/css" />
+<!--Google Analytics-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-90207910-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
+    gtag('config', 'UA-90207910-1');
+</script>
