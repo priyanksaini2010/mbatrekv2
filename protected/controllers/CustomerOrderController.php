@@ -145,14 +145,14 @@ class CustomerOrderController extends Controller
 	/**
 	 * Manages all models.
 	 */
-	public function actionAdmin($status)
+	public function actionAdmin($status, $task = "")
 	{
 		$model=new CustomerOrder('search');
 		$model->unsetAttributes();  // clear any default values
         $_GET['CustomerOrder']['status'] = $status;
 		if(isset($_GET['CustomerOrder']))
 			$model->attributes=$_GET['CustomerOrder'];
-        if ($this->isExportRequest()) {
+        if ($task == "xls") {
             $objPHPExcel = new PHPExcel();
             // Set document properties
 
