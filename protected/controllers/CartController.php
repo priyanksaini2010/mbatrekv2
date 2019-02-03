@@ -52,8 +52,8 @@ class CartController extends Controller {
 
         private function sendOrderMail($params, $status = 1){
             if($status == 1){
-                $subjectAdmin = "New Order Recieved";
-                $subject = "Your Order Was Successfull";
+                $subjectAdmin = "New Order Received";
+                $subject = "Your Order Was Successful";
                 $template = getTemplate("order_success");
             } else {
                 $subjectAdmin = "Order Failed";
