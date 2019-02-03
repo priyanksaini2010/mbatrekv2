@@ -9,7 +9,7 @@
 
 */
 define('PAYTM_ENVIRONMENT', 'TEST'); // PROD
-define('PAYTM_MERCHANT_KEY', 'pDK9@IhUa!ug0Eb8'); //Change this constant's value with Merchant key downloaded from portal
+define('PAYTM_MERCHANT_KEY', 'pDK9@lhUa!ug0Eb8'); //Change this constant's value with Merchant key downloaded from portal
 define('PAYTM_MERCHANT_MID', 'RdUXJ61704589448838'); //Change this constant's value with MID (Merchant ID) received from Paytm
 define('PAYTM_MERCHANT_WEBSITE', 'MBATrek'); //Change this constant's value with Website name received from Paytm
 
