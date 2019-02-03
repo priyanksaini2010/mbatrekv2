@@ -52,7 +52,7 @@ class CartController extends Controller {
 
         private function sendOrderMail($params, $status = 1){
             if($status == 1){
-                $subjectAdmin = "New Order Received";
+                $subjectAdmin = "New Order Recieved";
                 $subject = "Your Order Was Successful";
                 $template = getTemplate("order_success");
             } else {
@@ -110,7 +110,6 @@ class CartController extends Controller {
             }
         }
         public function actionPaytmsurl(){
-//            pr($_REQUEST);
             $userData = UsersNew::model()->findByPk(Yii::app()->user->id);
             $order = CustomerOrder::model()->findByAttributes(array("ordfer_hash"=>$_REQUEST['ORDERID']));
             $cartData = Cart::model()->findAllByAttributes(array("order_id"=>$order->id));
@@ -261,36 +260,50 @@ class CartController extends Controller {
                             "name"=>$userData->full_name,
                             "mobile"=>$userData->mobile_number,
                         );
-                        switch ($paymentGateWay){
-                            //PayTm
-                            case 1:
-                                $paramList = array();
-                                $paramList["TXN_AMOUNT"] = $amount;
-                                $paramList["MID"] = PAYTM_MERCHANT_MID;
-                                $paramList["ORDER_ID"] = $order->ordfer_hash;
-                                $paramList["CUST_ID"] = "MBATREKTEST".$userData->id;
-                                $paramList["INDUSTRY_TYPE_ID"] = "Retail";
-                                $paramList["CHANNEL_ID"] = "WEB";
-                                $paramList["CALLBACK_URL"] = PAYTM_CALLBACK_URL;
-                                $paramList["WEBSITE"] = PAYTM_MERCHANT_WEBSITE;
-                                $paramList["MSISDN"] = $userData->mobile_number; //Mobile number of customer
-                                $paramList["EMAIL"] = $userData->email; //Email ID of customer
-                                $paramList["VERIFIED_BY"] = "EMAIL"; //
-                                $paramList["IS_USER_VERIFIED"] = "YES"; //
-                                $this->render("webroot.themes.cart.views.cart.pytm",array("paramList"=>$paramList));
-                                break;
-                            //Payu
-                            case 2:
-                                $attribsArray['udf5'] = "BOLT_KIT_PHP7";
-                                $attribsArray['surl'] =  "https://mbatrek.com/cart/payusurl";
-//                                $attribsArray['surl'] = "https://localhost/mbt/cart/payusurl";
-                                $hash=hash('sha512', Yii::app()->params['payu_merchant_id'].'|'.$attribsArray['transaction_id'].'|'.$attribsArray['amount'].'|'.$attribsArray['product_info'].'|'.$attribsArray['name'].'|'.$attribsArray['email'].'|||||'.$attribsArray['udf5'].'||||||'.Yii::app()->params['payu_salt']);
-                                $attribsArray['hash'] = $hash;
-                                $this->render("webroot.themes.cart.views.cart.payu",array("params"=>$attribsArray));
-                                break;
-                        }
+
                     } else {
                         pr($itemModel->getErrors());
+                    }
+                    switch ($paymentGateWay){
+                        //PayTm
+                        case 1:
+                            define("merchantMid", "RdUYXJ61704589448838");
+// Key in your staging and production MID available in your dashboard
+                            define("merchantKey", "pDK9@IhUa!ug0Eb8");
+// Key in your staging and production merchant key available in your dashboard
+                            define("orderId", "order1");
+                            define("channelId", "WEB");
+                            define("custId", "cust123");
+                            define("mobileNo", "7777777777");
+                            define("email", "username@emailprovider.com");
+                            define("txnAmount", "100.12");
+                            define("website", "WEBSTAGING");
+// This is the staging value. Production value is available in your dashboard
+                            define("industryTypeId", "Retail");
+// This is the staging value. Production value is available in your dashboard
+                            define("callbackUrl", "https://localhost/mbt/payment_lib/PaytmKit/pgResponse.php");
+                            $paytmParams = array();
+                            $paytmParams["MID"] = merchantMid;
+                            $paytmParams["ORDER_ID"] = $order->ordfer_hash;
+                            $paytmParams["CUST_ID"] = $userData->id;
+                            $paytmParams["MOBILE_NO"] = $userData->mobile_number;
+                            $paytmParams["EMAIL"] = $userData->email;
+                            $paytmParams["CHANNEL_ID"] = channelId;
+                            $paytmParams["TXN_AMOUNT"] = $order->order_amount;
+                            $paytmParams["WEBSITE"] = website;
+                            $paytmParams["INDUSTRY_TYPE_ID"] = industryTypeId;
+                            $paytmParams["CALLBACK_URL"] = PAYTM_CALLBACK_URL;
+                            $this->render("webroot.themes.cart.views.cart.pytm",array("paytmParams"=>$paytmParams));
+                            break;
+                        //Payu
+                        case 2:
+                            $attribsArray['udf5'] = "BOLT_KIT_PHP7";
+                            $attribsArray['surl'] =  "https://mbatrek.com/cart/payusurl";
+//                                $attribsArray['surl'] = "https://localhost/mbt/cart/payusurl";
+                            $hash=hash('sha512', Yii::app()->params['payu_merchant_id'].'|'.$attribsArray['transaction_id'].'|'.$attribsArray['amount'].'|'.$attribsArray['product_info'].'|'.$attribsArray['name'].'|'.$attribsArray['email'].'|||||'.$attribsArray['udf5'].'||||||'.Yii::app()->params['payu_salt']);
+                            $attribsArray['hash'] = $hash;
+                            $this->render("webroot.themes.cart.views.cart.payu",array("params"=>$attribsArray));
+                            break;
                     }
                 }
 

@@ -1,28 +1,23 @@
 <?php
 //Here checksum string will return by getChecksumFromArray() function.
-$checkSum = getChecksumFromArray($paramList,PAYTM_MERCHANT_KEY);
-
+$paytmChecksum = getChecksumFromArray($paytmParams, "pDK9@IhUa!ug0Eb8");
+$transactionURL = "https://securegw-stage.paytm.in/theia/processTransaction";
 ?>
 <html>
 <head>
-    <title>Merchant Check Out Page</title>
+    <title>Merchant Checkout Page</title>
 </head>
 <body>
 <center><h1>Please do not refresh this page...</h1></center>
-<form method="post" action="<?php echo PAYTM_TXN_URL ?>" name="f1">
-    <table border="1">
-        <tbody>
-        <?php
-        foreach($paramList as $name => $value) {
-            echo '<input type="hidden" name="' . $name .'" value="' . $value . '">';
-        }
-        ?>
-        <input type="hidden" name="CHECKSUMHASH" value="<?php echo $checkSum ?>">
-        </tbody>
-    </table>
-    <script type="text/javascript">
-        document.f1.submit();
-    </script>
+<form method='post' action='<?php echo $transactionURL; ?>' name='f1'>
+    <?php
+    foreach($paytmParams as $name => $value) {
+        echo '<input type="hidden" name="' . $name .'" value="' . $value . '">';
+    }
+    ?>
+    <input type="hidden" name="CHECKSUMHASH" value="<?php echo $paytmChecksum ?>">
 </form>
+<script type="text/javascript">
+    document.f1.submit();
+</script>
 </body>
-</html>
