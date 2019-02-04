@@ -214,12 +214,12 @@ return array(
         'adminName'=>'MBAtrek',
 		'noreply'=>'no-reply@mbatrek.com',
         'url'=>'https://mbatrek.com/',
-//        "payu_merchant_id" => "uTUmfIq7",
-//        "payu_salt" => "ZbJSYLBwUJ",
+        "payu_merchant_id" => "uTUmfIq7",
+        "payu_salt" => "ZbJSYLBwUJ",
         "payu_merchant_id" => "rjQUPktU",
-        "payu_salt" => "e5iIg1jwi8",
-//        "payu_test_url" => "https://secure.payu.in/_payment",
-        "payu_test_url" => "https://test.payu.in/_payment"
+//        "payu_salt" => "e5iIg1jwi8",
+        "payu_test_url" => "https://secure.payu.in/_payment",
+//        "payu_test_url" => "https://test.payu.in/_payment"
 //        "payu_test_url" => "https://secure.payu.in/_payment"
 	),
 );
