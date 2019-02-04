@@ -211,6 +211,7 @@ return array(
 		// this is used in contact page
 		'contactEmail'=>'contact@mbatrek.com',
 		'adminEmail'=>'info@mbatrek.com',
+        'adminName'=>'MBAtrek',
 		'noreply'=>'no-reply@mbatrek.com',
         'url'=>'https://mbatrek.com/',
 //        "payu_merchant_id" => "uTUmfIq7",
