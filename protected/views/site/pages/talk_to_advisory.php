@@ -127,6 +127,7 @@ if(!isset($model)){
                                     </div>
                                 </div>
                                 <?php if (CCaptcha::checkRequirements()): ?>
+<div class="col-md-12 col-sm-12 col-xs-12">
                                                 <div class="row">
                                     <?php echo $form->labelEx($model, 'verifyCode'); ?>
                                                     <div>
@@ -137,6 +138,7 @@ if(!isset($model)){
                                                         <br/>Letters are not case-sensitive.</div>
                                     <?php echo $form->error($model, 'verifyCode'); ?>
                                                 </div>
+</div>
                                 <?php endif; ?>
                                 <div class="sibmit_form">
                                     <button class="site_btn raised ripple" type="submit"><a id='talk_submit' href="javascript:void('0');">Post</a></button>

@@ -73,7 +73,7 @@
             </div>
             <div class="amaster_bulid">
                 <div class="row">
-                    <div class="col-md-4 is-animated">
+                    <div class="col-md-4 col-sm-6 col-xs-12 is-animated">
                         <div class="amaster_repeat">
                             <img src="<?php echo $baseUrl; ?>/images/amazon_gift_icon.png"/>
                             <h3>Amazon Gift Cards Worth up to <span>₹ 7,000</span></h3>
@@ -87,7 +87,7 @@
                             <h3>MBAtrek Goodies  Worth up to <span>₹ 9,500 </span></h3>
                         </div>
                     </div>
-                    <div class="col-md-4  is-animated">
+                    <div class="col-md-4 col-sm-6 col-xs-12  is-animated">
                         <div class="amaster_repeat">
                             <img src="<?php echo $baseUrl; ?>/images/certification_of_Appriciation.png"/>
                             <h3><span>Certificate of Appreciation </span> from MBAtrek’s Founders</h3>
@@ -103,7 +103,7 @@
                             </h3>
                         </div>
                     </div>
-                    <div class="col-md-4 is-animated">
+                    <div class="col-md-4 col-sm-6 col-xs-12 is-animated">
                         <div class="amaster_repeat">
                             <img src="<?php echo $baseUrl; ?>/images/preplacement_icon.png"/>
                             <h3>Pre-Placement Interview  <span>(PPI)</span></h3>

@@ -920,6 +920,13 @@ user-select: none;
 	.engament_model ul li span{font-size:15px;}
 	.engament_model ul li label{line-height: 26px  ;  font-size: 16px;}
 	.classroom_div ul li{margin-bottom:23px;}
+	.ambastor_container .what_do_u_get .amaster_repeat{display:block;}
+	.ambastor_container .what_do_u_get .amaster_repeat img{float:left;}
+	.ambastor_container .what_do_u_get .amaster_repeat h3{    width: 215px; padding: 0 0 0 11px;float:left;}
+	.ambastor_container .what_do_u_get  .col-md-4{padding:0 9px 16px 9px;}
+
+	
+
 	
 }
 @media (max-width: 1024px) {
@@ -978,6 +985,18 @@ user-select: none;
 	.company_left{width:100%;}
 	.ambastor_container .earn_container ul li{width:200px;margin-bottom:20px;}
 	
+	.ambastor_container .what_do_u_get .amaster_repeat h3{width: 84%; padding: 0 0 0 11px;}
+	.ambastor_container .what_do_u_get  .col-md-4{padding:0 9px 16px 9px;width:100%;}
+	.ambastor_container .what_do_u_get  .col-md-4:after{width: 97%;
+    height: 1px;
+    left: 10px;
+    bottom: 0;
+    top: auto;}
+	body .ambastor_container.regsiter_emastor .earn_point ul li{width:280px;vertical-align: top;} 
+	body .ambastor_container.industry_Ready .earn_container ul li{    width: 177px;
+    vertical-align: top;}
+	
+	
 }
 @media (max-width: 991px) {
 	.comany_conainer .buy_now .order_div a{width:49%;    margin-right: 0.4vw;}
@@ -989,6 +1008,14 @@ user-select: none;
 	.row.first_year .step_professional{padding-bottom:24px;}
 	.row.career_planning .home-cta-wrapper.young_profes .cta-home{width:33%;}
 	.student-cta2 ul.student-cta-listing > li{width:46%;margin-bottom: 80px;}
+    .contact_container_page .form-horizontal .row .col-md-6 .row .col-md-6:nth-child(2) .contact_info_div{margin-top:23px;}
+    .google_information iframe{width:100%;}
+	.our_recomanded ul li{width:250px;}
+.payment_block .payment_button{    padding: 44px 0 0 50px;
+    width: auto;
+    display: inline-block;}
+.payment_block .payment_select ul li .img_payment{width:200px;}
+.profile_container .profile_user{    max-width: 670px;width:auto;}
 	
 }
 @media (max-width: 480px) {
@@ -1012,10 +1039,40 @@ user-select: none;
     padding: 41px 13px 40px 13px;}
 	.blog_new_container .blog_header .header_btn a{font-size:14px;padding: 8px 10px 6px 10px;}
 	.blog_new_container .blog_header .col-xs-4{padding:0;}
-	
+.login_container .login_wrapper{    max-width: 286px!important;}
+.payment_block .payment_button{    padding: 19px 0 0 30px;
+    width: auto;
+    display: inline-block;}
+.payment_block .payment_button a{    padding: 9px 10px 9px 10px;
+    font-size: 17px}
+.payment_block .payment_select ul li .img_payment{width:99px;}
+.page-wrapper .payment_block .payment_heading{font-size:30px;}
+.payment_block .order_sumery{    padding: 32px 10px;}
+.profile_container .form-signin{padding:0;}
+body .profile_user .col-md-12 .col-md-8 input[type="text"]{width:90%;}
+.bielf_container.task_page .talk_to_Advisor .panel-body{padding:0;}
+.bielf_container.task_page .talk_to_Advisor .panel-body .heading_Tab h2{font-size:20px;}
+.bielf_container.task_page .talk_to_Advisor .panel-body #login-form >.row >div{padding:0 0 0 23px;}
+.bielf_container.task_page .talk_to_Advisor .panel-body #login-form >.row >label{padding:0 0 0 23px;}
+.bielf_container.task_page .talk_to_Advisor .panel-body #login-form .sibmit_form{padding: 20px 0 14px 0;}
 }
 @media (max-width: 548px) {
 	main .bulid_categories .categories_container a{margin-right:0;}
+}
+@media (max-width: 592px) 
+{
+	body .ambastor_container.regsiter_emastor .earn_point ul li:after{bottom: -17px;
+    top: auto;
+    left: 0;
+    margin: auto;
+    right: 0;
+    transform: rotate(-270deg);}
+	body .ambastor_container.regsiter_emastor .earn_point ul li{padding-bottom: 30px;}
+body .ambastor_container.industry_Ready.interview_ready .earn_point.the_task .earn_container ul li{padding:0 0 30px 0px !important;width:300px!important;}
+body .ambastor_container.industry_Ready.interview_ready .earn_point.the_task .earn_container ul li .plus_icon_intervew{left:-15px;right:0;margin:auto;bottom:-199px;}
+.cart_area_wrapper.past_orders .cart_detail .cart_label{padding:20px 0 0 0!important;width:100%!important;}
+.cart_area_wrapper.past_orders .cart_label .puchase_id .id_pur{float: left!important;padding:0!important;}
+.cart_wrapper .cart_detail .cart_money{width:100%!important;text-align:left;}
 }
 @media (max-width: 385px) {
 	body{padding-bottom: 286px;}
@@ -1132,6 +1189,25 @@ main .home_page_slider .rslides_nav{    width: 31px; background-size: 100%;heigh
 	body .support_managment .row .support_aligment{padding: 0 0 40px 60px;width:100%;}
 	body .blog_new_container.student_story .blog_video_repeat{width:100%;}
 	body .faq_Container .tabbable-panel .nav li{margin-bottom:1px;}
+	.ambastor_container .what_do_u_get.compus_amastor_page .what_you_will_Get .earn_point ul li{width: 236px;}
+    body .ambastor_container.industry_Ready .earn_container ul li{width:100%!important ;     margin-bottom: 34px;}
+	body .ambastor_container.industry_Ready .earn_container ul li .arrow_industry_icon{bottom: -29px;
+    top: auto;
+    left: 0;
+    right: 0;
+    transform: rotate(89deg);
+    margin: auto;}
+	.ambastor_container.industry_Ready.interview_ready .what_do_u_get .col-md-4{width:100%}
+	.ambastor_container .earn_container ul li{width:100%;margin-bottom:40px;}
+	.ambastor_container .earn_container ul li:after{top:auto;bottom:-40px;right:0;left:-14px;margin:auto;    transform: rotate(450deg);}
+	.ambastor_container .what_you_will_Get .earn_point ul li{width:100%;}
+body .ambastor_container.industry_Ready.interview_ready .earn_point.the_task .earn_container ul li{padding:0 28px;width: 49%;}
+.are_yu ul li{margin-bottom:20px;width:100%;}
+.cart_detail .cart_label{padding-left:0;}
+.cart_label h4{font-size:16px;}
+.cart_wrapper .cart_detail .cart_money{width:26%;}
+.cart_area_wrapper.past_orders .cart_detail .cart_label{padding-left:16px;}
+   
 }
  
 @media (min-width: 768px) {
@@ -1483,7 +1559,7 @@ text-align: center;border-radius: 2px;}
 .bread_crum ul li a{color: #348786;font-size: 16px;}
 .bread_crum ul li.active a{font-family: 'MyriadPro-Semibold';} 
 .ground_1_pic {
-    width: 33%;
+    width: 32%;
     display: inline-block;
 }
 .navbar-nav  ul{
@@ -2350,3 +2426,4 @@ main .sucess_container.failure .any_query h3{font-style:normal;}
 .blog_new_container.student_story .blog_video_repeat{width:50%;}
 .blog_new_container.student_story .blog_video_repeat .blog_block{margin-bottom:0;}
 .our_company_page .manager_div{margin-top:80px;}
+.cart_area_wrapper.past_orders .cart_repeat{border-top:none;}
