@@ -42,7 +42,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
 								<div class="icon-holder">
 									<a id="tab1" href="#"> 
 										<span class="icon yound_need_help"> 
-											<img src="https://mbatrek.com/v2/images/young_need_help.png" alt=""> 
+											<img src="https://mbatrek.com/v2/images/young_need_help.png" alt="">
 											<!--<span class="icon-title">Internship</span>-->	 
 										</span> 
 										<span class="icon-text pull-left"> 
@@ -273,7 +273,11 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                 </div>
                                 <div class="row">
                                 </div class="col-md-12">
-                                <?php if(!empty($saver)){?>
+                                <?php if(!empty($saver)){
+                                    $url = str_replace("#","",rtrim($saver->title));
+                                    $url = str_replace(" ","-",$url);
+                                    $url = strtolower($url);
+                                ?>
                                 <div class="student-cta1-bottom " id="intern_price" >
                                     <div class="student-cta1-bottom-inner ">
                                         <div class="student-cta1-bottom-title">
@@ -290,7 +294,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                         <div class="buy-and-cart">
                                             <a href="<?php echo Yii::app()->createUrl("cart/buynow",array("id"=>$saver->id));?>">buy now</a>
                                             <a href="<?php echo Yii::app()->createUrl("cart/addtocart",array("id"=>$saver->id));?>">add to cart</a>
-                                            <a href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>$saver->id));?>">read more</a>
+                                            <a href="<?php echo Yii::app()->createUrl($url);?>">read more</a>
                                         </div>
 
                                     </div>
@@ -319,6 +323,9 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                 <?php 
                                                     $products = Products::model()->findAllByAttributes(array("product_sub_category_id"=>2,"type"=>1,"status"=>1));
                                                     foreach ($products as $prod){
+                                                        $url = str_replace("#","",rtrim($prod->title));
+                                                        $url = str_replace(" ","-",$url);
+                                                        $url = strtolower($url);
                                                 ?>
                                                         <li>
                                                             <div class="intern-type">
@@ -332,7 +339,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                                     <?php echo $prod->description1;?>
                                                                 </div>
                                                                 <div class="intern-read-more">
-                                                                    <a href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>$prod->id));?>">read more >></a>
+                                                                    <a href="<?php echo Yii::app()->createUrl($url);?>">read more >></a>
                                                                 </div>
                                                                 <div class="intern-price">
                                                                     PRICE &#8377 <?php echo money($prod->price);?>
@@ -348,7 +355,11 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                 </div>
                                             </div>
                                         </div>
-                                          <?php  $product = Products::model()->findByAttributes(array("id"=>31));?>
+                                          <?php  $product = Products::model()->findByAttributes(array("id"=>31));
+                                          $url = str_replace("#","",rtrim($product->title));
+                                          $url = str_replace(" ","-",$url);
+                                          $url = strtolower($url);
+                                          ?>
                                         <div class="combo_package">
                                         <div class="student-cta1-bottom ">
                                                 <div class="student-cta1-bottom-inner " id="indusctry_ready">
@@ -364,7 +375,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                     <div class="buy-and-cart">
                                                         <a href="<?php echo Yii::app()->createUrl("cart/addtocart",array("id"=>31));?>">buy now</a>
                                                         <a href="<?php echo Yii::app()->createUrl("cart/addtocart",array("id"=>31));?>">add to cart</a>
-                                                        <a href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>31));?>">Read More</a>
+                                                        <a href="<?php echo Yii::app()->createUrl($url);?>">Read More</a>
                                                     </div>
 
                                                 </div>
@@ -385,6 +396,9 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                         <?php 
                                                     
                                                     foreach ($products as $prod){
+                                                        $url = str_replace("#","",rtrim($prod->title));
+                                                        $url = str_replace(" ","-",$url);
+                                                        $url = strtolower($url);
                                                 ?>
                                                         <li>
                                                             <div class="intern-type">
@@ -398,7 +412,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                                     <?php echo $prod->description1;?>
                                                                 </div>
                                                                 <div class="intern-read-more">
-                                                                    <a href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>$prod->id));?>">read more >></a>
+                                                                    <a href="<?php echo Yii::app()->createUrl($url);?>">read more >></a>
                                                                 </div>
                                                                 <div class="intern-price">
                                                                     PRICE &#8377 <?php echo money($prod->price);?>
@@ -425,6 +439,9 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                          <?php 
                                                     $products = Products::model()->findAllByAttributes(array("product_sub_category_id"=>4,"status"=>1,"is_saver"=>0));
                                                     foreach ($products as $prod){
+                                                        $url = str_replace("#","",rtrim($prod->title));
+                                                        $url = str_replace(" ","-",$url);
+                                                        $url = strtolower($url);
                                                 ?>
                                                         <li>
                                                             <div class="intern-type">
@@ -438,7 +455,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                                     <?php echo $prod->description1;?>
                                                                 </div>
                                                                 <div class="intern-read-more">
-                                                                    <a href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>$prod->id));?>">read more >></a>
+                                                                    <a href="<?php echo Yii::app()->createUrl($url);?>">read more >></a>
                                                                 </div>
                                                                 <div class="intern-price">
                                                                     PRICE &#8377 <?php echo money($prod->price);?>
@@ -454,7 +471,11 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                 </div>
                                             </div>
                                         </div>
-                                        <?php  $product = Products::model()->findByAttributes(array("id"=>32));?>
+                                        <?php  $product = Products::model()->findByAttributes(array("id"=>32));
+                                        $url = str_replace("#","",rtrim($product->title));
+                                        $url = str_replace(" ","-",$url);
+                                        $url = strtolower($url);
+                                        ?>
                                         <div class="combo_package">
                                         <div class="student-cta1-bottom ">
                                                 <div class="student-cta1-bottom-inner" id="interview_ready" >
@@ -470,7 +491,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                     <div class="buy-and-cart">
                                                         <a href="<?php echo Yii::app()->createUrl("cart/buynow",array("id"=>32));?>">buy now</a>
                                                         <a href="<?php echo Yii::app()->createUrl("cart/addtocart",array("id"=>32));?>">add to cart</a>
-                                                        <a href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>32));?>">Read More</a>
+                                                        <a href="<?php echo Yii::app()->createUrl($url);?>">Read More</a>
                                                     </div>
 
                                                 </div>
