@@ -176,8 +176,8 @@ var domain_name = '<?php echo $_SERVER['HTTP_HOST'].DIREC;?>';
                                             <br />
                                             <span>Please check your email to verify account.</span>
                                             <br />
-                                           <span>Check your SPAM if you have not recieved the email.</span>
-                                            <br />
+                                           <span>Check your Spam/Junk/Promotions folder if you have not received the email.</span>
+
                                         </span></p>
                                 </div>
                                 <!-- <button class="md-close">OK</button> -->
