@@ -45,12 +45,16 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                 <ul class="student-cta1-listing">
                     <?php
                     if(!empty($products)){
-                        foreach($products as $key=>$prod){?>
+                            foreach($products as $key=>$prod){
+                                $url = str_replace("#","",rtrim($prod->title));
+                                $url = str_replace(" ","-",$url);
+                                $url = strtolower($url);
+                        ?>
                         <li>
                         <div class="intern-type">
                             <div class="top-icon">
 
-                                <a href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>$prod->id));?>">
+                                <a href="<?php echo Yii::app()->createUrl($url);?>">
                                     <img src="<?php echo Yii::app()->request->baseUrl;?>/assets/products/<?php echo $prod->logo;?>">
                                 </a>
                             </div>
@@ -59,7 +63,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                 <?php echo $prod->description1;?>
                             </div>
                             <div class="intern-read-more">
-                                <a href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>$prod->id));?>">read more >></a>
+                                <a href="<?php echo Yii::app()->createUrl($url);?>">read more >></a>
                             </div>
                             <div class="intern-price">
                                 PRICE &#8377 <?php echo money($prod->price);?>
@@ -83,7 +87,11 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                     <!--<span class="no-products">No Products Found</span>-->
                     <?php }?>
                 </ul>
-                <?php if(!empty($saver)){?>
+                <?php if(!empty($saver)){
+                    $url = str_replace("#","",rtrim($saver->title));
+                    $url = str_replace(" ","-",$url);
+                    $url = strtolower($url);
+                    ?>
                 <div class="student-cta1-bottom">
                     <div class="student-cta1-bottom-inner">
                         <div class="student-cta1-bottom-title">
@@ -97,7 +105,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                             <a href="<?php echo Yii::app()->createUrl("cart/addtocart",array("id"=>$saver->id));?>">add to cart</a>
                         </div>
                         <div class="read-more">
-                            <a href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>$saver->id));?>">read more >></a>
+                            <a href="<?php echo Yii::app()->createUrl($url);?>">read more >></a>
                         </div>
                     </div>
                 </div>
@@ -125,11 +133,15 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                 <div class="student-cta2">
                     <div class="student-cta2-inner">
                         <ul class="student-cta-listing">
-                            <?php foreach($products as $product){?>
+                            <?php foreach($products as $product){
+                                $url = str_replace("#","",rtrim($product->title));
+                                $url = str_replace(" ","-",$url);
+                                $url = strtolower($url);
+                            ?>
                             <li>
                                 <div class="intern-type">
                                     <div class="top-icon">
-                                        <a href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>$product->id));?>">
+                                        <a href="<?php echo Yii::app()->createUrl($url);?>">
                                             <img src="<?php echo Yii::app()->request->baseUrl;?>/assets/products/<?php echo $product->logo?>">
                                         </a>
                                     </div>
@@ -138,7 +150,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                         <?php echo $product->description1?>
                                     </div>
                                     <div class="intern-read-more">
-                                        <a href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>$product->id));?>">read more >></a>
+                                        <a href="<?php echo Yii::app()->createUrl($url);?>">read more >></a>
                                     </div>
                                     <div class="intern-price">
                                         PRICE &#8377 <?php echo money($product->price);?>
@@ -154,7 +166,11 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                         <?php 
                         if($sub->id == 4){
              $saver = $campusCorp;
-             if(!empty($saver)){?>
+             if(!empty($saver)){
+                 $url = str_replace("#","",rtrim($saver->title));
+                 $url = str_replace(" ","-",$url);
+                 $url = strtolower($url);
+                 ?>
                 <div class="student-cta1-bottom">
                     <div class="student-cta1-bottom-inner">
                         <div class="student-cta1-bottom-title"> 
@@ -168,7 +184,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                             <a href="<?php echo Yii::app()->createUrl("cart/addtocart",array("id"=>$saver->id));?>">add to cart</a>
                         </div>
                         <div class="read-more">
-                            <a href="<?php echo Yii::app()->createUrl("cart/description",array("id"=>$saver->id));?>">read more >></a>
+                            <a href="<?php echo Yii::app()->createUrl($url);?>">read more >></a>
                         </div>
                     </div>
                 </div>
