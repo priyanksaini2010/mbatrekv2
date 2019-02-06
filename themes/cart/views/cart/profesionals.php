@@ -294,7 +294,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                         <div class="buy-and-cart">
                                             <a href="<?php echo Yii::app()->createUrl("cart/buynow",array("id"=>$saver->id));?>">buy now</a>
                                             <a href="<?php echo Yii::app()->createUrl("cart/addtocart",array("id"=>$saver->id));?>">add to cart</a>
-                                            <a href="<?php echo Yii::app()->createUrl($url);?>">read more</a>
+                                            <a href="<?php echo Yii::app()->createUrl($url);?>" target="_blank">read more</a>
                                         </div>
 
                                     </div>
@@ -339,7 +339,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                                     <?php echo $prod->description1;?>
                                                                 </div>
                                                                 <div class="intern-read-more">
-                                                                    <a href="<?php echo Yii::app()->createUrl($url);?>">read more >></a>
+                                                                    <a href="<?php echo Yii::app()->createUrl($url);?>" target="_blank">read more >></a>
                                                                 </div>
                                                                 <div class="intern-price">
                                                                     PRICE &#8377 <?php echo money($prod->price);?>
@@ -375,7 +375,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                     <div class="buy-and-cart">
                                                         <a href="<?php echo Yii::app()->createUrl("cart/addtocart",array("id"=>31));?>">buy now</a>
                                                         <a href="<?php echo Yii::app()->createUrl("cart/addtocart",array("id"=>31));?>">add to cart</a>
-                                                        <a href="<?php echo Yii::app()->createUrl($url);?>">Read More</a>
+                                                        <a href="<?php echo Yii::app()->createUrl($url);?>" target="_blank">Read More</a>
                                                     </div>
 
                                                 </div>
@@ -412,7 +412,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                                     <?php echo $prod->description1;?>
                                                                 </div>
                                                                 <div class="intern-read-more">
-                                                                    <a href="<?php echo Yii::app()->createUrl($url);?>">read more >></a>
+                                                                    <a href="<?php echo Yii::app()->createUrl($url);?>" target="_blank">read more >></a>
                                                                 </div>
                                                                 <div class="intern-price">
                                                                     PRICE &#8377 <?php echo money($prod->price);?>
@@ -455,7 +455,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                                     <?php echo $prod->description1;?>
                                                                 </div>
                                                                 <div class="intern-read-more">
-                                                                    <a href="<?php echo Yii::app()->createUrl($url);?>">read more >></a>
+                                                                    <a href="<?php echo Yii::app()->createUrl($url);?>" target="_blank">read more >></a>
                                                                 </div>
                                                                 <div class="intern-price">
                                                                     PRICE &#8377 <?php echo money($prod->price);?>
@@ -491,7 +491,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                     <div class="buy-and-cart">
                                                         <a href="<?php echo Yii::app()->createUrl("cart/buynow",array("id"=>32));?>">buy now</a>
                                                         <a href="<?php echo Yii::app()->createUrl("cart/addtocart",array("id"=>32));?>">add to cart</a>
-                                                        <a href="<?php echo Yii::app()->createUrl($url);?>">Read More</a>
+                                                        <a href="<?php echo Yii::app()->createUrl($url);?>" target="_blank">Read More</a>
                                                     </div>
 
                                                 </div>

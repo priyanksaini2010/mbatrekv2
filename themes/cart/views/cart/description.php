@@ -289,7 +289,7 @@ $productActuall = Products::model()->findByPk($id);
 									<h3>InternACE</h3>
 								</div>
 								<div class="engage_img">
-									<img src="<?php echo $baseUrl; ?>/images/internace_icon.png"/>
+
 								</div>
 								<div class="title_descrip">
 									Getting ready and relevant for internship
@@ -297,14 +297,14 @@ $productActuall = Products::model()->findByPk($id);
 								<div class="price_eng">
 									<label>&#8377 4,500</label>
 								</div>
-								<img src="<?php echo $baseUrl; ?>/images/plus_icon.png"/>
+
 							</li>
 							<li>
 								<div class="title_eng">
 									<h3>InternPRO</h3>
 								</div>
 								<div class="engage_img">
-									<img src="<?php echo $baseUrl; ?>/images/internPro_icon.png"/>
+
 								</div>
 								<div class="title_descrip">
 									Delivering your best during the internship
@@ -313,7 +313,7 @@ $productActuall = Products::model()->findByPk($id);
 								<div class="price_eng">
 									<label>&#8377 4,500</label>
 								</div>
-								<img src="<?php echo $baseUrl; ?>/images/plus_icon.png"/>
+								<img
 							</li>
 							
 						</ul>
