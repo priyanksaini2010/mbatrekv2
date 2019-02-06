@@ -171,7 +171,7 @@ $(document).ready(function(){
              validationMethod("error","Please confirm password.");return false;
          }
          if ($("#UsersNew_cpassword").val() != $("#UsersNew_password").val()){
-             validationMethod("error","Confirm password and Password must be same.");return false;
+             validationMethod("error","The new password and the confirmation should be same.");return false;
          }
      })
     $("#register-form").submit(function(){
