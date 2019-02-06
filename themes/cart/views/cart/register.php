@@ -24,11 +24,11 @@
                         
                         <?php if($model->email != ''){ $data =  array('for' => "firstname",'class' => 'active');}else{$data =  array('for' => "firstname");};?>
                         <?php echo $form->textField($model, 'email', array('class' => "form-control email_rule_input","placeholder"=>"Email*")); ?>
-                         <span class="email_rule">(Kindly register with your Institutional Email ID to avail additional offers.)</span>
+                         <span class="email_rule">(Kindly register with your Institutional Email ID to avail additional offers)</span>
                         <?php if($model->password != ''){ $data =  array('for' => "firstname",'class' => 'active');}else{$data =  array('for' => "firstname");};?>
                         <?php echo $form->passwordField($model, 'password', array('class' => "form-control","placeholder"=>"Password*")); ?>
                         <input type="password" class="form-control" placeholder="Confirm Password*" id="UsersNew_cpassword"> 
-                        <span class="password_rule">(Should be 8 character long and alphanumeric, special characters are not allowed)</span>
+                        <span class="password_rule">(Should be 8 character long and alphanumeric)</span>
                         <?php if($model->mobile_number != ''){ $data =  array('for' => "firstname",'class' => 'active');}else{$data =  array('for' => "firstname");};?>
                         <?php echo $form->textField($model, 'mobile_number', array('class' => "form-control","placeholder"=>"Mobile Number*")); ?>
                         <!--

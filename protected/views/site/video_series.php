@@ -16,13 +16,13 @@ $typ = $_GET['type'];
     </div>
     <div class="blog_header">
         <div class="container">
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-4 col-xs-4">
                 <div class="header_btn"><a class="<?php echo $typ == 1?"active_high":"";?>" href="<?php echo Yii::app()->createUrl('videos/interview-ready');?>">#InterviewReady</a></div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-4 col-xs-4">
                 <div class="header_btn"><a class="<?php echo $typ == 2?"active_high":"";?>" href="<?php echo Yii::app()->createUrl('videos/interngo');?>">#InternGo</a></div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-4 col-xs-4">
                 <div class="header_btn"><a class="<?php echo $typ == 3?"active_high":"";?>"  href="<?php echo Yii::app()->createUrl('videos/cxo-thoughts');?>">CXO's Thoughts</a></div>
             </div>
         </div>
@@ -33,7 +33,7 @@ $typ = $_GET['type'];
                 <div class="row">
                     <?php foreach ($blogs as $blog){?>
                         <div class="blog_video_repeat">
-                    <div class="col-md-7 col-sm-7 col-xs-7">
+                    <div class="col-md-7 col-sm-7 col-xs-12">
                         <div class="blog_block">
                             <div class="block_Titke">
                                 <h1>  <?php echo $blog->title;?></h1>

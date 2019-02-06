@@ -172,21 +172,20 @@
                 </div>
                 <div class="amaster_bulid">
                     <div class="row">
-                        <div class="col-md-6 is-animated">
+                        <div class="col-md-12 is-animated">
                             <div class="amaster_repeat">
                                 <img src="<?php echo $baseUrl;?>/images/industry_Ready/one.png"/>
                                 <h3>This competition is open only for <span>1st year MBA</span> students of B-Schools in Delhi-NCR </h3>
+                            </div>
+<div class="amaster_repeat">
+                                <img src="<?php echo $baseUrl;?>/images/industry_Ready/two.png"/>
+                                <h3>The participants need to register in <span>teams with at least 2 students</span> and maximum up-to 4 students   </h3>
                             </div>
                             <div class="amaster_repeat">
                                 <img src="<?php echo $baseUrl;?>/images/industry_Ready/four.png"/>
                                 <h3>Minimum <span>10 team registrations</span> per college are required to enter the #IndustryREADY Competition  </h3>
                             </div>
-                        </div>
-                        <div class="col-md-6  is-animated">
-                            <div class="amaster_repeat">
-                                <img src="<?php echo $baseUrl;?>/images/industry_Ready/two.png"/>
-                                <h3>The participants need to register in <span>teams with at least 2 students</span> and maximum up-to 4 students   </h3>
-                            </div>
+							
                             <div class="amaster_repeat">
                                 <img src="<?php echo $baseUrl;?>/images/industry_Ready/three.png"/>
                                 <h3>MBAtrek will <span>visit your campus</span> to declare the Winners & provide performance feedback </h3>

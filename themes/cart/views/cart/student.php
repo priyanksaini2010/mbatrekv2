@@ -37,7 +37,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
         
     </div>
     <div class="container" >
-         <div class="sub_title" id="Firstfollow">Let us help you maximize your internship opportunity...</div>
+         <div class="sub_title" id="followed_by">Let us help you maximize your internship opportunity...</div>
     </div>
     <div class="student-cta1">
         <div class="container">

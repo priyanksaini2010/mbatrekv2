@@ -40,7 +40,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
 						<div class="container">
 							<div class="student-internship col-xs-12 col-md-6 col-lg-6">
 								<div class="icon-holder">
-									<a id="tab1" href="#"> 
+									<a class="scroll_to" href="#first_year"> 
 										<span class="icon yound_need_help"> 
 											<img src="https://mbatrek.com/v2/images/young_need_help.png" alt="">
 											<!--<span class="icon-title">Internship</span>-->	 
@@ -70,7 +70,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                     </div>
                 </div>
                 <div class="row first_year">
-                    <h4>Your 1st year at work could be the hardest year of your career&period;&period;&period;</h4>
+                    <h4 id="first_year">Your 1st year at work could be the hardest year of your career&period;&period;&period;</h4>
                    
                     <div class="step_professional">
                     <div class="col-md-6">

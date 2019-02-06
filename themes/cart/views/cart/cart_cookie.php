@@ -18,7 +18,7 @@ foreach ($products as $c){
  <div class="cart_area_wrapper">
     <div class="container">
         <div class="row">
-            <div class="cart_wrapper">
+            <div class="cart_wrapper before_cart">
                 <h3>Your ‘Ready & Relevant’ Cart </h3>
                 <div class="row">
                     <div class="col-md-8 ">
@@ -54,6 +54,7 @@ foreach ($products as $c){
                                         <a  class="remove_cart" href="<?php echo Yii::app()->createUrl("cart/remove",array("id"=>$icart->id));?>">Remove</a>
                                     </li>
                                     <li class="cart_money">
+										<label class="cart_price_title">Price</label>
                                         <span>&#8377 <?php echo money($icart->price);?></span>
                                     </li></ul>
                                     <?php }}else {?>

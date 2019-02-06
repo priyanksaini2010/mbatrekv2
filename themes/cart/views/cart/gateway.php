@@ -18,7 +18,7 @@ if(!empty($coupon)){
 <div class="page-wrapper">
     <div class="payment_block">
         <div class="container">
-            <h3 class="payment_heading">Select a payment method </h3>
+            <h3 class="payment_heading">Select preferred a payment gateway </h3>
             <div class="row">
                 <div class="col-md-8 col-sm-6 col-xs-12">
                     <div class="payment_select">
