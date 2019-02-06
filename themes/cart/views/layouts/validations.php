@@ -9,7 +9,10 @@
         <?php }?>
             <?php }?>
 <?php } ?>
-    <?php if(isset($_REQUEST['resetdone'])){?>
+    <?php
+    $flash = Yii::app()->user->getFlashes();
+    $resetdone = $flash['resetdone'];
+    if(isset($resetdone) && $resetdone == 1){?>
     validationMethod("thanks","Your password has been reset successfully. Please login with your new password")
     <?php }?>
     <?php if(isset($_REQUEST['thankprofile'])){?>
