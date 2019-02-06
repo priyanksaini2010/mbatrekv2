@@ -995,7 +995,8 @@ class CartController extends Controller {
                 } else{
                     $model->attributes = $_POST['UsersNew'];
                     if($model->save()){
-                        $this->refresh(true,"?thankcp=1");
+                        Yii::app()->user->setFlash('thankcp', 1);
+                        $this->refresh(true);
                     } else {
                         $errors = json_encode($model->getErrors());
                         Yii::log("Error: Profile Update Failure: ".$errors);
