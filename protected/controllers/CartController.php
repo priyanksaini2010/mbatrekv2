@@ -711,7 +711,7 @@ class CartController extends Controller {
                         }
                     }
                 } else {
-                   $this->errors["exist"] = "This product already exist in your cart."; 
+                   $this->errors["exist"] = "This product already exists in your cart.";
                    $this->render("webroot.themes.cart.views.cart.cart",array());
                 }
                 
