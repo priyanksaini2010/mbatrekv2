@@ -326,6 +326,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                         $url = str_replace("#","",rtrim($prod->title));
                                                         $url = str_replace(" ","-",$url);
                                                         $url = strtolower($url);
+                                                        if($prod->id != 31){
                                                 ?>
                                                         <li>
                                                             <div class="intern-type">
@@ -350,7 +351,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                                 </div>
                                                             </div>
                                                         </li>
-                                                    <?php }?>
+                                                    <?php }}?>
                                                     </ul>                                    
                                                 </div>
                                             </div>
@@ -442,6 +443,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                         $url = str_replace("#","",rtrim($prod->title));
                                                         $url = str_replace(" ","-",$url);
                                                         $url = strtolower($url);
+                                                        if($prod->id != 32){
                                                 ?>
                                                         <li>
                                                             <div class="intern-type">
@@ -466,7 +468,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                                 </div>
                                                             </div>
                                                         </li>
-                                                        <?php }?>
+                                                        <?php }}?>
                                                     </ul>                                    
                                                 </div>
                                             </div>
