@@ -376,7 +376,7 @@ $(document).ready(function(){
         }
 
         if ($("#new-password").val() != $("#confirm-password").val()){
-            validationMethod("error","Confirm password and Password must be same.");return false;
+            validationMethod("error","The new password and the confirmation should be same.");return false;
         }
         $("#cp-form").submit();
     })
