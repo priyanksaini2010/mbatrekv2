@@ -65,7 +65,7 @@ class CartController extends Controller {
             $body = str_replace("{{AMOUNT}}", money($params['amount']), $body);
             $body = str_replace("{{LIST}}", $params['list'], $body);
 
-            $headers="From: ".Yii::app()->params['adminEmail']." <".Yii::app()->params['adminName']."> \r\n".
+            $headers="From: ".Yii::app()->params['adminName']." <".Yii::app()->params['adminEmail']."> \r\n".
                 "Reply-To: ".Yii::app()->params['adminEmail']." \r\n";
             $headers .= "MIME-Version: 1.0\r\n".
                 "Content-Type: text/html; charset=UTF-8";
@@ -523,7 +523,7 @@ class CartController extends Controller {
                 $template = getTemplate("ca");
                 $body = str_replace("{{SUBJECT}}", $subject, $template);
 
-                $headers="From: ".Yii::app()->params['adminEmail']." <".Yii::app()->params['adminName']."> \r\n".
+                $headers="From: ".Yii::app()->params['adminName']." <".Yii::app()->params['adminEmail']."> \r\n".
                     "Reply-To: ".Yii::app()->params['adminEmail']." \r\n";
                 $headers .= "MIME-Version: 1.0\r\n".
                     "Content-Type: text/html; charset=UTF-8";
@@ -935,7 +935,7 @@ class CartController extends Controller {
                    
                  
                     if($model->save()){
-                        $subject = "Your Account Has Been Created";
+                        $subject = "MBAtrek | New Account | Verification";
                         $template = getTemplate("verify");
                         $name = ucfirst($_POST['UsersNew']['full_name']);
                         $body = str_replace("{{SUBJECT}}", $subject, $template);
@@ -943,13 +943,13 @@ class CartController extends Controller {
                         $link = Yii::app()->params['url']."cart/verify?id=".$model->id;
                         $body = str_replace("{{LINK}}", $link, $body);
 
-                        $headers="From: ".Yii::app()->params['adminEmail']." <".Yii::app()->params['adminName']."> \r\n".
+                        $headers="From: ".Yii::app()->params['adminName']." <".Yii::app()->params['adminEmail']."> \r\n".
                             "Reply-To: ".Yii::app()->params['adminEmail']." \r\n";
                         $headers .= "MIME-Version: 1.0\r\n".
                             "Content-Type: text/html; charset=UTF-8";
 
                         $sentToUser = sendEmail($_POST['UsersNew']['email'], $subject,$body,$headers);
-                        $subject = ".MBAtrek | New Account | Verification";
+
                         $sentToAdmin = sendEmail(Yii::app()->params['adminEmail'], $subject,$body,$headers);
 //                        $this->refresh(true,"?thankreg=1");
                         $this->redirect(Yii::app()->createUrl("cart/index",array("thankreg"=>1)));

@@ -98,7 +98,7 @@ class ContactController extends Controller
                                         . "Message : ".$_POST['Contact']['your_message']."<br/ ><br/ >"
                                         . "Thanks,<br/ >"
                                         . "MBATrek Feedback Service";
-                                $headers="From: ".Yii::app()->params['adminEmail']." <".Yii::app()->params['adminName']."> \r\n".
+                                $headers="From: ".Yii::app()->params['adminName']." <".Yii::app()->params['adminEmail']."> \r\n".
                                         "Reply-To: ".Yii::app()->params['adminEmail']." \r\n";
 
                                 $headers .= "MIME-Version: 1.0\r\n".
