@@ -49,7 +49,13 @@ class CartController extends Controller {
                 ),
             );
         }
-
+        private function generateOrderHash($role, $sno){
+            if($role == 1){
+                return "STU000000".$sno;
+            } else{
+                return "PF000000".$sno;
+            }
+        }
         private function sendOrderMail($params, $status = 1){
             if($status == 1){
                 $subjectAdmin = "New Order Recieved";
@@ -238,9 +244,10 @@ class CartController extends Controller {
             foreach($cartData as $items){
                 $amount = $amount  + $items->product->price;
             }
+            $orderHash =
             $order->attributes = array(
                                         "user_id" => Yii::app()->user->id,
-                                        "ordfer_hash" => generateRandomString(6),
+
                                         "order_amount" => $amount,
                                         "payment_gateway" => $paymentGateWay,
                                         "status" => 1,
@@ -248,6 +255,9 @@ class CartController extends Controller {
                                     );
 
             if($order->save()) {
+                $hash = $this->generateOrderHash($userData->role,$order->id);
+                $order->attributes = array("ordfer_hash" => $hash);
+                $order->save();
                 foreach($cartData as $item){
                     $itemModel = Cart::model()->findByPk($item->id);
                     $itemModel->attributes = array("order_id"=>$order->id);
@@ -728,7 +738,7 @@ class CartController extends Controller {
                         setcookie("products", serialize($cookieCart),strtotime( '+30 days' ),DIREC);
                         $this->redirect(Yii::app()->request->urlReferrer);
                     } else {
-                        $this->errors["exist"] = "This product already exist in your cart."; 
+                        $this->errors["exist"] = "This product already exists in your cart.";
                         $this->render("webroot.themes.cart.views.cart.cart",array());
                     }
                 } else {

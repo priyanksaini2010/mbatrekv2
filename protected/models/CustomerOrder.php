@@ -15,6 +15,7 @@
  * The followings are the available model relations:
  * @property Cart[] $carts
  * @property UsersNew $user
+ * @property PayuResponse[] $payuResponses
  */
 class CustomerOrder extends CActiveRecord
 {
@@ -34,7 +35,7 @@ class CustomerOrder extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('ordfer_hash, user_id, order_amount, payment_gateway, status, date_created', 'required'),
+			array('user_id, order_amount, payment_gateway, status, date_created', 'required'),
 			array('user_id, payment_gateway, status', 'numerical', 'integerOnly'=>true),
 			array('order_amount', 'numerical'),
 			array('ordfer_hash', 'length', 'max'=>255),
@@ -54,6 +55,7 @@ class CustomerOrder extends CActiveRecord
 		return array(
 			'carts' => array(self::HAS_MANY, 'Cart', 'order_id'),
 			'user' => array(self::BELONGS_TO, 'UsersNew', 'user_id'),
+			'payuResponses' => array(self::HAS_MANY, 'PayuResponse', 'order_id'),
 		);
 	}
 
@@ -64,7 +66,7 @@ class CustomerOrder extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'ordfer_hash' => 'Order Id',
+			'ordfer_hash' => 'Ordfer Hash',
 			'user_id' => 'User',
 			'order_amount' => 'Order Amount',
 			'payment_gateway' => 'Payment Gateway',
