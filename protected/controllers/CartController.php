@@ -53,7 +53,7 @@ class CartController extends Controller {
             if($role == 1){
                 return "STU000000".$sno;
             } else{
-                return "PF000000".$sno;
+                return "YPF000000".$sno;
             }
         }
         private function sendOrderMail($params, $status = 1){
