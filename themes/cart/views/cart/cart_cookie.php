@@ -88,7 +88,7 @@ foreach ($products as $c){
                                     <label> Total : <span> &#8377 <?php echo money($total - $total_dis);?></span></label>
                                 <?php }?>
 
-                                <a id="checkout-login" href="<?php echo Yii::app()->createUrl("login");?>">Checkout</a>
+                                <a id="checkout-login" href="<?php echo Yii::app()->createUrl("login?b=1");?>">Checkout</a>
 
                             </div>
                             <span class="promocode">Have a promocode? Enter here</span>
