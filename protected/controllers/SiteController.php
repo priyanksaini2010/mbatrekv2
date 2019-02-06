@@ -133,7 +133,7 @@ class SiteController extends Controller
 				$link = "https://mbatrek.com/site/retrieve?id=".base64_encode($find->id);
 				$body = str_replace("{{PASSWORD}}", $link, $body);
 
-                    $headers="From: ".Yii::app()->params['adminEmail']." <".Yii::app()->params['adminEmail']."> \r\n".
+                    $headers="From: ".Yii::app()->params['adminName']." <".Yii::app()->params['adminEmail']."> \r\n".
                             "Reply-To: ".Yii::app()->params['adminEmail']." \r\n";
 
                     $headers .= "MIME-Version: 1.0\r\n".
