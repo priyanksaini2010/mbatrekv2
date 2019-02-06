@@ -48,7 +48,8 @@ class SiteController extends Controller
             if (!empty($user)) {
                 $user->attributes = array("password"=>$_POST['UsersNew']['password']);
                 if($user->save()){
-                    $this->redirect(Yii::app()->createUrl("site/login",array("resetdone"=>1)));
+                    Yii::app()->user->setFlash('resetdone', 1);
+                    $this->redirect(Yii::app()->createUrl("site/login"));
                 } else{
                     pr($user->getErrors());
                 }
