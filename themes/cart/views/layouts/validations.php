@@ -15,7 +15,10 @@
     <?php if(isset($_REQUEST['thankprofile'])){?>
     validationMethod("thanks","Your profile has been updated successfully.")
     <?php }?>
-    <?php if(isset($_REQUEST['thankcp'])){?>
+    <?php
+    $flash = Yii::app()->user->getFlashes();
+    $thankcp = $flash['thankcp'];
+    if(isset($thankcp) && $thankcp ==1){?>
     validationMethod("thanks","Your password has been updated successfully.")
     <?php }?>
     <?php if(isset($_REQUEST['thankreg'])){?>
