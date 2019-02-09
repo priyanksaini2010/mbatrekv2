@@ -2441,3 +2441,4 @@ main .sucess_container.failure .any_query h3{font-style:normal;}
 .our_company_page .manager_div{margin-top:80px;}
 .cart_area_wrapper.past_orders .cart_repeat{border-top:none;}
 .what_do_u_get.rule_Game .amaster_repeat{width:50%;}
+#myModal-removecart .modal-body #pop-notification-text{text-align: center; display: block;}
