@@ -664,7 +664,7 @@ class CartController extends Controller {
                                     case 2:
 //                                        $status['message'] = "A Discount of Rs.".money($amount)."% have been applied successfully.";
 //                                        $status['message'] = "A promo code is successfully applied to your college id. You have received Rs.".money($amount)." off discount.";
-                                        $status['message'] = "You have successfully received Rs".money($amount)."off on your cart.";
+                                        $status['message'] = "You have successfully received Rs".money($amount)." off on your cart.";
                                         break;
                                 }
                                 
