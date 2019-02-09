@@ -38,6 +38,7 @@ $siteData = array(
      array('label'=>'Banners Managment', 'url'=>array('/banners/admin')),
             array('label'=>'Feedback Managment', 'url'=>array('/feedback/admin')),
             array('label'=>'Contact Managment', 'url'=>array('/contact/admin')),
+            array('label'=>'Blocked Managment', 'url'=>array('/blockedEmail/admin')),
             array('label'=>'FAQ Managment', 'url'=>array('/faq/admin')),
            
 //            array('label'=>'FAQ Analysis', 'url'=>array('/faqAnalysis/admin')),

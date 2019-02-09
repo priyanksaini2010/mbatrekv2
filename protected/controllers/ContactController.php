@@ -81,7 +81,10 @@ class ContactController extends Controller
               
 		if(isset($_POST['Contact']))
 		{
-			
+            $blokedEmails = CHtml::listData(BlockedEmail::model()->findAll(),"id","email");
+            if(in_array($_POST['Contact']['email'], $blokedEmails)){
+                $this->redirect(Yii::app()->createUrl('contact/create'));
+            }
 			$model->attributes=$_POST['Contact'];
 			
 			if($model->save()){
