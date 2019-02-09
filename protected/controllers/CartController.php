@@ -116,8 +116,15 @@ class CartController extends Controller {
             }
         }
         public function actionPaytmsurl(){
-            $userData = UsersNew::model()->findByPk(Yii::app()->user->id);
             $order = CustomerOrder::model()->findByAttributes(array("ordfer_hash"=>$_REQUEST['ORDERID']));
+            $userData = UsersNew::model()->findByPk(Yii::app()->user->id);
+            if(empty($userData)){
+                $userData = UsersNew::model()->findByPk($userData->user_id);
+                $model=new LoginForm;
+                $model->attributes = array("username"=>$userData->email,"password"=>$userData->password);
+                $model->login();
+            }
+
             $cartData = Cart::model()->findAllByAttributes(array("order_id"=>$order->id));
             switch ($_REQUEST['STATUS']){
                 case "TXN_SUCCESS":
@@ -176,8 +183,15 @@ class CartController extends Controller {
             }
         }
         public function actionPayusurl(){
-            $userData = UsersNew::model()->findByPk(Yii::app()->user->id);
             $order = CustomerOrder::model()->findByAttributes(array("ordfer_hash"=>$_REQUEST['txnid']));
+            $userData = UsersNew::model()->findByPk(Yii::app()->user->id);
+            if(empty($userData)){
+                $userData = UsersNew::model()->findByPk($userData->user_id);
+                $model=new LoginForm;
+                $model->attributes = array("username"=>$userData->email,"password"=>$userData->password);
+                $model->login();
+            }
+
             $cartData = Cart::model()->findAllByAttributes(array("order_id"=>$order->id));
             switch ($_REQUEST['status']){
                 case "success":
