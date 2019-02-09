@@ -419,8 +419,9 @@ class CartController extends Controller {
                     $isCouponValid = CouponCode::model()->findByAttributes(array("domain"=>$domain_name));
                    
                     if(!empty($isCouponValid)) {
-                        $isThisUsed = CouponUsage::model()->findByAttributes(array("email_used"=>$_POST['username']));
-                        if(empty($isThisUsed)){ 
+//                        $isThisUsed = CouponUsage::model()->findByAttributes(array("email_used"=>$_POST['username']));
+                        $isThisUsed = false;
+                        if(empty($isThisUsed)){
                             $cart = Cart::model()->findByAttributes(array("user_id" => Yii::app()->user->id, "status" => 1));
                             $cartAll = Cart::model()->findAllByAttributes(array("user_id" => Yii::app()->user->id, "status" => 1));
                             $total = 0;
@@ -634,7 +635,8 @@ class CartController extends Controller {
                         $status['message'] = "Please login with ".$_POST['code']." to avail discount.";
                         echo json_encode($status);die;
                     }
-                    $isThisUsed = CouponUsage::model()->findByAttributes(array("email_used"=>$_POST['code']));
+//                    $isThisUsed = CouponUsage::model()->findByAttributes(array("email_used"=>$_POST['code']));
+                    $isThisUsed = false;
                     if(empty($isThisUsed)){
                         $cart = Cart::model()->findByAttributes(array("user_id" => Yii::app()->user->id, "status" => 1));
                         $cartAll = Cart::model()->findAllByAttributes(array("user_id" => Yii::app()->user->id, "status" => 1));
