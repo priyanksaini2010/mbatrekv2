@@ -106,11 +106,34 @@ class ContactController extends Controller
                                 
                                 $sentToUser = sendEmail(Yii::app()->params['contactEmail'], $subject,$body,$headers);
 				
-                                $body = "Hello ".$_POST['Contact']['first_name']." ".$_POST['Contact']['last_name'].",<br/><br/>"
-                                        . "Thanks to contact us. Will get in touch soon: <br/><br/ >"
-                                        . "Thanks,<br/ >"
-                                        . "MBATrek Feedback Service";
-                                $headers="From: ".Yii::app()->params['adminEmail']." <".Yii::app()->params['adminEmail']."> \r\n".
+//                                $body = "Hello ".$_POST['Contact']['first_name']." ".$_POST['Contact']['last_name'].",<br/><br/>"
+//                                        . "Thanks to contact us. Will get in touch soon: <br/><br/ >"
+//                                        . "Thanks,<br/ >"
+//                                        . "MBATrek Feedback Service";
+                                $templateType = "";
+                                switch ($_POST['Contact']['are_you']){
+                                    case 1:
+                                        $templateType = "contact_companie";
+                                        break;
+                                    case 2:
+                                        $templateType = "contact_younprofession";
+                                        break;
+                                    case 3:
+                                        $templateType = "contact_student";
+                                        break;
+                                    case 4:
+                                        $templateType = "contact_institute";
+                                        break;
+                                }
+                                $subject = "MBAtrek | Inquiry";
+                                $template = getTemplate($templateType);
+                                $name = ucfirst($_POST['UsersNew']['full_name']);
+//                                $body = str_replace("{{SUBJECT}}", $subject, $template);
+//                                $body = str_replace("{{NAME}}", $name, $body);
+//                                $link = Yii::app()->params['url']."cart/verify?id=".$model->id;
+//                                $body = str_replace("{{LINK}}", $link, $body);
+                                $body = $template;
+                                $headers="From: ".Yii::app()->params['adminName']." <".Yii::app()->params['adminEmail']."> \r\n".
                                         "Reply-To: ".Yii::app()->params['adminEmail']." \r\n";
 
                                 $headers .= "MIME-Version: 1.0\r\n".

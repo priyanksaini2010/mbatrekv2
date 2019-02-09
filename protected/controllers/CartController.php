@@ -582,7 +582,21 @@ class CartController extends Controller {
                         $_POST['InterviewReadyCompetition']['registeration_date'] = date("Y-m-d h:i:s");
 			$model->attributes=$_POST['InterviewReadyCompetition'];
 			if($model->save()){
-				$this->redirect(array('index','thanksinterview'=>1));
+                $subject = "MBAtrek | #InterviewReady | New Registration";
+                $template = getTemplate("industry_ready");
+
+//                                $body = str_replace("{{SUBJECT}}", $subject, $template);
+//                                $body = str_replace("{{NAME}}", $name, $body);
+//                                $link = Yii::app()->params['url']."cart/verify?id=".$model->id;
+//                                $body = str_replace("{{LINK}}", $link, $body);
+                $body = $template;
+                $headers="From: ".Yii::app()->params['adminName']." <".Yii::app()->params['adminEmail']."> \r\n".
+                    "Reply-To: ".Yii::app()->params['adminEmail']." \r\n";
+
+                $headers .= "MIME-Version: 1.0\r\n".
+                    "Content-Type: text/html; charset=UTF-8";
+                $sentToUser = sendEmail($_POST['InterviewReadyCompetition']['email_id'], $subject,$body,$headers);
+                $this->redirect(array('index','thanksinterview'=>1));
                         } else {
                             foreach ($model->getErrors() as $error){
                                 $this->errors['email'] = $error[0];
@@ -604,6 +618,22 @@ class CartController extends Controller {
                         $_POST['IndustryReadyCompetition']['registeration_date'] = date("Y-m-d h:i:s");
 			$model->attributes=$_POST['IndustryReadyCompetition'];
 			if($model->save()){
+                $subject = "MBAtrek | #IndustryREADY | New Registration";
+                $template = getTemplate("industry_ready");
+
+//                                $body = str_replace("{{SUBJECT}}", $subject, $template);
+//                                $body = str_replace("{{NAME}}", $name, $body);
+//                                $link = Yii::app()->params['url']."cart/verify?id=".$model->id;
+//                                $body = str_replace("{{LINK}}", $link, $body);
+                $body = $template;
+                $headers="From: ".Yii::app()->params['adminName']." <".Yii::app()->params['adminEmail']."> \r\n".
+                    "Reply-To: ".Yii::app()->params['adminEmail']." \r\n";
+
+                $headers .= "MIME-Version: 1.0\r\n".
+                    "Content-Type: text/html; charset=UTF-8";
+                $sentToUser = sendEmail($_POST['IndustryReadyCompetition']['email_id'], $subject,$body,$headers);
+                $sentToUser = sendEmail($_POST['IndustryReadyCompetition']['email_Id_1'], $subject,$body,$headers);
+                $sentToUser = sendEmail($_POST['IndustryReadyCompetition']['email_Id_2'], $subject,$body,$headers);
 				$this->redirect(array('index','thanksindustry'=>1));
                         } else {
                             foreach ($model->getErrors() as $error){
