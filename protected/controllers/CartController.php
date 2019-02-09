@@ -992,6 +992,11 @@ class CartController extends Controller {
                    
                  
                     if($model->save()){
+                        if($_POST["UsersNew"]["role"] == 1){
+                            $basket =  "https://mbatrek.com/students";
+                        } else {
+                            $basket =  "https://mbatrek.com/professionals";
+                        }
                         $subject = "MBAtrek | New Account | Verification";
                         $template = getTemplate("verify");
                         $name = ucfirst($_POST['UsersNew']['full_name']);
@@ -999,6 +1004,7 @@ class CartController extends Controller {
                         $body = str_replace("{{NAME}}", $name, $body);
                         $link = Yii::app()->params['url']."cart/verify?id=".$model->id;
                         $body = str_replace("{{LINK}}", $link, $body);
+                        $body = str_replace("{{BASKET}}", $basket, $body);
 
                         $headers="From: ".Yii::app()->params['adminName']." <".Yii::app()->params['adminEmail']."> \r\n".
                             "Reply-To: ".Yii::app()->params['adminEmail']." \r\n";
