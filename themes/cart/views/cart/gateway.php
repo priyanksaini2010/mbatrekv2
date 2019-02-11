@@ -12,7 +12,7 @@ if(empty($cart)){
 $coupon = CouponUsage::model()->findByAttributes(array("cart_id"=> $cartID->id));
 if(!empty($coupon)){
     $discount = $coupon->coupon->discount;
-    $discount_type = $coupon->coupon->discount_type;
+    $discountType = $coupon->coupon->discount_type;
 }
 ?>
 <div class="page-wrapper">
@@ -52,7 +52,19 @@ if(!empty($coupon)){
                     <div class="order_sumery">
                         <h3>Order Summary  </h3>
 						 <div class="total_payment">
-                            <label>Total (<?php echo count($cart)?> Item): <span>&#8377 <?php echo money($total);$total = 0;?></span></label>
+                             <?php  if($discount != 0 && $discountType !=0){
+                                if($discountType == 1){
+                                    $total = $total - ceil(($total * $discount)/100);
+                                }else {
+                                    $total = $total - $discount;
+                                }
+                            ?>
+                                 <label>Discount : <span>&#8377 <?php echo money($discount);?></span></label>
+                                 <label>Total (<?php echo count($cart)?> Item): <span>&#8377 <?php echo money($total);$total = 0;?></span></label>
+                             <?php }else {?>
+                                 <label>Total (<?php echo count($cart)?> Item): <span>&#8377 <?php echo money($total);$total = 0;?></span></label>
+                             <?php }?>
+
                         </div>
                         <ul>
                             <?php

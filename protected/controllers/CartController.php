@@ -256,10 +256,23 @@ class CartController extends Controller {
             $userData = UsersNew::model()->findByPk(Yii::app()->user->id);
             $order = new CustomerOrder();
             $amount = 0;
+            $discount = 0;
+            $discountType = 0;
             foreach($cartData as $items){
+                $checkCoupon =CouponUsage::model()->findByAttributes(array("cart_id"=>$items->id));
+                if($checkCoupon){
+                    $discount = $checkCoupon->coupon->discount;
+                    $discountType = $checkCoupon->coupon->discount_type;
+                }
                 $amount = $amount  + $items->product->price;
             }
-            $orderHash =
+            if($discount != 0 && $discountType !=0){
+                if($discountType  == 1){
+                    $amount = $amount - ceil(($amount * $discount)/100);
+                } else {
+                    $amount = $amount - $discount;
+                }
+            }
             $order->attributes = array(
                                         "user_id" => Yii::app()->user->id,
 
