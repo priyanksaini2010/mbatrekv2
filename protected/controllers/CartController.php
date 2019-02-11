@@ -126,6 +126,16 @@ class CartController extends Controller {
                 $model->login();
 
             }
+            //Revoking Previous Cart Items After BuyNow option
+            $presetCartItems = Cart::model()->findAllByAttributes(array("user_id" =>Yii::app()->user->id,"status" => 4));
+            if(!empty($presetCartItems)){
+                foreach($presetCartItems as $presetCartItem){
+//                    pr($presetCartItem);
+//                    $itemModel = Cart::model()->findByPk($presetCartItem->id);
+                    $presetCartItem->attributes = array("status" => 1);
+                    $presetCartItem->save();
+                }
+            }
             $cartData = Cart::model()->findAllByAttributes(array("order_id"=>$order->id));
             switch ($_REQUEST['STATUS']){
                 case "TXN_SUCCESS":
@@ -192,7 +202,16 @@ class CartController extends Controller {
                 $model->attributes = array("username"=>$userData->email,"password"=>$userData->password);
                 $model->login();
             }
-
+            //Revoking Previous Cart Items After BuyNow option
+            $presetCartItems = Cart::model()->findAllByAttributes(array("user_id" =>Yii::app()->user->id,"status" => 4));
+            if(!empty($presetCartItems)){
+                foreach($presetCartItems as $presetCartItem){
+//                    pr($presetCartItem);
+//                    $itemModel = Cart::model()->findByPk($presetCartItem->id);
+                    $presetCartItem->attributes = array("status" => 1);
+                    $presetCartItem->save();
+                }
+            }
             $cartData = Cart::model()->findAllByAttributes(array("order_id"=>$order->id));
             switch ($_REQUEST['status']){
                 case "success":
@@ -934,8 +953,20 @@ class CartController extends Controller {
             }
         }
         public function actionBuynow($id){
-             $this->layout = getCartLayot();
-            
+            $this->layout = getCartLayot();
+            #Setting Temp Unavailable To All other items in cart
+            $presetCartItems = Cart::model()->findAllByAttributes(array("user_id" =>Yii::app()->user->id,"status" => 1));
+            if(!empty($presetCartItems)){
+                foreach($presetCartItems as $presetCartItem){
+//                    pr($presetCartItem);
+//                    $itemModel = Cart::model()->findByPk($presetCartItem->id);
+                    $presetCartItem->attributes = array("status" => 4);
+                    if(!$presetCartItem->save()){
+                        pr($presetCartItem->getErrors());
+                    }
+                }
+            }
+
             if (isset(Yii::app()->user->id)) {
                 $modelPre = Cart::model()->findByAttributes(array(
                     "user_id" =>Yii::app()->user->id,
