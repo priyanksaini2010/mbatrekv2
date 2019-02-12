@@ -34,7 +34,7 @@ if (PAYTM_ENVIRONMENT == 'PROD') {
 $PAYTM_STATUS_QUERY_NEW_URL='https://securegw.paytm.in/merchant-status/getTxnStatus';
 $PAYTM_TXN_URL='https://securegw.paytm.in/theia/processTransaction';
 //define('PAYTM_CALLBACK_URL', 'https://localhost/mbt/cart/paytmsurl');
-define('PAYTM_CALLBACK_URL', 'https://mbatrek.components/cart/paytmsurl');
+define('PAYTM_CALLBACK_URL', 'https://mbatrek.com/cart/paytmsurl');
 define('PAYTM_REFUND_URL', '');
 define('PAYTM_STATUS_QUERY_URL', $PAYTM_STATUS_QUERY_NEW_URL);
 define('PAYTM_STATUS_QUERY_NEW_URL', $PAYTM_STATUS_QUERY_NEW_URL);
