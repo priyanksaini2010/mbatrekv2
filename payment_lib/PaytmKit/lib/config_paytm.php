@@ -30,6 +30,7 @@ if (PAYTM_ENVIRONMENT == 'PROD') {
 	$PAYTM_STATUS_QUERY_NEW_URL='https://securegw.paytm.in/merchant-status/getTxnStatus';
 	$PAYTM_TXN_URL='https://securegw.paytm.in/theia/processTransaction';
 }
+
 $PAYTM_STATUS_QUERY_NEW_URL='https://securegw.paytm.in/merchant-status/getTxnStatus';
 $PAYTM_TXN_URL='https://securegw.paytm.in/theia/processTransaction';
 //define('PAYTM_CALLBACK_URL', 'https://localhost/mbt/cart/paytmsurl');
