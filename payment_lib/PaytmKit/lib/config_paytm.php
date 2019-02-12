@@ -10,10 +10,10 @@
 */
 define('PAYTM_ENVIRONMENT', 'PROD'); // PROD
 //define('PAYTM_MERCHANT_KEY', 'pDK9@IhUa!ug0Eb8'); //Change this constant's value with Merchant key downloaded from portal
-define('PAYTM_MERCHANT_KEY', 'pDK9@IhUa!ug0Eb8'); //Change this constant's value with Merchant key downloaded from portal
+define('PAYTM_MERCHANT_KEY', 'Ejy%Uaom7f3sDNR@'); //Change this constant's value with Merchant key downloaded from portal
 //define('PAYTM_MERCHANT_MID', 'RdUYXJ61704589448838'); //Change this constant's value with MID (Merchant ID) received from Paytm
-define('PAYTM_MERCHANT_MID', 'RdUYXJ61704589448838'); //Change this constant's value with MID (Merchant ID) received from Paytm
-define('PAYTM_MERCHANT_WEBSITE', 'MBAtrek'); //Change this constant's value with Website name received from Paytm
+define('PAYTM_MERCHANT_MID', 'ePBMbS84105354717491'); //Change this constant's value with MID (Merchant ID) received from Paytm
+define('PAYTM_MERCHANT_WEBSITE', 'DEFAULT'); //Change this constant's value with Website name received from Paytm
 
 /*$PAYTM_DOMAIN = "pguat.paytm.com";
 if (PAYTM_ENVIRONMENT == 'PROD') {
@@ -31,7 +31,7 @@ if (PAYTM_ENVIRONMENT == 'PROD') {
 	$PAYTM_TXN_URL='https://securegw.paytm.in/theia/processTransaction';
 }
 //define('PAYTM_CALLBACK_URL', 'https://localhost/mbt/cart/paytmsurl');
-define('PAYTM_CALLBACK_URL', 'https://mbatrek.com/cart/paytmsurl');
+define('PAYTM_CALLBACK_URL', 'https://mbatrek.components/cart/paytmsurl');
 define('PAYTM_REFUND_URL', '');
 define('PAYTM_STATUS_QUERY_URL', $PAYTM_STATUS_QUERY_NEW_URL);
 define('PAYTM_STATUS_QUERY_NEW_URL', $PAYTM_STATUS_QUERY_NEW_URL);
