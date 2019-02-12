@@ -1,6 +1,6 @@
 <?php
 //Here checksum string will return by getChecksumFromArray() function.
-$paytmChecksum = getChecksumFromArray($paytmParams, "pDK9@IhUa!ug0Eb8");
+$paytmChecksum = getChecksumFromArray($paytmParams, "Ejy%Uaom7f3sDNR@");
 $transactionURL = 'https://securegw.paytm.in/theia/processTransaction';
 ?>
 <html>

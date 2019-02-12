@@ -117,7 +117,6 @@ class CartController extends Controller {
         }
         public function actionPaytmsurl(){
 
-            pr($_REQUEST);
             $order = CustomerOrder::model()->findByAttributes(array("ordfer_hash"=>$_REQUEST['ORDERID']));
             $userData = UsersNew::model()->findByPk(Yii::app()->user->id);
             if(empty($userData)){
@@ -338,7 +337,7 @@ class CartController extends Controller {
                         case 1:
                             define("merchantMid", "ePBMbS84105354717491");
 // Key in your staging and production MID available in your dashboard
-                            define("merchantKey", "Ejy%Uaom7f3sDNR");
+                            define("merchantKey", "Ejy%Uaom7f3sDNR@");
 // Key in your staging and production merchant key available in your dashboard
                             define("orderId", "order1");
                             define("channelId", "WEB");
