@@ -117,6 +117,7 @@ class CartController extends Controller {
         }
         public function actionPaytmsurl(){
 
+            pr($_REQUEST);
             $order = CustomerOrder::model()->findByAttributes(array("ordfer_hash"=>$_REQUEST['ORDERID']));
             $userData = UsersNew::model()->findByPk(Yii::app()->user->id);
             if(empty($userData)){
