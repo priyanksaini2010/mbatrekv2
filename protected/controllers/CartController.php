@@ -155,11 +155,17 @@ class CartController extends Controller {
                 );
                 if($payuModel->save()){
                     $list = "";
-                    foreach($cartData as $item){
+                    $totalItems = (count($cartData) - 1);
+                    foreach($cartData as $key=>$item){
                         $url = str_replace("#","",rtrim($item->product->title));
                         $url = str_replace(" ","-",$url);
                         $url = strtolower($url);
-                        $list .= "<a href='https://mbatrek.com/".$url."' target='_blank'>".$item->product->title."</a>";
+                        if($key != $totalItems){
+                            $list .= "<a href='https://mbatrek.com/".$url."' target='_blank'>".$item->product->title.", </a>";
+                        } else{
+                            $list .= "<a href='https://mbatrek.com/".$url."' target='_blank'>".$item->product->title."</a>";
+                        }
+
                         $itemModel = Cart::model()->findByPk($item->id);
                         $itemModel->attributes = array("status"=>2);
                         if($itemModel->save()){
@@ -231,11 +237,16 @@ class CartController extends Controller {
                 );
                 if($payuModel->save()){
                     $list = "";
-                    foreach($cartData as $item){
+                    $totalItems = (count($cartData) - 1);
+                    foreach($cartData as $key=>$item){
                         $url = str_replace("#","",rtrim($item->product->title));
                         $url = str_replace(" ","-",$url);
                         $url = strtolower($url);
-                        $list .= "<a href='https://mbatrek.com/".$url."' target='_blank'>".$item->product->title."</a>";
+                        if($key != $totalItems){
+                            $list .= "<a href='https://mbatrek.com/".$url."' target='_blank'>".$item->product->title.", </a>";
+                        } else{
+                            $list .= "<a href='https://mbatrek.com/".$url."' target='_blank'>".$item->product->title."</a>";
+                        }
                         $itemModel = Cart::model()->findByPk($item->id);
                         $itemModel->attributes = array("status"=>2);
                         if($itemModel->save()){
