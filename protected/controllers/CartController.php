@@ -335,9 +335,9 @@ class CartController extends Controller {
                     switch ($paymentGateWay){
                         //PayTm
                         case 1:
-                            define("merchantMid", "RdUYXJ61704589448838");
+                            define("merchantMid", "ePBMbS84105354717491");
 // Key in your staging and production MID available in your dashboard
-                            define("merchantKey", "pDK9@IhUa!ug0Eb8");
+                            define("merchantKey", "Ejy%Uaom7f3sDNR");
 // Key in your staging and production merchant key available in your dashboard
                             define("orderId", "order1");
                             define("channelId", "WEB");
@@ -345,7 +345,7 @@ class CartController extends Controller {
                             define("mobileNo", "7777777777");
                             define("email", "username@emailprovider.com");
                             define("txnAmount", "100.12");
-                            define("website", "WEBSTAGING");
+                            define("website", "DEFAULT");
 // This is the staging value. Production value is available in your dashboard
                             define("industryTypeId", "Retail");
 // This is the staging value. Production value is available in your dashboard
