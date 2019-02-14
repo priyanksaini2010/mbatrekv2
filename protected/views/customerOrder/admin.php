@@ -23,6 +23,16 @@ $grid =  $this->widget('bootstrap.widgets.TbGridView',array(
                         "value"=>'UsersNew::model()->findByAttributes(array("id"=>$data->user_id))->full_name',
                         'filter'=>CHtml::listData( UsersNew::model()->findAll(), 'id', 'full_name'),
                     ),
+        array(
+            'header'=>"User's Email",
+            "value"=>'UsersNew::model()->findByAttributes(array("id"=>$data->user_id))->email',
+            'filter'=>CHtml::listData( UsersNew::model()->findAll(), 'id', 'email'),
+        ),
+        array(
+            'header'=>"User's Phonenumber",
+            "value"=>'UsersNew::model()->findByAttributes(array("id"=>$data->user_id))->mobile_number',
+            'filter'=>CHtml::listData( UsersNew::model()->findAll(), 'id', 'mobile_number'),
+        ),
 //		'user_id',
 		'order_amount',
 //		'payment_gateway',
