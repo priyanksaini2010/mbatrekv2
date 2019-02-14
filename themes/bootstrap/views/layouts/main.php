@@ -68,14 +68,16 @@ $caManagment = array(
     array('label'=>'Colleges Management', 'url'=>array('/colleges/admin')),
     array('label'=>'Courses Management', 'url'=>array('/courses/admin')),
     array('label'=>'Year Of Graduation Management', 'url'=>array('/yearOfGraduation/admin')),
-     
+    array('label'=>' Import Colleges', 'url'=>array('/campusAmbassador/importcolleges')),
+    array('label'=>' Import Courses', 'url'=>array('/campusAmbassador/import')),
 );
 $copManagment = array( 
       
             array('label'=>'Interview Management', 'url'=>array('/interviewReadyCompetition/admin')),
             array('label'=>'Industry Management', 'url'=>array('/industryReadyCompetition/admin')),
              array('label'=>'Competition Colleges Management', 'url'=>array('/collegesCompetition/admin')),
-     
+            array('label'=>' Import Competition Colleges', 'url'=>array('/campusAmbassador/importcompcolleges')),
+
 );
  $this->widget('bootstrap.widgets.TbNavbar',array(
     'items'=>array(
