@@ -44,9 +44,10 @@ class SiteController extends Controller
         if(!empty($_POST['UsersNew'])){
             $keys = array_keys($_GET);
                 $user_id = base64_decode($_GET['id']);
-            $user = UsersNew::model()->findByPk($user_id);
+            $user = UsersNew::model()->findByAttributes(array("reset_code"=>$user_id));
             if (!empty($user)) {
-                $user->attributes = array("password"=>$_POST['UsersNew']['password']);
+
+                $user->attributes = array("password"=>$_POST['UsersNew']['password'],"reset_code" => "");
                 if($user->save()){
                     Yii::app()->user->setFlash('resetdone', 1);
                     $this->redirect(Yii::app()->createUrl("site/login"));
@@ -56,6 +57,11 @@ class SiteController extends Controller
             } else {
                 $this->redirect(Yii::app()->createUrl("site/error"));
             }
+        }
+        $user_id = base64_decode($_GET['id']);
+        $user = UsersNew::model()->findByAttributes(array("reset_code"=>$user_id));
+        if(empty($user)){
+            $this->redirect(Yii::app()->createUrl("site/error"));
         }
         $this->render('retrieve',  array('model'=>$model));
     }
@@ -126,22 +132,27 @@ class SiteController extends Controller
 //                            . "<br/><br/ >"
 //                            . "Thanks,<br/ >"
 //                            . "MBATrek";
-		    $template = getTemplate("forget");
-				$name = ucfirst($find->full_name);
-				$body = str_replace("{{SUBJECT}}", $subject, $template);
-				$body = str_replace("{{NAME}}", $name, $body);
+                    $code = generateRandomString(5);
+                    $find->attributes = array("reset_code" => $code);
+                    if($find->save()){
+                        $template = getTemplate("forget");
+                        $name = ucfirst($find->full_name);
+                        $body = str_replace("{{SUBJECT}}", $subject, $template);
+                        $body = str_replace("{{NAME}}", $name, $body);
 //				$link = Yii::app()->createUrl("site/retrieve",array("id"=>base64_encode($find->id)));
-				$link = "https://mbatrek.com/site/retrieve?id=".base64_encode($find->id);
-				$body = str_replace("{{PASSWORD}}", $link, $body);
-
-                    $headers="From: ".Yii::app()->params['adminName']." <".Yii::app()->params['adminEmail']."> \r\n".
+                        $link = "https://mbatrek.com/site/retrieve?id=".base64_encode($find->reset_code);
+                        $body = str_replace("{{PASSWORD}}", $link, $body);
+                        $headers="From: ".Yii::app()->params['adminName']." <".Yii::app()->params['adminEmail']."> \r\n".
                             "Reply-To: ".Yii::app()->params['adminEmail']." \r\n";
 
-                    $headers .= "MIME-Version: 1.0\r\n".
-                                "Content-Type: text/html; charset=UTF-8";
-//		    pr($_POST);
-                    $sentToUser = sendEmail($_POST['UsersNew']['email'], $subject,$body,$headers);
-                    $this->redirect(array("site/forgot","thankfor"=>1));
+                        $headers .= "MIME-Version: 1.0\r\n".
+                            "Content-Type: text/html; charset=UTF-8";
+                        $sentToUser = sendEmail($_POST['UsersNew']['email'], $subject,$body,$headers);
+                        $this->redirect(array("site/forgot","thankfor"=>1));
+                    } else {
+                        pr($find->getErrors());
+                    }
+
                 }
             }
             $this->render('forgot',  array('model'=>$model));
