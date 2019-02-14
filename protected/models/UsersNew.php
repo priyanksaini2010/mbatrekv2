@@ -34,7 +34,7 @@ class UsersNew extends CActiveRecord
 		return array(
 			array('full_name, email, password, is_verified, date_created', 'required'),
 			array('update_subscription, is_verified, role', 'numerical', 'integerOnly'=>true),
-			array('full_name, email, password, name_of_college_company,mobile_number', 'length', 'max'=>255),
+			array('full_name, email, password, name_of_college_company,mobile_number,reset_code', 'length', 'max'=>255),
 //                        array('verifyCode', 'captcha', 'allowEmpty'=>!CCaptcha::checkRequirements()),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
@@ -70,6 +70,7 @@ class UsersNew extends CActiveRecord
 			'date_created' => 'Date Created',
             'mobile_number' => 'Mobile Number',
 			'role' => 'Role',
+            'reset_code' => 'Reset Code',
                         'name_of_college_company' => 'Name Of College / Company',
 		);
 	}
@@ -101,6 +102,7 @@ class UsersNew extends CActiveRecord
 		$criteria->compare('is_verified',$this->is_verified);
 		$criteria->compare('date_created',$this->date_created,true);
 		$criteria->compare('role',$this->role);
+        $criteria->compare('reset_code',$this->reset_code,true);
                 $criteria->compare('name_of_college_company',$this->name_of_college_company,true);
                 $criteria->order = "id desc";
 		return new CActiveDataProvider($this, array(
