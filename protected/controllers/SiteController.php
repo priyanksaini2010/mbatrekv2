@@ -61,9 +61,11 @@ class SiteController extends Controller
         $user_id = base64_decode($_GET['id']);
         $user = UsersNew::model()->findByAttributes(array("reset_code"=>$user_id));
         if(empty($user)){
-            $this->redirect(Yii::app()->createUrl("site/error"));
+            $this->render("webroot.themes.cart.views.cart.expired");
+        }else {
+            $this->render('retrieve',  array('model'=>$model));
         }
-        $this->render('retrieve',  array('model'=>$model));
+
     }
         /**
          * Register Industry/Institute
