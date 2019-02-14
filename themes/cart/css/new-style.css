@@ -1221,6 +1221,7 @@ body .ambastor_container.industry_Ready .what_do_u_get.rule_Game .amaster_repeat
 .ambastor_container.regsiter_emastor.register_interview .earn_point .earn_container ul li .arrow_intervew{left:0;right:0;margin:auto;bottom:-31px;top:auto;    transform: rotate(90deg);}
 .cart_wrapper  .cart_detail .cart_money .cart_price_title{display:inline-block;margin: 0 8px 0px 0;color: #348786;}
 .cart_wrapper.before_cart{padding: 0 20px;}
+.blog_details .blog_header img{height:auto;}
 }
  
 @media (min-width: 768px) {
@@ -1334,8 +1335,9 @@ body .ambastor_container.industry_Ready .what_do_u_get.rule_Game .amaster_repeat
 .faq_Container .tabbable-panel .tab-pane{margin-top:15px;}
 .fq_footer{width: 100%;float: left;text-align: center;}
 .fq_footer label{font-size: 17px;    margin: 9px 0 0 0;font-family: 'MyriadPro-Semibold';}
-.fq_footer label span{color: #348786;}
-.fq_footer label span.color_span{color: #124cb4;}
+.fq_footer label a{color:#348786;}
+.fq_footer label a .color_span{color:#348786!important;}
+.fq_footer label span.color_span{color: #348786;}
 /*------------Blog Css----------*/
 .blog_new_container{width: 100%;float: left;}
 .blog_header{width: 100%;float: left;padding: 20px 0 20px 0;}
@@ -1356,7 +1358,7 @@ body .ambastor_container.industry_Ready .what_do_u_get.rule_Game .amaster_repeat
 .blog_block >ul span.month_blog{color:#333;font-size:19px;}
 .blog_block >ul span.comment_blog{color:#dd991a;font-size:26px;}
 .blog_img{width:100%;float:left;border:1px solid #ccc;}
-.blog_img img {width: 366px;height: 299px;}
+.blog_img img {width: 366px;height: 299px;margin:auto;}
 .blog_content{width:100%;float:left;text-align:center;}
 .blog_info{width:92%;padding:10px;box-shadow: 0px 3px 4px 2px #ccc;-moz-box-shadow: 0px 3px 4px 2px #ccc;-webkit-box-shadow: 0px 3px 4px 2px #ccc;display:inline-block;text-align:left;background:#fff;position:relative;margin:-13px 0 0;}
 .blog_info:after{content:"";position:absolute;border:12px solid #fff;top:-24px;left:19px;border-right:12px solid transparent;border-left:12px solid transparent;border-top:12px solid transparent;}
@@ -2053,7 +2055,7 @@ vertical-align:middle;cursor:pointer;}
 .ambastor_container.industry_Ready .earn_point.the_task ul li .value_chain_Text{color: #f3ad02;}
 .ambastor_container.industry_Ready .earn_point.the_task ul li .text_tech{color: #656565;}
 .ambastor_container.industry_Ready .earn_point.the_task ul li label{font-family: 'MyriadPro-Regular';font-weight: normal;font-size: 18px;padding:11px 0 0 0;}
-.ambastor_container.industry_Ready .what_do_u_get .amaster_bulid .col-md-4 h3{color: #222;font-size: 20px;font-family: 'MyriadPro-Regular';margin:0;}
+.ambastor_container.industry_Ready .what_do_u_get .amaster_bulid .col-md-4 h3{color: #222;font-size: 20px;font-family: 'MyriadPro-Semibold';margin:0;}
 .ambastor_container.industry_Ready .what_do_u_get.rule_Game .amaster_repeat img{float: left;}
 .ambastor_container.industry_Ready .what_do_u_get.rule_Game .amaster_repeat h3{float: left;    padding-left: 21px;width: 87%;}
 .still_stuck{width: 100%;float: left;}
@@ -2442,3 +2444,7 @@ main .sucess_container.failure .any_query h3{font-style:normal;}
 .cart_area_wrapper.past_orders .cart_repeat{border-top:none;}
 .what_do_u_get.rule_Game .amaster_repeat{width:50%;}
 #myModal-removecart .modal-body #pop-notification-text{text-align: center; display: block;}
+.our_company_page .empower_manager .manager_div{margin-top:0;}
+.our_company_page .empower_manager {margin-top:0;}
+.our_company_page .manager_div.company{margin-top:20px;}
+.our_company_page .key_Area_cover#keyarea{    padding-top: 0;}
