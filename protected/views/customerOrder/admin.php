@@ -17,6 +17,12 @@ $grid =  $this->widget('bootstrap.widgets.TbGridView',array(
 	'columns'=>array(
 
 		'ordfer_hash',
+        array(
+                        'header'=>"User",
+                        "name"=>'user_id',
+                        "value"=>'UsersNew::model()->findByAttributes(array("id"=>$data->user_id))->full_name',
+                        'filter'=>CHtml::listData( UsersNew::model()->findAll(), 'id', 'full_name'),
+                    ),
 //		'user_id',
 		'order_amount',
 //		'payment_gateway',
