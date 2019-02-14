@@ -75,7 +75,7 @@
 
                                     <ul>
                                         <li ><a id="resume-diagnostic" href="<?php echo Yii::app()->createUrl('resume-diagnostic'); ?>">Resume / CV Diagnostic</a></li>
-                                        <li><a id="linkedin-diagnostic" href="<?php echo Yii::app()->createUrl('linkedin-diagnostic'); ?>">Linkedin Diagnostic</a></li>
+                                        <li><a id="linkedin-diagnostic" href="<?php echo Yii::app()->createUrl('linkedin-diagnostic'); ?>">LinkedIn Diagnostic</a></li>
                                         <li><a id="mock-interview"  href="<?php echo Yii::app()->createUrl('mock-interview'); ?>">Mock Interview</a></li>
                                         <li><a id="interview-q&a" href="<?php echo Yii::app()->createUrl('interview-q&a'); ?>">Interview Q & A</a></li>
                                         <li><a href="<?php echo Yii::app()->createUrl('industry-analysis'); ?>">Industry Analysis</a></li>
@@ -196,7 +196,7 @@
 											<li><span>Offerings</span>
 												<ul>
 													<li><a href="<?php echo Yii::app()->createUrl('resume-diagnostic'); ?>">Resume / CV Diagnostic</a></li>
-													<li><a href="<?php echo Yii::app()->createUrl('linkedin-diagnostic'); ?>">Linkedin Diagnostic</a></li>
+													<li><a href="<?php echo Yii::app()->createUrl('linkedin-diagnostic'); ?>">LinkedIn Diagnostic</a></li>
 													<li><a href="<?php echo Yii::app()->createUrl('mock-interview'); ?>">Mock Interview</a></li>
 													<li><a href="<?php echo Yii::app()->createUrl('interview-q&a'); ?>">Interview Q & A</a></li>
 													<li><a href="<?php echo Yii::app()->createUrl('industry-analysis'); ?>">Industry Analysis</a></li>
