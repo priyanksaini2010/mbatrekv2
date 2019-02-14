@@ -1,6 +1,7 @@
 <?php
 $product = Products::model()->findByPk($id);
 $productActuall = Products::model()->findByPk($id);
+$baseUrl = "";
 ?>
 <?php $this->setPageTitle( $product->title); ?>
 <div class="comany_conainer">
@@ -13,17 +14,17 @@ $productActuall = Products::model()->findByPk($id);
                     <?php if($product->sample_1 != "" || $product->sample_2 != "" || $product->sample_3 != ""){?>
 						<ul>
                             <?php if(!empty($product->sample_1)&& $product->sample_1 != ""){?>
-                                <li>
-                                    <a href="javascript:void(0);"><img src="<?php echo Yii::app()->baseUrl;?>/assets/products/<?php echo $product->sample_1; ?>"/></a>
+                                <li id="img1">
+                                    <a  href="javascript:void(0);"><img src="<?php echo Yii::app()->baseUrl;?>/assets/products/<?php echo $product->sample_1; ?>"/></a>
                                 </li>
                             <?php }?>
                             <?php if(!empty($product->sample_2)&& $product->sample_2 != ""){?>
-                                <li>
+                                <li id="img2">
                                     <a href="javascript:void(0);"><img src="<?php echo Yii::app()->baseUrl;?>/assets/products/<?php echo $product->sample_2; ?>"/></a>
                                 </li>
                             <?php }?>
                             <?php if(!empty($product->sample_3)&& $product->sample_3 != ""){?>
-                                <li>
+                                <li id="img3">
                                     <a href="javascript:void(0);"><img src="<?php echo Yii::app()->baseUrl;?>/assets/products/<?php echo $product->sample_3; ?>"/></a>
                                 </li>
                             <?php }?>
@@ -384,6 +385,72 @@ $productActuall = Products::model()->findByPk($id);
               
                 <?php }?>
             </ul>
+        </div>
+    </div>
+</div>
+<div id="myModalimage1" class="modal" data-easein="shake" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!--<div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Modal header</h4>
+            </div>-->
+            <div class="modal-body">
+                <div class="md-content">
+                    <h3 id="pop-notification-type-2">Sample 1</h3>
+                    <div class="error_wrap">
+                        <img src="<?php echo Yii::app()->baseUrl;?>/assets/products/<?php echo $product->sample_1; ?>"/>
+                        <br />
+                        <!-- <button class="md-close">OK</button> -->
+                        <div class="main_register"><div class="site_btn"><a data-dismiss="modal" class="close" href="javascript:void(0);">OK</a></div></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div id="myModalimage2" class="modal" data-easein="shake" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!--<div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Modal header</h4>
+            </div>-->
+            <div class="modal-body">
+                <div class="md-content">
+                    <h3 id="pop-notification-type-2">Sample 2</h3>
+                    <div class="error_wrap">
+                        <img src="<?php echo Yii::app()->baseUrl;?>/assets/products/<?php echo $product->sample_2; ?>"/>
+                        <br />
+                        <!-- <button class="md-close">OK</button> -->
+                        <div class="main_register"><div class="site_btn"><a data-dismiss="modal" class="close" href="javascript:void(0);">OK</a></div></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div id="myModalimage3" class="modal" data-easein="shake" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!--<div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Modal header</h4>
+            </div>-->
+            <div class="modal-body">
+                <div class="md-content">
+                    <h3 id="pop-notification-type-2">Sample 3</h3>
+                    <div class="error_wrap">
+                        <img src="<?php echo Yii::app()->baseUrl;?>/assets/products/<?php echo $product->sample_3; ?>"/>
+                        <br />
+                        <!-- <button class="md-close">OK</button> -->
+                        <div class="main_register"><div class="site_btn"><a data-dismiss="modal" class="close" href="javascript:void(0);">OK</a></div></div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>

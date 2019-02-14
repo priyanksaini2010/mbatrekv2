@@ -11,7 +11,7 @@
 <?php } ?>
     <?php
     $flash = Yii::app()->user->getFlashes();
-    $resetdone = $flash['resetdone'];
+    $resetdone = isset($flash['resetdone'])?$flash['resetdone']:"";
     if(isset($resetdone) && $resetdone == 1){?>
     validationMethod("thanks","Your password has been reset successfully. Please login with your new password")
     <?php }?>
@@ -20,7 +20,7 @@
     <?php }?>
     <?php
     $flash = Yii::app()->user->getFlashes();
-    $thankcp = $flash['thankcp'];
+    $thankcp = isset($flash['thankcp'])?$flash['thankcp']:"";
     if(isset($thankcp) && $thankcp ==1){?>
     validationMethod("thanks","Your password has been updated successfully.")
     <?php }?>
@@ -60,6 +60,15 @@
 	 validationMethod("thanks","Thanks for your feedback, we will get in touch with you soon.")
     <?php }?>
         $(document).ready(function(){
+            $("#img1").click(function(){
+                $('#myModalimage1').modal('show');
+            })
+            $("#img2").click(function(){
+                $('#myModalimage2').modal('show');
+            })
+            $("#img3").click(function(){
+                $('#myModalimage3').modal('show');
+            })
             $("#login-form-submit").click(function(){
                 $.ajax({
                     "type" : "post",
