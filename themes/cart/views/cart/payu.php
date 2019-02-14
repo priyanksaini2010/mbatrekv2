@@ -9,6 +9,8 @@ $paramList["email"] = $params['email'];
 $paramList["phone"] = $params['mobile'];
 $paramList["hash"] = $params['hash'];
 $paramList["surl"] = $params['surl'];
+$paramList["furl"] = $params['surl'];
+$paramList["curl"] = $params['surl'];
 $paramList["udf5"] = $params['udf5'];
 $paramList["service_provider"] = 'payu_paisa';
 ?>
