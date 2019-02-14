@@ -2,8 +2,7 @@
     <div class="container">
         <div class="row">
 
-
-                <span> This link has been expired</span>
+           <span> This link has been expired</span>
 
 
 
