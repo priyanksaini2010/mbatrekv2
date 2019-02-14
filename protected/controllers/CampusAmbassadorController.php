@@ -31,7 +31,7 @@ class CampusAmbassadorController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','admin','delete'),
+				'actions'=>array('create','update','admin','delete',"import","importcolleges","importcompcolleges"),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -63,7 +63,114 @@ class CampusAmbassadorController extends Controller
 			'model'=>$this->loadModel($id),
 		));
 	}
+    public function actionImport(){
+	    $model = new Courses;
+	    if(!empty($_FILES)){
+            $path="assets/imports";
+            if (!is_dir($path)) {
+                CFileHelper::createDirectory($path,null,true);
+            }
+            if (!empty($_FILES)) {
 
+                $fileName = rand().str_replace(" ","", $_FILES["files"]['name']);  // random number + file name
+
+                $tmp_name = $_FILES["files"]['tmp_name'];
+                move_uploaded_file($tmp_name, $path."/".$fileName);
+                $inputFileName = $path."/".$fileName;
+                $excelReader = PHPExcel_IOFactory::createReaderForFile($inputFileName);
+                $excelObj = $excelReader->load($inputFileName);
+                $worksheet = $excelObj->getSheet(0);
+                $lastRow = $worksheet->getHighestRow();
+
+                $array = array();
+                for ($row = 1; $row <= $lastRow; $row++) {
+                    if($row != 1) {
+                        $model = new Courses;
+                        $model->attributes = array("title" => $worksheet->getCell('A'.$row)->getValue());
+                        if($model->save()){
+                            Yii::app()->user->setFlash('success', "Campus Ambassador Courses Added Successfully.");
+                        } else {
+                            Yii::app()->user->setFlash('success', "Some of Campus Ambassador Courses are not Added.");
+                        }
+                    }
+                }
+            }
+        }
+
+	    $this->render("import", array("model"=>$model));
+    }
+    public function actionImportcolleges(){
+        $model = new Colleges;
+        if(!empty($_FILES)){
+            $path="assets/imports";
+            if (!is_dir($path)) {
+                CFileHelper::createDirectory($path,null,true);
+            }
+            if (!empty($_FILES)) {
+
+                $fileName = rand().str_replace(" ","", $_FILES["files"]['name']);  // random number + file name
+
+                $tmp_name = $_FILES["files"]['tmp_name'];
+                move_uploaded_file($tmp_name, $path."/".$fileName);
+                $inputFileName = $path."/".$fileName;
+                $excelReader = PHPExcel_IOFactory::createReaderForFile($inputFileName);
+                $excelObj = $excelReader->load($inputFileName);
+                $worksheet = $excelObj->getSheet(0);
+                $lastRow = $worksheet->getHighestRow();
+
+                $array = array();
+                for ($row = 1; $row <= $lastRow; $row++) {
+                    if($row != 1) {
+                        $model = new Colleges;
+                        $model->attributes = array("name" => $worksheet->getCell('A'.$row)->getValue());
+                        if($model->save()){
+                            Yii::app()->user->setFlash('success', "Campus Ambassador Colleges Added Successfully.");
+                        } else {
+                            Yii::app()->user->setFlash('success', "Some of Campus Ambassador Colleges are not Added.");
+                        }
+                    }
+                }
+            }
+        }
+
+        $this->render("importcolleges", array("model"=>$model));
+    }
+    public function actionImportcompcolleges(){
+        $model = new CollegesCompetition;
+        if(!empty($_FILES)){
+            $path="assets/imports";
+            if (!is_dir($path)) {
+                CFileHelper::createDirectory($path,null,true);
+            }
+            if (!empty($_FILES)) {
+
+                $fileName = rand().str_replace(" ","", $_FILES["files"]['name']);  // random number + file name
+
+                $tmp_name = $_FILES["files"]['tmp_name'];
+                move_uploaded_file($tmp_name, $path."/".$fileName);
+                $inputFileName = $path."/".$fileName;
+                $excelReader = PHPExcel_IOFactory::createReaderForFile($inputFileName);
+                $excelObj = $excelReader->load($inputFileName);
+                $worksheet = $excelObj->getSheet(0);
+                $lastRow = $worksheet->getHighestRow();
+
+                $array = array();
+                for ($row = 1; $row <= $lastRow; $row++) {
+                    if($row != 1) {
+                        $model = new CollegesCompetition;
+                        $model->attributes = array("name" => $worksheet->getCell('A'.$row)->getValue());
+                        if($model->save()){
+                            Yii::app()->user->setFlash('success', "Colleges for Competition Added Successfully.");
+                        } else {
+                            Yii::app()->user->setFlash('success', "Some of Colleges for Competition are not Added.");
+                        }
+                    }
+                }
+            }
+        }
+
+        $this->render("importcompcolleges", array("model"=>$model));
+    }
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
