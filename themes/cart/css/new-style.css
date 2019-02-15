@@ -1017,6 +1017,7 @@ user-select: none;
 .payment_block .payment_select ul li .img_payment{width:200px;}
 .profile_container .profile_user{    max-width: 670px;width:auto;}
 	body .ambastor_container.industry_Ready .what_do_u_get.rule_Game .amaster_repeat h3{width:83%;}
+	.sucess_container .our_recomanded ul li{margin-right:10px;margin-left:10px;}
 }
 @media (max-width: 480px) {
 	.ready_section .stry_text .journy_block ul{padding:0;}
@@ -1055,6 +1056,9 @@ body .profile_user .col-md-12 .col-md-8 input[type="text"]{width:90%;}
 .bielf_container.task_page .talk_to_Advisor .panel-body #login-form >.row >div{padding:0 0 0 23px;}
 .bielf_container.task_page .talk_to_Advisor .panel-body #login-form >.row >label{padding:0 0 0 23px;}
 .bielf_container.task_page .talk_to_Advisor .panel-body #login-form .sibmit_form{padding: 20px 0 14px 0;}
+.sucess_container .smile_icon{margin:10px 0;}
+.sucess_container .order_div h2{font-size:20px;    line-height: 1.5;}
+.sucess_container .order_div h3{font-size:20px;    line-height: 1.5;}
 }
 @media (max-width: 548px) {
 	main .bulid_categories .categories_container a{margin-right:0;}
@@ -1277,7 +1281,7 @@ body .ambastor_container.industry_Ready .what_do_u_get.rule_Game .amaster_repeat
 .student-top.young_top .icon.yound_need_help{margin-right:25px;max-width:15%;margin-top:30px;}
 .need_help{width:100%;float:left;margin: 50px 0 0 0;}
 .need_help span{font-weight:normal;font-size:15px;}
-.need_help span a{color:blue;}
+.need_help span a{color:#348786;}
 
 .contact_container_page{width: 100%;float: left;}
 .contact_info_div{width: 100%;float: left;    margin: 21px 0 0 0;}
@@ -2055,7 +2059,8 @@ vertical-align:middle;cursor:pointer;}
 .ambastor_container.industry_Ready .earn_point.the_task ul li .value_chain_Text{color: #f3ad02;}
 .ambastor_container.industry_Ready .earn_point.the_task ul li .text_tech{color: #656565;}
 .ambastor_container.industry_Ready .earn_point.the_task ul li label{font-family: 'MyriadPro-Regular';font-weight: normal;font-size: 18px;padding:11px 0 0 0;}
-.ambastor_container.industry_Ready .what_do_u_get .amaster_bulid .col-md-4 h3{color: #222;font-size: 20px;font-family: 'MyriadPro-Semibold';margin:0;}
+.ambastor_container.industry_Ready .what_do_u_get .amaster_bulid .col-md-4 h3{color: #222;font-size: 20px;font-family: 'MyriadPro-Regular';margin:0;}
+.ambastor_container.industry_Ready .what_do_u_get .amaster_bulid .col-md-4 >h3{font-family: 'MyriadPro-Semibold';}
 .ambastor_container.industry_Ready .what_do_u_get.rule_Game .amaster_repeat img{float: left;}
 .ambastor_container.industry_Ready .what_do_u_get.rule_Game .amaster_repeat h3{float: left;    padding-left: 21px;width: 87%;}
 .still_stuck{width: 100%;float: left;}
@@ -2448,3 +2453,4 @@ main .sucess_container.failure .any_query h3{font-style:normal;}
 .our_company_page .empower_manager {margin-top:0;}
 .our_company_page .manager_div.company{margin-top:20px;}
 .our_company_page .key_Area_cover#keyarea{    padding-top: 0;}
+.sucess_container .our_recomanded ul li{width:259px;}

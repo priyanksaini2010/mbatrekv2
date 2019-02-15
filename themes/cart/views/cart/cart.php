@@ -215,7 +215,7 @@ if(isset(Yii::app()->user->id)){
                 <?php }?>
 				<div class="need_help">
 					<span>
-                                            Need Help? Visit the <a href="<?php echo Yii::app()->createUrl("frequently-asked-questions");?>">FAQs</a> or <a href="<?php echo Yii::app()->createUrl("contact-us");?>">Contact Us</a>
+                                            Need Help? Visit the <a href="<?php echo Yii::app()->createUrl("frequently-asked-questions");?>">FAQs</a> or <a href="<?php echo Yii::app()->createUrl("contact");?>">Contact Us</a>
 					</span>
 				</div>
             </div>

@@ -57,7 +57,7 @@ $FaqType = FaqType::model()->findAll();;
             </div>
             
             
-            <div class="fq_footer"><label>Still stuck with your problem? <span><a href="<?php echo Yii::app()->createUrl("contact-us");?>">Contact us</a> at</span> <a href="mailto:contact@mbatrek.com"><span class="color_span"> contact@mbatrek.com</span></a> or <a href="<?php echo Yii::app()->createUrl("talk-to-our-career-advisor");?>">Talk to Our <span>Career Advisor</a> at</span> <span class="color_span">+91 98219 48334</span> </label></div>
+            <div class="fq_footer"><label>Still stuck with your problem? <span><a href="<?php echo Yii::app()->createUrl("contact-us");?>">Contact us</a> at</span> <a href="mailto:contact@mbatrek.com"><span class="color_span"> contact@mbatrek.com</span></a> or <a href="<?php echo Yii::app()->createUrl("talk-to-our-career-advisor");?>">Talk to Our <span>Career Advisor</a> at</span> <a href="https://wa.me/919821948334?text=Can%20you%20help%20with%20MBAtrek%27s%20career%20development%20services%3F%F0%9F%98%81" class="color_span">+91 98219 48334</a> </label></div>
         </div>
     </div>
 </div>
