@@ -77,23 +77,17 @@ class CampusAmbassadorController extends Controller
                 $tmp_name = $_FILES["files"]['tmp_name'];
                 move_uploaded_file($tmp_name, $path."/".$fileName);
                 $inputFileName = $path."/".$fileName;
-                $excelReader = PHPExcel_IOFactory::createReaderForFile($inputFileName);
-                $excelObj = $excelReader->load($inputFileName);
-                $worksheet = $excelObj->getSheet(0);
-                $lastRow = $worksheet->getHighestRow();
-
-                $array = array();
-                for ($row = 1; $row <= $lastRow; $row++) {
-                    if($row != 1) {
-                        $model = new Courses;
-                        $model->attributes = array("title" => $worksheet->getCell('A'.$row)->getValue());
-                        if($model->save()){
-                            Yii::app()->user->setFlash('success', "Campus Ambassador Courses Added Successfully.");
-                        } else {
-                            Yii::app()->user->setFlash('success', "Some of Campus Ambassador Courses are not Added.");
-                        }
+                $array = $this->ImportCSV2Array($inputFileName);
+                foreach ($array as $item){
+                    $model = new Courses;
+                    $model->attributes = array("title" => $item["title"]);
+                    if($model->save()){
+                        Yii::app()->user->setFlash('success', "Campus Ambassador Courses Added Successfully.");
+                    } else {
+                        Yii::app()->user->setFlash('success', "Some of Campus Ambassador Courses are not Added.");
                     }
                 }
+
             }
         }
 
@@ -113,21 +107,14 @@ class CampusAmbassadorController extends Controller
                 $tmp_name = $_FILES["files"]['tmp_name'];
                 move_uploaded_file($tmp_name, $path."/".$fileName);
                 $inputFileName = $path."/".$fileName;
-                $excelReader = PHPExcel_IOFactory::createReaderForFile($inputFileName);
-                $excelObj = $excelReader->load($inputFileName);
-                $worksheet = $excelObj->getSheet(0);
-                $lastRow = $worksheet->getHighestRow();
-
-                $array = array();
-                for ($row = 1; $row <= $lastRow; $row++) {
-                    if($row != 1) {
-                        $model = new Colleges;
-                        $model->attributes = array("name" => $worksheet->getCell('A'.$row)->getValue());
-                        if($model->save()){
-                            Yii::app()->user->setFlash('success', "Campus Ambassador Colleges Added Successfully.");
-                        } else {
-                            Yii::app()->user->setFlash('success', "Some of Campus Ambassador Colleges are not Added.");
-                        }
+                $array = $this->ImportCSV2Array($inputFileName);
+                foreach ($array as $item){
+                    $model = new Colleges;
+                    $model->attributes = array("name" => $item["title"]);
+                    if($model->save()){
+                        Yii::app()->user->setFlash('success', "Campus Ambassador Colleges Added Successfully.");
+                    } else {
+                        Yii::app()->user->setFlash('success', "Some of Campus Ambassador Colleges are not Added.");
                     }
                 }
             }
@@ -135,6 +122,11 @@ class CampusAmbassadorController extends Controller
 
         $this->render("importcolleges", array("model"=>$model));
     }
+
+    /**
+     * @throws PHPExcel_Exception
+     * @throws PHPExcel_Reader_Exception
+     */
     public function actionImportcompcolleges(){
         $model = new CollegesCompetition;
         if(!empty($_FILES)){
@@ -149,23 +141,17 @@ class CampusAmbassadorController extends Controller
                 $tmp_name = $_FILES["files"]['tmp_name'];
                 move_uploaded_file($tmp_name, $path."/".$fileName);
                 $inputFileName = $path."/".$fileName;
-                $excelReader = PHPExcel_IOFactory::createReaderForFile($inputFileName);
-                $excelObj = $excelReader->load($inputFileName);
-                $worksheet = $excelObj->getSheet(0);
-                $lastRow = $worksheet->getHighestRow();
-
-                $array = array();
-                for ($row = 1; $row <= $lastRow; $row++) {
-                    if($row != 1) {
-                        $model = new CollegesCompetition;
-                        $model->attributes = array("name" => $worksheet->getCell('A'.$row)->getValue());
-                        if($model->save()){
-                            Yii::app()->user->setFlash('success', "Colleges for Competition Added Successfully.");
-                        } else {
-                            Yii::app()->user->setFlash('success', "Some of Colleges for Competition are not Added.");
-                        }
+                $array = $this->ImportCSV2Array($inputFileName);
+                foreach ($array as $item){
+                    $model = new CollegesCompetition;
+                    $model->attributes = array("name" => $item["title"]);
+                    if($model->save()){
+                        Yii::app()->user->setFlash('success', "Colleges for Competition Added Successfully.");
+                    } else {
+                        Yii::app()->user->setFlash('success', "Some of Colleges for Competition are not Added.");
                     }
                 }
+
             }
         }
 
@@ -297,4 +283,37 @@ class CampusAmbassadorController extends Controller
 			Yii::app()->end();
 		}
 	}
+
+    private function ImportCSV2Array($filename)
+    {
+        $row = 0;
+        $col = 0;
+
+        $handle = @fopen($filename, "r");
+        if ($handle)
+        {
+            while (($row = fgetcsv($handle, 4096)) !== false)
+            {
+                if (empty($fields))
+                {
+                    $fields = $row;
+                    continue;
+                }
+
+                foreach ($row as $k=>$value)
+                {
+                    $results[$col][$fields[$k]] = $value;
+                }
+                $col++;
+                unset($row);
+            }
+            if (!feof($handle))
+            {
+                echo "Error: unexpected fgets() failn";
+            }
+            fclose($handle);
+        }
+
+        return $results;
+    }
 }
