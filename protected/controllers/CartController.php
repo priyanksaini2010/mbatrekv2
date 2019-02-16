@@ -57,6 +57,9 @@ class CartController extends Controller {
             }
         }
         private function sendOrderMail($params, $status = 1){
+            $userData = UsersNew::model()->findByPk(Yii::app()->user->id);
+            $link = "";
+            $role = "";
             if($status == 1){
                 $subjectAdmin = "New Order Recieved";
                 $subject = "Your Order Was Successful";
@@ -65,11 +68,24 @@ class CartController extends Controller {
                 $subjectAdmin = "Order Failed";
                 $subject = "Your Order Was Failed";
                 $template = getTemplate("order_failure");
+                if($userData->role == 1){
+                    $link = "https://www.mbatrek.com/students";
+                    $role = "Student";
+                } else {
+                    $link = "https://www.mbatrek.com/professionals";
+                    $role = "Young Professionals";
+                }
+
             }
 
             $body = str_replace("{{ORDER_ID}}", $params['order_id'], $template);
             $body = str_replace("{{AMOUNT}}", money($params['amount']), $body);
             $body = str_replace("{{LIST}}", $params['list'], $body);
+
+            if($status == 1){
+                $body = str_replace("{{LINK}}", $link, $body);
+                $body = str_replace("{{ROLE}}", $role, $body);
+            }
 
             $headers="From: ".Yii::app()->params['adminName']." <".Yii::app()->params['adminEmail']."> \r\n".
                 "Reply-To: ".Yii::app()->params['adminEmail']." \r\n";
