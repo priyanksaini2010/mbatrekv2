@@ -82,7 +82,7 @@ class CartController extends Controller {
             $body = str_replace("{{AMOUNT}}", money($params['amount']), $body);
             $body = str_replace("{{LIST}}", $params['list'], $body);
 
-            if($status == 1){
+            if($status == 2){
                 $body = str_replace("{{LINK}}", $link, $body);
                 $body = str_replace("{{ROLE}}", $role, $body);
             }
