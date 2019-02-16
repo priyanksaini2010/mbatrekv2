@@ -1,5 +1,10 @@
 <?php $this->setPageTitle('Payment Failed');
 $baseUrl = Yii::app()->request->baseUrl;
+$criteria = new CDbCriteria();
+$criteria->order = "id desc";
+$criteria->limit = 1;
+$criteria->addCondition("user_id = ".Yii::app()->user->id);
+$recentOrder = CustomerOrder::model()->find($criteria);
 $userData = UsersNew::model()->findByPk(Yii::app()->user->id);
 ?>
 
@@ -19,7 +24,8 @@ $userData = UsersNew::model()->findByPk(Yii::app()->user->id);
 			<div class="order_div">
 				<h2>If amount is deducted it would be refunded to the respective mode of payment according to the payment gateway policy.</h2>
 				<h3 class="one_of">Not to worry one of our Career Advisor will reach you soon via email with a dedicated payment link for you.</h3>
-				<h3>Meanwhile check out our dedicated: <br><a href="<?php echo $userData->role==1?"https://www.mbatrek.com/students":"https://www.mbatrek.com/professionals;?>"><?php echo $userData->role==1?"Student":"Young Professionals";?> Career Development Solutions </a><br> to accelerate your career and excel in the corporate world! </h3>
+				<h3>Meanwhile check out our dedicated: <br><a href="<?php echo $userData->role==1?"https://www.mbatrek.com/students":"https://www.mbatrek.com/professionals";?>">
+				<?php echo $userData->role==1?"Student":"Young Professionals";?> Career Development Solutions </a><br> to accelerate your career and excel in the corporate world! </h3>
 			
 		<div class="any_query">
 			<h3 class="no_italic">Is there something urgent? <br>
