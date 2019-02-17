@@ -15,6 +15,9 @@
 <body class="adminsection">
 
 <?php
+if(isset(Yii::app()->user->id) && Yii::app()->user->id){
+    die("Unauthorised Access");
+}
 $items = array(
 //            array('label'=>'Category Managment', 'url'=>array('/ebrouchersCategory/admin')),
 //            array('label'=>'Create Category', 'url'=>array('/ebrouchersCategory/create')),
