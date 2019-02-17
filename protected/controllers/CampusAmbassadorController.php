@@ -31,7 +31,7 @@ class CampusAmbassadorController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','admin','delete',"import","importcolleges","importcompcolleges"),
+				'actions'=>array('create','update','admin','delete',"import","importcolleges","importcompcolleges","importcontact"),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -92,6 +92,36 @@ class CampusAmbassadorController extends Controller
         }
 
 	    $this->render("import", array("model"=>$model));
+    }
+    public function actionImportcontact(){
+        $model = new Courses;
+        if(!empty($_FILES)){
+            $path="assets/imports";
+            if (!is_dir($path)) {
+                CFileHelper::createDirectory($path,null,true);
+            }
+            if (!empty($_FILES)) {
+
+                $fileName = rand().str_replace(" ","", $_FILES["files"]['name']);  // random number + file name
+
+                $tmp_name = $_FILES["files"]['tmp_name'];
+                move_uploaded_file($tmp_name, $path."/".$fileName);
+                $inputFileName = $path."/".$fileName;
+                $array = $this->ImportCSV2Array($inputFileName);
+                foreach ($array as $item){
+                    $model = new ContactAutofill();
+                    $model->attributes = array("name" => $item["title"]);
+                    if($model->save()){
+                        Yii::app()->user->setFlash('success', "Contact Company / Institutes Added Successfully.");
+                    } else {
+                        Yii::app()->user->setFlash('success', "Some of Contact Company / Institutes Courses are not Added.");
+                    }
+                }
+
+            }
+        }
+
+        $this->render("importcontact", array("model"=>$model));
     }
     public function actionImportcolleges(){
         $model = new Colleges;

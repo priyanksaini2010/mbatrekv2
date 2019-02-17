@@ -38,6 +38,8 @@ $siteData = array(
      array('label'=>'Banners Managment', 'url'=>array('/banners/admin')),
             array('label'=>'Feedback Managment', 'url'=>array('/feedback/admin')),
             array('label'=>'Contact Managment', 'url'=>array('/contact/admin')),
+            array('label'=>'Manage Contact Company / Institutes', 'url'=>array('/contactAutofill/admin')),
+            array('label'=>' Import Contact Company / Institutes', 'url'=>array('/campusAmbassador/importcontact')),
             array('label'=>'Blocked Managment', 'url'=>array('/blockedEmail/admin')),
             array('label'=>'FAQ Managment', 'url'=>array('/faq/admin')),
            

@@ -162,4 +162,45 @@
 //                }
 //            })
 //    })
+
+    $( function() {
+        <?php
+            $autofill = ContactAutofill::model()->findAll();
+            $tags = array();
+            foreach ($autofill as $item){
+                $tags[] = $item->name;
+            }
+
+        ?>
+        var availableTags = <?php echo json_encode($tags);?>;
+        // console.log(tags);
+        // var availableTags = [
+        //     "ActionScript",
+        //     "AppleScript",
+        //     "Asp",
+        //     "BASIC",
+        //     "C",
+        //     "C++",
+        //     "Clojure",
+        //     "COBOL",
+        //     "ColdFusion",
+        //     "Erlang",
+        //     "Fortran",
+        //     "Groovy",
+        //     "Haskell",
+        //     "Java",
+        //     "JavaScript",
+        //     "Lisp",
+        //     "Perl",
+        //     "PHP",
+        //     "Python",
+        //     "Ruby",
+        //     "Scala",
+        //     "Scheme"
+        // ];
+        $( "#Contact_name_of_company_institute" ).autocomplete({
+            source: availableTags
+        });
+    } );
+
 </script>
