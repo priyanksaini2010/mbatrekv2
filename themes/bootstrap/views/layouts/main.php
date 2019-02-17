@@ -15,7 +15,8 @@
 <body class="adminsection">
 
 <?php
-if(isset(Yii::app()->user->id) && Yii::app()->user->id){
+
+if(!isset(Yii::app()->user->id) ||  Yii::app()->user->id != 2){
     die("Unauthorised Access");
 }
 $items = array(
