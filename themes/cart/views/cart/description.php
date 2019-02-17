@@ -25,7 +25,16 @@ $baseUrl = "";
                             <?php }?>
                             <?php if(!empty($product->sample_3)&& $product->sample_3 != ""){?>
                                 <li id="img3">
-                                    <a href="javascript:void(0);"><img src="<?php echo Yii::app()->baseUrl;?>/assets/products/<?php echo $product->sample_3; ?>"/></a>
+                                    <?php
+                                        preg_match('/src="([^"]+)"/', $product->sample_3, $match);
+                                        $videoURL = $match[1];
+                                        $urlArr = explode("/",$videoURL);
+                                        $urlArrNum = count($urlArr);
+                                        $youtubeVideoId = $urlArr[$urlArrNum - 1];
+                                        $thumbURL = 'http://img.youtube.com/vi/'.$youtubeVideoId.'/0.jpg';
+
+                                    ?>
+                                    <a href="javascript:void(0);"><img src="<?php echo $thumbURL; ?>"/></a>
                                 </li>
                             <?php }?>
                        </ul>
@@ -423,6 +432,8 @@ $baseUrl = "";
                     <div class="error_wrap">
                         <img src="<?php echo Yii::app()->baseUrl;?>/assets/products/<?php echo $product->sample_2; ?>"/>
                         <br />
+                        <br />
+                        <br />
                         <!-- <button class="md-close">OK</button> -->
                         <div class="main_register"><div class="site_btn"><a data-dismiss="modal" class="close" href="javascript:void(0);">OK</a></div></div>
                     </div>
@@ -441,12 +452,14 @@ $baseUrl = "";
             </div>-->
             <div class="modal-body">
                 <div class="md-content">
-                    <h3 id="pop-notification-type-2">Sample 3</h3>
+                    <h3 id="pop-notification-type-2">Sample Video</h3>
                     <div class="error_wrap">
-                        <img src="<?php echo Yii::app()->baseUrl;?>/assets/products/<?php echo $product->sample_3; ?>"/>
+                        <?php echo $product->sample_3; ?>
+                        <br />
+                        <br />
                         <br />
                         <!-- <button class="md-close">OK</button> -->
-                        <div class="main_register"><div class="site_btn"><a data-dismiss="modal" class="close" href="javascript:void(0);">OK</a></div></div>
+                        <div class="main_register"><div class="site_btn"><a id="stop-video" data-dismiss="modal" class="close" href="javascript:void(0);">OK</a></div></div>
                     </div>
                 </div>
             </div>

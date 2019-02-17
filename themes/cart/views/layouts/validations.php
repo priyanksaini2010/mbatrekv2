@@ -201,6 +201,22 @@
         $( "#Contact_name_of_company_institute" ).autocomplete({
             source: availableTags
         });
+        $(function() {
+            // Find all YouTube and Vimeo videos
+            var $allVideos = $("iframe[src*='www.youtube.com'], iframe[src*='player.vimeo.com']");
+
+            // Figure out and save aspect ratio for each video
+            $allVideos.each(function() {
+                $(this).attr('height',300);
+                $(this).attr('width',358);
+            });
+
+        });
+        $(function(){
+            $('#stop-video').click(function(){
+                $("iframe[src*='www.youtube.com']").attr('src', $("iframe[src*='www.youtube.com']").attr('src'));
+            });
+        });
     } );
 
 </script>

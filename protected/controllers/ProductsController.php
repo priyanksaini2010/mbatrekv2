@@ -33,7 +33,7 @@ class ProductsController extends Controller
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('create', 'update', 'admin', 'delete',"sort"),
+                'actions' => array('create', 'update', 'admin', 'delete',"sort","deleteimage"),
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -59,6 +59,21 @@ class ProductsController extends Controller
                         }
                 }
         }
+
+    public function actionDeleteimage($id,$image){
+        $model = Products::model()->findByPk($id);
+        if($image == 1){
+            $model->attributes  = array("sample_1" => "");
+        } else if($image == 2) {
+            $model->attributes  = array("sample_2" => "");
+        }
+        if(!empty($model->attributes) && $model->save()){
+            Yii::app()->user->setFlash("success","Sample Image deleted Successfully");
+            $this->redirect( array("products/update","id"=>$id));
+        }
+
+
+    }
 	/**
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
@@ -179,20 +194,13 @@ class ProductsController extends Controller
                             } else {
                                 $_POST['Products']['sample_2'] = $model->sample_2;
                             }
-                            if($_FILES['Products']['name']['sample_3'] != ""){
-                                $fileName = rand() . str_replace(" ", "", $_FILES['Products']['name']['sample_3']);  // random number + file name
-                                $tmp_name = $_FILES['Products']['tmp_name']['sample_3'];
-                                move_uploaded_file($tmp_name, $path . "/" . $fileName);
-                                $_POST['Products']['sample_3'] = $fileName;
-                            } else {
-                                $_POST['Products']['sample_3'] = $model->sample_3;
-                            }
+
                         } else {
                             $_POST['Products']['logo'] = $model->logo;
                             $_POST['Products']['home_page_icon'] = $model->home_page_icon;
                             $_POST['Products']['sample_1'] = $model->sample_1;
                             $_POST['Products']['sample_2'] = $model->sample_2;
-                            $_POST['Products']['sample_3'] = $model->sample_3;
+
                         }
 			$model->attributes=$_POST['Products'];
 //                        pr($model->attributes);

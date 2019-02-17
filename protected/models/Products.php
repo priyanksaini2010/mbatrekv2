@@ -51,7 +51,8 @@ class Products extends CActiveRecord
 			array('actuall_price, price', 'numerical'),
 			array('title, logo, description1', 'length', 'max'=>255),
 			array('home_page_icon', 'length', 'max'=>250),
-            array('sample_1, sample_2, sample_3', 'length', 'max'=>500),
+            array('sample_1, sample_2', 'length', 'max'=>500),
+            array('sample_3', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, title, logo, actuall_price, description, description1, price, type, is_saver, product_sub_category_id, home_page_icon, home_page_bucket, status', 'safe', 'on'=>'search'),

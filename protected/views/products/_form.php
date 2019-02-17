@@ -22,17 +22,19 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 <?php } ?>
 <?php echo $form->fileFieldRow($model, 'home_page_icon', array('class' => 'span5', 'maxlength' => 255)); ?>
 <?php echo $form->fileFieldRow($model, 'sample_1', array('class' => 'span5', 'maxlength' => 255)); ?>
-<?php if (!$model->isNewRecord) { ?>
+<?php if (!$model->isNewRecord && $model->sample_1 != null) { ?>
     <img src="assets/products/<?php echo $model->sample_1 ?>" height="50px" width="50px"/>
+    <a href="<?php echo Yii::app()->createUrl("products/deleteimage",array("id"=>$model->id,"image"=>1));?>">X</a>
 <?php } ?>
 <?php echo $form->fileFieldRow($model, 'sample_2', array('class' => 'span5', 'maxlength' => 255)); ?>
-<?php if (!$model->isNewRecord) { ?>
+<?php if (!$model->isNewRecord && $model->sample_2 != null) { ?>
     <img src="assets/products/<?php echo $model->sample_2 ?>" height="50px" width="50px"/>
+    <a href="<?php echo Yii::app()->createUrl("products/deleteimage",array("id"=>$model->id,"image"=>2));?>">X</a>
 <?php } ?>
-<?php echo $form->fileFieldRow($model, 'sample_3', array('class' => 'span5', 'maxlength' => 255)); ?>
-<?php if (!$model->isNewRecord) { ?>
-    <img src="assets/products/<?php echo $model->sample_3 ?>" height="50px" width="50px"/>
-<?php } ?>
+<br />
+<label for="Products_sample_3">Sample Video</label>
+<?php echo $form->textArea($model, 'sample_3', array('class' => 'span5')); ?>
+
 <?php echo $form->textFieldRow($model, 'description1', array('class' => 'span5')); ?>
 <?php echo $form->textFieldRow($model, 'actuall_price', array('class' => 'span5')); ?>
 
