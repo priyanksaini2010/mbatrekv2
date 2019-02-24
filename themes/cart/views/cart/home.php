@@ -10,7 +10,8 @@
                 ?>
                     <a href="<?php echo $banner->link?>" target="_blank">
                 <?php }?>
-		<li><img src="https://d39ivqqvyriko0.cloudfront.net/<?php echo $banner->image;?>" alt=""></li>
+		<li><img src="<?php echo Yii::app()->request->baseUrl; ?>/assets/Banners/<?php echo $banner->image;?>" alt=""></li>
+<!--            <img src="https://d39ivqqvyriko0.cloudfront.net/--><?php //echo $banner->image;?><!--" alt=""></li>-->
                         <?php if(!empty($banner->link)){
                         ?>
                     </a>
@@ -228,6 +229,6 @@
         </div>
     </div>
 </div>
-<?php //echo $this->renderPartial("webroot.themes.cart.views.cart.socialwidgets"); ?><!-- -->
+<?php echo $this->renderPartial("webroot.themes.cart.views.cart.socialwidgets"); ?>
 </div>
 
