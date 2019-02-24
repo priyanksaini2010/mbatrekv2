@@ -99,9 +99,9 @@
                 <div class="compas_heading">
                     <h4>What Do You Get</h4>
                 </div>
-                <div class="amaster_bulid">
+                <div class="amaster_bulid what_do">
                     <div class="row">
-                        <div class="col-md-4 is-animated">
+                        <div class="col-md-4 is-animated col-xs-12">
                             <h3>Winner</h3>
                             <div class="amaster_repeat">
                                 <img src="<?php echo $baseUrl;?>/images/amazon_gift_icon.png"/>
@@ -116,7 +116,7 @@
                                 <h3>Pre-Placement Interview<span> (PPI) </span></h3>
                             </div>
                         </div>
-                        <div class="col-md-4  is-animated">
+                        <div class="col-md-4  is-animated col-xs-12">
                             <h3>First Runner up </h3>
                             <div class="amaster_repeat">
                                 <img src="<?php echo $baseUrl;?>/images/amazon_gift_icon.png"/>
@@ -131,7 +131,7 @@
                                 <h3><span>Certificate of Appreciation </span> from MBAtrek’s Founders  </h3>
                             </div>
                         </div>
-                        <div class="col-md-4 is-animated">
+                        <div class="col-md-4 is-animated col-xs-12">
                             <h3>Second Runner up </h3>
                             <div class="amaster_repeat">
                                 <img src="<?php echo $baseUrl;?>/images/preplacement_icon.png"/>

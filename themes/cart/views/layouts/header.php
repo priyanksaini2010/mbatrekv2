@@ -244,7 +244,7 @@
 							</li>
 							<li><span>Insights</span>
 								<ul>
-									<li><a href="<?php echo Yii::app()->createUrl('blogs'); ?>">Blogs / Article</a></li>
+									<li><a href="<?php echo Yii::app()->createUrl('blogs'); ?>">Blogs</a></li>
 									<li><a href="<?php echo Yii::app()->createUrl('videos'); ?>">Videos</a></li>
 								</ul>
 							</li>

@@ -431,9 +431,6 @@ $baseUrl = "";
                     <h3 id="pop-notification-type-2">Sample 2</h3>
                     <div class="error_wrap">
                         <img src="<?php echo Yii::app()->baseUrl;?>/assets/products/<?php echo $product->sample_2; ?>"/>
-                        <br />
-                        <br />
-                        <br />
                         <!-- <button class="md-close">OK</button> -->
                         <div class="main_register"><div class="site_btn"><a data-dismiss="modal" class="close" href="javascript:void(0);">OK</a></div></div>
                     </div>
@@ -455,9 +452,6 @@ $baseUrl = "";
                     <h3 id="pop-notification-type-2">Sample Video</h3>
                     <div class="error_wrap">
                         <?php echo $product->sample_3; ?>
-                        <br />
-                        <br />
-                        <br />
                         <!-- <button class="md-close">OK</button> -->
                         <div class="main_register"><div class="site_btn"><a id="stop-video" data-dismiss="modal" class="close" href="javascript:void(0);">OK</a></div></div>
                     </div>
