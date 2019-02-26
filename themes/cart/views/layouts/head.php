@@ -10,7 +10,20 @@
 <link href="<?php echo $baseUrl; ?>/css/font-awesome.css" rel="stylesheet" type="text/css" />
 <link href="<?php echo $baseUrl; ?>/css/jquery.mmenu.css" rel="stylesheet" type="text/css" />
 <!--<link href="--><?php //echo $baseUrl; ?><!--/css/source.css" rel="stylesheet" type="text/css" />-->
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"><!--Google Analytics-->
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link href="<?php echo $baseUrl; ?>/css/select2.min.css" rel="stylesheet" type="text/css" />
+<style>
+    .select2-container--default .select2-selection--single{
+        border: none;
+    }
+    .select2-container--default .select2-selection--single .select2-selection__rendered{
+        color: #222;
+        width: 100%;
+        border: 1px solid #999;
+        padding: 10px 10px;
+    }
+</style>
+<!--Google Analytics-->
 <!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-90207910-1"></script>-->
 <!--<script>-->
 <!--    window.dataLayer = window.dataLayer || [];-->

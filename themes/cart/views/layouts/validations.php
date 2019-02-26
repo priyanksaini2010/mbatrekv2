@@ -164,7 +164,10 @@
 //    })
 
     $( function() {
-        <?php
+    $(document).ready(function() { $("#InterviewReadyCompetition_college").select2(); });
+    $(document).ready(function() { $("#IndustryReadyCompetition_college ").select2(); });
+
+    <?php
             $autofill = ContactAutofill::model()->findAll();
             $tags = array();
             foreach ($autofill as $item){
@@ -173,34 +176,11 @@
 
         ?>
         var availableTags = <?php echo json_encode($tags);?>;
-        // console.log(tags);
-        // var availableTags = [
-        //     "ActionScript",
-        //     "AppleScript",
-        //     "Asp",
-        //     "BASIC",
-        //     "C",
-        //     "C++",
-        //     "Clojure",
-        //     "COBOL",
-        //     "ColdFusion",
-        //     "Erlang",
-        //     "Fortran",
-        //     "Groovy",
-        //     "Haskell",
-        //     "Java",
-        //     "JavaScript",
-        //     "Lisp",
-        //     "Perl",
-        //     "PHP",
-        //     "Python",
-        //     "Ruby",
-        //     "Scala",
-        //     "Scheme"
-        // ];
+
         $( "#Contact_name_of_company_institute" ).autocomplete({
             source: availableTags
         });
+
         $(function() {
             // Find all YouTube and Vimeo videos
             var $allVideos = $("iframe[src*='www.youtube.com'], iframe[src*='player.vimeo.com']");

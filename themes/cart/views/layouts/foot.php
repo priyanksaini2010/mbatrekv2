@@ -11,6 +11,7 @@
         <script src="<?php echo $baseUrl; ?>/js/jquery.waypoints.min.js"></script>
         <script src="<?php echo $baseUrl;?>/js/jssocials.min.js"></script>
         <script src="<?php echo $baseUrl;?>/js/jquery.mmenu.js"></script>
+        <script src="<?php echo $baseUrl;?>/js/select2.min.js"></script>
 <!--		<script src="https://d39ivqqvyriko0.cloudfront.net/source.js"></script>-->
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script type="text/javascript">
