@@ -13,7 +13,17 @@
     $action = $this->action->Id;
         echo $this->renderPartial("webroot.themes.cart.views.layouts.head"); ?>
         <link rel="icon" href="<?php echo $baseUrl; ?>/images/favicon.ico" type="image/x-icon">
-        
+        <!-- DO NOT MODIFY -->
+        <!-- Quora Pixel Code (JS Helper) -->
+        <script>
+            !function(q,e,v,n,t,s){if(q.qp) return; n=q.qp=function(){n.qp?n.qp.apply(n,arguments):n.queue.push(arguments);}; n.queue=[];t=document.createElement(e);t.async=!0;t.src=v; s=document.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s);}(window, 'script', 'https://a.quora.com/qevents.js');
+            qp('init', '502c75240dff49ed874fa846a7f25ac2');
+            qp('track', 'ViewContent');
+        </script>
+        <noscript><img height="1" width="1" style="display:none" src="https://q.quora.com/_/ad/502c75240dff49ed874fa846a7f25ac2/pixel?tag=ViewContent&noscript=1"/></noscript>
+        <!-- End of Quora Pixel Code -->
+        <script>qp('track', 'Generic');</script>
+
     </head>
     <body <?php if($controller == "cart" && $action == "index"){?>class="only-home-class"<?php }?>>
         <div id="fb-root"></div>
@@ -409,41 +419,30 @@ var domain_name = '<?php echo $_SERVER['HTTP_HOST'].DIREC;?>';
             </div>
         </div>
 <?php echo $this->renderPartial("webroot.themes.cart.views.layouts.validations"); ?> 
- <script>
-   /*   
-    $(".show_content_alok").hover(
-	
-        function () {
-        $(".alok_info").addClass("display_information_alok");
-        },
-        function () {
-        $(".alok_info").removeClass("display_information_alok");
-        }
-    );
-    $(".show_content_abhishek").hover(
-        function () {
-        $(".abhishek_info").addClass("display_information_alok");
-        },
-        function () {
-        $(".abhishek_info").removeClass("display_information_alok");
-        }
-    );
-    $(".ayushi_info").hover(
-        function () {
-        $(".show_ayushi_info").addClass("display_information_alok");
-        },
-        function () {
-        $(".show_ayushi_info").removeClass("display_information_alok");
-        }
-    );
-    $(".rahul_info").hover(
-        function () {
-        $(".show_rahul_info").addClass("display_information_alok");
-        },
-        function () {
-        $(".show_rahul_info").removeClass("display_information_alok");
-        }
-    ); */
+<!--    LinkedIn Tracking-->
+    <script type="text/javascript">
+        _linkedin_partner_id = "469235";
+        window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+        window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+    </script><script type="text/javascript">
+        (function(){var s = document.getElementsByTagName("script")[0];
+            var b = document.createElement("script");
+            b.type = "text/javascript";b.async = true;
+            b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+            s.parentNode.insertBefore(b, s);})();
     </script>
+    <noscript>
+        <img height="1" width="1" style="display:none;" alt="" src="https://dc.ads.linkedin.com/collect/?pid=469235&fmt=gif" />
+    </noscript>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("a").click(function(){
+                    if($(this).html() == "Add to Cart"){
+                        qp('track', 'Generic');
+                    }
+                })
+            });
+        </script>
+
     </body>
 </html> 
