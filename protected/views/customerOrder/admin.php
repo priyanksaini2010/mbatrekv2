@@ -6,7 +6,7 @@ $this->breadcrumbs=array(
 
 ?>
 
-<h1><?php echo $status == 2?"Success":"Failed";?> Orders</h1>
+<h1><?php echo $status == 2?"Successful":"Failed";?> Orders</h1>
 <?php if(Yii::app()->user->admin == 4){?>
 <!--<form method="post" action="--><?php //echo Yii::app()->createUrl("customerOrder/admin/status/".$status."/task/xls");?><!-- ">-->
     <input readonly="readonly" type="text" class="input-large" name="date_range" id="date-range" placeholder="Date range"/>
