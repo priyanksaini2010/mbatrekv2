@@ -9,7 +9,13 @@
     <title><?php echo CHtml::encode($this->pageTitle); ?></title>
 
 	<?php Yii::app()->bootstrap->register(); ?>
+    <?php if(Yii::app()->user->admin == 4){?>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <?php }?>
     <style>
 
         .navbar .nav > li {
@@ -22,7 +28,7 @@
 
 <?php
 
-if(!isset(Yii::app()->user->id) ||  Yii::app()->user->id != 2){
+if(!isset(Yii::app()->user->admin) ||  (Yii::app()->user->admin != 0 && Yii::app()->user->admin != 4)){
     die("Unauthorised Access");
 }
 
@@ -71,30 +77,38 @@ $usersMenu = array(
     array('label'=>'Registered Users', 'url'=>array('/usersNew/admin',"role"=>1)),
     array('label'=>'Blocked Email', 'url'=>array('/blockedEmail/admin')),
 );
+if(Yii::app()->user->admin == 0) {
+    $widgetItems = array(
+        'class'=>'bootstrap.widgets.TbMenu',
+        'items'=>array(
+            array('label'=>'Home', 'url'=>array('/customerOrder/admin/status/2')),
+            array('label'=>'Users', 'items'=>$usersMenu),
+            array('label'=>'Orders Management', 'items'=>$orderMenu),
+            array('label'=>'Web Data Management', 'items'=>$siteData),
+            array('label'=>'Campus Ambassador', 'items'=>$caManagment),
+            array('label'=>'Competitions', 'items'=>$copManagment),
+            array('label'=>'Blog Management', 'items'=>$blogMenu),
+            array('label'=>'Customer Interaction', 'items'=>$csInteractionMenu),
+            array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+        ),
+    );
+} else{
+    $widgetItems = array(
+        'class'=>'bootstrap.widgets.TbMenu',
+        'items'=>array(
+            array('label'=>'Home', 'url'=>array('/customerOrder/admin/status/2')),
+            array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+        ),
+    );
+}
 
 $this->widget('bootstrap.widgets.TbNavbar',array(
-    'items'=>array(
-        array(
-            'class'=>'bootstrap.widgets.TbMenu',
-            'items'=>array(
-                array('label'=>'Home', 'url'=>array('/customerOrder/admin/status/2')),
-                array('label'=>'Users', 'items'=>$usersMenu),
-                array('label'=>'Orders Management', 'items'=>$orderMenu),
-                array('label'=>'Web Data Management', 'items'=>$siteData),
-                array('label'=>'Campus Ambassador', 'items'=>$caManagment),
-                array('label'=>'Competitions', 'items'=>$copManagment),
-                array('label'=>'Blog Management', 'items'=>$blogMenu),
-                array('label'=>'Customer Interaction', 'items'=>$csInteractionMenu),
-                array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
-            ),
-        ),
-        
-    ),
+    'items'=>array($widgetItems),
     'collapse'=>true,
-    
     'brand' => ''
      
-)); ?>
+));
+?>
 
 <div class="container" id="page">
         <br/><br/><br/><br/><br/><br/>

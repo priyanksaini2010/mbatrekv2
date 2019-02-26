@@ -145,9 +145,26 @@ class CustomerOrderController extends Controller
 	/**
 	 * Manages all models.
 	 */
-	public function actionAdmin($status, $task = "")
+	public function actionAdmin($status, $task = "",$date = "")
 	{
 		if ($task == "xls") {
+
+		    $cb = new CDbCriteria();
+		    $cb->addCondition("status = ".$status);
+
+		    if(isset($date) && !empty($date)){
+                $dates = explode(" - ",$date);
+                if(!empty($dates)){
+                    $from = str_replace(" ","",$dates[0])." 00:00:00";
+                    $to = str_replace(" ","",$dates[1])." 00:00:00";
+                    $cb->addBetweenCondition("date_created",$from,$to);
+
+                }
+            }
+
+
+            $data = CustomerOrder::model()->findAll($cb);
+//
             $objPHPExcel = new PHPExcel();
             // Set document properties
 
@@ -171,7 +188,7 @@ class CustomerOrderController extends Controller
             }
             $colCount = 0;
             $rowCount = $rowCount + 1;
-            $data = CustomerOrder::model()->findAllByAttributes(array("status"=>$status));
+
             foreach ($data as $row){
                 $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($colCount,$rowCount,$row->ordfer_hash);$colCount++;
                 $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($colCount,$rowCount,"Rs.".money($row->order_amount));$colCount++;
@@ -194,9 +211,9 @@ class CustomerOrderController extends Controller
                 $colCount = 0;
                 $rowCount++;
             }
+//            pr($data);
 
-
-
+            ob_clean();
             // Redirect output to a client’s web browser (Excel5)
             header('Content-Type: application/vnd.ms-excel');
             header('Content-Disposition: attachment;filename="orders.xls"');

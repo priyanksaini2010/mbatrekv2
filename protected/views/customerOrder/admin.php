@@ -7,8 +7,14 @@ $this->breadcrumbs=array(
 ?>
 
 <h1><?php echo $status == 2?"Success":"Failed";?> Orders</h1>
-
-<a href="<?php echo Yii::app()->createUrl("customerOrder/admin/status/".$status."/task/xls");?>"> <button class="btn btn-info" h">Export To Excel</button></a>
+<?php if(Yii::app()->user->admin == 4){?>
+<!--<form method="post" action="--><?php //echo Yii::app()->createUrl("customerOrder/admin/status/".$status."/task/xls");?><!-- ">-->
+    <input readonly="readonly" type="text" class="input-large" name="date_range" id="date-range" placeholder="Date range"/>
+    <button class="btn btn-info" id="export" type="button">Export To Excel</button>
+<!--</form>-->
+<?php } else{?>
+<a href="<?php echo Yii::app()->createUrl("customerOrder/admin/status/".$status."/task/xls");?>"> <button class="btn btn-info" >Export To Excel</button></a>
+<?php }?>
 <?php
 $grid =  $this->widget('bootstrap.widgets.TbGridView',array(
 	'id'=>'customer-order-grid',
@@ -49,3 +55,14 @@ $grid =  $this->widget('bootstrap.widgets.TbGridView',array(
 
 
 ?>
+<script>
+    $('input[id="date-range"]').daterangepicker({
+        locale: {
+            format: 'YYYY-MM-DD',
+        }
+
+    });
+    $("#export").click(function(){
+        window.location.href = "<?php echo Yii::app()->createUrl("customerOrder/admin/status/".$status."/task/xls");?>"+"/date/"+$("#date-range").val();
+    });
+</script>

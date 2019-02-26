@@ -658,41 +658,44 @@ class SiteController extends Controller
 //			    $model2->attributes=array("login_count"=>($model2->login_count+1));
 //			    $model2->save(); 
                             
-                            $cookieCart = unserialize($_COOKIE['products']);
-                            $criteria = new CDbCriteria;
-                            $criteria->addInCondition("id", $cookieCart);
-                            $products = Products::model()->findAll($criteria);
-                            setcookie('products', null, -1, DIREC);
-                            foreach($products as $product){
-                                $modelPre = Cart::model()->findByAttributes(array(
-                                    "user_id" =>Yii::app()->user->id,
-                                    "product_id" =>$product->id,
-                                    "status" => 1,
-                                ));
-                                 
-                                if(empty($modelPre)){
-                                    $modelCart = new Cart();
-                                    $modelCart->attributes = array(
+                            $cookieCart = isset($_COOKIE['products'])?unserialize($_COOKIE['products']):null;
+                            if($cookieCart != null){
+                                $criteria = new CDbCriteria;
+                                $criteria->addInCondition("id", $cookieCart);
+                                $products = Products::model()->findAll($criteria);
+                                setcookie('products', null, -1, DIREC);
+                                foreach($products as $product){
+                                    $modelPre = Cart::model()->findByAttributes(array(
                                         "user_id" =>Yii::app()->user->id,
                                         "product_id" =>$product->id,
-                                        "status" =>1,
-                                        "date_created" =>date("Y-m-d h:i:s"),
-                                    );
-                                    if($modelCart->save()){
+                                        "status" => 1,
+                                    ));
+
+                                    if(empty($modelPre)){
+                                        $modelCart = new Cart();
+                                        $modelCart->attributes = array(
+                                            "user_id" =>Yii::app()->user->id,
+                                            "product_id" =>$product->id,
+                                            "status" =>1,
+                                            "date_created" =>date("Y-m-d h:i:s"),
+                                        );
+                                        if($modelCart->save()){
 //                                        $this->redirect(Yii::app()->request->urlReferrer);
-                                    } else {
-                                        foreach($modelCart->getErrors() as $key=>$err){
-                                            
-                                            $this->errors[$key] = $err[0];
-                                            
+                                        } else {
+                                            foreach($modelCart->getErrors() as $key=>$err){
+
+                                                $this->errors[$key] = $err[0];
+
+                                            }
+                                            $this->render("webroot.themes.cart.views.cart.login",array('model'=>$model));
+
                                         }
-                                        $this->render("webroot.themes.cart.views.cart.login",array('model'=>$model));
-                                        
                                     }
-                                } 
+                                }
                             }
-                            if (Yii::app()->user->admin == 0) {
-                                $this->redirect(Yii::app()->createUrl('/usersNew/admin',array("role"=>1)));
+
+                            if (Yii::app()->user->admin == 0 || Yii::app()->user->admin == 4) {
+                                $this->redirect(Yii::app()->createUrl('/customerOrder/admin/status/2'));
                             }  else {
 
                                 if($_REQUEST['b'] == 1){
