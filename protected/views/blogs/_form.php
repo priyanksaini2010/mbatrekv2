@@ -12,7 +12,7 @@ $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
         <label for="Blogs_blog_category_id" class="required">Blog Category <span class="required">*</span></label>
 	<?php echo $form->dropDownList($model,'blog_category_id',CHtml::listData(BlogCategory::model()->findAll(), "id", "name"),array('empty'=>'Select Category', "class"=>"span5")); ?>
         <label for="Blogs_type" class="required">Blog Type <span class="required">*</span></label>
-	<?php echo $form->dropDownList($model,'type',array(1=>"Recent Updates",2=>"Job Ready",3=>"CXO's Speak"),array('empty'=>'Select Type', "class"=>"span5")); ?>
+	<?php echo $form->dropDownList($model,'type',array(1=>"Career Preparation",2=>"Job Ready",3=>"CXO's Speak"),array('empty'=>'Select Type', "class"=>"span5")); ?>
 
 	<?php echo $form->textFieldRow($model,'title',array('class'=>'span5','maxlength'=>255)); ?>
 
