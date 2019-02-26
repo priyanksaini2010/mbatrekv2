@@ -4,12 +4,18 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="language" content="en" />
-        <link rel="stylesheet" type="text/css" href="/v3/themes/bootstrap/css/styles.css" />
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
-    	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
+    <link rel="stylesheet" type="text/css" href="/themes/bootstrap/css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
+    <title><?php echo CHtml::encode($this->pageTitle); ?></title>
 
 	<?php Yii::app()->bootstrap->register(); ?>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+    <style>
+
+        .navbar .nav > li {
+            width: 128px;
+        }
+    </style>
 </head>
 
 <body class="adminsection">
@@ -19,55 +25,32 @@
 if(!isset(Yii::app()->user->id) ||  Yii::app()->user->id != 2){
     die("Unauthorised Access");
 }
-$items = array(
-//            array('label'=>'Category Managment', 'url'=>array('/ebrouchersCategory/admin')),
-//            array('label'=>'Create Category', 'url'=>array('/ebrouchersCategory/create')),
-//            array('label'=>'eBrouchers', 'url'=>array('/ebrouchers/admin')),
-//            array('label'=>'Upload eBroucher', 'url'=>array('/ebrouchers/create')),
-//            array('label'=>'eBroucher Downloaded', 'url'=>array('/ebroucherDownloadForm/admin')),
-        );
+
 $blogMenu = array(
-        array('label'=>'Categories Managment', 'url'=>array('/blogCategory/admin')),
-        array('label'=>'Blog Managment', 'url'=>array('/blogs/admin')),
-        array('label'=>'Videos Managment', 'url'=>array('/videos/admin')),
+        array('label'=>'Categories Management', 'url'=>array('/blogCategory/admin')),
+        array('label'=>'Blog Management', 'url'=>array('/blogs/admin')),
+        array('label'=>'Videos Management', 'url'=>array('/videos/admin')),
     );
 $orderMenu = array(
-        array('label'=>'Successfull Orders', 'url'=>array('/customerOrder/admin/status/2')),
+        array('label'=>'Successful Orders', 'url'=>array('/customerOrder/admin/status/2')),
         array('label'=>'Failed Orders', 'url'=>array('/customerOrder/admin/status/3')),
+        array('label'=>'Coupon Management', 'url'=>array('/couponCode/admin')),
+        array('label'=>'Finance View', 'url'=>array('#')),
     );
 $siteData = array(
-			array('label'=>'Product Managment', 'url'=>array('/products/admin')),
-			array('label'=>'Coupon Managment', 'url'=>array('/couponCode/admin')),
-            array('label'=>'Content Managment', 'url'=>array('/contentJson/admin')),
-     array('label'=>'Banners Managment', 'url'=>array('/banners/admin')),
-            array('label'=>'Feedback Managment', 'url'=>array('/feedback/admin')),
-            array('label'=>'Contact Managment', 'url'=>array('/contact/admin')),
-            array('label'=>'Manage Contact Company / Institutes', 'url'=>array('/contactAutofill/admin')),
-            array('label'=>' Import Contact Company / Institutes', 'url'=>array('/campusAmbassador/importcontact')),
-            array('label'=>'Blocked Managment', 'url'=>array('/blockedEmail/admin')),
-            array('label'=>'FAQ Managment', 'url'=>array('/faq/admin')),
-           
-//            array('label'=>'FAQ Analysis', 'url'=>array('/faqAnalysis/admin')),
-            array('label'=>'Talk To Career Advisory', 'url'=>array('/talkToAdvisory/admin')),
-//            array('label'=>'eBroucher Management', 'items'=>$items),
+			array('label'=>'Product Management', 'url'=>array('/products/admin')),
+            array('label'=>'Content Management', 'url'=>array('/contentJson/admin')),
+            array('label'=>'Banners Management', 'url'=>array('/banners/admin')),
             array('label'=>'Success Story Management', 'url'=>array('/successStory/admin')),
-//            array('label'=>'Event Category Management', 'url'=>array('/eventCategory/admin')),
             array('label'=>'Event Management', 'url'=>array('/eventGallery/admin')),
-           
-           
-          
-//            array('label'=>'Success Story Management', 'url'=>array('/articles/admin',"type"=>2)),
-//            array('label'=>'Success Story Management', 'url'=>array('/articles/admin',"type"=>2)),
-//            array('label'=>'Industry Options 1', 'url'=>array('/industryOption/admin',"option_number"=>1)),
-//            array('label'=>'Industry Options 2', 'url'=>array('/industryOption/admin',"option_number"=>2)),
-//            array('label'=>'Industry Options 3', 'url'=>array('/industryOption/admin',"option_number"=>3)),
-//            array('label'=>'Industry Options 4', 'url'=>array('/industryOption/admin',"option_number"=>4)),
-//            array('label'=>'Industry Options 5', 'url'=>array('/industryOption/admin',"option_number"=>5)),
-//	    array('label'=>'Bulk Upload - Industry', 'url'=>array('/users/uploadindustry',"option_number"=>5)),
-//	    array('label'=>'B2C Image PopUp', 'url'=>array('/bbcPopup/admin')),
-//	    array('label'=>'Block Email', 'url'=>array('/blockedEmail/admin')),
-            
-        );
+);
+$csInteractionMenu = array(
+    array('label'=>'FAQ Management', 'url'=>array('/faq/admin')),
+    array('label'=>'Career Advisory Management', 'url'=>array('/talkToAdvisory/admin')),
+    array('label'=>'Contact Management', 'url'=>array('/contact/admin')),
+    array('label'=>'Import Contact Company / Institutes', 'url'=>array('/campusAmbassador/importcontact')),
+    array('label'=>'Manage Contact Company / Institutes', 'url'=>array('/contactAutofill/admin')),
+);
 $caManagment = array( 
     array('label'=>'Campus Ambassador Management', 'url'=>array('/campusAmbassador/admin')),
     array('label'=>'CA FAQ Managment', 'url'=>array('/caFaq/admin')),
@@ -81,23 +64,27 @@ $copManagment = array(
       
             array('label'=>'Interview Management', 'url'=>array('/interviewReadyCompetition/admin')),
             array('label'=>'Industry Management', 'url'=>array('/industryReadyCompetition/admin')),
-             array('label'=>'Competition Colleges Management', 'url'=>array('/collegesCompetition/admin')),
+            array('label'=>'Competition Colleges Management', 'url'=>array('/collegesCompetition/admin')),
             array('label'=>' Import Competition Colleges', 'url'=>array('/campusAmbassador/importcompcolleges')),
-
 );
- $this->widget('bootstrap.widgets.TbNavbar',array(
+$usersMenu = array(
+    array('label'=>'Registered Users', 'url'=>array('/usersNew/admin',"role"=>1)),
+    array('label'=>'Blocked Email', 'url'=>array('/blockedEmail/admin')),
+);
+
+$this->widget('bootstrap.widgets.TbNavbar',array(
     'items'=>array(
         array(
             'class'=>'bootstrap.widgets.TbMenu',
             'items'=>array(
-                array('label'=>'Home', 'url'=>'#'),
-                array('label'=>'Users', 'url'=>array('/usersNew/admin',"role"=>1)),
-                array('label'=>'Web Data Managment', 'items'=>$siteData),
-                array('label'=>'Campus Ambassador', 'items'=>$caManagment),
-                array('label'=>'Competetion', 'items'=>$copManagment),
-//                ,
-                array('label'=>'Blog Management', 'items'=>$blogMenu),
+                array('label'=>'Home', 'url'=>array('/customerOrder/admin/status/2')),
+                array('label'=>'Users', 'items'=>$usersMenu),
                 array('label'=>'Orders Management', 'items'=>$orderMenu),
+                array('label'=>'Web Data Management', 'items'=>$siteData),
+                array('label'=>'Campus Ambassador', 'items'=>$caManagment),
+                array('label'=>'Competitions', 'items'=>$copManagment),
+                array('label'=>'Blog Management', 'items'=>$blogMenu),
+                array('label'=>'Customer Interaction', 'items'=>$csInteractionMenu),
                 array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
             ),
         ),
@@ -114,7 +101,7 @@ $copManagment = array(
     	<?php if(isset($this->breadcrumbs)):?>
 		<?php $this->widget('bootstrap.widgets.TbBreadcrumbs', array(
 			'links'=>$this->breadcrumbs,
-                        'homeLink'=>CHtml::link('Home', array('/usersNew/admin',"role"=>1)),
+                        'homeLink'=>CHtml::link('Home', array('/customerOrder/admin/status/2')),
 
 		)); ?><!-- breadcrumbs -->
 	<?php endif?>
