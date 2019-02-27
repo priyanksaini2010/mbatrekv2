@@ -126,19 +126,20 @@ class CollegesCompetitionController extends Controller
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.
 	 * @param integer $id the ID of the model to be deleted
 	 */
-	public function actionDelete($id)
+	public function actionDelete()
 	{
-		if(Yii::app()->request->isPostRequest)
-		{
-			// we only allow deletion via POST request
-			$this->loadModel($id)->delete();
+		$all = CollegesCompetition::model()->findAll();
+		foreach ($all as $item){
+		    if($item->id != 4){
 
-			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-			if(!isset($_GET['ajax']))
-				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-		}
-		else
-			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
+                if($this->loadModel($item->id)->delete()){
+                    Yii::app()->user->setFlash("success", "All data deleted");
+                } else {
+                    Yii::app()->user->setFlash("success", "Some data is not deleted");
+                }
+            }
+        }
+		$this->redirect("admin");
 	}
 
 	/**

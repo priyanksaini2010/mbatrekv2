@@ -11,7 +11,7 @@ $this->menu=array(
 ?>
 
 <h1>Manage Colleges For Competitions</h1>
-
+<button class="btn btn-danger" id="delete-all">Delete All</button>
 <?php
 $str_js = "
 		var fixHelper = function(e, ui) {
@@ -59,3 +59,11 @@ $this->widget('bootstrap.widgets.TbGridView',array(
 		),
 	),
 )); ?>
+<script>
+    $("#delete-all").click(function(){
+        if(confirm("Are you sure you want to delete all data")){
+            window.location = "<?php echo Yii::app()->createUrl("collegesCompetition/delete");?>"
+        }
+    });
+
+</script>
