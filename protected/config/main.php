@@ -29,6 +29,7 @@ $ruleArray = array(
     'event-gallery' => 'site/page/view/event_gallery',
     'campus-ambassador' => 'site/page/view/campus_ambassador',
     'campus-abassador-register' => 'cart/campus',
+    'campus-ambassador-register' => 'cart/campus',
     'remove-coupon' => 'cart/removeCoupon',
     'copyright-notice' => 'site/page/view/copyright_notice',
     'industry-ready-competition' => 'site/page/view/industry_ready_compitition',

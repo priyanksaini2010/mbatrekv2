@@ -146,7 +146,7 @@
             </div>
         </div> 
         <div class="amastor_button">
-            <a href="<?php echo Yii::app()->createUrl('campus-abassador-register'); ?>">Apply Now</a>
+            <a href="<?php echo Yii::app()->createUrl('campus-ambassador-register'); ?>">Apply Now</a>
         </div>
     </section> 
     <?php
