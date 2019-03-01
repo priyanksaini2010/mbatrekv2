@@ -148,6 +148,7 @@
         <div class="amastor_button">
             <a href="<?php echo Yii::app()->createUrl('campus-ambassador-register'); ?>">Apply Now</a>
         </div>
+
     </section> 
     <?php
         
