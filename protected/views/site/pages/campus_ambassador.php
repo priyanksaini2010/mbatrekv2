@@ -1,4 +1,4 @@
-<?php $this->setPageTitle('Campus Ambassador'); ?>
+<?php $this->setPageTitle('Campus Ambassador Registration'); ?>
 <div class="bread_crum">
     <ul class="list-inline list-unstyled">
 	<li><a href="javascript:void(0);"><i class="fa fa-home" aria-hidden="true"></i></a> <i class="fa fa-angle-right" aria-hidden="true"></i></li>
@@ -33,7 +33,7 @@
                         </div>
                     </div>
                     <div class="amastor_button">
-                        <a href="<?php echo Yii::app()->createUrl('campus-abassador-register'); ?>">Apply Now</a>
+                        <a href="<?php echo Yii::app()->createUrl('campus-ambassador-register'); ?>">Apply Now</a>
                     </div>
                 </div>
             </div>
