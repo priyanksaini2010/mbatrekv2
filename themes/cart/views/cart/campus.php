@@ -1,5 +1,5 @@
 <?php 
-$this->setPageTitle('Campus Ambassador - Registeration'); 
+$this->setPageTitle('Campus Ambassador Registration');
 $criteria=new CDbCriteria;
 $criteria->order = "sortOrder asc";
 $colleges = CHtml::listData(Colleges::model()->findAll($criteria), "id", "name");
