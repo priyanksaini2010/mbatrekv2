@@ -59,7 +59,7 @@ $csInteractionMenu = array(
 );
 $caManagment = array( 
     array('label'=>'Campus Ambassador Management', 'url'=>array('/campusAmbassador/admin')),
-    array('label'=>'CA FAQ Managment', 'url'=>array('/caFaq/admin')),
+    array('label'=>'CA FAQ Management', 'url'=>array('/caFaq/admin')),
     array('label'=>'Colleges Management', 'url'=>array('/colleges/admin')),
     array('label'=>'Courses Management', 'url'=>array('/courses/admin')),
     array('label'=>'Year Of Graduation Management', 'url'=>array('/yearOfGraduation/admin')),
