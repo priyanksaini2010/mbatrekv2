@@ -150,7 +150,7 @@ if(isset(Yii::app()->user->id)){
                             <?php }else{?>
                             <div class="promo_card_apply">
                                 <label> </label>
-                                <div class="phAnimate"><label for="lastname">Email ID: <em>*</em></label> <input class="apply-promo-value input_field" id="name" class="input_field" type="text" name="name" /></div>
+                                <div class="phAnimate"><label for="lastname">Email ID / Coupon Code: <em>*</em></label> <input class="apply-promo-value input_field" id="name" class="input_field" type="text" name="name" /></div>
                                 <div class="promo_btn">
                                     <input type="submit" value="Apply" name="submit" class="apply-promo"/>
                                 </div>

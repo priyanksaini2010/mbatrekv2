@@ -726,16 +726,20 @@ class CartController extends Controller {
         }
         
         public function actionApplypromo(){
-            $status = array("status"=>"failure","message"=>"Invalid Reequest");
+            $status = array("status"=>"failure","message"=>"Invalid Request");
             if(!empty($_POST)) {
-                
+                $couponType = 1;
                 $domain_name = substr(strrchr($_POST['code'], "@"), 1);
+                if($domain_name == ""){
+                    $domain_name = $_POST['code'];
+                    $couponType  = 2;
+                }
                 $isCouponValid = CouponCode::model()->findByAttributes(array("domain"=>$domain_name));
                 //Only Login User can use his email as acoupon
                 $userEmail = UsersNew::model()->findByPk( Yii::app()->user->id);
                 
                 if(!empty($isCouponValid)) {
-                    if($userEmail->email != $_POST['code']){
+                    if($couponType == 1 &&$userEmail->email != $_POST['code']){
                         $status['message'] = "Please login with ".$_POST['code']." to avail discount.";
                         echo json_encode($status);die;
                     }

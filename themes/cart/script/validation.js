@@ -527,8 +527,8 @@ $(document).ready(function(){
         }
     });
     $(".apply-promo").click(function(){
-        if(!validateEmail($(".apply-promo-value").val())){
-            validationMethod("error","Please enter valid email.");return false;
+        if($(".apply-promo-value").val() == ""){
+            validationMethod("error","Please enter valid email id / coupon code.");return false;
         }
         $.ajax({
             url : "applypromo",
@@ -553,6 +553,9 @@ $(document).ready(function(){
             
         });
     });
+
+
+
 })
 
 $("#contact-form").submit(function() {
