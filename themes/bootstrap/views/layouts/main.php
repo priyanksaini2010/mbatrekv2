@@ -41,7 +41,7 @@ $orderMenu = array(
         array('label'=>'Successful Orders', 'url'=>array('/customerOrder/admin/status/2')),
         array('label'=>'Failed Orders', 'url'=>array('/customerOrder/admin/status/3')),
         array('label'=>'Coupon Management', 'url'=>array('/couponCode/admin')),
-        array('label'=>'Finance View', 'url'=>array('#')),
+
     );
 $siteData = array(
 			array('label'=>'Product Management', 'url'=>array('/products/admin')),
@@ -87,7 +87,7 @@ if(Yii::app()->user->admin == 0) {
             array('label'=>'Web Data Management', 'items'=>$siteData),
             array('label'=>'Campus Ambassador', 'items'=>$caManagment),
             array('label'=>'Competitions', 'items'=>$copManagment),
-            array('label'=>'Blog Management', 'items'=>$blogMenu),
+            array('label'=>'Blog / Video Management', 'items'=>$blogMenu),
             array('label'=>'Customer Interaction', 'items'=>$csInteractionMenu),
             array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
         ),
