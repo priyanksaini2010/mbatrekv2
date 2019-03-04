@@ -12,7 +12,7 @@ $this->menu=array(
 
 ?>
 
-<h1>Manage Year Of Graduations</h1>
+<h1>Manage Year Of Graduation</h1>
 
 
 <?php 
