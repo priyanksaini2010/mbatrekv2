@@ -17,6 +17,12 @@ $this->menu=array(
 	'filter'=>$model,
 	'columns'=>array(
 		'domain',
+        array(
+            'header'=>"Coupon Type",
+            "name"=>'coupon_type',
+            "value"=>'$data->coupon_type==1?"Domain Based":"Code Based"',
+            'filter'=>array(1=>"Domain Based",2=>"Code Based"),
+        ),
 		array(
                         'header'=>"Discount Type",
                         "name"=>'discount_type',
@@ -30,6 +36,7 @@ $this->menu=array(
                         "value"=>'$data->is_active==1?"Active":"De-Active"',
                         'filter'=>array(1=>"Active",2=>"De-Active"),
                 ),
+
 		array(
                     'class'=>'bootstrap.widgets.TbButtonColumn',
                     "template" => "{update}{delete}"
