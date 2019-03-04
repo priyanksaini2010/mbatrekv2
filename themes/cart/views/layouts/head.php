@@ -24,14 +24,14 @@
     }
 </style>
 <!--Google Analytics-->
-<!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-90207910-1"></script>-->
-<!--<script>-->
-<!--    window.dataLayer = window.dataLayer || [];-->
-<!--    function gtag(){dataLayer.push(arguments);}-->
-<!--    gtag('js', new Date());-->
-<!---->
-<!--    gtag('config', 'UA-90207910-1');-->
-<!--</script>-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-90207910-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-90207910-1');
+</script>
 <!-- Global site tag (gtag.js) - Google Ads: 862919331 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-862919331"></script>
 <script>
