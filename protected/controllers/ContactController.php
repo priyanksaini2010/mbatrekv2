@@ -43,7 +43,7 @@ class ContactController extends Controller
                 'users'=>array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions'=>array('update','admin','delete'),
+                'actions'=>array('update','admin','delete','export'),
                 'users'=>array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -66,6 +66,59 @@ class ContactController extends Controller
 			'model'=>$this->loadModel($id),
 		));
 	}
+    public function actionExport(){
+        $data = Contact::model()->findAll();
+        $objPHPExcel = new PHPExcel();
+        $headers = array(
+            "First Name",
+            "Last Name",
+            "Mobile No.",
+            "Email",
+            "Are You?",
+            "Name of Company / Institute",
+            "Subject",
+            "Your Message",
+        );
+        $objPHPExcel->setActiveSheetIndex(0);
+        $rowCount = 1;
+        $colCount = 0;
+        foreach($headers as $head){
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($colCount,$rowCount,$head);
+            $objPHPExcel->getActiveSheet()->getStyleByColumnAndRow($colCount,$rowCount)->getFont()->setBold("true");
+            $colCount++;
+        }
+        $colCount = 0;
+        $rowCount = $rowCount + 1;
+        foreach ($data as $row){
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($colCount,$rowCount,$row->first_name);$colCount++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($colCount,$rowCount,$row->last_name);$colCount++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($colCount,$rowCount,$row->mobile_no);$colCount++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($colCount,$rowCount,$row->email);$colCount++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($colCount,$rowCount,$row->are_you);$colCount++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($colCount,$rowCount,$row->name_of_company_institute);$colCount++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($colCount,$rowCount,$row->subject);$colCount++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($colCount,$rowCount,$row->your_message);$colCount++;
+            $colCount = 0;
+            $rowCount++;
+        }
+//            pr($data);
+
+        ob_clean();
+        // Redirect output to a client’s web browser (Excel5)
+        header('Content-Type: application/vnd.ms-excel');
+        header('Content-Disposition: attachment;filename="contacts-'.date("Y-m-d").'.xls"');
+        header('Cache-Control: max-age=0');
+// If you're serving to IE 9, then the following may be needed
+        header('Cache-Control: max-age=1');
+// If you're serving to IE over SSL, then the following may be needed
+        header ('Expires: Mon, 26 Jul 1997 05:00:00 GMT'); // Date in the past
+        header ('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT'); // always modified
+        header ('Cache-Control: cache, must-revalidate'); // HTTP/1.1
+        header ('Pragma: public'); // HTTP/1.0
+        $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel5');
+        $objWriter->save('php://output');
+        exit;
+    }
 
 	/**
 	 * Creates a new model.

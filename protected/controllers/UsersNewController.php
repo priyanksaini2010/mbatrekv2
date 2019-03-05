@@ -33,7 +33,7 @@ class UsersNewController extends Controller
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('create', 'update', 'admin', 'delete'),
+                'actions' => array('create', 'update', 'admin', 'delete','export'),
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -56,7 +56,80 @@ class UsersNewController extends Controller
 			'model'=>$this->loadModel($id),
 		));
 	}
+    public function actionExport(){
+        $data = UsersNew::model()->findAll();
+        $objPHPExcel = new PHPExcel();
+        $headers = array(
+            "Full Name",
+            "Email",
+            "Password",
+            "Mobile Number",
+            "Name Of College / Company",
+            "Subscription Opted",
+            "Verified",
+            "Date Created"
+        );
+        $objPHPExcel->setActiveSheetIndex(0);
+        $rowCount = 1;
+        $colCount = 0;
+        foreach($headers as $head){
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($colCount,$rowCount,$head);
+            $objPHPExcel->getActiveSheet()->getStyleByColumnAndRow($colCount,$rowCount)->getFont()->setBold("true");
+            $colCount++;
+        }
+        $colCount = 0;
+        $rowCount = $rowCount + 1;
+        foreach ($data as $row){
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($colCount,$rowCount,$row->full_name);$colCount++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($colCount,$rowCount,$row->email);$colCount++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($colCount,$rowCount,$row->password);$colCount++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($colCount,$rowCount,$row->mobile_number);$colCount++;
+            if($row->role == 1){
+                $role = "College Student";
+            } else if($row->role == 2) {
+                $role = "Young Professional";
+            } else if($row->role == 4){
+                $role = "Finance";
+            }else {
+                $role = "Admin";
+            }
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($colCount,$rowCount,$role);$colCount++;
+            if($row->update_subscription == 1){
+                $updateSubscription = "Opted";
+            } else {
+                $updateSubscription = "Not-Opted";
+            }
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($colCount,$rowCount,$updateSubscription);$colCount++;
+            if($row->is_verified == 1){
+                $isVerified = "Yes";
+            } else {
+                $isVerified = "No";
+            }
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($colCount,$rowCount,$isVerified);$colCount++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($colCount,$rowCount,$row->date_created);$colCount++;
 
+
+            $colCount = 0;
+            $rowCount++;
+        }
+//            pr($data);
+
+        ob_clean();
+        // Redirect output to a client’s web browser (Excel5)
+        header('Content-Type: application/vnd.ms-excel');
+        header('Content-Disposition: attachment;filename="users-'.date("Y-m-d").'.xls"');
+        header('Cache-Control: max-age=0');
+// If you're serving to IE 9, then the following may be needed
+        header('Cache-Control: max-age=1');
+// If you're serving to IE over SSL, then the following may be needed
+        header ('Expires: Mon, 26 Jul 1997 05:00:00 GMT'); // Date in the past
+        header ('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT'); // always modified
+        header ('Cache-Control: cache, must-revalidate'); // HTTP/1.1
+        header ('Pragma: public'); // HTTP/1.0
+        $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel5');
+        $objWriter->save('php://output');
+        exit;
+    }
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.

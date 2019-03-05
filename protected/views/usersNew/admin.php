@@ -12,7 +12,7 @@ $this->menu=array(
 ?>
 
 <h1>Manage Users </h1>
-
+<a href="<?php echo Yii::app()->createUrl("usersNew/export");?>"> <button class="btn btn-info" >Export To Excel</button></a>
 <?php $this->widget('bootstrap.widgets.TbGridView',array(
 	'id'=>'users-new-grid',
 	'dataProvider'=>$model->search(),
@@ -27,8 +27,8 @@ $this->menu=array(
                 array(
                         'header'=>"Role",
                         "name"=>'role',
-                        "value"=>'$data->role==1?"College Student":" Young Proffesional"',
-                        'filter'=>array(1=>"College Student",2=>"Young Proffesioinal"),
+                        "value"=>'$data->role==1?"College Student":" Young Professional"',
+                        'filter'=>array(1=>"College Student",2=>"Young Professional"),
                     ),
                 'name_of_college_company',
                 array(

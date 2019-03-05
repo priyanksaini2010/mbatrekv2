@@ -13,7 +13,7 @@ $this->menu=array(
 ?>
 
 <h1>Manage Contacts</h1>
-
+<a href="<?php echo Yii::app()->createUrl("contact/export");?>"> <button class="btn btn-info" >Export To Excel</button></a>
 <?php $this->widget('bootstrap.widgets.TbGridView',array(
 	'id'=>'contact-grid',
 	'dataProvider'=>$model->search(),
