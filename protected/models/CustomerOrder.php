@@ -68,7 +68,7 @@ class CustomerOrder extends CActiveRecord
 			'id' => 'ID',
 			'ordfer_hash' => 'Order Id',
 			'user_id' => 'Username',
-			'order_amount' => 'Order Amount',
+			'order_amount' => 'Total Amount',
 			'payment_gateway' => 'Payment Gateway',
 			'status' => 'Status',
 			'date_created' => 'Date Created',
