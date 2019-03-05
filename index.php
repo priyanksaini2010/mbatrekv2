@@ -8,7 +8,7 @@ if($env == "LOCAL"){
     $payuSurl = "https://localhost/mbt/cart/payusurl";
     $link = mysqli_connect("localhost","root","","mbatrek_v2");
 } else {
-    error_reporting(E_ERROR);
+    error_reporting(0);
     $payuSurl =  "https://mbatrek.com/cart/payusurl";
     $link = mysqli_connect("localhost","mbatrek_admin","mbatrek_admin","mbatrek_v2");
 }
@@ -54,6 +54,8 @@ const BACK_COLOR = 0xFFFFFF;
 require_once 'payment_lib/PaytmKit/lib/config_paytm.php';
 require_once 'payment_lib/PaytmKit/lib/encdec_paytm.php';
 require_once 'PHPExcel/Classes/PHPExcel.php';
+require_once 'PHPMailer/PHPMailer.php';
+require_once 'PHPMailer/SMTP.php';
 //require_once ('linkedinwp/oauth/linkedinoauth.php');
 function money($number){
     return number_format($number, 0, '.', ',');
@@ -80,6 +82,21 @@ function initials($str) {
 
 function sendEmail( $email,$subject,$body,$headers )
 {
+//    $mail = new PHPMailer(true);
+//    try{
+//        $mail->setFrom('info@mbatrek.com', 'MBATrek');
+//        $mail->addAddress($email);
+//        $mail->addAddress("info@mbatrek.com");
+//        $mail->addBCC("contact@mbatrek.com");
+//        $mail->isHTML(true);
+//        $mail->Subject = $subject;
+//        $mail->Body    = $body;
+//        $mail->send();
+//        echo 'Message has been sent';
+//
+//    }catch (Exception $e) {
+//
+//    }
     // Get cURL resource
     $curl = curl_init();
     // Set some options - we are passing in a useragent too here
@@ -96,14 +113,14 @@ function sendEmail( $email,$subject,$body,$headers )
     ));
     // Send the request & save response to $resp
     $resp = curl_exec($curl);
-    
+
     // Close request to clear up some resources
     curl_close($curl);
     $line = "Mail Sent To :".$email." Subject : ".$subject." Headers:".$headers;
     if (filesize(getcwd().'/email.log') > 3000000 ) {
-        rename(getcwd().'/email.log', getcwd().'/logs/visitors-'.date("Y-m-d")."-".time().'.log'); 
+        rename(getcwd().'/email.log', getcwd().'/logs/visitors-'.date("Y-m-d")."-".time().'.log');
     }
-    file_put_contents('logs/email.log', $line . PHP_EOL, FILE_APPEND);  
+    file_put_contents('logs/email.log', $line . PHP_EOL, FILE_APPEND);
     return $resp;
 //    mail($email,$subject,$body,$headers);
 //    pr($body);
@@ -352,7 +369,7 @@ function getTemplate($type){
         $content = file_get_contents('template_images/compus_amastor.html');
     }
     else {
-	$content = file_get_contents('template_images/institute.html');
+	 $content = file_get_contents('template_images/'.$type.".html");
     }
     return $content;
 }
