@@ -167,7 +167,7 @@ class CartController extends Controller {
                 $payuModel->attributes = array(
                     "order_id" => $order->id,
                     "payu_response" => json_encode($_REQUEST),
-                    "date_created" => date("Y-m-d h:i:s"),
+                    "date_created" => date("Y-m-d H:i:s"),
                 );
                 if($payuModel->save()){
                     $list = "";
@@ -249,7 +249,7 @@ class CartController extends Controller {
                 $payuModel->attributes = array(
                     "order_id" => $order->id,
                     "payu_response" => json_encode($_REQUEST),
-                    "date_created" => date("Y-m-d h:i:s"),
+                    "date_created" => date("Y-m-d H:i:s"),
                 );
                 if($payuModel->save()){
                     $list = "";
@@ -325,7 +325,7 @@ class CartController extends Controller {
                                         "order_amount" => $amount,
                                         "payment_gateway" => $paymentGateWay,
                                         "status" => 1,
-                                        "date_created" => date("Y-m-d h:i:s")
+                                        "date_created" => date("Y-m-d H:i:s")
                                     );
 
             if($order->save()) {
@@ -475,7 +475,7 @@ class CartController extends Controller {
                                 "user_id" =>Yii::app()->user->id,
                                 "product_id" =>$product->id,
                                 "status" =>1,
-                                "date_created" =>date("Y-m-d h:i:s"),
+                                "date_created" =>date("Y-m-d H:i:s"),
                             );
                             if($modelCart->save()){
 //                                        $this->redirect(Yii::app()->request->urlReferrer);
@@ -510,7 +510,7 @@ class CartController extends Controller {
                                                         "coupon_id" => $isCouponValid->id,
                                                         "email_used" => $_POST['username'],
                                                         "users_new_id" => Yii::app()->user->id,
-                                                        "date_created"=> date("Y-m-d h:i:s")
+                                                        "date_created"=> date("Y-m-d H:i:s")
                                                     );
                                 if($model->save()){
                                     $resp['status'] = "success";
@@ -599,7 +599,7 @@ class CartController extends Controller {
 
 		if(isset($_POST['CampusAmbassador']))
 		{
-            $_POST['CampusAmbassador']['registeration_date'] = date("Y-m-d h:i:s");
+            $_POST['CampusAmbassador']['registeration_date'] = date("Y-m-d H:i:s");
 			$model->attributes=$_POST['CampusAmbassador'];
 			if($model->save()){
 
@@ -638,7 +638,7 @@ class CartController extends Controller {
 
 		if(isset($_POST['InterviewReadyCompetition']))
 		{
-                        $_POST['InterviewReadyCompetition']['registeration_date'] = date("Y-m-d h:i:s");
+                        $_POST['InterviewReadyCompetition']['registeration_date'] = date("Y-m-d H:i:s");
 			$model->attributes=$_POST['InterviewReadyCompetition'];
 			if($model->save()){
                 $subject = "MBAtrek | #InterviewReady | New Registration";
@@ -674,7 +674,7 @@ class CartController extends Controller {
 
 		if(isset($_POST['IndustryReadyCompetition']))
 		{
-                        $_POST['IndustryReadyCompetition']['registeration_date'] = date("Y-m-d h:i:s");
+                        $_POST['IndustryReadyCompetition']['registeration_date'] = date("Y-m-d H:i:s");
 			$model->attributes=$_POST['IndustryReadyCompetition'];
 			if($model->save()){
                 $subject = "MBAtrek | #IndustryREADY | New Registration";
@@ -759,7 +759,7 @@ class CartController extends Controller {
                                                     "coupon_id" => $isCouponValid->id,
                                                     "email_used" => $_POST['code'],
                                                     "users_new_id" => Yii::app()->user->id,
-                                                    "date_created"=> date("Y-m-d h:i:s")
+                                                    "date_created"=> date("Y-m-d H:i:s")
                                                 );
                             if($model->save()){
                                 $status['status'] = "success";
@@ -820,7 +820,7 @@ class CartController extends Controller {
                         "user_id" =>Yii::app()->user->id,
                         "product_id" =>$id,
                         "status" =>1,
-                        "date_created" =>date("Y-m-d h:i:s"),
+                        "date_created" =>date("Y-m-d H:i:s"),
                     );
                     if($model->save()){
                         $this->redirect(Yii::app()->request->urlReferrer);
@@ -868,7 +868,7 @@ class CartController extends Controller {
 //                        "ip" =>$_SERVER['REMOTE_ADDR'],
 //                        "product_id" =>$id,
 //                        "status" =>1,
-//                        "date_created" =>date("Y-m-d h:i:s"),
+//                        "date_created" =>date("Y-m-d H:i:s"),
 //                    );
 //                    if($model->save()){
 //                        $this->redirect(Yii::app()->request->urlReferrer);
@@ -1010,7 +1010,7 @@ class CartController extends Controller {
                         "user_id" =>Yii::app()->user->id,
                         "product_id" =>$id,
                         "status" =>1,
-                        "date_created" =>date("Y-m-d h:i:s"),
+                        "date_created" =>date("Y-m-d H:i:s"),
                     );
                     if($model->save()){
                         $this->redirect(Yii::app()->createUrl("choose-payment-gateway"));
@@ -1054,7 +1054,7 @@ class CartController extends Controller {
 //                $_POST['UsersNew']['email'] = $_POST['UsersNew']['email'].time();
                 $_POST['UsersNew']['password'] = $_POST['UsersNew']['password'];
                 $_POST['UsersNew']['is_verified'] = 0;
-                $_POST['UsersNew']['date_created'] = date('Y-m-d h:i:s');
+                $_POST['UsersNew']['date_created'] = date('Y-m-d H:i:s');
                 if(!empty($_POST['UsersNew']['name_of_college']) && $_POST['UsersNew']['role'] == 1){
                     $_POST['UsersNew']['name_of_college_company'] = $_POST['UsersNew']['name_of_college'];
                 }
