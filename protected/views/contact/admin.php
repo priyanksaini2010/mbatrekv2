@@ -28,6 +28,10 @@ $this->menu=array(
 		'name_of_company_institute',
 		'subject',
 		'your_message',
+        array(
+            'class'=>'bootstrap.widgets.TbButtonColumn',
+            'template' => '{delete}'
+        ),
 
 
 	),
