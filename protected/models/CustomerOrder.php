@@ -100,7 +100,7 @@ class CustomerOrder extends CActiveRecord
 		$criteria->compare('payment_gateway',$this->payment_gateway);
 		$criteria->compare('status',$this->status);
 		$criteria->compare('date_created',$this->date_created,true);
-
+        $criteria->order = "id desc";
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
