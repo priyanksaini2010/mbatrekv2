@@ -66,8 +66,8 @@ class CustomerOrder extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'ordfer_hash' => 'Ordfer Hash',
-			'user_id' => 'User',
+			'ordfer_hash' => 'Order Id',
+			'user_id' => 'Username',
 			'order_amount' => 'Order Amount',
 			'payment_gateway' => 'Payment Gateway',
 			'status' => 'Status',
