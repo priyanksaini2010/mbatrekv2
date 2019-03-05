@@ -31,7 +31,7 @@ class CampusAmbassadorController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','admin','delete',"import","importcolleges","importcompcolleges","importcontact"),
+				'actions'=>array('create','update','admin','delete',"import","importcolleges","importcompcolleges","importcontact", 'export'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -122,6 +122,71 @@ class CampusAmbassadorController extends Controller
         }
 
         $this->render("importcontact", array("model"=>$model));
+    }
+    public function actionExport(){
+        $data = CampusAmbassador::model()->findAll();
+        $objPHPExcel = new PHPExcel();
+        $headers = array(
+            "First Name",
+            "Last Name",
+            "Mobile Number",
+            "Email",
+            "Name Of College",
+            "Name Of Course",
+            "Year Of Graduation",
+            "Why do you want to be a MBAtrek Campus Ambassador? ",
+            "Suggest two super creative ideas to share the importance of career development in your college / university",
+            "Any additional information you would like to provide us",
+            "Registration Date",
+            "Name Of College(Others)",
+            "Name Of Course(Others)",
+        );
+        $objPHPExcel->setActiveSheetIndex(0);
+        $rowCount = 1;
+        $colCount = 0;
+        foreach($headers as $head){
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($colCount,$rowCount,$head);
+            $objPHPExcel->getActiveSheet()->getStyleByColumnAndRow($colCount,$rowCount)->getFont()->setBold("true");
+            $colCount++;
+        }
+        $colCount = 0;
+        $rowCount = $rowCount + 1;
+        foreach ($data as $row){
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($colCount,$rowCount,$row->first_name);$colCount++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($colCount,$rowCount,$row->last_name);$colCount++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($colCount,$rowCount,$row->mobile_number);$colCount++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($colCount,$rowCount,$row->email_id);$colCount++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($colCount,$rowCount,Colleges::model()->findByAttributes(array("id"=>$row->college_id))->name);$colCount++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($colCount,$rowCount,Courses::model()->findByAttributes(array("id"=>$row->course_id))->title);$colCount++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($colCount,$rowCount,$row->year_of_graduation_id);$colCount++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($colCount,$rowCount,$row->question_1);$colCount++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($colCount,$rowCount,$row->question_2);$colCount++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($colCount,$rowCount,$row->question_3);$colCount++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($colCount,$rowCount,$row->registeration_date);$colCount++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($colCount,$rowCount,$row->name_of_college);$colCount++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($colCount,$rowCount,$row->name_of_course);$colCount++;
+
+
+            $colCount = 0;
+            $rowCount++;
+        }
+//            pr($data);
+
+        ob_clean();
+        // Redirect output to a client’s web browser (Excel5)
+        header('Content-Type: application/vnd.ms-excel');
+        header('Content-Disposition: attachment;filename="campus-ambassador-'.date("Y-m-d").'.xls"');
+        header('Cache-Control: max-age=0');
+// If you're serving to IE 9, then the following may be needed
+        header('Cache-Control: max-age=1');
+// If you're serving to IE over SSL, then the following may be needed
+        header ('Expires: Mon, 26 Jul 1997 05:00:00 GMT'); // Date in the past
+        header ('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT'); // always modified
+        header ('Cache-Control: cache, must-revalidate'); // HTTP/1.1
+        header ('Pragma: public'); // HTTP/1.0
+        $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel5');
+        $objWriter->save('php://output');
+        exit;
     }
     public function actionImportcolleges(){
         $model = new Colleges;

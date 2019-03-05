@@ -13,7 +13,7 @@ $this->menu=array(
 ?>
 
 <h1>Manage Interview Ready Competitions</h1>
-
+<a href="<?php echo Yii::app()->createUrl("interviewReadyCompetition/export");?>"> <button class="btn btn-info" >Export To Excel</button></a>
 <?php
 
 $grid = $this->widget('bootstrap.widgets.TbGridView',array(
@@ -53,6 +53,4 @@ $grid = $this->widget('bootstrap.widgets.TbGridView',array(
 		),
 	),
 )); 
-
-$this->renderExportGridButton($grid,'Export To CSV',array('class'=>'btn btn-info pull-right'));
 ?>

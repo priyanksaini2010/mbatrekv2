@@ -84,7 +84,7 @@ class CampusAmbassador extends CActiveRecord
 			'question_1' => 'Why do you want to be a MBAtrek Campus Ambassador? ',
 			'question_2' => 'Suggest two super creative ideas to share the importance of career development in your college / university',
 			'question_3' => 'Any additional information you would like to provide us <span style="color:grey;">(Optional)</span>',
-			'registeration_date' => 'Registeration Date',
+			'registeration_date' => 'Registration Date',
                         'name_of_college' => 'Name Of College',
 			'name_of_course' => 'Name Of Course',
 		);
