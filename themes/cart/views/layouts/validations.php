@@ -167,7 +167,9 @@
     $(document).ready(function() { $("#InterviewReadyCompetition_college").select2(); });
     $(document).ready(function() { $("#IndustryReadyCompetition_college ").select2(); });
     $(document).ready(function() { $("#CampusAmbassador_college_id ").select2(); });
-    $(document).ready(function() { $("#CampusAmbassador_course_id ").select2();$(".select2").select2(); });
+    $(document).ready(function() { $("#CampusAmbassador_course_id ").select2();
+    $(".select2class").select2();
+    });
 
     <?php
             $autofill = ContactAutofill::model()->findAll();
