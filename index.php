@@ -82,51 +82,58 @@ function initials($str) {
 
 function sendEmail( $email,$subject,$body,$headers )
 {
+
+    $to = $email; // <– replace with your address here
+    $message = $body;
+    if(mail($to,$subject,$message,$headers)){
+        logEmails($email,$subject, 1);
+    } else{
+        logEmails($email,$subject, 2);
+    }
+
 //    $mail = new PHPMailer(true);
 //    try{
-//        $mail->setFrom('info@mbatrek.com', 'MBATrek');
+//        $mail = new PHPMailer(); // create a new object
+//        $mail->IsSMTP(); // enable SMTP
+////        $mail->SMTPDebug = 3; // debugging: 1 = errors and messages, 2 = messages only
+//        $mail->SMTPAuth = true; // authentication enabled
+//        $mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for Gmail
+//        $mail->Host = "ssl://smtp.gmail.com";
+//        $mail->Port = 465; // or 587
+//        $mail->IsHTML(true);
+//        $mail->Username = "workspace.priyank.saini@gmail.com";
+//        $mail->Password = "#qw123pop";
+//        $mail->SetFrom("workspace.priyank.saini@gmail.com");
 //        $mail->addAddress($email);
-//        $mail->addAddress("info@mbatrek.com");
-//        $mail->addBCC("contact@mbatrek.com");
 //        $mail->isHTML(true);
 //        $mail->Subject = $subject;
 //        $mail->Body    = $body;
 //        $mail->send();
-//        echo 'Message has been sent';
+//        logEmails($email,$subject, 1);
 //
 //    }catch (Exception $e) {
-//
+//        logEmails($email,$subject, 2);
 //    }
-    // Get cURL resource
-    $curl = curl_init();
-    // Set some options - we are passing in a useragent too here
-    curl_setopt_array($curl, array(
-	CURLOPT_RETURNTRANSFER => 1,
-	CURLOPT_URL => 'http://greengenerics.in/sendmail.php',
-	CURLOPT_POST => 1,
-	CURLOPT_POSTFIELDS => array(
-	    'email' => $email,
-	    'subject' => $subject,
-	    'body' => $body,
-	    'headers' => $headers,
-	)
-    ));
-    // Send the request & save response to $resp
-    $resp = curl_exec($curl);
-
-    // Close request to clear up some resources
-    curl_close($curl);
-    $line = "Mail Sent To :".$email." Subject : ".$subject." Headers:".$headers;
-    if (filesize(getcwd().'/email.log') > 3000000 ) {
-        rename(getcwd().'/email.log', getcwd().'/logs/visitors-'.date("Y-m-d")."-".time().'.log');
+}
+function logEmails($email,$subject, $status){
+    if($status == 1){
+        $line = "Mail Sent To : ".$email." Subject : ".$subject;
+        if (filesize(getcwd().'/email.log') > 3000000 ) {
+            rename(getcwd().'/email.log', getcwd().'/logs/visitors-'.date("Y-m-d")."-".time().'.log');
+        }
+        file_put_contents('logs/email.log', $line . PHP_EOL, FILE_APPEND);
+    } else{
+        $line = "Failed Email : ".$email." Subject : ".$subject;
+        if (filesize(getcwd().'/email.log') > 3000000 ) {
+            rename(getcwd().'/email.log', getcwd().'/logs/email-'.date("Y-m-d")."-".time().'.log');
+        }
+        file_put_contents('logs/email.log', $line . PHP_EOL, FILE_APPEND);
     }
-    file_put_contents('logs/email.log', $line . PHP_EOL, FILE_APPEND);
-    return $resp;
-//    mail($email,$subject,$body,$headers);
-//    pr($body);
+
+
 }
 //$headers = "From: no-reply@mbatrek.com" . "\r\n" .
-//"CC: workspace.priyank.saini@gmail.com";
+////"CC: workspace.priyank.saini@gmail.com";
 //pr(sendEmail("priyanksaini2010@gmail.com","Hi There","Hello Ji",$headers));
 function getYoutubeFeeds(){
     $API_key    = 'AIzaSyCDd12p2lLnFqBmx2bpXEg03h3_70LmLs4';
