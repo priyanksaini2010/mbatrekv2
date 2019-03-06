@@ -54,8 +54,10 @@ $csInteractionMenu = array(
     array('label'=>'FAQ Management', 'url'=>array('/faq/admin')),
     array('label'=>'Career Advisory Management', 'url'=>array('/talkToAdvisory/admin')),
     array('label'=>'Contact Management', 'url'=>array('/contact/admin')),
-    array('label'=>'Import Contact Company / Institutes', 'url'=>array('/campusAmbassador/importcontact')),
-    array('label'=>'Manage Contact Company / Institutes', 'url'=>array('/contactAutofill/admin')),
+    array('label'=>'Import Contact Company', 'url'=>array('/campusAmbassador/importcontact')),
+    array('label'=>'Import Contact Institutes', 'url'=>array('/contactAutofillCompany/importcontact')),
+    array('label'=>'Manage Contact Company', 'url'=>array('/contactAutofill/admin')),
+    array('label'=>'Manage Contact Institutes', 'url'=>array('/contactAutofillCompany/admin')),
 );
 $caManagment = array( 
     array('label'=>'Campus Ambassador Management', 'url'=>array('/campusAmbassador/admin')),

@@ -382,7 +382,7 @@ class CartController extends Controller {
                         //Payu
                         case 2:
                             $attribsArray['udf5'] = "BOLT_KIT_PHP7";
-                            $attribsArray['surl'] =  "https://mbatrek.com/cart/payusurl";
+                            $attribsArray['surl'] =  Yii::app()->params['payu_surl'];
 //                                $attribsArray['surl'] = "https://localhost/mbt/cart/payusurl";
                             $hash=hash('sha512', Yii::app()->params['payu_merchant_id'].'|'.$attribsArray['transaction_id'].'|'.$attribsArray['amount'].'|'.$attribsArray['product_info'].'|'.$attribsArray['name'].'|'.$attribsArray['email'].'|||||'.$attribsArray['udf5'].'||||||'.Yii::app()->params['payu_salt']);
                             $attribsArray['hash'] = $hash;

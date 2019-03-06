@@ -86,19 +86,19 @@
                             <div class="are_yu"><label>Are You?</label>
                                 <ul>
                                     <li>
-                                        <input type="radio"  name="Contact[are_you]" value="1"  id="radio2" class="css-checkbox" checked="checked"/>
+                                        <input type="radio"  name="Contact[are_you]" value="1"  id="radio2" class="css-checkbox radio-comp-inst" checked="checked"/>
                                         <label for="radio2" class="css-label radGroup1">Company Official</label>                                                    
                                     </li>
                                     <li>
-                                        <input type="radio" name="Contact[are_you]" value="2"  id="radio3" class="css-checkbox" />
+                                        <input type="radio" name="Contact[are_you]" value="2"  id="radio3" class="css-checkbox radio-comp-inst" />
                                         <label for="radio3" class="css-label radGroup1">Institute Rep</label>
                                     </li>
                                     <li>
-                                        <input type="radio"  name="Contact[are_you]" value="3"  id="radio31" class="css-checkbox" />
+                                        <input type="radio"  name="Contact[are_you]" value="3"  id="radio31" class="css-checkbox radio-comp-inst" />
                                         <label for="radio31" class="css-label radGroup1">College Student</label>
                                     </li>
                                     <li>
-                                        <input type="radio"  name="Contact[are_you]" value="4"  id="radio32" class="css-checkbox" />
+                                        <input type="radio"  name="Contact[are_you]" value="4"  id="radio32" class="css-checkbox radio-comp-inst" />
                                         <label for="radio32" class="css-label radGroup1">Young professional</label>
                                     </li>
                                 </ul>
@@ -106,19 +106,42 @@
                         </div>
                         <div class="col-md-12">
                             <div class="contact_info_div">
-                                <div class="phAnimate">
+                                <div id="company-autofill" class="phAnimate" >
 <?php
 if ($model->name_of_company_institute != '') {
     $data = array('for' => "name_of_company_institute", 'class' => 'active');
 } else {
     $data = array('for' => "name_of_company_institute");
 };
-?>
-                                    <?php echo $form->labelEx($model, 'name_of_company_institute', $data); ?>
-                                    <?php echo $form->textField($model, 'name_of_company_institute', array('class' => "input_field")); ?>
+?>                                  <label for="name_of_company" class="required active">Name of Company<span class="required">*</span></label>
+                                    <select class="input_field select2" name="Contact[name_of_company_institute]" id="name_of_company">
+                                        <option value="">Select an Company</option>
+                                        <?php
+                                        $autofill = ContactAutofill::model()->findAll();
+                                        $tags = array();
+                                        foreach ($autofill as $item){?>
+
+                                            <option><?php echo $item->name;?></option>
+                                        <?php }?>
+                                    </select>
+                                </div>
+                                <div class="phAnimate" id="inst-autofill" class="phAnimate" style="display: none">
+                                    <label for="name_of_company_institute_" class="required active">Name of Institute<span class="required">*</span></label>
+<!--                                    <input class="input_field" name="Contact[name_of_company_institute_1]" id="Contact_name_of_company_institute_1" type="text" maxlength="255" placeholder="" autocomplete="off">-->
+
+                                    <select class="input_field select2" name="Contact[name_of_company_institute_1]" id="name_of_institute">
+                                        <option value="">Select an Institute</option>
+                                        <?php
+            $autofill = ContactAutofillCompany::model()->findAll();
+            $tags = array();
+            foreach ($autofill as $item){?>
+                <option><?php echo $item->name;?></option>
+            <?php }?>
+                                    </select>
                                 </div>
                             </div>
                         </div>
+                        <br/>
                         <div class="col-md-12">
                             <div class="contact_info_div">
                                 <div class="phAnimate"> 
@@ -186,6 +209,11 @@ if ($model->your_message != '') {
 </div><style>
     .required{
         color : red;
+    }
+    .select2-container{
+        height: 40px !important;
+        width: 555px !important;
+
     }
 </style>
 <script>

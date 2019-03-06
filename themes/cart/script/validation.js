@@ -496,6 +496,18 @@ $(document).ready(function(){
             $("#IndustryReadyCompetition_question_3").hide();
         }
     });
+    $(".radio-comp-inst").change(function(){
+        var valu = $('.radio-comp-inst:checked').val();
+        if(valu == 1 || valu == 4){
+            $("#Contact_name_of_company_institute_1").val('');
+            $("#inst-autofill").hide();
+            $("#company-autofill").show();
+        } else {
+            $("#Contact_name_of_company_institute").val('');
+            $("#company-autofill").hide();
+            $("#inst-autofill").show();
+        }
+    })
     $("#InterviewReadyCompetition_college").change(function(){
         
         if($(this).val() == 4){
@@ -581,7 +593,7 @@ $("#contact-form").submit(function() {
                 validationMethod("error","Please enter valid mobile number.");
                 return false;
             }
-            if ($("#Contact_name_of_company_institute").val() == "") {
+            if ($("#name_of_company").val() == "" && $("#name_of_institute").val() == "") {
                 $("#Contact_name_of_company_institute").focus()
                 validationMethod("error","Please enter name of Company / Institute.");
                 return false;

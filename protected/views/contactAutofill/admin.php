@@ -1,7 +1,7 @@
 <?php
 $this->breadcrumbs=array(
-    'Manage Contact Company / Institutes'=>array('contactAutofill/admin'),
-    'Import  Contact Company / Institutes',
+    'Manage Contact Company'=>array('contactAutofill/admin'),
+    'Import  Contact Company',
 );
 
 $this->menu=array(
@@ -9,7 +9,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>Manage Contact Company / Institutes</h1>
+<h1>Manage Contact Company</h1>
 
 <?php $this->widget('bootstrap.widgets.TbGridView',array(
 	'id'=>'contact-autofill-grid',

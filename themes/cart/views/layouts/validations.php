@@ -167,7 +167,7 @@
     $(document).ready(function() { $("#InterviewReadyCompetition_college").select2(); });
     $(document).ready(function() { $("#IndustryReadyCompetition_college ").select2(); });
     $(document).ready(function() { $("#CampusAmbassador_college_id ").select2(); });
-    $(document).ready(function() { $("#CampusAmbassador_course_id ").select2(); });
+    $(document).ready(function() { $("#CampusAmbassador_course_id ").select2();$(".select2").select2(); });
 
     <?php
             $autofill = ContactAutofill::model()->findAll();
@@ -175,12 +175,21 @@
             foreach ($autofill as $item){
                 $tags[] = $item->name;
             }
+        $autofill = ContactAutofillCompany::model()->findAll();
+        $tags = array();
+        foreach ($autofill as $item){
+            $tagsInstitutes[] = $item->name;
+        }
 
         ?>
         var availableTags = <?php echo json_encode($tags);?>;
+        var availableTagsInstitutes = <?php echo json_encode($tagsInstitutes);?>;
 
         $( "#Contact_name_of_company_institute" ).autocomplete({
             source: availableTags
+        });
+        $( "#Contact_name_of_company_institute_1" ).autocomplete({
+            source: availableTagsInstitutes
         });
 
         $(function() {

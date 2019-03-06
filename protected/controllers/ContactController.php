@@ -138,6 +138,9 @@ class ContactController extends Controller
             if(in_array($_POST['Contact']['email'], $blokedEmails)){
                 $this->redirect(Yii::app()->createUrl('contact/create'));
             }
+            if($_POST['Contact']['name_of_company_institute'] == "" && $_POST['Contact']['name_of_company_institute_1'] != ""){
+                $_POST['Contact']['name_of_company_institute'] = $_POST['Contact']['name_of_company_institute_1'];
+            }
 			$model->attributes=$_POST['Contact'];
 			
 			if($model->save()){
@@ -159,8 +162,8 @@ class ContactController extends Controller
 
                                 $headers .= "MIME-Version: 1.0\r\n".
                                             "Content-Type: text/html; charset=UTF-8";
-                                
-                                $sentToUser = sendEmail(Yii::app()->params['contactEmail'], $subject,$body,$headers);
+
+                              $sentToUser = sendEmail(Yii::app()->params['contactEmail'], $subject,$body,$headers);
 				
 //                                $body = "Hello ".$_POST['Contact']['first_name']." ".$_POST['Contact']['last_name'].",<br/><br/>"
 //                                        . "Thanks to contact us. Will get in touch soon: <br/><br/ >"

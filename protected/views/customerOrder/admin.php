@@ -24,7 +24,7 @@ $grid =  $this->widget('bootstrap.widgets.TbGridView',array(
 
 		'ordfer_hash',
         array(
-                        'header'=>"User",
+                        'header'=>"Username",
                         "name"=>'user_id',
                         "value"=>'UsersNew::model()->findByAttributes(array("id"=>$data->user_id))->full_name',
                         'filter'=>CHtml::listData( UsersNew::model()->findAll(), 'id', 'full_name'),
@@ -35,12 +35,12 @@ $grid =  $this->widget('bootstrap.widgets.TbGridView',array(
             'filter'=>CHtml::listData( UsersNew::model()->findAll(), 'id', 'email'),
         ),
         array(
-            'header'=>"User's Phonenumber",
+            'header'=>"User's Phone number",
             "value"=>'UsersNew::model()->findByAttributes(array("id"=>$data->user_id))->mobile_number',
             'filter'=>CHtml::listData( UsersNew::model()->findAll(), 'id', 'mobile_number'),
         ),
 //		'user_id',
-		'order_amount',
+        'order_amount',
 //		'payment_gateway',
 //		'status',
         'date_created',
