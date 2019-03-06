@@ -19,6 +19,7 @@ if(!empty($coupon)){
     <div class="payment_block">
         <div class="container">
             <h3 class="payment_heading">Select a preferred payment gateway </h3>
+            <h4 style="color: #93AF34;">Applied your promo-code? <u><b><a style="color: #ADC131; text-decoration: underline;" href="<?php echo Yii::app()->createUrl("cart");?>">Check Here</a></b></u> , once before paying</h4>
             <div class="row">
                 <div class="col-md-8 col-sm-6 col-xs-12">
                     <div class="payment_select">
