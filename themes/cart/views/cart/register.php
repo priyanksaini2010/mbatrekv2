@@ -49,7 +49,7 @@
                                                                     
                                                         <div id="1" class="desc"  <?php if(isset($model->role) && $model->role ==1){?>style="display :block !important;"<?php }?>>
 <!--										<input name="UsersNew[name_of_college]" class="form-control" placeholder="Name of your college*" id="name_of_college"  type="text" >-->
-                                                            <select class="form-control select2" name="UsersNew[name_of_college]" id="name_of_college">
+                                                            <select class="form-control select2class" name="UsersNew[name_of_college]" id="name_of_college">
                                                                 <option value="">Select Your College</option>
                                                                 <?php
                                                                 $autofill = ContactAutofillCompany::model()->findAll();
@@ -62,7 +62,7 @@
 									</div>
 									<div id="2" class="desc" <?php if(isset($model->role) && $model->role ==2){?>style="display :block !important;"<?php }?>>
 <!--										<input name="UsersNew[name_of_company]" class="form-control" placeholder="Name of your company*"  type="text" id="name_of_company">-->
-                                        <select class="form-control select2" name="UsersNew[name_of_company]" id="name_of_company">
+                                        <select class="form-control select2class" name="UsersNew[name_of_company]" id="name_of_company">
                                             <option value="">Select Your Company</option>
                                             <?php
                                             $autofill = ContactAutofill::model()->findAll();
