@@ -114,7 +114,7 @@ if ($model->name_of_company_institute != '') {
     $data = array('for' => "name_of_company_institute");
 };
 ?>                                  <label for="name_of_company" class="required active">Name of Company<span class="required">*</span></label>
-                                    <select class="input_field select2" name="Contact[name_of_company_institute]" id="name_of_company">
+                                    <select class="input_field select2class" name="Contact[name_of_company_institute]" id="name_of_company">
                                         <option value="">Select an Company</option>
                                         <?php
                                         $autofill = ContactAutofill::model()->findAll();
@@ -129,7 +129,7 @@ if ($model->name_of_company_institute != '') {
                                     <label for="name_of_company_institute_" class="required active">Name of Institute<span class="required">*</span></label>
 <!--                                    <input class="input_field" name="Contact[name_of_company_institute_1]" id="Contact_name_of_company_institute_1" type="text" maxlength="255" placeholder="" autocomplete="off">-->
 
-                                    <select class="input_field select2" name="Contact[name_of_company_institute_1]" id="name_of_institute">
+                                    <select class="input_field select2class" name="Contact[name_of_company_institute_1]" id="name_of_institute">
                                         <option value="">Select an Institute</option>
                                         <?php
             $autofill = ContactAutofillCompany::model()->findAll();
