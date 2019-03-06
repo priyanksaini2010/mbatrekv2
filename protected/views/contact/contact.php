@@ -115,7 +115,7 @@ if ($model->name_of_company_institute != '') {
 };
 ?>                                  <label for="name_of_company" class="required active">Name of Company<span class="required">*</span></label>
                                     <select class="input_field select2class" name="Contact[name_of_company_institute]" id="name_of_company">
-                                        <option value="">Select an Company</option>
+                                        <option value="">Select a Company</option>
                                         <?php
                                         $autofill = ContactAutofill::model()->findAll();
                                         $tags = array();
