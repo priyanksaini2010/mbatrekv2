@@ -9,6 +9,9 @@ $saver = Products::model()->findByAttributes(array("id"=>33));
 
 $arrProd = array();
 $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/themes/cart");
+function createId($str){
+    return strtolower(str_replace(" ","-",$str));
+}
 ?>
 <div class="bread_crum">
     <ul class="list-inline list-unstyled">
@@ -293,7 +296,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                         </div>
                                         <div class="buy-and-cart">
                                             <a href="<?php echo Yii::app()->createUrl("cart/buynow",array("id"=>$saver->id));?>">buy now</a>
-                                            <a href="<?php echo Yii::app()->createUrl("cart/addtocart",array("id"=>$saver->id));?>">add to cart</a>
+                                            <a id="<?php echo createId($saver->title);?>" href="<?php echo Yii::app()->createUrl("cart/addtocart",array("id"=>$saver->id));?>">add to cart</a>
                                             <a href="<?php echo Yii::app()->createUrl($url);?>" target="_blank">read more</a>
                                         </div>
 
@@ -347,7 +350,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                                 </div>
                                                                 <div class="intern-link">
                                                                     <a href="<?php echo Yii::app()->createUrl("cart/buynow",array("id"=>$prod->id));?>">buy now</a>
-                                                                    <a href="<?php echo Yii::app()->createUrl("cart/addtocart",array("id"=>$prod->id));?>">add to cart</a>
+                                                                    <a id="<?php echo createId($prod->title);?>" href="<?php echo Yii::app()->createUrl("cart/addtocart",array("id"=>$prod->id));?>">add to cart</a>
                                                                 </div>
                                                             </div>
                                                         </li>
@@ -375,7 +378,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                     </div>
                                                     <div class="buy-and-cart">
                                                         <a href="<?php echo Yii::app()->createUrl("cart/addtocart",array("id"=>31));?>">buy now</a>
-                                                        <a href="<?php echo Yii::app()->createUrl("cart/addtocart",array("id"=>31));?>">add to cart</a>
+                                                        <a id="<?php echo createId($product->title);?>" href="<?php echo Yii::app()->createUrl("cart/addtocart",array("id"=>31));?>">add to cart</a>
                                                         <a href="<?php echo Yii::app()->createUrl($url);?>" target="_blank">Read More</a>
                                                     </div>
 
@@ -420,7 +423,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                                 </div>
                                                                 <div class="intern-link">
                                                                     <a href="<?php echo Yii::app()->createUrl("cart/buynow",array("id"=>$prod->id));?>">buy now</a>
-                                                                    <a href="<?php echo Yii::app()->createUrl("cart/addtocart",array("id"=>$prod->id));?>">add to cart</a>
+                                                                    <a id="<?php echo createId($prod->title);?>" href="<?php echo Yii::app()->createUrl("cart/addtocart",array("id"=>$prod->id));?>">add to cart</a>
                                                                 </div>
                                                             </div>
                                                         </li>
@@ -464,7 +467,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                                 </div>
                                                                 <div class="intern-link">
                                                                     <a href="<?php echo Yii::app()->createUrl("cart/buynow",array("id"=>$prod->id));?>">buy now</a>
-                                                                    <a href="<?php echo Yii::app()->createUrl("cart/addtocart",array("id"=>$prod->id));?>">add to cart</a>
+                                                                    <a id="<?php echo createId($prod->title);?>" href="<?php echo Yii::app()->createUrl("cart/addtocart",array("id"=>$prod->id));?>">add to cart</a>
                                                                 </div>
                                                             </div>
                                                         </li>
@@ -492,7 +495,7 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
                                                     </div>
                                                     <div class="buy-and-cart">
                                                         <a href="<?php echo Yii::app()->createUrl("cart/buynow",array("id"=>32));?>">buy now</a>
-                                                        <a href="<?php echo Yii::app()->createUrl("cart/addtocart",array("id"=>32));?>">add to cart</a>
+                                                        <a id="<?php echo createId($product->title);?>" href="<?php echo Yii::app()->createUrl("cart/addtocart",array("id"=>32));?>">add to cart</a>
                                                         <a href="<?php echo Yii::app()->createUrl($url);?>" target="_blank">Read More</a>
                                                     </div>
 

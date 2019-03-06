@@ -806,8 +806,9 @@ class CartController extends Controller {
 
         public function actionAddtocart($id){
 //             pr($_COOKIE['products']);
+            $product = Products::model()->findByPk($id);
+            $idElement = strtolower(str_replace(" ","-",$product->title));
             $this->layout = getCartLayot();
-           
             if (isset(Yii::app()->user->id)) {
                 $modelPre = Cart::model()->findByAttributes(array(
                     "user_id" =>Yii::app()->user->id,
@@ -822,8 +823,11 @@ class CartController extends Controller {
                         "status" =>1,
                         "date_created" =>date("Y-m-d H:i:s"),
                     );
+
+
                     if($model->save()){
-                        $this->redirect(Yii::app()->request->urlReferrer);
+
+                        $this->redirect(Yii::app()->request->urlReferrer."#".$idElement);
                     } else {
 
                         foreach($model->getErrors() as $key=>$err){
@@ -838,6 +842,8 @@ class CartController extends Controller {
                 
                 
             }else {
+
+
 //                pr(unserialize(array(1,2,3)));
 //                pr(unserialize(serialize(array(1,2,3))));
                 if(isset($_COOKIE['products'])){
@@ -846,7 +852,8 @@ class CartController extends Controller {
                     if(!in_array($id,$cookieCart)){
                         $cookieCart[] = $id;
                         setcookie("products", serialize($cookieCart),strtotime( '+30 days' ),DIREC);
-                        $this->redirect(Yii::app()->request->urlReferrer);
+
+                        $this->redirect(Yii::app()->request->urlReferrer."#".$idElement);
                     } else {
                         $this->errors["exist"] = "This product already exists in your cart.";
                         $this->render("webroot.themes.cart.views.cart.cart",array());
@@ -855,7 +862,8 @@ class CartController extends Controller {
                     
                     $cookieCart = array($id);
                     setcookie("products", serialize($cookieCart),strtotime( '+30 days' ),DIREC);
-                    $this->redirect(Yii::app()->request->urlReferrer);
+
+                    $this->redirect(Yii::app()->request->urlReferrer."#".$idElement);
                 }
 //                $modelPre = CartIp::model()->findByAttributes(array(
 //                    "ip" =>$_SERVER['REMOTE_ADDR'],
