@@ -1059,6 +1059,10 @@ class CartController extends Controller {
             $model = new UsersNew;
             if(isset($_POST['UsersNew']))
             {
+                $blokedEmails = CHtml::listData(BlockedEmail::model()->findAll(),"id","email");
+                if(in_array($_POST['UsersNew']['email'], $blokedEmails)){
+                    $this->redirect(Yii::app()->createUrl('register'));
+                }
 //                $_POST['UsersNew']['email'] = $_POST['UsersNew']['email'].time();
                 $_POST['UsersNew']['password'] = $_POST['UsersNew']['password'];
                 $_POST['UsersNew']['is_verified'] = 0;
