@@ -32,12 +32,14 @@
 					?>
 					
 					<ul>
+                        <?php if(isset($feedLin->updateContent->companyStatusUpdate->share->comment)){?>
 						<li class="linked-in-status">
 							<?php echo $feedLin->updateContent->companyStatusUpdate->share->comment;?>
 						</li>
 						<li class="linked-in-image">
 							<img src="<?php echo $feedLin->updateContent->companyStatusUpdate->share->content->eyebrowUrl;?>" height="280" width="150">
 						</li>
+                        <?php }?>
 					</ul>
 					<?php }?>
 					</div>
