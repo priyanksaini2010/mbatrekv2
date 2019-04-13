@@ -1,6 +1,8 @@
 pipelines:
   default:
     - step:
+        name: Deploy to Production
+        deployment: production   # can be test, staging or production.
         script:
           - pipe: atlassian/ssh-run:0.1.1
             variables:
