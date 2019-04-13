@@ -157,7 +157,7 @@ function getInstaFeeds(){
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+//    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
     $response = curl_exec($ch);
     curl_close($ch);
     $data = (array)json_decode($response);
@@ -166,14 +166,14 @@ function getInstaFeeds(){
 }
 //pr(getInstaFeeds());
 function getLinkedInFeeds(){
-//    $code = generateRandomString(10);
+//    $token = generateRandomString(10);
 ////    $code = "AQS56H56i6WHKP8a_f4U0cDz1k0kKpmD7r-oGcaC1IaTyA7enWZ8TBOvp9nmBOqnjT6cJPK5aMeITBGaj_H_mcRJqWGv6Opg2nQvJ8_w9ItW45zeA2-YQxCic8MGjeXEDcVVTh5XUaKzpiBSbOoElOmBKpbqz9PLONMK0tIDzi5GeFUkQTrsLp3lJ07DjA";
 //    $url = "https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=819f0m0m8h76le";
-//    $url .= "&redirect_uri=".urlencode("https://mbatrek.com/callback.php");
+//    $url .= "&redirect_uri=".urlencode("https://localhost/mbt/callback.php");
 //    $url .= "&state=".$token."&scope=rw_company_admin";
 //    pr($url);
-//    
-    $token = "AQU_QIUG7O2YhOl53WBWD3RT1ZA5kwGzwvdB6xqdHmFbzT7qpEQfWDM4XnvDFdnt5S1YLwlGHCoUn2jhabuhHOVulem6LNeVr8W4P4YVKZ1tXfqH1ch_zBcgjxLqfms5AJOUhxanc-PYuR4OVEo8sHCJAbHhc6pWvLCnzf3SZ8FGLhx3QAoW3WgKHE49ihFF4wQszJ1rQPFyl6HZM8Vnwteuv55H0sDqrC4mYtY_Sjv4cmCLlHMHe-Auqxo4Iko3RUf9f_aH8qFDRVwQ_-g1o0yoIguFH_4gh3TCz9v9DyFWnzcOQrGDbOokeacc00FuiW5fulK3K5tF59m4yWHY8fJm9QZR_Q";
+
+    $token = "AQUjKvfovP8t_xCxYTgVb0ZDh48o51kYJQBiCDKGFj4QOyftlHAZiNqBN4ke8iPRSvHxDJoiWtepp6m34K8EdG-HvT6E94vOEOu4P9PB28AnZwYt6cwl-u_W10M0oZhvzN6SvUEHuZp2XdN9qBc2JhfkDy2fX8YchkRZwCZgEvIsfeJI4NyPzFql_J6ZePsgTdK1mlf8qqR3avJa5SOTKGqd-6Ag6mki-aqnRpx8wbR8a7_TNEYOMOr5vWmbLdUMjJmMtRnUg078olfcQTCBpGELZelNT1CcHkwhuR08Pl7bt8XffCC7ufWgMkB_4pirn9fAjwQ2N3YtqhCFqk2TLfdOdq2kMA";
     $url = "https://api.linkedin.com/v1/companies/7955944/updates";    
     $headers = array(
       'Authorization: Bearer ' . $token,
