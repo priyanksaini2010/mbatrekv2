@@ -4,8 +4,3 @@ script:
       SSH_USER: 'mbatrek2017'
       SERVER: 'mbatrek.com'
       COMMAND: 'cd public_html && git pull origin master'
-      MODE: '<string>' # Optional
-      PORT: '<string>' # Optional
-      SSH_KEY: '<string>' # Optional
-      EXTRA_ARGS: '<string>' # Optional
-      DEBUG: '<string>' # Optional
