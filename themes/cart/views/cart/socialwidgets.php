@@ -1,3 +1,4 @@
+<?php $baseUrl = "";?>
 <div class="social_container">
     <div class="container">
         <div class="row">
@@ -10,6 +11,8 @@
                         <a href="https://www.facebook.com/MBAtrekIndia">MBAtrek Pvt Ltd.</a>
                     </blockquote></div>
             </div>
+            <?php $feeds = getLinkedInFeeds();
+            if (isset($feeds['values'])) {?>
             <div class="col-md-6">
 				<div class="social_title">
 					<img src="images/linkedin_home.png"/>
@@ -21,8 +24,9 @@
                         <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
                         <script type="IN/FollowCompany" data-id="7955944" data-counter="top"></script>
 					</div>
+
 					<div class="feeds_blocks">
-					<?php $feeds = getLinkedInFeeds();
+					<?php
 					foreach($feeds['values'] as $feedLin){
 	//                    foreach($feedContents as $feed){
 					?>
@@ -37,8 +41,10 @@
 					</ul>
 					<?php }?>
 					</div>
+
 				</div>
             </div>
+            <?php }?>
             <div class="col-md-6">
 				<div class="social_title">
 					<img src="images/instagram_home.png"/>
