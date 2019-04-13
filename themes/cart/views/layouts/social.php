@@ -58,7 +58,7 @@
                         
                         if (!empty($cart)) {
                             ?>
-                            <div <?php if(isset($_REQUEST['show_cart'])){echo "style='display:block;'";}?> class="cart-wrapper">
+                            <div <?php if(isset($_REQUEST['show_cart'])){echo "style='display:block;'";}?> class="cart-wrapper_new">
                                 <div class="cart-heading">
                                     <div class="cart-title">Products</div>
                                     <div class="cart-price">Price (in &#8377)</div>
@@ -95,7 +95,7 @@
     $criteria->addInCondition("id", $cookieCart);
     $products = Products::model()->findAll($criteria);
     ?>
-                    <div class="cart-wrapper">
+                    <div class="cart-wrapper1">
                                 <div class="cart-heading">
                                     <div class="cart-title">Products</div>
                                     <div class="cart-price">Price (in &#8377)</div>

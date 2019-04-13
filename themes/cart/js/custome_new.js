@@ -148,6 +148,53 @@ $(document).ready(function(){
 	}, { offset: '80%' });
 	/* ========End For HomePage======= */
 	
+	/* ========For Education institute======= */
+	$('.education_container .student-journey-inner .student-ready').css('opacity', 0);
+	$('.education_container .student-journey-inner .student-relevant').css('opacity', 0);
+	$('.education_container .student-journey-inner .student-ready').waypoint( function()
+	{
+	
+	var $isAnimatedSecond = $('.education_container .student-journey-inner .student-ready'),
+		$isAnimatedSecondSingle = $('.education_container .student-journey-inner .student-relevant');
+	
+	{
+		$isAnimatedSecond.addClass('animated fadeInLeft'); 
+		/* $isAnimatedSecond.eq(0).css('animation-delay', '.2s');
+		$isAnimatedSecond.eq(1).css('animation-delay', '.3s');
+		$isAnimatedSecond.eq(2).css('animation-delay', '.4s');
+		$isAnimatedSecond.eq(3).css('animation-delay', '.4s');*/
+		$isAnimatedSecondSingle.addClass('animated fadeInLeft').css('animation-delay', '1.7s'); 
+	}
+	}, { offset: '80%' });
+	
+	/* ========End Education institute======= */
+	
+	/* ========For Education engagment model======= */
+	
+	$('.line_process').css('opacity', 0);
+	$('.engament_model ul li').css('opacity', 0);
+	$('.line_process').waypoint( function() 
+	{  
+	
+	var $isAnimatedSecond = $('.line_process'),
+		$isAnimatedSecondSingle = $('.engament_model ul li');
+	
+	{
+		$isAnimatedSecond.addClass('animated fadeInLeft'); 
+		$isAnimatedSecondSingle.addClass('animated fadeInLeft'); 
+		 $isAnimatedSecondSingle.eq(0).css('animation-delay', '.2s');
+		$isAnimatedSecondSingle.eq(1).css('animation-delay', '.3s');
+		$isAnimatedSecondSingle.eq(2).css('animation-delay', '.4s');
+		$isAnimatedSecondSingle.eq(3).css('animation-delay', '.5s');
+		$isAnimatedSecondSingle.eq(4).css('animation-delay', '.6s');
+		$isAnimatedSecondSingle.eq(5).css('animation-delay', '.7s');
+		$isAnimatedSecondSingle.eq(6).css('animation-delay', '.8s');
+		//$isAnimatedSecondSingle.addClass('animated fadeInLeft').css('animation-delay', '1.7s'); 
+	}
+	}, { offset: '80%' });
+	
+	/* ========End Education institute engagment model======= */
+	
 	/* ========For Our Story======= */
 	$('.addition_wrapper').css('opacity', 0);
 	$('.addition_wrapper').waypoint( function()
@@ -309,8 +356,16 @@ $(document).ready(function(){
 
 /* ========Our Profile======= */
 $(document).ready(function(){
-	$('.profile_open').click(function(){
+	$('.profile_open').click(function(e){
 		$('.profile_div').toggleClass('open_profile_div');
+		 $(".cart-wrapper_new").removeClass("open_cart");
+		e.stopPropagation();
+		$(document).on("click", function(e) {
+			if ($(e.target).is(".profile_div") === false) {
+			  $(".profile_div").removeClass("open_profile_div");
+			 
+			}
+		}); 
 	});
 });
 
@@ -326,18 +381,21 @@ $(document).ready(function() {
         $("#" + test).show();
     });
 });
+
 /* ========End Register Form======= */
-/* $(document).ready(function(){
+ $(document).ready(function(){
 	$('#cart-link').click(function(e){
-		$('.cart').toggleClass("hide_cart");
+		$('.cart-wrapper_new').toggleClass("open_cart");
+		$('.profile_div').removeClass('open_profile_div');
 		e.stopPropagation();
+		
 		$(document).on("click", function(e) {
-			if ($(e.target).is(".cart") === false) {
-			  $(".cart").removeClass("hide_cart");
+			if ($(e.target).is(".cart-wrapper_new") === false) {
+			  $(".cart-wrapper_new").removeClass("open_cart");
+			 
 			}
 		});
 	});
 	
 	
-}); */
-  
+});  

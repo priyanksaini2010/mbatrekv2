@@ -1,13 +1,19 @@
 <div class="social_container">
     <div class="container">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-6">
+				<div class="social_title">
+					<img src="images/facebook_home.png"/>
+				</div>
                 <div class="fb-page" data-href="https://www.facebook.com/MBAtrekIndia" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false">
                     <blockquote cite="https://www.facebook.com/MBAtrekIndia" class="fb-xfbml-parse-ignore">
                         <a href="https://www.facebook.com/MBAtrekIndia">MBAtrek Pvt Ltd.</a>
                     </blockquote></div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
+				<div class="social_title">
+					<img src="images/linkedin_home.png"/>
+				</div>
 				<div class="linked_in_feeds">
 					<div class="linked_header">
                         <a href="https://www.linkedin.com/company/mbatrek-private-ltd/" target="_blank"><img src="<?php echo $baseUrl; ?>/images/linked_img.jpg"/></a>
@@ -33,7 +39,10 @@
 					</div>
 				</div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
+				<div class="social_title">
+					<img src="images/instagram_home.png"/>
+				</div>
 				<div class="linked_in_feeds">
 					<div class="linked_header">
                         <a href="https://www.instagram.com/mbatrek/" target="_blank"><img src="<?php echo $baseUrl; ?>/images/linked_img.jpg"/></a>
@@ -65,7 +74,10 @@
 					</div>
 				</div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
+				<div class="social_title">
+					<img src="images/youtube_home.png"/>
+				</div>
 			<div class="linked_in_feeds">
 					<div class="linked_header">
                         <a href="https://www.youtube.com/channel/UCJg7bO36Hii_AXTDL6TLY4A" target="_blank"><img src="<?php echo $baseUrl; ?>/images/linked_img.jpg"/></a>

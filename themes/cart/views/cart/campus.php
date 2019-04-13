@@ -85,7 +85,7 @@ $yog = CHtml::listData(YearOfGraduation::model()->findAll($criteria), "id", "yea
                     <?php echo $form->textFieldRow($model,'email_id',array('class'=>'span5','maxlength'=>255)); ?>
                 </div>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-12 special_field">
                 <div class="form_amster_field">
                     <label>College <Em>*</Em></label>
 <!--                    <select>
@@ -104,7 +104,7 @@ $yog = CHtml::listData(YearOfGraduation::model()->findAll($criteria), "id", "yea
                     <?php echo $form->textFieldRow($model,'name_of_college',array('class'=>'span5','maxlength'=>255)); ?>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 course_spe">
                 <div class="form_amster_field">
                     <label>Course <Em>*</Em></label>
 <!--                    <select>

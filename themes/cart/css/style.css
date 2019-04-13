@@ -386,7 +386,7 @@ footer .footer-logo a svg {
 .cart{
     position: relative;
 }
-.cart-wrapper{
+.cart-wrapper_new{
     position: absolute;
     top: 42px;
     right: 0;
@@ -492,17 +492,17 @@ footer .footer-logo a svg {
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
 }
-.cart-wrapper .total{
+.cart-wrapper_new .total{
     display: inline-block;
     vertical-align: top;
     width: 100%;
     border-top: 2px solid #fff;
     padding-top: 5px;
 }
-.cart-wrapper .total .total-title{
+.cart-wrapper_new .total .total-title{
     float: left;
 }
-.cart-wrapper .total .total-price{
+.cart-wrapper_new .total .total-price{
     float: right;
 }
 .student-top{
@@ -1325,7 +1325,7 @@ footer .footer-logo a svg {
         width: 100%;
         margin: 0px 0;
     }
-    .cart-wrapper{
+    .cart-wrapper_new{
         right: -38px;
         top: 54px;
     }
