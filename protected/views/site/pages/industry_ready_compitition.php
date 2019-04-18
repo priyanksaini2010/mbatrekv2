@@ -36,7 +36,7 @@
                             </div>
                         </div>
                         <div class="amastor_button">
-                            <a href="<?php echo Yii::app()->createUrl("industry-ready-registeration");?>">Register Now</a>
+                            <a href="<?php echo Yii::app()->createUrl("industry-ready-registration");?>">Register Now</a>
                         </div>
                     </div>
                 </div>
@@ -192,7 +192,7 @@
                             </div>
                         </div>
                         <div class="amastor_button">
-                            <a href="<?php echo Yii::app()->createUrl("industry-ready-registeration");?>">Register Now</a>
+                            <a href="<?php echo Yii::app()->createUrl("industry-ready-registration");?>">Register Now</a>
                         </div>
                     </div>
                     <div class="fq_footer">
