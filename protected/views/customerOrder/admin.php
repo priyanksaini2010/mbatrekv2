@@ -30,20 +30,26 @@ $grid =  $this->widget('bootstrap.widgets.TbGridView',array(
                         'filter'=>CHtml::listData( UsersNew::model()->findAll(), 'id', 'full_name'),
                     ),
         array(
-            'header'=>"User's Email",
+            'header'=>"Email",
             "value"=>'UsersNew::model()->findByAttributes(array("id"=>$data->user_id))->email',
             'filter'=>CHtml::listData( UsersNew::model()->findAll(), 'id', 'email'),
         ),
         array(
-            'header'=>"User's Phone number",
+            'header'=>"Phone number",
             "value"=>'UsersNew::model()->findByAttributes(array("id"=>$data->user_id))->mobile_number',
             'filter'=>CHtml::listData( UsersNew::model()->findAll(), 'id', 'mobile_number'),
         ),
+
 //		'user_id',
         'order_amount',
+        array(
+            'header' => 'Discount Amount',
+            'value'=>array($this,'gridDataColumn'),
+        ),
 //		'payment_gateway',
 //		'status',
         'date_created',
+
 
 		array(
             'class'=>'bootstrap.widgets.TbButtonColumn',
