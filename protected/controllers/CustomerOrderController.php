@@ -265,4 +265,26 @@ class CustomerOrderController extends Controller
 			Yii::app()->end();
 		}
 	}
+    //called on rendering the column for each row
+    protected function gridDataColumn($data,$row)
+    {
+        $cart = Cart::model()->findByAttributes(array('order_id' => $data->id));
+        $AllCartItems = Cart::model()->findAllByAttributes(array('order_id' => $data->id));
+        $OrderTotal = 0;
+        foreach ($AllCartItems as $cartItem) {
+            $OrderTotal  = $OrderTotal  + $cartItem->product->price;
+        }
+        if ($cart) {
+            $coupon = CouponUsage::model()->findByAttributes(array('cart_id' => $cart->id));
+            if ($coupon) {
+                if ($coupon->coupon->discount_type == 1) {
+                    $discount = ($OrderTotal * $coupon->coupon->discount)/100;
+                } else {
+                    $discount = $coupon->coupon->discount;
+                }
+                return ceil($discount);
+            }
+        }
+        return '';
+    }
 }
