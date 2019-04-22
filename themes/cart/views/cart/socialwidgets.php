@@ -6,7 +6,7 @@
 				<div class="social_title">
 					<img src="images/facebook_home.png"/>
 				</div>
-                <div class="fb-page" data-href="https://www.facebook.com/MBAtrekIndia" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false">
+                <div class="fb-page" data-href="https://www.facebook.com/MBAtrekIndia" data-tabs="timeline" data-width="556" data-small-header="false" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false">
                     <blockquote cite="https://www.facebook.com/MBAtrekIndia" class="fb-xfbml-parse-ignore">
                         <a href="https://www.facebook.com/MBAtrekIndia">MBAtrek Pvt Ltd.</a>
                     </blockquote></div>

@@ -182,13 +182,13 @@ $(document).ready(function(){
 	{
 		$isAnimatedSecond.addClass('animated fadeInLeft'); 
 		$isAnimatedSecondSingle.addClass('animated fadeInLeft'); 
-		 $isAnimatedSecondSingle.eq(0).css('animation-delay', '.2s');
-		$isAnimatedSecondSingle.eq(1).css('animation-delay', '.3s');
-		$isAnimatedSecondSingle.eq(2).css('animation-delay', '.4s');
-		$isAnimatedSecondSingle.eq(3).css('animation-delay', '.5s');
-		$isAnimatedSecondSingle.eq(4).css('animation-delay', '.6s');
-		$isAnimatedSecondSingle.eq(5).css('animation-delay', '.7s');
-		$isAnimatedSecondSingle.eq(6).css('animation-delay', '.8s');
+		$isAnimatedSecondSingle.eq(0).addClass('animated fadeInLeft').css('animation-delay', '1.30s');
+		$isAnimatedSecondSingle.eq(1).addClass('animated fadeInLeft').css('animation-delay', '3.60s');
+		$isAnimatedSecondSingle.eq(2).addClass('animated fadeInLeft').css('animation-delay', '4.40s');
+		$isAnimatedSecondSingle.eq(3).addClass('animated fadeInLeft').css('animation-delay', '5.50s');
+		$isAnimatedSecondSingle.eq(4).addClass('animated fadeInLeft').css('animation-delay', '6.60s');
+		$isAnimatedSecondSingle.eq(5).addClass('animated fadeInLeft').css('animation-delay', '7.70s');
+		$isAnimatedSecondSingle.eq(6).addClass('animated fadeInLeft').css('animation-delay', '8.80s');
 		//$isAnimatedSecondSingle.addClass('animated fadeInLeft').css('animation-delay', '1.7s'); 
 	}
 	}, { offset: '80%' });

@@ -95,7 +95,7 @@
     $criteria->addInCondition("id", $cookieCart);
     $products = Products::model()->findAll($criteria);
     ?>
-                    <div class="cart-wrapper1">
+                    <div class="cart-wrapper_new">
                                 <div class="cart-heading">
                                     <div class="cart-title">Products</div>
                                     <div class="cart-price">Price (in &#8377)</div>

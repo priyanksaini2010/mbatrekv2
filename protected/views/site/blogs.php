@@ -22,7 +22,7 @@ if(!isset($_GET['type'])){
                 <div class="header_btn"><a class="<?php echo $typ == 2?"active_high":"";?>" href="<?php echo Yii::app()->createUrl('blogs/job-ready');?>">Job Ready</a></div>
             </div>
             <div class="col-md-4 col-sm-4 col-xs-4">
-                <div class="header_btn"><a class="<?php echo $typ == 3?"active_high":"";?>"  href="<?php echo Yii::app()->createUrl('blogs/cxo-thoughts');?>">CXOs Speaks</a></div>
+                <div class="header_btn"><a class="<?php echo $typ == 3?"active_high":"";?>"  href="<?php echo Yii::app()->createUrl('blogs/cxo-thoughts');?>">CXO Speaks</a></div>
             </div>
         </div>
     </div>

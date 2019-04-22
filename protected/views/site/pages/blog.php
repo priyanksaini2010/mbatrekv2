@@ -13,7 +13,7 @@ $typ = $_GET['type'];
                 <div class="header_btn"><a <?php echo $typ == 1?"active_high":"";?> href="<?php echo Yii::app()->createUrl("site/blogs",array("type"=>2));?>">Job Ready</a></div>
             </div>
             <div class="col-md-4 col-sm-4 col-xs-4">
-                <div class="header_btn"><a <?php echo $typ == 1?"active_high":"";?>  href="<?php echo Yii::app()->createUrl("site/blogs",array("type"=>3));?>">CXO's Thoughts</a></div>
+                <div class="header_btn"><a <?php echo $typ == 1?"active_high":"";?>  href="<?php echo Yii::app()->createUrl("site/blogs",array("type"=>3));?>">CXO Thoughts</a></div>
             </div>
         </div>
     </div>
