@@ -10,6 +10,8 @@
  * @property integer $discount
  * @property integer $min_value
  * @property integer $is_active
+ * @property integer $expiry_required
+ * @property string $expiry_date
  *
  * The followings are the available model relations:
  * @property CouponUsage[] $couponUsages
@@ -33,11 +35,12 @@ class CouponCode extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('discount_type,coupon_type, domain, discount, min_value, is_active', 'required'),
-			array('discount_type,coupon_type, discount, min_value, is_active', 'numerical', 'integerOnly'=>true),
+			array('discount_type,coupon_type, discount, min_value, is_active, expiry_required', 'numerical', 'integerOnly'=>true),
 			array('domain', 'length', 'max'=>255),
+            array('expiry_date', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, discount_type,coupon_type, domain, discount, min_value, is_active', 'safe', 'on'=>'search'),
+			array('id, discount_type,coupon_type, domain, discount, min_value, is_active,  expiry_required, expiry_date', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -50,6 +53,7 @@ class CouponCode extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'couponUsages' => array(self::HAS_MANY, 'CouponUsage', 'coupon_id'),
+            'couponProductMaps' => array(self::HAS_MANY, 'CouponProductMap', 'coupon_id'),
 		);
 	}
 
@@ -66,6 +70,9 @@ class CouponCode extends CActiveRecord
 			'discount' => 'Discount',
 			'min_value' => 'Min Value',
 			'is_active' => 'Is Active',
+            'expiry_required' => 'Is this coupon have an expiry date?',
+            'expiry_date' => 'Expiry Date',
+
 		);
 	}
 
@@ -94,6 +101,8 @@ class CouponCode extends CActiveRecord
 		$criteria->compare('min_value',$this->min_value);
 		$criteria->compare('is_active',$this->is_active);
         $criteria->compare('coupon_type',$this->coupon_type);
+        $criteria->compare('expiry_required',$this->expiry_required);
+        $criteria->compare('expiry_date',$this->expiry_date,true);
                 $criteria->order = "id desc";
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

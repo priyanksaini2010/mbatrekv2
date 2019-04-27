@@ -1,6 +1,6 @@
 <?php
 
-class CouponCodeController extends Controller
+class CouponProductMapController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -23,11 +23,6 @@ class CouponCodeController extends Controller
 	 * This method is used by the 'accessControl' filter.
 	 * @return array access control rules
 	 */
-	/**
-	 * Specifies the access control rules.
-	 * This method is used by the 'accessControl' filter.
-	 * @return array access control rules
-	 */
 	public function accessRules()
 	{
 		return array(
@@ -36,11 +31,11 @@ class CouponCodeController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','admin','delete'),
+				'actions'=>array('create','update'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array(),
+				'actions'=>array('admin','delete'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -48,7 +43,6 @@ class CouponCodeController extends Controller
 			),
 		);
 	}
-
 
 	/**
 	 * Displays a particular model.
@@ -67,32 +61,16 @@ class CouponCodeController extends Controller
 	 */
 	public function actionCreate()
 	{
-                $this->layout = 'webroot.themes.bootstrap.views.layouts.main';
-		$model=new CouponCode;
+		$model=new CouponProductMap;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['CouponCode']))
+		if(isset($_POST['CouponProductMap']))
 		{
-            $model->attributes=$_POST['CouponCode'];
-			if($model->save()){
-			    if (!empty($_POST['selectedProducts'])) {
-                    foreach ($_POST['selectedProducts'] as $selected) {
-                        $modelMap = new CouponProductMap();
-                        $modelMap->attributes = array(
-                            'coupon_id' => $model->id,
-                            'product_id' =>$selected
-                        );
-                        if (!$modelMap->save()) {
-                            pr($modelMap->getErrors());
-                        }
-                    }
-                }
-                Yii::app()->user->setFlash('success', "Coupon Code added successfully.");
-                $this->redirect(array('admin'));
-            }
-		
+			$model->attributes=$_POST['CouponProductMap'];
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('create',array(
@@ -107,39 +85,16 @@ class CouponCodeController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-                $this->layout = 'webroot.themes.bootstrap.views.layouts.main';
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['CouponCode']))
+		if(isset($_POST['CouponProductMap']))
 		{
-			$model->attributes=$_POST['CouponCode'];
-
-			if($model->save()){
-                if (!empty($_POST['selectedProducts'])) {
-                    $deleteAction = CouponProductMap::model()->deleteAllByAttributes(array('coupon_id' => $id));
-
-                    foreach ($_POST['selectedProducts'] as $selected) {
-                        if ($selected != '0'){
-                            $modelMap = new CouponProductMap();
-                            $modelMap->attributes = array(
-                                'coupon_id' => $id,
-                                'product_id' =>$selected
-                            );
-                            if (!$modelMap->save()) {
-                                pr($modelMap->getErrors());
-                            }
-                        }
-
-                    }
-
-                }
-                Yii::app()->user->setFlash('success', "Coupon Code updated successfully.");
-                $this->redirect(array('admin'));
-            }
-				
+			$model->attributes=$_POST['CouponProductMap'];
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('update',array(
@@ -172,7 +127,7 @@ class CouponCodeController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('CouponCode');
+		$dataProvider=new CActiveDataProvider('CouponProductMap');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -183,11 +138,10 @@ class CouponCodeController extends Controller
 	 */
 	public function actionAdmin()
 	{
-                $this->layout = 'webroot.themes.bootstrap.views.layouts.main';
-		$model=new CouponCode('search');
+		$model=new CouponProductMap('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['CouponCode']))
-			$model->attributes=$_GET['CouponCode'];
+		if(isset($_GET['CouponProductMap']))
+			$model->attributes=$_GET['CouponProductMap'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -201,7 +155,7 @@ class CouponCodeController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=CouponCode::model()->findByPk($id);
+		$model=CouponProductMap::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -213,7 +167,7 @@ class CouponCodeController extends Controller
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='coupon-code-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='coupon-product-map-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

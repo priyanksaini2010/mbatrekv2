@@ -307,14 +307,14 @@ class CartController extends Controller {
             foreach($cartData as $items){
                 $checkCoupon =CouponUsage::model()->findByAttributes(array("cart_id"=>$items->id));
                 if($checkCoupon){
-                    $discount = $checkCoupon->coupon->discount;
+                    $discount = $checkCoupon->discount_availed;
                     $discountType = $checkCoupon->coupon->discount_type;
                 }
                 $amount = $amount  + $items->product->price;
             }
             if($discount != 0 && $discountType !=0){
                 if($discountType  == 1){
-                    $amount = $amount - ceil(($amount * $discount)/100);
+                    $amount = $amount - $discount;
                 } else {
                     $amount = $amount - $discount;
                 }
@@ -720,9 +720,79 @@ class CartController extends Controller {
 	}
         
         public function actionCart(){
-            
+            $couponRemovedP = 0;
+            $couponRemovedM = 0;
+            if(isset(Yii::app()->user->id)){
+                $cartID = Cart::model()->findByAttributes(array("user_id" => Yii::app()->user->id, "status" => 1));
+                if (!empty($cartID)) {
+                    $coupon = CouponUsage::model()->findByAttributes(array("cart_id"=> $cartID->id));
+                    if (!empty($coupon)) {
+                        $isCouponValid = CouponCode::model()->findByPk($coupon->coupon_id);
+                        $cartAll = Cart::model()->findAllByAttributes(array("user_id" => Yii::app()->user->id, "status" => 1));
+                        $match = array();
+                        if (!empty($isCouponValid->couponProductMaps)) {
+                            $cartArray = array();
+                            $couponMapArray = array();
+                            foreach ($cartAll as $cartItem) {
+                                $cartArray[] = $cartItem->product_id;
+                            }
+                            foreach ($isCouponValid->couponProductMaps as $couponItem) {
+
+                                $couponMapArray[] = $couponItem->product_id;
+                            }
+                            $match = array_intersect($cartArray, $couponMapArray);
+                            if(empty($match)){
+                                $couponRemovedP = 1;
+                                CouponUsage::model()->deleteByPk($coupon->id);
+                            }
+                        }
+                        $total = 0;
+                        foreach ($cartAll as $sum){
+                            $total = $total +   $sum->product->price;
+                        }
+                        if($total >= $isCouponValid->min_value) {
+                            //Discount Calculation
+                            $discount = 0;
+                            if (empty($match)) {
+                                switch ($isCouponValid->discount_type) {
+                                    case 2:
+                                        $discount = $isCouponValid->discount;
+                                        break;
+                                    case 1:
+                                        $discount = ceil(($total * $isCouponValid->discount) / 100);
+                                        break;
+                                }
+                            } else {
+                                foreach ($match as $dicountedItems) {
+                                    $matchItemModel = Products::model()->findByPk($dicountedItems);
+                                    switch ($isCouponValid->discount_type) {
+                                        case 2:
+                                            $discount += $isCouponValid->discount;
+                                            break;
+                                        case 1:
+                                            $discount += ceil(($matchItemModel->price * $isCouponValid->discount) / 100);
+                                            break;
+                                    }
+                                }
+                            }
+                            $model = CouponUsage::model()->findByPk($coupon->id);
+                            if (!empty($model)) {
+                                $model->attributes = array("discount_availed" => $discount);
+                                if($model->save()){} else {
+                                    pr($model->getErrors());
+                                }
+                            }
+                        } else {
+                            $couponRemovedM = 1;
+                            CouponUsage::model()->deleteByPk($coupon->id);
+                        }
+                    }
+                }
+
+
+            }
             $this->layout = getCartLayot();
-            $this->render("webroot.themes.cart.views.cart.cart",array());
+            $this->render("webroot.themes.cart.views.cart.cart",array('couponRemovedP' => $couponRemovedP,'couponRemovedM' => $couponRemovedM));
         }
         
         public function actionApplypromo(){
@@ -735,9 +805,54 @@ class CartController extends Controller {
                     $couponType  = 2;
                 }
                 $isCouponValid = CouponCode::model()->findByAttributes(array("domain"=>$domain_name));
+                //Active Check
+                if($isCouponValid->is_active == 2) {
+                    $status['message'] = "<p><span>Sorry!</span><br /><span>This coupon code is not valid.</span></p>";
+                    $status['status'] = "dfailure";
+                    $status['title'] = "Error";
+                    echo json_encode($status);die;
+                }
+                //Expiry Check
+                if($isCouponValid->expiry_required == 1) {
+                    $expiryDate = strtotime($isCouponValid->expiry_date);
+                    $currentDate = strtotime(date("Y-m-d"));
+                    if ($expiryDate < $currentDate) {
+                        $status['message'] = "<p><span>Sorry!</span><br /><span>This coupon code is expired.</span></p>";
+                        $status['status'] = "dfailure";
+                        $status['title'] = "Error";
+                        echo json_encode($status);die;
+                    }
+                }
+
+
                 //Only Login User can use his email as acoupon
+
                 $userEmail = UsersNew::model()->findByPk( Yii::app()->user->id);
-                
+
+                //Product Check
+                $cartAll = Cart::model()->findAllByAttributes(array("user_id" => Yii::app()->user->id, "status" => 1));
+                $match = array();
+                if (!empty($isCouponValid->couponProductMaps)) {
+                    $cartArray = array();
+                    $couponMapArray = array();
+                    foreach($cartAll as $cartItem){
+                        $cartArray[] = $cartItem->product_id;
+                    }
+                    foreach($isCouponValid->couponProductMaps as $couponItem){
+
+                        $couponMapArray[] = $couponItem->product_id;
+                    }
+                    $match = array_intersect($cartArray, $couponMapArray);
+                    $status['data1'] = json_encode($match);
+                    if (empty($match)) {
+                        $status['data1'] = json_encode($match);
+                        $status['data2'] = json_encode($cartArray);
+                        $status['message'] = "<p><span>Sorry!</span><br /><span>This coupon code is valid for products present in cart.</span></p>";
+                        $status['status'] = "dfailure";
+                        $status['title'] = "Error";
+                        echo json_encode($status);die;
+                    }
+                }
                 if(!empty($isCouponValid)) {
                     if($couponType == 1 &&$userEmail->email != $_POST['code']){
                         $status['message'] = "Please login with ".$_POST['code']." to avail discount.";
@@ -753,11 +868,36 @@ class CartController extends Controller {
                           $total = $total +   $sum->product->price;
                         }
                         if($total >= $isCouponValid->min_value){
+                            //Discount Calculation
+                            $discount = 0;
+                            if (empty($match)) {
+                                switch ($isCouponValid->discount_type){
+                                    case 2:
+                                        $discount = $isCouponValid->discount;
+                                        break;
+                                    case 1:
+                                        $discount = ceil(($total * $isCouponValid->discount) / 100);
+                                        break;
+                                }
+                            } else {
+                                foreach ($match as $dicountedItems){
+                                    $matchItemModel = Products::model()->findByPk($dicountedItems);
+                                        switch ($isCouponValid->discount_type){
+                                        case 2:
+                                            $discount += $isCouponValid->discount;
+                                            break;
+                                        case 1:
+                                            $discount += ceil(($matchItemModel->price * $isCouponValid->discount) / 100);
+                                            break;
+                                    }
+                                }
+                            }
                             $model = new CouponUsage;
                             $model->attributes = array(
                                                     "cart_id" => $cart->id,
                                                     "coupon_id" => $isCouponValid->id,
                                                     "email_used" => $_POST['code'],
+                                                    "discount_availed" => $discount,
                                                     "users_new_id" => Yii::app()->user->id,
                                                     "date_created"=> date("Y-m-d H:i:s")
                                                 );
@@ -767,18 +907,28 @@ class CartController extends Controller {
                                 switch ($isCouponValid->discount_type){
                                     case 1:
 //                                        $status['message'] = "A promo code is successfully applied to your college id. You have received ".$amount."% off discount.";
-                                        $status['message'] = "You have successfully received ".$amount."% off on your cart.";
+                                        if (empty($match)) {
+                                            $status['message'] = "You have successfully received ".$amount."% off on your cart.";
+                                        } else {
+                                            $status['message'] = "You have successfully received ".$amount."% off on your cart's selected items.";
+                                        }
+
                                         break;
                                     case 2:
 //                                        $status['message'] = "A Discount of Rs.".money($amount)."% have been applied successfully.";
 //                                        $status['message'] = "A promo code is successfully applied to your college id. You have received Rs.".money($amount)." off discount.";
-                                        $status['message'] = "You have successfully received Rs".money($amount)." off on your cart.";
+
+                                        if (empty($match)) {
+                                            $status['message'] = "You have successfully received Rs".money($amount)." off on your cart.";
+                                        } else {
+                                            $status['message'] = "You have successfully received Rs".money($amount)." off on your cart's selected items.";
+                                        }
                                         break;
                                 }
                                 
                             }else {
                                 pr($model->getErrors());
-                                $status['message'] = "Oops! Some error occured, Please try after some time.";
+                                $status['message'] = "Oops! Some error occurred, Please try after some time.";
                             }
                         } else {
                             $status['message'] = "This coupon code is valid only for minimum cart value of Rs.". money($isCouponValid->min_value).".";
@@ -899,10 +1049,22 @@ class CartController extends Controller {
                 $model = Cart::model()->findByAttributes(array(
                     "user_id" =>Yii::app()->user->id,
                     "product_id" =>$id,
+                    "status" => 1,
                     
                 ));
-               
-                
+
+                $coupon = CouponUsage::model()->findByAttributes(array("cart_id" => $model->id));
+                if (!empty($coupon)) {
+                    $cart = Cart::model()->findAllByAttributes(array("user_id" => Yii::app()->user->id, "status" => 1));
+                    if (count($cart) > 1) {
+                        $newCartId = $cart[1];
+                        $mod = CouponUsage::model()->findByPk($coupon->id);
+                        $mod->attributes = array('cart_id' => $newCartId->id);
+                        if($mod->save()){} else {
+                            pr($mod->getErr);
+                        };
+                    }
+                }
                 if($model->delete()){
                     $cart = Cart::model()->findAllByAttributes(array("user_id" => Yii::app()->user->id, "status" => 1));
                     $cartID = Cart::model()->findByAttributes(array("user_id" => Yii::app()->user->id, "status" => 1));
@@ -950,7 +1112,18 @@ class CartController extends Controller {
                     "product_id" =>$id,
                     
                 ));
-               
+                $coupon = CouponUsage::model()->findByAttributes(array("cart_id" => $model->id));
+                if (!empty($coupon)) {
+                    $cart = Cart::model()->findAllByAttributes(array("user_id" => Yii::app()->user->id, "status" => 1));
+                    if (count($cart) > 1) {
+                        $newCartId = $cart[1];
+                        $mod = CouponUsage::model()->findByPk($coupon->id);
+                        $mod->attributes = array('cart_id' => $newCartId->id);
+                        if($mod->save()){} else {
+                            pr($mod->getErr);
+                        };
+                    }
+                }
                 
                 
                 

@@ -11,7 +11,7 @@ if(empty($cart)){
 }
 $coupon = CouponUsage::model()->findByAttributes(array("cart_id"=> $cartID->id));
 if(!empty($coupon)){
-    $discount = $coupon->coupon->discount;
+    $discount = $coupon->discount_availed;
     $discountType = $coupon->coupon->discount_type;
 }
 ?>
@@ -55,7 +55,7 @@ if(!empty($coupon)){
 						 <div class="total_payment">
                              <?php  if($discount != 0 && $discountType !=0){
                                 if($discountType == 1){
-                                    $total = $total - ceil(($total * $discount)/100);
+                                    $total = $total - $discount;
                                 }else {
                                     $total = $total - $discount;
                                 }

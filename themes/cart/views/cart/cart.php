@@ -10,11 +10,19 @@ if(isset(Yii::app()->user->id)){
   if(empty($cart)){
       $cart = $modelIp;
   }
-  $coupon = CouponUsage::model()->findByAttributes(array("cart_id"=> $cartID->id));
-  if(!empty($coupon)){
-      $discount = $coupon->coupon->discount;
-      $discount_type = $coupon->coupon->discount_type;
+  if (!empty($cartID)) {
+      $coupon = CouponUsage::model()->findByAttributes(array("cart_id"=> $cartID->id));
   }
+
+//  if(!empty($coupon)){
+//      $discount = $coupon->coupon->discount;
+//      $discount_type = $coupon->coupon->discount_type;
+//  }
+    $discount = 0;
+    if(isset($coupon) && !empty($coupon)){
+        $discount = $coupon->discount_availed;
+        $discount_type = $coupon->coupon->discount_type;
+    }
   $hasRecommendation = false;
   foreach ($cart as $c){
     if(count($c->product->productRecommendedValueSaverPacks) > 0){
@@ -92,28 +100,27 @@ if(isset(Yii::app()->user->id)){
                                 <label>Sub Total (<?php echo count($cart)>1?count($cart)." Items":count($cart)." Item";?>): <span> &#8377 <?php echo money($total);?></span></label>
                                 <?php if(!empty($coupon)){?>
                                  <label>You Save : <span> &#8377 <?php 
-                                    if($discount_type == 1){
-                                         $total_dis = ceil(($total * $discount)/100);
-                                    }else {
-                                         $total_dis = $discount;
-                                    }
-                                    echo money($total_dis);
-//                                    echo  "(".money(($total_dis/$total)*100)."%)";
-                                    
+//                                    if($discount_type == 1){
+//                                         $total_dis = ceil(($total * $discount)/100);
+//                                    }else {
+//                                         $total_dis = $discount;
+//                                    }
+                                    echo money($discount);
+
                                  ?></span></label>
-                                <label> Total : <span> &#8377 <?php echo money($total - $total_dis);?></span></label>
+                                <label> Total : <span> &#8377 <?php echo money($total - $discount);?></span></label>
                                 <?php }?>
                                 
                                 <a href="<?php echo Yii::app()->createUrl("choose-payment-gateway");?>">Checkout</a>
 								<span>
-                                    <input type="text" value="<?php echo $cartID->gstin;?>" class="input_field" id="gstin" name="GSTIN" placeholder="GSTIN ( if applicable )">
-                                    <?php if($cartID->gstin != "" && !isset($_GET['update']) && $_GET['update'] !=1){?>
+                                    <input type="text" value="<?php echo isset($cartID->gstin)?$cartID->gstin:'';?>" class="input_field" id="gstin" name="GSTIN" placeholder="GSTIN ( if applicable )">
+                                    <?php if(isset($cartID->gstin) && $cartID->gstin != "" && !isset($_GET['update']) && $_GET['update'] !=1){?>
                                     <a href="<?php echo Yii::app()->createUrl("cart/cart",array("update"=>1));?>"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                                     <?php }else if(isset($_GET['update']) && $_GET['update'] ==1){?>
                                         <a href="javascript:void('0')" id="gstin-apply">Apply GSTIN</a>
                                     <?php }?>
                                     <br />
-                                    <?php if($cartID->gstin == ""){?>
+                                    <?php if(isset($cartID->gstin) && $cartID->gstin == "" ){?>
                                     <a href="javascript:void('0')" id="gstin-apply">Apply GSTIN</a>
                                     <?php }?>
                                 </span>
@@ -222,8 +229,19 @@ if(isset(Yii::app()->user->id)){
         </div>
     </div>
 </div>
+    <?php
+    if ($couponRemovedP == 1) {
+        Yii::app()->clientScript->registerScript('myscript', "$('#CartProd').modal('show');");
+    }
+    if($couponRemovedM) {
+        Yii::app()->clientScript->registerScript('myscript', "$('#CartProd').modal('show');");
+    }
+
+    ?>
+
 <?php } else if(isset($_COOKIE['products'])) { ?>
 <?php echo $this->renderPartial("webroot.themes.cart.views.cart.cart_cookie");?> 
  
 <?php }
 ?>
+

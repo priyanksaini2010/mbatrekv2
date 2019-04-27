@@ -81,6 +81,12 @@ function validationMethodSpecialCart(id,text){
     $('#myModal29').modal('show');
 //    alert(text);
 }
+function DvalidationMethod(title,text){
+    $('.d-modal-title').html(title)
+    $('#d-modal-content').html(text)
+    $('#dynamicModal').modal('show');
+//    alert(text);
+}
 // Method to validate email
 function validateEmail(emailField) {
     var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
@@ -557,7 +563,10 @@ $(document).ready(function(){
                     setInterval(function(){window.location.reload(); }, 3000);
                 } else if(obj.status == "notapplied"){
                     validationMethodNotApplied("error",obj.message)
-                }else {
+                } else if (obj.status == "dfailure") {
+                    DvalidationMethod(obj.title, obj.message);
+                }
+                else {
                     validationMethod("error",obj.message)
                 }
                 
