@@ -218,6 +218,7 @@ return array(
 		'noreply'=>'no-reply@mbatrek.com',
         'url'=>'https://mbatrek.com/',
         "payu_merchant_id" => "uTUmfIq7",
+	"payu_surl" => "https://mbatrek.com/cart/payusurl",
         "payu_salt" => "ZbJSYLBwUJ",
 //        "payu_merchant_id" => "rjQUPktU",
 //        "payu_salt" => "e5iIg1jwi8",

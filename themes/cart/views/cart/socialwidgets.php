@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-md-6">
 				<div class="social_title">
-					<img src="images/facebook_home.png"/>
+					<a href="https://www.facebook.com/MBAtrekIndia"><img src="images/facebook_home.png"/></a>
 				</div>
                 <div class="fb-page" data-href="https://www.facebook.com/MBAtrekIndia" data-tabs="timeline" data-width="556" data-small-header="false" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false">
                     <blockquote cite="https://www.facebook.com/MBAtrekIndia" class="fb-xfbml-parse-ignore">
@@ -15,9 +15,9 @@
             if (isset($feeds['values'])) {?>
             <div class="col-md-6">
 				<div class="social_title">
-					<img src="images/linkedin_home.png"/>
+					<a href="https://www.linkedin.com/company/mbatrek-private-ltd/"><img src="images/linkedin_home.png"/></a>
 				</div>
-				<div class="linked_in_feeds">
+				<div class="linked_in_feeds linked_Data">
 					<div class="linked_header">
                         <a href="https://www.linkedin.com/company/mbatrek-private-ltd/" target="_blank"><img src="<?php echo $baseUrl; ?>/images/linked_img.jpg"/></a>
                         <a href="https://www.linkedin.com/company/mbatrek-private-ltd/" target="_blank"><h2>MBAtrek Private Limited</h2></a>
@@ -49,7 +49,7 @@
             <?php }?>
             <div class="col-md-6">
 				<div class="social_title">
-					<img src="images/instagram_home.png"/>
+					<a href="https://www.instagram.com/mbatrek/"><img src="images/instagram_home.png"/></a>
 				</div>
 				<div class="linked_in_feeds">
 					<div class="linked_header">
@@ -84,7 +84,7 @@
             </div>
             <div class="col-md-6">
 				<div class="social_title">
-					<img src="images/youtube_home.png"/>
+					<a href="https://www.youtube.com/channel/UCJg7bO36Hii_AXTDL6TLY4A"><img src="images/youtube_home.png"/></a>
 				</div>
 			<div class="linked_in_feeds">
 					<div class="linked_header">

@@ -65,6 +65,9 @@ $yog = CHtml::listData(YearOfGraduation::model()->findAll($criteria), "id", "yea
 									</div>
 									<div class="col-md-10">
 										<div class="form_amster_field">
+											<div class="label_new">
+												<label>Name of Your Team <em>*</em></label>
+											</div>
                                             <?php echo $form->textFieldRow($model,'team_name',array('class'=>'span5','maxlength'=>255,'label'=>false,'placeholder'=>$model->getAttributeLabel("team_name"))); ?>
 										</div>
 									</div>
@@ -79,21 +82,33 @@ $yog = CHtml::listData(YearOfGraduation::model()->findAll($criteria), "id", "yea
 										<div class="row">
 											<div class="col-md-6">
 												<div class="form_amster_field">
+												<div class="label_new">
+													<label>First Name <em>*</em></label>
+												</div>
                                                     <?php echo $form->textFieldRow($model,'first_name',array('class'=>'span5','maxlength'=>255,'label'=>false,'placeholder'=>$model->getAttributeLabel("first_name"))); ?>
 												</div>
 											</div>
 											<div class="col-md-6">
 												<div class="form_amster_field">
+												<div class="label_new">
+													<label>Last Name <em>*</em></label>
+												</div>
                                                     <?php echo $form->textFieldRow($model,'last_name',array('class'=>'span5','maxlength'=>255,'label'=>false,'placeholder'=>$model->getAttributeLabel("last_name"))); ?>
 												</div>
 											</div>
 											<div class="col-md-6">
 												<div class="form_amster_field">
+												<div class="label_new">
+													<label>Email Id <em>*</em></label>
+												</div>
                                                     <?php echo $form->textFieldRow($model,'email_id',array('class'=>'span5','maxlength'=>255,'label'=>false,'placeholder'=>$model->getAttributeLabel("email_id"))); ?>
 												</div>
 											</div>
 											<div class="col-md-6">
 												<div class="form_amster_field">
+												<div class="label_new">
+													<label>Mobile Number <em>*</em></label>
+												</div>
                                                     <?php echo $form->textFieldRow($model,'mobile_number',array('class'=>'span5','maxlength'=>255,'label'=>false,'placeholder'=>$model->getAttributeLabel("mobile_number"))); ?>
 												</div>
 											</div>
@@ -110,21 +125,33 @@ $yog = CHtml::listData(YearOfGraduation::model()->findAll($criteria), "id", "yea
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form_amster_field">
+												<div class="label_new">
+													<label>First Name <em>*</em></label>
+												</div>
                                                     <?php echo $form->textFieldRow($model,'first_name_1',array('class'=>'span5','maxlength'=>255,'label'=>false,'placeholder'=>$model->getAttributeLabel("first_name_1"))); ?>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form_amster_field">
+												<div class="label_new">
+													<label>Last Name <em>*</em></label>
+												</div>
                                                     <?php echo $form->textFieldRow($model,'last_name_1',array('class'=>'span5','maxlength'=>255,'label'=>false,'placeholder'=>$model->getAttributeLabel("last_name_1"))); ?>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form_amster_field">
+												<div class="label_new">
+													<label>Email Id <em>*</em></label>
+												</div>
                                                     <?php echo $form->textFieldRow($model,'email_Id_1',array('class'=>'span5','maxlength'=>255,'label'=>false,'placeholder'=>$model->getAttributeLabel("email_Id_1"))); ?>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form_amster_field">
+												<div class="label_new">
+													<label>Mobile Number <em>*</em></label>
+												</div>
                                                     <?php echo $form->textFieldRow($model,'mobile_number_1',array('class'=>'span5','maxlength'=>255,'label'=>false,'placeholder'=>$model->getAttributeLabel("mobile_number_1"))); ?>
                                                 </div>
                                             </div>
@@ -141,21 +168,33 @@ $yog = CHtml::listData(YearOfGraduation::model()->findAll($criteria), "id", "yea
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form_amster_field">
+												<div class="label_new">
+													<label>First Name <em>*</em></label>
+												</div>
                                                     <?php echo $form->textFieldRow($model,'first_name_2',array('class'=>'span5','maxlength'=>255,'label'=>false,'placeholder'=>$model->getAttributeLabel("first_name_2"))); ?>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form_amster_field">
+												<div class="label_new">
+													<label>Last Name <em>*</em></label>
+												</div>
                                                     <?php echo $form->textFieldRow($model,'last_name_2',array('class'=>'span5','maxlength'=>255,'label'=>false,'placeholder'=>$model->getAttributeLabel("last_name_2"))); ?>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form_amster_field">
+												<div class="label_new">
+													<label>Email Id <em>*</em></label>
+												</div>
                                                     <?php echo $form->textFieldRow($model,'email_Id_2',array('class'=>'span5','maxlength'=>255,'label'=>false,'placeholder'=>$model->getAttributeLabel("email_Id_2"))); ?>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form_amster_field">
+												<div class="label_new">
+													<label>Mobile Number <em>*</em></label>
+												</div>
                                                     <?php echo $form->textFieldRow($model,'mobile_number_2',array('class'=>'span5','maxlength'=>255,'label'=>false,'placeholder'=>$model->getAttributeLabel("mobile_number_2"))); ?>
                                                 </div>
                                             </div>
@@ -168,12 +207,18 @@ $yog = CHtml::listData(YearOfGraduation::model()->findAll($criteria), "id", "yea
 										<div class="row">
 											<div class="col-md-6">
 												<div class="form_amster_field">
+												<div class="label_new">
+													<label>Select Your MBA Batch <em>*</em></label>
+												</div>
                                                     <?php echo $form->dropDownList($model, 'mba_batch', $yog, array('class' => 'span3','empty'=>'Select Your MBA Batch','label'=>false)); ?>
 												</div>
 											</div>
-											<div class="clearfix"></div>
-											<div class="col-md-6">
+											
+											<div class="col-md-6 ">
 												<div class="form_amster_field">
+												<div class="label_new">
+													<label>Select College <em>*</em></label>
+												</div>
                                                     <?php echo $form->dropDownList($model, 'college', $colleges, array('class' => 'span3','empty'=>'Select Your College / University','label'=>false)); ?>
 												</div>
 											</div>

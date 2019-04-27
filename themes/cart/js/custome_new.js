@@ -163,7 +163,7 @@ $(document).ready(function(){
 		$isAnimatedSecond.eq(1).css('animation-delay', '.3s');
 		$isAnimatedSecond.eq(2).css('animation-delay', '.4s');
 		$isAnimatedSecond.eq(3).css('animation-delay', '.4s');*/
-		$isAnimatedSecondSingle.addClass('animated fadeInLeft').css('animation-delay', '1.7s'); 
+		$isAnimatedSecondSingle.addClass('animated fadeInRight').css('animation-delay', '1.7s'); 
 	}
 	}, { offset: '80%' });
 	

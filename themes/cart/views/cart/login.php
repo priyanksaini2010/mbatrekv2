@@ -28,13 +28,17 @@
 							$userErr = $form->error($model, 'username');
 						?>
 						<div class="main">	
-							
+							<div class="label_new">
+								<label>Email Id <em>*</em></label>
+							</div>
 							<?php if($model->username != ''){ $data =  array('for' => "firstname",'class' => 'active');}else{$data =  array('for' => "firstname");};?>
 							
 							<?php echo $form->textField($model, 'username', array('class'=>"form-control","placeholder"=>"Email Id")); ?>
 							
 							<?php if($model->password != ''){ $data =  array('for' => "firstname",'class' => 'active');}else{$data =  array('for' => "firstname");};?>
-							
+							<div class="label_new">
+								<label>Password <em>*</em></label>
+							</div>
 							<?php echo $form->passwordField($model, 'password', array('class'=>"form-control","placeholder"=>"Password")); ?>
 							<span class="clearfix"></span>	
 						</div>

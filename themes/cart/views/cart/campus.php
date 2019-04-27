@@ -63,26 +63,26 @@ $yog = CHtml::listData(YearOfGraduation::model()->findAll($criteria), "id", "yea
                 <div class="form_amster_field">
 <!--                    <label>First Name <Em>*</Em></label>
                     <input type="text"/>-->
-                    <?php echo $form->textFieldRow($model,'first_name',array('class'=>'span5','maxlength'=>255)); ?>
+                    <?php echo $form->textFieldRow($model,'first_name',array('class'=>'span5',"placeholder"=>"First Name",'maxlength'=>255)); ?> 
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form_amster_field">
-                    <?php echo $form->textFieldRow($model,'last_name',array('class'=>'span5','maxlength'=>255)); ?>
+                    <?php echo $form->textFieldRow($model,'last_name',array('class'=>'span5',"placeholder"=>"Last Name",'maxlength'=>255)); ?>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form_amster_field">
 <!--                    <label>Mobile Number <Em>*</Em></label>
                     <input type="text"/>-->
-                    <?php echo $form->textFieldRow($model,'mobile_number',array('class'=>'span5','maxlength'=>255)); ?>
+                    <?php echo $form->textFieldRow($model,'mobile_number',array('class'=>'span5',"placeholder"=>"Mobile Number",'maxlength'=>255)); ?>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form_amster_field">
 <!--                    <label>E-mail ID <Em>*</Em></label>
                     <input type="text"/>-->
-                    <?php echo $form->textFieldRow($model,'email_id',array('class'=>'span5','maxlength'=>255)); ?>
+                    <?php echo $form->textFieldRow($model,'email_id',array('class'=>'span5',"placeholder"=>"Email",'maxlength'=>255)); ?>
                 </div>
             </div>
             <div class="col-md-12 special_field">
@@ -139,19 +139,19 @@ $yog = CHtml::listData(YearOfGraduation::model()->findAll($criteria), "id", "yea
                 <div class="form_amster_field">
 <!--                    <label>Why do you want to be a MBAtrek Campus Ambassador? <Em>*</Em></label>
                     <textarea></textarea>-->
-                    <?php echo $form->textAreaRow($model,'question_1',array('rows'=>6, 'cols'=>50, 'class'=>'span8')); ?>
+                    <?php echo $form->textAreaRow($model,'question_1',array('rows'=>6, 'cols'=>50,"placeholder"=>"Why do you want to be a MBAtrek Campus Ambassador?", 'class'=>'span8')); ?>
                 </div>
             </div>
             <div class="col-md-12">
                 <div class="form_amster_field">
 <!--                    <label>Suggest two super creative ideas to share the importance of career development  in your college <Em>*</Em></label>
                     <textarea></textarea>-->
-                    <?php echo $form->textAreaRow($model,'question_2',array('rows'=>6, 'cols'=>50, 'class'=>'span8')); ?>
+                    <?php echo $form->textAreaRow($model,'question_2',array('rows'=>6, 'cols'=>50, "placeholder"=>"Suggest two super creative ideas to share the importance of career development in your college / university",'class'=>'span8')); ?>
                 </div>
             </div>
             <div class="col-md-12">
-                <div class="form_amster_field">
-                   <?php echo $form->textAreaRow($model,'question_3',array('rows'=>6, 'cols'=>50, 'class'=>'span8')); ?>
+                <div class="form_amster_field"> 
+                   <?php echo $form->textAreaRow($model,'question_3',array('rows'=>6, 'cols'=>50,"placeholder"=>"Any additional information you would like to provide us", 'class'=>'span8')); ?>
                 </div>
             </div>
             <?php if (CCaptcha::checkRequirements()): ?>

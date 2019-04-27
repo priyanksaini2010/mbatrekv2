@@ -18,8 +18,8 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="contact_info_div margin-0">
-                                <div class="phAnimate">
-                                    <label for="lastname">First Name <em>*</em></label> 
+                                <div class="label_new">
+                                    <!--<label for="lastname">First Name <em>*</em></label> -->
                                     <?php
                                     if ($model->first_name != '') {
                                         $data = array('for' => "first_name", 'class' => 'active');
@@ -28,14 +28,14 @@
                                     };
                                     ?>
 <?php echo $form->labelEx($model, 'first_name', $data); ?>
-<?php echo $form->textField($model, 'first_name', array('class' => "input_field")); ?>
+<?php echo $form->textField($model, 'first_name', array('class' => "input_field", "placeholder" => "First Name")); ?>
                                 </div>
                             </div>
 
                         </div>
                         <div class="col-md-6">
                             <div class="contact_info_div margin-0">
-                                <div class="phAnimate">
+                                <div class="label_new">
                                     <!--<label for="lastname">Last Name <em>*</em></label>--> 
                                     <?php
                                     if ($model->last_name != '') {
@@ -45,14 +45,14 @@
                                     };
                                     ?>
 <?php echo $form->labelEx($model, 'last_name', $data); ?>
-<?php echo $form->textField($model, 'last_name', array('class' => "input_field")); ?>
+<?php echo $form->textField($model, 'last_name', array('class' => "input_field","placeholder" => "Last Name")); ?>
                                 </div>
                             </div>
 
                         </div>
                         <div class="col-md-6">
                             <div class="contact_info_div">
-                                <div class="phAnimate">
+                                <div class="label_new">
                                     <!--<label for="lastname">Email <em>*</em></label>--> 
                                     <?php
                                     if ($model->email != '') {
@@ -62,14 +62,14 @@
                                     };
                                     ?>
 <?php echo $form->labelEx($model, 'email', $data); ?>
-<?php echo $form->textField($model, 'email', array('class' => "input_field")); ?>
+<?php echo $form->textField($model, 'email', array('class' => "input_field","placeholder" => "Email")); ?>
                                 </div>
                             </div>
 
                         </div>
                         <div class="col-md-6">
                             <div class="contact_info_div">
-                                <div class="phAnimate">
+                                <div class="label_new">
                                     <?php
                                     if ($model->mobile_no != '') {
                                         $data = array('for' => "mobile_no", 'class' => 'active');
@@ -78,7 +78,7 @@
                                     };
                                     ?>
 <?php echo $form->labelEx($model, 'mobile_no', $data); ?>
-<?php echo $form->textField($model, 'mobile_no', array('class' => "input_field")); ?>
+<?php echo $form->textField($model, 'mobile_no', array('class' => "input_field", "placeholder" => "Mobile No")); ?>
                                 </div>
                             </div>
                         </div>
@@ -106,6 +106,9 @@
                         </div>
                         <div class="col-md-12">
                             <div class="contact_info_div">
+							<div class="label_new">
+	<label>Select a Company <em>*</em></label>
+ </div>
                                 <div id="company-autofill" class="phAnimate" >
 <?php
 if ($model->name_of_company_institute != '') {
@@ -114,6 +117,7 @@ if ($model->name_of_company_institute != '') {
     $data = array('for' => "name_of_company_institute");
 };
 ?>                                 <!-- <label for="name_of_company" class="required active">Name of Company<span class="required">*</span></label>-->
+ 
                                     <select class="input_field select2class" name="Contact[name_of_company_institute]" id="name_of_company">
                                         <option value="">Select a Company</option>
                                         <?php
@@ -144,7 +148,7 @@ if ($model->name_of_company_institute != '') {
                         <br/>
                         <div class="col-md-12">
                             <div class="contact_info_div">
-                                <div class="phAnimate"> 
+                                <div class="label_new"> 
 <?php
 if ($model->subject != '') {
     $data = array('for' => "subject", 'class' => 'active');
@@ -153,13 +157,13 @@ if ($model->subject != '') {
 };
 ?>
                                     <?php echo $form->labelEx($model, 'subject', $data); ?>
-                                    <?php echo $form->textField($model, 'subject', array('class' => "input_field")); ?>
+                                    <?php echo $form->textField($model, 'subject', array('class' => "input_field","placeholder" => "Subject")); ?>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="contact_info_div">
-                                <div class="phAnimate">
+                                <div class="label_new">
 <?php
 if ($model->your_message != '') {
     $data = array('for' => "your_message", 'class' => 'active');
@@ -168,7 +172,8 @@ if ($model->your_message != '') {
 };
 ?>
 <?php echo $form->labelEx($model, 'your_message', $data); ?>
-<?php echo $form->textArea($model, 'your_message', array('class' => "input_field")); ?>
+<?php echo $form->textArea($model, 'your_message', array('class' => "input_field","placeholder" => "
+Your Message")); ?>
                                 </div>
                             </div>
                         </div>

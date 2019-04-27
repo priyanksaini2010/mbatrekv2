@@ -60,22 +60,22 @@ $yog = CHtml::listData(YearOfGraduation::model()->findAll($criteria), "id", "yea
                     <div class="container">
                         <div class="col-md-6">
                             <div class="form_amster_field">
-                                  <?php echo $form->textFieldRow($model,'first_name',array('class'=>'span5','maxlength'=>255)); ?>
+                                  <?php echo $form->textFieldRow($model,'first_name',array('class'=>'span5',"placeholder"=>"First Name",'maxlength'=>255)); ?>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form_amster_field">
-                                 <?php echo $form->textFieldRow($model,'last_name',array('class'=>'span5','maxlength'=>255)); ?>
+                                 <?php echo $form->textFieldRow($model,'last_name',array('class'=>'span5',"placeholder"=>"Last Name",'maxlength'=>255)); ?>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form_amster_field">
-                                <?php echo $form->textFieldRow($model,'mobile_number',array('class'=>'span5','maxlength'=>255)); ?>
+                                <?php echo $form->textFieldRow($model,'mobile_number',array('class'=>'span5',"placeholder"=>"Mobile Number",'maxlength'=>255)); ?>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form_amster_field">
-                               <?php echo $form->textFieldRow($model,'email_id',array('class'=>'span5','maxlength'=>255)); ?>
+                               <?php echo $form->textFieldRow($model,'email_id',array('class'=>'span5',"placeholder"=>"Email",'maxlength'=>255)); ?>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -92,28 +92,28 @@ $yog = CHtml::listData(YearOfGraduation::model()->findAll($criteria), "id", "yea
                         </div>
                         <div class="col-md-6"  id="name_of_college" style="display:none;">
                             <div class="form_amster_field">
-                                <?php echo $form->textFieldRow($model,'name_of_college',array('class'=>'span5','maxlength'=>255)); ?>
+                                <?php echo $form->textFieldRow($model,'name_of_college',array('class'=>'span5',"placeholder"=>"Name of college",'maxlength'=>255)); ?>
                             </div>
                         </div>
                         <div class="col-md-12" id="question_1" style="display:none;">
                             <div class="form_amster_field">
 <!--                                <label>Name of your Student Placement Coordinator / Student Committee Member  <Em>*</Em></label>
                                <textarea></textarea>-->
-  <?php echo $form->textAreaRow($model,'question_1',array('rows'=>6, 'cols'=>50, 'class'=>'span8')); ?>
+  <?php echo $form->textAreaRow($model,'question_1',array('rows'=>6, 'cols'=>50, "placeholder"=>"Name of your Student Placement Coordinator / Student Committee Member",'class'=>'span8')); ?>
                             </div>
                         </div>
                         <div class="col-md-12" id="question_2" style="display:none;">
                             <div class="form_amster_field">
 <!--                                <label>Email of your Student Placement Coordinator / Student Committee Member  <Em>*</Em></label>
                                 <textarea></textarea>-->
-                                      <?php echo $form->textAreaRow($model,'question_2',array('rows'=>6, 'cols'=>50, 'class'=>'span8')); ?>
+                                      <?php echo $form->textAreaRow($model,'question_2',array('rows'=>6, 'cols'=>50,"placeholder"=>"Email of your Student Placement Coordinator / Student Committee Member ", 'class'=>'span8')); ?>
                             </div>
                         </div>
                         <div class="col-md-12" id="question_3" style="display:none;">
                             <div class="form_amster_field">
 <!--                                <label>Mobile No of your Student Placement Coordinator / Student Committee Member  </label>
                                 <textarea></textarea>-->
-                                <?php echo $form->textAreaRow($model,'question_3',array('rows'=>6, 'cols'=>50, 'class'=>'span8')); ?>
+                                <?php echo $form->textAreaRow($model,'question_3',array('rows'=>6,"placeholder"=>"Mobile No of your Student Placement Coordinator / Student Committee Member", 'cols'=>50, 'class'=>'span8')); ?>
                             </div>
                         </div>
                         <?php if (CCaptcha::checkRequirements()): ?>
