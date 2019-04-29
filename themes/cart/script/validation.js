@@ -42,7 +42,8 @@ function validationMethod(id,text){
             break;
         case "thanks":
             $("#pop-notification-type").text("Thanks");
-            $("#pop-notification-class").addClass("fa-check");
+            // $("#pop-notification-class").addClass("fa-check");
+            $("#pop-notification-class").removeAttr('class');
             $("#pop-notification-class").removeClass("fa-warning");
             break;
         case "congrats":
