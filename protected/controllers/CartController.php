@@ -817,7 +817,7 @@ class CartController extends Controller {
                     $expiryDate = strtotime($isCouponValid->expiry_date);
                     $currentDate = strtotime(date("Y-m-d"));
                     if ($expiryDate < $currentDate) {
-                        $status['message'] = "<p><span>Sorry!</span><br /><span>This coupon code is expired.</span></p>";
+                        $status['message'] = "<p><span>Coupon Code has expired!</span><br /><span>Kindly try another coupon code.</span></p>";
                         $status['status'] = "dfailure";
                         $status['title'] = "Error";
                         echo json_encode($status);die;
@@ -847,7 +847,7 @@ class CartController extends Controller {
                     if (empty($match)) {
                         $status['data1'] = json_encode($match);
                         $status['data2'] = json_encode($cartArray);
-                        $status['message'] = "<p><span>Sorry!</span><br /><span>This coupon code is valid for products present in cart.</span></p>";
+                        $status['message'] = "<p><span>Sorry!</span><br /><span>This coupon code is not applicable on these product(s).</span></p>";
                         $status['status'] = "dfailure";
                         $status['title'] = "Error";
                         echo json_encode($status);die;
