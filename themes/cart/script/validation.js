@@ -42,14 +42,14 @@ function validationMethod(id,text){
             break;
         case "thanks":
             $("#pop-notification-type").text("Thanks");
-            // $("#pop-notification-class").addClass("fa-check");
-            $("#pop-notification-class").removeAttr('class');
+            $("#pop-notification-class").addClass("fa-check");
             $("#pop-notification-class").removeClass("fa-warning");
             break;
         case "congrats":
             $("#pop-notification-type").text("Congratulations!");
             $("#pop-notification-class").addClass("fa-check");
             $("#pop-notification-class").removeClass("fa-warning");
+            $("#pop-notification-class").removeAttr("class");
             break;
     }
      $("#pop-notification-text").text(text);
