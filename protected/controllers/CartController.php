@@ -807,7 +807,7 @@ class CartController extends Controller {
                 $isCouponValid = CouponCode::model()->findByAttributes(array("domain"=>$domain_name));
                 //Active Check
                 if($isCouponValid->is_active == 2) {
-                    $status['message'] = "<p><span>Sorry!</span><br /><span>This coupon code is not valid.</span></p>";
+                    $status['message'] = "<p><span>Coupon Code has expired!</span><br /><span>Kindly try another coupon code.</span></p>";
                     $status['status'] = "dfailure";
                     $status['title'] = "Error";
                     echo json_encode($status);die;
