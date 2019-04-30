@@ -245,19 +245,22 @@ $yog = CHtml::listData(YearOfGraduation::model()->findAll($criteria), "id", "yea
                                                     <?php echo $form->textAreaRow($model,'question_3',array("style"=>"display:none",'rows'=>6, 'cols'=>50, 'class'=>'span8','label'=>false,'placeholder'=>$model->getAttributeLabel("question_3"))); ?>
 												</div>
 											</div>
-                                            <?php if (CCaptcha::checkRequirements()): ?>
-                                                <div class="catcha_Code">
-                                                    <?php echo $form->labelEx($model, 'verifyCode'); ?>
-                                                    <div>
-                                                        <?php $this->widget('CCaptcha'); ?><br>
-                                                        <?php echo $form->textField($model, 'verifyCode'); ?>
-                                                    </div>
-                                                    <div class="hint">Please enter the characters as they are shown in the image above.
-                                                        <br/>characters are not case-sensitive.</div>
-                                                        <br/>Characters are not case-sensitive.</div>
-                                                    <?php echo $form->error($model, 'verifyCode'); ?>
-                                                </div>
-                                            <?php endif; ?>
+                                            <div class="col-md-12 col-sm-12 col-xs-12 align_over_txt">
+                                                <div class="g-recaptcha form-field" data-sitekey="6LcHG6EUAAAAAERv9LjXHi8OMkiRsmS6ZHdGB0Mj"></div>
+                                            </div>
+<!--                                            --><?php //if (CCaptcha::checkRequirements()): ?>
+<!--                                                <div class="catcha_Code">-->
+<!--                                                    --><?php //echo $form->labelEx($model, 'verifyCode'); ?>
+<!--                                                    <div>-->
+<!--                                                        --><?php //$this->widget('CCaptcha'); ?><!--<br>-->
+<!--                                                        --><?php //echo $form->textField($model, 'verifyCode'); ?>
+<!--                                                    </div>-->
+<!--                                                    <div class="hint">Please enter the characters as they are shown in the image above.-->
+<!--                                                        <br/>characters are not case-sensitive.</div>-->
+<!--                                                        <br/>Characters are not case-sensitive.</div>-->
+<!--                                                    --><?php //echo $form->error($model, 'verifyCode'); ?>
+<!--                                                </div>-->
+<!--                                            --><?php //endif; ?>
                                             <div class="capcha_div"><img src="images/capcha.png" alt="" />
 											 <div class="col-md-12 text-center">
 												<div class="form_amster_field">

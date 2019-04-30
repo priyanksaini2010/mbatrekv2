@@ -49,7 +49,7 @@ class IndustryReadyCompetition extends CActiveRecord
 			array('mba_batch, college', 'numerical', 'integerOnly'=>true),
 			array('first_name, last_name, mobile_number, email_id, team_name, first_name_1, last_name_1, mobile_number_1, email_Id_1, first_name_2, last_name_2, mobile_number_2, email_Id_2, name_of_college', 'length', 'max'=>255),
 			array('question_1, question_2, question_3', 'safe'),
-            array('verifyCode', 'captcha', 'allowEmpty'=>!CCaptcha::checkRequirements()),
+//            array('verifyCode', 'captcha', 'allowEmpty'=>!CCaptcha::checkRequirements()),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, first_name, last_name, mobile_number, email_id, team_name, first_name_1, last_name_1, mobile_number_1, email_Id_1, first_name_2, last_name_2, mobile_number_2, email_Id_2, mba_batch, college, name_of_college, question_1, question_2, question_3, registeration_date', 'safe', 'on'=>'search'),

@@ -599,30 +599,34 @@ class CartController extends Controller {
 
 		if(isset($_POST['CampusAmbassador']))
 		{
-            $_POST['CampusAmbassador']['registeration_date'] = date("Y-m-d H:i:s");
-			$model->attributes=$_POST['CampusAmbassador'];
-			if($model->save()){
-
-			    //Sending Mail
-                $subject = "MBAtrek | Campus Ambassador | Registration";
-                $template = getTemplate("ca");
-                $body = str_replace("{{SUBJECT}}", $subject, $template);
-
-                $headers="From: ".Yii::app()->params['adminName']." <".Yii::app()->params['adminEmail']."> \r\n".
-                    "Reply-To: ".Yii::app()->params['adminEmail']." \r\n";
-                $headers .= "MIME-Version: 1.0\r\n".
-                    "Content-Type: text/html; charset=UTF-8";
-                //Sending To User
-                $sentToUser = sendEmail($_POST['CampusAmbassador']['email_id'], $subject,$body,$headers);
-                //Sending To Admin
-                $subject = "MBAtrek | New Campus Ambassador | Registration";
-                $sentToAdmin = sendEmail(Yii::app()->params['adminEmail'], $subject,$body,$headers);
-
-
-				$this->redirect(array('index','thankscampus'=>1));
+            if (!verifyCaptcha($_POST['g-recaptcha-response'])) {
+                $this->errors['email'] = 'Captcha verification failed.';
             } else {
-                foreach ($model->getErrors() as $error){
-                    $this->errors['email'] = $error[0];
+                $_POST['CampusAmbassador']['registeration_date'] = date("Y-m-d H:i:s");
+                $model->attributes = $_POST['CampusAmbassador'];
+                if ($model->save()) {
+
+                    //Sending Mail
+                    $subject = "MBAtrek | Campus Ambassador | Registration";
+                    $template = getTemplate("ca");
+                    $body = str_replace("{{SUBJECT}}", $subject, $template);
+
+                    $headers = "From: " . Yii::app()->params['adminName'] . " <" . Yii::app()->params['adminEmail'] . "> \r\n" .
+                        "Reply-To: " . Yii::app()->params['adminEmail'] . " \r\n";
+                    $headers .= "MIME-Version: 1.0\r\n" .
+                        "Content-Type: text/html; charset=UTF-8";
+                    //Sending To User
+                    $sentToUser = sendEmail($_POST['CampusAmbassador']['email_id'], $subject, $body, $headers);
+                    //Sending To Admin
+                    $subject = "MBAtrek | New Campus Ambassador | Registration";
+                    $sentToAdmin = sendEmail(Yii::app()->params['adminEmail'], $subject, $body, $headers);
+
+
+                    $this->redirect(array('index', 'thankscampus' => 1));
+                } else {
+                    foreach ($model->getErrors() as $error) {
+                        $this->errors['email'] = $error[0];
+                    }
                 }
             }
 		}
@@ -638,29 +642,33 @@ class CartController extends Controller {
 
 		if(isset($_POST['InterviewReadyCompetition']))
 		{
-                        $_POST['InterviewReadyCompetition']['registeration_date'] = date("Y-m-d H:i:s");
-			$model->attributes=$_POST['InterviewReadyCompetition'];
-			if($model->save()){
-                $subject = "MBAtrek | #InterviewReady | New Registration";
-                $template = getTemplate("industry_ready");
+            if (!verifyCaptcha($_POST['g-recaptcha-response'])) {
+                $this->errors['email'] = 'Captcha verification failed.';
+            } else {
+                $_POST['InterviewReadyCompetition']['registeration_date'] = date("Y-m-d H:i:s");
+                $model->attributes = $_POST['InterviewReadyCompetition'];
+                if ($model->save()) {
+                    $subject = "MBAtrek | #InterviewReady | New Registration";
+                    $template = getTemplate("industry_ready");
 
 //                                $body = str_replace("{{SUBJECT}}", $subject, $template);
 //                                $body = str_replace("{{NAME}}", $name, $body);
 //                                $link = Yii::app()->params['url']."cart/verify?id=".$model->id;
 //                                $body = str_replace("{{LINK}}", $link, $body);
-                $body = $template;
-                $headers="From: ".Yii::app()->params['adminName']." <".Yii::app()->params['adminEmail']."> \r\n".
-                    "Reply-To: ".Yii::app()->params['adminEmail']." \r\n";
+                    $body = $template;
+                    $headers = "From: " . Yii::app()->params['adminName'] . " <" . Yii::app()->params['adminEmail'] . "> \r\n" .
+                        "Reply-To: " . Yii::app()->params['adminEmail'] . " \r\n";
 
-                $headers .= "MIME-Version: 1.0\r\n".
-                    "Content-Type: text/html; charset=UTF-8";
-                $sentToUser = sendEmail($_POST['InterviewReadyCompetition']['email_id'], $subject,$body,$headers);
-                $this->redirect(array('index','thanksinterview'=>1));
-                        } else {
-                            foreach ($model->getErrors() as $error){
-                                $this->errors['email'] = $error[0];
-                            }
-                        }
+                    $headers .= "MIME-Version: 1.0\r\n" .
+                        "Content-Type: text/html; charset=UTF-8";
+                    $sentToUser = sendEmail($_POST['InterviewReadyCompetition']['email_id'], $subject, $body, $headers);
+                    $this->redirect(array('index', 'thanksinterview' => 1));
+                } else {
+                    foreach ($model->getErrors() as $error) {
+                        $this->errors['email'] = $error[0];
+                    }
+                }
+            }
 		}
 		$this->render("webroot.themes.cart.views.cart.interview",array("model"=>$model));
 
@@ -674,31 +682,37 @@ class CartController extends Controller {
 
 		if(isset($_POST['IndustryReadyCompetition']))
 		{
-                        $_POST['IndustryReadyCompetition']['registeration_date'] = date("Y-m-d H:i:s");
-			$model->attributes=$_POST['IndustryReadyCompetition'];
-			if($model->save()){
-                $subject = "MBAtrek | #IndustryREADY | New Registration";
-                $template = getTemplate("industry_ready");
+            if (!verifyCaptcha($_POST['g-recaptcha-response'])) {
+                $this->errors['email'] = 'Captcha verification failed.';
+            } else {
+
+
+                $_POST['IndustryReadyCompetition']['registeration_date'] = date("Y-m-d H:i:s");
+                $model->attributes = $_POST['IndustryReadyCompetition'];
+                if ($model->save()) {
+                    $subject = "MBAtrek | #IndustryREADY | New Registration";
+                    $template = getTemplate("industry_ready");
 
 //                                $body = str_replace("{{SUBJECT}}", $subject, $template);
 //                                $body = str_replace("{{NAME}}", $name, $body);
 //                                $link = Yii::app()->params['url']."cart/verify?id=".$model->id;
 //                                $body = str_replace("{{LINK}}", $link, $body);
-                $body = $template;
-                $headers="From: ".Yii::app()->params['adminName']." <".Yii::app()->params['adminEmail']."> \r\n".
-                    "Reply-To: ".Yii::app()->params['adminEmail']." \r\n";
+                    $body = $template;
+                    $headers = "From: " . Yii::app()->params['adminName'] . " <" . Yii::app()->params['adminEmail'] . "> \r\n" .
+                        "Reply-To: " . Yii::app()->params['adminEmail'] . " \r\n";
 
-                $headers .= "MIME-Version: 1.0\r\n".
-                    "Content-Type: text/html; charset=UTF-8";
-                $sentToUser = sendEmail($_POST['IndustryReadyCompetition']['email_id'], $subject,$body,$headers);
-                $sentToUser = sendEmail($_POST['IndustryReadyCompetition']['email_Id_1'], $subject,$body,$headers);
-                $sentToUser = sendEmail($_POST['IndustryReadyCompetition']['email_Id_2'], $subject,$body,$headers);
-				$this->redirect(array('index','thanksindustry'=>1));
-                        } else {
-                            foreach ($model->getErrors() as $error){
-                                $this->errors['email'] = $error[0];
-                            }
-                        }
+                    $headers .= "MIME-Version: 1.0\r\n" .
+                        "Content-Type: text/html; charset=UTF-8";
+                    $sentToUser = sendEmail($_POST['IndustryReadyCompetition']['email_id'], $subject, $body, $headers);
+                    $sentToUser = sendEmail($_POST['IndustryReadyCompetition']['email_Id_1'], $subject, $body, $headers);
+                    $sentToUser = sendEmail($_POST['IndustryReadyCompetition']['email_Id_2'], $subject, $body, $headers);
+                    $this->redirect(array('index', 'thanksindustry' => 1));
+                } else {
+                    foreach ($model->getErrors() as $error) {
+                        $this->errors['email'] = $error[0];
+                    }
+                }
+            }
 		}
 		$this->render("webroot.themes.cart.views.cart.industry",array("model"=>$model));
 
