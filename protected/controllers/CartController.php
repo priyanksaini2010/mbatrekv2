@@ -910,7 +910,7 @@ class CartController extends Controller {
                                         if (empty($match)) {
                                             $status['message'] = "You have successfully received ".$amount."% off on your cart.";
                                         } else {
-                                            $status['message'] = "You have successfully received ".$amount."% off on your cart's selected items.";
+                                            $status['message'] = "You have successfully received ".$amount."% off on your cart";
                                         }
 
                                         break;
@@ -921,7 +921,7 @@ class CartController extends Controller {
                                         if (empty($match)) {
                                             $status['message'] = "You have successfully received Rs".money($amount)." off on your cart.";
                                         } else {
-                                            $status['message'] = "You have successfully received Rs".money($amount)." off on your cart's selected items.";
+                                            $status['message'] = "You have successfully received Rs".money($amount)." off on your cart.";
                                         }
                                         break;
                                 }
@@ -1230,60 +1230,63 @@ class CartController extends Controller {
 
         public function actionRegister(){
             $model = new UsersNew;
-            if(isset($_POST['UsersNew']))
-            {
-                $blokedEmails = CHtml::listData(BlockedEmail::model()->findAll(),"id","email");
-                if(in_array($_POST['UsersNew']['email'], $blokedEmails)){
-                    $this->redirect(Yii::app()->createUrl('register'));
-                }
-//                $_POST['UsersNew']['email'] = $_POST['UsersNew']['email'].time();
-                $_POST['UsersNew']['password'] = $_POST['UsersNew']['password'];
-                $_POST['UsersNew']['is_verified'] = 0;
-                $_POST['UsersNew']['date_created'] = date('Y-m-d H:i:s');
-                if(!empty($_POST['UsersNew']['name_of_college']) && $_POST['UsersNew']['role'] == 1){
-                    $_POST['UsersNew']['name_of_college_company'] = $_POST['UsersNew']['name_of_college'];
-                }
-                if(!empty($_POST['UsersNew']['name_of_company']) && $_POST['UsersNew']['role'] == 2){
-                    $_POST['UsersNew']['name_of_college_company'] = $_POST['UsersNew']['name_of_company'];
-                }
-                $model->attributes=$_POST['UsersNew'];
-               
-                try {
-                   
-                 
-                    if($model->save()){
-                        if($_POST["UsersNew"]["role"] == 1){
-                            $basket =  "https://mbatrek.com/students";
-                        } else {
-                            $basket =  "https://mbatrek.com/professionals";
-                        }
-                        $subject = "MBAtrek | New Account | Verification";
-                        $template = getTemplate("verify");
-                        $name = ucfirst($_POST['UsersNew']['full_name']);
-                        $body = str_replace("{{SUBJECT}}", $subject, $template);
-                        $body = str_replace("{{NAME}}", $name, $body);
-                        $link = Yii::app()->params['url']."cart/verify?id=".$model->id;
-                        $body = str_replace("{{LINK}}", $link, $body);
-                        $body = str_replace("{{BASKET}}", $basket, $body);
-
-                        $headers="From: ".Yii::app()->params['adminName']." <".Yii::app()->params['adminEmail']."> \r\n".
-                            "Reply-To: ".Yii::app()->params['adminEmail']." \r\n";
-                        $headers .= "MIME-Version: 1.0\r\n".
-                            "Content-Type: text/html; charset=UTF-8";
-
-                        $sentToUser = sendEmail($_POST['UsersNew']['email'], $subject,$body,$headers);
-
-                        $sentToAdmin = sendEmail(Yii::app()->params['adminEmail'], $subject,$body,$headers);
-//                        $this->refresh(true,"?thankreg=1");
-                        $this->redirect(Yii::app()->createUrl("cart/index",array("thankreg"=>1)));
-                    } else {
-                        foreach ($model->getErrors() as $error){
-                            $this->errors['email'] = $error[0];
-                        }
+            if(isset($_POST['UsersNew'])) {
+                if (!verifyCaptcha($_POST['g-recaptcha-response'])) {
+                    $this->errors['email'] = 'Captcha verification failed.';
+                } else {
+                    $blokedEmails = CHtml::listData(BlockedEmail::model()->findAll(), "id", "email");
+                    if (in_array($_POST['UsersNew']['email'], $blokedEmails)) {
+                        $this->redirect(Yii::app()->createUrl('register'));
                     }
-                } catch (Exception $ex) {
-                    $model->addError('emailexist', 'This Email ID is already registered with us.Kindly Login to access your account');
-                    $this->errors['emailexist'] = 'This Email ID is already registered with us.Kindly Login to access your account';
+//                $_POST['UsersNew']['email'] = $_POST['UsersNew']['email'].time();
+                    $_POST['UsersNew']['password'] = $_POST['UsersNew']['password'];
+                    $_POST['UsersNew']['is_verified'] = 0;
+                    $_POST['UsersNew']['date_created'] = date('Y-m-d H:i:s');
+                    if (!empty($_POST['UsersNew']['name_of_college']) && $_POST['UsersNew']['role'] == 1) {
+                        $_POST['UsersNew']['name_of_college_company'] = $_POST['UsersNew']['name_of_college'];
+                    }
+                    if (!empty($_POST['UsersNew']['name_of_company']) && $_POST['UsersNew']['role'] == 2) {
+                        $_POST['UsersNew']['name_of_college_company'] = $_POST['UsersNew']['name_of_company'];
+                    }
+                    $model->attributes = $_POST['UsersNew'];
+
+                    try {
+
+
+                        if ($model->save()) {
+                            if ($_POST["UsersNew"]["role"] == 1) {
+                                $basket = "https://mbatrek.com/students";
+                            } else {
+                                $basket = "https://mbatrek.com/professionals";
+                            }
+                            $subject = "MBAtrek | New Account | Verification";
+                            $template = getTemplate("verify");
+                            $name = ucfirst($_POST['UsersNew']['full_name']);
+                            $body = str_replace("{{SUBJECT}}", $subject, $template);
+                            $body = str_replace("{{NAME}}", $name, $body);
+                            $link = Yii::app()->params['url'] . "cart/verify?id=" . $model->id;
+                            $body = str_replace("{{LINK}}", $link, $body);
+                            $body = str_replace("{{BASKET}}", $basket, $body);
+
+                            $headers = "From: " . Yii::app()->params['adminName'] . " <" . Yii::app()->params['adminEmail'] . "> \r\n" .
+                                "Reply-To: " . Yii::app()->params['adminEmail'] . " \r\n";
+                            $headers .= "MIME-Version: 1.0\r\n" .
+                                "Content-Type: text/html; charset=UTF-8";
+
+                            $sentToUser = sendEmail($_POST['UsersNew']['email'], $subject, $body, $headers);
+
+                            $sentToAdmin = sendEmail(Yii::app()->params['adminEmail'], $subject, $body, $headers);
+//                        $this->refresh(true,"?thankreg=1");
+                            $this->redirect(Yii::app()->createUrl("cart/index", array("thankreg" => 1)));
+                        } else {
+                            foreach ($model->getErrors() as $error) {
+                                $this->errors['email'] = $error[0];
+                            }
+                        }
+                    } catch (Exception $ex) {
+                        $model->addError('emailexist', 'This Email ID is already registered with us.Kindly Login to access your account');
+                        $this->errors['emailexist'] = 'This Email ID is already registered with us.Kindly Login to access your account';
+                    }
                 }
             }
             $this->layout = getCartLayot();

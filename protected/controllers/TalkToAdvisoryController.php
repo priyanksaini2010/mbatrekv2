@@ -136,22 +136,28 @@ class TalkToAdvisoryController extends Controller
                     
                 }
                 $_POST['TalkToAdvisory']['date'] = date("Y-m-d");
-		if(isset($_POST['TalkToAdvisory']))
-		{
-			$model->attributes=$_POST['TalkToAdvisory'];
-			if($model->save()){
-				$this->redirect(array('site/page','view'=>"talk_to_advisory","thankc"=>1));
-                        } else {
-                           
-                            foreach ($model->getErrors() as $error){
-                                $this->errors['email'] = $error[0];
-                            }
-                            
-                            $this->render('talk_to_advisory',array(
-                                    'model'=>$model,
-                            ));
-                        }
-		}
+		if(isset($_POST['TalkToAdvisory'])) {
+            if (!verifyCaptcha($_POST['g-recaptcha-response'])) {
+                $this->errors['email'] = 'Captcha verification failed.';
+                $this->render('talk_to_advisory', array(
+                    'model' => $model,
+                ));
+            } else {
+                $model->attributes = $_POST['TalkToAdvisory'];
+                if ($model->save()) {
+                    $this->redirect(array('site/page', 'view' => "talk_to_advisory", "thankc" => 1));
+                } else {
+
+                    foreach ($model->getErrors() as $error) {
+                        $this->errors['email'] = $error[0];
+                    }
+
+                    $this->render('talk_to_advisory', array(
+                        'model' => $model,
+                    ));
+                }
+            }
+        }
         }
 
 	/**

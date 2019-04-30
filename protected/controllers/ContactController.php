@@ -126,84 +126,88 @@ class ContactController extends Controller
 	 */
 	public function actionCreate()
 	{
-                $this->layout = getCartLayot();
+        $this->layout = getCartLayot();
 		$model=new Contact;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-              
+
 		if(isset($_POST['Contact']))
 		{
-            $blokedEmails = CHtml::listData(BlockedEmail::model()->findAll(),"id","email");
-            if(in_array($_POST['Contact']['email'], $blokedEmails)){
-                $this->redirect(Yii::app()->createUrl('contact/create'));
-            }
-            if($_POST['Contact']['name_of_company_institute'] == "" && $_POST['Contact']['name_of_company_institute_1'] != ""){
-                $_POST['Contact']['name_of_company_institute'] = $_POST['Contact']['name_of_company_institute_1'];
-            }
-			$model->attributes=$_POST['Contact'];
-			
-			if($model->save()){
-                                $subject = $_POST['Contact']['subject'];
-                                $body = "Hello Admin,<br/><br/>"
-                                        . "New Enquiry recieved: <br/><br/ >"
-                                        . "First Name: ".$_POST['Contact']['first_name']."<br/ >"
-                                        . "Last Name: ".$_POST['Contact']['last_name']."<br/ >"
-                                        . "Mobile No.: ".$_POST['Contact']['mobile_no']."<br/ >"
-                                        . "Email : ".$_POST['Contact']['email']."<br/ >"
-                                        . "Rep Type : ".$_POST['Contact']['are_you']."<br/ >"
-                                        . "Name of Company / Institute : ".$_POST['Contact']['name_of_company_institute']."<br/ >"
-                                        . "Subject : ".$_POST['Contact']['subject']."<br/ ><br/ >"
-                                        . "Message : ".$_POST['Contact']['your_message']."<br/ ><br/ >"
-                                        . "Thanks,<br/ >"
-                                        . "MBATrek Feedback Service";
-                                $headers="From: ".Yii::app()->params['adminName']." <".Yii::app()->params['adminEmail']."> \r\n".
-                                        "Reply-To: ".Yii::app()->params['adminEmail']." \r\n";
+            if (!verifyCaptcha($_POST['g-recaptcha-response'])) {
+                $this->errors['email'] = 'Captcha verification failed.';
+            } else {
+                $blokedEmails = CHtml::listData(BlockedEmail::model()->findAll(), "id", "email");
+                if (in_array($_POST['Contact']['email'], $blokedEmails)) {
+                    $this->redirect(Yii::app()->createUrl('contact/create'));
+                }
+                if ($_POST['Contact']['name_of_company_institute'] == "" && $_POST['Contact']['name_of_company_institute_1'] != "") {
+                    $_POST['Contact']['name_of_company_institute'] = $_POST['Contact']['name_of_company_institute_1'];
+                }
+                $model->attributes = $_POST['Contact'];
 
-                                $headers .= "MIME-Version: 1.0\r\n".
-                                            "Content-Type: text/html; charset=UTF-8";
+                if ($model->save()) {
+                    $subject = $_POST['Contact']['subject'];
+                    $body = "Hello Admin,<br/><br/>"
+                        . "New Enquiry recieved: <br/><br/ >"
+                        . "First Name: " . $_POST['Contact']['first_name'] . "<br/ >"
+                        . "Last Name: " . $_POST['Contact']['last_name'] . "<br/ >"
+                        . "Mobile No.: " . $_POST['Contact']['mobile_no'] . "<br/ >"
+                        . "Email : " . $_POST['Contact']['email'] . "<br/ >"
+                        . "Rep Type : " . $_POST['Contact']['are_you'] . "<br/ >"
+                        . "Name of Company / Institute : " . $_POST['Contact']['name_of_company_institute'] . "<br/ >"
+                        . "Subject : " . $_POST['Contact']['subject'] . "<br/ ><br/ >"
+                        . "Message : " . $_POST['Contact']['your_message'] . "<br/ ><br/ >"
+                        . "Thanks,<br/ >"
+                        . "MBATrek Feedback Service";
+                    $headers = "From: " . Yii::app()->params['adminName'] . " <" . Yii::app()->params['adminEmail'] . "> \r\n" .
+                        "Reply-To: " . Yii::app()->params['adminEmail'] . " \r\n";
 
-                              $sentToUser = sendEmail(Yii::app()->params['contactEmail'], $subject,$body,$headers);
-				
+                    $headers .= "MIME-Version: 1.0\r\n" .
+                        "Content-Type: text/html; charset=UTF-8";
+
+                    $sentToUser = sendEmail(Yii::app()->params['contactEmail'], $subject, $body, $headers);
+
 //                                $body = "Hello ".$_POST['Contact']['first_name']." ".$_POST['Contact']['last_name'].",<br/><br/>"
 //                                        . "Thanks to contact us. Will get in touch soon: <br/><br/ >"
 //                                        . "Thanks,<br/ >"
 //                                        . "MBATrek Feedback Service";
-                                $templateType = "";
-                                switch ($_POST['Contact']['are_you']){
-                                    case 1:
-                                        $templateType = "contact_companie";
-                                        break;
-                                    case 2:
-                                        $templateType = "contact_younprofession";
-                                        break;
-                                    case 3:
-                                        $templateType = "contact_student";
-                                        break;
-                                    case 4:
-                                        $templateType = "contact_institute";
-                                        break;
-                                }
-                                $subject = "MBAtrek | Inquiry";
-                                $template = getTemplate($templateType);
-                                $name = ucfirst($_POST['UsersNew']['full_name']);
+                    $templateType = "";
+                    switch ($_POST['Contact']['are_you']) {
+                        case 1:
+                            $templateType = "contact_companie";
+                            break;
+                        case 2:
+                            $templateType = "contact_younprofession";
+                            break;
+                        case 3:
+                            $templateType = "contact_student";
+                            break;
+                        case 4:
+                            $templateType = "contact_institute";
+                            break;
+                    }
+                    $subject = "MBAtrek | Inquiry";
+                    $template = getTemplate($templateType);
+                    $name = ucfirst($_POST['UsersNew']['full_name']);
 //                                $body = str_replace("{{SUBJECT}}", $subject, $template);
 //                                $body = str_replace("{{NAME}}", $name, $body);
 //                                $link = Yii::app()->params['url']."cart/verify?id=".$model->id;
 //                                $body = str_replace("{{LINK}}", $link, $body);
-                                $body = $template;
-                                $headers="From: ".Yii::app()->params['adminName']." <".Yii::app()->params['adminEmail']."> \r\n".
-                                        "Reply-To: ".Yii::app()->params['adminEmail']." \r\n";
+                    $body = $template;
+                    $headers = "From: " . Yii::app()->params['adminName'] . " <" . Yii::app()->params['adminEmail'] . "> \r\n" .
+                        "Reply-To: " . Yii::app()->params['adminEmail'] . " \r\n";
 
-                                $headers .= "MIME-Version: 1.0\r\n".
-                                            "Content-Type: text/html; charset=UTF-8";
-                                $sentToUser = sendEmail($_POST['Contact']['email'], $subject,$body,$headers);
-                                $this->redirect(Yii::app()->createUrl('contact/create',array('thankc'=>1)));
-                        } else {
-                            foreach ($model->getErrors() as $error){
-                                $this->errors['email'] = $error[0];
-                            }
-                        }
+                    $headers .= "MIME-Version: 1.0\r\n" .
+                        "Content-Type: text/html; charset=UTF-8";
+                    $sentToUser = sendEmail($_POST['Contact']['email'], $subject, $body, $headers);
+                    $this->redirect(Yii::app()->createUrl('contact/create', array('thankc' => 1)));
+                } else {
+                    foreach ($model->getErrors() as $error) {
+                        $this->errors['email'] = $error[0];
+                    }
+                }
+            }
 		}
 
 		$this->render('contact',array(

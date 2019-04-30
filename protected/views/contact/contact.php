@@ -193,21 +193,23 @@ Your Message")); ?>
                     </div>
                 </div>
             </div>
-            <?php if (CCaptcha::checkRequirements()): ?>
-                <div class="catcha_Code">
-						<?php echo $form->labelEx($model, 'verifyCode'); ?>
-										<div>
-						<?php $this->widget('CCaptcha'); ?>
-						<?php echo $form->textField($model, 'verifyCode'); ?>
-										</div>
-										<div class="hint">Please enter the characters as they are shown in the image above.
-											<br/>Characters are not case-sensitive.</div>
-						<?php echo $form->error($model, 'verifyCode'); ?>
-                </div>
-<?php endif; ?>
-            <div class="capcha_div"><img src="images/capcha.png" alt="" />
+            <div class="g-recaptcha form-field" data-sitekey="6LcHG6EUAAAAAERv9LjXHi8OMkiRsmS6ZHdGB0Mj"></div>
+
+<!--            --><?php //if (CCaptcha::checkRequirements()): ?>
+<!--                <div class="catcha_Code">-->
+<!--						--><?php //echo $form->labelEx($model, 'verifyCode'); ?>
+<!--										<div>-->
+<!--						--><?php //$this->widget('CCaptcha'); ?>
+<!--						--><?php //echo $form->textField($model, 'verifyCode'); ?>
+<!--										</div>-->
+<!--										<div class="hint">Please enter the characters as they are shown in the image above.-->
+<!--											<br/>Characters are not case-sensitive.</div>-->
+<!--						--><?php //echo $form->error($model, 'verifyCode'); ?>
+<!--                </div>-->
+<?php //endif; ?>
+<!--            <div class="capcha_div"><img src="images/capcha.png" alt="" />-->
                 <div class="submit_form_btn" ><button type="submit">Submit</button></div>
-            </div>
+<!--            </div>-->
 <?php $this->endWidget(); ?>
         </div>
     </div>

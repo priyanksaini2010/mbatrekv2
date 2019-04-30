@@ -516,6 +516,6 @@ var domain_name = '<?php echo $_SERVER['HTTP_HOST'].DIREC;?>';
                 })
             });
         </script>
-
+    <script type="text/javascript" src="https://www.google.com/recaptcha/api.js?hl=en"></script>
     </body>
 </html> 

@@ -4,7 +4,7 @@
 $env = "PROD";
 global $payuSurl;
 if($env == "LOCAL"){
-    error_reporting(E_ALL);
+    error_reporting(E_ERROR);
     $payuSurl = "https://localhost/mbt/cart/payusurl";
     $link = mysqli_connect("localhost","root","","mbatrek_v2");
 } else {
@@ -49,7 +49,7 @@ if (!$link) {
 
 date_default_timezone_set("Asia/Kolkata");
 //const BLOGURLS = $blogUrls;
-const DIREC = "/";
+const DIREC = "/mbt/";
 const BACK_COLOR = 0xFFFFFF;
 require_once 'payment_lib/PaytmKit/lib/config_paytm.php';
 require_once 'payment_lib/PaytmKit/lib/encdec_paytm.php';
@@ -380,7 +380,30 @@ function getTemplate($type){
     }
     return $content;
 }
+function verifyCaptcha($response) {
+    $postdata = http_build_query(
+        array(
+            'secret'   => '6LcHG6EUAAAAAOPcr1CT0Q3MUUZur3j1faKpbOz3',
+            'response' => $response,
+            'remoteip' => $_SERVER['REMOTE_ADDR']
+        )
+    );
+    $options = array('http' =>
+        array(
+            'method'  => 'POST',
+            'header'  => 'Content-type: application/x-www-form-urlencoded',
+            'content' => $postdata
+        )
+    );
+    $context = stream_context_create($options);
+    $result  = json_decode(file_get_contents('https://www.google.com/recaptcha/api/siteverify', false, $context));
 
+    //check if 'success' is ture, 'action' is the same as the one specified in your form and 'score' is greater than 0.5
+    if($result->success){
+        return true;
+    }
+    return false;
+}
 /*$location = file_get_contents('http://freegeoip.net/json/'.$_SERVER['REMOTE_ADDR']);
 $country = "";
 $city = "";
