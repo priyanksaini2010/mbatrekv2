@@ -1,7 +1,7 @@
 <?php
 // Ia m comment
 // I am also:wq
-$env = "LOCAL";
+$env = "PROD";
 global $payuSurl;
 if($env == "LOCAL"){
     error_reporting(E_ERROR);
