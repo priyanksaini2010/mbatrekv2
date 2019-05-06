@@ -87,7 +87,7 @@ class Products extends CActiveRecord
 			'id' => 'ID',
 			'title' => 'Title',
 			'logo' => 'Logo',
-			'actuall_price' => 'Actuall Price',
+			'actuall_price' => 'Actual Price',
 			'description' => 'Description(On Product Description Page)',
 			'description1' => 'Description(On Product Listing Page)',
 			'price' => 'Price',
