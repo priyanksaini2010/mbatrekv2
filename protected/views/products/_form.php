@@ -60,7 +60,7 @@ $this->widget('KRichTextEditor', array(
 
 <br />
 <label for="Products_type" class="required">Product Type <span class="required">*</span></label>
-<?php echo $form->dropDownList($model, 'type', array("Select Product Type", "Student", "Young Proffesional"), array('class' => 'span3')); ?>
+<?php echo $form->dropDownList($model, 'type', array("Select Product Type", "Student", "Young Professional"), array('class' => 'span3')); ?>
 <br />
 <label for="Products_type" class="required">Home Page Bucket <span class="required">*</span></label>
 <?php 
