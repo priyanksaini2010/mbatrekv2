@@ -122,7 +122,9 @@ if ($model->name_of_company_institute != '') {
                                     <select class="input_field select2class" name="Contact[name_of_company_institute]" id="name_of_company">
                                         <option value="">Select a Company</option>
                                         <?php
-                                        $autofill = ContactAutofill::model()->findAll();
+                                        $criteria=new CDbCriteria;
+                                        $criteria->order = 'name asc';
+                                        $autofill = ContactAutofill::model()->findAll($criteria);
                                         $tags = array();
                                         foreach ($autofill as $item){?>
 
@@ -139,7 +141,7 @@ if ($model->name_of_company_institute != '') {
                                     <select class="input_field select2class" name="Contact[name_of_company_institute_1]" id="name_of_institute">
                                         <option value="">Select an Institute</option>
                                         <?php
-            $autofill = ContactAutofillCompany::model()->findAll();
+            $autofill = ContactAutofillCompany::model()->findAll($criteria);
             $tags = array();
             foreach ($autofill as $item){?>
                 <option><?php echo $item->name;?></option>
