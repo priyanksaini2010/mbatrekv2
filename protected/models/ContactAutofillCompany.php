@@ -75,7 +75,7 @@ class ContactAutofillCompany extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('name',$this->name,true);
-
+        $criteria->order = 'name asc';
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
