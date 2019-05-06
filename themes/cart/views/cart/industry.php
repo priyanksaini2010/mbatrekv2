@@ -261,7 +261,7 @@ $yog = CHtml::listData(YearOfGraduation::model()->findAll($criteria), "id", "yea
 <!--                                                    --><?php //echo $form->error($model, 'verifyCode'); ?>
 <!--                                                </div>-->
 <!--                                            --><?php //endif; ?>
-                                            <div class="capcha_div"><img src="images/capcha.png" alt="" />
+                                            <div class="capcha_div"><!--<img src="images/capcha.png" alt="" />-->
 											 <div class="col-md-12 text-center">
 												<div class="form_amster_field">
 													<input class="application_submit" type="submit" name="Submit Application" value="Submit Application"/>

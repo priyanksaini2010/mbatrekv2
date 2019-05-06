@@ -106,10 +106,11 @@
                         </div>
                         <div class="col-md-12">
                             <div class="contact_info_div">
-							<div class="label_new">
-	<label>Select a Company <em>*</em></label>
- </div>
+							
                                 <div id="company-autofill" class="phAnimate" >
+								<div class="label_new">
+									<label>Select a Company <em>*</em></label>
+								 </div>
 <?php
 if ($model->name_of_company_institute != '') {
     $data = array('for' => "name_of_company_institute", 'class' => 'active');
@@ -130,9 +131,11 @@ if ($model->name_of_company_institute != '') {
                                     </select>
                                 </div>
                                 <div class="phAnimate" id="inst-autofill" class="phAnimate" style="display: none">
-                                    <label for="name_of_company_institute_" class="required active">Name of Institute<span class="required">*</span></label>
+                                    <!--<label for="name_of_company_institute_" class="required active">Name of Institute<span class="required">*</span></label>-->
 <!--                                    <input class="input_field" name="Contact[name_of_company_institute_1]" id="Contact_name_of_company_institute_1" type="text" maxlength="255" placeholder="" autocomplete="off">-->
-
+					<div class="label_new">
+	<label>Select a Institute <em>*</em></label>
+ </div>
                                     <select class="input_field select2class" name="Contact[name_of_company_institute_1]" id="name_of_institute">
                                         <option value="">Select an Institute</option>
                                         <?php
@@ -146,7 +149,7 @@ if ($model->name_of_company_institute != '') {
                             </div>
                         </div>
                         <br/>
-                        <div class="col-md-12">
+                        <div class="col-md-12 ">
                             <div class="contact_info_div">
                                 <div class="label_new"> 
 <?php
@@ -161,7 +164,7 @@ if ($model->subject != '') {
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-12">
+                        <div class="col-md-12 your_message">
                             <div class="contact_info_div">
                                 <div class="label_new">
 <?php
