@@ -66,7 +66,9 @@
                                                             <select class="form-control select2class" name="UsersNew[name_of_college]" id="name_of_college">
                                                                 <option value="">Select Your College</option>
                                                                 <?php
-                                                                $autofill = ContactAutofillCompany::model()->findAll();
+                                                                $criteria=new CDbCriteria;
+                                                                $criteria->order = 'name asc';
+                                                                $autofill = ContactAutofillCompany::model()->findAll($criteria);
                                                                 $tags = array();
                                                                 foreach ($autofill as $item){?>
                                                                     <option><?php echo $item->name;?></option>
@@ -79,7 +81,8 @@
                                         <select class="form-control select2class" name="UsersNew[name_of_company]" id="name_of_company">
                                             <option value="">Select Your Company</option>
                                             <?php
-                                            $autofill = ContactAutofill::model()->findAll();
+
+                                            $autofill = ContactAutofill::model()->findAll($criteria);
                                             $tags = array();
                                             foreach ($autofill as $item){?>
                                                 <option><?php echo $item->name;?></option>
