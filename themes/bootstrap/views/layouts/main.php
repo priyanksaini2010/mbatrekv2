@@ -49,6 +49,7 @@ $siteData = array(
             array('label'=>'Banners Management', 'url'=>array('/banners/admin')),
             array('label'=>'Success Story Management', 'url'=>array('/successStory/admin')),
             array('label'=>'Event Management', 'url'=>array('/eventGallery/admin')),
+            array('label'=>'Team Management', 'url'=>array('/foundingTeam/admin')),
 );
 $csInteractionMenu = array(
     array('label'=>'FAQ Management', 'url'=>array('/faq/admin')),
