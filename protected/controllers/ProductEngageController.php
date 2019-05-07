@@ -201,17 +201,15 @@ class ProductEngageController extends Controller
 	 */
 	public function actionDelete($id)
 	{
-		if(Yii::app()->request->isPostRequest)
-		{
-			// we only allow deletion via POST request
-			$this->loadModel($id)->delete();
-
-			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-			if(!isset($_GET['ajax']))
-				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-		}
-		else
-			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
+        // we only allow deletion via POST request
+        $model  = $this->loadModel($id);
+        $product_id= $model->product_id;
+        $model->delete();
+        Yii::app()->user->setFlash("success","Product Engage deleted successfully");
+        $this->redirect(array("admin","product_id"=>$product_id));
+        // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+        if(!isset($_GET['ajax']))
+            $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));;
 	}
 
 	/**
