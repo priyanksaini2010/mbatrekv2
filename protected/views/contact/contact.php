@@ -11,8 +11,8 @@
                 'action' => Yii::app()->createUrl('contact/create'),
                 'htmlOptions' => array(
                     'class' => 'form-horizontal',
-            )));
-            ?> 
+                )));
+            ?>
             <div class="row">
                 <div class="col-md-6">
                     <div class="row">
@@ -27,8 +27,8 @@
                                         $data = array('for' => "first_name");
                                     };
                                     ?>
-<?php echo $form->labelEx($model, 'first_name', $data); ?>
-<?php echo $form->textField($model, 'first_name', array('class' => "input_field", "placeholder" => "First Name")); ?>
+                                    <?php echo $form->labelEx($model, 'first_name', $data); ?>
+                                    <?php echo $form->textField($model, 'first_name', array('class' => "input_field", "placeholder" => "First Name")); ?>
                                 </div>
                             </div>
 
@@ -36,7 +36,7 @@
                         <div class="col-md-6">
                             <div class="contact_info_div margin-0">
                                 <div class="label_new">
-                                    <!--<label for="lastname">Last Name <em>*</em></label>--> 
+                                    <!--<label for="lastname">Last Name <em>*</em></label>-->
                                     <?php
                                     if ($model->last_name != '') {
                                         $data = array('for' => "last_name", 'class' => 'active');
@@ -44,8 +44,8 @@
                                         $data = array('for' => "last_name");
                                     };
                                     ?>
-<?php echo $form->labelEx($model, 'last_name', $data); ?>
-<?php echo $form->textField($model, 'last_name', array('class' => "input_field","placeholder" => "Last Name")); ?>
+                                    <?php echo $form->labelEx($model, 'last_name', $data); ?>
+                                    <?php echo $form->textField($model, 'last_name', array('class' => "input_field","placeholder" => "Last Name")); ?>
                                 </div>
                             </div>
 
@@ -53,7 +53,7 @@
                         <div class="col-md-6">
                             <div class="contact_info_div">
                                 <div class="label_new">
-                                    <!--<label for="lastname">Email <em>*</em></label>--> 
+                                    <!--<label for="lastname">Email <em>*</em></label>-->
                                     <?php
                                     if ($model->email != '') {
                                         $data = array('for' => "email", 'class' => 'active');
@@ -61,8 +61,8 @@
                                         $data = array('for' => "email");
                                     };
                                     ?>
-<?php echo $form->labelEx($model, 'email', $data); ?>
-<?php echo $form->textField($model, 'email', array('class' => "input_field","placeholder" => "Email")); ?>
+                                    <?php echo $form->labelEx($model, 'email', $data); ?>
+                                    <?php echo $form->textField($model, 'email', array('class' => "input_field","placeholder" => "Email")); ?>
                                 </div>
                             </div>
 
@@ -77,8 +77,8 @@
                                         $data = array('for' => "mobile_no");
                                     };
                                     ?>
-<?php echo $form->labelEx($model, 'mobile_no', $data); ?>
-<?php echo $form->textField($model, 'mobile_no', array('class' => "input_field", "placeholder" => "Mobile No")); ?>
+                                    <?php echo $form->labelEx($model, 'mobile_no', $data); ?>
+                                    <?php echo $form->textField($model, 'mobile_no', array('class' => "input_field", "placeholder" => "Mobile No")); ?>
                                 </div>
                             </div>
                         </div>
@@ -87,7 +87,7 @@
                                 <ul>
                                     <li>
                                         <input type="radio"  name="Contact[are_you]" value="1"  id="radio2" class="css-checkbox radio-comp-inst" checked="checked"/>
-                                        <label for="radio2" class="css-label radGroup1">Company Official</label>                                                    
+                                        <label for="radio2" class="css-label radGroup1">Company Official</label>
                                     </li>
                                     <li>
                                         <input type="radio" name="Contact[are_you]" value="2"  id="radio3" class="css-checkbox radio-comp-inst" />
@@ -106,21 +106,22 @@
                         </div>
                         <div class="col-md-12">
                             <div class="contact_info_div">
-							
+
                                 <div id="company-autofill" class="phAnimate" >
-								<div class="label_new">
-									<label>Select a Company <em>*</em></label>
-								 </div>
-<?php
-if ($model->name_of_company_institute != '') {
-    $data = array('for' => "name_of_company_institute", 'class' => 'active');
-} else {
-    $data = array('for' => "name_of_company_institute");
-};
-?>                                 <!-- <label for="name_of_company" class="required active">Name of Company<span class="required">*</span></label>-->
- 
+                                    <div class="label_new">
+                                        <label>Select a Company <em>*</em></label>
+                                    </div>
+                                    <?php
+                                    if ($model->name_of_company_institute != '') {
+                                        $data = array('for' => "name_of_company_institute", 'class' => 'active');
+                                    } else {
+                                        $data = array('for' => "name_of_company_institute");
+                                    };
+                                    ?>                                 <!-- <label for="name_of_company" class="required active">Name of Company<span class="required">*</span></label>-->
+
                                     <select class="input_field select2class" name="Contact[name_of_company_institute]" id="name_of_company">
                                         <option value="">Select a Company</option>
+                                        <option value="0">My Company is not listed</option>
                                         <?php
                                         $criteria=new CDbCriteria;
                                         $criteria->order = 'name asc';
@@ -131,36 +132,47 @@ if ($model->name_of_company_institute != '') {
                                             <option><?php echo $item->name;?></option>
                                         <?php }?>
                                     </select>
+
+                                </div>
+                                <br />
+                                <div class="phAnimate" id="comp-autofill-other" class="phAnimate" style="display: none">
+                                    <input type="text" id="other_company" name="other_company" class="form-control input_field" placeholder="Company Name"/>
                                 </div>
                                 <div class="phAnimate" id="inst-autofill" class="phAnimate" style="display: none">
                                     <!--<label for="name_of_company_institute_" class="required active">Name of Institute<span class="required">*</span></label>-->
-<!--                                    <input class="input_field" name="Contact[name_of_company_institute_1]" id="Contact_name_of_company_institute_1" type="text" maxlength="255" placeholder="" autocomplete="off">-->
-					<div class="label_new">
-	<label>Select a Institute <em>*</em></label>
- </div>
+                                    <!--                                    <input class="input_field" name="Contact[name_of_company_institute_1]" id="Contact_name_of_company_institute_1" type="text" maxlength="255" placeholder="" autocomplete="off">-->
+                                    <div class="label_new">
+                                        <label>Select a Institute <em>*</em></label>
+                                    </div>
                                     <select class="input_field select2class" name="Contact[name_of_company_institute_1]" id="name_of_institute">
                                         <option value="">Select an Institute</option>
+                                        <option value="0">My Institute is not listed</option>
                                         <?php
-            $autofill = ContactAutofillCompany::model()->findAll($criteria);
-            $tags = array();
-            foreach ($autofill as $item){?>
-                <option><?php echo $item->name;?></option>
-            <?php }?>
+                                        $autofill = ContactAutofillCompany::model()->findAll($criteria);
+                                        $tags = array();
+                                        foreach ($autofill as $item){?>
+                                            <option><?php echo $item->name;?></option>
+                                        <?php }?>
                                     </select>
+
+                                </div>
+                                <br />
+                                <div class="phAnimate" id="inst-autofill-other" class="phAnimate" style="display: none">
+                                    <input type="text" id="other_institute" name="other_institute" class="form-control input_field" placeholder="Institute Name"/>
                                 </div>
                             </div>
                         </div>
                         <br/>
                         <div class="col-md-12 ">
                             <div class="contact_info_div">
-                                <div class="label_new"> 
-<?php
-if ($model->subject != '') {
-    $data = array('for' => "subject", 'class' => 'active');
-} else {
-    $data = array('for' => "subject");
-};
-?>
+                                <div class="label_new">
+                                    <?php
+                                    if ($model->subject != '') {
+                                        $data = array('for' => "subject", 'class' => 'active');
+                                    } else {
+                                        $data = array('for' => "subject");
+                                    };
+                                    ?>
                                     <?php echo $form->labelEx($model, 'subject', $data); ?>
                                     <?php echo $form->textField($model, 'subject', array('class' => "input_field","placeholder" => "Subject")); ?>
                                 </div>
@@ -169,15 +181,15 @@ if ($model->subject != '') {
                         <div class="col-md-12 your_message">
                             <div class="contact_info_div">
                                 <div class="label_new">
-<?php
-if ($model->your_message != '') {
-    $data = array('for' => "your_message", 'class' => 'active');
-} else {
-    $data = array('for' => "your_message");
-};
-?>
-<?php echo $form->labelEx($model, 'your_message', $data); ?>
-<?php echo $form->textArea($model, 'your_message', array('class' => "input_field","placeholder" => "
+                                    <?php
+                                    if ($model->your_message != '') {
+                                        $data = array('for' => "your_message", 'class' => 'active');
+                                    } else {
+                                        $data = array('for' => "your_message");
+                                    };
+                                    ?>
+                                    <?php echo $form->labelEx($model, 'your_message', $data); ?>
+                                    <?php echo $form->textArea($model, 'your_message', array('class' => "input_field","placeholder" => "
 Your Message")); ?>
                                 </div>
                             </div>
@@ -192,30 +204,30 @@ Your Message")); ?>
                         <div class="google_map_info">
                             <h3>MBAtrek Private Ltd.</h3>
                             <label>414 (4th Floor), Suncity Business Tower, </label> <label>Golf Course Road, Sector -54, </label> <label>Gurugram &ndash; 122003, INDIA</label> <label>CIN: U74999HR2016PTC057728</label><label>Email: <a href="mailto:contact@mbatrek.com">contact@mbatrek.com</a></label>
-							<label>Phone: <a href="https://wa.me/919821948334?text=Can%20you%20help%20with%20MBAtrek's%20career%20development%20services%3F%F0%9F%98%81
+                            <label>Phone: <a href="https://wa.me/919821948334?text=Can%20you%20help%20with%20MBAtrek's%20career%20development%20services%3F%F0%9F%98%81
 " target="_blank">+91 9821948334</a> , <a href="https://wa.me/919821948335?text=Can%20you%20help%20with%20MBAtrek's%20career%20development%20services%3F%F0%9F%98%81" target="_blank">+91 9821948335</a> </label>
-							</div>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="g-recaptcha form-field" data-sitekey="6LcHG6EUAAAAAERv9LjXHi8OMkiRsmS6ZHdGB0Mj"></div>
 
-<!--            --><?php //if (CCaptcha::checkRequirements()): ?>
-<!--                <div class="catcha_Code">-->
-<!--						--><?php //echo $form->labelEx($model, 'verifyCode'); ?>
-<!--										<div>-->
-<!--						--><?php //$this->widget('CCaptcha'); ?>
-<!--						--><?php //echo $form->textField($model, 'verifyCode'); ?>
-<!--										</div>-->
-<!--										<div class="hint">Please enter the characters as they are shown in the image above.-->
-<!--											<br/>Characters are not case-sensitive.</div>-->
-<!--						--><?php //echo $form->error($model, 'verifyCode'); ?>
-<!--                </div>-->
-<?php //endif; ?>
-<!--            <div class="capcha_div"><img src="images/capcha.png" alt="" />-->
-                <div class="submit_form_btn" ><button type="submit">Submit</button></div>
-<!--            </div>-->
-<?php $this->endWidget(); ?>
+            <!--            --><?php //if (CCaptcha::checkRequirements()): ?>
+            <!--                <div class="catcha_Code">-->
+            <!--						--><?php //echo $form->labelEx($model, 'verifyCode'); ?>
+            <!--										<div>-->
+            <!--						--><?php //$this->widget('CCaptcha'); ?>
+            <!--						--><?php //echo $form->textField($model, 'verifyCode'); ?>
+            <!--										</div>-->
+            <!--										<div class="hint">Please enter the characters as they are shown in the image above.-->
+            <!--											<br/>Characters are not case-sensitive.</div>-->
+            <!--						--><?php //echo $form->error($model, 'verifyCode'); ?>
+            <!--                </div>-->
+            <?php //endif; ?>
+            <!--            <div class="capcha_div"><img src="images/capcha.png" alt="" />-->
+            <div class="submit_form_btn" ><button type="submit">Submit</button></div>
+            <!--            </div>-->
+            <?php $this->endWidget(); ?>
         </div>
     </div>
 </div><style>
