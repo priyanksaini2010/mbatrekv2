@@ -986,7 +986,7 @@ footer .footer-logo a svg {
     color: rgb(34,152,151);
 }
 .student-cta2{
-    margin-top: 90px;
+   /*  margin-top: 90px; */
 }
 .student-cta2 ul {
     text-align: center;
@@ -1019,6 +1019,7 @@ footer .footer-logo a svg {
     max-width: 300px;
     margin: 0 auto;
     padding: 80px 20px 30px;
+	margin-top:110px;
 } 
 .student-cta2 ul.student-cta-listing > li .intern-type .top-icon{
     position: absolute;

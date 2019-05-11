@@ -19,7 +19,7 @@ if(!empty($coupon)){
     <div class="payment_block">
         <div class="container">
             <h3 class="payment_heading">Select a preferred payment gateway </h3>
-            <h4 class="blink-one">Have you applied a promo-code? <a href="<?php echo Yii::app()->createUrl("cart");?>">Check the card</a> before making a payment</h4> 
+            <h4 class="blink-one">Have you applied a promo-code? <a href="<?php echo Yii::app()->createUrl("cart");?>">Check the cart</a> before making a payment</h4> 
             <div class="row">
                 <div class="col-md-8 col-sm-6 col-xs-12">
                     <div class="payment_select">
