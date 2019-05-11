@@ -257,11 +257,12 @@ $(function() {
 /* ========Our Team======= */
 $(document).ready(function(){
 	$('.show_content_alok').click(function(e){
-		$(this).toggleClass('active_team');
+		// $(this).toggleClass('active_team');
 		var itemId = $(this).attr('alt');
-		$('.expand_information').removeClass('display_information_alok');
+		// $('.expand_information').toggleClass('display_information_alok');
+		// $('.expand_information').removeClass('display_information_alok')
 		$('.expand_information').hide();
-		$('.'+itemId).addClass('display_information_alok')
+		$('.'+itemId).toggleClass('display_information_alok')
 		// $('.alok_info').toggleClass('display_information_alok');
 		// $('.abhishek_info').removeClass('display_information_alok');
 		// $('.show_rahul_info').removeClass('display_information_alok');
