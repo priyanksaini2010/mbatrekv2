@@ -1,7 +1,9 @@
-<?php $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/themes/cart"); ?>
+<?php $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/themes/cart");
+?>
 <!DOCTYPE html>
 <html lang="eng">
     <head>
+        <?php echo $this->renderPartial("webroot.themes.cart.views.layouts.seo"); ?>
         <?php $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/themes/cart"); ?>
         <title><?php
             echo Yii::app()->name . " ";

@@ -694,8 +694,13 @@ class SiteController extends Controller
                                 }
                             }
 
-                            if (Yii::app()->user->admin == 0 || Yii::app()->user->admin == 4) {
-                                $this->redirect(Yii::app()->createUrl('/customerOrder/admin/status/2'));
+                            if (Yii::app()->user->admin == 0 || Yii::app()->user->admin == 4 || Yii::app()->user->admin == 5) {
+                                if (Yii::app()->user->admin == 5) {
+                                    $this->redirect(Yii::app()->createUrl('/seo/admin/status/2'));
+                                } else {
+                                    $this->redirect(Yii::app()->createUrl('/customerOrder/admin/status/2'));
+                                }
+
                             }  else {
 
                                 if($_REQUEST['b'] == 1){

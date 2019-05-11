@@ -28,7 +28,7 @@
 
 <?php
 
-if(!isset(Yii::app()->user->admin) ||  (Yii::app()->user->admin != 0 && Yii::app()->user->admin != 4)){
+if(!isset(Yii::app()->user->admin) ||  (Yii::app()->user->admin != 0 && Yii::app()->user->admin != 4 && Yii::app()->user->admin != 5)){
     die("Unauthorised Access");
 }
 
