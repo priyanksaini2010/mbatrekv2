@@ -64,6 +64,7 @@ class UsersNewController extends Controller
             "Email",
             "Password",
             "Mobile Number",
+            "Role",
             "Name Of College / Company",
             "Subscription Opted",
             "Verified",
@@ -94,6 +95,7 @@ class UsersNewController extends Controller
                 $role = "Admin";
             }
             $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($colCount,$rowCount,$role);$colCount++;
+            $objPHPExcel->getActiveSheet()->setCellValueByColumnAndRow($colCount,$rowCount,$row->name_of_college_company);$colCount++;
             if($row->update_subscription == 1){
                 $updateSubscription = "Opted";
             } else {
