@@ -43,6 +43,7 @@ $ruleArray = array(
     'quick-links' => 'site/page/view/quick_links',
     'companies' => 'site/page/view/comp',
     'our-team' => 'site/page/view/team',
+    'our-team-beta' => 'cart/team',
     'frequently-asked-questions' => 'site/page/view/faq',
     'sitemap' => 'site/page/view/quick_links',
     'articles' => 'site/articles/type/1',
