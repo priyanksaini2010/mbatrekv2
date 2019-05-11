@@ -31,9 +31,9 @@ class CartController extends Controller {
         public function accessRules() {
             return array(
                 array('allow', // allow all users to perform 'index' and 'view' actions
-                    'actions' => array('captcha','removeCoupon','industry','interview','index', 'view','student',"addtocart","cart","remove","buynow","verify", 
+                    'actions' => array('captcha','removeCoupon','industry','interview','index', 'view','student',"addtocart","cart","remove","buynow","verify",
                                         'profesionals','institutes','register',"description","checkout","removeCart","applypromo","story","campus","loginandapply","applygstin","clearcart",
-                                        "profile","pastorder","changepassword","checkout","gateway","payusurl","postpayment","paytmsurl"),
+                                        "profile","pastorder","changepassword","checkout","gateway","payusurl","postpayment","paytmsurl","team"),
                     'users' => array('*'),
                 ),
                 array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -1346,6 +1346,10 @@ class CartController extends Controller {
             }
             $this->render("webroot.themes.cart.views.cart.changepassword",array('model'=>$model));
         }
+
+    public function actionTeam() {
+        $this->render("webroot.themes.cart.views.cart.team",array('model'=>$model));
+    }
 
 }
 
