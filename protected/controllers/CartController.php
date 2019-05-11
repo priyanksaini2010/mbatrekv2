@@ -601,6 +601,7 @@ class CartController extends Controller {
 		{
             if (!verifyCaptcha($_POST['g-recaptcha-response'])) {
                 $this->errors['email'] = 'Captcha verification failed.';
+                $model->attributes = $_POST['CampusAmbassador'];
             } else {
                 $_POST['CampusAmbassador']['registeration_date'] = date("Y-m-d H:i:s");
                 $model->attributes = $_POST['CampusAmbassador'];
@@ -643,6 +644,7 @@ class CartController extends Controller {
 		if(isset($_POST['InterviewReadyCompetition']))
 		{
             if (!verifyCaptcha($_POST['g-recaptcha-response'])) {
+                $model->attributes = $_POST['InterviewReadyCompetition'];
                 $this->errors['email'] = 'Captcha verification failed.';
             } else {
                 $_POST['InterviewReadyCompetition']['registeration_date'] = date("Y-m-d H:i:s");
@@ -683,6 +685,7 @@ class CartController extends Controller {
 		if(isset($_POST['IndustryReadyCompetition']))
 		{
             if (!verifyCaptcha($_POST['g-recaptcha-response'])) {
+                $model->attributes = $_POST['IndustryReadyCompetition'];
                 $this->errors['email'] = 'Captcha verification failed.';
             } else {
 
