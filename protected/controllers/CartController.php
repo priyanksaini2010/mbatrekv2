@@ -1246,21 +1246,33 @@ class CartController extends Controller {
             $model = new UsersNew;
             if(isset($_POST['UsersNew'])) {
                 if (!verifyCaptcha($_POST['g-recaptcha-response'])) {
+                    $model->attributes = $_POST['UsersNew'];
                     $this->errors['email'] = 'Captcha verification failed.';
                 } else {
                     $blokedEmails = CHtml::listData(BlockedEmail::model()->findAll(), "id", "email");
                     if (in_array($_POST['UsersNew']['email'], $blokedEmails)) {
                         $this->redirect(Yii::app()->createUrl('register'));
                     }
+
 //                $_POST['UsersNew']['email'] = $_POST['UsersNew']['email'].time();
                     $_POST['UsersNew']['password'] = $_POST['UsersNew']['password'];
                     $_POST['UsersNew']['is_verified'] = 0;
                     $_POST['UsersNew']['date_created'] = date('Y-m-d H:i:s');
-                    if (!empty($_POST['UsersNew']['name_of_college']) && $_POST['UsersNew']['role'] == 1) {
-                        $_POST['UsersNew']['name_of_college_company'] = $_POST['UsersNew']['name_of_college'];
+                    if ($_POST['UsersNew']['name_of_college'] != '' && $_POST['UsersNew']['role'] == 1) {
+
+                        if ($_POST['UsersNew']['name_of_college'] == 0) {
+                            $_POST['UsersNew']['name_of_college_company'] = $_POST['other_college'];
+                        } else {
+                            $_POST['UsersNew']['name_of_college_company'] = $_POST['UsersNew']['name_of_college'];
+                        }
                     }
-                    if (!empty($_POST['UsersNew']['name_of_company']) && $_POST['UsersNew']['role'] == 2) {
-                        $_POST['UsersNew']['name_of_college_company'] = $_POST['UsersNew']['name_of_company'];
+                    if ($_POST['UsersNew']['name_of_company'] != '' && $_POST['UsersNew']['role'] == 2) {
+                        if ($_POST['UsersNew']['name_of_company'] == 0) {
+                            $_POST['UsersNew']['name_of_college_company'] = $_POST['other_company'];
+                        } else {
+                            $_POST['UsersNew']['name_of_college_company'] = $_POST['UsersNew']['name_of_company'];
+                        }
+
                     }
                     $model->attributes = $_POST['UsersNew'];
 

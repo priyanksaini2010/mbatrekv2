@@ -624,3 +624,50 @@ $("#contact-form").submit(function() {
             }
             
         });
+$(document).ready(function() {
+    $("#name_of_company").change(function() {
+
+        if ($(this).val() == 0) {
+            $("#company_others").val('')
+            // $("#company_others-html").removeAttr('style')
+            $("#company_others-html").show();
+            $("#1-other").show();
+            $("#college_others").hide();
+            $("#1-other-college").hide();
+        } else {
+            $("#company_others-html").hide();
+            $("#1-other").hide();
+        }
+    });
+    $("#name_of_college").change(function() {
+
+        if ($(this).val() == 0) {
+            $("#college_other").val('')
+            // $("#company_others-html").removeAttr('style')
+            $("#college_others_html").show();
+            $("#1-other-college").show();
+            $("#company_others-html").hide();
+            $("#1-other").hide();
+        } else {
+            $("#college_others").hide();
+            $("#1-other-college").hide();
+        }
+    });
+    $("#radio3").click(function () {
+        if ($('#radio3').is(':checked')) {
+            $("#name_of_company").val('');
+            $("#company_others").val('')
+            $("#company_others-html").show();
+            $("#1-other").show();
+        }
+    });
+    $("#radio2").click(function () {
+        if ($('#radio2').is(':checked')) {
+            $("#name_of_college").val('');
+            $("#company_others").val('')
+            $("#college_others").show();
+            $("#1-other-college").show();
+        }
+    });
+
+})
