@@ -503,18 +503,39 @@ $(document).ready(function(){
             $("#IndustryReadyCompetition_question_3").hide();
         }
     });
+    function hideOthers() {
+        $("#inst-autofill-other").hide();
+        $("#other_institute").val('');
+        $("#other_company").val('');
+        $("#comp-autofill-other").hide();
+    }
     $(".radio-comp-inst").change(function(){
         var valu = $('.radio-comp-inst:checked').val();
         if(valu == 1 || valu == 4){
             $("#Contact_name_of_company_institute_1").val('');
             $("#inst-autofill").hide();
             $("#company-autofill").show();
+            hideOthers();
         } else {
             $("#Contact_name_of_company_institute").val('');
             $("#company-autofill").hide();
             $("#inst-autofill").show();
+            hideOthers()
         }
     })
+    $("#name_of_company").change(function() {
+        hideOthers();
+        if ($(this).val() == 0) {
+            $("#comp-autofill-other").show();
+        }
+    });
+    $("#name_of_institute").change(function () {
+        hideOthers();
+        if ($(this).val() == 0) {
+            $("#inst-autofill-other").show();
+        }
+    })
+
     $("#InterviewReadyCompetition_college").change(function(){
         
         if($(this).val() == 4){
