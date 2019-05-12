@@ -121,7 +121,7 @@
 
                                     <select class="input_field select2class" name="Contact[name_of_company_institute]" id="name_of_company">
                                         <option value="">Select a Company</option>
-                                        <option value="0">My Company is not listed</option>
+                                        <option value="0">Others</option>
                                         <?php
                                         $criteria=new CDbCriteria;
                                         $criteria->order = 'name asc';
@@ -146,7 +146,7 @@
                                     </div>
                                     <select class="input_field select2class" name="Contact[name_of_company_institute_1]" id="name_of_institute">
                                         <option value="">Select an Institute</option>
-                                        <option value="0">My Institute is not listed</option>
+                                        <option value="0">Others</option>
                                         <?php
                                         $autofill = ContactAutofillCompany::model()->findAll($criteria);
                                         $tags = array();
