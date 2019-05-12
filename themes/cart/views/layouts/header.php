@@ -91,7 +91,7 @@
                                     <li><a href="<?php echo Yii::app()->createUrl('intern-pro'); ?>">InternPRO</a></li>
                                     <li><a href="<?php echo Yii::app()->createUrl('intern-arise'); ?>">InternARISE</a></li>
                                     <li><a href="<?php echo Yii::app()->createUrl('campus-2-corporate'); ?>">Campus2Corporate</a></li>
-                                    <li><a href="<?php echo Yii::app()->createUrlMa('industry-ready'); ?>">#IndustryReady</a></li>
+                                    <li><a href="<?php echo Yii::app()->createUrl('industry-ready'); ?>">#IndustryReady</a></li>
                                     <li><a href="<?php echo Yii::app()->createUrl('interview-ready'); ?>">#InterviewReady</a></li>
                                     <li><a href="<?php echo Yii::app()->createUrl('placement-ready'); ?>">#Placement Ready</a></li>
 								</ul>
