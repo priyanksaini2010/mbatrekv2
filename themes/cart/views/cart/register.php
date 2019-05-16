@@ -98,7 +98,7 @@
                             </div>
                             <div id='company_others-html' style="display: none;">
                                 <div id="1-other" class="desc"  <?php if(isset($model->role) && $model->role ==1){?>style="display :block !important;"<?php }?>>
-                                    <input type="text" name="other_company" class="form-control" placeholder="Company Name"/>
+                                    <input type="text" id="other_company" name="other_company" class="form-control" placeholder="Company Name"/>
                                 </div>
                             </div>
                         </div>

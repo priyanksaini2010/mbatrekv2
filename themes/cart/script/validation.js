@@ -217,11 +217,20 @@ $(document).ready(function(){
         if($('#radio2').is(':checked')){
             if($("#name_of_college").val() == ""){
                 validationMethod("error","Please enter college name.");return false;
+            } else if($("#name_of_college").val() == 0){
+                if($("#college_other").val() == ""){
+                    validationMethod("error","Please enter college name.");return false;
+                }
             }
+
         }
         if($('#radio3').is(':checked')){
             if($("#name_of_company").val() == ""){
                 validationMethod("error","Please enter company name.");return false;
+            }else if($("#name_of_company").val() == 0){
+                if($("#other_company").val() == ""){
+                    validationMethod("error","Please enter company name.");return false;
+                }
             }
         }
         if ($("#UsersNew_cpassword").val() != $("#UsersNew_password").val()){
