@@ -1067,6 +1067,9 @@ body .our_Team_mbatrek .our_team_block.core_team ul li{width: 32%;padding: 0 12p
 body .our_Team_mbatrek .our_team_block.core_team ul li a{min-height: 22vw;}
 body .our_Team_mbatrek .our_team_block.core_team ul li a img{height: 23vw;}
 body .sample_block ul li{width: 120px;height:79px;}
+.login-footer .g-recaptcha >div{width:100%!important;}
+.login-footer .g-recaptcha >div iframe{width:100%;}
+
 }
 @media (max-width: 548px) {
 	main .bulid_categories .categories_container a{margin-right:0;}
@@ -2606,3 +2609,4 @@ margin-bottom: 7px;}
        @keyframes blinker-two {  
          100% { opacity: 0; }
        }
+.login-footer .g-recaptcha{padding-left:18px;}
