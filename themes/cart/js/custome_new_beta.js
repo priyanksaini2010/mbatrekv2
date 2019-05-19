@@ -261,8 +261,27 @@ $(document).ready(function(){
 		var itemId = $(this).attr('alt');
 		// $('.expand_information').toggleClass('display_information_alok');
 		// $('.expand_information').removeClass('display_information_alok')
-		$('.expand_information').hide();
-		$('.'+itemId).toggleClass('display_information_alok')
+		var classes = $('.'+itemId).attr('class');
+		var clss = classes.split(' ');
+		var isShowing = false;
+		$.each(clss, function (index,item) {
+			if (item == 'display_information_alok') {
+				isShowing = true;
+			}
+		})
+		if (isShowing) {
+			$('.expand_information').hide();
+			$('.'+itemId).removeClass('display_information_alok');
+			$('.'+itemId).hide();
+		} else {
+			$('.display_information_alok').removeClass('display_information_alok');
+			$('.expand_information').hide();
+			$('.'+itemId).addClass('display_information_alok');
+			$('.'+itemId).show();
+		}
+
+
+
 		// $('.alok_info').toggleClass('display_information_alok');
 		// $('.abhishek_info').removeClass('display_information_alok');
 		// $('.show_rahul_info').removeClass('display_information_alok');
