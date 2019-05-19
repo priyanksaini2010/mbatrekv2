@@ -52,7 +52,7 @@ function validationMethod(id,text){
             $("#pop-notification-class").removeAttr("class");
             break;
     }
-     $("#pop-notification-text").text(text);
+    $("#pop-notification-text").text(text);
     $('#myModal27').modal('show');
 //    alert(text);
 }
@@ -100,25 +100,25 @@ function validateEmail(emailField) {
     return true;
 }
 $(document).ready(function(){
-     $("#submit_form_btn_act").click(function(){
-         
-         $('#contact-form').submit();
-     });
- });
+    $("#submit_form_btn_act").click(function(){
+
+        $('#contact-form').submit();
+    });
+});
 $(document).ready(function(){
-    
-     $("#share").jsSocials({
-    showLabel: false,
-    showCount: false,
-    shares: ["email", "twitter", "facebook", "linkedin"]
-})
+
+    $("#share").jsSocials({
+        showLabel: false,
+        showCount: false,
+        shares: ["email", "twitter", "facebook", "linkedin"]
+    })
     //Registeration Form Validation
     $(".cart-remove").click(function(){
         $("#remove-yes").attr("alt",$(this).val())
         $("#myModal-removecart").show()
-            // if(confirm("Are you sure you want to remove this product from your cart?")){
-            //     window.location.href = 'https://'+domain_name+"cart/removeCart?p="+$(this).val();
-            // }
+        // if(confirm("Are you sure you want to remove this product from your cart?")){
+        //     window.location.href = 'https://'+domain_name+"cart/removeCart?p="+$(this).val();
+        // }
     });
     $("#remove-no").click(function(){
         $("#myModal-removecart").hide()
@@ -140,49 +140,49 @@ $(document).ready(function(){
     $("#clear-yes").click(function(){
         window.location.href = 'https://'+domain_name+"cart/clearcart";
     });
-     $("#gstin-apply").click(function(){
-         $.ajax({
-             url : "applygstin",
-             type : "post",
-             data : {
-                 gstin : $("#gstin").val()
-             },
-             success : function(data){
-                 var obj = $.parseJSON(data);
-                 if(obj.status == "success"){
+    $("#gstin-apply").click(function(){
+        $.ajax({
+            url : "applygstin",
+            type : "post",
+            data : {
+                gstin : $("#gstin").val()
+            },
+            success : function(data){
+                var obj = $.parseJSON(data);
+                if(obj.status == "success"){
 //                    window.location.refresh;
-                     validationMethod("congrats",obj.message)
+                    validationMethod("congrats",obj.message)
 //                    location.reload("?thanmscart=1");
-                     setInterval(function(){window.location.href =  'https://'+domain_name+"cart/cart"}, 3000);
-                 } else {
-                     validationMethod("error",obj.message)
-                 }
+                    setInterval(function(){window.location.href =  'https://'+domain_name+"cart/cart"}, 3000);
+                } else {
+                    validationMethod("error",obj.message)
+                }
 
-             }
+            }
 
-         });
-     });
-     $("#retrieve-form").submit(function(){
-         if ($("#UsersNew_password").val() == ""){
-             validationMethod("error","Please enter password.");return false;
-         }
-         if ($("#UsersNew_password").val().length < 8){
-             $('#myModal34').modal('show');;
-             return false;
-         }
-         if (!passwords($("#UsersNew_password").val())){
-             $('#myModal34').modal('show');
-             return false;
-         }
-         if ($("#UsersNew_cpassword").val() == ""){
-             validationMethod("error","Please confirm password.");return false;
-         }
-         if ($("#UsersNew_cpassword").val() != $("#UsersNew_password").val()){
-             validationMethod("error","The new password and the confirmation should be same.");return false;
-         }
-     })
+        });
+    });
+    $("#retrieve-form").submit(function(){
+        if ($("#UsersNew_password").val() == ""){
+            validationMethod("error","Please enter password.");return false;
+        }
+        if ($("#UsersNew_password").val().length < 8){
+            $('#myModal34').modal('show');;
+            return false;
+        }
+        if (!passwords($("#UsersNew_password").val())){
+            $('#myModal34').modal('show');
+            return false;
+        }
+        if ($("#UsersNew_cpassword").val() == ""){
+            validationMethod("error","Please confirm password.");return false;
+        }
+        if ($("#UsersNew_cpassword").val() != $("#UsersNew_password").val()){
+            validationMethod("error","The new password and the confirmation should be same.");return false;
+        }
+    })
     $("#register-form").submit(function(){
-        
+
         if ($("#UsersNew_full_name").val() == ""){
             validationMethod("UsersNew_full_name","Please enter full name");
             return false;
@@ -210,7 +210,7 @@ $(document).ready(function(){
         if ($("#UsersNew_mobile_number").val() == ""  || !phonenumber($("#UsersNew_mobile_number").val())){
             validationMethod("error","Please valid mobile number.");return false;
         }
-        
+
         if(!$('#radio2').is(':checked') && !$('#radio3').is(':checked')) {
             validationMethod("error","Please tell us if you are a college student or a young professional.");return false;
         }
@@ -266,7 +266,7 @@ $(document).ready(function(){
                 validationMethod("error","Please enter name of college.");
                 return false;
             }
-            
+
         }
         if ($("#CampusAmbassador_course_id").val() == ""){
             validationMethod("error","Please select a course.");
@@ -277,7 +277,7 @@ $(document).ready(function(){
                 validationMethod("error","Please enter name of course.");
                 return false;
             }
-            
+
         }
         if ($("#CampusAmbassador_year_of_graduation_id").val() == ""){
             validationMethod("error","Please select a year of graduation.");
@@ -298,8 +298,8 @@ $(document).ready(function(){
 //            validationMethod("error","Please provide Any additional information you would like");
 //            return false;
 //        }
-        
-        
+
+
         return true;
     });
     $("#interview-ready-form").submit(function(){
@@ -326,7 +326,7 @@ $(document).ready(function(){
             validationMethod("error","Please select a college.");
             return false;
         }
-        
+
 //        if ($("#InterviewReadyCompetition_name_of_college").val() == ""){
 //            validationMethod("error","Please enter college name.");
 //            return false;
@@ -339,9 +339,9 @@ $(document).ready(function(){
             if ($("#InterviewReadyCompetition_name_of_college").val() == ""){
                 validationMethod("error","Please enter college name.");
                 return false;
-            } 
+            }
         }
-         if($("#InterviewReadyCompetition_college").val() == 4){
+        if($("#InterviewReadyCompetition_college").val() == 4){
             if ($("#InterviewReadyCompetition_question_2").val() == ""){
                 validationMethod("error","Please tell us Email of your Student Placement Coordinator / Student Committee Member");
                 return false;
@@ -356,13 +356,13 @@ $(document).ready(function(){
         if ($("#InterviewReadyCompetition_verifyCode").val() == ""){
             validationMethod("error","Please enter verification code.");return false;
         }
-        
+
 //        if ($("#CampusAmbassador_question_3").val() == ""){
 //            validationMethod("error","Please provide Any additional information you would like");
 //            return false;
 //        }
-        
-        
+
+
         return true;
     });
     $("#profile-save").click(function(){
@@ -396,7 +396,7 @@ $(document).ready(function(){
         }
         $("#cp-form").submit();
     })
-    
+
     $("#industry-ready-form-updated").submit(function(){
 
         if ($("#IndustryReadyCompetition_team_name").val() == ""){
@@ -465,9 +465,9 @@ $(document).ready(function(){
             if ($("#IndustryReadyCompetition_name_of_college").val() == ""){
                 validationMethod("error","Please enter college name.");
                 return false;
-            } 
+            }
         }
-        
+
 //        if ($("#CampusAmbassador_year_of_graduation_id").val() == ""){
 //            validationMethod("error","Please select a year of graduation.");
 //            return false;
@@ -487,18 +487,18 @@ $(document).ready(function(){
         if ($("#IndustryReadyCompetition_verifyCode").val() == ""){
             validationMethod("error","Please enter verification code.");return false;
         }
-        
-        
+
+
 //        if ($("#CampusAmbassador_question_3").val() == ""){
 //            validationMethod("error","Please provide Any additional information you would like");
 //            return false;
 //        }
-        
-        
+
+
         return false;
     });
     $("#IndustryReadyCompetition_college").change(function(){
-        
+
         if($(this).val() == 4){
             $("#IndustryReadyCompetition_name_of_college").show();
             $("#IndustryReadyCompetition_question_2").show();
@@ -546,7 +546,7 @@ $(document).ready(function(){
     })
 
     $("#InterviewReadyCompetition_college").change(function(){
-        
+
         if($(this).val() == 4){
             $("#name_of_college").show();
             $("#question_1").show();
@@ -560,7 +560,7 @@ $(document).ready(function(){
         }
     });
     $("#CampusAmbassador_course_id").change(function(){
-        
+
         if($(this).val() == 2){
             $("#name_of_course").show();
         } else {
@@ -568,7 +568,7 @@ $(document).ready(function(){
         }
     });
     $("#CampusAmbassador_college_id").change(function(){
-        
+
         if($(this).val() == 2){
             $("#name_of_college").show();
         } else {
@@ -600,9 +600,9 @@ $(document).ready(function(){
                 else {
                     validationMethod("error",obj.message)
                 }
-                
+
             }
-            
+
         });
     });
 
@@ -612,48 +612,56 @@ $(document).ready(function(){
 
 $("#contact-form").submit(function() {
 //    alert("here");
-            
-            if ($("#Contact_first_name").val() == "") {
-                $("#Contact_first_name").focus()
-                validationMethod("error","Please enter first name.");
-                return false;
-            }
-            if ($("#Contact_last_name").val() == "") {
-                $("#Contact_last_name").focus()
-                validationMethod("error","Please enter last name.");
-                return false;
-            }
-            if ($("#Contact_email").val() == "" || !validateEmail($("#Contact_email").val())) {
-                $("#Contact_email").focus()
-                validationMethod("Contact_email","Please enter valid email.");
-                return false;
-            }   
-            if ($("#Contact_mobile_no").val() == "" || !phonenumber($("#Contact_mobile_no").val())) {
-                $("#Contact_mobile_no").focus()
-                validationMethod("error","Please enter valid mobile number.");
-                return false;
-            }
-            if ($("#name_of_company").val() == "" && $("#name_of_institute").val() == "") {
-                $("#Contact_name_of_company_institute").focus()
-                validationMethod("error","Please enter name of Company / Institute.");
-                return false;
-            }
-            if ($("#Contact_subject").val() == "") {
-                $("#Contact_subject").focus()
-                validationMethod("error","Please enter subject.");
-                return false;
-            }
-            if ($("#Contact_subject").val() == "") {
-                $("#Contact_subject").focus()
-                validationMethod("error","Please enter your message.");
-                return false;
-            }
-            if($("#Contact_verifyCode").val() == ""){
-                validationMethod("error","Please enter verification code.");
-                return false;
-            }
-            
-        });
+
+    if ($("#Contact_first_name").val() == "") {
+        $("#Contact_first_name").focus()
+        validationMethod("error","Please enter first name.");
+        return false;
+    }
+    if ($("#Contact_last_name").val() == "") {
+        $("#Contact_last_name").focus()
+        validationMethod("error","Please enter last name.");
+        return false;
+    }
+    if ($("#Contact_email").val() == "" || !validateEmail($("#Contact_email").val())) {
+        $("#Contact_email").focus()
+        validationMethod("Contact_email","Please enter valid email.");
+        return false;
+    }
+    if ($("#Contact_mobile_no").val() == "" || !phonenumber($("#Contact_mobile_no").val())) {
+        $("#Contact_mobile_no").focus()
+        validationMethod("error","Please enter valid mobile number.");
+        return false;
+    }
+    if ($("#name_of_company").val() == "" && $("#name_of_institute").val() == "") {
+        $("#Contact_name_of_company_institute").focus()
+        validationMethod("error","Please enter name of Company / Institute.");
+        return false;
+    }
+    if ($("#name_of_company").val() == 0 && $("#other_company").val() == '') {
+        validationMethod("error","Please enter name of Company.");
+        return false;
+    }
+    if ($("#name_of_institute").val() == 0 && $("#other_institute").val() == '') {
+        validationMethod("error","Please enter name of Company / Institute.");
+        return false;
+    }
+    if ($("#Contact_subject").val() == "") {
+        $("#Contact_subject").focus()
+        validationMethod("error","Please enter subject.");
+        return false;
+    }
+    if ($("#Contact_subject").val() == "") {
+        $("#Contact_subject").focus()
+        validationMethod("error","Please enter your message.");
+        return false;
+    }
+    if($("#Contact_verifyCode").val() == ""){
+        validationMethod("error","Please enter verification code.");
+        return false;
+    }
+
+});
 $(document).ready(function() {
     $("#name_of_company").change(function() {
 
