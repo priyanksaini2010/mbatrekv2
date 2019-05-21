@@ -1262,15 +1262,15 @@ class CartController extends Controller {
                     $_POST['UsersNew']['is_verified'] = 0;
                     $_POST['UsersNew']['date_created'] = date('Y-m-d H:i:s');
                     if ($_POST['UsersNew']['name_of_college'] != '' && $_POST['UsersNew']['role'] == 1) {
-
-                        if ($_POST['UsersNew']['name_of_college'] == 0) {
+                        if ($_POST['UsersNew']['name_of_college'] === "0") {
                             $_POST['UsersNew']['name_of_college_company'] = $_POST['other_college'];
                         } else {
+
                             $_POST['UsersNew']['name_of_college_company'] = $_POST['UsersNew']['name_of_college'];
                         }
                     }
                     if ($_POST['UsersNew']['name_of_company'] != '' && $_POST['UsersNew']['role'] == 2) {
-                        if ($_POST['UsersNew']['name_of_company'] == 0) {
+                        if ($_POST['UsersNew']['name_of_company'] === 0) {
                             $_POST['UsersNew']['name_of_college_company'] = $_POST['other_company'];
                         } else {
                             $_POST['UsersNew']['name_of_college_company'] = $_POST['UsersNew']['name_of_company'];

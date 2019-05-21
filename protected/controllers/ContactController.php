@@ -147,12 +147,12 @@ class ContactController extends Controller
                     $_POST['Contact']['name_of_company_institute'] = $_POST['Contact']['name_of_company_institute_1'];
                 }
                 if ($_POST['Contact']['are_you'] ==  1 || $_POST['Contact']['are_you'] ==  4) {
-                    if ($_POST['Contact']['name_of_company_institute'] == 0) {
+                    if ($_POST['Contact']['name_of_company_institute'] === "0") {
                         $_POST['Contact']['name_of_company_institute'] = $_POST['other_company'];
                     }
                 }
                 if ($_POST['Contact']['are_you'] ==  2 || $_POST['Contact']['are_you'] ==  3) {
-                    if ($_POST['Contact']['name_of_company_institute_1'] == 0) {
+                    if ($_POST['Contact']['name_of_company_institute_1'] === "0") {
                         $_POST['Contact']['name_of_company_institute'] = $_POST['other_institute'];
                     }
                 }
