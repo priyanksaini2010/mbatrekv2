@@ -124,7 +124,7 @@
                         <!--                                    --><?php //echo $form->error($model, 'verifyCode'); ?>
                         <!--                                </div>-->
                         <!--                            --><?php //endif; ?>
-                        <div class="capcha_div"><div><img src="images/capcha.png" alt="" /></div>
+                        <div class="capcha_div"><div><!---<img src="images/capcha.png" alt="" />--></div>
                             <div class="col-xs-12 col-md-12 text-center">
                                 <button type="submit" class="btn btn-large btn-danger">Sign Up</button>
                             </div>
