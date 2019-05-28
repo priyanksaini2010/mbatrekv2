@@ -277,12 +277,12 @@ class CustomerOrderController extends Controller
         if ($cart) {
             $coupon = CouponUsage::model()->findByAttributes(array('cart_id' => $cart->id));
             if ($coupon) {
-                if ($coupon->coupon->discount_type == 1) {
-                    $discount = ($OrderTotal * $coupon->coupon->discount)/100;
-                } else {
-                    $discount = $coupon->coupon->discount;
-                }
-                return ceil($discount);
+//                if ($coupon->coupon->discount_type == 1) {
+//                    $discount = ($OrderTotal * $coupon->coupon->discount)/100;
+//                } else {
+//                    $discount = $coupon->coupon->discount;
+//                }
+                return ceil($coupon->discount_availed);
             }
         }
         return '';
