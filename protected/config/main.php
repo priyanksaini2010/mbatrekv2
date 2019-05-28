@@ -68,6 +68,7 @@ $ruleArray = array(
     "choose-payment-gateway" => "cart/gateway",
     "paytm-checkout" => "cart/checkout/paymentGateWay/1",
     "payu-checkout" => "cart/checkout/paymentGateWay/2",
+    "spc-checkout" => "cart/checkout/paymentGateWay/3",
     "success" => "cart/postpayment/status/2",
     "failure" => "cart/postpayment/status/3",
     'institutes' => 'site/page/view/educational_institute',

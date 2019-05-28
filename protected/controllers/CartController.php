@@ -109,6 +109,29 @@ class CartController extends Controller {
             );
 	}
         public function actionGateway(){
+            $cartData = Cart::model()->findAllByAttributes(array("user_id"=>Yii::app()->user->id,"status"=>1));
+            $amount = 0;
+            $discount = 0;
+            $discountType = 0;
+            foreach($cartData as $items){
+                $checkCoupon =CouponUsage::model()->findByAttributes(array("cart_id"=>$items->id));
+                if($checkCoupon){
+                    $discount = $checkCoupon->discount_availed;
+                    $discountType = $checkCoupon->coupon->discount_type;
+                }
+                $amount = $amount  + $items->product->price;
+            }
+            if($discount != 0 && $discountType !=0){
+                if($discountType  == 1){
+                    $amount = $amount - $discount;
+                } else {
+                    $amount = $amount - $discount;
+                }
+            }
+
+            if ((float)$amount === (float)0) {
+                $this->redirect(Yii::app()->createUrl('spc-checkout'));
+            }
             $this->layout = getCartLayot();
             $this->render("webroot.themes.cart.views.cart.gateway",array());
         }
@@ -387,6 +410,46 @@ class CartController extends Controller {
                             $hash=hash('sha512', Yii::app()->params['payu_merchant_id'].'|'.$attribsArray['transaction_id'].'|'.$attribsArray['amount'].'|'.$attribsArray['product_info'].'|'.$attribsArray['name'].'|'.$attribsArray['email'].'|||||'.$attribsArray['udf5'].'||||||'.Yii::app()->params['payu_salt']);
                             $attribsArray['hash'] = $hash;
                             $this->render("webroot.themes.cart.views.cart.payu",array("params"=>$attribsArray));
+                            break;
+                        case 3:
+                            if ($amount != 0) {
+                                pr('Invalid Entry Point');
+                            }
+                            $newMOdel = CustomerOrder::model()->findByPk($order->id);
+                            $newMOdel->attributes = array('status' => 2);
+                            if ($newMOdel->save()) {
+                                $list = "";
+                                $totalItems = (count($cartData) - 1);
+                                foreach($cartData as $key=>$item){
+                                    $url = str_replace("#","",rtrim($item->product->title));
+                                    $url = str_replace(" ","-",$url);
+                                    $url = strtolower($url);
+                                    if($key != $totalItems){
+                                        $list .= "<a href='https://mbatrek.com/".$url."' target='_blank'>".$item->product->title.", </a>";
+                                    } else{
+                                        $list .= "<a href='https://mbatrek.com/".$url."' target='_blank'>".$item->product->title."</a>";
+                                    }
+                                    $itemModel = Cart::model()->findByPk($item->id);
+                                    $itemModel->attributes = array("status"=>2);
+                                    if($itemModel->save()){
+
+                                    } else{
+                                        pr($itemModel->getErrors());
+                                    }
+                                }
+                                $mailParams = array(
+                                    "order_id"=>$order->ordfer_hash,
+                                    "email"=>$userData->email,
+                                    "amount"=>$order->order_amount,
+                                    "list" => $list
+                                );
+                                $this->sendOrderMail($mailParams,1);
+                                Yii::app()->user->setFlash('order_id', $order->id);
+                                $this->redirect(Yii::app()->createUrl("success"));
+                            } else {
+                                pr($newMOdel->getErrors());
+                            }
+
                             break;
                     }
                 }
