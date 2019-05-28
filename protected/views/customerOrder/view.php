@@ -43,6 +43,8 @@ $this->breadcrumbs=array(
                             echo "Paytm";
                         } else if($mod == 2){
                             echo "Payu";
+                        } else if($mod == 3){
+                            echo 'Special Free Product';
                         }
                         break;
                     case "user_id":
