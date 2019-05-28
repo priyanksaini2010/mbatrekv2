@@ -48,7 +48,7 @@
                     <!--
                     <input type="radio" name="UsersNew[role]" checked="checked" value="1" id="checkboxG1_radio1" class="css-checkbox" />College Student
                     <input type="radio" name="UsersNew[role]" value="2" id="checkboxG1_radio2" class="css-checkbox" />Young Professional-->
-                    <div class="are_yu"><label>Are You?</label>
+                    <div class="are_yu"><label>Are You? <em style="color: red;">*</em></label>
                         <ul class="register_input">
                             <li>
                                 <input type="radio" <?php if(isset($model->role) && $model->role ==1){?>checked="checked"<?php }?> value="1"  name="UsersNew[role]"   id="radio2" class="css-checkbox "/>
@@ -64,7 +64,7 @@
                             <div id="1" class="desc"  <?php if(isset($model->role) && $model->role ==1){?>style="display :block !important;"<?php }?>>
                                 <!--										<input name="UsersNew[name_of_college]" class="form-control" placeholder="Name of your college*" id="name_of_college"  type="text" >-->
                                 <select class="form-control select2class" name="UsersNew[name_of_college]" id="name_of_college">
-                                    <option value="">Select Your College</option>
+                                    <option value="">Select Your College *</option>
                                     <option value="0">Others</option>
                                     <?php
                                     $criteria=new CDbCriteria;
@@ -79,13 +79,13 @@
                             </div>
                             <div id="college_others_html" style="display: none;">
                                 <div id="1-other-college" class="desc"  <?php if(isset($model->role) && $model->role ==1){?>style="display :block !important;"<?php }?>>
-                                    <input type="text" id="college_other" name="other_college" class="form-control" placeholder="College Name"/>
+                                    <input type="text" id="college_other" name="other_college" class="form-control" placeholder="College Name *"/>
                                 </div>
                             </div>
                             <div id="2" class="desc" <?php if(isset($model->role) && $model->role ==2){?>style="display :block !important;"<?php }?>>
                                 <!--										<input name="UsersNew[name_of_company]" class="form-control" placeholder="Name of your company*"  type="text" id="name_of_company">-->
                                 <select class="form-control select2class" name="UsersNew[name_of_company]" id="name_of_company">
-                                    <option value="">Select Your Company</option>
+                                    <option value="">Select Your Company *</option>
                                     <option value="0">Others</option>
                                     <?php
 
@@ -98,7 +98,7 @@
                             </div>
                             <div id='company_others-html' style="display: none;">
                                 <div id="1-other" class="desc"  <?php if(isset($model->role) && $model->role ==1){?>style="display :block !important;"<?php }?>>
-                                    <input type="text" id="other_company" name="other_company" class="form-control" placeholder="Company Name"/>
+                                    <input type="text" id="other_company" name="other_company" class="form-control" placeholder="Company Name *"/>
                                 </div>
                             </div>
                         </div>
