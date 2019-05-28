@@ -823,7 +823,7 @@ user-select: none;
     margin: 38px 0 0 0;
 }
 .card_price .promocode{    padding: 5px 0 0 0;
-	display: inline-block;font-size: 16px;}
+	display: inline-block;font-size: 20px;font-family: 'MyriadPro-Semibold';}
 .order_div{width: 100%;float: left;}
 .order_div a:hover
 {
