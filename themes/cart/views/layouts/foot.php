@@ -1,5 +1,5 @@
 <?php
-$betaUrl = DIREC.'our-team-beta';
+$betaUrl = DIREC.'our-team';
 $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/themes/cart"); ?>
 		<script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
 		<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
