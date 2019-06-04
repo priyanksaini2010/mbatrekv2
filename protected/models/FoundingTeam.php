@@ -64,8 +64,8 @@ class FoundingTeam extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'name' => 'Name',
-			'photo_1' => 'Photo Colored',
-			'photo_2' => 'Photo BnW',
+			'photo_1' => 'Photo Colored (300X300)Px' ,
+			'photo_2' => 'Photo BnW (300X300)Px',
 			'desig' => 'Designation',
 			'about' => 'About',
 			'email' => 'Email',
