@@ -112,13 +112,13 @@ class FoundingTeamController extends Controller
 
 		if(isset($_POST['FoundingTeam']))
 		{
-            $path = "assets/products";
+            $path = "assets/team";
             if (!is_dir($path)) {
                 CFileHelper::createDirectory($path, null, true);
             }
             if (!empty($_FILES)) {
                 if($_FILES['FoundingTeam']['name']['photo_1'] != ""){
-                    $fileName = rand() . str_replace(" ", "", $_FILES['Products']['name']['photo_1']);  // random number + file name
+                    $fileName = rand() . str_replace(" ", "", $_FILES['FoundingTeam']['name']['photo_1']);  // random number + file name
                     $tmp_name = $_FILES['FoundingTeam']['tmp_name']['photo_1'];
                     move_uploaded_file($tmp_name, $path . "/" . $fileName);
                     $_POST['FoundingTeam']['photo_1'] = $fileName;
@@ -126,7 +126,7 @@ class FoundingTeamController extends Controller
                     $_POST['FoundingTeam']['photo_1'] = $model->photo_1;
                 }
                 if($_FILES['FoundingTeam']['name']['photo_2'] != ""){
-                    $fileName = rand() . str_replace(" ", "", $_FILES['Products']['name']['photo_2']);  // random number + file name
+                    $fileName = rand() . str_replace(" ", "", $_FILES['FoundingTeam']['name']['photo_2']);  // random number + file name
                     $tmp_name = $_FILES['FoundingTeam']['tmp_name']['photo_2'];
                     move_uploaded_file($tmp_name, $path . "/" . $fileName);
                     $_POST['FoundingTeam']['photo_2'] = $fileName;
@@ -134,7 +134,7 @@ class FoundingTeamController extends Controller
                     $_POST['FoundingTeam']['photo_2'] = $model->photo_2;
                 }
             }
-			$model->attributes=$_POST['FoundingTeam'];
+            $model->attributes=$_POST['FoundingTeam'];
             if($model->save()){
                 Yii::app()->user->setFlash("success",'Team member updated successfully');
                 $this->redirect(array('admin'));
