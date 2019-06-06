@@ -1,16 +1,16 @@
 <?php $this->setPageTitle('Our Team');
 $foundingMembers = FoundingTeam::model()->findAllByAttributes(array('type' => 1));
-$coreMembers = FoundingTeam::model()->findAllByAttributes(array('type' => 2));
+$coreMembersS = FoundingTeam::model()->findAllByAttributes(array('type' => 2));
 $coreBreakUp = array();
 $i = 0;
 $j = 0;
-foreach ($coreMembers as $member) {
-    if ($i > 3) {
-        $i = 0;
+foreach ($coreMembersS as $member) {
+    if ($j >= 3) {
+        $i++;
         $j = 0;
     }
     $coreBreakUp[$i][$j] = $member;
-    $i++;$j++;
+    $j++;
 }
 $cdb = new CDbCriteria();
 $cdb->order = 'id desc';
