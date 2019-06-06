@@ -55,6 +55,8 @@ $csInteractionMenu = array(
     array('label'=>'FAQ Management', 'url'=>array('/faq/admin')),
     array('label'=>'Career Advisory Management', 'url'=>array('/talkToAdvisory/admin')),
     array('label'=>'Contact Management', 'url'=>array('/contact/admin')),
+    array('label'=>'Call To Action Management', 'url'=>array('/popup/admin')),
+//    array('label'=>'Call To Action Management', 'url'=>array('/popupReponse/admin')),
     array('label'=>'Import Contact Company', 'url'=>array('/campusAmbassador/importcontact')),
     array('label'=>'Import Contact Institutes', 'url'=>array('/contactAutofillCompany/importcontact')),
     array('label'=>'Manage Contact Company', 'url'=>array('/contactAutofill/admin')),
@@ -96,10 +98,14 @@ if(Yii::app()->user->admin == 0) {
         ),
     );
 } else{
+    $widArr =  array('label'=>'Home', 'url'=>array('/customerOrder/admin/status/2'));
+    if (Yii::app()->user->admin == 5) {
+        $widArr =  array('label'=>'Home', 'url'=>array('/seo/admin'));
+    }
     $widgetItems = array(
         'class'=>'bootstrap.widgets.TbMenu',
         'items'=>array(
-            array('label'=>'Home', 'url'=>array('/customerOrder/admin/status/2')),
+            $widArr,
             array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
         ),
     );
@@ -116,11 +122,24 @@ $this->widget('bootstrap.widgets.TbNavbar',array(
 <div class="container" id="page">
         <br/><br/><br/><br/><br/><br/>
     	<?php if(isset($this->breadcrumbs)):?>
-		<?php $this->widget('bootstrap.widgets.TbBreadcrumbs', array(
-			'links'=>$this->breadcrumbs,
-                        'homeLink'=>CHtml::link('Home', array('/customerOrder/admin/status/2')),
+		<?php
 
-		)); ?><!-- breadcrumbs -->
+
+        if (Yii::app()->user->admin == 5) {
+            $arr =     array(
+                'links'=>$this->breadcrumbs,
+                'homeLink'=>CHtml::link('Home', array('/seo/admin')),
+
+            );
+        } else {
+            $arr =     array(
+                'links'=>$this->breadcrumbs,
+                'homeLink'=>CHtml::link('Home', array('/customerOrder/admin/status/2')),
+
+            );
+        }
+        $this->widget('bootstrap.widgets.TbBreadcrumbs', $arr); ?><!-- breadcrumbs -->
+
 	<?php endif?>
             
             <?php
