@@ -360,7 +360,7 @@ p.section-pra {
 /* responsive */
 
 @media screen and (max-width: 992px) and (min-width: 320px){
-
+.expand_information ul li{margin-bottom:20px;}
 .navbar-header {
 	 margin: 7px 0 0 -18px!important;
 	width: auto;
@@ -1100,6 +1100,18 @@ body .ambastor_container.industry_Ready.interview_ready .earn_point.the_task .ea
 .blog_new_container.video_container .blog_header .header_btn a{font-size: 10px!important;}
 }
 @media (max-width: 767px) {
+	.expand_information .social_info_admin ul li a
+	{
+		min-height:auto!important;
+	}
+	.expand_information .social_info_admin ul li
+	{
+		width:100%!important;
+	}
+	.expand_information .social_info_admin ul li a img
+	{
+		height:auto!important;
+	}
 	.course_spe .form_amster_field{
 		margin-bottom:40px;
 	}
@@ -2067,7 +2079,7 @@ vertical-align:middle;cursor:pointer;}
 .expand_information  ul {padding:11px 0 0 0;text-align: center;width: 100%;}
 .expand_information  ul li span{font-size: 20px;padding-left: 7px;margin: 7px 0 0 0;
     display: inline-block;}
-.expand_information.display_information_alok{display: block!important;}
+.expand_information.display_information_alok{display: block!important;margin-bottom: 30px;margin-top: -43px;}
 .social_info_admin{width: 100%;float: left;}
 
 /* Industry REady Page */
@@ -2482,8 +2494,8 @@ overflow: hidden;}
 .our_company_page .empower_manager {margin-top:0;}
 .our_company_page .manager_div.company{margin-top:20px;}
 .our_company_page .key_Area_cover#keyarea{    padding-top: 0;}
-.sucess_container .our_recomanded ul li{width:259px;}
-.our_team_block.core_team ul li{width:33%;}
+.sucess_container .our_recomanded ul li{width:259px;} 
+.our_team_block.core_team ul li{width:33%;margin-bottom: 32px;}
 .our_team_block.core_team ul{width:100%;}
 #myModalimage1  .modal-dialog{width: 581px; margin: 40px auto 30px;}
 #myModalimage1  .modal-dialog .error_wrap img{width:100%;}

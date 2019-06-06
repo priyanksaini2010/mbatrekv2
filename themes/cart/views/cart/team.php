@@ -15,12 +15,12 @@ $internsMembers = FoundingTeam::model()->findAllByAttributes(array('type' => 3))
             <h3>Our Founding Team</h3>
             <ul>
                 <?php foreach ($foundingMembers as $founder) {?>
-                <li class="pull-left show_content_alok" alt="<?php echo $founder->id;?>">
+                <li class=" show_content_alok" alt="<?php echo $founder->id;?>">
                     <a href="javascript:void(0);">
-                        <img class="witho_hover" style="width: 183px;height: 189px;" src="<?php echo  Yii::app()->baseUrl.'/assets/team/'.$founder->photo_2;?>" alt="" />
-                        <img class="hover_img"  style="width: 183px;height: 189px;" src="<?php echo  Yii::app()->baseUrl.'/assets/team/'.$founder->photo_1;?>" alt="" />
+                        <img class="witho_hover"  src="<?php echo  Yii::app()->baseUrl.'/assets/team/'.$founder->photo_2;?>" alt="" />
+                        <img class="hover_img"   src="<?php echo  Yii::app()->baseUrl.'/assets/team/'.$founder->photo_1;?>" alt="" />
                     </a>
-                    <h3><?php echo ucwords($founder->name);?> <span><?php echo ucwords($founder->desig);?></span></h3>
+                    <h3><?php echo ucwords($founder->name);?><span><?php echo ucwords($founder->desig);?></span></h3>
                 </li>
                 <?php }?>
 
@@ -42,10 +42,10 @@ $internsMembers = FoundingTeam::model()->findAllByAttributes(array('type' => 3))
             <h3>Our Core Team</h3>
             <ul>
                 <?php foreach ($coreMembers as $founder) {?>
-                <li class="pull-left show_content_alok " alt="<?php echo $founder->id;?>">
+                <li class="show_content_alok " alt="<?php echo $founder->id;?>">
                     <a href="javascript:void(0);">
-                        <img class="witho_hover" style="width: 183px;height: 189px;" src="<?php echo  Yii::app()->baseUrl.'/assets/team/'.$founder->photo_2;?>" alt="" />
-                        <img class="hover_img"  style="width: 183px;height: 189px;" src="<?php echo  Yii::app()->baseUrl.'/assets/team/'.$founder->photo_1;?>" alt="" />
+                        <img class="witho_hover"  src="<?php echo  Yii::app()->baseUrl.'/assets/team/'.$founder->photo_2;?>" alt="" />
+                        <img class="hover_img"   src="<?php echo  Yii::app()->baseUrl.'/assets/team/'.$founder->photo_1;?>" alt="" />
                     </a>
                     <h3><?php echo ucwords($founder->name);?> <span><?php echo html_entity_decode(ucwords($founder->desig));?></span></h3>
                 </li>
@@ -58,7 +58,7 @@ $internsMembers = FoundingTeam::model()->findAllByAttributes(array('type' => 3))
                         <ul>
                             <li><a href="mailto:<?php echo $founder->email;?>" target="_blank"><img src="images/company/company_logo/mail_iocn_team.png" alt="" /> </a><span><?php echo $founder->email;?></span></li>
                             <li>&nbsp;<a href="mailto:<?php echo $founder->email;?>" target="_blank"><img src="images/company/company_logo/phone_icon_Team.png" alt="" /></a><span><?php echo $founder->phone;?></span></li>
-                            <li><a title="LinkedIn Profile" href="<?php echo $founder->linked_in;?>" target="_blank"><img src="images/company/company_logo/linkedin_icon_Team.png" alt="" /><span>LinkedIn Profile</span></a></li>
+                            <li><a title="LinkedIn Profile" href="<?php echo $founder->linked_in;?>" target="_blank"><img src="images/company/company_logo/linkedin_icon_Team.png" alt="" /><span>LinkedIn Profile</span></a></li> 
                         </ul>
                     </div>
                 </div>
