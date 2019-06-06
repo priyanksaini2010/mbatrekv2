@@ -1,7 +1,10 @@
 <?php $this->setPageTitle('Our Team');
 $foundingMembers = FoundingTeam::model()->findAllByAttributes(array('type' => 1));
 $coreMembers = FoundingTeam::model()->findAllByAttributes(array('type' => 2));
-$internsMembers = FoundingTeam::model()->findAllByAttributes(array('type' => 3));
+$cdb = new CDbCriteria();
+$cdb->order = 'id desc';
+$cdb->addCondition('type = 3');
+$internsMembers = FoundingTeam::model()->findAll($cdb);
 ?>
 <div class="bread_crum">
     <ul class="list-inline list-unstyled">
@@ -73,7 +76,7 @@ $internsMembers = FoundingTeam::model()->findAllByAttributes(array('type' => 3))
                         <img class="witho_hover" style="width: 103px;height: 97px;" src="<?php echo  Yii::app()->baseUrl.'/assets/team/'.$founder->photo_2;?>" alt="" />
                         <img class="hover_img"  style="width: 103px;height: 97px;" src="<?php echo  Yii::app()->baseUrl.'/assets/team/'.$founder->photo_1;?>" alt="" />
                     </a>
-                    <h3><?php echo ucwords($founder->name);?>i<span> <?php echo ucwords($founder->college);?></span> <span><?php echo ucwords($founder->batch);?></span></h3>
+                    <h3><?php echo ucwords($founder->name);?><span> <?php echo ucwords($founder->college);?></span> <span><?php echo ucwords($founder->batch);?></span></h3>
                 </li>
                 <?php }?>
             </ul>
