@@ -1,6 +1,17 @@
 <?php $this->setPageTitle('Our Team');
 $foundingMembers = FoundingTeam::model()->findAllByAttributes(array('type' => 1));
 $coreMembers = FoundingTeam::model()->findAllByAttributes(array('type' => 2));
+$coreBreakUp = array();
+$i = 0;
+$j = 0;
+foreach ($coreMembers as $member) {
+    if ($i > 3) {
+        $i = 0;
+        $j = 0;
+    }
+    $coreBreakUp[$i][$j] = $member;
+    $i++;$j++;
+}
 $cdb = new CDbCriteria();
 $cdb->order = 'id desc';
 $cdb->addCondition('type = 3');
@@ -43,6 +54,7 @@ $internsMembers = FoundingTeam::model()->findAll($cdb);
         </div>
         <div class="our_team_block core_team">
             <h3>Our Core Team</h3>
+            <?php foreach ($coreBreakUp as $coreMembers){?>
             <ul>
                 <?php foreach ($coreMembers as $founder) {?>
                 <li class="show_content_alok " alt="<?php echo $founder->id;?>">
@@ -65,6 +77,7 @@ $internsMembers = FoundingTeam::model()->findAll($cdb);
                         </ul>
                     </div>
                 </div>
+            <?php }?>
             <?php }?>
         </div>
         <div class="our_team_block intern_Team">
