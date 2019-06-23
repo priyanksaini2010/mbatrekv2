@@ -45,6 +45,8 @@ $orderMenu = array(
     );
 $siteData = array(
 			array('label'=>'Product Management', 'url'=>array('/products/admin')),
+            array('label'=>'Assessments Management', 'url'=>array('/assessments/admin')),
+            array('label'=>'Featured Assessments Management', 'url'=>array('/featuredAssessment/admin')),
             array('label'=>'Content Management', 'url'=>array('/contentJson/admin')),
             array('label'=>'Banners Management', 'url'=>array('/banners/admin')),
             array('label'=>'Success Story Management', 'url'=>array('/successStory/admin')),
@@ -56,6 +58,7 @@ $csInteractionMenu = array(
     array('label'=>'Career Advisory Management', 'url'=>array('/talkToAdvisory/admin')),
     array('label'=>'Contact Management', 'url'=>array('/contact/admin')),
     array('label'=>'Call To Action Management', 'url'=>array('/popup/admin')),
+    array('label'=>'Assessment PopUp Management', 'url'=>array('/assessmentPopup/admin')),
 //    array('label'=>'Call To Action Management', 'url'=>array('/popupReponse/admin')),
     array('label'=>'Import Contact Company', 'url'=>array('/campusAmbassador/importcontact')),
     array('label'=>'Import Contact Institutes', 'url'=>array('/contactAutofillCompany/importcontact')),
@@ -180,7 +183,7 @@ $this->widget('bootstrap.widgets.TbNavbar',array(
     $(document).ready(function() {
              $('img').each(function () {
                     var src =  $(this).attr('src');
-                    src = '/'+src;
+                    src = <?php echo DIREC;?>+src;
                     $(this).attr('src', src);
                 });
                 $("#example10").dateDropdowns({

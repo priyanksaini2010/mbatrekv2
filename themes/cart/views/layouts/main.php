@@ -493,6 +493,75 @@ var domain_name = '<?php echo $_SERVER['HTTP_HOST'].DIREC;?>';
                 </div>
             </div>
         </div>
+        <?php
+            
+            $q = $_SERVER['QUERY_STRING'];
+            $is_home = false;
+            if(DIREC == $_SERVER['REQUEST_URI']) {
+                $qExp = array(0=>'home',1=>"home");
+                $is_home = true;
+            } else {
+                $qExp = explode('=', $q);
+            }
+            if (!empty($qExp) && isset($qExp[1])) {
+                $popUp = Popup::model()->findByAttributes(array('url' => $qExp[1],'status' => 1));
+                if (!empty($popUp)) {?>
+                    <div id="callOutPopUp-<?php echo $popUp->id;?>" class="modal" data-easein="shake" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <!--<div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                        <h4 class="modal-title">Modal header</h4>
+                                </div>-->
+                                <div class="modal-body">
+                                    <div class="md-content">
+                                        <h3 id="pop-notification-type-2" class="d-modal-title"><?php echo $popUp->header_text;?></h3>
+                                        <h2 id="pop-notification-type-3" class="d-modal-title"><?php echo $popUp->sub_heading_text;?></h2>
+                                        <div class="error_wrap">
+                                            <div class="error_container" id="d-modal-content">
+                                                    <input class="form-control" placeholder="Name *" id="<?php echo $popUp->id;?>-name"><br/>
+                                                    <input class="form-control" placeholder="Email Address *" id="<?php echo $popUp->id;?>-email">
+                                            </div>
+                                            <!-- <button class="md-close">OK</button> -->
+                                                <div class="main_register"><div class="site_btn"><a alt="<?php echo $popUp->id;?>" class="cta-filled" href="javascript:void(0);"><?php echo $popUp->button_text;?></a></div></div>
+                                            <a data-dismiss="modal" class="close" href="javascript:void(0);"><?php echo $popUp->cancellation_text;?></a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+        <?php   }
+            }
+            if ($is_home) {
+                $assessmentPopUp = AssessmentPopup::model()->findByAttributes(array('status'=>1));
+                if (!empty($assessmentPopUp)) {?>
+                    <div id="assessmentPopup" class="modal" data-easein="shake" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <!--<div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                        <h4 class="modal-title">Modal header</h4>
+                                </div>-->
+                                <div class="modal-body">
+                                    <div class="md-content">
+<!--                                        <h3 id="pop-notification-type-2">Sample 2</h3>-->
+                                        <div class="error_wrap">
+                                            <img src="<?php echo Yii::app()->baseUrl;?>/assets/assements/<?php echo $assessmentPopUp->image; ?>"/>
+                                            <!-- <button class="md-close">OK</button> -->
+                                            <div class="main_register"><div class="site_btn"><a data-dismiss="modal" class="close" href="javascript:void(0);">OK</a></div></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+        <?php   }
+            }
+        ?>
 <?php echo $this->renderPartial("webroot.themes.cart.views.layouts.validations"); ?> 
 <!--    LinkedIn Tracking-->
     <script type="text/javascript">

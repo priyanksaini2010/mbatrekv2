@@ -18,6 +18,9 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
         <script src="<?php echo $baseUrl;?>/js/jssocials.min.js"></script>
         <script src="<?php echo $baseUrl;?>/js/jquery.mmenu.js"></script>
         <script src="<?php echo $baseUrl;?>/js/select2.min.js"></script>
+        <script src="<?php echo $baseUrl;?>/js/SimpleStarRating.js"></script>
+        <script src="<?php echo $baseUrl;?>/js/metismenujs.js"></script>
+        <script src="<?php echo $baseUrl;?>/js/mm-ajax.js"></script>
 <!--		<script src="https://d39ivqqvyriko0.cloudfront.net/source.js"></script>-->
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script type="text/javascript">
@@ -57,3 +60,31 @@ $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/them
 });
 /* Accordian FOR FAQ js */
 		</script>
+
+<script>
+    var ratings = document.getElementsByClassName('rating');
+
+    for (var i = 0; i < ratings.length; i++) {
+        var r = new SimpleStarRating(ratings[i]);
+
+        ratings[i].addEventListener('rate', function (e) {
+            console.log('Rating: ' + e.detail);
+        });
+    }
+
+    $(function () {
+        var Accordion = function (el, multiple) {
+            this.el = el || {};
+            this.multiple = multiple || false;
+
+            // Variables privadas
+            var links = this.el.find('.link');
+            // Evento
+            links.on('click', { el: this.el, multiple: this.multiple }, this.dropdown)
+        }
+
+
+    });
+
+
+</script>

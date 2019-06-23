@@ -60,6 +60,62 @@
 	 validationMethod("thanks","Thanks for your feedback, we will get in touch with you soon.")
     <?php }?>
         $(document).ready(function(){
+            <?php
+            $q = $_SERVER['QUERY_STRING'];
+            $is_home = false;
+            if(DIREC == $_SERVER['REQUEST_URI']) {
+                $qExp = array(0=>'home',1=>"home");
+                $is_home = true;
+            } else {
+                $qExp = explode('=', $q);
+            }
+            if (!empty($qExp) && isset($qExp[0])) {
+                $popUp = Popup::model()->findByAttributes(array('url' => $qExp[1]));
+
+                if (!empty($popUp)) {?>
+                    $('#callOutPopUp-<?php echo $popUp->id;?>').modal('show');
+            <?php }
+
+            }
+            if ($is_home) {
+                $assessmentPopUp = AssessmentPopup::model()->findByAttributes(array('status' => 1));
+                if (!empty($assessmentPopUp)) {?>
+                    $('#assessmentPopup').modal('show');
+            <?php }
+            }
+
+            ?>
+            $(".cta-filled").click(function() {
+                var iden = $(this).attr('alt')
+                if($('#'+iden+'-name').val() == '') {
+                    validationMethod("error","Please Enter Name");
+                    return false;
+                }
+                if($('#'+iden+'-email').val() == '') {
+                    validationMethod("error","Please Enter Email Address");
+                    return false;
+                }
+                $.ajax({
+                    url: "savectaresponse",
+                    type: "post",
+                    data: {
+                        name: $('#'+iden+'-name').val(),
+                        email: $('#'+iden+'-email').val(),
+                        pop_id: iden
+                    },
+                    success : function (data) {
+                        var obj = $.parseJSON(data);
+                        if (obj.status == "success") {
+                            if (obj.login_status == 1) {
+                            //    Add Login PopUp
+                            } else {
+                            //    Add register PopUp
+                            }
+                        }
+
+                    }
+                })
+            });
             $("#img1").click(function(){
                 $('#myModalimage1').modal('show');
             })
@@ -213,3 +269,4 @@
     } );
 
 </script>
+

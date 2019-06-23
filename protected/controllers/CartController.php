@@ -33,7 +33,7 @@ class CartController extends Controller {
                 array('allow', // allow all users to perform 'index' and 'view' actions
                     'actions' => array('captcha','removeCoupon','industry','interview','index', 'view','student',"addtocart","cart","remove","buynow","verify",
                                         'profesionals','institutes','register',"description","checkout","removeCart","applypromo","story","campus","loginandapply","applygstin","clearcart",
-                                        "profile","pastorder","changepassword","checkout","gateway","payusurl","postpayment","paytmsurl","team"),
+                                        "profile","pastorder","changepassword","checkout","gateway","payusurl","postpayment","paytmsurl","team",'assessment'),
                     'users' => array('*'),
                 ),
                 array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -1402,6 +1402,11 @@ class CartController extends Controller {
         public function actionPastorder(){
             $model = new UsersNew();
             $this->render("webroot.themes.cart.views.cart.pastorder",array('model'=>$model));
+        }
+
+        public function actionAssessment(){
+            $model = new UsersNew();
+            $this->render("webroot.themes.cart.views.cart.assessment",array('model'=>$model));
         }
 
         public function actionChangepassword(){
