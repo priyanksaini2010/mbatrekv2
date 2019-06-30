@@ -74,6 +74,12 @@ echo $form->dropDownList($model, 'home_page_bucket', $ar, array('class' => 'span
     <label for="Products_status" class="required">Product Status <span class="required">*</span></label>
     <?php echo $form->dropDownList($model, 'status', array("In-active", "Active"), array('class' => 'span3')); ?>
     <?php } ?>
+<?php
+if (isset($_REQUEST['assessment_id']) && $_REQUEST['assessment_id'] != '') {
+    echo $form->hiddenField($model,'assessment_id',array('value'=>$_REQUEST['assessment_id']));
+    echo $form->hiddenField($model,'is_assessment',array('value'=>1));
+}
+?>
 <div class="form-actions">
     <?php
     $this->widget('bootstrap.widgets.TbButton', array(

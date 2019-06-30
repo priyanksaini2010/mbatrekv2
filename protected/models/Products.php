@@ -47,7 +47,7 @@ class Products extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('title, logo, actuall_price, description, description1, price, type, is_saver, product_sub_category_id, status', 'required'),
-			array('type, is_saver, product_sub_category_id, home_page_bucket, status,sortOrder', 'numerical', 'integerOnly'=>true),
+			array('type, is_saver, product_sub_category_id, home_page_bucket, status,sortOrder,is_assessment, assessment_id', 'numerical', 'integerOnly'=>true),
 			array('actuall_price, price', 'numerical'),
 			array('title, logo, description1', 'length', 'max'=>255),
 			array('home_page_icon', 'length', 'max'=>250),
@@ -55,7 +55,7 @@ class Products extends CActiveRecord
             array('sample_3', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, title, logo, actuall_price, description, description1, price, type, is_saver, product_sub_category_id, home_page_icon, home_page_bucket, status', 'safe', 'on'=>'search'),
+			array('id, title, logo, actuall_price, description, description1, price, type, is_saver, product_sub_category_id, home_page_icon, home_page_bucket, status,is_assessment, assessment_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -100,7 +100,9 @@ class Products extends CActiveRecord
             'sample_2' => 'Sample 2',
             'sample_3' => 'Sample 3',
 			'status' => 'Status',
-                        'sortOrder' => 'Sort Order',
+            'sortOrder' => 'Sort Order',
+            'is_assessment' => "Is This An Assessment?",
+            'assessment_id' => "Assessment ID"
 		);
 	}
 
@@ -138,9 +140,11 @@ class Products extends CActiveRecord
         $criteria->compare('sample_2',$this->sample_2,true);
         $criteria->compare('sample_3',$this->sample_3,true);
 		$criteria->compare('status',$this->status);
-                $criteria->order = "id desc";
-                $criteria->order = "sortOrder asc";
-                $criteria->limit = 100;
+        $criteria->compare('is_assessment',$this->is_assessment);
+        $criteria->compare('assessment_id',$this->assessment_id);
+        $criteria->order = "id desc";
+        $criteria->order = "sortOrder asc";
+        $criteria->limit = 100;
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
                         'pagination' => array(

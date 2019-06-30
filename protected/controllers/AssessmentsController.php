@@ -87,8 +87,8 @@ class AssessmentsController extends Controller
             $_POST['Assessments']['date_updated'] = date('Y-m-d H:i:s');
 			$model->attributes=$_POST['Assessments'];
             if($model->save()){
-                Yii::app()->user->setFlash("success",'Assessment added successfully');
-                $this->redirect(array('admin'));
+                Yii::app()->user->setFlash("success",'Assessment added successfully, Please complete its product creation.');
+                $this->redirect(array('products/create','assessment_id'=>$model->id));
             }
 		}
 

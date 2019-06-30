@@ -19,8 +19,13 @@ $this->menu=array(
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		'id',
-		'assessment_id',
+//		'id',
+//		'assessment_id',
+        array(
+            'header' =>'Current Featured Assessment',
+            "name"=>'assessment_id',
+            'value'=>'$data->assessment->headline'
+        ),
 		'point_1',
 		'point_2',
 		'point_3',

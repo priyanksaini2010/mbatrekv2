@@ -155,7 +155,10 @@
                 <ul>
                     <?php $arr = array(1,2,3,4);
                         foreach ($arr as $a){
-                            $products = Products::model()->findAllByAttributes(array("home_page_bucket" => $a));
+                            $criteria = new CDbCriteria();
+                            $criteria->addCondition("home_page_bucket = ".$a);
+                            $criteria->addCondition("is_assessment <> 1");
+                            $products = Products::model()->findAll($criteria);
                     ?>
                     <li>
                         <div class="bulid_button">

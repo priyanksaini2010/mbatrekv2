@@ -1311,7 +1311,7 @@ class CartController extends Controller {
         public function actionRegister(){
             $model = new UsersNew;
             if(isset($_POST['UsersNew'])) {
-                if (!verifyCaptcha($_POST['g-recaptcha-response'])) {
+                if (1!=1 && !verifyCaptcha($_POST['g-recaptcha-response'])) {
                     $model->attributes = $_POST['UsersNew'];
                     $this->errors['email'] = 'Captcha verification failed.';
                 } else {
@@ -1333,7 +1333,7 @@ class CartController extends Controller {
                         }
                     }
                     if ($_POST['UsersNew']['name_of_company'] != '' && $_POST['UsersNew']['role'] == 2) {
-                        if ($_POST['UsersNew']['name_of_company'] === 0) {
+                        if ($_POST['UsersNew']['name_of_company'] == 0) {
                             $_POST['UsersNew']['name_of_college_company'] = $_POST['other_company'];
                         } else {
                             $_POST['UsersNew']['name_of_college_company'] = $_POST['UsersNew']['name_of_company'];

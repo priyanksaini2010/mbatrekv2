@@ -73,7 +73,7 @@ class Assessments extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'image' => 'Image',
-			'headline' => 'Headline',
+			'headline' => 'Headline(Please use same name in product creation)',
 			'sub_heading_text' => 'Sub Heading Text',
 			'price' => 'Price',
 			'rating' => 'Rating',
@@ -81,7 +81,7 @@ class Assessments extends CActiveRecord
 			'questions' => 'Questions',
 			'degree' => 'Degree',
 			'small_description' => 'Small Description',
-			'bullet_points' => 'Bullet Points',
+			'bullet_points' => 'Bullet Points (Please use "," as separator for each point)',
 			'zoho_html_code' => 'Zoho Html Code',
 			'zoho_iframe_code' => 'Zoho Iframe Code',
 			'zoho_javascript_code' => 'Zoho Javascript Code',

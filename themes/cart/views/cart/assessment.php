@@ -6,6 +6,12 @@
                 <?php
                     $featuredAssessment =  FeaturedAssessment::model()->findByAttributes(array('id'=>1));
                     if (!empty($featuredAssessment)){
+                    $cdb = new CDbCriteria();
+                    $cdb->addCondition('assessment_id = '.$freeAssessment->id);
+                    $product = Products::model()->find($cdb);
+                    $url = str_replace("#","",rtrim($product->title));
+                    $url = str_replace(" ","-",$url);
+                    $url = strtolower($url);
                 ?>
                 <h3>Featured Assessment </h3>
                 <div class="sugester_block">
@@ -14,7 +20,7 @@
                         <h2><?php echo $featuredAssessment->assessment->headline;?></h2>
                         <span class="rating" data-default-rating="<?php echo $featuredAssessment->assessment->rating;?>" disabled></span>
                         <span class="total_rating"><?php echo $featuredAssessment->assessment->rating;?></span>
-                        <a href="javascript:void(0);">Know More >></a>
+                        <a href="<?php echo Yii::app()->createUrl($url);?>">Know More >></a>
                     </div>
                 </div>
                 <div class="sugester_desc">
@@ -78,7 +84,14 @@
                     <div class="assessment_wrapper">
                         <h3>Free Assessments</h3>
                         <div class="assessment_content">
-                            <?php foreach($freeAssessments as $freeAssessment){?>
+                            <?php foreach($freeAssessments as $freeAssessment){
+                                $cdb = new CDbCriteria();
+                                $cdb->addCondition('assessment_id = '.$freeAssessment->id);
+                                $product = Products::model()->find($cdb);
+                                $url = str_replace("#","",rtrim($product->title));
+                                $url = str_replace(" ","-",$url);
+                                $url = strtolower($url);
+                            ?>
                             <div class="sugester_block">
                                 <img src="<?php echo Yii::app()->baseUrl.'/assets/assements/'.$freeAssessment->image;?>"/>
                                 <h2><?php echo $freeAssessment->headline;?></h2>
@@ -86,7 +99,7 @@
                                     <h4><?php echo $freeAssessment->sub_heading_text;?></h4>
                                     <span class="rating" data-default-rating="<?php echo $freeAssessment->rating;?>" disabled></span>
                                     <span class="total_rating"><?php echo $freeAssessment->rating;?></span>
-<!--                                    <a href="javascript:void(0);">Know More >></a>-->
+                                    <a href="<?php echo Yii::app()->createUrl($url)?>">Know More >></a>
                                 </div>
                                 <div class="hover_active">
                                     <h3><?php echo $freeAssessment->headline;?> </h3>
@@ -98,16 +111,23 @@
                                     <p>
                                         <?php echo $freeAssessment->small_description;?>
                                     </p>
-<!--                                    <ul class="list-text">-->
+                                    <ul class="list-text">
 <!--                                        <li>-->
 <!--                                            Get the Insider's Secret to Running Profitable Ads.-->
 <!--                                        </li>-->
 <!--                                        <li>In Just 2 Days! Fun, Actionable and Fluff-Free Course</li>-->
 <!--                                        <li>In Just 2 Days! Fun, Actionable and Fluff-Free Course</li>-->
 <!--                                    </ul>-->
-                                    <?php echo $freeAssessment->bullet_points;?>
+                                    <?php
+                                        $points = explode(',',$freeAssessment->bullet_points);
+
+                                        foreach ($points as $point){
+                                            echo "<li>".$point."</li>";
+                                        }
+                                    ?>
+                                    </ul>
                                     <div class="assment_btn">
-                                        <a class="btn" href="javascript:void(0);">Verify & Start </a>
+                                        <a class="btn" href="<?php echo Yii::app()->createUrl('login')?>">Verify & Start </a>
                                         <a class="free_anchr" href="javascript:void(0);">Free</a>
                                     </div>
                                 </div>
@@ -125,7 +145,14 @@
                         <div class="assessment_wrapper">
                             <h3>Premium Assessments</h3>
                             <div class="assessment_content">
-                                <?php foreach($freeAssessments as $freeAssessment){?>
+                                <?php foreach($freeAssessments as $freeAssessment){
+                                    $cdb = new CDbCriteria();
+                                    $cdb->addCondition('assessment_id = '.$freeAssessment->id);
+                                    $product = Products::model()->find($cdb);
+                                    $url = str_replace("#","",rtrim($product->title));
+                                    $url = str_replace(" ","-",$url);
+                                    $url = strtolower($url);
+                                ?>
                                     <div class="sugester_block">
                                         <img src="<?php echo Yii::app()->baseUrl.'/assets/assements/'.$freeAssessment->image;?>"/>
                                         <h2><?php echo $freeAssessment->headline;?></h2>
@@ -133,7 +160,7 @@
                                             <h4><?php echo $freeAssessment->sub_heading_text;?></h4>
                                             <span class="rating" data-default-rating="<?php echo $freeAssessment->rating;?>" disabled></span>
                                             <span class="total_rating"><?php echo $freeAssessment->rating;?></span>
-                                            <!--                                    <a href="javascript:void(0);">Know More >></a>-->
+                                            <a href="<?php echo Yii::app()->createUrl($url)?>">Know More >></a>
                                         </div>
                                         <div class="hover_active">
                                             <h3><?php echo $freeAssessment->headline;?> </h3>
@@ -152,10 +179,26 @@
                                             <!--                                        <li>In Just 2 Days! Fun, Actionable and Fluff-Free Course</li>-->
                                             <!--                                        <li>In Just 2 Days! Fun, Actionable and Fluff-Free Course</li>-->
                                             <!--                                    </ul>-->
-                                            <?php echo $freeAssessment->bullet_points;?>
+<!--                                            --><?php //echo $freeAssessment->bullet_points;?>
+                                            <ul class="list-text">
+                                                <!--                                        <li>-->
+                                                <!--                                            Get the Insider's Secret to Running Profitable Ads.-->
+                                                <!--                                        </li>-->
+                                                <!--                                        <li>In Just 2 Days! Fun, Actionable and Fluff-Free Course</li>-->
+                                                <!--                                        <li>In Just 2 Days! Fun, Actionable and Fluff-Free Course</li>-->
+                                                <!--                                    </ul>-->
+                                                <?php
+                                                $points = explode(',',$freeAssessment->bullet_points);
+
+                                                foreach ($points as $point){
+                                                    echo "<li>".$point."</li>";
+                                                }
+
+                                                ?>
+                                            </ul>
                                             <div class="assment_btn">
-                                                <a class="btn" href="javascript:void(0);">Verify & Start </a>
-                                                <a class="free_anchr" href="javascript:void(0);">Free</a>
+                                                <a class="btn" href="<?php echo Yii::app()->createUrl("cart/addtocart",array("id"=>$product->id))?>">Add to Cart</a>
+                                                <a class="free_anchr" href="javascript:void(0);">&#8377; <?php echo money($product->price);?></a>
                                             </div>
                                         </div>
                                     </div>
