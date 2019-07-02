@@ -1,7 +1,7 @@
 <?php
 // Ia m comment
 // I am also:wq
-$env = "PROD";
+$env = "LOCAL";
 global $payuSurl;
 if($env == "LOCAL"){
     error_reporting(E_ERROR);
@@ -49,7 +49,7 @@ if (!$link) {
 
 date_default_timezone_set("Asia/Kolkata");
 //const BLOGURLS = $blogUrls;
-const DIREC = "/";
+const DIREC = "/mbatrekv2/";
 const BACK_COLOR = 0xFFFFFF;
 require_once 'payment_lib/PaytmKit/lib/config_paytm.php';
 require_once 'payment_lib/PaytmKit/lib/encdec_paytm.php';
