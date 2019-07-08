@@ -49,7 +49,7 @@ if (!$link) {
 
 date_default_timezone_set("Asia/Kolkata");
 //const BLOGURLS = $blogUrls;
-const DIREC = "/mbatrekv2/";
+const DIREC = "/mbt/";
 const BACK_COLOR = 0xFFFFFF;
 require_once 'payment_lib/PaytmKit/lib/config_paytm.php';
 require_once 'payment_lib/PaytmKit/lib/encdec_paytm.php';
