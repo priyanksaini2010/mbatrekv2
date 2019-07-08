@@ -514,18 +514,20 @@ var domain_name = '<?php echo $_SERVER['HTTP_HOST'].DIREC;?>';
                                         <h4 class="modal-title">Modal header</h4>
                                 </div>-->
                                 <div class="modal-body">
-                                    <div class="md-content">
-                                        <h3 id="pop-notification-type-2" class="d-modal-title"><?php echo $popUp->header_text;?></h3>
-                                        <h2 id="pop-notification-type-3" class="d-modal-title"><?php echo $popUp->sub_heading_text;?></h2>
-                                        <div class="error_wrap">
-                                            <div class="error_container" id="d-modal-content">
-                                                    <input class="form-control" placeholder="Name *" id="<?php echo $popUp->id;?>-name"><br/>
-                                                    <input class="form-control" placeholder="Email Address *" id="<?php echo $popUp->id;?>-email">
-                                            </div>
-                                            <!-- <button class="md-close">OK</button> -->
-                                                <div class="main_register"><div class="site_btn"><a alt="<?php echo $popUp->id;?>" class="cta-filled" href="javascript:void(0);"><?php echo $popUp->button_text;?></a></div></div>
-                                            <a data-dismiss="modal" class="close" href="javascript:void(0);"><?php echo $popUp->cancellation_text;?></a>
+                                    <div class="pop_design">
+                                        <h3><?php echo $popUp->header_text;?></h3>
+                                        <h4><?php echo $popUp->sub_heading_text;?></h4>
+                                        <p></p>
+                                        <div class="without_login">
+                                            <input class="form-control" placeholder="Name *" id="<?php echo $popUp->id;?>-name"><br/>
+                                            <input class="form-control" placeholder="Email Address *" id="<?php echo $popUp->id;?>-email">
+                                            <input type="submit" name="GET ME ₹ 100 OFF" value="<?php echo $popUp->button_text;?>" />
+                                            <a data-dismiss="modal" class="close" href="javascript:void(0);">
+                                                <span><?php echo $popUp->cancellation_text;?></span>
+                                            </a>
+
                                         </div>
+
                                     </div>
                                 </div>
 
@@ -537,7 +539,7 @@ var domain_name = '<?php echo $_SERVER['HTTP_HOST'].DIREC;?>';
             if ($is_home) {
                 $assessmentPopUp = AssessmentPopup::model()->findByAttributes(array('status'=>1));
                 if (!empty($assessmentPopUp)) {?>
-                    <div id="assessmentPopup" class="modal pop_design" data-easein="shake" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div id="assessmentPopup" class="modal" data-easein="shake" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <!--<div class="modal-header">
