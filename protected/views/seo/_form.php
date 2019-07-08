@@ -2,6 +2,7 @@
 	'id'=>'seo-form',
 	'enableAjaxValidation'=>false,
 ));
+
 $ruleArray = array(
     'our-story' => 'site/page/view/mbatrek_story',
     'how-are-we-different' => 'site/page/view/how_we_are_different',
@@ -72,7 +73,17 @@ $ruleArray = array(
     'institutes' => 'site/page/view/educational_institute',
     'home' => 'home'
 );
-
+$products = Products::model()->findAll();
+foreach ($products as $product){
+    $url = str_replace("#","",rtrim($product->title));
+    $url = str_replace(" ","-",$url);
+    $url = strtolower($url);
+    $ruleArray[$url] = "cart/description/id/".$product->id;
+}
+$blogs = Blogs::model()->findAll();
+foreach ($blogs as $blog) {
+    $ruleArray["blogs/".$blog->id] = "site/blogdetails/id/".$blog->id;
+}
 $urlArray = array_keys($ruleArray);
 $finalUrl = array_combine($urlArray,$urlArray)
 ?>

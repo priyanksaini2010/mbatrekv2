@@ -7,8 +7,8 @@
                     $featuredAssessment =  FeaturedAssessment::model()->findByAttributes(array('id'=>1));
                     if (!empty($featuredAssessment)){
                     $cdb = new CDbCriteria();
-                    $cdb->addCondition('assessment_id = '.$freeAssessment->id);
-                    $product = Products::model()->find($cdb);
+//                    $cdb->addCondition('assessment_id = '.$freeAssessment->id);
+//                    $product = Products::model()->find($cdb);
                     $url = str_replace("#","",rtrim($product->title));
                     $url = str_replace(" ","-",$url);
                     $url = strtolower($url);

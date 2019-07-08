@@ -13,14 +13,134 @@ $baseUrl = "";
 					<div class="sample_block">
                     <?php if($product->sample_1 != "" || $product->sample_2 != "" || $product->sample_3 != ""){?>
 						<ul>
-                            <?php if(!empty($product->sample_1)&& $product->sample_1 != ""){?>
+                            <?php if(!empty($product->sample_1)&& $product->sample_1 != ""){
+                                switch ($product->sample_1) {
+                                    case '1607479040ResumeCheatsheet.png':
+                                        $s_1_alt = 'Resume Diagnostic';
+                                    break;
+                                    case '89360135ResumeScore.png':
+                                        $s_1_alt = 'Resume Format';
+                                        break;
+                                    case '1780792421LinkedInCheatsheet.png':
+                                        $s_1_alt = 'LinkedIn profile';
+                                        break;
+                                    case '1896905459LinkedInScore.png':
+                                        $s_1_alt = 'LinkedIn jobs';
+                                        break;
+                                    case '1767904789InterviewCheatsheet.png':
+                                        $s_1_alt = 'Mock interview';
+                                        break;
+                                    case '1768706863InterviewDiagnostic.png':
+                                        $s_1_alt = 'How to prepare for interview/ Mock interview performance';
+                                        break;
+                                    case '459314976InterviewQandA-Slide1.png':
+                                        $s_1_alt = 'Job interview tips';
+                                        break;
+                                    case '1194325509InterviewQandA-Slide2.png':
+                                        $s_1_alt = 'Job interview questions and answers';
+                                        break;
+                                    case '740701441IndustryAnalysis-Slide1.PNG':
+                                        $s_1_alt = 'Industry Analysis';
+                                        break;
+                                    case '1846001760IndustryAnalysis-Slide2.PNG':
+                                        $s_1_alt = 'Industry Analysis overview';
+                                        break;
+                                    case '490435889CompanyAnalysis-Slide1.PNG':
+                                        $s_1_alt = 'Company Analysis';
+                                        break;
+                                    case '372163438CompanyAnalysis-Slide2.PNG':
+                                        $s_1_alt = 'Company Analysis Factors';
+                                        break;
+                                    case '641410425RolesPeoplePlayinGD-Slide1.png':
+                                        $s_1_alt = 'Group discussion';
+                                        break;
+                                    case '1035894777RolesPeoplePlayinGD-Slide2.png':
+                                        $s_1_alt = 'Group discussion Tips';
+                                        break;
+                                    case '425684776IndustryAnalysis-Slide2.PNG':
+                                        $s_1_alt = 'Industry Ready/ Industry Analysis';
+                                        break;
+                                    case '1912663539CompanyAnalysis-Slide1.PNG':
+                                        $s_1_alt = 'Company Analysis';
+                                        break;
+                                    case '2051416157InterviewPerformanceScore.png':
+                                        $s_1_alt = 'Mock Interview';
+                                        break;
+                                    case '1363393211InterviewQandA-Slide2.png':
+                                        $s_1_alt = 'Interview  tips';
+                                        break;
+                                    default:
+                                        $s_1_alt = '';
+                                        break;
+                                }
+                            ?>
                                 <li id="img1">
-                                    <a  href="javascript:void(0);"><img src="<?php echo Yii::app()->baseUrl;?>/assets/products/<?php echo $product->sample_1; ?>"/></a>
+                                    <a  href="javascript:void(0);"><img src="<?php echo Yii::app()->baseUrl;?>/assets/products/<?php echo $product->sample_1; ?>" alt="<?php echo $s_1_alt;?>"/></a>
                                 </li>
                             <?php }?>
-                            <?php if(!empty($product->sample_2)&& $product->sample_2 != ""){?>
+                            <?php if(!empty($product->sample_2)&& $product->sample_2 != ""){
+                                switch ($product->sample_2) {
+                                    case '1607479040ResumeCheatsheet.png':
+                                        $s_1_alt = 'Resume Diagnostic';
+                                        break;
+                                    case '89360135ResumeScore.png':
+                                        $s_1_alt = 'Resume Format';
+                                        break;
+                                    case '1780792421LinkedInCheatsheet.png':
+                                        $s_1_alt = 'LinkedIn profile';
+                                        break;
+                                    case '1896905459LinkedInScore.png':
+                                        $s_1_alt = 'LinkedIn jobs';
+                                        break;
+                                    case '1767904789InterviewCheatsheet.png':
+                                        $s_1_alt = 'Mock interview';
+                                        break;
+                                    case '1768706863InterviewDiagnostic.png':
+                                        $s_1_alt = 'How to prepare for interview/ Mock interview performance';
+                                        break;
+                                    case '459314976InterviewQandA-Slide1.png':
+                                        $s_1_alt = 'Job interview tips';
+                                        break;
+                                    case '1194325509InterviewQandA-Slide2.png':
+                                        $s_1_alt = 'Job interview questions and answers';
+                                        break;
+                                    case '740701441IndustryAnalysis-Slide1.PNG':
+                                        $s_1_alt = 'Industry Analysis';
+                                        break;
+                                    case '1846001760IndustryAnalysis-Slide2.PNG':
+                                        $s_1_alt = 'Industry Analysis overview';
+                                        break;
+                                    case '490435889CompanyAnalysis-Slide1.PNG':
+                                        $s_1_alt = 'Company Analysis';
+                                        break;
+                                    case '372163438CompanyAnalysis-Slide2.PNG':
+                                        $s_1_alt = 'Company Analysis Factors';
+                                        break;
+                                    case '641410425RolesPeoplePlayinGD-Slide1.png':
+                                        $s_1_alt = 'Group discussion';
+                                        break;
+                                    case '1035894777RolesPeoplePlayinGD-Slide2.png':
+                                        $s_1_alt = 'Group discussion Tips';
+                                        break;
+                                    case '425684776IndustryAnalysis-Slide2.PNG':
+                                        $s_1_alt = 'Industry Ready/ Industry Analysis';
+                                        break;
+                                    case '1912663539CompanyAnalysis-Slide1.PNG':
+                                        $s_1_alt = 'Company Analysis';
+                                        break;
+                                    case '2051416157InterviewPerformanceScore.png':
+                                        $s_1_alt = 'Mock Interview';
+                                        break;
+                                    case '1363393211InterviewQandA-Slide2.png':
+                                        $s_1_alt = 'Interview  tips';
+                                        break;
+                                    default:
+                                        $s_1_alt = '';
+                                        break;
+                                }
+                            ?>
                                 <li id="img2">
-                                    <a href="javascript:void(0);"><img src="<?php echo Yii::app()->baseUrl;?>/assets/products/<?php echo $product->sample_2; ?>"/></a>
+                                    <a href="javascript:void(0);"><img alt="<?php echo $s_1_alt;?>" src="<?php echo Yii::app()->baseUrl;?>/assets/products/<?php echo $product->sample_2; ?>"/></a>
                                 </li>
                             <?php }?>
                             <?php if(!empty($product->sample_3)&& $product->sample_3 != ""){?>

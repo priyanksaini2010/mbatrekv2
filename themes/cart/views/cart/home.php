@@ -1,4 +1,6 @@
-<?php $this->setPageTitle('Home'); ?>
+<?php $this->setPageTitle('Home');
+
+?>
 <?php $baseUrl = (Yii::app()->theme ? $baseUrl : Yii::app()->request->baseUrl . "/themes/cart"); ?>
 <div class="home_page_slider" style="z-index: 0">
 	<ul class="rslides" id="slider1">
@@ -6,11 +8,25 @@
             $criteria = new CDbCriteria;
             $criteria->order = "sortOrder asc";
             foreach ( Banners::model()->findAll($criteria)as $banner){
+                switch ($banner->image) {
+                    case '1613473156Aceyour1stYr@Work!.png':
+                        $bAlt = "Career counselling";
+                    break;
+                    case '687472031CampusAmbassador.png':
+                        $bAlt = "Career counselling online/ Centre";
+                    break;
+                    case '379462731FREESESSIONS(1).png':
+                        $bAlt = 'Career counselling Delhi/ Sessions';
+                    break;
+                    default:
+                        $bAlt = '';
+                        break;
+                }
                 if(!empty($banner->link)){
                 ?>
                     <a href="<?php echo $banner->link?>" target="_blank">
                 <?php }?>
-		<li><img src="<?php echo Yii::app()->request->baseUrl; ?>/assets/Banners/<?php echo $banner->image;?>" alt=""></li>
+		<li><img src="<?php echo Yii::app()->request->baseUrl; ?>/assets/Banners/<?php echo $banner->image;?>" alt="<?php echo $bAlt;?>"></li>
 <!--            <img src="https://d39ivqqvyriko0.cloudfront.net/--><?php //echo $banner->image;?><!--" alt=""></li>-->
                         <?php if(!empty($banner->link)){
                         ?>

@@ -537,7 +537,7 @@ var domain_name = '<?php echo $_SERVER['HTTP_HOST'].DIREC;?>';
             if ($is_home) {
                 $assessmentPopUp = AssessmentPopup::model()->findByAttributes(array('status'=>1));
                 if (!empty($assessmentPopUp)) {?>
-                    <div id="assessmentPopup" class="modal" data-easein="shake" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div id="assessmentPopup" class="modal pop_design" data-easein="shake" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <!--<div class="modal-header">
