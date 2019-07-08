@@ -8,6 +8,6 @@ RewriteEngine on
   RewriteCond %{REQUEST_URI} !=/favicon.ico
   RewriteRule ^(.*)$ index.php?q=$1 [L,QSA]
 
-  RewriteEngine On
-  RewriteCond %{HTTPS} off
-  RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
+  # RewriteEngine On
+  # RewriteCond %{HTTPS} off
+  # RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
